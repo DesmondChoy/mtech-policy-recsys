@@ -253,7 +253,7 @@ The following amounts are the maximum benefit limits that are payable to you per
 | Sub-limit for jewellery (in total)                                                                | S$300                   | S$500                   | S$500                   |
 | Sub-limit for all other items (per item)                                                          | S$300                   | S$500                   | S$500                   |
 | Overall limit for family plan                                                                     | S$7,500                 | S$12,500                | S$18,750                |
-| Loss of passport, travel documents &amp; theft of money                                               | S$300                   | S$600                   | S$1,000                 |
+| Loss of passport, travel documents & theft of money                                               | S$300                   | S$600                   | S$1,000                 |
 | Sub-limit for theft of your money                                                                 | S$300                   | S$300                   | S$300                   |
 | Fraudulent personal credit card usage When unauthorised charges are made on your credit card      | S$300                   | S$600                   | S$1,000                 |
 | Car rental excess Cover for any car rental excess you need to pay if an  accident happens         | Not Applicable          | S$500                   | S$1,000                 |
