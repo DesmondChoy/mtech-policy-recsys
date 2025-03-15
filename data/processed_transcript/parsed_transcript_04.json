@@ -1,0 +1,86 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Good morning, ISS Insurance, you’re speaking with Sarah. How may I assist you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, good morning. I'm calling about travel insurance. I’ve been looking at your website, but frankly, insurance websites always seem a bit… vague. I wanted to get some straight answers before I commit to anything."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "I understand your concern. I'm here to help clarify things for you. To assist you better, could you tell me where you are planning to travel to?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Why do you need to know that already? I haven’t even told you anything else about my trip. Is this just to immediately start calculating some inflated premium based on the destination? I’m going to… let’s just say Europe. Western Europe."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Knowing the region helps us understand the potential travel risks involved and ensure the appropriate coverage is considered for your trip. Western Europe is helpful. And when are you planning to travel, and for how long will you be away?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "And why do you need the dates? Is this going to be used to track me somehow or send me a barrage of marketing emails later? I’m traveling from the 15th of December to the 28th of December. Two weeks exactly."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "The travel dates are essential to determine the period of coverage required for your policy. This ensures you are covered for the entire duration of your trip. ISS Insurance respects your privacy, and your details are used solely for processing your enquiry. We need to know the start and end dates to calculate the policy duration. Could you also let me know your age, please?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "My age? What’s my age got to do with it? Are you going to tell me my premium is higher because I’m ‘older’ or something? I’m 35. And I’m female, if that’s also going to affect things in some mysterious way."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for providing that information. Age is a factor in assessing travel risk for insurance purposes, and gender is sometimes used for statistical analysis within the insurance industry to understand risk profiles. It helps us ensure we are offering relevant policy options. Will you be travelling alone, or with family members or other companions?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Family. My husband and my parents are coming along. Why do you need to know about family? Is this some kind of family package thing? I want to know the individual costs, not some bundled deal where I don’t know what I’m paying for exactly."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Knowing if you are travelling with family helps us understand the number of individuals who will require coverage. And are any of your family members senior citizens? This is relevant as some policies have specific provisions for senior travellers."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Senior citizens? Yes, my parents are both over 70. What kind of ‘provisions’? Are there going to be extra charges or exclusions because they are older? I need to understand all the fine print upfront."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understanding if there are senior citizens in the travel group is important because some policies offer enhanced benefits or specific options tailored for senior travellers. We need this information to ensure we consider all appropriate policy types. Finally, do you have a particular type of coverage in mind, such as basic travel insurance, or are you looking for a more comprehensive plan?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "‘Type of coverage’? Isn’t that your job to tell me what I need? This is why I’m calling, because I don’t understand all the jargon. What’s the difference? Are you trying to sell me the most expensive thing if I say ‘comprehensive’? I just want to be covered for emergencies, you know, medical things, lost luggage maybe. The usual stuff. Nothing too fancy."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "I understand. By ‘type of coverage,’ I meant whether you are looking for a basic plan primarily for medical emergencies and travel disruptions, or a more comprehensive plan that includes additional benefits like baggage loss, personal liability, and trip cancellation. Based on what you’ve mentioned, it sounds like you are interested in a plan that covers medical emergencies and lost luggage, which would be considered a more standard or mid-range coverage."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Let me just summarise the information I have gathered to ensure I have everything correct. You are a 35-year-old female, travelling to Western Europe from the 15th of December to the 28th of December, for a total of 14 days. You will be travelling with your husband and your parents, two of whom are senior citizens over the age of 70. You are interested in travel insurance that covers medical emergencies and lost luggage, which would be considered a standard or mid-range coverage. Is that all correct?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Hmm, yes, I suppose that’s… accurate. Two weeks, Western Europe, me and husband, plus elderly parents, mid-range coverage for medical and luggage. Yes, that’s right. But this is just for you to… give me options later, right? This isn’t a quote or anything binding yet?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Correct. This is just to gather your requirements so we can provide you with the relevant travel insurance options available. We will use this information to prepare some information for you. Is there anything else I can clarify for you at this stage regarding your requirements?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No, I think that’s all for now. Just… make sure you actually look at what I’ve told you and don’t just send me some generic policy. I’ll be expecting to hear back then."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Certainly. We will ensure the options we provide are relevant to your specific needs based on the requirements you’ve shared. Thank you for calling ISS Insurance and have a good day."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Alright, thanks. Goodbye."
+    }
+]
