@@ -1,39 +1,38 @@
 import json
 import re
 import os
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List, Optional
 from datetime import date
 
 class TravelInsuranceRequirement(BaseModel):
-    """
-    A Pydantic model representing travel insurance requirements extracted from customer conversations.
+    requirement_id: str = Field(..., description="Unique identifier for tracking the insurance requirement.")
+    requirement_summary: str = Field(..., description="Concise summary of the customer's insurance needs.")
+    detailed_description: str = Field(..., description="Detailed narrative extracted from the transcript.")
     
-    This class structures and validates travel insurance requirements data, making it easier to process
-    and analyze customer needs systematically. It captures essential details about travel plans,
-    insurance preferences, and specific customer requirements.
-    """
-    requirement_id: str  # Unique identifier for tracking
+    travel_destination: Optional[str] = Field(None, description="Country or region the customer is traveling to.")
+    travel_duration: Optional[str] = Field(None, description="Duration of the trip (e.g., '7 days', '1 month').")
+    travel_start_date: Optional[date] = Field(None, description="Start date of the travel.")
+    travel_end_date: Optional[date] = Field(None, description="End date of the travel.")
     
-    requirement_summary: str  # Summary of the customer's insurance needs
-    detailed_description: str  # More detailed requirement extracted from transcript
-
-    travel_destination: Optional[str]  # Country or region the user is traveling to
-    travel_duration: Optional[str]  # e.g., "7 days", "1 month", "6 months"
-    travel_start_date: Optional[date]  # Date when the travel begins
-    travel_end_date: Optional[date]  # Date when the travel ends
+    insurance_coverage_type: Optional[List[str]] = Field(
+        None, description="Types of insurance coverage requested (e.g., ['Medical', 'Trip Cancellation'])."
+    )
+    pre_existing_conditions: Optional[List[str]] = Field(
+        None, description="Any pre-existing conditions mentioned that might affect coverage."
+    )
+    age_group: Optional[str] = Field(None, description="Age bracket of the travelers (e.g., '26-40').")
+    travelers_count: Optional[int] = Field(None, ge=1, description="Number of travelers to be insured (must be at least 1).")
     
-    insurance_coverage_type: Optional[List[str]]  # e.g., ["Medical", "Trip Cancellation", "Baggage Loss"]
-    pre_existing_conditions: Optional[List[str]]  # Any health conditions to be covered
-    age_group: Optional[str]  # e.g., "18-25", "26-40", "41-60", "Senior"
-    travelers_count: Optional[int]  # Number of travelers to be insured
+    budget_range: Optional[str] = Field(None, description="Budget constraints (e.g., '$100-$200').")
+    preferred_insurance_provider: Optional[str] = Field(None, description="Preferred insurance provider, if any.")
     
-    budget_range: Optional[str]  # e.g., "$50-$100", "$100-$200"
-    preferred_insurance_provider: Optional[str]  # If the user has a preference
-    
-    additional_requests: Optional[str]  # Any special requests, like "Coverage for adventure sports"
-    
-    keywords: Optional[List[str]]  # Important keywords for analytics
+    additional_requests: Optional[str] = Field(
+        None, description="Any special requests or concerns noted by the customer."
+    )
+    keywords: Optional[List[str]] = Field(
+        None, description="Important keywords or terms extracted from the transcript for further analysis."
+    )
 
 def parse_transcript(file_path):
     """
