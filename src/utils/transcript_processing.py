@@ -14,7 +14,6 @@ class TravelInsuranceRequirement(BaseModel):
     insurance preferences, and specific customer requirements.
     """
     requirement_id: str  # Unique identifier for tracking
-    call_id: str  # Unique identifier for the call
     
     requirement_summary: str  # Summary of the customer's insurance needs
     detailed_description: str  # More detailed requirement extracted from transcript
@@ -32,11 +31,9 @@ class TravelInsuranceRequirement(BaseModel):
     budget_range: Optional[str]  # e.g., "$50-$100", "$100-$200"
     preferred_insurance_provider: Optional[str]  # If the user has a preference
     
-    pain_points: Optional[List[str]]  # Customer's concerns (e.g., "high cost", "slow claims process")
     additional_requests: Optional[str]  # Any special requests, like "Coverage for adventure sports"
     
     keywords: Optional[List[str]]  # Important keywords for analytics
-    transcript_snippet: Optional[str]  # Relevant excerpt from transcript for context
 
 def parse_transcript(file_path):
     """
