@@ -129,8 +129,7 @@ def example_different_models():
     print(f"Prompt: {prompt}\n")
 
     try:
-        # Using the default model (gemini-2.0-pro)
-        print("Using default model (gemini-2.0-pro):")
+        print("Using default model (gemini-2.0-flash):")
         response_default = llm_service.generate_content(prompt)
         print(f"{response_default.text}\n")
 

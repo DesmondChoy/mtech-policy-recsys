@@ -31,6 +31,9 @@ class LLMService:
             api_key: The API key to use. If not provided, it will be loaded from environment variables.
         """
         self.api_key = api_key or GeminiConfig.get_api_key()
+        self.GeminiConfig = (
+            GeminiConfig  # Make GeminiConfig accessible as an instance attribute
+        )
         self._initialize_client()
 
     def _initialize_client(self) -> None:
