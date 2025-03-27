@@ -8,7 +8,6 @@ This directory contains scripts and modules for evaluating conversation transcri
 scripts/evaluation/
 ├── README.md                         # This file
 ├── eval_transcript_main.py           # Main entry point for transcript evaluation
-├── evaluate_transcripts.py           # Legacy script (for backward compatibility)
 ├── prompts/                          # Prompt templates
 │   ├── __init__.py
 │   └── eval_transcript_prompts.py    # Prompt construction and formatting
@@ -149,7 +148,3 @@ response = client.models.generate_content(
     },
 )
 ```
-
-## Legacy Script
-
-The `evaluate_transcripts.py` script is maintained for backward compatibility. It imports and uses the refactored modules, but displays a deprecation warning. New development should use `eval_transcript_main.py` instead.
