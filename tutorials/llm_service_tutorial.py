@@ -6,26 +6,30 @@ It provides examples of basic content generation, structured output generation,
 streaming responses, and error handling.
 
 To run this tutorial:
-1. Make sure you have set the GEMINI_API_KEY environment variable or created a .env file
+1. Make sure you have set the GOOGLE_API_KEY environment variable or created a .env file
 2. Install the required dependencies: pip install -r requirements.txt
 3. Run the script: python tutorials/llm_service_tutorial.py
 """
 
 import os
+import sys
 import json
 import time
 from dotenv import load_dotenv
 
-# Import the LLM service
-from src.models import LLMService
+# Add the project root to the Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+# Import the LLM service directly
+from src.models.llm_service import LLMService
 
 # Load environment variables from .env file
 load_dotenv()
 
 # Check if API key is set
-api_key = os.getenv("GEMINI_API_KEY")
+api_key = os.getenv("GOOGLE_API_KEY")
 if not api_key:
-    print("GEMINI_API_KEY environment variable is not set.")
+    print("GOOGLE_API_KEY environment variable is not set.")
     print("Please set it in your .env file or environment variables.")
     exit(1)
 

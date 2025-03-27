@@ -86,7 +86,7 @@ The system uses multiple specialized agents:
 3. Set up your Google Gemini API key:
    ```
    # In .env file or environment variables
-   GEMINI_API_KEY=your_api_key_here
+   GOOGLE_API_KEY=your_api_key_here
    ```
 4. Explore the notebooks in the `notebooks/` directory
 5. Check out the LLM service tutorial: `python tutorials/llm_service_tutorial.py`
