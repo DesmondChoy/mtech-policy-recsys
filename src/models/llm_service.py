@@ -9,8 +9,9 @@ import time
 import logging
 from typing import Dict, List, Any, Optional, Union, Generator, Callable
 
-from google import genai
-from google.generativeai.types import GenerationConfig, SafetySetting
+import google.generativeai as genai
+from google.generativeai.types import GenerationConfig
+from google.generativeai.types.safety_types import HarmCategory, HarmBlockThreshold
 from google.generativeai.types.generation_types import GenerateContentResponse
 
 from src.models.gemini_config import GeminiConfig
@@ -76,7 +77,10 @@ class LLMService:
 
         # Convert safety settings to SafetySetting objects
         safety_settings_list = [
-            SafetySetting(category=category, threshold=threshold)
+            {
+                "category": getattr(HarmCategory, f"HARM_CATEGORY_{category.upper()}"),
+                "threshold": getattr(HarmBlockThreshold, f"{threshold.upper()}")
+            }
             for category, threshold in safety_settings.items()
         ]
 
@@ -191,7 +195,10 @@ class LLMService:
 
         # Convert safety settings to SafetySetting objects
         safety_settings_list = [
-            SafetySetting(category=category, threshold=threshold)
+            {
+                "category": getattr(HarmCategory, f"HARM_CATEGORY_{category.upper()}"),
+                "threshold": getattr(HarmBlockThreshold, f"{threshold.upper()}")
+            }
             for category, threshold in safety_settings.items()
         ]
 
