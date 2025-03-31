@@ -1,5 +1,5 @@
 from crewai import Agent, Crew, Task
-from utils.transcript_processing import TravelInsuranceRequirement
+from src.utils.transcript_processing import TravelInsuranceRequirement
 
 # Step 1: Requirement Extraction Agent - Processes Call Transcripts
 transcript_analyst = Agent(
