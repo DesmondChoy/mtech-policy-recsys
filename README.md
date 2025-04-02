@@ -55,8 +55,8 @@ flowchart TD
     *   If the evaluation **passes**, the transcript proceeds to the processing stage.
     *   If it **fails**, the ideal next step (currently not implemented) would be to regenerate or revise the transcript.
 4.  **Processing & Extraction:**
-    *   Passed transcripts are parsed into a structured JSON format by `src/utils/transcript_processing.py`.
-    *   The logic within `notebooks/agent_development/extractor/extractor_prototype.ipynb` then extracts the final structured requirements from this JSON.
+    *   Passed transcripts undergo an initial parsing step (potentially using logic from `src/utils/transcript_processing.py` or another process) to prepare them.
+    *   The `src/agents/extractor.py` agent then consumes these parsed transcripts and extracts the final structured requirements into a JSON object conforming to the `TravelInsuranceRequirement` model (defined in `src/utils/transcript_processing.py`).
 5.  **Output:** The result is a structured JSON file containing the extracted customer requirements (e.g., `insurance_requirement.json`).
 
 ## Policy Data Workflow
@@ -120,9 +120,9 @@ The project structure supports the workflow illustrated in the diagram above:
    - **Output**: JSON files in `data/transcripts/processed/`
 
 4. **Requirement Extraction**
-   - **Component**: Logic in `notebooks/agent_development/extractor/extractor_prototype.ipynb`
-   - **Purpose**: Extracts structured customer requirements from processed transcripts
-   - **Output**: Structured requirements JSON (e.g., `insurance_requirement.json`)
+   - **Component**: `src/agents/extractor.py`
+   - **Purpose**: Extracts structured customer requirements from parsed transcripts using a dedicated agent.
+   - **Output**: Structured requirements JSON (e.g., `insurance_requirement.json`), conforming to the `TravelInsuranceRequirement` model.
 
 5. **Policy Processing**
    - **Component**: Methods explored in `notebooks/pdf_parsing/pdf_to_md.ipynb`
