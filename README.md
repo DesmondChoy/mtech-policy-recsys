@@ -18,34 +18,32 @@ This system addresses common pain points in insurance purchasing by providing pe
 
 ## Transcript Processing and Requirement Extraction Workflow
 
-This diagram illustrates the current workflow for processing call transcripts, evaluating them against coverage requirements, and extracting structured customer requirements:
-
 ```mermaid
 flowchart TD
-    subgraph Inputs
-        T[Raw Call Transcripts <br> (data/transcripts/raw/*)]
-        CR[Coverage Requirements <br> (data/coverage_requirements/coverage_requirements.py)]
-    end
-
-    subgraph Evaluation ["Transcript Evaluation (Automated Check)"]
-        EVAL{Evaluate Transcript vs Requirements <br> using `scripts/evaluation/eval_transcript_main.py`}
-    end
-
-    subgraph Processing_Extraction ["Requirement Extraction (If Evaluation Passes)"]
-        PARSE[Parse Raw Transcript to JSON <br> using `src/utils/transcript_processing.py`]
-        EXTRACT[Extract Structured Requirements from JSON <br> using logic in `notebooks/agent_development/extractor/extractor_prototype.ipynb`]
-        RESULT[Structured Requirements JSON <br> (e.g., insurance_requirement.json)]
-    end
-
-    T --> EVAL
-    CR --> EVAL
-
-    EVAL -->|Pass| PARSE
-    EVAL -->|Fail| REGENERATE(Regenerate Transcript <br> *Future Step - Not Implemented*)
-
-    PARSE --> EXTRACT
-    EXTRACT --> RESULT
-
+    %% Data Inputs
+    PolicyDocs[Policy Documents] -->|Input to| PolicyAnalysis
+    Transcripts[Call Transcripts] -->|Input to| TranscriptEval
+    CoverageReqs[Coverage Requirements] -->|Baseline for| TranscriptEval
+    
+    %% Evaluation Process
+    TranscriptEval[Transcript Evaluation] -->|Evaluate| EvalDecision{Pass/Fail?}
+    
+    %% Decision Branch
+    EvalDecision -->|Fail| Regenerate[Regenerate Transcript\n(Not Implemented)]
+    EvalDecision -->|Pass| TranscriptParsing
+    
+    %% Processing & Extraction
+    TranscriptParsing[Transcript Parsing] -->|Structured JSON| RequirementExtraction[Requirement Extraction]
+    
+    %% Output
+    RequirementExtraction -->|Output| StructuredReqs[Structured Requirements]
+    
+    %% Policy Analysis (Parallel Path)
+    PolicyAnalysis[Policy Analysis] --> ProcessedPolicies[Processed Policies]
+    
+    %% Connect to downstream processes (future)
+    StructuredReqs -.->|Input to| FutureAnalyzer[Analyzer Agent]
+    ProcessedPolicies -.->|Input to| FutureAnalyzer
 ```
 
 **Explanation:**
@@ -76,25 +74,59 @@ flowchart TD
 ├── notebooks/               # Jupyter notebooks for experimentation
 │   ├── exploratory/         # Initial data exploration
 │   ├── agent_development/   # Agent-specific experiments
+│   │   └── extractor/       # Requirement extraction from transcripts
 │   ├── integration/         # Testing agent interactions
 │   ├── evaluation/          # Performance metrics
-│   └── demos/               # Demo notebooks
+│   └── pdf_parsing/         # PDF to text conversion utilities
 ├── data/                    # Data storage
 │   ├── coverage_requirements/ # Standardized coverage requirements
-│   ├── raw_policies/        # Raw insurance policy documents
-│   ├── processed_policies/  # Processed policy documents
+│   ├── policies/            # Insurance policy documents
+│   │   ├── raw/             # Original PDF policy documents
+│   │   └── processed/       # Processed text policy documents
 │   ├── transcripts/         # Conversation transcripts
-│   └── processed_transcript/ # Processed transcript data
+│   │   ├── raw/             # Original conversation transcripts
+│   │   └── processed/       # Processed JSON transcripts
 ├── src/                     # Source code
 │   ├── agents/              # Agent implementations
 │   ├── models/              # LLM configurations and services
 │   ├── prompts/             # Prompts for LLM tasks
 │   ├── utils/               # Utility functions
+│   │   └── transcript_processing.py # Transcript parsing utilities
 │   └── web/                 # Web interface components
 ├── tests/                   # Test cases
 ├── scripts/                 # Utility scripts
+│   └── evaluation/          # Transcript evaluation scripts
 └── tutorials/               # Tutorial scripts and examples
 ```
+
+## Key Workflow Components
+
+The project structure supports the workflow illustrated in the diagram above:
+
+1. **Data Inputs**
+   - **Policy Documents**: Located in `data/policies/raw/` (PDF format)
+   - **Call Transcripts**: Located in `data/transcripts/raw/` (text format)
+   - **Coverage Requirements**: Defined in `data/coverage_requirements/coverage_requirements.py`
+
+2. **Transcript Evaluation**
+   - **Component**: `scripts/evaluation/eval_transcript_main.py`
+   - **Purpose**: Evaluates if transcripts contain all required coverage information
+   - **Output**: Pass/fail decision for each transcript
+
+3. **Transcript Processing**
+   - **Component**: `src/utils/transcript_processing.py`
+   - **Purpose**: Parses raw transcripts into structured JSON format
+   - **Output**: JSON files in `data/transcripts/processed/`
+
+4. **Requirement Extraction**
+   - **Component**: Logic in `notebooks/agent_development/extractor/extractor_prototype.ipynb`
+   - **Purpose**: Extracts structured customer requirements from processed transcripts
+   - **Output**: Structured requirements JSON (e.g., `insurance_requirement.json`)
+
+5. **Policy Processing**
+   - **Component**: Methods explored in `notebooks/pdf_parsing/pdf_to_md.ipynb`
+   - **Purpose**: Converts PDF policies to text format for analysis
+   - **Output**: Processed policy text in `data/policies/processed/`
 
 ## Technical Stack
 
