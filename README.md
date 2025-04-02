@@ -16,17 +16,49 @@ This system addresses common pain points in insurance purchasing by providing pe
 
 # How To Use
 
-## Data Generation and Processing Workflow
+## Transcript Processing and Requirement Extraction Workflow
 
-1.  **Synthetic Transcript Generation (Optional)**: To create synthetic training or testing data, use the prompts provided in `scripts/data_generation/prompts.md`. These prompts guide the generation of diverse customer personalities and then use those personalities to create realistic conversation transcripts between a customer and a service agent. The generated raw transcripts are typically saved in `data/transcripts/synthetic/`.
-2.  **Input**: Raw conversation transcripts (either synthetically generated or real) are stored as text files (e.g., `.txt`) in the `data/transcripts/synthetic/` or `data/transcripts/real/` directories. These transcripts typically follow a format like `Speaker Name: Dialogue text`.
-3.  **Processing**: The script `src/utils/transcript_processing.py` is used to parse these raw text files.
-    *   It reads each line of the transcript.
-    *   It uses regular expressions to identify the speaker and their corresponding dialogue.
-    *   It structures the conversation into a list of speaker-dialogue pairs.
-4.  **Output**: The script outputs a structured JSON file for each processed transcript (e.g., `parsed_transcript_01.json`) into the `data/processed_transcript/` directory. This JSON format is used as input for downstream tasks, such as the requirement extraction agent (`notebooks/agent_development/extractor/extractor_prototype.ipynb`).
+This diagram illustrates the current workflow for processing call transcripts, evaluating them against coverage requirements, and extracting structured customer requirements:
 
-To process a specific transcript (e.g., `transcript_05.txt`), you can modify and run the `main()` function within `src/utils/transcript_processing.py` or import and use the `process_transcript` function elsewhere.
+```mermaid
+graph TD
+    subgraph Inputs
+        T[Raw Call Transcripts <br> (data/transcripts/raw/*)]
+        CR[Coverage Requirements <br> (data/coverage_requirements/coverage_requirements.py)]
+    end
+
+    subgraph Evaluation ["Transcript Evaluation (Automated Check)"]
+        EVAL{Evaluate Transcript vs Requirements <br> using `scripts/evaluation/eval_transcript_main.py`}
+    end
+
+    subgraph Processing_Extraction ["Requirement Extraction (If Evaluation Passes)"]
+        PARSE[Parse Raw Transcript to JSON <br> using `src/utils/transcript_processing.py`]
+        EXTRACT[Extract Structured Requirements from JSON <br> using logic in `notebooks/agent_development/extractor/extractor_prototype.ipynb`]
+        RESULT[Structured Requirements JSON <br> (e.g., insurance_requirement.json)]
+    end
+
+    T --> EVAL
+    CR --> EVAL
+
+    EVAL -->|Pass| PARSE
+    EVAL -->|Fail| REGENERATE(Regenerate Transcript <br> *Future Step - Not Implemented*)
+
+    PARSE --> EXTRACT
+    EXTRACT --> RESULT
+
+```
+
+**Explanation:**
+
+1.  **Inputs:** The workflow starts with Raw Call Transcripts (from `data/transcripts/raw/`) and the defined Coverage Requirements (from `data/coverage_requirements/coverage_requirements.py`).
+2.  **Evaluation:** The `scripts/evaluation/eval_transcript_main.py` script automatically evaluates the transcript against the coverage requirements.
+3.  **Decision:**
+    *   If the evaluation **passes**, the transcript proceeds to the processing stage.
+    *   If it **fails**, the ideal next step (currently not implemented) would be to regenerate or revise the transcript.
+4.  **Processing & Extraction:**
+    *   Passed transcripts are parsed into a structured JSON format by `src/utils/transcript_processing.py`.
+    *   The logic within `notebooks/agent_development/extractor/extractor_prototype.ipynb` then extracts the final structured requirements from this JSON.
+5.  **Output:** The result is a structured JSON file containing the extracted customer requirements (e.g., `insurance_requirement.json`).
 
 ## Policy Data Workflow
 
