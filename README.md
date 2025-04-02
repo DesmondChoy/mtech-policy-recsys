@@ -21,7 +21,7 @@ This system addresses common pain points in insurance purchasing by providing pe
 This diagram illustrates the current workflow for processing call transcripts, evaluating them against coverage requirements, and extracting structured customer requirements:
 
 ```mermaid
-graph TD
+flowchart TD
     subgraph Inputs
         T[Raw Call Transcripts <br> (data/transcripts/raw/*)]
         CR[Coverage Requirements <br> (data/coverage_requirements/coverage_requirements.py)]
