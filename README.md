@@ -61,9 +61,10 @@ flowchart TD
 
 ## Policy Data Workflow
 
-1.  **Input**: Raw insurance policy documents, typically in PDF format, are stored in the `data/raw_policies/` directory. These documents contain the detailed terms, conditions, and coverage information for various insurance products.
-2.  **Processing (Potential)**: These raw PDFs often require processing to extract relevant text and structure the information for analysis. While a specific script isn't designated solely for this in `src/utils/`, notebooks like `notebooks/pdf_parsing/pdf_to_md.ipynb` explore methods for converting PDFs to more usable formats (like Markdown or plain text). Processed versions might be stored in `data/processed_policies/`.
-3.  **Usage**: The structured information extracted from these policies is essential for downstream tasks, particularly for the Analyzer and Recommender agents, which need to compare customer requirements against actual policy details to provide accurate and justified recommendations.
+1.  **Input**: Raw insurance policy documents in PDF format are stored in the `data/policies/raw/` directory. Files must follow the naming convention `insurer_{policy_tier}.pdf` (e.g., `allianz_{gold_plan}.pdf`).
+2.  **Processing**: The `scripts/extract_policy_tier.py` script processes these PDFs. It uses the Google Gemini API to extract detailed coverage information for the specific policy tier indicated in the filename. The script validates the output against a predefined Pydantic schema.
+3.  **Output**: Structured JSON files, named `insurer_{policy_tier}.json`, are saved in the `data/policies/processed/` directory. Each file contains the extracted coverage details for a specific policy tier.
+4.  **Usage**: This structured JSON policy data is the primary input for the Analyzer Agent, enabling it to compare customer requirements against detailed, validated policy information.
 
 
 
@@ -122,12 +123,13 @@ The project structure supports the workflow illustrated in the diagram above:
 4. **Requirement Extraction**
    - **Component**: `src/agents/extractor.py`
    - **Purpose**: Extracts structured customer requirements from parsed transcripts using a dedicated agent.
-   - **Output**: Structured requirements JSON (e.g., `insurance_requirement.json`), conforming to the `TravelInsuranceRequirement` model.
+    - **Output**: Structured requirements JSON (e.g., `insurance_requirement.json`), conforming to the `TravelInsuranceRequirement` model.
 
 5. **Policy Processing**
-   - **Component**: Methods explored in `notebooks/pdf_parsing/pdf_to_md.ipynb`
-   - **Purpose**: Converts PDF policies to text format for analysis
-   - **Output**: Processed policy text in `data/policies/processed/`
+   - **Component**: `scripts/extract_policy_tier.py`
+   - **Purpose**: Extracts structured coverage details from policy PDFs using Gemini API for a specific policy tier.
+   - **Input**: PDFs from `data/policies/raw/` named `insurer_{policy_tier}.pdf`.
+   - **Output**: Structured JSON policy data in `data/policies/processed/` named `insurer_{policy_tier}.json`.
 
 ## Technical Stack
 
