@@ -1,0 +1,320 @@
+{
+  "provider_name": "Allianz",
+  "policy_name": "Allianz Travel Protect Single Trip",
+  "tier_name": "Silver Plan",
+  "extraction_date": "2024-07-29",
+  "currency": "SGD",
+  "coverage_categories": [
+    {
+      "category_name": "Trip Cancellation/Interruption",
+      "coverages": [
+        {
+          "coverage_name": "Trip Cancellation",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Travel agent insolvency sublimit",
+              "limit": 1000,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses non-refundable trip payments/deposits if the trip is cancelled BEFORE departure due to specified covered reasons (e.g., illness, injury, death of insured/travelling companion/family member, specific quarantine, travel carrier delay >=24h, residence uninhabitable, travel agent insolvency after policy purchase). Requires notification to travel suppliers within 72 hours of discovering the need to cancel. The travel agent insolvency sublimit applies specifically to claims arising from the insolvency of the travel agency used for booking, occurring within 60 days before trip commencement.",
+          "source_info": "Page 2, Coverage Summary; Page 14-15, Section 5.1"
+        },
+        {
+          "coverage_name": "Trip Interruption (Curtailment)",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 2000,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses the prorated portion of insured unused non-refundable trip payments and deposits if the trip must be ended early due to specified covered reasons occurring DURING the trip (similar reasons to Trip Cancellation). Requires notification to travel suppliers within 72 hours of discovering the need to interrupt.",
+          "source_info": "Page 2, Coverage Summary; Page 15, Section 5.2"
+        },
+        {
+          "coverage_name": "Trip Interruption (Incident - Early Return, Trip Continuation, Extended Stay)",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "This benefit, covering costs for returning home early/late, continuing the trip after interruption, or extended stays due to interruption, is not available under the Silver Plan.",
+          "source_info": "Page 2, Coverage Summary; Page 15, Section 5.2"
+        }
+      ]
+    },
+    {
+      "category_name": "Travel Inconvenience",
+      "coverages": [
+        {
+          "coverage_name": "Travel Delay",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 500,
+              "basis": null
+            },
+            {
+              "type": "Daily limit (per 24 hours)",
+              "limit": 250,
+              "basis": "Minimum 6 hours delay required with reimbursement per 24-hour period of delay"
+            }
+          ],
+          "details": "Reimburses lost prepaid expenses and additional expenses for meals, accommodation, communication, and transport incurred after a minimum 6-hour delay due to covered reasons (e.g., carrier delay, strike, specific quarantine, natural disaster, lost/stolen documents). Receipts must be provided. Subject to a daily limit and the overall maximum limit.",
+          "source_info": "Page 2, Coverage Summary; Page 16-17, Section 5.3"
+        }
+      ]
+    },
+    {
+      "category_name": "Baggage",
+      "coverages": [
+        {
+          "coverage_name": "Baggage Coverage",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 1500,
+              "basis": null
+            },
+            {
+              "type": "Per item limit",
+              "limit": 250,
+              "basis": null
+            },
+            {
+              "type": "Maximum benefit for all high value items combined",
+              "limit": 500,
+              "basis": null
+            }
+          ],
+          "details": "Covers the cost to repair or replace baggage that is lost, damaged, or stolen while on the trip. Payment is the lesser of repair cost or replacement cost depreciated by 10% per full year since purchase (max 50% depreciation). Requires reasonable steps to protect and recover baggage, and reporting to authorities/carrier within 24 hours. Police report needed for high-value item theft. Original receipts or proof of purchase required (otherwise cover is 50% of replacement cost). Excludes certain items (e.g., money, documents, fragile items, unattended baggage).",
+          "source_info": "Page 2, Coverage Summary; Page 17, Section 5.4"
+        },
+        {
+          "coverage_name": "Baggage Delay",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 500,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses expenses for essential items needed when baggage is delayed by an airline, cruise line, or other travel carrier for a minimum of 6 hours during the trip. Receipts must be provided.",
+          "source_info": "Page 2, Coverage Summary; Page 18, Section 5.5"
+        }
+      ]
+    },
+    {
+      "category_name": "Medical",
+      "coverages": [
+        {
+          "coverage_name": "Overseas Emergency Medical and Dental",
+          "limits": [
+            {
+              "type": "Ages 0-69 years",
+              "limit": 200000,
+              "basis": null
+            },
+            {
+              "type": "Ages 70 years and above",
+              "limit": 50000,
+              "basis": null
+            },
+            {
+              "type": "Dental care maximum sublimit",
+              "limit": 250,
+              "basis": null
+            },
+            {
+              "type": "Continuation medical treatment in Singapore (max 14 days) - Ages 0-69 years",
+              "limit": 2500,
+              "basis": null
+            },
+            {
+              "type": "Continuation medical treatment in Singapore (max 14 days) - Ages 70 years and above",
+              "limit": 1250,
+              "basis": null
+            },
+            {
+              "type": "Traditional Chinese Medicine sublimit",
+              "limit": 200,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses reasonable and customary costs for medically necessary emergency medical or dental treatment (for sudden illness, injury, or medical condition including COVID-19) incurred overseas during the trip. Dental covers infection, injury, broken tooth, lost filling. Continuation care in Singapore covers costs within 14 days of return, provided treatment was sought within 48 hours of return if not treated overseas (age limits apply). Traditional Chinese Medicine costs are covered up to the sublimit. Requires contacting Allianz Assistance prior to hospitalization where possible. Positive COVID-19 test required for COVID-related claims.",
+          "source_info": "Page 3, Coverage Summary; Page 18, Section 5.6"
+        },
+        {
+          "coverage_name": "Hospital cash",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Daily cash benefit for hospital confinement overseas is not available under the Silver Plan.",
+          "source_info": "Page 3, Coverage Summary; Page 18, Section 5.6"
+        },
+        {
+          "coverage_name": "Emergency Transportation",
+          "limits": [
+            {
+              "type": "Overall Limit",
+              "limit": "Actual cost",
+              "basis": null
+            },
+            {
+              "type": "Search & Rescue sublimit",
+              "limit": 10000,
+              "basis": null
+            }
+          ],
+          "details": "Covers costs for medically necessary emergency evacuation, medical repatriation, transport to bedside for a family member/friend (if hospitalized >120h), return of dependents (if hospitalized >24h or death), and repatriation of remains. Search and Rescue sublimit applies if reported missing or needing rescue from a physical emergency. Arrangements must generally be made by Allianz Assistance.",
+          "source_info": "Page 3, Coverage Summary; Page 19-20, Section 5.7"
+        }
+      ]
+    },
+    {
+      "category_name": "Personal Accident",
+      "coverages": [
+        {
+          "coverage_name": "Travel Accident",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 50000,
+              "basis": null
+            }
+          ],
+          "details": "Pays a lump sum benefit if an accident occurs during the trip outside Singapore results in death or permanent disablement (as defined) within 90 days of the accident. Excludes persons under 16.",
+          "source_info": "Page 3, Coverage Summary; Page 20, Section 5.8"
+        }
+      ]
+    },
+    {
+      "category_name": "Liability",
+      "coverages": [
+        {
+          "coverage_name": "Personal Liability",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Coverage for legal liability due to accidental injury to others or damage to their property is not available under the Silver Plan.",
+          "source_info": "Page 3, Coverage Summary; Page 21, Section 5.9"
+        }
+      ]
+    },
+    {
+      "category_name": "Sports",
+      "coverages": [
+        {
+          "coverage_name": "Sports Coverage Missed Activity",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Coverage for missing prepaid sports activities due to specified reasons is not available under the Silver Plan.",
+          "source_info": "Page 3, Coverage Summary; Page 21, Section 5.10"
+        },
+        {
+          "coverage_name": "Sporting Equipment Cover",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Coverage for loss, damage, or theft of personal sporting equipment is not available under the Silver Plan.",
+          "source_info": "Page 3, Coverage Summary; Page 22, Section 5.10"
+        },
+        {
+          "coverage_name": "Sporting Equipment Rental",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Coverage for renting replacement sporting equipment if personal equipment is lost, damaged, or delayed is not available under the Silver Plan.",
+          "source_info": "Page 3, Coverage Summary; Page 22, Section 5.10"
+        },
+        {
+          "coverage_name": "Sports Coverage Search and Rescue",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Specific search and rescue coverage related to sports activities is not available under the Silver Plan (Note: General Emergency Transportation includes a Search & Rescue sublimit).",
+          "source_info": "Page 3, Coverage Summary; Page 22, Section 5.10"
+        }
+      ]
+    },
+    {
+      "category_name": "Vehicle",
+      "coverages": [
+        {
+          "coverage_name": "Rental Car Excess",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Coverage for the excess/deductible charged by a rental car company for damage or theft is not available under the Silver Plan.",
+          "source_info": "Page 3, Coverage Summary; Page 23, Section 5.11"
+        }
+      ]
+    },
+    {
+      "category_name": "Other",
+      "coverages": [
+        {
+          "coverage_name": "Identification document",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Coverage for the cost of replacing lost, stolen, or damaged identification documents (passport/visa) is not available under the Silver Plan.",
+          "source_info": "Page 3, Coverage Summary; Page 23, Section 5.12"
+        },
+        {
+          "coverage_name": "Personal Money",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Coverage for loss or theft of personal money withdrawn from an ATM is not available under the Silver Plan.",
+          "source_info": "Page 3, Coverage Summary; Page 23, Section 5.13"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "provider_name": "Allianz",
+  "policy_name": "Allianz Travel Protect Single Trip",
+  "tier_name": "Gold Plan",
+  "extraction_date": "2024-07-29",
+  "currency": "SGD",
+  "coverage_categories": [
+    {
+      "category_name": "Trip Inconvenience",
+      "coverages": [
+        {
+          "coverage_name": "Trip Cancellation",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 7500,
+              "basis": null
+            },
+            {
+              "type": "Travel agent insolvency sublimit",
+              "limit": 1500,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses non-refundable trip payments/deposits if trip is cancelled *before departure* due to specified covered reasons (e.g., illness/injury of insured/travelling companion/family member, specific quarantine conditions met, traffic accident on departure day, legal attendance requirement, primary residence uninhabitable, carrier delay >24h, travel agent insolvency). Must notify travel suppliers within 72 hours of discovering need to cancel. Travel agent insolvency sublimit applies, insolvency must occur within 60 days before trip commencement overseas and must have been filed after policy purchase.",
+          "source_info": "Page 2, Coverage Summary; Page 14-15, Section 5.1"
+        },
+        {
+          "coverage_name": "Trip Curtailment",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 4000,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses the prorated portion of unused non-refundable trip payments/deposits if the trip must be interrupted or ended early *after departure* due to specified covered reasons (similar to Trip Cancellation reasons but occurring during the trip, plus hijacking). Must notify travel suppliers within 72 hours of discovering need to curtail.",
+          "source_info": "Page 2, Coverage Summary; Page 15-16, Section 5.2"
+        },
+        {
+          "coverage_name": "Trip Interruption - Trip Incident (Early Return, Trip Continuation, Extended Stay)",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Coverage for Early/Delayed Return transportation costs, Trip Continuation transportation costs, and Extended Stay accommodation/transportation costs due to trip interruption is not provided under the Gold Plan.",
+          "source_info": "Page 2, Coverage Summary; Page 15, Section 5.2"
+        },
+        {
+          "coverage_name": "Travel Delay",
+          "limits": [
+            {
+              "type": "Per Person Maximum",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Daily Limit (per 24 hours)",
+              "limit": 250,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses lost prepaid expenses and additional expenses (meals, accommodation, communication, transport) up to the daily limit, for delays of at least 6 consecutive hours due to specified covered reasons (e.g., carrier delay, strike, specific quarantine, natural disaster, lost/stolen documents, hijacking, traffic accident). Reimbursement is per 24-hour period of delay. Receipts must be provided.",
+          "source_info": "Page 2, Coverage Summary; Page 16-17, Section 5.3"
+        }
+      ]
+    },
+    {
+      "category_name": "Baggage",
+      "coverages": [
+        {
+          "coverage_name": "Baggage Coverage",
+          "limits": [
+            {
+              "type": "Per Person Maximum",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Per item limit",
+              "limit": 500,
+              "basis": null
+            },
+            {
+              "type": "Maximum benefit for all high value items combined",
+              "limit": 1000,
+              "basis": null
+            }
+          ],
+          "details": "Covers baggage lost, damaged, or stolen while on the trip. Pays the lesser of repair cost or replacement cost depreciated by 10% per full year since purchase (max 50% depreciation). Requires reasonable steps to protect/recover baggage, report loss/theft/damage within 24 hours (police report for theft of high-value items). Original receipts or proof of purchase required (otherwise limit is 50% of replacement cost). High value items include electronics, jewelry, cameras, etc. Excludes specific items like money, documents, keys, business property, unattended items.",
+          "source_info": "Page 2, Coverage Summary; Page 17, Section 5.4"
+        },
+        {
+          "coverage_name": "Baggage Delay",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 750,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses expenses for essential items needed when baggage is delayed by an airline, cruise line, or other travel carrier for at least 6 hours while on the trip. Receipts must be provided.",
+          "source_info": "Page 2, Coverage Summary; Page 18, Section 5.5"
+        }
+      ]
+    },
+    {
+      "category_name": "Medical",
+      "coverages": [
+        {
+          "coverage_name": "Overseas Emergency Medical and Dental",
+          "limits": [
+            {
+              "type": "Ages 0 - 69 years",
+              "limit": 500000,
+              "basis": null
+            },
+            {
+              "type": "Ages 70 years and above",
+              "limit": 75000,
+              "basis": null
+            },
+            {
+              "type": "Dental care maximum sublimit",
+              "limit": 250,
+              "basis": null
+            },
+            {
+              "type": "Hospital cash (Max)",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Continuation medical treatment in Singapore (max 14 days) - Ages 0-69 years",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Continuation medical treatment in Singapore (max 14 days) - Ages 70 years and above",
+              "limit": 2500,
+              "basis": null
+            },
+            {
+              "type": "Traditional Chinese Medicine sublimit",
+              "limit": 250,
+              "basis": null
+            }
+          ],
+          "details": "Covers reasonable and customary costs for emergency medical or dental treatment required due to sudden, unexpected illness or injury (including diagnosed COVID-19) during the trip outside Singapore. Care must be medically necessary. Dental sublimit applies to dental infection, broken tooth, dental injury, or lost filling. Hospital cash of $150 per 24 hours confinement is paid if hospitalised outside Singapore for over 48 hours (first 48 hours not covered). Continuation medical treatment in Singapore is covered up to 14 days after return (must seek treatment within 48 hours of return if not treated overseas; COVID claims require positive test during trip). TCM treatment covered up to sublimit. Pre-existing conditions excluded. Allianz Assistance must be contacted prior to hospitalisation where possible.",
+          "source_info": "Page 3, Coverage Summary; Page 18-19, Section 5.6"
+        }
+      ]
+    },
+    {
+      "category_name": "Medical Assistance",
+      "coverages": [
+        {
+          "coverage_name": "Emergency Transportation",
+          "limits": [
+            {
+              "type": "Overall",
+              "limit": "Actual cost",
+              "basis": null
+            },
+            {
+              "type": "Search & Rescue sublimit",
+              "limit": 10000,
+              "basis": null
+            }
+          ],
+          "details": "Covers transportation needed following a medical emergency during the trip. Includes emergency evacuation to the nearest appropriate medical facility if local facilities are inadequate, medical repatriation home when medically stable, transport for a friend/family member to bedside if hospitalised >120h, return transport for dependents if insured is hospitalised >24h or dies, repatriation of remains if death occurs on trip. Search and rescue costs by a professional team are covered up to the sublimit if reported missing or needing rescue from a physical emergency. All transportation must be arranged in advance by Allianz Assistance.",
+          "source_info": "Page 3, Coverage Summary; Page 19-20, Section 5.7"
+        }
+      ]
+    },
+    {
+      "category_name": "Personal Accident",
+      "coverages": [
+        {
+          "coverage_name": "Travel Accident",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 75000,
+              "basis": null
+            }
+          ],
+          "details": "Pays a lump sum benefit if the insured suffers death or permanent disablement as a result of a travel accident occurring during the trip. The death or disablement must occur within 90 days from the date of the accident. If the accident occurs during a flight, it must be on a commercial airline between two commercial airports. Excludes illness, natural causes, persons under 16 years.",
+          "source_info": "Page 3, Coverage Summary; Page 20-21, Section 5.8"
+        }
+      ]
+    },
+    {
+      "category_name": "Liability",
+      "coverages": [
+        {
+          "coverage_name": "Personal Liability",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Coverage for legal liability for accidental injury/death to third parties or damage to their property is not provided under the Gold Plan.",
+          "source_info": "Page 3, Coverage Summary; Page 21, Section 5.9"
+        }
+      ]
+    },
+    {
+      "category_name": "Sports",
+      "coverages": [
+        {
+          "coverage_name": "Sports Coverage - Missed Activity",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Coverage for missing a prepaid activity during the trip is not provided under the Gold Plan.",
+          "source_info": "Page 3, Coverage Summary; Page 21, Section 5.10"
+        },
+        {
+          "coverage_name": "Sporting Equipment Cover",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Coverage for lost, damaged, or stolen sporting equipment during the trip is not provided under the Gold Plan.",
+          "source_info": "Page 3, Coverage Summary; Page 22, Section 5.10"
+        },
+        {
+          "coverage_name": "Sporting Equipment Rental",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Coverage for renting sporting equipment if personal equipment is lost, damaged, or stolen during the trip is not provided under the Gold Plan.",
+          "source_info": "Page 3, Coverage Summary; Page 22, Section 5.10"
+        },
+        {
+          "coverage_name": "Sports Coverage - Search and Rescue",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Nil",
+              "basis": null
+            }
+          ],
+          "details": "Specific sports-related search and rescue coverage is not provided under the Gold Plan (Note: General Search & Rescue is included under Emergency Transportation).",
+          "source_info": "Page 3, Coverage Summary; Page 22, Section 5.10"
+        }
+      ]
+    },
+    {
+      "category_name": "Vehicle Related",
+      "coverages": [
+        {
+          "coverage_name": "Rental Car Excess",
+          "limits": [
+            {
+              "type": "Per Incident",
+              "limit": 750,
+              "basis": null
+            }
+          ],
+          "details": "Covers the excess or deductible the insured is liable to pay if their rental car is damaged or stolen during the scheduled rental period on the trip. The driver must be listed on the rental agreement. Excludes certain vehicle types (e.g., trucks, campers, motorcycles, high-value cars >$75k), uses (e.g., commercial, off-road), and violating the rental agreement.",
+          "source_info": "Page 3, Coverage Summary; Page 23, Section 5.11"
+        }
+      ]
+    },
+    {
+      "category_name": "Miscellaneous",
+      "coverages": [
+        {
+          "coverage_name": "Identification Document",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 250,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses the cost (including shipping fees) to replace a passport, visa, or other identification document if it is stolen, lost, or damaged while on the trip. The document must have had at least six months validity remaining from the date of loss.",
+          "source_info": "Page 3, Coverage Summary; Page 23, Section 5.12"
+        },
+        {
+          "coverage_name": "Personal Money",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 250,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses personal money (cash) if it is lost or stolen within four hours after being withdrawn from an ATM during the trip, while being carried or in a locked safety deposit box. Requires proof of the incident (e.g., police report) and proof of withdrawal. Reimbursement is limited to the amount withdrawn.",
+          "source_info": "Page 3, Coverage Summary; Page 23, Section 5.13"
+        }
+      ]
+    }
+  ]
+}
