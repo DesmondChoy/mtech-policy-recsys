@@ -1,0 +1,38 @@
+{
+  "requirement_id": "REQ001",
+  "requirement_summary": "Travel insurance needed for a couple traveling to Thailand for 10 days.",
+  "detailed_description": "The customer is seeking travel insurance for a trip to Thailand, visiting Bangkok and Phuket, from November 15th to November 25th, for ten days. The insurance should cover medical emergencies and lost luggage, while also being mindful of the budget.",
+  "travel_destination": "Thailand",
+  "travel_duration": "10 days",
+  "travel_start_date": "2023-11-15",
+  "travel_end_date": "2023-11-25",
+  "insurance_coverage_type": [
+    "Medical",
+    "Lost Luggage"
+  ],
+  "pre_existing_conditions": null,
+  "age_group": "41-50",
+  "travelers_count": 2,
+  "traveler_details": [
+    {
+      "age": 45,
+      "gender": "male",
+      "citizenship": "Singaporean"
+    },
+    {
+      "age": 42,
+      "gender": "female",
+      "citizenship": "Singaporean"
+    }
+  ],
+  "budget_range": null,
+  "preferred_insurance_provider": null,
+  "additional_requests": "Looking for the best possible price and value-for-money options.",
+  "keywords": [
+    "Thailand",
+    "Medical Coverage",
+    "Lost Luggage",
+    "Best Price",
+    "Value-for-Money"
+  ]
+}

@@ -14,7 +14,29 @@ This system addresses common pain points in insurance purchasing by providing pe
 - **Transparent Justifications**: Clear explanations linked to policy clauses
 - **Iterative Refinement**: Ability to update requirements and receive new recommendations
 
-## Project Structure
+# How To Use
+
+## Data Generation and Processing Workflow
+
+1.  **Synthetic Transcript Generation (Optional)**: To create synthetic training or testing data, use the prompts provided in `scripts/data_generation/prompts.md`. These prompts guide the generation of diverse customer personalities and then use those personalities to create realistic conversation transcripts between a customer and a service agent. The generated raw transcripts are typically saved in `data/transcripts/synthetic/`.
+2.  **Input**: Raw conversation transcripts (either synthetically generated or real) are stored as text files (e.g., `.txt`) in the `data/transcripts/synthetic/` or `data/transcripts/real/` directories. These transcripts typically follow a format like `Speaker Name: Dialogue text`.
+3.  **Processing**: The script `src/utils/transcript_processing.py` is used to parse these raw text files.
+    *   It reads each line of the transcript.
+    *   It uses regular expressions to identify the speaker and their corresponding dialogue.
+    *   It structures the conversation into a list of speaker-dialogue pairs.
+4.  **Output**: The script outputs a structured JSON file for each processed transcript (e.g., `parsed_transcript_01.json`) into the `data/processed_transcript/` directory. This JSON format is used as input for downstream tasks, such as the requirement extraction agent (`notebooks/agent_development/extractor/extractor_prototype.ipynb`).
+
+To process a specific transcript (e.g., `transcript_05.txt`), you can modify and run the `main()` function within `src/utils/transcript_processing.py` or import and use the `process_transcript` function elsewhere.
+
+## Policy Data Workflow
+
+1.  **Input**: Raw insurance policy documents, typically in PDF format, are stored in the `data/raw_policies/` directory. These documents contain the detailed terms, conditions, and coverage information for various insurance products.
+2.  **Processing (Potential)**: These raw PDFs often require processing to extract relevant text and structure the information for analysis. While a specific script isn't designated solely for this in `src/utils/`, notebooks like `notebooks/pdf_parsing/pdf_to_md.ipynb` explore methods for converting PDFs to more usable formats (like Markdown or plain text). Processed versions might be stored in `data/processed_policies/`.
+3.  **Usage**: The structured information extracted from these policies is essential for downstream tasks, particularly for the Analyzer and Recommender agents, which need to compare customer requirements against actual policy details to provide accurate and justified recommendations.
+
+
+
+# Project Structure
 
 ```
 /
@@ -59,25 +81,6 @@ The project includes a reusable LLM service that provides a unified interface to
 - **Features**: Content generation, structured output (JSON), streaming responses, batch processing
 - **Error Handling**: Retry logic, validation, and comprehensive error management
 - **Tutorial**: Example usage in `tutorials/llm_service_tutorial.py`
-
-### Agents
-
-The system uses multiple specialized agents:
-
-1. **CS Agent**: Handles user conversations
-2. **Extractor**: Processes transcripts to extract requirements
-3. **Analyzer**: Evaluates policies against requirements
-4. **Voting System**: Aggregates multiple independent evaluations
-5. **Recommender**: Delivers final recommendations with justifications
-
-## Workflow
-
-1. Customer interacts with CS Agent to express needs
-2. Conversation is processed to extract key requirements
-3. Requirements are compared against insurance policies
-4. Multiple LLM instances vote on the most suitable policy
-5. Results are consolidated and recommendations are delivered
-6. Customer can provide feedback for refined recommendations
 
 ## Getting Started
 
