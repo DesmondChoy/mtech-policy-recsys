@@ -24,23 +24,24 @@ flowchart TD
     PolicyDocs[Policy Documents] -->|Input to| PolicyAnalysis
     Transcripts[Call Transcripts] -->|Input to| TranscriptEval
     CoverageReqs[Coverage Requirements] -->|Baseline for| TranscriptEval
-    
+
     %% Evaluation Process
     TranscriptEval[Transcript Evaluation] -->|Evaluate| EvalDecision{Pass/Fail?}
-    
+
     %% Decision Branch
-    EvalDecision -->|Fail| Regenerate[Regenerate Transcript\n(Not Implemented)]
+    EvalDecision -->|Fail| Regenerate["Regenerate Transcript\n(Not Implemented)"]
+    %% The comment about adding quotes was moved or removed from the line above
     EvalDecision -->|Pass| TranscriptParsing
-    
+
     %% Processing & Extraction
     TranscriptParsing[Transcript Parsing] -->|Structured JSON| RequirementExtraction[Requirement Extraction]
-    
+
     %% Output
     RequirementExtraction -->|Output| StructuredReqs[Structured Requirements]
-    
+
     %% Policy Analysis (Parallel Path)
     PolicyAnalysis[Policy Analysis] --> ProcessedPolicies[Processed Policies]
-    
+
     %% Connect to downstream processes (future)
     StructuredReqs -.->|Input to| FutureAnalyzer[Analyzer Agent]
     ProcessedPolicies -.->|Input to| FutureAnalyzer
