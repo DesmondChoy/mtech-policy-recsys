@@ -1,0 +1,681 @@
+{
+  "provider_name": "FWD Singapore Pte. Ltd.",
+  "policy_name": "FWD Travel insurance",
+  "tier_name": "Premium",
+  "extraction_date": "2024-07-30",
+  "currency": "SGD",
+  "coverage_categories": [
+    {
+      "category_name": "Protecting your travel plans",
+      "coverages": [
+        {
+          "coverage_name": "Trip cancellation and loss of deposit",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 7500,
+              "basis": null
+            },
+            {
+              "type": "Overall limit for family plan",
+              "limit": 18750,
+              "basis": null
+            }
+          ],
+          "details": "Payable if the entire trip is cancelled due to specified events (e.g., serious injury/illness making you unfit to travel, death of you/travel companion/family member, witness duty, serious home damage, serious public event, specific airline cancellations, hijack >12hrs) occurring within 30 days before scheduled departure. Covers unused, non-refundable travel costs and cancellation fees. Must seek refunds from providers first. Excludes claims if policy bought less than 72 hours before departure.",
+          "source_info": "Page 5, Pages 10-11"
+        },
+        {
+          "coverage_name": "Trip postponement",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 500,
+              "basis": null
+            }
+          ],
+          "details": "Payable if the entire trip is postponed due to specified events (e.g., serious injury/illness making you unfit to travel, death of you/travel companion/family member, witness duty, serious home damage, serious public event) occurring within 30 days before scheduled departure. Covers rebooking fees to reschedule trip within 180 days. Must seek refunds from providers first. Excludes claims if policy bought less than 72 hours before departure.",
+          "source_info": "Page 5, Pages 10-11"
+        },
+        {
+          "coverage_name": "Trip cut short",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Overall limit for family plan",
+              "limit": 12500,
+              "basis": null
+            }
+          ],
+          "details": "Payable if you need to return to Singapore earlier than planned due to specified events occurring while overseas (e.g., serious injury/illness confirmed overseas, death of you/travel companion/family member, witness duty, serious home damage, serious public event, hijack >12hrs). Covers unused, non-refundable costs or additional economy transport/accommodation for immediate return. Must seek refunds first. Excludes cost of original unused return ticket.",
+          "source_info": "Page 5, Pages 10-11"
+        },
+        {
+          "coverage_name": "Insolvency protection",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 1000,
+              "basis": null
+            }
+          ],
+          "details": "Payable if your trip is cancelled before departure or disrupted overseas because a travel agent, transport provider, tour operator, or accommodation provider responsible for your trip is declared insolvent. Covers non-refundable costs and additional transport/accommodation expenses. Excludes claims if policy bought less than 72 hours before departure.",
+          "source_info": "Page 5, Page 12"
+        },
+        {
+          "coverage_name": "Trip diversion",
+          "limits": [
+            {
+              "type": "Per Person Max",
+              "limit": 500,
+              "basis": "S$100 for every six hours diverted while overseas"
+            }
+          ],
+          "details": "Payable if your airplane is diverted to another destination for 6 continuous hours or more while travelling overseas, before reaching your scheduled destination.",
+          "source_info": "Page 5, Page 12"
+        },
+        {
+          "coverage_name": "Travel delay",
+          "limits": [
+            {
+              "type": "Overseas Delay Max",
+              "limit": 300,
+              "basis": "S$100 for every six hours delay while overseas"
+            },
+            {
+              "type": "Singapore Delay Max",
+              "limit": 100,
+              "basis": "S$100 for the first six hours delay in Singapore only"
+            }
+          ],
+          "details": "Payable if your scheduled public transport is delayed or overbooked for 6 continuous hours or more. Requires written proof from the transport provider showing duration and reason for delay.",
+          "source_info": "Page 5, Pages 12-13"
+        },
+        {
+          "coverage_name": "Missed connections",
+          "limits": [
+            {
+              "type": "Per Person Max",
+              "limit": 300,
+              "basis": "S$100 for every six hours you are stranded"
+            }
+          ],
+          "details": "Payable if you miss a travel connection because your incoming scheduled public transport arrives late, and no alternative transport is available within 6 hours of the scheduled departure of your next connection. Requires written proof of delay.",
+          "source_info": "Page 5, Pages 12-13"
+        },
+        {
+          "coverage_name": "Trip disruption",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 1000,
+              "basis": null
+            }
+          ],
+          "details": "Payable if your trip is disrupted (forced itinerary change) while in Singapore or overseas due to specified events (your serious injury/illness making you unfit to travel, serious public event, flight cancellation due to airport/runway/airspace closure or poor weather). Covers additional economy transport/accommodation to continue trip OR unused non-refundable costs. Must seek refunds first.",
+          "source_info": "Page 5, Pages 13-14"
+        },
+        {
+          "coverage_name": "Terrorism cover",
+          "limits": [
+            {
+              "type": "Coverage Status",
+              "limit": "Covered",
+              "basis": null
+            }
+          ],
+          "details": "The policy provides cover for claims directly resulting from an act of terrorism during your trip, subject to the limits and conditions specified for each relevant benefit section. An act of terrorism involves force or violence for political, religious, ideological, or similar purposes to influence government or intimidate the public.",
+          "source_info": "Page 5, Page 14"
+        }
+      ]
+    },
+    {
+      "category_name": "Protecting your stuff",
+      "coverages": [
+        {
+          "coverage_name": "Baggage delay",
+          "limits": [
+            {
+              "type": "Overseas Delay Max",
+              "limit": 150,
+              "basis": "S$150 for every six hours of delay"
+            },
+            {
+              "type": "Singapore Delay Max",
+              "limit": 150,
+              "basis": "S$150 for first six hour delay in Singapore only"
+            }
+          ],
+          "details": "Payable for each 6-hour period your checked-in baggage is delayed, misdirected, or misplaced by a public transport provider (only the first 6 hours are paid if delay occurs on arrival in Singapore). Requires written proof from the provider stating duration and reason.",
+          "source_info": "Page 6, Page 14"
+        },
+        {
+          "coverage_name": "Theft of or damage to baggage or personal belongings",
+          "limits": [
+            {
+              "type": "Overall Limit",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Sub-limit for laptop / tablet (in total)",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Sub-limit for mobile phone (in total)",
+              "limit": 300,
+              "basis": null
+            },
+            {
+              "type": "Sub-limit for jewellery (in total)",
+              "limit": 300,
+              "basis": null
+            },
+            {
+              "type": "Sub-limit for all other items (per item)",
+              "limit": 300,
+              "basis": null
+            },
+            {
+              "type": "Overall limit for family plan",
+              "limit": 7500,
+              "basis": null
+            }
+          ],
+          "details": "Covers baggage/personal items stolen or accidentally damaged, or lost by an airline operator during the trip. Payment based on depreciation (age-based formula or S$50, whichever higher, with proof of purchase) or current market value (up to S$50/item, max 5 items without proof). High-value items (phones, laptops, jewellery) must be carried, not checked-in or left unattended. Requires items to be under your care or authorised person's care. Report theft to police within 24 hours. Excludes wear & tear, consumables, perishables, vehicles, stored value cards, business goods.",
+          "source_info": "Page 6, Pages 14-15"
+        },
+        {
+          "coverage_name": "Loss of passport, travel documents & theft of money",
+          "limits": [
+            {
+              "type": "Overall Limit",
+              "limit": 300,
+              "basis": null
+            },
+            {
+              "type": "Sub-limit for theft of your money",
+              "limit": 300,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses the cost to replace lost passports or travel documents overseas, and the value of cash or travellers' cheques stolen while being carried by you overseas. Stolen items must have been under your care or securely stored. Report loss/theft to police within 24 hours. Call Emergency Assistance (+65 6322 2072) for replacement advice.",
+          "source_info": "Page 6, Page 16"
+        },
+        {
+          "coverage_name": "Fraudulent personal credit card usage",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 300,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses unauthorised charges made on your credit card while overseas. You must report the unauthorised charges or card theft to the card issuer and police within 24 hours of discovery and comply with the card issuer's procedures. Excludes charges made by family members, travel companions, or anyone you entrusted your card details to.",
+          "source_info": "Page 6, Page 16"
+        },
+        {
+          "coverage_name": "Car rental excess",
+          "limits": [
+            {
+              "type": "Coverage Status",
+              "limit": "Not Applicable",
+              "basis": null
+            }
+          ],
+          "details": "This benefit is not included in the Premium plan. Cover for car rental excess is available under the Business and First plans or as a separate optional add-on.",
+          "source_info": "Page 6"
+        }
+      ]
+    },
+    {
+      "category_name": "Protecting you and your health",
+      "coverages": [
+        {
+          "coverage_name": "Emergency medical evacuation & repatriation",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Unlimited",
+              "basis": null
+            }
+          ],
+          "details": "Requires calling Emergency Assistance (+65 6322 2072). Covers arrangement and costs for medically necessary transport (e.g., air ambulance, regular flight) to the nearest appropriate medical facility or back to Singapore due to a life-threatening illness/injury overseas. Also covers repatriation of mortal remains if death occurs overseas, including reasonable mortician/undertaker costs.",
+          "source_info": "Page 7, Page 17"
+        },
+        {
+          "coverage_name": "Personal liability while on your trip",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 500000,
+              "basis": null
+            }
+          ],
+          "details": "Covers amounts you become legally liable to pay for accidental death or bodily injury to another person, or loss/damage to another person's property, during your trip overseas. Excludes punitive damages, liability admitted without consent, property in your care/custody, criminal acts, liability from using vehicles/firearms/animals, business activities. Requires immediate notification.",
+          "source_info": "Page 7, Page 17"
+        },
+        {
+          "coverage_name": "Personal accident",
+          "limits": [
+            {
+              "type": "Adult below 70 years of age",
+              "limit": 200000,
+              "basis": null
+            },
+            {
+              "type": "Adult 70 years old or older",
+              "limit": 40000,
+              "basis": null
+            },
+            {
+              "type": "Child covered under a family plan",
+              "limit": 60000,
+              "basis": null
+            },
+            {
+              "type": "Overall limit for family plan",
+              "limit": 500000,
+              "basis": null
+            }
+          ],
+          "details": "Provides a lump sum payment according to a scale of benefits if you suffer accidental death or specific permanent disabilities (e.g., loss of limb, sight, hearing, speech, severe burns) during your trip. The event must occur within 90 days of the accident. Maximum payout per person is 100% of the sum insured.",
+          "source_info": "Page 7, Page 18"
+        },
+        {
+          "coverage_name": "Medical expenses incurred overseas",
+          "limits": [
+            {
+              "type": "Adult below 70 years of age",
+              "limit": 200000,
+              "basis": null
+            },
+            {
+              "type": "Adult 70 years old or older",
+              "limit": 40000,
+              "basis": null
+            },
+            {
+              "type": "Child covered under a family plan",
+              "limit": 60000,
+              "basis": null
+            },
+            {
+              "type": "Overall limit for family plan",
+              "limit": 500000,
+              "basis": null
+            },
+            {
+              "type": "Sub-limit for mobility aids",
+              "limit": "Not covered",
+              "basis": null
+            },
+            {
+              "type": "Sub-limit for dental expenses caused by accident",
+              "limit": 2000,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses reasonable and medically necessary expenses for treatment of unexpected illness or injury incurred overseas. Cover lasts for up to 30 days from the first treatment date. Includes ambulance, specialist treatment (if referred by GP), emergency dental treatment due to accident, medical equipment hire. Excludes treatment for pre-existing conditions (unless optional cover bought), non-natural teeth, planned medical treatment, mobility aid prostheses.",
+          "source_info": "Page 7, Page 19"
+        },
+        {
+          "coverage_name": "Daily hospital cash while overseas",
+          "limits": [
+            {
+              "type": "Overall Limit",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Per Day Limit",
+              "limit": 200,
+              "basis": null
+            },
+            {
+              "type": "Per Day Limit (Intensive Care)",
+              "limit": 400,
+              "basis": null
+            }
+          ],
+          "details": "Pays a cash benefit for each continuous 24-hour period you are confined to a hospital overseas due to an unexpected illness or injury suffered during the trip. Admission must be medically necessary. The daily benefit doubles if confined in an intensive care unit (ICU).",
+          "source_info": "Page 7, Page 19"
+        },
+        {
+          "coverage_name": "Automatic policy extension",
+          "limits": [
+            {
+              "type": "Maximum Extension",
+              "limit": "7 days",
+              "basis": null
+            }
+          ],
+          "details": "Automatically extends the insurance period free of charge if your return to Singapore is delayed because of a serious public event or because you are confined to an overseas hospital on the advice of a medical practitioner.",
+          "source_info": "Page 7, Page 19"
+        },
+        {
+          "coverage_name": "Emergency phone charges",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 200,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses the costs of emergency phone calls made while overseas to the Emergency Assistance hotline, police, medical facilities, consulates, or family members in Singapore for help related to a serious illness or injury suffered during the trip.",
+          "source_info": "Page 8, Page 19"
+        },
+        {
+          "coverage_name": "Hospitalisation visit",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 5000,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses reasonable return economy transport and standard accommodation costs for one adult family member (or travel companion) to travel to be with you if you are hospitalised overseas for at least 5 continuous days due to unexpected illness/injury, confirmed unable to return to Singapore for treatment, and have no adult family member with you. Benefit ceases after 30 days or when fit to travel.",
+          "source_info": "Page 8, Pages 19-20"
+        },
+        {
+          "coverage_name": "Child companion",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 5000,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses reasonable return economy transport and standard accommodation costs for one adult family member to travel to look after your child(ren) if you (as the only travelling adult) are hospitalised overseas for at least 5 continuous days due to unexpected illness/injury and confirmed unable to return to Singapore for treatment. Benefit ceases after 30 days or when fit to travel.",
+          "source_info": "Page 8, Pages 19-20"
+        },
+        {
+          "coverage_name": "Compassionate travel",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 5000,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses reasonable return economy transport and standard accommodation costs for one adult family member to travel overseas to arrange the return of your body to Singapore or your home country if you die overseas due to an unexpected illness or injury suffered during the trip, and there is no other adult family member present.",
+          "source_info": "Page 8, Pages 19-20"
+        },
+        {
+          "coverage_name": "Chinese medicine practitioner, physiotherapist and chiropractor expenses",
+          "limits": [
+            {
+              "type": "Overall Limit",
+              "limit": 300,
+              "basis": null
+            },
+            {
+              "type": "Per Visit Limit",
+              "limit": 50,
+              "basis": null
+            }
+          ],
+          "details": "Covers expenses for treatment received from a registered Chinese medicine practitioner, physiotherapist, or chiropractor for an unexpected illness or injury suffered during the trip. Treatment must be sought either overseas or within 48 hours of returning to Singapore, provided you also sought initial medical treatment overseas for the same condition.",
+          "source_info": "Page 8, Page 20"
+        },
+        {
+          "coverage_name": "Medical expenses incurred in Singapore",
+          "limits": [
+            {
+              "type": "Adult below 70 years of age",
+              "limit": 6000,
+              "basis": null
+            },
+            {
+              "type": "Adult 70 years old or older",
+              "limit": 1200,
+              "basis": null
+            },
+            {
+              "type": "Child covered under a family plan",
+              "limit": 1800,
+              "basis": null
+            },
+            {
+              "type": "Overall limit for family plan",
+              "limit": 15000,
+              "basis": null
+            },
+            {
+              "type": "Sub-limit for mobility aids",
+              "limit": "Not covered",
+              "basis": null
+            },
+            {
+              "type": "Sub-limit for dental expenses caused by accident",
+              "limit": 2000,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses reasonable and medically necessary expenses for follow-up treatment in Singapore for an unexpected illness or injury suffered overseas. Treatment must be sought within 48 hours of returning to Singapore (or treatment must have been sought overseas). Cover lasts for up to 30 days from return date. Includes ambulance, specialist (if referred), dental (accident only), medical equipment. Excludes non-natural teeth, interested party treatment, mobility aid prostheses.",
+          "source_info": "Page 8, Page 20"
+        },
+        {
+          "coverage_name": "Daily hospital cash while in Singapore",
+          "limits": [
+            {
+              "type": "Overall Limit",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Per Day Limit",
+              "limit": 100,
+              "basis": null
+            },
+            {
+              "type": "Per Day Limit (Intensive Care)",
+              "limit": 200,
+              "basis": null
+            }
+          ],
+          "details": "Pays a cash benefit for each continuous 24-hour period you are confined to a hospital in Singapore due to an unexpected illness or injury suffered overseas during the trip. Confinement must occur within 48 hours of return (or within 30 days if treated overseas first) and be medically necessary. The daily benefit doubles if confined in an intensive care unit (ICU).",
+          "source_info": "Page 8, Page 21"
+        }
+      ]
+    },
+    {
+      "category_name": "Optional Covers",
+      "coverages": [
+        {
+          "coverage_name": "Pre-existing medical conditions - Trip cancellation and loss of deposit",
+          "limits": [
+            {
+              "type": "50% co-payment",
+              "limit": 7500,
+              "basis": null
+            }
+          ],
+          "details": "Optional Cover. Reimburses 50% of covered travel costs if the entire trip is cancelled due to specified events directly arising from a pre-existing medical condition suffered by you, a travelling family member, or travel companion (who also purchased this cover). Event must occur within 30 days before departure. Excludes claims if cover bought <72hrs before departure, terminal illness diagnosis.",
+          "source_info": "Page 9, Pages 22, 25-26"
+        },
+        {
+          "coverage_name": "Pre-existing medical conditions - Trip postponement",
+          "limits": [
+            {
+              "type": "50% co-payment",
+              "limit": 500,
+              "basis": null
+            }
+          ],
+          "details": "Optional Cover. Reimburses 50% of covered travel costs if the entire trip is postponed due to specified events directly arising from a pre-existing medical condition suffered by you, a travelling family member, or travel companion (who also purchased this cover). Event must occur within 30 days before departure. Excludes claims if cover bought <72hrs before departure, terminal illness diagnosis.",
+          "source_info": "Page 9, Pages 22, 25-26"
+        },
+        {
+          "coverage_name": "Pre-existing medical conditions - Trip cut short",
+          "limits": [
+            {
+              "type": "50% co-payment",
+              "limit": 5000,
+              "basis": null
+            }
+          ],
+          "details": "Optional Cover. Reimburses 50% of covered travel costs if you return early from overseas due to specified events directly arising from a pre-existing medical condition suffered by you, a travelling family member, or travel companion (who also purchased this cover). Excludes terminal illness diagnosis.",
+          "source_info": "Page 9, Pages 22, 25-26"
+        },
+        {
+          "coverage_name": "Pre-existing medical conditions - Trip disruption",
+          "limits": [
+            {
+              "type": "50% co-payment",
+              "limit": 1000,
+              "basis": null
+            }
+          ],
+          "details": "Optional Cover. Reimburses 50% of covered costs if your trip itinerary is forcibly changed due to a serious injury or illness directly arising from a pre-existing medical condition making you unfit to travel (confirmed by a medical practitioner). Excludes terminal illness diagnosis.",
+          "source_info": "Page 9, Pages 23, 25-26"
+        },
+        {
+          "coverage_name": "Pre-existing medical conditions - Medical expenses incurred overseas",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 50000,
+              "basis": null
+            }
+          ],
+          "details": "Optional Cover. Reimburses medically necessary treatment costs incurred overseas for an unexpected illness or injury directly arising from a pre-existing medical condition. Cover up to 30 days from first treatment. Includes ambulance, referred specialist, mobility aids (not prosthesis), medical equipment. Excludes planned treatment, terminal illness diagnosis.",
+          "source_info": "Page 9, Pages 24, 26"
+        },
+        {
+          "coverage_name": "Pre-existing medical conditions - Emergency medical evacuation & repatriation",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": "Unlimited",
+              "basis": null
+            }
+          ],
+          "details": "Optional Cover. Requires calling Emergency Assistance (+65 6322 2072). Covers arrangement and costs for medically necessary transport due to a life-threatening condition directly arising from a pre-existing medical condition. Also covers repatriation of remains. Excludes terminal illness diagnosis.",
+          "source_info": "Page 9, Pages 24, 26"
+        },
+        {
+          "coverage_name": "Pre-existing medical conditions - Automatic policy extension",
+          "limits": [
+            {
+              "type": "Maximum Extension",
+              "limit": "30 days",
+              "basis": null
+            }
+          ],
+          "details": "Optional Cover. Automatically extends insurance period free if return delayed due to unexpected illness/injury from pre-existing condition making you medically unfit to travel, or confinement in overseas hospital due to it (confirmed by doctor).",
+          "source_info": "Page 9, Page 24"
+        },
+        {
+          "coverage_name": "Cancel for any reason - Trip cancellation",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Overall limit for family plan",
+              "limit": 2500,
+              "basis": null
+            }
+          ],
+          "details": "Optional Cover. Reimburses 50% of non-refundable travel costs if you cancel the entire trip for any reason NOT already covered by the standard Trip Cancellation benefit. Must be purchased within 7 days of the initial trip deposit. Requires seeking refunds first. Policy ends if this benefit is paid.",
+          "source_info": "Page 9, Page 27-28"
+        },
+        {
+          "coverage_name": "Cancel for any reason - Trip postponement",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 300,
+              "basis": null
+            },
+            {
+              "type": "Overall limit for family plan",
+              "limit": 750,
+              "basis": null
+            }
+          ],
+          "details": "Optional Cover. Reimburses 50% of non-refundable travel costs if you postpone the entire trip for any reason NOT already covered by the standard Trip Postponement benefit. Must be purchased within 7 days of the initial trip deposit. Requires seeking refunds first. Policy ends if this benefit is paid.",
+          "source_info": "Page 9, Page 27-28"
+        },
+        {
+          "coverage_name": "Cancel for any reason - Trip cut short",
+          "limits": [
+            {
+              "type": "Per Person",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Overall limit for family plan",
+              "limit": 2500,
+              "basis": null
+            }
+          ],
+          "details": "Optional Cover. Reimburses 50% of non-refundable travel costs if you return to Singapore early (after trip commenced for 48+ hours) for any reason NOT already covered by the standard Trip Cut Short benefit. Must be purchased within 7 days of the initial trip deposit. Requires seeking refunds first.",
+          "source_info": "Page 9, Page 27-28"
+        },
+        {
+          "coverage_name": "Car rental excess",
+          "limits": [
+            {
+              "type": "Per Incident",
+              "limit": 300,
+              "basis": null
+            }
+          ],
+          "details": "Optional Cover for Premium plan. Reimburses the rental vehicle insurance excess or deductible you are legally required to pay due to accidental loss or damage to a rental car collected overseas during your trip. Requires you to be a named driver, legally permitted to drive, and comply with the rental agreement and local laws.",
+          "source_info": "Page 9, Page 28"
+        },
+        {
+          "coverage_name": "Pet care",
+          "limits": [
+            {
+              "type": "Per Incident Max",
+              "limit": 150,
+              "basis": "S$50 for every six hours of delay"
+            }
+          ],
+          "details": "Optional Cover. Pays a benefit for each 6-hour period your return to Singapore on scheduled public transport is delayed (delay not caused by you/family/companion). Requires your pet to be boarded at a pet hotel or kennel during your trip.",
+          "source_info": "Page 9, Page 28"
+        },
+        {
+          "coverage_name": "Sports equipment protector",
+          "limits": [
+            {
+              "type": "Overall Limit",
+              "limit": 2000,
+              "basis": null
+            },
+            {
+              "type": "Rental Limit",
+              "limit": 100,
+              "basis": "Per day"
+            }
+          ],
+          "details": "Optional Cover. Covers theft, accidental damage, or loss by airline/transport/accommodation provider of specified owned sports equipment (golf clubs, diving gear, skis/boards, bikes, fishing tackle, specialist apparel). Also covers cost of renting replacement equipment up to S$100 per day. Depreciation applies to owned equipment value based on age. Report loss/theft within 24 hours. Excludes damage during use.",
+          "source_info": "Page 9, Pages 28-29"
+        },
+        {
+          "coverage_name": "Home contents",
+          "limits": [
+            {
+              "type": "Per Incident",
+              "limit": 6000,
+              "basis": null
+            }
+          ],
+          "details": "Optional Cover. Covers loss or damage to your household contents (furniture, furnishings, domestic electronic appliances, personal belongings) due to fire or burglary at your home in Singapore while you are overseas on your trip. Depreciation applies based on item age. Max S$50/item (up to 5 items) without proof of purchase.",
+          "source_info": "Page 9, Page 30"
+        }
+      ]
+    }
+  ]
+}

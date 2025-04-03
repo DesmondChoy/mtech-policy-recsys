@@ -1,0 +1,645 @@
+{
+  "provider_name": "Income Insurance",
+  "policy_name": "Travel Insurance",
+  "tier_name": "classic",
+  "extraction_date": "2024-07-29",
+  "currency": "SGD",
+  "coverage_categories": [
+    {
+      "category_name": "Travel Inconvenience Benefits",
+      "coverages": [
+        {
+          "coverage_name": "Cancelling your trip",
+          "limits": [
+            {
+              "type": "Per insured person",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 15000,
+              "basis": null
+            }
+          ],
+          "details": "Covers non-refundable overseas transport and accommodation expenses if the trip is cancelled due to specified unforeseen circumstances, including serious sickness from COVID-19 (subject to eligibility conditions). The event causing cancellation must occur after policy purchase and within 30 days before departure from Singapore (unless accidental). Policy must generally be purchased at least 3 days before departure. Must meet destination/carrier COVID-19 requirements.",
+          "source_info": "Page 5, Section 1; Page 3, Footnote 5; Page 10, Footnote 5; Page 11, Footnote 10"
+        },
+        {
+          "coverage_name": "Postponing your trip",
+          "limits": [
+            {
+              "type": "Per insured person",
+              "limit": 2000,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 6000,
+              "basis": null
+            }
+          ],
+          "details": "Covers additional administrative charges or non-refundable costs if the trip needs to be postponed due to specified unforeseen events.",
+          "source_info": "Page 5, Section 2"
+        },
+        {
+          "coverage_name": "Shortening your trip",
+          "limits": [
+            {
+              "type": "Overall section limit - Per insured person",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Overall section limit - Family total",
+              "limit": 15000,
+              "basis": null
+            },
+            {
+              "type": "Limit for extra expenses to return to Singapore - Per insured person",
+              "limit": 1000,
+              "basis": null
+            }
+          ],
+          "details": "Covers unused, non-refundable travel and accommodation expenses paid in advance, plus extra costs to return to Singapore if the trip is cut short due to specified unforeseen circumstances, including contracting COVID-19 while overseas (subject to eligibility conditions). Must meet destination/carrier COVID-19 requirements.",
+          "source_info": "Page 5, Section 3; Page 3, Footnote 5; Page 10, Footnote 5; Page 11, Footnote 10"
+        },
+        {
+          "coverage_name": "Trip disruption",
+          "limits": [
+            {
+              "type": "Overall section limit - Per insured person",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Overall section limit - Family total",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Limit for accommodation expenses per room per night",
+              "limit": 400,
+              "basis": null
+            }
+          ],
+          "details": "Covers reasonable additional accommodation and travel costs if the trip is disrupted due to specified unforeseen events.",
+          "source_info": "Page 5, Section 4"
+        },
+        {
+          "coverage_name": "Travel delay",
+          "limits": [
+            {
+              "type": "Overall section limit - Per insured person",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Overall section limit - Family total",
+              "limit": 2000,
+              "basis": null
+            },
+            {
+              "type": "For every six hours of delay while overseas - Adult",
+              "limit": 100,
+              "basis": null
+            },
+            {
+              "type": "For every six hours of delay while overseas - Child",
+              "limit": 50,
+              "basis": null
+            },
+            {
+              "type": "After six hours of delay while in Singapore - Adult",
+              "limit": 150,
+              "basis": null
+            },
+            {
+              "type": "After six hours of delay while in Singapore - Child",
+              "limit": 50,
+              "basis": null
+            }
+          ],
+          "details": "Provides cash benefit for delays of scheduled public transport for more than 6 consecutive hours, provided the delay is not caused by you. Different rates apply for delays overseas vs. delays in Singapore before departure.",
+          "source_info": "Page 5, Section 5; Page 2, Footnote 3; Page 10, Footnote 3"
+        },
+        {
+          "coverage_name": "Missed connections",
+          "limits": [
+            {
+              "type": "Per insured person",
+              "limit": 100,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 1000,
+              "basis": null
+            }
+          ],
+          "details": "Covers costs incurred due to missing a connecting public transport due to the late arrival of the incoming confirmed connecting public transport.",
+          "source_info": "Page 5, Section 6"
+        },
+        {
+          "coverage_name": "Overbooked public transport",
+          "limits": [
+            {
+              "type": "Per insured person",
+              "limit": 100,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 1000,
+              "basis": null
+            }
+          ],
+          "details": "Provides a benefit if you are denied boarding on a scheduled public transport due to overbooking, and no alternative transport is offered within 6 hours.",
+          "source_info": "Page 5, Section 7"
+        },
+        {
+          "coverage_name": "If the travel agency becomes insolvent",
+          "limits": [
+            {
+              "type": "Per insured person",
+              "limit": 2000,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 10000,
+              "basis": null
+            }
+          ],
+          "details": "Covers loss of travel fares or accommodation expenses paid in advance due to the insolvency of the licensed travel agency.",
+          "source_info": "Page 5, Section 8"
+        },
+        {
+          "coverage_name": "Baggage delay",
+          "limits": [
+            {
+              "type": "Overall section limit - Per insured person",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Overall section limit - Family total",
+              "limit": 2000,
+              "basis": null
+            },
+            {
+              "type": "For every six hours of delay while overseas - Adult",
+              "limit": 200,
+              "basis": null
+            },
+            {
+              "type": "For every six hours of delay while overseas - Child",
+              "limit": 50,
+              "basis": null
+            },
+            {
+              "type": "Baggage delay after six hours when arriving in Singapore - Adult",
+              "limit": 200,
+              "basis": null
+            },
+            {
+              "type": "Baggage delay after six hours when arriving in Singapore - Child",
+              "limit": 50,
+              "basis": null
+            }
+          ],
+          "details": "Provides cash benefit for delay of checked-in baggage for more than 6 consecutive hours upon arrival at scheduled destination.",
+          "source_info": "Page 6, Section 9"
+        },
+        {
+          "coverage_name": "Loss or damage of baggage and personal belongings",
+          "limits": [
+            {
+              "type": "Overall section limit - Per insured person",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Overall section limit - Family total",
+              "limit": 7500,
+              "basis": null
+            },
+            {
+              "type": "Limit for laptop - Per insured person",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Limit for watches, jewellery or valuables in total - Per insured person",
+              "limit": 200,
+              "basis": null
+            },
+            {
+              "type": "Limit for other items (for each item, set or pair) - Per insured person",
+              "limit": 500,
+              "basis": null
+            }
+          ],
+          "details": "Covers accidental loss or damage to baggage, clothing, personal belongings, valuables, and portable computing equipment during the trip, subject to per item and specific item limits.",
+          "source_info": "Page 6, Section 10"
+        },
+        {
+          "coverage_name": "Losing money",
+          "limits": [
+            {
+              "type": "Adult",
+              "limit": 250,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 100,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 450,
+              "basis": null
+            }
+          ],
+          "details": "Covers loss of cash or traveller's cheques due to theft, robbery or burglary during the trip.",
+          "source_info": "Page 6, Section 11"
+        },
+        {
+          "coverage_name": "Losing travel documents",
+          "limits": [
+            {
+              "type": "Overall section limit - Per insured person",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Overall section limit - Family total",
+              "limit": 7500,
+              "basis": null
+            },
+            {
+              "type": "Limit for accommodation expenses per room per night",
+              "limit": 400,
+              "basis": null
+            }
+          ],
+          "details": "Covers costs of obtaining replacement passports, visas, or travel tickets lost during the trip, plus related additional travel and accommodation expenses.",
+          "source_info": "Page 6, Section 12"
+        }
+      ]
+    },
+    {
+      "category_name": "Personal Accident and Medical Expenses Benefits",
+      "coverages": [
+        {
+          "coverage_name": "Personal accident",
+          "limits": [
+            {
+              "type": "Adult 70 years old or over",
+              "limit": 100000,
+              "basis": null
+            },
+            {
+              "type": "Adult under 70 years old",
+              "limit": 150000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 75000,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 600000,
+              "basis": null
+            }
+          ],
+          "details": "Provides lump sum payment based on the scale of compensation (e.g., 100% for accidental death or permanent total disability, 50% for loss of one limb/sight in one eye/speech/hearing) if an accident occurs during the trip resulting in injury, disability, or death. Maximum compensation is the benefit limit. Classic plan does not include Public Transport Double Cover.",
+          "source_info": "Page 7, Section 13"
+        },
+        {
+          "coverage_name": "Medical expenses overseas",
+          "limits": [
+            {
+              "type": "Adult 70 years old or over (combined sections 14, 18, 19)",
+              "limit": 300000,
+              "basis": null
+            },
+            {
+              "type": "Adult under 70 years old",
+              "limit": 250000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 150000,
+              "basis": null
+            },
+            {
+              "type": "Limit for medical aids and equipment - Per insured person",
+              "limit": 500,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 1000000,
+              "basis": null
+            }
+          ],
+          "details": "Covers necessary medical expenses incurred overseas due to injury or sickness (including COVID-19) sustained during the trip. Includes treatment, hospitalisation, and cost of medical aids/equipment up to the specified limits. Age limits apply.",
+          "source_info": "Page 7, Section 14; Page 3; Page 11, Footnote 10"
+        },
+        {
+          "coverage_name": "Medical expenses in Singapore",
+          "limits": [
+            {
+              "type": "Adult 70 years old or over",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Adult under 70 years old",
+              "limit": 12500,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 10000,
+              "basis": null
+            },
+            {
+              "type": "Limit for medical aids and equipment - Per insured person",
+              "limit": 500,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 60000,
+              "basis": null
+            }
+          ],
+          "details": "Covers medical expenses incurred in Singapore within 30 days of returning, for follow-up treatment of injury or sickness (excluding COVID-19 unless hospitalised overseas first) sustained during the overseas trip. Age limits apply.",
+          "source_info": "Page 8, Section 15; Page 9, Footnote 10"
+        },
+        {
+          "coverage_name": "Treatment by a Chinese medicine practitioner or a chiropractor",
+          "limits": [
+            {
+              "type": "Overall section limit - Per insured person",
+              "limit": 300,
+              "basis": null
+            },
+            {
+              "type": "Overall section limit - Family total",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Limit per visit",
+              "limit": 50,
+              "basis": null
+            }
+          ],
+          "details": "Covers expenses for treatment by a licensed Chinese medicine practitioner or chiropractor overseas or in Singapore (within 30 days of return) for injury sustained during the trip. Subject to per visit and overall limits. Refer to policy conditions for specific requirements.",
+          "source_info": "Page 8, Section 16; Page 2, Footnote 4; Page 10, Footnote 4"
+        },
+        {
+          "coverage_name": "Overseas hospital allowance",
+          "limits": [
+            {
+              "type": "Overall section limit - Per insured person",
+              "limit": 10000,
+              "basis": null
+            },
+            {
+              "type": "Overall section limit - Family total",
+              "limit": 30000,
+              "basis": null
+            },
+            {
+              "type": "Benefit per day",
+              "limit": 100,
+              "basis": null
+            }
+          ],
+          "details": "Provides a daily cash benefit for each full 24 hours of hospital confinement overseas due to injury or sickness sustained during the trip.",
+          "source_info": "Page 8, Section 17"
+        },
+        {
+          "coverage_name": "Emergency medical evacuation",
+          "limits": [
+            {
+              "type": "Adult 70 years old or over",
+              "limit": "See limit under section 14",
+              "basis": null
+            },
+            {
+              "type": "Adult under 70 years old",
+              "limit": 500000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 500000,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 1250000,
+              "basis": null
+            }
+          ],
+          "details": "Covers expenses for emergency evacuation (including due to COVID-19) to Singapore or the nearest appropriate medical facility if necessary due to serious injury or sickness during the trip. Must be arranged by the designated assistance provider. The limit for adults 70+ is combined with Sections 14 & 19, capped at the Section 14 limit (S$300,000).",
+          "source_info": "Page 8, Section 18; Page 7, Section 14; Page 11, Footnote 10"
+        },
+        {
+          "coverage_name": "Sending you home",
+          "limits": [
+            {
+              "type": "Adult 70 years old or over",
+              "limit": "See limit under section 14",
+              "basis": null
+            },
+            {
+              "type": "Adult under 70 years old",
+              "limit": 150000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 150000,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 1250000,
+              "basis": null
+            }
+          ],
+          "details": "Covers costs for returning the insured person's body or ashes to Singapore, or for local burial/cremation overseas, in the event of death during the trip. Limit for adults 70+ combined with Sections 14 & 18, capped at the Section 14 limit (S$300,000).",
+          "source_info": "Page 8, Section 19; Page 7, Section 14"
+        },
+        {
+          "coverage_name": "Compassionate visit",
+          "limits": [
+            {
+              "type": "Overall section limit - Per insured person",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Overall section limit - Family total",
+              "limit": 15000,
+              "basis": null
+            },
+            {
+              "type": "Limit for accommodation expenses per room per night",
+              "limit": 400,
+              "basis": null
+            }
+          ],
+          "details": "Covers travel and accommodation costs for one relative or friend to travel to the insured person if hospitalised overseas for more than 5 consecutive days, or to assist dependent children travelling with the insured.",
+          "source_info": "Page 8, Section 20"
+        }
+      ]
+    },
+    {
+      "category_name": "Other Benefits",
+      "coverages": [
+        {
+          "coverage_name": "Kidnap and hostage",
+          "limits": [
+            {
+              "type": "Overall section limit - Per insured person",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Overall section limit - Family total",
+              "limit": 9000,
+              "basis": null
+            },
+            {
+              "type": "Every 24 hours",
+              "limit": 100,
+              "basis": null
+            }
+          ],
+          "details": "Provides a daily benefit if the insured person is unlawfully detained or held hostage during the trip.",
+          "source_info": "Page 9, Section 21"
+        },
+        {
+          "coverage_name": "Emergency phone charges",
+          "limits": [
+            {
+              "type": "Per insured person",
+              "limit": 100,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 300,
+              "basis": null
+            }
+          ],
+          "details": "Reimburses emergency telephone calls made to the designated assistance provider or for reporting loss of baggage/credit cards during the trip.",
+          "source_info": "Page 9, Section 22"
+        },
+        {
+          "coverage_name": "Home cover",
+          "limits": [
+            {
+              "type": "Overall section limit",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Limit per item (for each item, set or pair)",
+              "limit": 500,
+              "basis": null
+            }
+          ],
+          "details": "Covers loss or damage to home contents due to fire or burglary while the insured person's home in Singapore is unoccupied during the trip (minimum 4 days trip duration usually applies).",
+          "source_info": "Page 9, Section 23"
+        },
+        {
+          "coverage_name": "Personal liability",
+          "limits": [
+            {
+              "type": "Per insured person / Family total",
+              "limit": 500000,
+              "basis": null
+            }
+          ],
+          "details": "Covers legal liability for accidentally causing injury to other people or damage to their property during the trip.",
+          "source_info": "Page 9, Section 24"
+        },
+        {
+          "coverage_name": "Rental vehicle excess cover",
+          "limits": [
+            {
+              "type": "Per insured person / Family total",
+              "limit": 1500,
+              "basis": null
+            }
+          ],
+          "details": "Covers the insurance excess payable on the rental vehicle insurance if the rental vehicle is damaged or stolen during the trip.",
+          "source_info": "Page 9, Section 25"
+        },
+        {
+          "coverage_name": "Full terrorism cover",
+          "limits": [
+            {
+              "type": "Adult 70 years old or over",
+              "limit": 100000,
+              "basis": null
+            },
+            {
+              "type": "Adult under 70 years old",
+              "limit": 150000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 75000,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 600000,
+              "basis": null
+            }
+          ],
+          "details": "Provides cover under Sections 1 to 25 for losses arising from acts of terrorism. Limits shown apply specifically to Personal Accident (Section 13) benefits resulting from terrorism; for other sections, the standard limits apply.",
+          "source_info": "Page 9, Section 26"
+        },
+        {
+          "coverage_name": "COVID-19 cover",
+          "limits": [
+            {
+              "type": "Varies by section",
+              "limit": "See limits of respective sections that apply.",
+              "basis": null
+            }
+          ],
+          "details": "Provides cover under Sections 1 to 25 (excluding Section 15 - Medical expenses in Singapore, unless hospitalised overseas first) for specified events related to COVID-19, subject to the limits of the respective sections. Eligibility requires fulfilling all vaccination, pre-departure/post-arrival tests mandated by destination/carrier, and meeting specific conditions within each relevant section (e.g., trip cancellation requires serious sickness from COVID-19).",
+          "source_info": "Page 9, Section 27; Page 11, Footnote 10"
+        },
+        {
+          "coverage_name": "Post-departure purchase extension",
+          "limits": [
+            {
+              "type": "Varies by section",
+              "limit": "See limits of respective sections that apply.",
+              "basis": null
+            }
+          ],
+          "details": "If the policy is purchased after departure from Singapore (within 1 day, per-trip plans only), this covers losses under Sections 3 to 27 (excluding Section 8 - travel agency insolvency) that occur *after* the policy purchase time. It does not cover claims arising from known events or losses that occurred before the policy was bought.",
+          "source_info": "Page 9, Section 28; Page 4; Page 11, Footnote 9"
+        }
+      ]
+    }
+  ]
+}
