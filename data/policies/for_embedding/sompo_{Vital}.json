@@ -1,0 +1,449 @@
+{
+  "provider_name": "Sompo Insurance",
+  "policy_name": "TravelJoy",
+  "tier_name": "Vital",
+  "extraction_date": "2024-07-26",
+  "currency": "SGD",
+  "coverage_categories": [
+    {
+      "category_name": "Personal Covers",
+      "coverages": [
+        {
+          "coverage_name": "Personal Accident",
+          "limits": [
+            {
+              "type": "70 years & below",
+              "limit": 150000,
+              "basis": null
+            },
+            {
+              "type": "Over 70 years",
+              "limit": 50000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 50000,
+              "basis": null
+            },
+            {
+              "type": "Per Family",
+              "limit": "No aggregate limit for family",
+              "basis": null
+            }
+          ],
+          "details": "Covers Accidental Death, Permanent Disablement and Third Degree Burns occurring during the trip."
+        },
+        {
+          "coverage_name": "Medical Expenses Incurred Overseas",
+          "limits": [
+            {
+              "type": "70 years & below",
+              "limit": 150000,
+              "basis": null
+            },
+            {
+              "type": "Over 70 years",
+              "limit": 50000,
+              "basis": null
+            },
+            {
+              "type": "Per Family",
+              "limit": 300000,
+              "basis": null
+            },
+            {
+              "type": "Physiotherapist, Chinese Physician or Chiropractor",
+              "limit": 300,
+              "basis": "$50 per visit"
+            },
+            {
+              "type": "Dentist",
+              "limit": 500,
+              "basis": null
+            }
+          ],
+          "details": "Covers outpatient and hospitalisation medical expenses incurred overseas arising from accident or sickness, emergency dental expenses arising from accident, and accidental miscarriage. Includes treatment by Physiotherapist, Chinese Physician or Chiropractor up to $50 per visit (overall limit $300) and Dentist (overall limit $500)."
+        },
+        {
+          "coverage_name": "Medical Expenses Incurred Upon Return to Singapore",
+          "limits": [
+            {
+              "type": "70 years & below",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Over 70 years",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Per Family",
+              "limit": 6000,
+              "basis": null
+            },
+            {
+              "type": "Physiotherapist, Chinese Physician or Chiropractor",
+              "limit": 300,
+              "basis": "$50 per visit"
+            },
+            {
+              "type": "Dentist",
+              "limit": 500,
+              "basis": null
+            }
+          ],
+          "details": "Covers follow-up treatment within 31 days from return date. If initial treatment was not sought overseas, treatment in Singapore must be sought within 48 hours from return date and covered for up to 31 days. Includes treatment by Physiotherapist, Chinese Physician or Chiropractor up to $50 per visit (overall limit $300) and Dentist (overall limit $500)."
+        },
+        {
+          "coverage_name": "Emergency Medical Evacuation & Repatriation (Including Mortal Remains) Back to Singapore",
+          "limits": [
+            {
+              "type": "Per Insured Person up to 70 years",
+              "limit": 600000,
+              "basis": null
+            },
+            {
+              "type": "Per Insured Person above 70 years",
+              "limit": 100000,
+              "basis": null
+            },
+            {
+              "type": "Per Insured Person (Pre-existing Conditions)",
+              "limit": "N.A.",
+              "basis": null
+            },
+            {
+              "type": "Per Family",
+              "limit": "No aggregate limit for family",
+              "basis": null
+            }
+          ],
+          "details": "Covers emergency medical evacuation and repatriation back to Singapore, including mortal remains. Includes pregnancy-related complications. Pre-existing medical conditions are not covered under the Vital plan for this benefit."
+        },
+        {
+          "coverage_name": "Overseas Hospitalisation Allowance",
+          "limits": [
+            {
+              "type": "Per Insured Person",
+              "limit": 200,
+              "basis": "per day, up to 20 days"
+            }
+          ],
+          "details": "Payable for each complete day the insured person is hospitalised overseas."
+        },
+        {
+          "coverage_name": "Compassionate Visit by a Relative or Friend",
+          "limits": [
+            {
+              "type": "Per Insured Person (Due to your injury, sickness or disease)",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Per Family (Due to your injury, sickness or disease)",
+              "limit": 10000,
+              "basis": null
+            },
+            {
+              "type": "Per Insured Person (In the event of your death)",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Per Family (In the event of your death)",
+              "limit": 6000,
+              "basis": null
+            }
+          ],
+          "details": "Covers travel and accommodation expenses for one relative or friend to travel to the insured person if they are hospitalised due to injury, sickness or disease, or in the event of the insured person's death overseas."
+        }
+      ]
+    },
+    {
+      "category_name": "Inconvenience / Liability Covers",
+      "coverages": [
+        {
+          "coverage_name": "Loss or Damage to Baggage & Personal Effects",
+          "limits": [
+            {
+              "type": "Per Insured Person",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Per Family",
+              "limit": 6000,
+              "basis": null
+            },
+            {
+              "type": "Per article/pair/set (Section C)",
+              "limit": 250,
+              "basis": null
+            },
+            {
+              "type": "Per video equipment/camera (Section C)",
+              "limit": 500,
+              "basis": null
+            },
+            {
+              "type": "Per laptop/tablet (Section C)",
+              "limit": 500,
+              "basis": null
+            },
+            {
+              "type": "Maximum one mobile phone (Section C)",
+              "limit": 250,
+              "basis": null
+            },
+            {
+              "type": "Aggregate for jewellery",
+              "limit": 500,
+              "basis": null
+            },
+            {
+              "type": "Aggregate for electronic items/equipment",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Aggregate per suitcase/bag",
+              "limit": 5000,
+              "basis": null
+            }
+          ],
+          "details": "Covers loss or damage to baggage and personal effects during the trip. Specific sub-limits apply per item/category as listed under Section (C)."
+        },
+        {
+          "coverage_name": "Travel Document & Money",
+          "limits": [
+            {
+              "type": "Per Insured Person",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Per Family",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Loss of money resulting from theft (Section F)",
+              "limit": 150,
+              "basis": null
+            },
+            {
+              "type": "Fraudulent use of credit card overseas",
+              "limit": 1000,
+              "basis": null
+            }
+          ],
+          "details": "Covers loss of essential travel documents (passport, tickets) and loss of cash or money due to theft. Includes cover for fraudulent use of credit card overseas. Sub-limit for money loss applies as per Section (F)."
+        },
+        {
+          "coverage_name": "Trip Cancellation or Postponement",
+          "limits": [
+            {
+              "type": "Per Insured Person",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Per Family",
+              "limit": 10000,
+              "basis": null
+            }
+          ],
+          "details": "Covers loss of travel and accommodation expenses paid in advance due to trip cancellation, postponement, or replacement of traveller arising from Insured Events within 30 days before departure."
+        },
+        {
+          "coverage_name": "Trip Curtailment",
+          "limits": [
+            {
+              "type": "Per Insured Person",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Per Family",
+              "limit": 10000,
+              "basis": null
+            }
+          ],
+          "details": "Covers loss of the unused portion of prepaid travel costs and expenses after trip departure, arising from Insured Events resulting in your necessary and unavoidable return to Singapore."
+        },
+        {
+          "coverage_name": "Financial Collapse of Licensed Tour Operators",
+          "limits": [
+            {
+              "type": "Per Insured Person",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Per Family",
+              "limit": 10000,
+              "basis": null
+            }
+          ],
+          "details": "Covers loss of non-refundable or un-utilised prepaid travel costs and expenses resulting from the financial collapse of licensed tour operators, for trip cancellation or curtailment occurring after the date of policy issue."
+        },
+        {
+          "coverage_name": "Personal Liability / Family Liability",
+          "limits": [
+            {
+              "type": "Per Insured Person or Family",
+              "limit": 1000000,
+              "basis": null
+            }
+          ],
+          "details": "Covers legal liability for accidental bodily injury to third parties or accidental loss/damage to third party property."
+        }
+      ]
+    },
+    {
+      "category_name": "Cash Benefits",
+      "coverages": [
+        {
+          "coverage_name": "Baggage Delay",
+          "limits": [
+            {
+              "type": "Maximum Limit Per Person",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Basis (Overseas)",
+              "limit": 100,
+              "basis": "per full 6 hours"
+            },
+            {
+              "type": "Basis (Singapore)",
+              "limit": 100,
+              "basis": "for 1st full 6 hours only"
+            }
+          ],
+          "details": "Provides cash benefit for delay in arrival of checked-in baggage. Extended to cover delay if baggage is wrongly picked up by another passenger overseas. Payout basis differs for overseas vs. Singapore arrival."
+        },
+        {
+          "coverage_name": "Travel Delay",
+          "limits": [
+            {
+              "type": "Maximum Limit Per Person",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Basis (Overseas or Singapore)",
+              "limit": 100,
+              "basis": "for 1st full 6 hours"
+            },
+            {
+              "type": "Basis (Overseas, subsequent)",
+              "limit": 100,
+              "basis": "per 6 hours thereafter"
+            }
+          ],
+          "details": "Provides cash benefit for delay of scheduled transport due to any cause outside your control. Payout is based on the actual arrival time compared to the original scheduled arrival time."
+        },
+        {
+          "coverage_name": "Flight Overbooked Whilst Overseas",
+          "limits": [
+            {
+              "type": "Per Insured Person",
+              "limit": 150,
+              "basis": null
+            }
+          ],
+          "details": "Provides cash benefit if denied boarding on a confirmed scheduled flight whilst overseas due to overbooking by the airline."
+        },
+        {
+          "coverage_name": "Flight Deviation",
+          "limits": [
+            {
+              "type": "Maximum Limit Per Person",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Basis",
+              "limit": 100,
+              "basis": "per 6 hours"
+            }
+          ],
+          "details": "Provides cash benefit if the scheduled flight is deviated due to adverse weather conditions or landing at an alternative destination for emergency medical treatment of a fellow passenger."
+        },
+        {
+          "coverage_name": "Travel Misconnection Exceeding 6 Hours",
+          "limits": [
+            {
+              "type": "Per Insured Person",
+              "limit": 200,
+              "basis": null
+            }
+          ],
+          "details": "Provides cash benefit if the insured person fails to connect to a confirmed onward journey due to the late arrival of the incoming confirmed connecting public conveyance, and no alternative is available within 6 hours."
+        }
+      ]
+    },
+    {
+      "category_name": "Bonus Covers",
+      "coverages": [
+        {
+          "coverage_name": "War Cover",
+          "limits": [
+            {
+              "type": "Coverage",
+              "limit": "Extension to Section 1",
+              "basis": null
+            }
+          ],
+          "details": "Extends the Personal Accident cover (Section 1) to include Accidental Death & Permanent Disablement if the insured is an innocent bystander during an act of war."
+        },
+        {
+          "coverage_name": "Emergency Phone Charges",
+          "limits": [
+            {
+              "type": "Per Insured Person/Family",
+              "limit": 100,
+              "basis": null
+            }
+          ],
+          "details": "Covers overseas telephone charges incurred for contacting the Emergency Assistance provider or Sompo following an event covered under the policy."
+        },
+        {
+          "coverage_name": "Quarantine Allowance Due to 17 Infectious Diseases Upon Return to Singapore",
+          "limits": [
+            {
+              "type": "Per Insured Person",
+              "limit": 50,
+              "basis": "per day for 5 days"
+            }
+          ],
+          "details": "Provides cash benefit if quarantined upon return to Singapore due to one of the 17 specified infectious diseases contracted during the trip (e.g., SARS, Dengue, MERS, Zika, Avian Flu)."
+        }
+      ]
+    },
+    {
+      "category_name": "General Highlights (Informational)",
+      "coverages": [
+        {
+          "coverage_name": "Amateur Sports Cover",
+          "limits": [],
+          "details": "The brochure highlights cover for amateur sports including tandem skydiving and trekking up to 3,500m. However, specific limits or applicability under the Vital tier are not detailed in the benefit tables (Pages 3-6). Coverage might be subject to Personal Accident or Medical Expense limits and conditions. Refer to policy wording for specifics."
+        },
+        {
+          "coverage_name": "Travel Delay for All Risks",
+          "limits": [],
+          "details": "The brochure highlights that Travel Delay covers all causes of unexpected delays beyond your control. Refer to Section 19 for specific limits and conditions under the Vital tier."
+        },
+        {
+          "coverage_name": "Free and Automatic Extension of Policy",
+          "limits": [],
+          "details": "Policy automatically extends up to 14 days due to injury/illness/quarantine or delayed/cancellation of public conveyance preventing return to Singapore by the end date."
+        }
+      ]
+    }
+  ]
+}

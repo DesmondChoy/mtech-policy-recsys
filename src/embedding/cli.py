@@ -7,7 +7,7 @@ from pathlib import Path
 
 # Add the parent directory to sys.path to allow importing the EmbeddingRecommender
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from src.recommender.embedding_recommender import EmbeddingRecommender
+from src.embedding.embedding_recommender import EmbeddingRecommender
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -26,8 +26,8 @@ def parse_args():
         "--policies-dir",
         "-p",
         type=str,
-        default=os.path.join("data", "processed_policies"),
-        help="Directory containing processed policy JSON files",
+        default=os.path.join("data", "policies", "for_embedding"),
+        help="Directory containing policy JSON files",
     )
     
     parser.add_argument(

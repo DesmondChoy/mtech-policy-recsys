@@ -9,7 +9,7 @@ from pathlib import Path
 
 # Add the parent directory to the path
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from src.recommender.embedding_recommender import EmbeddingRecommender
+from src.embedding.embedding_recommender import EmbeddingRecommender
 
 def main():
     print("Insurance Policy Recommendation System Demo")

@@ -10,7 +10,7 @@ import logging
 
 # Add the parent directory to sys.path to allow importing the EmbeddingRecommender
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from src.recommender.embedding_recommender import EmbeddingRecommender
+from src.embedding.embedding_recommender import EmbeddingRecommender
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
