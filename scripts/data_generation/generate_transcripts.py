@@ -275,9 +275,8 @@ def generate_transcript():
     logging.info(f"Generating transcript using model: {MODEL_NAME}...")
     try:
         llm = LLMService()  # Assumes API key is handled by GeminiConfig/environment
-        response = llm.generate_content(
-            prompt=final_prompt, model=MODEL_NAME, max_output_tokens=10000
-        )  # Added max_output_tokens
+        # Call uses default max_output_tokens from config now
+        response = llm.generate_content(prompt=final_prompt, model=MODEL_NAME)
         generated_text = response.text
         logging.info("Transcript generation complete.")
         # --- START RAW LLM RESPONSE ---

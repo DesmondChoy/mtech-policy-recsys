@@ -1,21 +1,23 @@
 """
 Generates a list of common insurance customer service personality types using
-the Google Gemini LLM (specifically gemini-2.5-pro-exp-03-25).
+the centralized LLMService (which utilizes Google Gemini, specifically
+gemini-2.5-pro-exp-03-25 by default or as specified).
 
 Purpose:
-- Calls the Gemini API with a specific prompt to identify 10 distinct personalities.
+- Calls the LLMService with a specific prompt to identify 10 distinct personalities.
 - Validates the LLM's JSON response against predefined Pydantic models.
 - Saves the validated list of personalities as a JSON file.
 
 Requirements:
 - Python 3.x
-- `google-generativeai` library (`pip install google-generativeai`)
-- `pydantic` library (`pip install pydantic`)
-- `python-dotenv` library (`pip install python-dotenv`)
-- A `.env` file in the project root containing the `GEMINI_API_KEY`.
+- Project dependencies installed (`pip install -r requirements.txt`), including:
+  - `google-generativeai` (used by LLMService)
+  - `pydantic`
+  - `python-dotenv` (used by LLMService/GeminiConfig)
+- A `.env` file in the project root containing the `GOOGLE_API_KEY` (used by LLMService).
 
 Usage:
-1. Ensure all requirements are installed and the .env file is configured.
+1. Ensure all requirements are installed and the .env file is configured with GOOGLE_API_KEY.
 2. Run the script from the project root directory:
    ```bash
    python scripts/data_generation/generate_personalities.py
@@ -25,13 +27,26 @@ Usage:
    `data/transcripts/personalities.json`
 """
 
-import google.generativeai as genai
+# import google.generativeai as genai # Replaced by LLMService
 import pydantic
 import json
 import os
 import re
-from dotenv import load_dotenv
+import sys  # Added for path manipulation
+
+# from dotenv import load_dotenv # Handled by LLMService
 from typing import List, Dict, Any
+
+# --- Add project root to sys.path ---
+# Assumes the script is run from the project root directory
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+# Go up two levels: data_generation -> scripts -> project_root
+PROJECT_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+# --- Local Imports ---
+from src.models.llm_service import LLMService  # Import LLMService
 
 # --- Configuration ---
 OUTPUT_DIR = "data/transcripts"
@@ -85,97 +100,90 @@ Example structure:
 """
 
 
-# --- Helper Function to Extract JSON ---
-def extract_json_from_response(text: str) -> Dict[str, Any] | None:
-    """Extracts JSON object from LLM response, handling potential markdown."""
-    # Look for JSON within markdown code blocks
-    match = re.search(r"```json\s*(\{.*?\})\s*```", text, re.DOTALL | re.IGNORECASE)
-    if match:
-        json_str = match.group(1)
-    else:
-        # If no markdown block, assume the whole text might be JSON or contain it
-        # Find the first '{' and last '}'
-        start = text.find("{")
-        end = text.rfind("}")
-        if start != -1 and end != -1 and end > start:
-            json_str = text[start : end + 1]
+# --- Helper Function to Extract/Verify JSON ---
+def extract_and_verify_json(data: Any) -> Dict[str, Any] | None:
+    """
+    Verifies if the input is a dict (already parsed JSON) or extracts JSON
+    from text, handling potential markdown.
+    """
+    if isinstance(data, dict):
+        print("LLMService returned a dictionary (already parsed JSON).")
+        return data
+    elif isinstance(data, str):
+        print("LLMService returned text, attempting to extract JSON...")
+        text = data
+        json_str = None
+        # Look for JSON within markdown code blocks
+        match = re.search(r"```json\s*(\{.*?\})\s*```", text, re.DOTALL | re.IGNORECASE)
+        if match:
+            json_str = match.group(1)
         else:
-            # Fallback: try parsing the whole text if it looks like JSON
-            if text.strip().startswith("{") and text.strip().endswith("}"):
-                json_str = text.strip()
+            # If no markdown block, assume the whole text might be JSON or contain it
+            # Find the first '{' and last '}'
+            start = text.find("{")
+            end = text.rfind("}")
+            if start != -1 and end != -1 and end > start:
+                json_str = text[start : end + 1]
             else:
-                print("Error: Could not find JSON object in the response.")
-                return None
+                # Fallback: try parsing the whole text if it looks like JSON
+                if text.strip().startswith("{") and text.strip().endswith("}"):
+                    json_str = text.strip()
 
-    try:
-        return json.loads(json_str)
-    except json.JSONDecodeError as e:
-        print(f"Error: Failed to decode JSON: {e}")
-        print(f"Attempted to parse: {json_str[:500]}...")  # Print first 500 chars
+        if json_str:
+            try:
+                return json.loads(json_str)
+            except json.JSONDecodeError as e:
+                print(f"Error: Failed to decode extracted JSON string: {e}")
+                print(
+                    f"Attempted to parse: {json_str[:500]}..."
+                )  # Print first 500 chars
+                return None
+        else:
+            print(
+                "Error: Could not find or extract JSON object from the response text."
+            )
+            return None
+    else:
+        print(f"Error: Unexpected data type received from LLMService: {type(data)}")
         return None
 
 
 # --- Main Generation Function ---
 def generate_personalities():
-    """Generates, validates, and saves the personality list."""
-    print("Loading environment variables...")
-    load_dotenv()
-    api_key = os.getenv("GOOGLE_API_KEY")
-
-    if not api_key:
-        print("Error: GOOGLE_API_KEY not found in environment variables.")
-        return
-
-    print(f"Configuring Gemini with model: {MODEL_NAME}...")
-    genai.configure(api_key=api_key)
-
-    generation_config = genai.types.GenerationConfig(
-        # Ensure JSON output if the model supports it directly
-        # response_mime_type="application/json", # Uncomment if model supports direct JSON output
-        temperature=0.7  # Adjust temperature for creativity vs consistency
-    )
-
-    # Safety settings - adjust as needed
-    safety_settings = [
-        {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-        {
-            "category": "HARM_CATEGORY_HATE_SPEECH",
-            "threshold": "BLOCK_MEDIUM_AND_ABOVE",
-        },
-        {
-            "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-            "threshold": "BLOCK_MEDIUM_AND_ABOVE",
-        },
-        {
-            "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
-            "threshold": "BLOCK_MEDIUM_AND_ABOVE",
-        },
-    ]
-
-    model = genai.GenerativeModel(
-        model_name=MODEL_NAME,
-        generation_config=generation_config,
-        safety_settings=safety_settings,
-    )
-
-    print("Sending prompt to Gemini...")
+    """Generates, validates, and saves the personality list using LLMService."""
+    print("Initializing LLM Service...")
     try:
-        response = model.generate_content(PROMPT)
-        response_text = response.text
-        print("Received response from Gemini.")
-        # print(f"Raw response:\n{response_text[:500]}...") # Optional: print raw response start
-
+        # API key handled internally by LLMService/GeminiConfig
+        llm_service = LLMService()
+    except ValueError as e:
+        print(f"Error initializing LLM Service: {e}")
+        return
     except Exception as e:
-        print(f"Error during Gemini API call: {e}")
-        # print(f"Candidate: {response.candidates[0]}") # Debugging info if available
-        # print(f"Prompt Feedback: {response.prompt_feedback}") # Debugging info if available
+        print(f"Unexpected error initializing LLM Service: {e}")
         return
 
-    print("Extracting JSON from response...")
-    json_data = extract_json_from_response(response_text)
+    print(f"Sending prompt to LLM Service (Model: {MODEL_NAME})...")
+    try:
+        # Use generate_structured_content which aims for JSON output
+        # Pass the specific model name if needed, otherwise it uses the default from config
+        response_data = llm_service.generate_structured_content(
+            prompt=PROMPT, model=MODEL_NAME
+        )
+        print("Received response from LLM Service.")
+
+    except ValueError as e:  # Catch JSON parsing errors from LLMService
+        print(f"Error: LLM Service failed to return valid JSON: {e}")
+        return
+    except Exception as e:
+        print(f"Error during LLM Service API call: {e}")
+        return
+
+    print("Verifying/Extracting JSON from response...")
+    # generate_structured_content should return a dict, but we double-check
+    json_data = extract_and_verify_json(response_data)
 
     if not json_data:
-        print("Failed to extract JSON data. Aborting.")
+        print("Failed to get valid JSON data. Aborting.")
         return
 
     print("Validating JSON data with Pydantic...")

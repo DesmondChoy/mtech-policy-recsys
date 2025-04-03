@@ -3,11 +3,11 @@ Extract Policy Tier Information from PDFs using Google Gemini.
 
 Purpose:
 This script processes travel insurance policy PDF documents located in a specified
-input directory. It uses the Google Gemini API (specifically, a model capable of
-handling PDF input) to extract coverage details for specific
-policy tiers, as indicated by the PDF filename format. The extracted information
-is validated against a Pydantic model and saved as structured JSON files in a
-specified output directory.
+input directory. It uses the centralized `LLMService` (which utilizes the
+Google Gemini API, specifically a model capable of handling PDF input) to
+extract coverage details for specific policy tiers, as indicated by the PDF
+filename format. The extracted information is validated against a Pydantic model
+and saved as structured JSON files in a specified output directory.
 
 Prerequisites:
 1.  Python Environment: Ensure you have a Python environment set up.
@@ -37,8 +37,8 @@ Combine Options:
     python scripts/extract_policy_tier.py --input-dir pdfs/ --output-dir processed_policies/ --api-key YOUR_KEY
 
 Error Handling:
-- The script uses exponential backoff for retriable API errors.
-- It validates the JSON structure received from the API using Pydantic.
+- API calls and retries (including exponential backoff) are handled by the `LLMService`.
+- The script validates the JSON structure received from the `LLMService` using Pydantic.
 - If an output JSON file already exists for a PDF, that PDF will be skipped, and an error logged.
 - Files not matching the expected naming pattern will be skipped.
 - Errors during file reading, API calls, JSON parsing, or validation are logged.
@@ -47,28 +47,41 @@ Error Handling:
 import os
 import re
 import json
-import time
+import os  # Added for path manipulation
+import sys  # Added for path manipulation
+
+# import time # No longer needed directly
 import logging
 import argparse
 from datetime import datetime
 from typing import List, Optional, Dict, Any
 
-import google.generativeai as genai
-from google.api_core import exceptions as google_exceptions
-from dotenv import load_dotenv
+# import google.generativeai as genai # Replaced by LLMService
+# from google.api_core import exceptions as google_exceptions # Replaced by LLMService retry logic
+# from dotenv import load_dotenv # Handled by LLMService/GeminiConfig
 from pydantic import BaseModel, Field, ValidationError, field_validator
+
+# --- Add project root to sys.path ---
+# Assumes the script is run from the project root directory
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)  # Go up one level from scripts/
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+# --- Local Imports ---
+from src.models.llm_service import LLMService  # Import LLMService
 
 # --- Configuration ---
 INPUT_DIR_DEFAULT = "data/policies/raw/"
 OUTPUT_DIR_DEFAULT = "data/policies/processed/"
-GEMINI_MODEL = "gemini-2.5-pro-exp-03-25"
+# GEMINI_MODEL = "gemini-2.5-pro-exp-03-25" # Now handled by LLMService default config
 FILENAME_PATTERN = re.compile(r"(.+)_\{(.+)\}\.pdf")
-MAX_RETRIES = 3
-INITIAL_BACKOFF = 2  # seconds
+# MAX_RETRIES = 3 # Handled by LLMService
+# INITIAL_BACKOFF = 2  # seconds # Handled by LLMService
 
 # --- Logging Setup ---
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.INFO,  # Reverted level to INFO
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[logging.StreamHandler()],
 )
@@ -118,8 +131,7 @@ class PolicyExtraction(BaseModel):
 
 # --- Prompt Template ---
 # Note: Using f-string deferred formatting {{ }} for json examples inside the main f-string
-PROMPT_TEMPLATE = """
-[POLICY TIER NAME]: {policy_tier}
+PROMPT_TEMPLATE = """[POLICY TIER NAME]: {policy_tier}
 ---
 **Your Task:**
 Act as a meticulous data extraction assistant. Your goal is to process the provided travel insurance policy document (or OCR text) and extract specific coverage information for the **`[POLICY TIER NAME]`** plan/tier. You must structure the extracted data precisely according to the nested JSON format specified below.
@@ -254,16 +266,15 @@ Please process the provided policy document for the **`[POLICY TIER NAME]`** tie
 
 # --- Helper Functions ---
 
-
-def load_environment_variables():
-    """Loads environment variables from .env file."""
-    load_dotenv()
-    api_key = os.getenv("GOOGLE_API_KEY")
-    if not api_key:
-        logger.warning(
-            "GOOGLE_API_KEY not found in environment variables or .env file."
-        )
-    return api_key
+# def load_environment_variables(): # No longer needed
+#     """Loads environment variables from .env file."""
+#     load_dotenv()
+#     api_key = os.getenv("GOOGLE_API_KEY")
+#     if not api_key:
+#         logger.warning(
+#             "GOOGLE_API_KEY not found in environment variables or .env file."
+#         )
+#     return api_key
 
 
 def ensure_output_directory(directory_path: str):
@@ -271,96 +282,60 @@ def ensure_output_directory(directory_path: str):
     os.makedirs(directory_path, exist_ok=True)
 
 
-def call_gemini_with_retry(
-    model_name: str,
-    prompt: str,
-    pdf_data: bytes,
-    api_key: Optional[str] = None,
-) -> Optional[str]:
-    """
-    Calls the Gemini API with exponential backoff on retriable errors.
-
-    Args:
-        model_name: The name of the Gemini model to use.
-        prompt: The text prompt for the model.
-        pdf_data: The raw bytes of the PDF file.
-        api_key: Optional Google API key.
-
-    Returns:
-        The generated text content from the model, or None if the call fails after retries.
-    """
-    if api_key:
-        genai.configure(api_key=api_key)
-    elif not os.getenv("GOOGLE_API_KEY"):
-        logger.error(
-            "API key must be provided either via --api-key or GOOGLE_API_KEY env var."
-        )
-        return None  # Cannot proceed without API key
-
-    model = genai.GenerativeModel(model_name)
-    retries = 0
-    backoff_time = INITIAL_BACKOFF
-
-    while retries <= MAX_RETRIES:
-        try:
-            logger.info(f"Attempting API call (Retry {retries}/{MAX_RETRIES})...")
-            response = model.generate_content(
-                contents=[
-                    {"mime_type": "application/pdf", "data": pdf_data},
-                    prompt,
-                ],
-                generation_config=genai.types.GenerationConfig(
-                    # Ensure JSON output if model supports it (some models might need specific instructions)
-                    # response_mime_type="application/json" # Uncomment if using a model version that supports this directly
-                ),
-            )
-            # Clean potential markdown code block fences
-            cleaned_text = response.text.strip()
-            if cleaned_text.startswith("```json"):
-                cleaned_text = cleaned_text[7:]
-            if cleaned_text.endswith("```"):
-                cleaned_text = cleaned_text[:-3]
-            cleaned_text = cleaned_text.strip()
-
-            return cleaned_text
-
-        except (
-            google_exceptions.ResourceExhausted,
-            google_exceptions.ServiceUnavailable,
-            google_exceptions.InternalServerError,
-            google_exceptions.DeadlineExceeded,
-            # Add other potentially retriable exceptions if needed
-        ) as e:
-            logger.warning(
-                f"Retriable API error: {e}. Retrying in {backoff_time} seconds..."
-            )
-            time.sleep(backoff_time)
-            retries += 1
-            backoff_time *= 2  # Exponential backoff
-        except Exception as e:
-            logger.error(f"Non-retriable API error: {e}")
-            return None  # Non-retriable error
-
-    logger.error("API call failed after maximum retries.")
-    return None
+# def call_gemini_with_retry(...): # Replaced by LLMService.generate_content
 
 
 # --- Main Processing Function ---
 
 
-def process_policies(input_dir: str, output_dir: str, api_key: Optional[str]):
+def process_policies(
+    input_dir: str,
+    output_dir: str,
+    api_key: Optional[str],
+    specific_file: Optional[str] = None,
+):
     """
     Processes PDF policy files in the input directory, extracts tier-specific
-    information using Gemini, validates, and saves as JSON.
+    information using Gemini (via LLMService), validates, and saves as JSON.
+    If `specific_file` is provided, only that file is processed.
     """
     logger.info(f"Starting policy processing from: {input_dir}")
     ensure_output_directory(output_dir)
+
+    # Instantiate LLM Service
+    try:
+        llm_service = LLMService(api_key=api_key)
+    except ValueError as e:
+        logger.error(f"Failed to initialize LLM Service: {e}")
+        return  # Cannot proceed without API key
 
     processed_count = 0
     skipped_count = 0
     error_count = 0
 
-    for filename in os.listdir(input_dir):
+    files_to_process = []
+    if specific_file:
+        # Process only the specified file
+        if not os.path.exists(os.path.join(input_dir, specific_file)):
+            logger.error(
+                f"Specified file not found: {os.path.join(input_dir, specific_file)}"
+            )
+            return
+        files_to_process.append(specific_file)
+        logger.info(f"Processing specific file: {specific_file}")
+    else:
+        # Process all files in the directory
+        try:
+            files_to_process = [f for f in os.listdir(input_dir) if f.endswith(".pdf")]
+            logger.info(f"Processing all PDF files in directory: {input_dir}")
+        except FileNotFoundError:
+            logger.error(f"Input directory not found: {input_dir}")
+            return
+        except Exception as e:
+            logger.error(f"Error listing files in directory {input_dir}: {e}")
+            return
+
+    for filename in files_to_process:
         match = FILENAME_PATTERN.match(filename)
         if match:
             input_path = os.path.join(input_dir, filename)
@@ -374,7 +349,7 @@ def process_policies(input_dir: str, output_dir: str, api_key: Optional[str]):
 
             # Check if output file already exists
             if os.path.exists(output_path):
-                logger.error(f"Output file already exists, skipping: {output_path}")
+                logger.warning(f"Output file already exists, skipping: {output_path}")
                 skipped_count += 1
                 continue
 
@@ -390,17 +365,38 @@ def process_policies(input_dir: str, output_dir: str, api_key: Optional[str]):
             # Format the prompt
             formatted_prompt = PROMPT_TEMPLATE.format(policy_tier=policy_tier)
 
-            # Call Gemini API
-            response_text = call_gemini_with_retry(
-                GEMINI_MODEL, formatted_prompt, pdf_data, api_key
-            )
+            # Prepare content for LLM Service
+            contents_for_llm = [
+                {"mime_type": "application/pdf", "data": pdf_data},
+                formatted_prompt,
+            ]
+
+            # Call LLM Service
+            response_text = None
+            try:
+                logger.info(f"Calling LLM Service for {filename}...")
+                # Use default max_output_tokens from LLMService/GeminiConfig
+                response = llm_service.generate_content(contents=contents_for_llm)
+                # Clean potential markdown code block fences
+                cleaned_text = response.text.strip()
+                if cleaned_text.startswith("```json"):
+                    cleaned_text = cleaned_text[7:]
+                if cleaned_text.endswith("```"):
+                    cleaned_text = cleaned_text[:-3]
+                response_text = cleaned_text.strip()
+
+            except Exception as e:
+                logger.error(f"LLM Service call failed for {filename}: {e}")
+                error_count += 1
+                continue
 
             if not response_text:
-                logger.error(f"Failed to get response from Gemini for {filename}")
+                logger.error(f"LLM Service returned empty response for {filename}")
                 error_count += 1
                 continue
 
             # Parse and Validate JSON
+            extracted_data = None  # Initialize for logging in case of JSONDecodeError
             try:
                 extracted_data = json.loads(response_text)
                 # Add extraction date before validation if missing
@@ -426,13 +422,14 @@ def process_policies(input_dir: str, output_dir: str, api_key: Optional[str]):
 
             except json.JSONDecodeError as e:
                 logger.error(f"Failed to parse JSON response for {filename}: {e}")
+                # Removed explicit print, debug log remains if level is DEBUG
                 logger.debug(f"Raw response for {filename}:\n{response_text}")
                 error_count += 1
             except ValidationError as e:
                 logger.error(f"JSON validation failed for {filename}: {e}")
                 logger.debug(
-                    f"Invalid JSON data for {filename}:\n{extracted_data}"
-                )  # Log data before validation error
+                    f"Invalid JSON data for {filename}:\n{json.dumps(extracted_data, indent=2)}"  # Log data before validation error, formatted
+                )
                 error_count += 1
             except Exception as e:
                 logger.error(
@@ -441,11 +438,15 @@ def process_policies(input_dir: str, output_dir: str, api_key: Optional[str]):
                 error_count += 1
 
         else:
-            if filename != ".gitkeep":  # Ignore .gitkeep
-                logger.warning(f"Skipping file with non-matching format: {filename}")
+            # Only log warning if not processing a specific file or if the specific file doesn't match
+            if not specific_file or filename == specific_file:
+                if filename != ".gitkeep":  # Ignore .gitkeep
+                    logger.warning(
+                        f"Skipping file with non-matching format: {filename}"
+                    )
 
     logger.info(
-        f"Processing complete. Processed: {processed_count}, Skipped (exists): {skipped_count}, Errors: {error_count}"
+        f"Processing complete. Processed: {processed_count}, Skipped (exists/format): {skipped_count}, Errors: {error_count}"
     )
 
 
@@ -467,18 +468,18 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--api-key",
-        help="Google Gemini API key (overrides GOOGLE_API_KEY environment variable)",
+        help="Google Gemini API key (overrides GOOGLE_API_KEY environment variable loaded by LLMService)",
+    )
+    parser.add_argument(
+        "--file",
+        help="Specific PDF filename within the input directory to process (optional). If provided, only this file will be processed.",
+        default=None,
     )
 
     args = parser.parse_args()
 
-    # Load API key from .env first, then allow override from args
-    loaded_api_key = load_environment_variables()
-    final_api_key = args.api_key if args.api_key else loaded_api_key
-
-    if not final_api_key:
-        logger.error(
-            "Google API Key is required. Set GOOGLE_API_KEY environment variable or use --api-key argument."
-        )
-    else:
-        process_policies(args.input_dir, args.output_dir, final_api_key)
+    # API key is now handled by LLMService initialization,
+    # which checks env vars first, but can be overridden by the arg.
+    # We pass the arg directly to process_policies, which passes it to LLMService.
+    # LLMService will raise an error if no key is found (env or arg).
+    process_policies(args.input_dir, args.output_dir, args.api_key, args.file)

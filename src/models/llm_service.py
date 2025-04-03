@@ -44,19 +44,24 @@ class LLMService:
 
     def generate_content(
         self,
-        prompt: str,
+        prompt: Optional[str] = None,  # Make prompt optional
+        contents: Optional[List[Union[str, Dict]]] = None,  # Add contents parameter
         model: Optional[str] = None,
         parameters: Optional[Dict[str, Any]] = None,
         safety_settings: Optional[Dict[str, str]] = None,
         retry_count: int = 3,
         retry_delay: float = 1.0,
-        max_output_tokens: Optional[int] = None,  # Added max_output_tokens
+        max_output_tokens: Optional[int] = None,
     ) -> GenerateContentResponse:
         """
         Generate content using Google Gemini.
 
+        Can accept either a simple text prompt or a list of contents for multi-modal input.
+
         Args:
-            prompt: The prompt to generate content from.
+            prompt: The text prompt to generate content from (used if contents is None).
+            contents: A list of content parts (e.g., text, PDF data) for multi-modal input.
+                      Example: [{"mime_type": "application/pdf", "data": pdf_bytes}, "prompt text"]
             model: The model to use. If not provided, the default model will be used.
             parameters: The parameters to use. If not provided, the default parameters will be used.
             safety_settings: The safety settings to use. If not provided, the default safety settings will be used.
@@ -68,11 +73,23 @@ class LLMService:
             The generated content response.
 
         Raises:
+            ValueError: If neither prompt nor contents is provided.
             Exception: If the API call fails after all retries.
         """
-        model = model or GeminiConfig.DEFAULT_MODEL
-        parameters = parameters or GeminiConfig.get_parameters()
-        safety_settings = safety_settings or GeminiConfig.SAFETY_SETTINGS
+        if prompt is None and contents is None:
+            raise ValueError("Either 'prompt' or 'contents' must be provided.")
+        if prompt is not None and contents is not None:
+            logger.warning(
+                "Both 'prompt' and 'contents' provided. 'contents' will be used."
+            )
+
+        model = model or self.GeminiConfig.DEFAULT_MODEL  # Use instance attribute
+        parameters = (
+            parameters or self.GeminiConfig.get_parameters()
+        )  # Use instance attribute
+        safety_settings = (
+            safety_settings or self.GeminiConfig.SAFETY_SETTINGS
+        )  # Use instance attribute
 
         # Add max_output_tokens to parameters if provided
         if max_output_tokens is not None:
@@ -97,10 +114,13 @@ class LLMService:
             safety_settings=safety_settings_list,
         )
 
+        # Determine the content to send
+        content_to_send = contents if contents is not None else prompt
+
         # Try to generate content with retries
         for attempt in range(retry_count):
             try:
-                response = gemini_model.generate_content(prompt)
+                response = gemini_model.generate_content(content_to_send)
                 return response
             except Exception as e:
                 if attempt < retry_count - 1:

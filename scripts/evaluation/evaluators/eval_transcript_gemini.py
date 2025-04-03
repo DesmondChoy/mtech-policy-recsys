@@ -1,31 +1,35 @@
 """
 Gemini-based evaluator for transcript evaluation.
 
-This module contains functions for evaluating transcripts using Google Gemini.
+This module contains functions for evaluating transcripts using Google Gemini via LLMService.
 """
 
-import os
-import time
+# import os # No longer needed directly
+# import time # No longer needed directly
 import json
 import logging
-from typing import Dict, List, Any, Optional, Union
+import os  # Added for path manipulation
+import sys  # Added for path manipulation
+from typing import Dict, List, Any, Optional
 
 # Configure logging
 logger = logging.getLogger(__name__)
 
-# Import Google Gemini API
-try:
-    from google import genai
-    from google.genai import types
-    from pydantic import BaseModel
+# --- Add project root to sys.path ---
+# Assumes the script is run from the project root directory
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+# Go up three levels: evaluators -> evaluation -> scripts -> project_root
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(SCRIPT_DIR)))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
-    GEMINI_AVAILABLE = True
-except ImportError:
-    logger.warning("Google Generative AI SDK not installed. Will save prompts only.")
-    GEMINI_AVAILABLE = False
+# Import Pydantic and LLMService
+from pydantic import BaseModel, ValidationError
+from src.models.llm_service import LLMService  # Import LLMService
 
 
 # Define Pydantic models for the evaluation response structure
+# (Keep these as they are used for validation)
 class CoverageEvaluation(BaseModel):
     coverage_type: str
     name: str
@@ -48,108 +52,55 @@ class TranscriptEvaluation(BaseModel):
     summary: EvaluationSummary
 
 
-def check_gemini_availability() -> bool:
-    """
-    Check if the Google Gemini API is available.
-
-    Returns:
-        bool: True if Gemini is available, False otherwise
-    """
-    return GEMINI_AVAILABLE
+# def check_gemini_availability(): # No longer needed
+#     """Check if the Google Gemini API is available."""
+#     return True # Assume available if LLMService can be imported
 
 
-def initialize_gemini_client(api_key: Optional[str] = None) -> Any:
+# def initialize_gemini_client(): # No longer needed
+#     """Initialize the Google Gemini client."""
+#     pass # Handled by LLMService
+
+
+def generate_gemini_evaluation(prompt: str) -> Dict[str, Any]:
     """
-    Initialize the Google Gemini client.
+    Generate an evaluation using Google Gemini via LLMService.
 
     Args:
-        api_key (str, optional): The API key to use. If not provided, it will be loaded from environment variables.
+        prompt (str): The prompt to send to Gemini.
 
     Returns:
-        Any: The initialized Gemini client
+        dict: The validated evaluation results as a dictionary.
 
     Raises:
-        ValueError: If the API key is not set
-        ImportError: If the Gemini SDK is not installed
+        Exception: If the LLMService call fails or validation fails.
+        ValueError: If the response cannot be parsed or validated.
     """
-    if not GEMINI_AVAILABLE:
-        raise ImportError("Google Generative AI SDK not installed.")
+    try:
+        # Instantiate LLM Service (API key handled internally)
+        llm_service = LLMService()
 
-    # Get API key from environment if not provided
-    if not api_key:
-        api_key = os.getenv("GOOGLE_API_KEY")
-        if not api_key:
-            raise ValueError("GOOGLE_API_KEY environment variable is not set.")
+        # Call LLM Service to get structured content (JSON)
+        # This uses deterministic parameters by default
+        logger.info("Calling LLM Service for transcript evaluation...")
+        result_dict = llm_service.generate_structured_content(prompt=prompt)
 
-    # Initialize the Gemini client
-    client = genai.Client(api_key=api_key)
-    return client
-
-
-def generate_gemini_evaluation(
-    prompt: str, api_key: Optional[str] = None
-) -> Dict[str, Any]:
-    """
-    Generate an evaluation using Google Gemini with schema-based JSON response.
-
-    Args:
-        prompt (str): The prompt to send to Gemini
-        api_key (str, optional): The API key to use. If not provided, it will be loaded from environment variables.
-
-    Returns:
-        dict: The evaluation results as a dictionary
-
-    Raises:
-        ImportError: If the Gemini SDK is not installed
-        ValueError: If the API key is not set
-    """
-    if not GEMINI_AVAILABLE:
-        raise ImportError("Google Generative AI SDK not installed.")
-
-    # Initialize the client
-    client = initialize_gemini_client(api_key)
-
-    # Set up the model name
-    model = "gemini-2.0-flash"  # Using flash model which is available
-
-    # Try to generate content with retries
-    retry_count = 3
-    retry_delay = 1.0
-
-    for attempt in range(retry_count):
+        # Validate the received dictionary against the Pydantic model
         try:
-            # Generate content using the client with schema
-            response = client.models.generate_content(
-                model=model,
-                contents=[prompt],
-                config={
-                    "temperature": 0.2,
-                    "top_p": 0.95,
-                    "top_k": 40,
-                    "max_output_tokens": 2048,
-                    "response_mime_type": "application/json",
-                    "response_schema": TranscriptEvaluation,
-                },
-            )
+            validated_data = TranscriptEvaluation(**result_dict)
+            logger.info("LLM response successfully validated against schema.")
+            # Return the validated data as a dictionary
+            return validated_data.model_dump()
+        except ValidationError as e:
+            logger.error(f"LLM response validation failed: {e}")
+            logger.debug(f"Invalid data received: {result_dict}")
+            raise ValueError(f"LLM response validation failed: {e}")
+        except Exception as e:  # Catch other potential errors during validation/dumping
+            logger.error(f"Error processing LLM response after validation: {e}")
+            raise ValueError(f"Error processing LLM response: {e}")
 
-            # Use the parsed response directly
-            if hasattr(response, "parsed"):
-                return response.parsed.dict()
-            else:
-                # Fallback to manual JSON parsing if parsed attribute is not available
-                logger.warning(
-                    "Parsed attribute not available, falling back to manual JSON parsing"
-                )
-                return json.loads(response.text)
-
-        except Exception as e:
-            if attempt < retry_count - 1:
-                logger.warning(
-                    f"API call failed (attempt {attempt + 1}/{retry_count}): {str(e)}. Retrying in {retry_delay} seconds..."
-                )
-                time.sleep(retry_delay)
-                # Increase delay for next retry (exponential backoff)
-                retry_delay *= 2
-            else:
-                logger.error(f"API call failed after {retry_count} attempts: {str(e)}")
-                raise
+    except Exception as e:
+        # Log errors from LLMService call (e.g., API errors after retries)
+        logger.error(f"LLM Service call failed during evaluation generation: {e}")
+        # Re-raise the exception to be handled by the calling script
+        raise
