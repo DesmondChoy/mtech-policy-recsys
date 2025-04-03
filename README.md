@@ -34,10 +34,10 @@ flowchart TD
     EvalDecision -->|Pass| TranscriptParsing
 
     %% Processing & Extraction
-    TranscriptParsing[Transcript Parsing] -->|Structured JSON| RequirementExtraction[Requirement Extraction]
+    TranscriptParsing[Transcript Parsing] -->|Parsed JSON Path (CLI Arg)| RequirementExtraction["Requirement Extraction\n(src/agents/extractor.py\nusing CrewAI + OpenAI)"]
 
     %% Output
-    RequirementExtraction -->|Output| StructuredReqs[Structured Requirements]
+    RequirementExtraction -->|Output| StructuredReqs["Structured Requirements\n(data/extracted_customer_requirements/\n{transcript_name}_requirements.json)"]
 
     %% Policy Analysis (Parallel Path)
     PolicyAnalysis[Policy Analysis] --> ProcessedPolicies[Processed Policies]
@@ -55,9 +55,9 @@ flowchart TD
     *   If the evaluation **passes**, the transcript proceeds to the processing stage.
     *   If it **fails**, the ideal next step (currently not implemented) would be to regenerate or revise the transcript.
 4.  **Processing & Extraction:**
-    *   Passed transcripts undergo an initial parsing step (potentially using logic from `src/utils/transcript_processing.py` or another process) to prepare them.
-    *   The `src/agents/extractor.py` agent then consumes these parsed transcripts and extracts the final structured requirements into a JSON object conforming to the `TravelInsuranceRequirement` model (defined in `src/utils/transcript_processing.py`).
-5.  **Output:** The result is a structured JSON file containing the extracted customer requirements (e.g., `insurance_requirement.json`).
+    *   Passed transcripts undergo an initial parsing step (potentially using logic from `src/utils/transcript_processing.py` or another process) to prepare them as structured JSON (e.g., `data/transcripts/processed/parsed_transcript_01.json`).
+    *   The `src/agents/extractor.py` script is then run from the command line, providing the path to the parsed transcript JSON file. This script uses a CrewAI agent configured with OpenAI to perform the extraction.
+5.  **Output:** The script saves the extracted requirements as a JSON file in the `data/extracted_customer_requirements/` directory. The filename is dynamically generated based on the input transcript name (e.g., `parsed_transcript_01_requirements.json`), conforming to the `TravelInsuranceRequirement` model.
 
 ## Policy Data Workflow
 
@@ -79,15 +79,17 @@ flowchart TD
 │   │   └── extractor/       # Requirement extraction from transcripts
 │   ├── integration/         # Testing agent interactions
 │   ├── evaluation/          # Performance metrics
-│   └── pdf_parsing/         # PDF to text conversion utilities
+│   └── demos/               # Demo notebooks
 ├── data/                    # Data storage
 │   ├── coverage_requirements/ # Standardized coverage requirements
+│   ├── extracted_customer_requirements/ # Extracted requirements from transcripts
 │   ├── policies/            # Insurance policy documents
 │   │   ├── raw/             # Original PDF policy documents
-│   │   └── processed/       # Processed text policy documents
+│   │   └── processed/       # Processed policy text files
 │   ├── transcripts/         # Conversation transcripts
 │   │   ├── raw/             # Original conversation transcripts
 │   │   └── processed/       # Processed JSON transcripts
+│   └── evaluation/          # Evaluation data
 ├── src/                     # Source code
 │   ├── agents/              # Agent implementations
 │   ├── models/              # LLM configurations and services
@@ -122,8 +124,9 @@ The project structure supports the workflow illustrated in the diagram above:
 
 4. **Requirement Extraction**
    - **Component**: `src/agents/extractor.py`
-   - **Purpose**: Extracts structured customer requirements from parsed transcripts using a dedicated agent.
-    - **Output**: Structured requirements JSON (e.g., `insurance_requirement.json`), conforming to the `TravelInsuranceRequirement` model.
+   - **Purpose**: Extracts structured customer requirements from a parsed transcript JSON file using a CrewAI agent (configured with OpenAI). Run via CLI.
+   - **Input**: Path to a processed transcript JSON file (e.g., `data/transcripts/processed/parsed_transcript_01.json`).
+   - **Output**: Saves structured requirements JSON to `data/extracted_customer_requirements/` with a filename derived from the input (e.g., `parsed_transcript_01_requirements.json`), conforming to the `TravelInsuranceRequirement` model.
 
 5. **Policy Processing**
    - **Component**: `scripts/extract_policy_tier.py`
@@ -134,7 +137,8 @@ The project structure supports the workflow illustrated in the diagram above:
 ## Technical Stack
 
 - **Python**: Primary programming language
-- **Google Gemini**: LLM for natural language processing
+- **Google Gemini & OpenAI**: LLMs for natural language processing (Gemini via `LLMService`, OpenAI via `crewai` for Extractor)
+- **CrewAI**: Framework for multi-agent orchestration (used by Extractor)
 - **Jupyter Notebooks**: Development environment
 - **LLM Service**: Reusable interface to Google Gemini API
 
@@ -156,10 +160,17 @@ The project includes a reusable LLM service that provides a unified interface to
 3. Set up your Google Gemini API key:
    ```
    # In .env file or environment variables
-   GOOGLE_API_KEY=your_api_key_here
+   GOOGLE_API_KEY="your_google_api_key_here"
+   OPENAI_API_KEY="your_openai_api_key_here"
+   # OPENAI_MODEL_NAME="gpt-4o" # Optional: Defaults to gpt-4o if not set
    ```
-4. Explore the notebooks in the `notebooks/` directory
-5. Check out the LLM service tutorial: `python tutorials/llm_service_tutorial.py`
+4. Explore the notebooks in the `notebooks/` directory.
+5. Check out the LLM service tutorial: `python tutorials/llm_service_tutorial.py`.
+6. Run the Extractor agent (ensure transcript exists):
+   ```bash
+   # Example using a processed transcript
+   python src/agents/extractor.py data/transcripts/processed/parsed_transcript_01.json
+   ```
 
 ## Academic Project
 

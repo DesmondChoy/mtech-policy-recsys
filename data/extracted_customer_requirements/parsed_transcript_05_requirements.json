@@ -1,0 +1,101 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ-0001\",\n  \"requirement_summary\": \"Couple seeking travel insurance for a trip to Thailand with specific coverage for medical emergencies and lost luggage.\",\n  \"detailed_description\": \"The customer is planning a trip to Thailand from November 15 to November 25 for ten days. They are looking for travel insurance that covers medical emergencies and some lost luggage, while ensuring the best possible price. The customer and his wife are both Singaporean citizens aged 45 and 42 respectively.\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"travel_start_date\": \"2023-11-15\",\n  \"travel_end_date\": \"2023-11-25\",\n  \"insurance_coverage_type\": [\"Medical\", \"Lost Luggage\"],\n  \"pre_existing_conditions\": null,\n  \"age_group\": \"41-50\",\n  \"travelers_count\": 2,\n  \"traveler_details\": [\n    {\n      \"age\": 45,\n      \"gender\": \"male\",\n      \"citizenship\": \"Singaporean\"\n    },\n    {\n      \"age\": 42,\n      \"gender\": \"female\",\n      \"citizenship\": \"Singaporean\"\n    }\n  ],\n  \"budget_range\": null,\n  \"preferred_insurance_provider\": \"ISS Insurance\",\n  \"additional_requests\": \"Looking for the best deal and value for money.\",\n  \"keywords\": [\"travel insurance\", \"medical emergencies\", \"lost luggage\", \"Thailand\", \"couples discount\", \"best price\"]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ-0001",
+        "requirement_summary": "Couple seeking travel insurance for a trip to Thailand with specific coverage for medical emergencies and lost luggage.",
+        "detailed_description": "The customer is planning a trip to Thailand from November 15 to November 25 for ten days. They are looking for travel insurance that covers medical emergencies and some lost luggage, while ensuring the best possible price. The customer and his wife are both Singaporean citizens aged 45 and 42 respectively.",
+        "travel_destination": "Thailand",
+        "travel_duration": "10 days",
+        "travel_start_date": "2023-11-15",
+        "travel_end_date": "2023-11-25",
+        "insurance_coverage_type": [
+            "Medical",
+            "Lost Luggage"
+        ],
+        "pre_existing_conditions": null,
+        "age_group": "41-50",
+        "travelers_count": 2,
+        "traveler_details": [
+            {
+                "age": 45,
+                "gender": "male",
+                "citizenship": "Singaporean"
+            },
+            {
+                "age": 42,
+                "gender": "female",
+                "citizenship": "Singaporean"
+            }
+        ],
+        "budget_range": null,
+        "preferred_insurance_provider": "ISS Insurance",
+        "additional_requests": "Looking for the best deal and value for money.",
+        "keywords": [
+            "travel insurance",
+            "medical emergencies",
+            "lost luggage",
+            "Thailand",
+            "couples discount",
+            "best price"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema with the following fields:\n- requirement_id (str): A unique identifier.\n- requirement_summary (str): A concise summary of the customer's insurance needs.\n- detailed_description (str): A detailed narrative extracted from the transcript.\n- travel_destination (Optional[str]): The destination (country or region) mentioned.\n- travel_duration (Optional[str]): Duration of the trip (e.g., \"7 days\", \"1 month\").\n- travel_start_date (Optional[date]): The travel start date.\n- travel_end_date (Optional[date]): The travel end date.\n- insurance_coverage_type (Optional[List[str]]): The types of insurance coverage requested (e.g., [\"Medical\", \"Trip Cancellation\"]).\n- pre_existing_conditions (Optional[List[str]]): Any pre-existing conditions mentioned.\n- age_group (Optional[str]): Age bracket of the travelers (e.g., \"26-40\").\n- travelers_count (Optional[int]): Number of travelers.\n- budget_range (Optional[str]): Budget constraints (e.g., \"$100-$200\").\n- preferred_insurance_provider (Optional[str]): Preferred insurance provider, if any.\n- additional_requests (Optional[str]): Any special requests or concerns.\n- keywords (Optional[List[str]]): Important keywords or terms for further analysis.\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance, this is Sarah, how may I assist you today?\nCustomer: Good morning Sarah, ah, yes, hello. I’m calling to ask about your travel insurance. Thinking of going on a trip, you see, and want to be sure I get a good deal, you know? Travel insurance can be quite pricey these days.\nCustomer Service Agent: Certainly, I understand. We can definitely help you with information on our travel insurance plans. To start, could you tell me a bit about your travel plans? Where are you planning to travel to?\nCustomer: Okay, yes. Planning a trip to Thailand, Bangkok and Phuket, for about… hmm, let me check… about ten days. From the 15th of November to the 25th of November this year. Hopefully flights don't get too expensive also, everything is going up, you know?\nCustomer Service Agent: Thank you for that information. And who will be travelling? Will it just be yourself, or are there others joining you?\nCustomer: Just myself and my wife. Just the two of us. Are there any discounts for couples, by the way? Some places offer that, right?\nCustomer Service Agent: I understand you're looking for the best possible value. Let me just gather all the necessary details first, and then we can see what options are available. Could you please also let me know your ages?\nCustomer: Ah, yes, of course. I am 45, and my wife is… she just turned 42 last month. So, 45 and 42. Not too old yet, hopefully still young enough for good rates, right? I saw some insurers charge more for older people.\nCustomer Service Agent: Thank you for that information. And are you both Singaporean citizens or residents?\nCustomer: Yes, yes, both Singaporean, born and bred! Why? Does that make a difference to the price?\nCustomer Service Agent: It helps us determine the appropriate coverage and ensure we are providing the correct policy details for you. Lastly, could you tell me what kind of coverage you are looking for? Are you interested in basic coverage, or something more comprehensive? I mean, there’s always different levels, right? Like the ‘premium’ ones, but those are usually quite expensive.\nCustomer: Yes, exactly! Don’t want to pay for all the bells and whistles if I don't need them. Just something… sufficient. You know, for medical emergencies, maybe some lost luggage coverage. Nothing too fancy, but definitely need medical, especially in a foreign country. Just the standard stuff, really, but at the best possible price, of course. I’ve been looking at a few other insurers online, and some are quite competitive, so you need to give me a good reason to choose ISS, ah?\nCustomer Service Agent: I understand. Just to confirm, you are a 45-year-old male and your wife is a 42-year-old female, both Singaporean citizens, travelling to Thailand, specifically Bangkok and Phuket, from the 15th of November to the 25th of November, for ten days. You are interested in travel insurance that includes medical emergency coverage and some lost luggage coverage, and you are looking for the most value-for-money option. Is that correct?\nCustomer: Yes, yes, that’s all correct. And just to be clear, no senior citizens in our group, just the two of us. So, you will be able to give me a good price based on this, right? Or at least tell me what kind of plans you have that fit this, and then I can compare?\nCustomer Service Agent: Yes, I have accurately noted all your requirements. We will now use this information to prepare some options for you. Is there anything else you would like to add regarding your requirements at this stage?\nCustomer: Hmm, no, I think that covers everything for now. Just keen to see what kind of deals you have.\nCustomer Service Agent: Alright. Thank you for providing all the necessary information. We have captured your requirements and will proceed with the next steps internally. Someone from our team will be in touch with you soon to discuss the available plans and provide you with further details.\nCustomer: Okay, good, good. Please make sure they give me the best possible quote, ah? I’m really looking for the best deal. Thanks, Sarah.\nCustomer Service Agent: Certainly, we will do our best to assist you. Thank you for calling ISS Insurance, have a good day.\nCustomer: You too. Bye bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ-0001\",\n  \"requirement_summary\": \"Couple seeking travel insurance for a trip to Thailand with specific coverage for medical emergencies and lost luggage.\",\n  \"detailed_description\": \"The customer is planning a trip to Thailand from November 15 to November 25 for ten days. They are looking for travel insurance that covers medical emergencies and some lost luggage, while ensuring the best possible price. The customer and his wife are both Singaporean citizens aged 45 and 42 respectively.\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"travel_start_date\": \"2023-11-15\",\n  \"travel_end_date\": \"2023-11-25\",\n  \"insurance_coverage_type\": [\"Medical\", \"Lost Luggage\"],\n  \"pre_existing_conditions\": null,\n  \"age_group\": \"41-50\",\n  \"travelers_count\": 2,\n  \"traveler_details\": [\n    {\n      \"age\": 45,\n      \"gender\": \"male\",\n      \"citizenship\": \"Singaporean\"\n    },\n    {\n      \"age\": 42,\n      \"gender\": \"female\",\n      \"citizenship\": \"Singaporean\"\n    }\n  ],\n  \"budget_range\": null,\n  \"preferred_insurance_provider\": \"ISS Insurance\",\n  \"additional_requests\": \"Looking for the best deal and value for money.\",\n  \"keywords\": [\"travel insurance\", \"medical emergencies\", \"lost luggage\", \"Thailand\", \"couples discount\", \"best price\"]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ-0001",
+                "requirement_summary": "Couple seeking travel insurance for a trip to Thailand with specific coverage for medical emergencies and lost luggage.",
+                "detailed_description": "The customer is planning a trip to Thailand from November 15 to November 25 for ten days. They are looking for travel insurance that covers medical emergencies and some lost luggage, while ensuring the best possible price. The customer and his wife are both Singaporean citizens aged 45 and 42 respectively.",
+                "travel_destination": "Thailand",
+                "travel_duration": "10 days",
+                "travel_start_date": "2023-11-15",
+                "travel_end_date": "2023-11-25",
+                "insurance_coverage_type": [
+                    "Medical",
+                    "Lost Luggage"
+                ],
+                "pre_existing_conditions": null,
+                "age_group": "41-50",
+                "travelers_count": 2,
+                "traveler_details": [
+                    {
+                        "age": 45,
+                        "gender": "male",
+                        "citizenship": "Singaporean"
+                    },
+                    {
+                        "age": 42,
+                        "gender": "female",
+                        "citizenship": "Singaporean"
+                    }
+                ],
+                "budget_range": null,
+                "preferred_insurance_provider": "ISS Insurance",
+                "additional_requests": "Looking for the best deal and value for money.",
+                "keywords": [
+                    "travel insurance",
+                    "medical emergencies",
+                    "lost luggage",
+                    "Thailand",
+                    "couples discount",
+                    "best price"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 2053,
+        "prompt_tokens": 1719,
+        "cached_prompt_tokens": 1664,
+        "completion_tokens": 334,
+        "successful_requests": 1
+    }
+}

@@ -1,3 +1,8 @@
+import os
+import json
+import argparse
+from pprint import pprint
+from dotenv import load_dotenv
 from crewai import Agent, Crew, Task
 from src.utils.transcript_processing import TravelInsuranceRequirement
 
@@ -11,7 +16,7 @@ transcript_analyst = Agent(
         "the insights into a structured JSON output that conforms to the TravelInsuranceRequirement model for accurate policy matching."
     ),
     allow_delegation=False,
-    verbose=True
+    verbose=True,
 )
 
 # Define the agent task
@@ -44,22 +49,120 @@ Transcript:
     expected_output="A JSON object that matches the TravelInsuranceRequirement model.",
     agent=transcript_analyst,
     output_json=TravelInsuranceRequirement,
-    output_file="insurance_requirement.json"
 )
 
 # Define the crew with agents and tasks
 insurance_recommendation_crew = Crew(
-    agents=[transcript_analyst],
-    tasks=[transcript_analyst_task],
-    verbose=True
+    agents=[transcript_analyst], tasks=[transcript_analyst_task], verbose=True
 )
 
+
 def main():
-    # Execute the crew to process transcripts
-    # TODO: populate and make it work
-    result = insurance_recommendation_crew.kickoff()
-    return result
+    # Load environment variables from .env file
+    load_dotenv()
+
+    # Check for OpenAI API Key
+    openai_api_key = os.getenv("OPENAI_API_KEY")
+    if openai_api_key is None:
+        raise ValueError("OPENAI_API_KEY is not set. Please add it to your .env file.")
+
+    # Set environment variables for CrewAI (optional if already set globally, but good practice)
+    os.environ["OPENAI_API_KEY"] = openai_api_key
+    # Ensure the desired model is set, matching the notebook if necessary
+    os.environ["OPENAI_MODEL_NAME"] = os.getenv("OPENAI_MODEL_NAME", "gpt-4o")
+
+    # Set up argument parser
+    parser = argparse.ArgumentParser(
+        description="Extract travel insurance requirements from a transcript JSON file."
+    )
+    parser.add_argument(
+        "transcript_path", help="Path to the parsed transcript JSON file."
+    )
+    args = parser.parse_args()
+
+    # Validate input file path
+    if not os.path.exists(args.transcript_path):
+        print(f"Error: Transcript file not found at {args.transcript_path}")
+        return
+
+    # Read and parse the JSON transcript
+    try:
+        with open(args.transcript_path, "r", encoding="utf-8") as f:
+            transcript_data = json.load(f)
+    except json.JSONDecodeError:
+        print(f"Error: Could not decode JSON from {args.transcript_path}")
+        return
+    except Exception as e:
+        print(f"Error reading transcript file: {e}")
+        return
+
+    # Convert the transcript data to a string format for the agent
+    # Assuming transcript_data is a list of dicts like [{'speaker': 'X', 'dialogue': '...'}, ...]
+    if isinstance(transcript_data, list) and all(
+        isinstance(item, dict) and "speaker" in item and "dialogue" in item
+        for item in transcript_data
+    ):
+        formatted_transcript = "\n".join(
+            [f"{msg['speaker']}: {msg['dialogue']}" for msg in transcript_data]
+        )
+    else:
+        print(
+            "Error: Transcript data is not in the expected format (list of {'speaker': ..., 'dialogue': ...} dictionaries)."
+        )
+        # Attempt to handle if it's already a string or other format if needed
+        if isinstance(transcript_data, str):
+            formatted_transcript = transcript_data  # Assume it's already formatted
+        else:
+            # Fallback or specific handling for other formats if necessary
+            print("Attempting to convert transcript data to string.")
+            formatted_transcript = str(transcript_data)
+
+    # Prepare inputs for the crew
+    input_data = {"parsed_transcripts": formatted_transcript}
+
+    # Execute the crew to process the transcript
+    print("Kicking off the crew...")
+    result = insurance_recommendation_crew.kickoff(inputs=input_data)
+
+    # Print the result
+    print("\nExtraction Result:")
+    pprint(result)
+
+    # --- Save the result to a dynamic file path ---
+    if result:
+        try:
+            # Get the base name of the input transcript file
+            base_name = os.path.basename(args.transcript_path)
+            # Remove the .json extension and add _requirements.json
+            output_filename = os.path.splitext(base_name)[0] + "_requirements.json"
+
+            # Define the output directory
+            output_dir = os.path.join(
+                os.path.dirname(__file__),
+                "..",
+                "..",
+                "data",
+                "extracted_customer_requirements",
+            )
+
+            # Ensure the output directory exists
+            os.makedirs(output_dir, exist_ok=True)
+
+            # Construct the full output path
+            output_path = os.path.join(output_dir, output_filename)
+
+            # Save the result dictionary as JSON
+            with open(output_path, "w", encoding="utf-8") as f:
+                # Convert the Pydantic model (result) to a dictionary before saving
+                json.dump(result.model_dump(), f, indent=4, ensure_ascii=False)
+
+            print(f"\nSuccessfully saved extraction results to: {output_path}")
+
+        except Exception as e:
+            print(f"\nError saving extraction results: {e}")
+    else:
+        print("\nNo result generated, skipping save.")
+
 
 if __name__ == "__main__":
     main()
-
