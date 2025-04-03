@@ -34,27 +34,27 @@ flowchart TD
     linkStyle default color:black
 
     subgraph prep["Data Preparation"]
-        RawPolicies[("Raw Policy PDFs")] -->|Input| ExtractScript["Policy Extraction Script"]
+        RawPolicies[("Raw Policy PDFs")] -->|Input| ExtractScript["Policy Extraction Script (Gemini)"]
         ExtractScript --> ProcessedPolicies[("Structured Policy JSON")]
 
-        GenPersonalities["Generate Personalities"] --> PersonalitiesJSON[("Personalities JSON")]
-        CoverageReqs[("Coverage Requirements")] -->|Input| GenTranscripts["Generate Transcripts"]
+        GenPersonalities["Generate Personalities (Gemini)"] --> PersonalitiesJSON[("Personalities JSON")]
+        CoverageReqs[("Coverage Requirements")] -->|Input| GenTranscripts["Generate Transcripts (Gemini)"]
         PersonalitiesJSON -->|Input| GenTranscripts
         GenTranscripts --> RawTranscripts[("Raw Synthetic Transcripts")]
     end
 
     subgraph process["Transcript Processing & Analysis"]
-        RawTranscripts -->|Input| TranscriptEval["Transcript Evaluation"]
+        RawTranscripts -->|Input| TranscriptEval["Transcript Evaluation (Gemini)"]
         TranscriptEval -->|Evaluate| EvalDecision{Pass/Fail?}
-        EvalDecision -->|Fail| Regenerate["Regenerate Transcript"]
+        EvalDecision -->|Fail| Regenerate["Regenerate Transcript (Gemini)"]
         EvalDecision -->|Pass| TranscriptParsing["Transcript Parsing"]
         TranscriptParsing --> ParsedTranscripts[("Parsed Transcripts")]
-        ParsedTranscripts -->|Input| RequirementExtraction["Requirement Extraction"]
+        ParsedTranscripts -->|Input| RequirementExtraction["Requirement Extraction (OpenAI via CrewAI)"]
         RequirementExtraction --> StructuredReqs[("Structured Requirements")]
     end
 
     subgraph comparison["Policy Comparison (Work in Progress)"]
-        ProcessedPolicies -->|Input| AnalyzerAgent["Analyzer Agent"]
+        ProcessedPolicies -->|Input| AnalyzerAgent["Analyzer Agent (Future - Gemini)"]
         StructuredReqs -->|Input| AnalyzerAgent
         AnalyzerAgent --> ComparisonReport["Policy Comparison Report"]
     end
