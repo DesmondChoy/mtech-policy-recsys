@@ -118,6 +118,18 @@ This phase focuses on evaluating the generated transcripts and extracting custom
 
 The outputs from the previous steps (Structured Policy JSON and Structured Requirements JSON) will serve as inputs to the future Analyzer Agent, which will compare them to generate personalized policy recommendations.
 
+## Data Pipeline Regeneration
+
+To regenerate the core data pipeline from transcript generation through requirement extraction, follow these steps in order:
+
+1.  **(Optional) Update Coverage Requirements**: Modify `data/coverage_requirements/coverage_requirements.py` if the standard requirements need changes.
+2.  **Generate Synthetic Transcripts**: Run `python scripts/data_generation/generate_transcripts.py` (use `-n` to specify the number). This creates raw JSON transcripts in `data/transcripts/raw/synthetic/` based on defined personalities and coverage requirements.
+3.  **Evaluate Raw Transcripts**: Run `python scripts/evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/`. This checks if the generated raw transcripts adequately cover the requirements. Results are saved in `data/evaluation/transcript_evaluations/` (by default).
+4.  **Process Raw Transcripts**: Run `python src/utils/transcript_processing.py`. This script batch-processes all raw transcripts found in `data/transcripts/raw/synthetic/` and saves parsed versions (standardized JSON lists) to `data/transcripts/processed/`.
+5.  **Extract Requirements**: Run `python src/agents/extractor.py`. This script batch-processes all parsed transcripts from `data/transcripts/processed/` using the Extractor Agent and saves the structured requirements (JSON) to `data/extracted_customer_requirements/`.
+
+This sequence takes you from the initial transcript generation to having structured customer requirements ready for the downstream analysis agents.
+
 ## Project Structure
 
 ```

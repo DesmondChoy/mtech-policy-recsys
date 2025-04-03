@@ -8,14 +8,14 @@ It uses the Google Gemini LLM to analyze transcripts and provide structured eval
 based on standardized coverage requirements.
 
 Usage:
-    # Evaluate a single transcript
-    python scripts/evaluation/eval_transcript_main.py --transcript data/transcripts/synthetic/transcript_01.txt
+    # Evaluate a single JSON transcript
+    python scripts/evaluation/eval_transcript_main.py --transcript data/transcripts/raw/synthetic/transcript_example_timestamp.json
 
-    # Evaluate all transcripts in a directory
-    python scripts/evaluation/eval_transcript_main.py --directory data/transcripts/synthetic/
+    # Evaluate all JSON transcripts in a directory
+    python scripts/evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/
 
     # Specify output format and location
-    python scripts/evaluation/eval_transcript_main.py --transcript transcript_01.txt --output-dir custom/output/path --format json,txt
+    python scripts/evaluation/eval_transcript_main.py --transcript data/transcripts/raw/synthetic/transcript_example_timestamp.json --output-dir custom/output/path --format json,txt
 """
 
 import os
@@ -196,8 +196,10 @@ def main():
     parser = argparse.ArgumentParser(
         description="Evaluate transcripts for coverage requirement gathering"
     )
-    parser.add_argument("--transcript", help="Path to a single transcript file")
-    parser.add_argument("--directory", help="Path to a directory of transcript files")
+    parser.add_argument("--transcript", help="Path to a single transcript JSON file")
+    parser.add_argument(
+        "--directory", help="Path to a directory of transcript JSON files"
+    )
     parser.add_argument(
         "--output-dir",
         default="data/evaluation/transcript_evaluations",

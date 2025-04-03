@@ -1,3 +1,40 @@
+"""
+Extractor Agent Script
+
+Purpose:
+This script defines and runs the Extractor Agent using the CrewAI framework.
+The agent's primary goal is to analyze processed call transcripts (JSON format)
+and extract key customer requirements for travel insurance, structuring them
+into a validated JSON object based on the TravelInsuranceRequirement Pydantic model.
+
+Input:
+- Reads processed transcript JSON files from a specified directory. Each JSON file
+  should contain a list of dictionaries, where each dictionary has 'speaker' and
+  'dialogue' keys.
+- Default input directory: data/transcripts/processed/
+
+Output:
+- Generates structured customer requirement JSON files.
+- Saves output files to a specified directory.
+- Default output directory: data/extracted_customer_requirements/
+- Output filename format: requirements_{original_transcript_name_part}.json
+  (e.g., requirements_the_anxious_inquirer_20250403_152253.json)
+
+Dependencies:
+- Requires a .env file in the project root containing OpenAI API keys:
+  - OPENAI_API_KEY
+  - OPENAI_MODEL_NAME (optional, defaults to gpt-4o)
+- Relies on the TravelInsuranceRequirement model from src.utils.transcript_processing.
+
+Usage:
+Run from the project root directory:
+  python src/agents/extractor.py
+
+Optional arguments:
+  --input_dir PATH   : Specify a different input directory for processed transcripts.
+  --output_dir PATH  : Specify a different output directory for requirement files.
+"""
+
 import os
 import json
 import argparse
@@ -71,97 +108,161 @@ def main():
     # Ensure the desired model is set, matching the notebook if necessary
     os.environ["OPENAI_MODEL_NAME"] = os.getenv("OPENAI_MODEL_NAME", "gpt-4o")
 
-    # Set up argument parser
+    # --- Determine Project Root ---
+    # Assuming this script is in src/agents/, project root is two levels up
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(os.path.dirname(current_dir))
+
+    # --- Set up argument parser ---
     parser = argparse.ArgumentParser(
-        description="Extract travel insurance requirements from a transcript JSON file."
+        description="Extract travel insurance requirements from transcript JSON files in a directory."
     )
     parser.add_argument(
-        "transcript_path", help="Path to the parsed transcript JSON file."
+        "--input_dir",
+        default=os.path.join(project_root, "data", "transcripts", "processed"),
+        help="Path to the directory containing parsed transcript JSON files.",
+    )
+    parser.add_argument(
+        "--output_dir",
+        default=os.path.join(project_root, "data", "extracted_customer_requirements"),
+        help="Path to the directory where extracted requirements JSON files will be saved.",
     )
     args = parser.parse_args()
 
-    # Validate input file path
-    if not os.path.exists(args.transcript_path):
-        print(f"Error: Transcript file not found at {args.transcript_path}")
+    # --- Validate input directory ---
+    if not os.path.isdir(args.input_dir):
+        print(f"Error: Input directory not found at {args.input_dir}")
         return
 
-    # Read and parse the JSON transcript
-    try:
-        with open(args.transcript_path, "r", encoding="utf-8") as f:
-            transcript_data = json.load(f)
-    except json.JSONDecodeError:
-        print(f"Error: Could not decode JSON from {args.transcript_path}")
-        return
-    except Exception as e:
-        print(f"Error reading transcript file: {e}")
-        return
+    # --- Ensure output directory exists ---
+    os.makedirs(args.output_dir, exist_ok=True)
 
-    # Convert the transcript data to a string format for the agent
-    # Assuming transcript_data is a list of dicts like [{'speaker': 'X', 'dialogue': '...'}, ...]
-    if isinstance(transcript_data, list) and all(
-        isinstance(item, dict) and "speaker" in item and "dialogue" in item
-        for item in transcript_data
-    ):
-        formatted_transcript = "\n".join(
-            [f"{msg['speaker']}: {msg['dialogue']}" for msg in transcript_data]
-        )
-    else:
-        print(
-            "Error: Transcript data is not in the expected format (list of {'speaker': ..., 'dialogue': ...} dictionaries)."
-        )
-        # Attempt to handle if it's already a string or other format if needed
-        if isinstance(transcript_data, str):
-            formatted_transcript = transcript_data  # Assume it's already formatted
-        else:
-            # Fallback or specific handling for other formats if necessary
-            print("Attempting to convert transcript data to string.")
-            formatted_transcript = str(transcript_data)
+    print(f"Starting batch extraction from: {args.input_dir}")
+    print(f"Output will be saved to: {args.output_dir}")
 
-    # Prepare inputs for the crew
-    input_data = {"parsed_transcripts": formatted_transcript}
+    processed_count = 0
+    failed_count = 0
 
-    # Execute the crew to process the transcript
-    print("Kicking off the crew...")
-    result = insurance_recommendation_crew.kickoff(inputs=input_data)
+    # --- Iterate through files in the input directory ---
+    for filename in os.listdir(args.input_dir):
+        if filename.lower().endswith(".json"):
+            input_file_path = os.path.join(args.input_dir, filename)
+            print(f"\n--- Processing file: {filename} ---")
 
-    # Print the result
-    print("\nExtraction Result:")
-    pprint(result)
+            # --- Read and parse the JSON transcript ---
+            try:
+                with open(input_file_path, "r", encoding="utf-8") as f:
+                    transcript_data = json.load(f)
+            except json.JSONDecodeError:
+                print(f"Error: Could not decode JSON from {input_file_path}")
+                failed_count += 1
+                continue  # Skip to next file
+            except Exception as e:
+                print(f"Error reading transcript file {input_file_path}: {e}")
+                failed_count += 1
+                continue  # Skip to next file
 
-    # --- Save the result to a dynamic file path ---
-    if result:
-        try:
-            # Get the base name of the input transcript file
-            base_name = os.path.basename(args.transcript_path)
-            # Remove the .json extension and add _requirements.json
-            output_filename = os.path.splitext(base_name)[0] + "_requirements.json"
+            # --- Convert the transcript data to a string format for the agent ---
+            formatted_transcript = ""
+            if isinstance(transcript_data, list) and all(
+                isinstance(item, dict) and "speaker" in item and "dialogue" in item
+                for item in transcript_data
+            ):
+                formatted_transcript = "\n".join(
+                    [f"{msg['speaker']}: {msg['dialogue']}" for msg in transcript_data]
+                )
+            else:
+                print(
+                    f"Error: Transcript data in {filename} is not in the expected format (list of {{'speaker': ..., 'dialogue': ...}} dictionaries)."
+                )
+                # Attempt to handle if it's already a string or other format if needed
+                if isinstance(transcript_data, str):
+                    print("Attempting to use raw string data.")
+                    formatted_transcript = (
+                        transcript_data  # Assume it's already formatted
+                    )
+                else:
+                    # Fallback or specific handling for other formats if necessary
+                    print(
+                        "Attempting to convert transcript data to string as fallback."
+                    )
+                    try:
+                        formatted_transcript = str(transcript_data)
+                    except Exception as str_e:
+                        print(f"Could not convert transcript data to string: {str_e}")
+                        failed_count += 1
+                        continue  # Skip to next file
 
-            # Define the output directory
-            output_dir = os.path.join(
-                os.path.dirname(__file__),
-                "..",
-                "..",
-                "data",
-                "extracted_customer_requirements",
-            )
+            if not formatted_transcript:
+                print(f"Error: Could not format transcript from {filename}. Skipping.")
+                failed_count += 1
+                continue  # Skip to next file
 
-            # Ensure the output directory exists
-            os.makedirs(output_dir, exist_ok=True)
+            # --- Prepare inputs for the crew ---
+            input_data = {"parsed_transcripts": formatted_transcript}
 
-            # Construct the full output path
-            output_path = os.path.join(output_dir, output_filename)
+            # --- Execute the crew to process the transcript ---
+            print("Kicking off the crew...")
+            result = None  # Initialize result
+            try:
+                result = insurance_recommendation_crew.kickoff(inputs=input_data)
+                # Print the result
+                print("\nExtraction Result:")
+                pprint(result)
 
-            # Save the result dictionary as JSON
-            with open(output_path, "w", encoding="utf-8") as f:
-                # Convert the Pydantic model (result) to a dictionary before saving
-                json.dump(result.model_dump(), f, indent=4, ensure_ascii=False)
+            except Exception as crew_e:
+                print(f"Error during CrewAI kickoff for {filename}: {crew_e}")
+                failed_count += 1
+                continue  # Skip to next file
 
-            print(f"\nSuccessfully saved extraction results to: {output_path}")
+            # --- Save the result to a dynamic file path ---
+            if result:
+                try:
+                    # Get the base name of the input transcript file
+                    base_name = os.path.basename(input_file_path)
+                    # Construct the desired output filename: requirements_{original_name}.json
+                    name_part = os.path.splitext(base_name)[0]
+                    if name_part.startswith("parsed_"):
+                        name_part = name_part[len("parsed_") :]
+                    if name_part.startswith("transcript_"):
+                        name_part = name_part[len("transcript_") :]
+                    output_filename = f"requirements_{name_part}.json"
 
-        except Exception as e:
-            print(f"\nError saving extraction results: {e}")
-    else:
-        print("\nNo result generated, skipping save.")
+                    output_path = os.path.join(args.output_dir, output_filename)
+
+                    # Save the result dictionary as JSON
+                    with open(output_path, "w", encoding="utf-8") as f:
+                        # Convert the Pydantic model (result) to a dictionary before saving
+                        # Check if result is already a dict (sometimes crewai might return dict)
+                        if isinstance(result, dict):
+                            json.dump(result, f, indent=4, ensure_ascii=False)
+                        elif hasattr(
+                            result, "model_dump"
+                        ):  # Check if it's a Pydantic model
+                            json.dump(
+                                result.model_dump(), f, indent=4, ensure_ascii=False
+                            )
+                        else:
+                            print(
+                                f"Warning: Result for {filename} is not a dict or Pydantic model. Attempting to save raw result."
+                            )
+                            json.dump(
+                                str(result), f, indent=4, ensure_ascii=False
+                            )  # Save string representation as fallback
+
+                    print(f"\nSuccessfully saved extraction results to: {output_path}")
+                    processed_count += 1
+
+                except Exception as save_e:
+                    print(f"\nError saving extraction results for {filename}: {save_e}")
+                    failed_count += 1
+            else:
+                print(f"\nNo result generated for {filename}, skipping save.")
+                failed_count += 1  # Count as failed if no result
+
+    print(f"\n--- Batch Extraction Finished ---")
+    print(f"Successfully processed: {processed_count} files.")
+    print(f"Failed attempts: {failed_count} files.")
 
 
 if __name__ == "__main__":
