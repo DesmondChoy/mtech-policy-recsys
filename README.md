@@ -16,7 +16,7 @@ This system addresses common pain points in insurance purchasing by providing pe
 
 ## How To Use
 
-This section outlines the primary workflows for preparing data and processing transcripts within the system.
+This section outlines the primary workflows for preparing data, processing transcripts, and generating comparison reports within the system.
 
 ```mermaid
 flowchart TD
@@ -67,6 +67,18 @@ flowchart TD
     class prep prepSubgraph
     class process processSubgraph
     class comparison comparisonSubgraph
+
+    %% Add Policy Comparison Script to Diagram
+    subgraph comparisonReportGen ["Policy Comparison Report Generation"]
+        StructuredReqs -->|Input| GenComparisonScript["Policy Comparison Script"]
+        ProcessedPolicies -->|Input| GenComparisonScript
+        GenComparisonScript -- Uses --> LLMServiceNode[LLM Service via src/models/llm_service.py]
+        GenComparisonScript --> ComparisonReports[("Policy Comparison Reports (Markdown)")]
+    end
+
+    class GenComparisonScript processNode
+    class ComparisonReports dataNode
+    class comparisonReportGen comparisonSubgraph
 ```
 
 ## 1. Data Preparation
@@ -114,9 +126,22 @@ This phase focuses on evaluating the generated transcripts and extracting custom
     ```
 4.  **Output**: The script saves the extracted requirements as a JSON file in `data/extracted_customer_requirements/`. The filename is derived from the input transcript name (e.g., `transcript_the_skeptic_20250403_151200_requirements.json`), conforming to the `TravelInsuranceRequirement` Pydantic model.
 
-## 3. Policy Recommendation (Future)
+## 3. Policy Comparison Report Generation
 
-The outputs from the previous steps (Structured Policy JSON and Structured Requirements JSON) will serve as inputs to the future Analyzer Agent, which will compare them to generate personalized policy recommendations.
+This step uses the structured requirements and policy data to generate detailed Markdown comparison reports for each policy against a specific customer's needs.
+
+1.  **Input**: Requires structured requirements JSON from step 2 (`data/extracted_customer_requirements/`) and processed policy JSON files from step 1 (`data/policies/processed/`).
+2.  **Processing**: Run the `scripts/generate_policy_comparison.py` script, providing the path to the specific customer requirements file you want to use.
+    ```bash
+    # Example using the confused novice requirements
+    python scripts/generate_policy_comparison.py data/extracted_customer_requirements/requirements_the_confused_novice_20250403_175921.json
+    ```
+    The script uses the Gemini API (`gemini-2.5-pro-exp-03-25`) via the `LLMService` to compare the requirements against *all* policies found in `data/policies/processed/`. It processes policies asynchronously in batches.
+3.  **Output**: Markdown reports are saved to a subdirectory within `results/`, named after the customer ID and timestamp from the input requirements file (e.g., `results/the_confused_novice_20250403_175921/`). Each report file is named `policy_comparison_{provider}_{tier}_{customer_id}_{timestamp}.md`.
+
+## 4. Policy Recommendation (Future)
+
+The outputs from the previous steps (Structured Policy JSON, Structured Requirements JSON, and potentially the generated Comparison Reports) will serve as inputs to the future Analyzer Agent, which will compare them to generate personalized policy recommendations.
 
 ## Data Pipeline Regeneration
 
@@ -174,6 +199,7 @@ This sequence takes you from the initial transcript generation to having structu
 │   └── test_agents.py          # Agent tests
 ├── scripts/                    # Utility scripts
 │   ├── extract_policy_tier.py  # Extracts policy tiers from PDF/text
+│   ├── generate_policy_comparison.py # Generates Markdown comparison reports
 │   ├── data_generation/        # Scripts specifically for data generation
 │   │   ├── generate_personalities.py # Generates personality types
 │   │   └── generate_transcripts.py   # Generates synthetic transcripts using LLM
@@ -226,6 +252,12 @@ The project structure supports the workflow illustrated in the diagram above:
    - **Component**: `scripts/data_generation/generate_transcripts.py`
    - **Purpose**: Generates synthetic conversation transcripts using the Gemini API (`gemini-2.5-pro-exp-03-25`), combining personalities from `personalities.json` and requirements from `coverage_requirements.py`.
    - **Output**: Saves structured, timestamped JSON transcripts (e.g., `transcript_the_skeptic_20250403_151200.json`) to `data/transcripts/raw/synthetic/`. Accepts `-n` argument to generate multiple transcripts. See the script's docstring for details.
+
+7. **Policy Comparison Report Generation**
+   - **Component**: `scripts/generate_policy_comparison.py`
+   - **Purpose**: Generates detailed Markdown reports comparing extracted customer requirements against multiple processed policies.
+   - **Input**: A structured requirements JSON file (from `data/extracted_customer_requirements/`) and all processed policy JSON files (`data/policies/processed/`).
+   - **Output**: Saves Markdown reports to a subdirectory in `results/` named after the input requirements file (e.g., `results/the_confused_novice_20250403_175921/`).
 
 ## Technical Stack
 
