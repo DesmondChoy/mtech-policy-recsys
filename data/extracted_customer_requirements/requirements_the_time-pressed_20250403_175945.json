@@ -1,0 +1,93 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ001\",\n  \"requirement_summary\": \"Travel insurance for a 2-week trip to Japan covering medical, skiing, war unrest, travel delays, trip cancellation, and luggage.\",\n  \"detailed_description\": \"Customer requires travel insurance for a trip to Japan for 2 weeks. They need coverage for standard medical expenses, accidents, skiing, potential political unrest, significant travel delays, trip cancellation due to serious illness, and lost or damaged luggage. They have no pre-existing conditions and are aged 26-40. The trip includes 2 travelers, and they are looking to spend between $200-$300 on the insurance.\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"travel_start_date\": null,\n  \"travel_end_date\": null,\n  \"insurance_coverage_type\": [\"Medical\", \"Sports and Adventure Activities\", \"War and Political Unrest\", \"Travel Delays\", \"Trip Cancellation\", \"Lost or Damaged Luggage\"],\n  \"pre_existing_conditions\": [],\n  \"age_group\": \"26-40\",\n  \"travelers_count\": 2,\n  \"traveler_details\": null,\n  \"budget_range\": \"$200-$300\",\n  \"preferred_insurance_provider\": null,\n  \"additional_requests\": \"Needs quick options and pricing.\",\n  \"keywords\": [\"Japan\", \"2 weeks\", \"medical coverage\", \"skiing\", \"war unrest\", \"travel delays\", \"trip cancellation\", \"luggage\", \"insurance budget\"]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ001",
+        "requirement_summary": "Travel insurance for a 2-week trip to Japan covering medical, skiing, war unrest, travel delays, trip cancellation, and luggage.",
+        "detailed_description": "Customer requires travel insurance for a trip to Japan for 2 weeks. They need coverage for standard medical expenses, accidents, skiing, potential political unrest, significant travel delays, trip cancellation due to serious illness, and lost or damaged luggage. They have no pre-existing conditions and are aged 26-40. The trip includes 2 travelers, and they are looking to spend between $200-$300 on the insurance.",
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "travel_start_date": null,
+        "travel_end_date": null,
+        "insurance_coverage_type": [
+            "Medical",
+            "Sports and Adventure Activities",
+            "War and Political Unrest",
+            "Travel Delays",
+            "Trip Cancellation",
+            "Lost or Damaged Luggage"
+        ],
+        "pre_existing_conditions": [],
+        "age_group": "26-40",
+        "travelers_count": 2,
+        "traveler_details": null,
+        "budget_range": "$200-$300",
+        "preferred_insurance_provider": null,
+        "additional_requests": "Needs quick options and pricing.",
+        "keywords": [
+            "Japan",
+            "2 weeks",
+            "medical coverage",
+            "skiing",
+            "war unrest",
+            "travel delays",
+            "trip cancellation",
+            "luggage",
+            "insurance budget"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema with the following fields:\n- requirement_id (str): A unique identifier.\n- requirement_summary (str): A concise summary of the customer's insurance needs.\n- detailed_description (str): A detailed narrative extracted from the transcript.\n- travel_destination (Optional[str]): The destination (country or region) mentioned.\n- travel_duration (Optional[str]): Duration of the trip (e.g., \"7 days\", \"1 month\").\n- travel_start_date (Optional[date]): The travel start date.\n- travel_end_date (Optional[date]): The travel end date.\n- insurance_coverage_type (Optional[List[str]]): The types of insurance coverage requested (e.g., [\"Medical\", \"Trip Cancellation\"]).\n- pre_existing_conditions (Optional[List[str]]): Any pre-existing conditions mentioned.\n- age_group (Optional[str]): Age bracket of the travelers (e.g., \"26-40\").\n- travelers_count (Optional[int]): Number of travelers.\n- budget_range (Optional[str]): Budget constraints (e.g., \"$100-$200\").\n- preferred_insurance_provider (Optional[str]): Preferred insurance provider, if any.\n- additional_requests (Optional[str]): Any special requests or concerns.\n- keywords (Optional[List[str]]): Important keywords or terms for further analysis.\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Siti, how may I help you today?\nCustomer: Hi Siti, yes, I need travel insurance. I'm really short on time, so can we do this quickly? Just need the essentials.\nCustomer Service Agent: Certainly, I can help you with that. To understand your needs, I just need a few details about your trip first. Could you tell me where you'll be travelling to?\nCustomer: Japan. Look, I don't need a whole lecture, just the coverage. We're planning a trip to Japan.\nCustomer Service Agent: Okay, Japan. And how long will your trip be?\nCustomer: About 2 weeks. Just two of us going.\nCustomer Service Agent: Noted, Japan for 2 weeks, for two travellers. And may I know the age group of the travellers?\nCustomer: We're mostly around 26-40 years old. Right, so standard medical cover is a must, obviously. Accidents, getting sick, that sort of thing.\nCustomer Service Agent: Understood, medical coverage is a key requirement. Are there any pre-existing conditions for either traveller?\nCustomer: No, no pre-existing conditions. But listen, we plan to do some skiing. Is that covered? Like if there's an accident on the slopes? Need that sports thing included.\nCustomer Service Agent: Okay, so coverage for medical expenses including for specified sports like skiing. Noted. Any other specific activities or concerns regarding the destination?\nCustomer: Well, yeah, with everything going on... what if there's some trouble? Like political unrest or... worse? Is there any cover for that sort of situation, like war breaking out or something? Need to know if that's an option.\nCustomer Service Agent: Alright, I've noted your interest in coverage related to war and political unrest scenarios. Thinking about the journey itself, any concerns regarding potential disruptions?\nCustomer: Definitely! If the flight gets delayed for hours and we're stuck, need cover for extra hotel nights or meals. Hate waiting around. And also, what if we have to cancel the whole trip *before* we go? Like if one of us gets seriously ill? That needs to be covered, the cancellation costs.\nCustomer Service Agent: Okay, so coverage for significant travel delays and for trip cancellation due to unforeseen events like illness. Understood. Is there anything else you specifically want covered? Perhaps regarding your belongings?\nCustomer: Oh, yes! Luggage! If the airline loses our bags or smashes them up, need compensation for that. It's happened before, nightmare. So, lost or damaged luggage cover too. Is that everything? What's the typical cost? We're hoping to spend $200-$300 for the insurance.\nCustomer Service Agent: Thank you for providing those details and the budget indication. Let me quickly summarize the key requirements you've mentioned for your 2-week trip to Japan for two travellers, aged 26-40, with no pre-existing conditions. You're looking for: Medical Coverage, coverage for Sports and Adventure Activities like skiing, cover related to War and Political Unrest, protection against significant Travel Delays, Trip Cancellation cover, and Lost or Damaged Luggage cover. Does that sound correct?\nCustomer: Yes, yes, that's it. That covers the main worries. Just need the options and the price fast, okay?\nCustomer Service Agent: Understood. I have recorded all your requirements. I will pass this information to our specialist team who will prepare the relevant plan options based on your needs and budget. They will reach out to you shortly with the details.\nCustomer: Okay, good. Please make sure they contact me soon. Thanks, Siti. Bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ001\",\n  \"requirement_summary\": \"Travel insurance for a 2-week trip to Japan covering medical, skiing, war unrest, travel delays, trip cancellation, and luggage.\",\n  \"detailed_description\": \"Customer requires travel insurance for a trip to Japan for 2 weeks. They need coverage for standard medical expenses, accidents, skiing, potential political unrest, significant travel delays, trip cancellation due to serious illness, and lost or damaged luggage. They have no pre-existing conditions and are aged 26-40. The trip includes 2 travelers, and they are looking to spend between $200-$300 on the insurance.\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"travel_start_date\": null,\n  \"travel_end_date\": null,\n  \"insurance_coverage_type\": [\"Medical\", \"Sports and Adventure Activities\", \"War and Political Unrest\", \"Travel Delays\", \"Trip Cancellation\", \"Lost or Damaged Luggage\"],\n  \"pre_existing_conditions\": [],\n  \"age_group\": \"26-40\",\n  \"travelers_count\": 2,\n  \"traveler_details\": null,\n  \"budget_range\": \"$200-$300\",\n  \"preferred_insurance_provider\": null,\n  \"additional_requests\": \"Needs quick options and pricing.\",\n  \"keywords\": [\"Japan\", \"2 weeks\", \"medical coverage\", \"skiing\", \"war unrest\", \"travel delays\", \"trip cancellation\", \"luggage\", \"insurance budget\"]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ001",
+                "requirement_summary": "Travel insurance for a 2-week trip to Japan covering medical, skiing, war unrest, travel delays, trip cancellation, and luggage.",
+                "detailed_description": "Customer requires travel insurance for a trip to Japan for 2 weeks. They need coverage for standard medical expenses, accidents, skiing, potential political unrest, significant travel delays, trip cancellation due to serious illness, and lost or damaged luggage. They have no pre-existing conditions and are aged 26-40. The trip includes 2 travelers, and they are looking to spend between $200-$300 on the insurance.",
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "travel_start_date": null,
+                "travel_end_date": null,
+                "insurance_coverage_type": [
+                    "Medical",
+                    "Sports and Adventure Activities",
+                    "War and Political Unrest",
+                    "Travel Delays",
+                    "Trip Cancellation",
+                    "Lost or Damaged Luggage"
+                ],
+                "pre_existing_conditions": [],
+                "age_group": "26-40",
+                "travelers_count": 2,
+                "traveler_details": null,
+                "budget_range": "$200-$300",
+                "preferred_insurance_provider": null,
+                "additional_requests": "Needs quick options and pricing.",
+                "keywords": [
+                    "Japan",
+                    "2 weeks",
+                    "medical coverage",
+                    "skiing",
+                    "war unrest",
+                    "travel delays",
+                    "trip cancellation",
+                    "luggage",
+                    "insurance budget"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 6759,
+        "prompt_tokens": 5620,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 1139,
+        "successful_requests": 3
+    }
+}

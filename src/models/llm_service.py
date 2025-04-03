@@ -50,6 +50,7 @@ class LLMService:
         safety_settings: Optional[Dict[str, str]] = None,
         retry_count: int = 3,
         retry_delay: float = 1.0,
+        max_output_tokens: Optional[int] = None,  # Added max_output_tokens
     ) -> GenerateContentResponse:
         """
         Generate content using Google Gemini.
@@ -61,6 +62,7 @@ class LLMService:
             safety_settings: The safety settings to use. If not provided, the default safety settings will be used.
             retry_count: The number of times to retry if the API call fails.
             retry_delay: The delay between retries in seconds.
+            max_output_tokens: Optional maximum number of tokens to generate.
 
         Returns:
             The generated content response.
@@ -72,6 +74,10 @@ class LLMService:
         parameters = parameters or GeminiConfig.get_parameters()
         safety_settings = safety_settings or GeminiConfig.SAFETY_SETTINGS
 
+        # Add max_output_tokens to parameters if provided
+        if max_output_tokens is not None:
+            parameters["max_output_tokens"] = max_output_tokens
+
         # Convert parameters to GenerationConfig
         generation_config = GenerationConfig(**parameters)
 
@@ -79,7 +85,7 @@ class LLMService:
         safety_settings_list = [
             {
                 "category": getattr(HarmCategory, f"HARM_CATEGORY_{category.upper()}"),
-                "threshold": getattr(HarmBlockThreshold, f"{threshold.upper()}")
+                "threshold": getattr(HarmBlockThreshold, f"{threshold.upper()}"),
             }
             for category, threshold in safety_settings.items()
         ]
@@ -197,7 +203,7 @@ class LLMService:
         safety_settings_list = [
             {
                 "category": getattr(HarmCategory, f"HARM_CATEGORY_{category.upper()}"),
-                "threshold": getattr(HarmBlockThreshold, f"{threshold.upper()}")
+                "threshold": getattr(HarmBlockThreshold, f"{threshold.upper()}"),
             }
             for category, threshold in safety_settings.items()
         ]

@@ -1,0 +1,70 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly requested trip cancellation coverage due to potential illness.",
+      "customer_quote": "If the flight gets delayed for hours and we're stuck, need cover for extra hotel nights or meals. Hate waiting around. And also, what if we have to cancel the whole trip *before* we go? Like if one of us gets seriously ill? That needs to be covered, the cancellation costs.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's concern and confirmed the requirement for trip cancellation coverage due to unforeseen events like illness.",
+      "agent_quote": "Okay, so coverage for significant travel delays and for trip cancellation due to unforeseen events like illness. Understood."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer specifically stated that standard medical cover is a must, mentioning accidents and getting sick.",
+      "customer_quote": "Right, so standard medical cover is a must, obviously. Accidents, getting sick, that sort of thing.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the need for medical coverage and appropriately inquired about pre-existing conditions.",
+      "agent_quote": "Understood, medical coverage is a key requirement. Are there any pre-existing conditions for either traveller?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for lost or damaged luggage, citing a previous negative experience.",
+      "customer_quote": "Oh, yes! Luggage! If the airline loses our bags or smashes them up, need compensation for that. It's happened before, nightmare. So, lost or damaged luggage cover too.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent prompted the customer about belongings, leading to the customer requesting lost/damaged luggage coverage.",
+      "agent_quote": "Is there anything else you specifically want covered? Perhaps regarding your belongings?"
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer expressed concern about flight delays and requested coverage for accommodation and meal expenses in such situations.",
+      "customer_quote": "If the flight gets delayed for hours and we're stuck, need cover for extra hotel nights or meals. Hate waiting around.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's concern about travel delays and confirmed the coverage requirement.",
+      "agent_quote": "Okay, so coverage for significant travel delays and for trip cancellation due to unforeseen events like illness. Understood."
+    },
+    {
+      "coverage_type": "sports_and_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer specifically mentioned skiing and inquired if accidents on the slopes would be covered.",
+      "customer_quote": "But listen, we plan to do some skiing. Is that covered? Like if there's an accident on the slopes? Need that sports thing included.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's interest in sports coverage and confirmed that skiing would be included.",
+      "agent_quote": "Okay, so coverage for medical expenses including for specified sports like skiing. Noted."
+    },
+    {
+      "coverage_type": "war_and_political_unrest",
+      "name": "War and Political Unrest",
+      "result": "PASS",
+      "justification": "The customer explicitly inquired about coverage for political unrest or war-related scenarios.",
+      "customer_quote": "Well, yeah, with everything going on... what if there's some trouble? Like political unrest or... worse? Is there any cover for that sort of situation, like war breaking out or something? Need to know if that's an option.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's concern and noted their interest in coverage related to war and political unrest.",
+      "agent_quote": "Alright, I've noted your interest in coverage related to war and political unrest scenarios."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The customer service agent successfully gathered all the required travel insurance coverage information from the customer. The agent effectively identified the customer's needs and concerns by asking relevant questions and confirming the key requirements. The agent's performance was satisfactory."
+  },
+  "transcript_name": "transcript_the_time-pressed_20250403_175945"
+}

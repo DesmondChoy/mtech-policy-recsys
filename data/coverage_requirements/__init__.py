@@ -9,6 +9,8 @@ from .coverage_requirements import (
     get_coverage_requirements,
     get_coverage_types,
     get_coverage,
+    customer_context_options,  # Add this
+    get_customer_context_options,  # Add this
 )
 
 __all__ = [
@@ -16,4 +18,6 @@ __all__ = [
     "get_coverage_requirements",
     "get_coverage_types",
     "get_coverage",
+    "customer_context_options",  # Add this
+    "get_customer_context_options",  # Add this
 ]

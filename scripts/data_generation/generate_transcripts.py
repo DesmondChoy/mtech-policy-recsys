@@ -83,6 +83,7 @@ try:
     # Assuming coverage_requirements.py is structured to be importable
     from data.coverage_requirements.coverage_requirements import (
         get_coverage_requirements,
+        get_customer_context_options,
     )
 except ImportError as e:
     logging.error(f"Error importing modules: {e}")
@@ -108,35 +109,42 @@ Generate a realistic synthetic conversation transcript between a customer servic
 # Customer Personality
 {personality_details}
 
-# Customer Requirements
+# REQUIRED CUSTOMER REQUIREMENTS
 {coverage_requirements}
 
-# Context and Guidelines
+# REQUIRED CUSTOMER CONTEXT
+{context_options_details}
 
-The customer's personality should naturally influence their responses throughout the conversation.
-The customer's requirements should surface either proactively from the customer or through targeted questions from the agent.
-The customer service agent's role is strictly limited to gathering the customer's requirements. They do NOT provide recommendations or advice.
-Once all requirements are clearly gathered and confirmed, the agent should politely and naturally close the conversation.
+# Transcript Generation Guidelines and Requirements
 
+## Core Mandates & Verification
+- **CRITICAL REQUIREMENT:** The conversation MUST explicitly discuss or mention EVERY SINGLE requirement listed in # REQUIRED CUSTOMER REQUIREMENTS. No requirement should be omitted.
+- Actively incorporate relevant details or specific examples inspired by # REQUIRED CUSTOMER CONTEXT into the dialogue.
+- **Verification:** Before finalizing the transcript, mentally double-check that every requirement from # REQUIRED CUSTOMER REQUIREMENTS has been mentioned (primarily initiated by the customer) and that relevant details from # REQUIRED CUSTOMER CONTEXT have been woven into the dialogue (potentially initiated by the agent).
+
+## Conversation Flow & Realism
+- The customer's personality should naturally influence their responses throughout the conversation.
+- The customer's specific coverage requirements (from # REQUIRED CUSTOMER REQUIREMENTS) should arise naturally from the customer's dialogue, influenced by their personality and travel plans.
+- Maintain realistic conversational style appropriate for a customer service scenario in Singapore.
+
+## Agent Role & Behavior
+- The agent should NOT directly ask "Do you need [specific coverage type]?".
+- Instead, the agent should focus on understanding the customer's trip details and concerns (using # REQUIRED CUSTOMER CONTEXT as a guide for questions), allowing the customer to mention their coverage needs organically. The agent may ask clarifying questions related to these context options to understand the customer's situation.
+- The customer service agent's role is strictly limited to gathering the customer's requirements. They do NOT provide recommendations or advice.
+- Once all requirements are clearly gathered and confirmed, the agent should politely and naturally close the conversation.
 
 # Conversation Format
 
 Customer Service Agent: [Greeting and opening line]
 Customer: [Response influenced by personality]
 ...
-Customer Service Agent: [Clarifying question to reveal requirements]
+Customer Service Agent: [Clarifying question about trip context/plans (leading to requirement reveal)]
 Customer: [Explicit mention or clarification of requirement]
 ...
 Customer Service Agent: [Summarizes and confirms requirements]
 Customer: [Final confirmation or clarification]
 Customer Service Agent: [Polite and natural closure of conversation]
 Customer: [Acknowledgment and natural end of conversation]
-
-# Requirements for Transcript
-
-Explicitly include all customer requirements listed above.
-Naturally reflect the customer's personality traits listed above.
-Maintain realistic conversational style appropriate for a customer service scenario in Singapore.
 
 # Output Format
 Provide ONLY the raw conversation transcript text, starting with "Customer Service Agent:" and ending with the final customer line. Do not include any introductory text, explanations, or markdown formatting around the transcript itself.
@@ -228,6 +236,15 @@ def generate_transcript():
         logging.error("Error: Could not retrieve coverage requirements.")
         sys.exit(1)
 
+    context_options = get_customer_context_options()  # Load context options
+    if not context_options:
+        logging.error("Error: Could not retrieve customer context options.")
+        # Decide if this is critical enough to exit
+        # sys.exit(1)
+        # Or just log a warning and continue without them
+        logging.warning("Proceeding without customer context options.")
+        context_options = {}  # Use empty dict to avoid formatting errors
+
     # 2. Select Personality
     selected_personality = random.choice(personalities)
     personality_name = selected_personality.get("name", "unknown_personality")
@@ -237,12 +254,20 @@ def generate_transcript():
     formatted_personality = format_personality(selected_personality)
     # Use pprint for readable dictionary formatting in the prompt
     formatted_requirements = pprint.pformat(coverage_reqs, indent=2)
+    formatted_context_options = pprint.pformat(
+        context_options, indent=2
+    )  # Format context options
 
     # 4. Construct Prompt
     final_prompt = PROMPT_TEMPLATE.format(
         personality_details=formatted_personality,
         coverage_requirements=formatted_requirements,
+        context_options_details=formatted_context_options,  # Add formatted context options
     )
+    # --- START GENERATE TRANSCRIPT PROMPT ---
+    print("--- START GENERATE TRANSCRIPT PROMPT ---")
+    print(final_prompt)
+    print("--- END GENERATE TRANSCRIPT PROMPT ---")
     # Optional: Log the prompt for debugging (can be long)
     # logging.debug(f"Generated Prompt:\n{final_prompt}")
 
@@ -250,9 +275,15 @@ def generate_transcript():
     logging.info(f"Generating transcript using model: {MODEL_NAME}...")
     try:
         llm = LLMService()  # Assumes API key is handled by GeminiConfig/environment
-        response = llm.generate_content(prompt=final_prompt, model=MODEL_NAME)
+        response = llm.generate_content(
+            prompt=final_prompt, model=MODEL_NAME, max_output_tokens=10000
+        )  # Added max_output_tokens
         generated_text = response.text
         logging.info("Transcript generation complete.")
+        # --- START RAW LLM RESPONSE ---
+        print("--- START RAW LLM RESPONSE ---")
+        print(generated_text)
+        print("--- END RAW LLM RESPONSE ---")
         # Optional: Log the raw response text
         # logging.debug(f"Raw LLM Response:\n{generated_text}")
 

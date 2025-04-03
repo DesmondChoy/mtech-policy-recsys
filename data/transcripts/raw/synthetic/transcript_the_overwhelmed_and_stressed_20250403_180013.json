@@ -1,0 +1,110 @@
+{
+  "personality": {
+    "name": "The Overwhelmed & Stressed",
+    "characteristics": [
+      "Sounds flustered, panicked, or highly emotional (beyond simple anger)",
+      "Overwhelmed by the situation (e.g., accident aftermath, complex claim)",
+      "May have difficulty articulating needs clearly",
+      "Expresses feeling stressed by the process itself",
+      "Needs patience, calming, and clear guidance"
+    ]
+  },
+  "transcript": [
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Sarah, how may I assist you today?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Oh, hello? Yes, hi Sarah. I... I need help. I'm trying to figure out travel insurance and it's all just... so much. I'm planning a trip and I'm already feeling completely stressed out about everything that could go wrong. It's overwhelming."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "I understand getting insurance can feel like a lot, but I'm here to help gather the details we need. Take a deep breath, we can go through this step by step. Could you tell me a bit about your trip? For example, where are you planning to travel to?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Okay, okay, deep breath. Right. We're planning a trip to Japan. Just trying to get everything sorted is... yeah."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Japan, lovely. And how long will you be away for?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "It will be a 2 weeks trip. But what if... what if something happens *before* we even go? Like, if one of us gets sick, or there's a family emergency? We'd lose so much money. The thought is making me panic. We definitely need cover if we have to cancel the whole thing for a serious reason. That's a big worry."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, I understand the concern about needing to cancel the trip beforehand. Noted. And how many people will be travelling on this policy?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "There will be 2 of us traveling."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Alright, two travellers going to Japan for two weeks. And roughly, which age group do the travellers fall into?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "We're mostly around 26-40 years old. But... speaking of getting sick, what about *during* the trip? My partner has high blood pressure. Do we need to declare high blood pressure? What if something happens over there? The medical bills... I can't even think about it. We absolutely need good medical coverage."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Thank you for letting me know. Yes, it's important we note any pre-existing conditions like high blood pressure. So, comprehensive medical cover is a priority. Understood. While you're in Japan for the two weeks, are you planning on doing any specific activities, perhaps like winter sports or diving?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Oh gosh, yes! We were hoping to try some skiing. I hadn't even properly considered... what if one of us gets injured doing that? It's supposed to be fun but now I'm just picturing accidents. Yes, we need cover for that too, for sports and adventure activities, I suppose? This is so stressful."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, noted cover for specified sports like skiing. It's good you're thinking about these things now. How about your travel arrangements getting there and back? Are you concerned about potential issues with flights?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Oh don't even start! Flights are a nightmare sometimes. Last time we flew, there was a huge delay, we missed a connection... it was awful. Stuck in an airport, tired, hungry. If that happens again... the cost of hotels, food... Yes, we absolutely need cover for travel delays. Significant ones, I mean. The stress is just too much otherwise."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Alright, cover for significant travel delays causing extra expenses like accommodation and meals. I understand. And related to travel, what about your belongings, your luggage?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "My luggage! Oh my goodness, yes! Can you imagine getting there and your bags are just... gone? Or smashed up? All your clothes, everything... It would be a disaster. We'd have to buy everything. Yes, definitely need coverage for lost or damaged luggage. It's just one more thing to worry about."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, cover for lost, damaged, or delayed luggage. I've noted that down. Just one more area to consider. With everything going on in the world, do you have any concerns regarding the safety situation, even in a place like Japan? And also, just so we have an idea for finding suitable options later, do you have a rough budget in mind for the insurance policy itself?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Honestly? Yes. I know Japan is generally safe, but you see things on the news... unexpected events, political things... It just adds to the anxiety. It feels silly, maybe, but having some kind of cover for... I don't know, war and political unrest? Just in case? It would make me feel a bit less panicked. As for budget... We're hoping to spend around $400 for the insurance for both of us. Is that realistic with all this...? I feel like I'm asking for everything."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Thank you for sharing that. It's always better to consider all possibilities. Okay, so let me quickly summarize the requirements you've mentioned just to make sure I have everything correct. You're looking for travel insurance for two travellers, aged 26-40, travelling to Japan for two weeks. One traveller has pre-existing high blood pressure. You require cover for: Trip Cancellation, comprehensive Medical Coverage, Sports and Adventure Activities like skiing, significant Travel Delays, Lost or Damaged Luggage, and also War and Political Unrest cover. And your budget is around $400. Is that all correct?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Yes... yes, that sounds right. Hearing it listed out like that... it's a lot, but yes, that's what we need to feel secure. Thank you for being so patient, I know I sound a bit frantic."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Not at all, it's completely understandable. My job is just to gather these details accurately for you. Thank you for providing all the information. What will happen next is that we will use these requirements to identify suitable policy options, and a colleague from our sales team will be in touch shortly to discuss those specific plans and provide quotes."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Okay. Thank you, Sarah. I appreciate your help."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "You're most welcome. Thank you for calling ISS Insurance Ltd. Have a good day."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "You too. Bye."
+    }
+  ]
+}
