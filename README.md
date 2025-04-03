@@ -20,37 +20,53 @@ This section outlines the primary workflows for preparing data and processing tr
 
 ```mermaid
 flowchart TD
-    subgraph "1. Data Preparation"
-        direction TB
-        RawPolicies[("Raw Policy PDFs\n(data/policies/raw/)")] -->|Input| ExtractScript("scripts/extract_policy_tier.py")
-        ExtractScript --> ProcessedPolicies[("Structured Policy JSON\n(data/policies/processed/)")]
+    %% Modern color scheme with improved text contrast
+    classDef dataNode fill:#5D87E1,stroke:#4668B0,color:white,stroke-width:1px
+    classDef processNode fill:#4CAF50,stroke:#388E3C,color:white,stroke-width:1px
+    classDef decisionNode fill:#FF9800,stroke:#F57C00,color:white,stroke-width:1px
+    
+    %% Subgraph styling with black text
+    classDef prepSubgraph fill:#E3F2FD,stroke:#90CAF9,color:black,stroke-width:2px
+    classDef processSubgraph fill:#E8F5E9,stroke:#A5D6A7,color:black,stroke-width:2px
+    classDef comparisonSubgraph fill:#FFF3E0,stroke:#FFCC80,color:black,stroke-width:2px
+    
+    %% Edge styling with black text
+    linkStyle default color:black
 
-        GenPersonalities("scripts/data_generation/generate_personalities.py") --> PersonalitiesJSON[("personalities.json\n(data/transcripts/)")]
-        CoverageReqs[("Coverage Requirements\n(data/coverage_requirements/)")] -->|Input| GenTranscripts
-        PersonalitiesJSON -->|Input| GenTranscripts("scripts/data_generation/generate_transcripts.py")
-        GenTranscripts --> RawTranscripts[("Raw Synthetic Transcripts\n(data/transcripts/raw/synthetic/)")]
+    subgraph prep["Data Preparation"]
+        RawPolicies[("Raw Policy PDFs")] -->|Input| ExtractScript["Policy Extraction Script"]
+        ExtractScript --> ProcessedPolicies[("Structured Policy JSON")]
+
+        GenPersonalities["Generate Personalities"] --> PersonalitiesJSON[("Personalities JSON")]
+        CoverageReqs[("Coverage Requirements")] -->|Input| GenTranscripts["Generate Transcripts"]
+        PersonalitiesJSON -->|Input| GenTranscripts
+        GenTranscripts --> RawTranscripts[("Raw Synthetic Transcripts")]
     end
 
-    subgraph "2. Transcript Processing & Analysis"
-        direction TB
-        RawTranscripts -->|Input| TranscriptEval("scripts/evaluation/eval_transcript_main.py")
+    subgraph process["Transcript Processing & Analysis"]
+        RawTranscripts -->|Input| TranscriptEval["Transcript Evaluation"]
         TranscriptEval -->|Evaluate| EvalDecision{Pass/Fail?}
-        EvalDecision -->|Fail| Regenerate["Regenerate Transcript\n(Manual/Future Step)"]
-        EvalDecision -->|Pass| TranscriptParsing["Transcript Parsing\n(Manual/Future Step)"]
-        TranscriptParsing --> ParsedTranscripts[("Parsed Transcript JSON\n(data/transcripts/processed/)")]
-        ParsedTranscripts -->|Input Path| RequirementExtraction("Requirement Extraction\n(src/agents/extractor.py)")
-        RequirementExtraction --> StructuredReqs[("Structured Requirements JSON\n(data/extracted_customer_requirements/)")]
+        EvalDecision -->|Fail| Regenerate["Regenerate Transcript"]
+        EvalDecision -->|Pass| TranscriptParsing["Transcript Parsing"]
+        TranscriptParsing --> ParsedTranscripts[("Parsed Transcripts")]
+        ParsedTranscripts -->|Input| RequirementExtraction["Requirement Extraction"]
+        RequirementExtraction --> StructuredReqs[("Structured Requirements")]
     end
 
-    subgraph "3. Policy Recommendation (Future)"
-        direction TB
+    subgraph comparison["Policy Comparison (Work in Progress)"]
         ProcessedPolicies -->|Input| AnalyzerAgent["Analyzer Agent"]
         StructuredReqs -->|Input| AnalyzerAgent
-        AnalyzerAgent --> Recommendations["Policy Recommendations"]
+        AnalyzerAgent --> ComparisonReport["Policy Comparison Report"]
     end
 
-    DataPreparation --> TranscriptProcessingAnalysis
-    TranscriptProcessingAnalysis --> PolicyRecommendation
+    %% Apply styles
+    class RawPolicies,ProcessedPolicies,PersonalitiesJSON,CoverageReqs,RawTranscripts,ParsedTranscripts,StructuredReqs dataNode
+    class ExtractScript,GenPersonalities,GenTranscripts,TranscriptEval,TranscriptParsing,RequirementExtraction,AnalyzerAgent,ComparisonReport,Regenerate processNode
+    class EvalDecision decisionNode
+    
+    class prep prepSubgraph
+    class process processSubgraph
+    class comparison comparisonSubgraph
 ```
 
 ## 1. Data Preparation
