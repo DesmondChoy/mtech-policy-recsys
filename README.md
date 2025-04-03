@@ -134,6 +134,11 @@ The project structure supports the workflow illustrated in the diagram above:
    - **Input**: PDFs from `data/policies/raw/` named `insurer_{policy_tier}.pdf`.
    - **Output**: Structured JSON policy data in `data/policies/processed/` named `insurer_{policy_tier}.json`.
 
+6. **Data Generation Scripts**
+   - **Component**: `scripts/data_generation/generate_personalities.py`
+   - **Purpose**: Generates a list of common customer service personality types using the Gemini API (`gemini-2.5-pro-exp-03-25`).
+   - **Output**: Saves a validated JSON file to `data/transcripts/personalities.json`. See the script's docstring for usage details.
+
 ## Technical Stack
 
 - **Python**: Primary programming language

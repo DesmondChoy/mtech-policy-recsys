@@ -1,0 +1,104 @@
+{
+  "personalities": [
+    {
+      "name": "The Aggrieved",
+      "characteristics": [
+        "Expresses anger or frustration clearly",
+        "Feels personally wronged by the company or situation",
+        "May use accusatory language or raise their voice",
+        "Focuses on perceived unfairness or errors",
+        "Seeks immediate rectification or validation of their grievance"
+      ]
+    },
+    {
+      "name": "The Confused Novice",
+      "characteristics": [
+        "Lacks basic understanding of insurance terms or processes",
+        "Asks fundamental questions repeatedly",
+        "Expresses confusion or feeling lost",
+        "Needs simple, step-by-step explanations",
+        "May apologize for not understanding"
+      ]
+    },
+    {
+      "name": "The Time-Pressed",
+      "characteristics": [
+        "Emphasizes urgency and lack of time",
+        "May interrupt frequently to speed things up",
+        "Seeks the quickest possible solution, avoids details",
+        "Expresses impatience with holds or procedures",
+        "Focuses solely on the immediate task resolution"
+      ]
+    },
+    {
+      "name": "The Anxious Inquirer",
+      "characteristics": [
+        "Expresses significant worry about coverage, claims, or future events",
+        "Asks many hypothetical 'what if' questions",
+        "Seeks repeated reassurance and confirmation",
+        "Voice may sound stressed or trembling",
+        "Overly concerned about potential negative outcomes"
+      ]
+    },
+    {
+      "name": "The Skeptic",
+      "characteristics": [
+        "Expresses distrust of the insurance company or industry",
+        "Questions the CSR's information or motives",
+        "May challenge policy terms or standard procedures",
+        "Seeks validation from external sources or supervisors",
+        "Often sounds suspicious or guarded"
+      ]
+    },
+    {
+      "name": "The Informed Researcher",
+      "characteristics": [
+        "Comes prepared with specific details, policy numbers, or prior research",
+        "Uses correct insurance terminology",
+        "Asks pointed, knowledgeable questions",
+        "May reference specific policy clauses or documentation",
+        "Expects efficient and equally knowledgeable responses"
+      ]
+    },
+    {
+      "name": "The Socializer",
+      "characteristics": [
+        "Engages readily in small talk unrelated to the issue",
+        "Shares personal anecdotes and stories",
+        "Builds rapport easily, often very friendly",
+        "May significantly extend call duration",
+        "Values the interpersonal connection as much as the transaction"
+      ]
+    },
+    {
+      "name": "The Entitled Demander",
+      "characteristics": [
+        "Believes rules or procedures shouldn't apply to them",
+        "Demands exceptions, special treatment, or outcomes beyond policy limits",
+        "May reference their loyalty, status, or threaten to leave",
+        "Often escalates quickly if demands aren't met",
+        "Challenges CSR authority and asks for supervisors"
+      ]
+    },
+    {
+      "name": "The Overwhelmed & Stressed",
+      "characteristics": [
+        "Sounds flustered, panicked, or highly emotional (beyond simple anger)",
+        "Overwhelmed by the situation (e.g., accident aftermath, complex claim)",
+        "May have difficulty articulating needs clearly",
+        "Expresses feeling stressed by the process itself",
+        "Needs patience, calming, and clear guidance"
+      ]
+    },
+    {
+      "name": "The Concise Communicator",
+      "characteristics": [
+        "Provides brief, direct answers to questions",
+        "Avoids unnecessary conversation or details",
+        "Focuses purely on the facts needed for the transaction",
+        "May seem abrupt or uninterested, but is often just efficient",
+        "Expects a quick, business-like interaction"
+      ]
+    }
+  ]
+}
