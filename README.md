@@ -24,61 +24,55 @@ flowchart TD
     classDef dataNode fill:#5D87E1,stroke:#4668B0,color:white,stroke-width:1px
     classDef processNode fill:#4CAF50,stroke:#388E3C,color:white,stroke-width:1px
     classDef decisionNode fill:#FF9800,stroke:#F57C00,color:white,stroke-width:1px
-    
+
     %% Subgraph styling with black text
     classDef prepSubgraph fill:#E3F2FD,stroke:#90CAF9,color:black,stroke-width:2px
     classDef processSubgraph fill:#E8F5E9,stroke:#A5D6A7,color:black,stroke-width:2px
-    classDef comparisonSubgraph fill:#FFF3E0,stroke:#FFCC80,color:black,stroke-width:2px
-    
+    classDef comparisonSubgraph fill:#FFF3E0,stroke:#FFCC80,color:black,stroke-width:2px %% Kept for Report Gen style
+
     %% Edge styling with black text
     linkStyle default color:black
 
-    subgraph prep["Data Preparation"]
-        RawPolicies[("Raw Policy PDFs")] -->|Input| ExtractScript["Policy Extraction Script (Gemini)"]
-        ExtractScript --> ProcessedPolicies[("Structured Policy JSON")]
+    subgraph prep["Prep"]
+        RawPolicies[("Raw PDFs")] -->|Input| ExtractScript["Policy Extract (Gemini)"]
+        ExtractScript --> ProcessedPolicies[("Policy JSON")]
 
-        GenPersonalities["Generate Personalities (Gemini)"] --> PersonalitiesJSON[("Personalities JSON")]
-        CoverageReqs[("Coverage Requirements")] -->|Input| GenTranscripts["Generate Transcripts (Gemini)"]
+        GenPersonalities["Gen Personalities (Gemini)"] --> PersonalitiesJSON[("Pers. JSON")]
+        CoverageReqs[("Cov. Reqs")] -->|Input| GenTranscripts["Gen Transcripts (Gemini)"]
         PersonalitiesJSON -->|Input| GenTranscripts
-        GenTranscripts --> RawTranscripts[("Raw Synthetic Transcripts")]
+        GenTranscripts --> RawTranscripts[("Raw Transcripts")]
     end
 
-    subgraph process["Transcript Processing & Analysis"]
-        RawTranscripts -->|Input| TranscriptEval["Transcript Evaluation (Gemini)"]
+    subgraph process["Processing"]
+        RawTranscripts -->|Input| TranscriptEval["Transcript Eval (Gemini)"]
         TranscriptEval -->|Evaluate| EvalDecision{Pass/Fail?}
-        EvalDecision -->|Fail| Regenerate["Regenerate Transcript (Gemini)"]
-        EvalDecision -->|Pass| TranscriptParsing["Transcript Parsing"]
+        EvalDecision -->|Fail| Regenerate["Regen Transcript (Gemini)"]
+        EvalDecision -->|Pass| TranscriptParsing["Parsing"]
         TranscriptParsing --> ParsedTranscripts[("Parsed Transcripts")]
-        ParsedTranscripts -->|Input| RequirementExtraction["Requirement Extraction (OpenAI via CrewAI)"]
-        RequirementExtraction --> StructuredReqs[("Structured Requirements")]
-    end
-
-    subgraph comparison["Policy Comparison (Work in Progress)"]
-        ProcessedPolicies -->|Input| AnalyzerAgent["Analyzer Agent (Future - Gemini)"]
-        StructuredReqs -->|Input| AnalyzerAgent
-        AnalyzerAgent --> ComparisonReport["Policy Comparison Report"]
+        ParsedTranscripts -->|Input| RequirementExtraction["Req Extract (OpenAI)"]
+        RequirementExtraction --> StructuredReqs[("Reqs JSON")]
     end
 
     %% Apply styles
     class RawPolicies,ProcessedPolicies,PersonalitiesJSON,CoverageReqs,RawTranscripts,ParsedTranscripts,StructuredReqs dataNode
-    class ExtractScript,GenPersonalities,GenTranscripts,TranscriptEval,TranscriptParsing,RequirementExtraction,AnalyzerAgent,ComparisonReport,Regenerate processNode
+    class ExtractScript,GenPersonalities,GenTranscripts,TranscriptEval,TranscriptParsing,RequirementExtraction,Regenerate processNode
     class EvalDecision decisionNode
-    
+
     class prep prepSubgraph
     class process processSubgraph
-    class comparison comparisonSubgraph
+    %% Removed comparison class assignment
 
     %% Add Policy Comparison Script to Diagram
-    subgraph comparisonReportGen ["Policy Comparison Report Generation"]
-        StructuredReqs -->|Input| GenComparisonScript["Policy Comparison Script"]
+    subgraph comparisonReportGen ["Report Gen"]
+        StructuredReqs -->|Input| GenComparisonScript["Compare Script"]
         ProcessedPolicies -->|Input| GenComparisonScript
-        GenComparisonScript -- Uses --> LLMServiceNode[LLM Service via src/models/llm_service.py]
-        GenComparisonScript --> ComparisonReports[("Policy Comparison Reports (Markdown)")]
+        GenComparisonScript -- Uses --> LLMServiceNode["LLM Service"]
+        GenComparisonScript --> ComparisonReports[("Compare Reports (MD)")]
     end
 
     class GenComparisonScript processNode
     class ComparisonReports dataNode
-    class comparisonReportGen comparisonSubgraph
+    class comparisonReportGen comparisonSubgraph %% Use comparison style for this subgraph
 ```
 
 ## 1. Data Preparation
