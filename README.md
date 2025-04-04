@@ -53,14 +53,15 @@ flowchart TD
         RequirementExtraction --> StructuredReqs[("Reqs JSON")]
     end
 
-    %% Apply styles
+    %% Apply styles to nodes
     class RawPolicies,ProcessedPolicies,PersonalitiesJSON,CoverageReqs,RawTranscripts,ParsedTranscripts,StructuredReqs dataNode
     class ExtractScript,GenPersonalities,GenTranscripts,TranscriptEval,TranscriptParsing,RequirementExtraction,Regenerate processNode
     class EvalDecision decisionNode
 
+    %% Apply styles to subgraphs
     class prep prepSubgraph
     class process processSubgraph
-    %% Removed comparison class assignment
+    %% Removed comparison class assignment comment is fine here
 
     %% Add Policy Comparison Script to Diagram
     subgraph comparisonReportGen ["Report Gen"]
@@ -70,9 +71,11 @@ flowchart TD
         GenComparisonScript --> ComparisonReports[("Compare Reports (MD)")]
     end
 
+    %% Apply styles to comparison report nodes and subgraph
     class GenComparisonScript processNode
     class ComparisonReports dataNode
-    class comparisonReportGen comparisonSubgraph %% Use comparison style for this subgraph
+    class comparisonReportGen comparisonSubgraph
+    %% Use comparison style for this subgraph -- Moved comment to its own line
 ```
 
 ## 1. Data Preparation
