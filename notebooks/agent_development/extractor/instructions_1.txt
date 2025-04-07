@@ -1,0 +1,131 @@
+﻿[POLICY TIER NAME]: GO Japan
+---
+**Your Task:**
+Act as a meticulous data extraction assistant. Your goal is to process the provided travel insurance policy document (or OCR text) and extract specific coverage information for the **`[POLICY TIER NAME]`** plan/tier. You must structure the extracted data precisely according to the nested JSON format specified below.
+**Input:**
+A travel insurance policy document (or text derived from OCR).
+**Policy Tier to Extract:**
+Focus *exclusively* on the benefits, limits, and details applicable to the **`[POLICY TIER NAME]`** tier specified in the policy document.
+**Output Format (Strict JSON):**
+Your output **MUST** be a single, valid JSON object conforming to the following structure. Do **NOT** include any text before or after the JSON code block.
+```json
+{
+  "provider_name": "Name of the Insurance Company",
+  "policy_name": "Name of the Insurance Policy",
+  "tier_name": "[POLICY TIER NAME]", // The tier you extracted for
+  "extraction_date": "YYYY-MM-DD", // Date of extraction
+  "currency": "Currency Code (e.g., SGD, USD)",
+  "coverage_categories": [
+    {
+      "category_name": "Name of the Benefit Category (e.g., Personal Accident Benefits)",
+      "coverages": [
+        {
+          "coverage_name": "Specific Name of the Coverage (e.g., Accidental Death and Permanent Disability)",
+          "limits": [
+            // Array of limit objects. Each object represents a specific limit variation.
+            {
+              "type": "Description of the limit scope (e.g., 'Adult under 70 years', 'Maximum Limit for Family Cover', 'Per Person', 'Per item')",
+              "limit": Numerical_Limit_Value_Or_String_Like_Actual_cost_or_Unlimited,
+              // Optional: Add 'basis' key if limit is calculated (e.g., per X hours)
+              // "basis": "Description of basis (e.g., 'S$100 every 6 hours')"
+            }
+            // ... more limit objects if applicable (e.g., different ages, child, family)
+          ],
+          "details": "Summarized key conditions, definitions, inclusions, or exclusions for THIS specific coverage from the policy text relevant to the specified tier. DO NOT just write 'Refer to Section X'.",
+          "source_info": "Brief location identifier from the document (e.g., 'Page 3, Section 1', 'Page 4, Travel Delay table', 'Page 5, COVID-19 Extension')"
+        }
+        // ... more coverage objects within this category
+      ]
+    }
+    // ... more category objects
+  ]
+}
+```
+**Crucial Instructions:**
+1.  **Tier Specificity:** Extract data *only* for the `[POLICY TIER NAME]` tier. If limits are shared across tiers, use the value specified for this tier.
+2.  **`details` Field Content:** This is critical. **DO NOT** use placeholder text like "Refer to Section X". You **MUST** read the relevant section(s) in the policy text referenced (or identifiable) for each coverage and **summarize** the key applicable conditions, definitions, major inclusions/exclusions, or other pertinent information for that coverage and specified tier. If a benefit is not covered for a specific tier, explicitly state that if mentioned. If no specific additional details are found beyond the benefit name and limit, state `No specific additional details found for this tier beyond the benefit description.`
+3.  **`source_info` Field:** For each `coverage` object, include a `source_info` string briefly indicating where the data (name, limit, details) was primarily found in the document (e.g., Page number, Section number, Table name).
+4.  **`limits` Array:** Capture all relevant limits shown for the specific coverage and tier. Use the `type` field to clarify the scope (e.g., 'Adult under 70', 'Child', 'Family Cover', 'Per Person', 'Per day max'). Ensure the `limit` value is the numerical amount (or appropriate string like "Unlimited" or "Actual cost"). If a limit has a specific basis (e.g., "$100 per 6 hours"), include this information, potentially within the `details` or as a separate `basis` key within the limit object.
+5.  **Currency:** Identify and include the correct currency code (e.g., "SGD").
+6.  **Completeness:** Extract all distinct coverage categories and the specific coverages listed under them for the specified tier.
+7.  **Accuracy:** Ensure benefit names, limits, and summarized details accurately reflect the policy document for the specified tier.
+8.  **JSON Only:** Your entire output must be just the JSON object, starting with `{` and ending with `}`.
+**Positive Example (Illustrative Snippet for Great Eastern TravelSmart Premier - Elite Plan):**
+```json
+{
+  "provider_name": "Great Eastern",
+  "policy_name": "TravelSmart Premier",
+  "tier_name": "Elite",
+  "extraction_date": "2024-07-26",
+  "currency": "SGD",
+  "coverage_categories": [
+    {
+      "category_name": "Personal Accident Benefits",
+      "coverages": [
+        {
+          "coverage_name": "Accidental Death and Permanent Disability",
+          "limits": [
+            {"type": "Adult under 70 years", "limit": 500000},
+            {"type": "Adult age 70 years or above", "limit": 150000},
+            {"type": "Child", "limit": 100000},
+            {"type": "Maximum Limit for Family Cover", "limit": 1200000}
+          ],
+          "details": "Provides lump sum payment in the event of accidental death or permanent disablement occurring during the trip, subject to the scale of compensation. Excludes disablement from illness.",
+          "source_info": "Page 3, Section 1"
+        }
+      ]
+    },
+    {
+      "category_name": "Travel Inconvenience Benefits",
+      "coverages": [
+         {
+          "coverage_name": "Travel Delay While Overseas",
+          "limits": [
+            {"type": "Per Person Max", "limit": 1200, "basis": "S$100 every 6 hours"}
+          ],
+          "details": "Payable for delay of scheduled public conveyance for every full 6 consecutive hours of delay while overseas. Requires written confirmation from carrier stating duration and reason for delay. Excludes delays known before booking/purchase.",
+          "source_info": "Page 4, Section 21A"
+        }
+      ]
+    }
+    // ... other categories and coverages
+  ]
+}
+```
+**Negative Examples (Mistakes to Avoid):**
+1.  **Incorrect `details` Field (Placeholder Text):**
+    ```json
+    // ... inside a coverage object ...
+    {
+        "coverage_name": "Trip Cancellation",
+        // ... limits ...
+        "details": "Refer to Section 15.", // <-- WRONG: Should summarize Section 15 content.
+        "source_info": "Page 4, Section 15"
+    }
+    ```
+2.  **Missing `source_info` Field:**
+    ```json
+    // ... inside a coverage object ...
+    {
+        "coverage_name": "Baggage Loss",
+        // ... limits ...
+        "details": "Covers loss of baggage due to theft or misdirection by carrier, up to per item limits and overall maximum. Depreciation applies.",
+        // <-- WRONG: Missing the source_info field entirely.
+    }
+    ```
+3.  **Incorrect `limits` Structure (Flat values instead of array of objects):**
+    ```json
+    // ... inside a coverage object ...
+    {
+        "coverage_name": "Medical Expenses While Overseas",
+        "limits": { // <-- WRONG: Should be an array [{ "type": "...", "limit": ...}, ...]
+            "Adult under 70 years": 500000,
+            "Child": 300000
+        },
+        "details": "Covers necessary medical treatment incurred overseas due to accident or illness during the trip.",
+        "source_info": "Page 3, Section 3"
+    }
+    ```
+4.  **Missing Tier-Specific Data:** Extracting data generally without confirming it applies specifically to the requested `[POLICY TIER NAME]`.
+---
+Please process the provided policy document for the **`[POLICY TIER NAME]`** tier and generate the JSON output according to these instructions.
