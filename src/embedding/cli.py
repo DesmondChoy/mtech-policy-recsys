@@ -70,7 +70,13 @@ def main():
     # Load requirement
     try:
         with open(args.requirement, 'r') as f:
-            requirement = json.load(f)
+            requirement_data = json.load(f)
+        
+        # Check if the requirement data has a nested structure with json_dict
+        if 'json_dict' in requirement_data:
+            requirement = requirement_data['json_dict']
+        else:
+            requirement = requirement_data
     except json.JSONDecodeError:
         print(f"Error: Invalid JSON in requirement file {args.requirement}.")
         sys.exit(1)
@@ -113,8 +119,14 @@ def main():
                 for coverage in category.get('coverages', []):
                     coverage_name = coverage.get('coverage_name', '').lower()
                     
-                    # Check if this coverage is relevant to the requirement
-                    is_relevant = any(req_type.lower() in coverage_name for req_type in req_coverage_types)
+                    # More flexible matching - check if any words in the requirement type match words in the coverage name
+                    is_relevant = False
+                    for req_type in req_coverage_types:
+                        req_words = req_type.lower().split()
+                        # Check if any words from requirement match in coverage name
+                        if any(word in coverage_name for word in req_words):
+                            is_relevant = True
+                            break
                     
                     if is_relevant:
                         found_relevant = True
