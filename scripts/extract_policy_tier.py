@@ -74,10 +74,7 @@ from src.models.llm_service import LLMService  # Import LLMService
 # --- Configuration ---
 INPUT_DIR_DEFAULT = "data/policies/raw/"
 OUTPUT_DIR_DEFAULT = "data/policies/processed/"
-# GEMINI_MODEL = "gemini-2.5-pro-exp-03-25" # Now handled by LLMService default config
 FILENAME_PATTERN = re.compile(r"(.+)_\{(.+)\}\.pdf")
-# MAX_RETRIES = 3 # Handled by LLMService
-# INITIAL_BACKOFF = 2  # seconds # Handled by LLMService
 
 # --- Logging Setup ---
 logging.basicConfig(
@@ -96,11 +93,24 @@ class LimitDetail(BaseModel):
     basis: Optional[str] = None
 
 
+class SourceDetail(BaseModel):
+    detail_snippet: str
+    source_location: str
+
+
+class ConditionalLimit(BaseModel):
+    condition: str
+    limits: List[LimitDetail]
+    source_location: str
+
+
 class CoverageDetail(BaseModel):
     coverage_name: str
-    limits: List[LimitDetail]
-    details: str
-    source_info: str
+    base_limits: List[LimitDetail]  # Renamed from limits
+    conditional_limits: Optional[List[ConditionalLimit]] = Field(
+        default=None
+    )  # Added optional conditional limits
+    source_specific_details: List[SourceDetail]  # Added source-specific details
 
 
 class CoverageCategory(BaseModel):
@@ -154,18 +164,37 @@ Your output **MUST** be a single, valid JSON object conforming to the following 
       "coverages": [
         {{
           "coverage_name": "Specific Name of the Coverage (e.g., Accidental Death and Permanent Disability)",
-          "limits": [
-            // Array of limit objects. Each object represents a specific limit variation.
+          "base_limits": [ // Renamed from 'limits'
+            // Array of limit objects for standard coverage.
             {{
               "type": "Description of the limit scope (e.g., 'Adult under 70 years', 'Maximum Limit for Family Cover', 'Per Person', 'Per item')",
               "limit": "Numerical_Limit_Value_Or_String_Like_Actual_cost_or_Unlimited",
               // Optional: Add 'basis' key if limit is calculated (e.g., per X hours)
               // "basis": "Description of basis (e.g., 'S$100 every 6 hours')"
             }}
-            // ... more limit objects if applicable (e.g., different ages, child, family)
+            // ... more limit objects if applicable
           ],
-          "details": "Summarized key conditions, definitions, inclusions, or exclusions for THIS specific coverage from the policy text relevant to the specified tier. DO NOT just write 'Refer to Section X'.",
-          "source_info": "Brief location identifier from the document (e.g., 'Page 3, Section 1', 'Page 4, Travel Delay table', 'Page 5, COVID-19 Extension')"
+          "conditional_limits": [ // Optional: Limits under specific conditions
+            {{
+              "condition": "Description of the condition (e.g., 'With 'Adventure Sports' add-on')",
+              "limits": [
+                 {{
+                   "type": "Description of the limit scope under this condition",
+                   "limit": "Numerical_Limit_Value_Or_String"
+                 }}
+                 // ... more limits specific to this condition
+              ],
+              "source_location": "Location where this conditional limit is defined (e.g., 'Page 15, Add-on Benefits')"
+            }}
+            // ... more conditional limits if applicable
+          ],
+          "source_specific_details": [ // Replaces 'details' and 'source_info'
+             {{
+               "detail_snippet": "Summarized key conditions, definitions, inclusions, or exclusions found at a specific location. DO NOT just write 'Refer to Section X'.",
+               "source_location": "Brief location identifier for this snippet (e.g., 'Page 3, Section 1')"
+             }}
+             // ... more detail snippets from different locations for the same coverage
+          ]
         }}
         // ... more coverage objects within this category
       ]
@@ -176,13 +205,20 @@ Your output **MUST** be a single, valid JSON object conforming to the following 
 ```
 **Crucial Instructions:**
 1.  **Tier Specificity:** Extract data *only* for the `[POLICY TIER NAME]` tier. If limits are shared across tiers, use the value specified for this tier.
-2.  **`details` Field Content:** This is critical. **DO NOT** use placeholder text like "Refer to Section X". You **MUST** read the relevant section(s) in the policy text referenced (or identifiable) for each coverage and **summarize** the key applicable conditions, definitions, major inclusions/exclusions, or other pertinent information for that coverage and specified tier. If a benefit is not covered for a specific tier, explicitly state that if mentioned. If no specific additional details are found beyond the benefit name and limit, state `No specific additional details found for this tier beyond the benefit description.`
-3.  **`source_info` Field:** For each `coverage` object, include a `source_info` string briefly indicating where the data (name, limit, details) was primarily found in the document (e.g., Page number, Section number, Table name).
-4.  **`limits` Array:** Capture all relevant limits shown for the specific coverage and tier. Use the `type` field to clarify the scope (e.g., 'Adult under 70', 'Child', 'Family Cover', 'Per Person', 'Per day max'). Ensure the `limit` value is the numerical amount (or appropriate string like "Unlimited" or "Actual cost"). If a limit has a specific basis (e.g., "$100 per 6 hours"), include this information, potentially within the `details` or as a separate `basis` key within the limit object.
+2.  **Benefit Consolidation & Structure:** Information for a single conceptual benefit (e.g., 'Rental Car Excess') might be mentioned in multiple places. You MUST create only ONE `coverage` object for that benefit.
+    *   Populate `base_limits` with the standard limits applicable to the benefit.
+    *   If limits change under specific conditions (e.g., add-on purchase, specific activity), populate the `conditional_limits` list. Each item in this list must describe the `condition`, the applicable `limits` under that condition, and the `source_location` where this conditional limit is defined. If no conditional limits apply, this field can be omitted or null.
+    *   Populate the `source_specific_details` list. Each item in this list MUST contain a `detail_snippet` summarizing key information (conditions, definitions, inclusions, exclusions) found at a specific `source_location`. **DO NOT** use placeholder text like "Refer to Section X"; summarize the actual content. Include an entry for *each distinct location* in the document that provides relevant details for the consolidated benefit.
+3.  **`base_limits` and `conditional_limits`:** Capture all relevant limits. Use the `type` field to clarify scope (e.g., 'Adult', 'Child', 'Family', 'Per Person', 'Per Item', 'Per Day'). Ensure `limit` is the numerical amount or appropriate string ("Unlimited", "Actual cost"). Include `basis` if applicable (e.g., "$100 per 6 hours").
+4.  **`source_specific_details` Content:** This is critical. For each entry, the `detail_snippet` MUST summarize the key information from the corresponding `source_location`. If a benefit aspect is not covered, state that explicitly if mentioned. If no specific details are found at a location beyond what's implied by the benefit name/limit, state `No specific additional details found at this location beyond the benefit description.`
 5.  **Currency:** Identify and include the correct currency code (e.g., "SGD").
-6.  **Completeness:** Extract all distinct coverage categories and the specific coverages listed under them for the specified tier.
-7.  **Accuracy:** Ensure benefit names, limits, and summarized details accurately reflect the policy document for the specified tier.
+6.  **Completeness:** Extract all distinct coverage categories and the specific coverages listed under them for the specified tier, following the consolidation rules.
+7.  **Accuracy:** Ensure benefit names, limits, conditions, and summarized details accurately reflect the policy document for the specified tier.
 8.  **JSON Only:** Your entire output must be just the JSON object, starting with `{{` and ending with `}}`.
+9.  **Table Symbol Interpretation:** When extracting information from tables, interpret symbols commonly used to indicate coverage:
+    *   '✓' (checkmark) or similar positive indicators mean **Yes / Covered**.
+    *   'X' (cross) or similar negative indicators mean **No / Not Covered**.
+    *   An empty cell or absence of a symbol for a specific benefit/condition usually means **No / Not Covered**. Use the context of the table to confirm.
 **Positive Example (Illustrative Snippet for Great Eastern TravelSmart Premier - Elite Plan):**
 ```json
 {{
@@ -197,14 +233,19 @@ Your output **MUST** be a single, valid JSON object conforming to the following 
       "coverages": [
         {{
           "coverage_name": "Accidental Death and Permanent Disability",
-          "limits": [
+          "base_limits": [ // Updated field name
             {{"type": "Adult under 70 years", "limit": 500000}},
             {{"type": "Adult age 70 years or above", "limit": 150000}},
             {{"type": "Child", "limit": 100000}},
             {{"type": "Maximum Limit for Family Cover", "limit": 1200000}}
           ],
-          "details": "Provides lump sum payment in the event of accidental death or permanent disablement occurring during the trip, subject to the scale of compensation. Excludes disablement from illness.",
-          "source_info": "Page 3, Section 1"
+          "conditional_limits": null, // Example showing no conditional limits
+          "source_specific_details": [ // Updated field name
+            {{
+              "detail_snippet": "Provides lump sum payment in the event of accidental death or permanent disablement occurring during the trip, subject to the scale of compensation. Excludes disablement from illness.",
+              "source_location": "Page 3, Section 1"
+            }}
+          ]
         }}
       ]
     }},
@@ -213,11 +254,45 @@ Your output **MUST** be a single, valid JSON object conforming to the following 
       "coverages": [
          {{
           "coverage_name": "Travel Delay While Overseas",
-          "limits": [
+          "base_limits": [ // Updated field name
             {{"type": "Per Person Max", "limit": 1200, "basis": "S$100 every 6 hours"}}
           ],
-          "details": "Payable for delay of scheduled public conveyance for every full 6 consecutive hours of delay while overseas. Requires written confirmation from carrier stating duration and reason for delay. Excludes delays known before booking/purchase.",
-          "source_info": "Page 4, Section 21A"
+          "conditional_limits": null,
+          "source_specific_details": [ // Updated field name
+            {{
+              "detail_snippet": "Payable for delay of scheduled public conveyance for every full 6 consecutive hours of delay while overseas. Requires written confirmation from carrier stating duration and reason for delay. Excludes delays known before booking/purchase.",
+              "source_location": "Page 4, Section 21A"
+            }}
+          ]
+        }},
+        {{
+          "coverage_name": "Rental Vehicle Excess Cover",
+          "base_limits": [
+            {{ "type": "Per Incident", "limit": 1000 }}
+          ],
+          "conditional_limits": [
+            {{
+              "condition": "With 'Premium Plus' add-on purchase",
+              "limits": [
+                {{ "type": "Per Incident", "limit": 2000 }}
+              ],
+              "source_location": "Page 15, Add-on Benefits"
+            }}
+          ],
+          "source_specific_details": [
+            {{
+              "detail_snippet": "Covers the excess or deductible you become legally liable to pay for loss or damage to a rental vehicle.",
+              "source_location": "Page 5, Section 25"
+            }},
+            {{
+              "detail_snippet": "Requires a formal rental agreement. Excludes rentals longer than 30 days and certain vehicle types (e.g., motorcycles, RVs).",
+              "source_location": "Page 18, Rental Vehicle Terms"
+            }},
+            {{
+              "detail_snippet": "Details about the optional 'Premium Plus' add-on increasing the excess cover limit.",
+              "source_location": "Page 15, Add-on Benefits"
+            }}
+          ]
         }}
       ]
     }}
@@ -226,40 +301,44 @@ Your output **MUST** be a single, valid JSON object conforming to the following 
 }}
 ```
 **Negative Examples (Mistakes to Avoid):**
-1.  **Incorrect `details` Field (Placeholder Text):**
+1.  **Incorrect `source_specific_details` (Placeholder Text):**
     ```json
     // ... inside a coverage object ...
     {{
         "coverage_name": "Trip Cancellation",
-        // ... limits ...
-        "details": "Refer to Section 15.", // <-- WRONG: Should summarize Section 15 content.
-        "source_info": "Page 4, Section 15"
+        "base_limits": [ ... ],
+        "source_specific_details": [
+            {{
+                "detail_snippet": "Refer to Section 15.", // <-- WRONG: Should summarize Section 15 content.
+                "source_location": "Page 4, Section 15"
+            }}
+        ]
     }}
     ```
-2.  **Missing `source_info` Field:**
+2.  **Missing `source_specific_details` Field:**
     ```json
     // ... inside a coverage object ...
     {{
         "coverage_name": "Baggage Loss",
-        // ... limits ...
-        "details": "Covers loss of baggage due to theft or misdirection by carrier, up to per item limits and overall maximum. Depreciation applies.",
-        // <-- WRONG: Missing the source_info field entirely.
+        "base_limits": [ ... ],
+        // <-- WRONG: Missing the source_specific_details field entirely.
     }}
     ```
-3.  **Incorrect `limits` Structure (Flat values instead of array of objects):**
+3.  **Incorrect `base_limits` Structure (Flat values instead of array of objects):**
     ```json
     // ... inside a coverage object ...
     {{
         "coverage_name": "Medical Expenses While Overseas",
-        "limits": {{ // <-- WRONG: Should be an array [{{ "type": "...", "limit": ...}}, ...]
+        "base_limits": {{ // <-- WRONG: Should be an array [{{ "type": "...", "limit": ...}}, ...]
             "Adult under 70 years": 500000,
             "Child": 300000
         }},
-        "details": "Covers necessary medical treatment incurred overseas due to accident or illness during the trip.",
-        "source_info": "Page 3, Section 3"
+        "source_specific_details": [ ... ]
     }}
     ```
 4.  **Missing Tier-Specific Data:** Extracting data generally without confirming it applies specifically to the requested `[POLICY TIER NAME]`.
+5.  **Lack of Consolidation:** Creating separate `coverage` objects for the same benefit found in different document sections, instead of consolidating into one object with multiple `source_specific_details` entries.
+6.  **Incorrect `conditional_limits` Structure:** Using flat values or incorrect nesting within `conditional_limits`.
 ---
 Please process the provided policy document for the **`[POLICY TIER NAME]`** tier and generate the JSON output according to these instructions.
 """

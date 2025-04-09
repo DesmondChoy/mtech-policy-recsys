@@ -21,11 +21,11 @@ class GeminiConfig:
     API_KEY: str = os.getenv("GOOGLE_API_KEY", "")
 
     # Default models
-    DEFAULT_MODEL: str = "gemini-2.5-pro-exp-03-25"  # Updated default model
+    DEFAULT_MODEL: str = "gemini-2.5-pro-preview-03-25"  # Updated default model
 
     # Default parameters for different use cases
     DEFAULT_PARAMETERS: Dict[str, Any] = {
-        "temperature": 0.7,
+        "temperature": 0.1,
         "top_p": 0.95,
         "top_k": 40,
         "max_output_tokens": 60000,  # Increased default max tokens
