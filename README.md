@@ -133,7 +133,7 @@ This step uses the structured requirements and policy data to generate detailed 
     # Example using the confused novice requirements
     python scripts/generate_policy_comparison.py data/extracted_customer_requirements/requirements_the_confused_novice_20250403_175921.json
     ```
-    The script uses the Gemini API (`gemini-2.5-pro-exp-03-25`) via the `LLMService` to compare the requirements against *all* policies found in `data/policies/processed/`. It processes policies asynchronously in batches.
+    The script uses the Gemini API (`gemini-2.5-pro-preview-03-25`) via the `LLMService` to compare the requirements against *all* policies found in `data/policies/processed/`. It processes policies asynchronously in batches.
 3.  **Output**: Markdown reports are saved to a subdirectory within `results/`, named after the customer ID and timestamp from the input requirements file (e.g., `results/the_confused_novice_20250403_175921/`). Each report file is named `policy_comparison_{provider}_{tier}_{customer_id}_{timestamp}.md`.
 
 ## 4. Policy Recommendation (Future)
@@ -244,10 +244,10 @@ The project structure supports the workflow illustrated in the diagram above:
 
 6. **Data Generation Scripts**
    - **Component**: `scripts/data_generation/generate_personalities.py`
-   - **Purpose**: Generates a list of common customer service personality types using the Gemini API (`gemini-2.5-pro-exp-03-25`).
+   - **Purpose**: Generates a list of common customer service personality types using the Gemini API (`gemini-2.5-pro-preview-03-25`).
    - **Output**: Saves a validated JSON file to `data/transcripts/personalities.json`. See the script's docstring for usage details.
    - **Component**: `scripts/data_generation/generate_transcripts.py`
-   - **Purpose**: Generates synthetic conversation transcripts using the Gemini API (`gemini-2.5-pro-exp-03-25`), combining personalities from `personalities.json` and requirements from `coverage_requirements.py`.
+   - **Purpose**: Generates synthetic conversation transcripts using the Gemini API (`gemini-2.5-pro-preview-03-25`), combining personalities from `personalities.json` and requirements from `coverage_requirements.py`.
    - **Output**: Saves structured, timestamped JSON transcripts (e.g., `transcript_the_skeptic_20250403_151200.json`) to `data/transcripts/raw/synthetic/`. Accepts `-n` argument to generate multiple transcripts. See the script's docstring for details.
 
 7. **Policy Comparison Report Generation**

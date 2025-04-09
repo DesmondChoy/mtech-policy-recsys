@@ -22,17 +22,21 @@ Inputs:
   profiles with names and characteristics.
 - data/coverage_requirements/coverage_requirements.py: Contains a dictionary
   defining standard travel insurance coverage types and details.
+- data/scenarios/*.json: (Optional) Contains scenario-specific requirements and
+  instructions for generating transcripts with specific coverage needs.
 - LLM Service API Key: Must be configured correctly for the LLMService, typically
   via environment variables (e.g., GOOGLE_API_KEY) as handled by
   src.models.gemini_config.
 
 Output:
-- A JSON file named `transcript_{personality_name}_{YYYYMMDD_HHMMSS}.json` (e.g.,
-  `transcript_the_skeptic_20250403_151200.json`) saved in the
+- A JSON file named `transcript_{scenario_name}_{YYYYMMDD_HHMMSS}.json`
+  (e.g., `transcript_uncovered_cancellation_reason_20250403_151200.json`) or just
+  `transcript_{YYYYMMDD_HHMMSS}.json` if no scenario is specified, saved in the
   `data/transcripts/raw/synthetic/` directory.
 - The JSON file contains:
     - "personality": The full dictionary of the randomly selected personality.
     - "transcript": A list of objects, each with "speaker" and "dialogue".
+    - "scenario": (If a scenario was used) The name of the scenario used.
 
 How to Run:
 1. Ensure you are in the project's root directory (mtech-policy-recsys).
@@ -41,7 +45,8 @@ How to Run:
    (usually via environment variables).
 4. Execute the script using the Python interpreter. You can optionally specify
    the number of transcripts to generate using the `-n` or `--num_transcripts`
-   argument (default is 1):
+   argument (default is 1) and/or a specific scenario using the `-s` or `--scenario`
+   argument:
    ```bash
    # Generate 1 transcript (default)
    python scripts/data_generation/generate_transcripts.py
@@ -50,6 +55,12 @@ How to Run:
    python scripts/data_generation/generate_transcripts.py -n 10
    # or
    python scripts/data_generation/generate_transcripts.py --num_transcripts 10
+
+   # Generate 1 transcript with a specific scenario
+   python scripts/data_generation/generate_transcripts.py -s uncovered_cancellation_reason
+
+   # Generate 5 transcripts with a specific scenario
+   python scripts/data_generation/generate_transcripts.py -n 5 -s golf_coverage
    ```
 5. Check the `data/transcripts/raw/synthetic/` directory for the output JSON file(s).
 
@@ -100,8 +111,9 @@ logging.basicConfig(
 PERSONALITIES_PATH = os.path.join(
     PROJECT_ROOT, "data", "transcripts", "personalities.json"
 )
+SCENARIOS_DIR = os.path.join(PROJECT_ROOT, "data", "scenarios")
 OUTPUT_DIR = os.path.join(PROJECT_ROOT, "data", "transcripts", "raw", "synthetic")
-MODEL_NAME = "gemini-2.5-pro-exp-03-25"
+MODEL_NAME = "gemini-2.5-pro-preview-03-25"
 
 PROMPT_TEMPLATE = """
 Generate a realistic synthetic conversation transcript between a customer service agent at ISS Insurance Ltd (Singapore) and a customer inquiring about travel insurance.
@@ -110,7 +122,11 @@ Generate a realistic synthetic conversation transcript between a customer servic
 {personality_details}
 
 # REQUIRED CUSTOMER REQUIREMENTS
-{coverage_requirements}
+## Standard Requirements:
+{standard_coverage_requirements}
+
+## Scenario-Specific Requirements:
+{scenario_requirements}
 
 # REQUIRED CUSTOMER CONTEXT
 {context_options_details}
@@ -218,8 +234,15 @@ def save_json(data: dict, file_path: str) -> None:
 # --- Main Generation Logic ---
 
 
-def generate_transcript():
-    """Generates a single transcript."""
+def generate_transcript(scenario_name=None):
+    """
+    Generates a single transcript.
+
+    Args:
+        scenario_name (str, optional): Name of the scenario to use. If provided,
+                                      loads scenario-specific requirements from the
+                                      corresponding JSON file in data/scenarios/.
+    """
     logging.info("Starting transcript generation...")
 
     # 1. Load Data
@@ -245,6 +268,20 @@ def generate_transcript():
         logging.warning("Proceeding without customer context options.")
         context_options = {}  # Use empty dict to avoid formatting errors
 
+    # Load scenario data if specified
+    scenario_data = None
+    if scenario_name:
+        scenario_path = os.path.join(SCENARIOS_DIR, f"{scenario_name}.json")
+        try:
+            scenario_data = load_json(scenario_path)
+            logging.info(f"Loaded scenario: {scenario_name}")
+        except FileNotFoundError:
+            logging.error(f"Error: Scenario file not found at {scenario_path}")
+            sys.exit(1)
+        except json.JSONDecodeError:
+            logging.error(f"Error: Could not decode JSON from {scenario_path}")
+            sys.exit(1)
+
     # 2. Select Personality
     selected_personality = random.choice(personalities)
     personality_name = selected_personality.get("name", "unknown_personality")
@@ -253,17 +290,44 @@ def generate_transcript():
     # 3. Format Data for Prompt
     formatted_personality = format_personality(selected_personality)
     # Use pprint for readable dictionary formatting in the prompt
-    formatted_requirements = pprint.pformat(coverage_reqs, indent=2)
+    formatted_standard_requirements = pprint.pformat(coverage_reqs, indent=2)
     formatted_context_options = pprint.pformat(
         context_options, indent=2
     )  # Format context options
 
+    # Format scenario-specific requirements if available
+    formatted_scenario_requirements = ""
+    scenario_instructions = ""
+    if scenario_data:
+        # Format additional requirements as a bulleted list
+        if "additional_requirements" in scenario_data:
+            formatted_scenario_requirements = "\n".join(
+                [f"- {req}" for req in scenario_data.get("additional_requirements", [])]
+            )
+
+        # Get scenario-specific instructions if available
+        if "prompt_instructions" in scenario_data:
+            scenario_instructions = f"\n\n## Scenario-Specific Instructions:\n{scenario_data['prompt_instructions']}"
+
     # 4. Construct Prompt
     final_prompt = PROMPT_TEMPLATE.format(
         personality_details=formatted_personality,
-        coverage_requirements=formatted_requirements,
-        context_options_details=formatted_context_options,  # Add formatted context options
+        standard_coverage_requirements=formatted_standard_requirements,
+        scenario_requirements=formatted_scenario_requirements,
+        context_options_details=formatted_context_options,
     )
+
+    # Add scenario-specific instructions if available
+    if scenario_instructions:
+        # Insert scenario instructions after the core mandates section
+        insert_point = final_prompt.find("## Conversation Flow & Realism")
+        if insert_point != -1:
+            final_prompt = (
+                final_prompt[:insert_point]
+                + scenario_instructions
+                + "\n\n"
+                + final_prompt[insert_point:]
+            )
     # --- START GENERATE TRANSCRIPT PROMPT ---
     print("--- START GENERATE TRANSCRIPT PROMPT ---")
     print(final_prompt)
@@ -305,11 +369,22 @@ def generate_transcript():
     # 7. Prepare Output
     output_data = {"personality": selected_personality, "transcript": transcript_output}
 
+    # Add scenario information if available
+    if scenario_data:
+        output_data["scenario"] = scenario_data.get("scenario_name")
+
     # 8. Save Output
     formatted_name = format_filename(personality_name)
     # Add timestamp to filename
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_filename = f"transcript_{formatted_name}_{timestamp}.json"
+
+    # Include scenario name in filename if available
+    if scenario_name:
+        formatted_scenario_name = format_filename(scenario_name)
+        output_filename = f"transcript_{formatted_scenario_name}_{timestamp}.json"
+    else:
+        output_filename = f"transcript_{timestamp}.json"
+
     output_path = os.path.join(OUTPUT_DIR, output_filename)
 
     save_json(output_data, output_path)
@@ -328,6 +403,12 @@ if __name__ == "__main__":
         default=1,
         help="Number of transcripts to generate (default: 1)",
     )
+    parser.add_argument(
+        "-s",
+        "--scenario",
+        type=str,
+        help="Name of the scenario to use (without .json extension). Loads scenario-specific requirements from data/scenarios/<scenario>.json",
+    )
     args = parser.parse_args()
 
     if args.num_transcripts < 1:
@@ -335,11 +416,13 @@ if __name__ == "__main__":
         sys.exit(1)
 
     logging.info(f"Starting generation of {args.num_transcripts} transcript(s)...")
+    if args.scenario:
+        logging.info(f"Using scenario: {args.scenario}")
 
     for i in range(args.num_transcripts):
         logging.info(f"--- Generating transcript {i + 1} of {args.num_transcripts} ---")
         try:
-            generate_transcript()
+            generate_transcript(scenario_name=args.scenario)
         except Exception as e:
             # Log the error for this specific transcript generation but continue
             logging.error(f"Failed to generate transcript {i + 1}: {e}")

@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 # Constants
 POLICY_DIR = project_root / "data" / "policies" / "processed"
 RESULTS_DIR = project_root / "results"
-LLM_MODEL = "gemini-2.5-pro-exp-03-25"  # As specified by user
+LLM_MODEL = "gemini-2.5-pro-preview-03-25"  # As specified by user
 BATCH_SIZE = 5
 
 # Note: Placeholders like {{Policy Source Info}} are escaped with double braces

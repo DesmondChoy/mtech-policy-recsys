@@ -1,0 +1,8 @@
+{
+  "scenario_name": "public_transport_double_cover",
+  "description": "Customer wants doubled accidental death coverage when traveling on public transport.",
+  "additional_requirements": [
+    "Double payout for accidental death if it occurs while traveling on public transport."
+  ],
+  "prompt_instructions": "The customer should explicitly ask about doubled coverage for accidental death specifically when traveling on public transport. The customer should be clear about wanting this specific benefit (e.g., 'I want to know if the policy provides extra coverage if an accident happens while I'm on a bus or train'). The agent should clearly acknowledge this specific request and note it as a requirement."
+}

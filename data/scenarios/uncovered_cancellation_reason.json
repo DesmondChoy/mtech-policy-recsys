@@ -1,0 +1,8 @@
+{
+  "scenario_name": "uncovered_cancellation_reason",
+  "description": "Customer needs trip cancellation coverage for a personal family event (e.g., important wedding), which is typically excluded.",
+  "additional_requirements": [
+    "Coverage if I have to cancel my trip for an important family event, like my sister's wedding."
+  ],
+  "prompt_instructions": "The customer should explicitly ask about coverage for trip cancellation due to a personal family event, providing specific details (e.g., 'I need to know if I'm covered if I have to cancel my trip for my sister's wedding'). The agent should clearly acknowledge this specific request, note it as a requirement, and indicate that this might not be a standard covered reason for cancellation."
+}
