@@ -78,52 +78,48 @@ flowchart TD
     %% Use comparison style for this subgraph -- Moved comment to its own line
 ```
 
-## 1. Data Preparation
+## 1. Data Preparation and Processing Pipeline
 
-This phase involves processing raw policy documents and generating synthetic transcript data.
+This section describes the end-to-end workflow for preparing policy data and generating/processing transcript data to extract customer requirements.
 
-### Policy Data Workflow
+1.  **Extract Policy Data**:
+    *   **Input**: Place raw insurance policy documents (PDF) into `data/policies/raw/` following the naming convention `insurer_{policy_tier}.pdf`.
+    *   **Action**: Run `python scripts/extract_policy_tier.py`.
+    *   **Process**: Uses Gemini API to extract structured coverage details for the specified tier, validates output using Pydantic.
+    *   **Output**: Structured JSON files (`insurer_{policy_tier}.json`) saved in `data/policies/processed/`.
 
-1.  **Input**: Place raw insurance policy documents in PDF format into the `data/policies/raw/` directory. Ensure files follow the naming convention `insurer_{policy_tier}.pdf` (e.g., `allianz_{gold_plan}.pdf`).
-2.  **Processing**: Run the `scripts/extract_policy_tier.py` script. This script uses the Google Gemini API to extract detailed coverage information for the specific policy tier indicated in the filename and validates the output against a Pydantic schema.
-    ```bash
-    python scripts/extract_policy_tier.py
-    ```
-3.  **Output**: Structured JSON files, named `insurer_{policy_tier}.json`, are saved in the `data/policies/processed/` directory.
-4.  **Usage**: This structured policy data is used later by the Analyzer Agent.
+2.  **Generate Personalities (Optional)**:
+    *   **Action**: If `data/transcripts/personalities.json` is missing or needs updating, run `python scripts/data_generation/generate_personalities.py`.
+    *   **Process**: Uses Gemini API to generate a list of customer personalities.
+    *   **Output**: `data/transcripts/personalities.json`.
 
-### Synthetic Transcript Workflow
+3.  **Generate Synthetic Transcripts**:
+    *   **Input**: `data/transcripts/personalities.json`, `data/coverage_requirements/coverage_requirements.py`. Optionally, specify a scenario file from `data/scenarios/` using `-s`.
+    *   **Action**: Run `python scripts/data_generation/generate_transcripts.py -n <number_of_transcripts> [-s <scenario_name>]`.
+    *   **Process**: Uses Gemini API to create synthetic conversation transcripts based on inputs.
+    *   **Output**: Structured JSON transcript files saved in `data/transcripts/raw/synthetic/`. Filenames follow the format `transcript_{scenario_name}_{timestamp}.json` (if scenario used) or `transcript_{timestamp}.json` (if no scenario). Example: `transcript_golf_coverage_20250410_220036.json`.
 
-1.  **Generate Personalities (Optional)**: If `data/transcripts/personalities.json` doesn't exist or needs updating, run:
-    ```bash
-    python scripts/data_generation/generate_personalities.py
-    ```
-    This script uses the Gemini API to generate a list of common customer personalities and saves them.
-2.  **Generate Transcripts**: Run the `scripts/data_generation/generate_transcripts.py` script. This script uses the generated personalities (`personalities.json`), the defined coverage requirements (`data/coverage_requirements/coverage_requirements.py`), and the Gemini API to create synthetic conversation transcripts.
-    ```bash
-    # Generate 5 transcripts
-    python scripts/data_generation/generate_transcripts.py -n 5
-    ```
-3.  **Output**: Structured, timestamped JSON transcript files (e.g., `transcript_the_skeptic_20250403_151200.json`) are saved in `data/transcripts/raw/synthetic/`. Each file contains the personality used and the conversation structured as speaker turns.
+4.  **Evaluate Raw Transcripts**:
+    *   **Input**: Raw synthetic transcripts from `data/transcripts/raw/synthetic/`.
+    *   **Action**: Run `python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/`.
+    *   **Process**: Evaluates if the raw transcripts adequately cover standard and scenario-specific requirements using Gemini API.
+    *   **Output**: Evaluation results saved in `data/evaluation/transcript_evaluations/`. (Note: The pipeline proceeds regardless of pass/fail currently).
 
-## 2. Transcript Processing and Requirement Extraction
+5.  **Parse Raw Transcripts (Batch)**:
+    *   **Input**: Raw synthetic transcripts (`.json`) from `data/transcripts/raw/synthetic/`.
+    *   **Action**: Run `python src/utils/transcript_processing.py`.
+    *   **Process**: Batch-processes all raw transcripts, parsing them into a standardized JSON list format.
+    *   **Output**: Parsed JSON files saved in `data/transcripts/processed/` with a `parsed_` prefix (e.g., `parsed_transcript_golf_coverage_20250410_220036.json`).
 
-This phase focuses on evaluating the generated transcripts and extracting customer requirements.
+6.  **Extract Requirements (Batch)**:
+    *   **Input**: Parsed transcript JSON files from `data/transcripts/processed/`.
+    *   **Action**: Run `python src/agents/extractor.py`. (Optionally specify `--input_dir` or `--output_dir`).
+    *   **Process**: Batch-processes all parsed transcripts using the Extractor Agent (CrewAI with OpenAI) to extract structured requirements.
+    *   **Output**: Structured requirements JSON files saved in `data/extracted_customer_requirements/`. Filenames follow the format `requirements_{original_name_part}.json` (e.g., `requirements_the_confused_novice_20250403_175921.json`), conforming to the `TravelInsuranceRequirement` Pydantic model.
 
-1.  **Evaluation**: Run the `scripts/evaluation/eval_transcript_main.py` script to automatically evaluate the raw synthetic transcripts (`data/transcripts/raw/synthetic/`) against the defined coverage requirements (`data/coverage_requirements/coverage_requirements.py`).
-    ```bash
-    python scripts/evaluation/eval_transcript_main.py
-    ```
-    This helps ensure the generated transcripts meet the necessary criteria before further processing. (Note: The workflow currently proceeds regardless of pass/fail, but evaluation results are generated).
-2.  **Parsing (Manual/Future Step)**: Transcripts that pass evaluation (or all transcripts, depending on the desired workflow) need to be parsed into a standardized format if they aren't already structured correctly. Currently, the generation script outputs structured JSON, but if using other raw sources, this step might involve `src/utils/transcript_processing.py` or similar logic to create files in `data/transcripts/processed/`.
-3.  **Requirement Extraction**: Run the `src/agents/extractor.py` script, providing the path to a *parsed* transcript JSON file (from `data/transcripts/processed/` or directly from `data/transcripts/raw/synthetic/` if the structure is compatible). This script uses a CrewAI agent (configured with OpenAI) to extract structured requirements.
-    ```bash
-    # Example using a generated transcript directly (assuming compatible structure)
-    python src/agents/extractor.py data/transcripts/raw/synthetic/transcript_the_skeptic_20250403_151200.json
-    ```
-4.  **Output**: The script saves the extracted requirements as a JSON file in `data/extracted_customer_requirements/`. The filename is derived from the input transcript name (e.g., `transcript_the_skeptic_20250403_151200_requirements.json`), conforming to the `TravelInsuranceRequirement` Pydantic model.
+This sequence takes you from raw data to structured policy information and customer requirements, ready for downstream analysis and comparison.
 
-## 3. Policy Comparison Report Generation
+## 2. Policy Comparison Report Generation
 
 This step uses the structured requirements and policy data to generate detailed Markdown comparison reports for each policy against a specific customer's needs.
 
@@ -133,84 +129,39 @@ This step uses the structured requirements and policy data to generate detailed 
     # Example using the confused novice requirements
     python scripts/generate_policy_comparison.py data/extracted_customer_requirements/requirements_the_confused_novice_20250403_175921.json
     ```
-    The script uses the Gemini API (`gemini-2.5-pro-preview-03-25`) via the `LLMService` to compare the requirements against *all* policies found in `data/policies/processed/`. It processes policies asynchronously in batches.
+    The script uses the Gemini API (`gemini-2.5-pro-exp-03-25`) via the `LLMService` to compare the requirements against *all* policies found in `data/policies/processed/`. It processes policies asynchronously in batches.
 3.  **Output**: Markdown reports are saved to a subdirectory within `results/`, named after the customer ID and timestamp from the input requirements file (e.g., `results/the_confused_novice_20250403_175921/`). Each report file is named `policy_comparison_{provider}_{tier}_{customer_id}_{timestamp}.md`.
 
-## 4. Policy Recommendation (Future)
+## 3. Policy Recommendation (Future)
 
 The outputs from the previous steps (Structured Policy JSON, Structured Requirements JSON, and potentially the generated Comparison Reports) will serve as inputs to the future Analyzer Agent, which will compare them to generate personalized policy recommendations.
-
-## Data Pipeline Regeneration
-
-To regenerate the core data pipeline from transcript generation through requirement extraction, follow these steps in order:
-
-1.  **(Optional) Update Coverage Requirements**: Modify `data/coverage_requirements/coverage_requirements.py` if the standard requirements need changes.
-2.  **Generate Synthetic Transcripts**: Run `python scripts/data_generation/generate_transcripts.py` (use `-n` to specify the number, and optionally `-s` for a scenario). This creates raw JSON transcripts in `data/transcripts/raw/synthetic/` based on defined personalities and coverage requirements.
-3.  **Evaluate Raw Transcripts**: Run `python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/`. This checks if the generated raw transcripts adequately cover the requirements (standard and scenario-specific). Results are saved in `data/evaluation/transcript_evaluations/` (by default).
-4.  **Process Raw Transcripts**: Run `python src/utils/transcript_processing.py`. This script batch-processes all raw transcripts found in `data/transcripts/raw/synthetic/` and saves parsed versions (standardized JSON lists) to `data/transcripts/processed/`.
-5.  **Extract Requirements**: Run `python src/agents/extractor.py`. This script batch-processes all parsed transcripts from `data/transcripts/processed/` using the Extractor Agent and saves the structured requirements (JSON) to `data/extracted_customer_requirements/`.
-
-This sequence takes you from the initial transcript generation to having structured customer requirements ready for the downstream analysis agents.
 
 ## Project Structure
 
 ```
 /
-├── notebooks/                  # Jupyter notebooks for experimentation
-│   ├── agent_development/      # Agent-specific experiments
-│   │   ├── analyzer/           # Analyzer agent development
-│   │   ├── extractor/          # Requirement extraction from transcripts
-│   │   ├── recommender/        # Recommender agent development
-│   │   └── voting/             # Voting system development
-│   └── supervised_learning/    # Supervised learning experiments
 ├── data/                       # Data storage
 │   ├── coverage_requirements/  # Standardized coverage requirements
 │   ├── extracted_customer_requirements/ # Extracted requirements from transcripts
 │   ├── policies/               # Insurance policy documents
 │   │   ├── raw/                # Original PDF policy documents
 │   │   └── processed/          # Processed policy JSON files
+│   ├── scenarios/              # Scenario definitions for transcript generation
 │   ├── transcripts/            # Conversation transcripts
 │   │   ├── raw/                # Original conversation transcripts (synthetic/, real/)
 │   │   └── processed/          # Processed JSON transcripts
-│   └── evaluation/             # Evaluation data
+│   └── evaluation/             # Evaluation data & results
 │       └── transcript_evaluations/ # Transcript evaluation results
-├── src/                        # Source code
-│   ├── agents/                 # Agent implementations
-│   │   ├── analyzer.py         # Policy analyzer agent
-│   │   ├── cs_agent.py         # Customer service agent
-│   │   ├── extractor.py        # Requirement extraction agent
-│   │   ├── recommender.py      # Policy recommendation agent
-│   │   └── voting.py           # Consensus voting system
-│   ├── models/                 # LLM configurations and services
-│   │   ├── base.py             # Base model definitions
-│   │   ├── gemini_config.py    # Google Gemini configuration
-│   │   └── llm_service.py      # LLM service interface
-│   ├── prompts/                # Prompts for LLM tasks
-│   │   └── cs_agent_prompts.py # Customer service agent prompts
-│   ├── utils/                  # Utility functions
-│   │   ├── email_service.py    # Email service utilities
-│   │   └── transcript_processing.py # Transcript parsing utilities
-│   └── web/                    # Web interface components
-│       └── app.py              # Web application
+├── memory-bank/                # Cline's memory bank (documentation)
+├── notebooks/                  # Jupyter notebooks for experimentation & prototyping
+├── results/                    # Output comparison reports
+├── scripts/                    # Utility & automation scripts (data generation, evaluation, etc.)
+├── src/                        # Core application source code (agents, models, utils)
 ├── tests/                      # Test cases
-│   └── test_agents.py          # Agent tests
-├── scripts/                    # Utility scripts
-│   ├── extract_policy_tier.py  # Extracts policy tiers from PDF/text
-│   ├── generate_policy_comparison.py # Generates Markdown comparison reports
-│   ├── data_generation/        # Scripts specifically for data generation
-│   │   ├── generate_personalities.py # Generates personality types
-│   │   └── generate_transcripts.py   # Generates synthetic transcripts using LLM
-│   └── evaluation/             # Evaluation-related scripts and data
-│       └── transcript_evaluation/ # Transcript evaluation scripts (flat structure)
-│           ├── eval_transcript_main.py
-│           ├── eval_transcript_gemini.py
-│           ├── eval_transcript_parser.py
-│           ├── eval_transcript_prompts.py
-│           ├── eval_transcript_results.py
-│           └── eval_transcript_utils.py
-└── tutorials/                  # Tutorial scripts and examples
-    ├── llm_service_guide.md    # LLM service documentation
-    └── llm_service_tutorial.py # LLM service usage examples
+├── tutorials/                  # Guides and example scripts
+├── .gitignore                  # Git ignore file
+├── README.md                   # This file
+└── requirements.txt            # Project dependencies
 ```
 
 ## Key Workflow Components
@@ -246,9 +197,9 @@ The project structure supports the workflow illustrated in the diagram above:
 
 4. **Requirement Extraction**
    - **Component**: `src/agents/extractor.py`
-   - **Purpose**: Extracts structured customer requirements from a parsed transcript JSON file using a CrewAI agent (configured with OpenAI). Run via CLI.
-   - **Input**: Path to a processed transcript JSON file (e.g., `data/transcripts/processed/parsed_transcript_01.json`).
-   - **Output**: Saves structured requirements JSON to `data/extracted_customer_requirements/` with a filename derived from the input (e.g., `parsed_transcript_01_requirements.json`), conforming to the `TravelInsuranceRequirement` model.
+   - **Purpose**: Extracts structured customer requirements from parsed transcript JSON files using a CrewAI agent (configured with OpenAI). Run via CLI for batch processing.
+   - **Input**: Directory containing processed transcript JSON files (default: `data/transcripts/processed/`).
+   - **Output**: Saves structured requirements JSON to `data/extracted_customer_requirements/` (default). Filenames follow the format `requirements_{original_name_part}.json` (e.g., `requirements_the_confused_novice_20250403_175921.json`), conforming to the `TravelInsuranceRequirement` model.
 
 5. **Policy Processing**
    - **Component**: `scripts/extract_policy_tier.py`
@@ -261,8 +212,8 @@ The project structure supports the workflow illustrated in the diagram above:
    - **Purpose**: Generates a list of common customer service personality types using the Gemini API (`gemini-2.5-pro-preview-03-25`).
    - **Output**: Saves a validated JSON file to `data/transcripts/personalities.json`. See the script's docstring for usage details.
    - **Component**: `scripts/data_generation/generate_transcripts.py`
-   - **Purpose**: Generates synthetic conversation transcripts using the Gemini API (`gemini-2.5-pro-preview-03-25`), combining personalities from `personalities.json` and requirements from `coverage_requirements.py`.
-   - **Output**: Saves structured, timestamped JSON transcripts (e.g., `transcript_the_skeptic_20250403_151200.json`) to `data/transcripts/raw/synthetic/`. Accepts `-n` argument to generate multiple transcripts. See the script's docstring for details.
+   - **Purpose**: Generates synthetic conversation transcripts using the Gemini API (`gemini-2.5-pro-exp-03-25`), combining personalities from `personalities.json` and requirements from `coverage_requirements.py`. Can optionally use scenario files (`data/scenarios/`).
+   - **Output**: Saves structured, timestamped JSON transcripts to `data/transcripts/raw/synthetic/`. Filenames follow the format `transcript_{scenario_name}_{timestamp}.json` or `transcript_{timestamp}.json` (e.g., `transcript_golf_coverage_20250410_220036.json`). Accepts `-n` and `-s` arguments. See the script's docstring for details.
 
 7. **Policy Comparison Report Generation**
    - **Component**: `scripts/generate_policy_comparison.py`
