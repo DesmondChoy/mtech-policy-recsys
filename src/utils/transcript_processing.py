@@ -6,14 +6,6 @@ from typing import List, Optional, Dict, Any
 from datetime import date
 
 
-class TravelerDetail(BaseModel):
-    age: Optional[int] = Field(None, description="Age of the traveler.")
-    gender: Optional[str] = Field(
-        None, description="Gender of the traveler (e.g., 'Male', 'Female')."
-    )
-    citizenship: Optional[str] = Field(None, description="Citizenship of the traveler.")
-
-
 class TravelInsuranceRequirement(BaseModel):
     requirement_id: str = Field(
         ..., description="Unique identifier for tracking the insurance requirement."
@@ -50,8 +42,8 @@ class TravelInsuranceRequirement(BaseModel):
     excluded_coverages: Optional[List[str]] = Field(
         None, description="Coverages the customer specifically wants to exclude."
     )
-    traveler_details: Optional[List[TravelerDetail]] = Field(
-        None, description="Detailed demographic information for each traveler."
+    age_group: Optional[str] = Field(
+        None, description="Age range of the traveler (e.g., '18-25', '26-35', '36-45')."
     )
     additional_requests: Optional[str] = Field(
         None, description="Any special requests or concerns noted by the customer."
