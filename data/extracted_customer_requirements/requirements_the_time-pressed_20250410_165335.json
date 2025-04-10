@@ -1,0 +1,115 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two travelers, including medical coverage, trip cancellation, travel delays, and lost/damaged luggage.\",\n  \"detailed_description\": \"The customer, traveling from Singapore to Japan for 10 days with one companion, requires essential travel insurance. They prioritize medical emergencies, trip cancellation in case of illness prior to departure, coverage for travel delays, and lost or damaged luggage. They also plan to participate in regular hiking activities but do not have any pre-existing conditions or need special medical equipment. The customer wishes to exclude coverage related to war and political unrest and has a budget of $200-$300 for the policy.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Emergency medical treatment\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"excluded_coverages\": [\n    \"War and Political Unrest\"\n  ],\n  \"traveler_details\": [\n    {\n      \"age\": 30,\n      \"gender\": null,\n      \"citizenship\": \"Singapore\"\n    },\n    {\n      \"age\": 30,\n      \"gender\": null,\n      \"citizenship\": \"Singapore\"\n    }\n  ],\n  \"additional_requests\": \"Need quick options and coverage details, preferably within 24 hours.\",\n  \"keywords\": [\n    \"Travel Insurance\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Hiking\",\n    \"War and Political Unrest\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ123456",
+        "requirement_summary": "Travel insurance for a trip to Japan for two travelers, including medical coverage, trip cancellation, travel delays, and lost/damaged luggage.",
+        "detailed_description": "The customer, traveling from Singapore to Japan for 10 days with one companion, requires essential travel insurance. They prioritize medical emergencies, trip cancellation in case of illness prior to departure, coverage for travel delays, and lost or damaged luggage. They also plan to participate in regular hiking activities but do not have any pre-existing conditions or need special medical equipment. The customer wishes to exclude coverage related to war and political unrest and has a budget of $200-$300 for the policy.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "10 days",
+        "insurance_coverage_type": [
+            "Medical",
+            "Trip Cancellation",
+            "Travel Delays",
+            "Lost/Damaged Luggage"
+        ],
+        "pre_existing_conditions": [],
+        "medical_needs": [
+            "Emergency medical treatment"
+        ],
+        "activities_to_cover": [
+            "Hiking"
+        ],
+        "excluded_coverages": [
+            "War and Political Unrest"
+        ],
+        "traveler_details": [
+            {
+                "age": 30,
+                "gender": null,
+                "citizenship": "Singapore"
+            },
+            {
+                "age": 30,
+                "gender": null,
+                "citizenship": "Singapore"
+            }
+        ],
+        "additional_requests": "Need quick options and coverage details, preferably within 24 hours.",
+        "keywords": [
+            "Travel Insurance",
+            "Medical Coverage",
+            "Trip Cancellation",
+            "Travel Delays",
+            "Lost/Damaged Luggage",
+            "Hiking",
+            "War and Political Unrest"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema with the following fields:\n- requirement_id (str): A unique identifier.\n- requirement_summary (str): A concise summary of the customer's insurance needs.\n- detailed_description (str): A detailed narrative extracted from the transcript.\n- travel_destination (Optional[str]): The destination (country or region) mentioned.\n- travel_duration (Optional[str]): Duration of the trip (e.g., \"7 days\", \"1 month\").\n- travel_start_date (Optional[date]): The travel start date.\n- travel_end_date (Optional[date]): The travel end date.\n- insurance_coverage_type (Optional[List[str]]): The types of insurance coverage requested (e.g., [\"Medical\", \"Trip Cancellation\"]).\n- pre_existing_conditions (Optional[List[str]]): Any pre-existing conditions mentioned.\n- age_group (Optional[str]): Age bracket of the travelers (e.g., \"26-40\").\n- travelers_count (Optional[int]): Number of travelers.\n- budget_range (Optional[str]): Budget constraints (e.g., \"$100-$200\").\n- preferred_insurance_provider (Optional[str]): Preferred insurance provider, if any.\n- additional_requests (Optional[str]): Any special requests or concerns.\n- keywords (Optional[List[str]]): Important keywords or terms for further analysis.\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd Singapore. My name is Sarah. How may I help you today?\nCustomer: Hi Sarah, look, I'm really short on time. I need to get travel insurance sorted like, now. Can we do this quickly?\nCustomer Service Agent: Of course, I understand you're busy. I can definitely help gather the details needed for a travel insurance quote. To start, could you let me know where you'll be travelling to?\nCustomer: Japan. We're planning a trip to Japan.\nCustomer Service Agent: Okay, Japan. And how long will you be away for?\nCustomer: 10 days. It will be a 10 day trip. Just need the basics covered, nothing fancy.\nCustomer Service Agent: Noted, 10 days. And how many people will be travelling?\nCustomer: Two of us. It's a trip for 2.\nCustomer Service Agent: Alright, two travellers. And will you be travelling from Singapore?\nCustomer: Yes, yes, we're based in Singapore. Can we move on? What else do you need?\nCustomer Service Agent: Certainly. Just need a few more details about your trip plans to understand your needs. For instance, what's the main concern you want the insurance to address?\nCustomer: Look, the absolute must-have is medical. If one of us gets sick or has an accident over there, needs a doctor, hospital, whatever – that *has* to be covered. Emergency medical treatment is key.\nCustomer Service Agent: Okay, so comprehensive Medical Coverage is a priority. Understood. Anything else specifically?\nCustomer: Yeah, cancellations. What if, God forbid, one of us gets seriously ill *before* we even leave and we have to cancel the whole thing? Need cover for those non-refundable costs. Trip Cancellation, right?\nCustomer Service Agent: Yes, Trip Cancellation covers specific reasons like illness preventing travel. Noted.\nCustomer: And delays! Last time I flew, massive delay, stuck for hours. If that happens, need cover for extra hotel nights, food, that sort of thing. Travel Delays coverage.\nCustomer Service Agent: Understood, coverage for significant Travel Delays causing additional expenses. What about your belongings?\nCustomer: Oh, right. Bags. Definitely need coverage if the airline loses our luggage or it turns up damaged. Reimbursement for lost items and maybe essentials if it's delayed for ages. Lost/Damaged Luggage cover.\nCustomer Service Agent: Okay, Lost/Damaged Luggage cover included. Now, regarding your plans in Japan, are you intending to participate in any specific activities? Sometimes certain activities require specific mention.\nCustomer: Uh, nothing extreme. We plan to do some Hiking during our trip. Just regular hiking trails, nothing professional. Does that need anything special?\nCustomer Service Agent: Thanks for clarifying. Mentioning hiking helps ensure appropriate coverage under the Sports and Adventure Activities section, even for standard activities. Are there any types of coverage you know for sure you *won't* need?\nCustomer: Yeah, that War and Political Unrest stuff. Definitely don't need coverage for that. Japan's stable. We want to exclude War and Political Unrest from our policy. Just adds cost, right?\nCustomer Service Agent: Okay, noted to exclude War and Political Unrest cover. Just a couple more standard questions. Could you tell me the general age group of the two travellers?\nCustomer: We're mostly around 26-40 years old. Why? Does it change the price much? Get on with it.\nCustomer Service Agent: It's just one factor for the underwriters, thank you. And are there any pre-existing medical conditions for either traveller, like asthma or diabetes?\nCustomer: No, no pre-existing conditions.\nCustomer Service Agent: And are you taking any special medical equipment, like a CPAP machine or wheelchair?\nCustomer: No special medical equipment needed. None at all.\nCustomer Service Agent: Okay. And finally, do you have a rough budget in mind for the insurance premium itself?\nCustomer: Look, we're hoping to spend $200-$300, somewhere around there. Just need the options that fit. Quickly, please.\nCustomer Service Agent: Alright, thank you. Let me quickly summarize the requirements I've gathered to make sure I have everything correct. You need travel insurance for 2 adults, age group 26-40, travelling from Singapore to Japan for 10 days. You require coverage for Medical emergencies, Trip Cancellation, Travel Delays, and Lost/Damaged Luggage. You plan on doing some Hiking, so we'll note that under activities. You specifically want to exclude coverage for War and Political Unrest. There are no pre-existing conditions or special medical equipment. Your preferred budget is around $200-$300. Is that all correct?\nCustomer: Yes, yes, that sounds right. Finally. So what happens now? Do I get a quote?\nCustomer Service Agent: Thank you for confirming. I have all the necessary details recorded. I will pass this information to our quotes team, and they will prepare the relevant options based on your requirements and budget. You should receive an email with the quotes within the next 24 hours.\nCustomer: Okay, fine. 24 hours. Make sure it’s quick. Thanks. Bye.\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd. Have a good day.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two travelers, including medical coverage, trip cancellation, travel delays, and lost/damaged luggage.\",\n  \"detailed_description\": \"The customer, traveling from Singapore to Japan for 10 days with one companion, requires essential travel insurance. They prioritize medical emergencies, trip cancellation in case of illness prior to departure, coverage for travel delays, and lost or damaged luggage. They also plan to participate in regular hiking activities but do not have any pre-existing conditions or need special medical equipment. The customer wishes to exclude coverage related to war and political unrest and has a budget of $200-$300 for the policy.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Emergency medical treatment\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"excluded_coverages\": [\n    \"War and Political Unrest\"\n  ],\n  \"traveler_details\": [\n    {\n      \"age\": 30,\n      \"gender\": null,\n      \"citizenship\": \"Singapore\"\n    },\n    {\n      \"age\": 30,\n      \"gender\": null,\n      \"citizenship\": \"Singapore\"\n    }\n  ],\n  \"additional_requests\": \"Need quick options and coverage details, preferably within 24 hours.\",\n  \"keywords\": [\n    \"Travel Insurance\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Hiking\",\n    \"War and Political Unrest\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ123456",
+                "requirement_summary": "Travel insurance for a trip to Japan for two travelers, including medical coverage, trip cancellation, travel delays, and lost/damaged luggage.",
+                "detailed_description": "The customer, traveling from Singapore to Japan for 10 days with one companion, requires essential travel insurance. They prioritize medical emergencies, trip cancellation in case of illness prior to departure, coverage for travel delays, and lost or damaged luggage. They also plan to participate in regular hiking activities but do not have any pre-existing conditions or need special medical equipment. The customer wishes to exclude coverage related to war and political unrest and has a budget of $200-$300 for the policy.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "10 days",
+                "insurance_coverage_type": [
+                    "Medical",
+                    "Trip Cancellation",
+                    "Travel Delays",
+                    "Lost/Damaged Luggage"
+                ],
+                "pre_existing_conditions": [],
+                "medical_needs": [
+                    "Emergency medical treatment"
+                ],
+                "activities_to_cover": [
+                    "Hiking"
+                ],
+                "excluded_coverages": [
+                    "War and Political Unrest"
+                ],
+                "traveler_details": [
+                    {
+                        "age": 30,
+                        "gender": null,
+                        "citizenship": "Singapore"
+                    },
+                    {
+                        "age": 30,
+                        "gender": null,
+                        "citizenship": "Singapore"
+                    }
+                ],
+                "additional_requests": "Need quick options and coverage details, preferably within 24 hours.",
+                "keywords": [
+                    "Travel Insurance",
+                    "Medical Coverage",
+                    "Trip Cancellation",
+                    "Travel Delays",
+                    "Lost/Damaged Luggage",
+                    "Hiking",
+                    "War and Political Unrest"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 9013,
+        "prompt_tokens": 7428,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 1585,
+        "successful_requests": 4
+    }
+}
