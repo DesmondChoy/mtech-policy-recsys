@@ -48,7 +48,7 @@ How to Run:
    argument (default is 1) and/or a specific scenario using the `-s` or `--scenario`
    argument:
    ```bash
-   # Generate 1 transcript (default)
+   # Generate 1 transcript (default, no scenario used)
    python scripts/data_generation/generate_transcripts.py
 
    # Generate 10 transcripts
@@ -339,8 +339,11 @@ def generate_transcript(scenario_name=None):
     logging.info(f"Generating transcript using model: {MODEL_NAME}...")
     try:
         llm = LLMService()  # Assumes API key is handled by GeminiConfig/environment
-        # Call uses default max_output_tokens from config now
-        response = llm.generate_content(prompt=final_prompt, model=MODEL_NAME)
+        # Get creative parameters
+        parameters = llm.GeminiConfig.get_parameters("creative")
+        response = llm.generate_content(
+            prompt=final_prompt, model=MODEL_NAME, parameters=parameters
+        )
         generated_text = response.text
         logging.info("Transcript generation complete.")
         # --- START RAW LLM RESPONSE ---
