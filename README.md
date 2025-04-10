@@ -145,8 +145,8 @@ The outputs from the previous steps (Structured Policy JSON, Structured Requirem
 To regenerate the core data pipeline from transcript generation through requirement extraction, follow these steps in order:
 
 1.  **(Optional) Update Coverage Requirements**: Modify `data/coverage_requirements/coverage_requirements.py` if the standard requirements need changes.
-2.  **Generate Synthetic Transcripts**: Run `python scripts/data_generation/generate_transcripts.py` (use `-n` to specify the number). This creates raw JSON transcripts in `data/transcripts/raw/synthetic/` based on defined personalities and coverage requirements.
-3.  **Evaluate Raw Transcripts**: Run `python scripts/evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/`. This checks if the generated raw transcripts adequately cover the requirements. Results are saved in `data/evaluation/transcript_evaluations/` (by default).
+2.  **Generate Synthetic Transcripts**: Run `python scripts/data_generation/generate_transcripts.py` (use `-n` to specify the number, and optionally `-s` for a scenario). This creates raw JSON transcripts in `data/transcripts/raw/synthetic/` based on defined personalities and coverage requirements.
+3.  **Evaluate Raw Transcripts**: Run `python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/`. This checks if the generated raw transcripts adequately cover the requirements (standard and scenario-specific). Results are saved in `data/evaluation/transcript_evaluations/` (by default).
 4.  **Process Raw Transcripts**: Run `python src/utils/transcript_processing.py`. This script batch-processes all raw transcripts found in `data/transcripts/raw/synthetic/` and saves parsed versions (standardized JSON lists) to `data/transcripts/processed/`.
 5.  **Extract Requirements**: Run `python src/agents/extractor.py`. This script batch-processes all parsed transcripts from `data/transcripts/processed/` using the Extractor Agent and saves the structured requirements (JSON) to `data/extracted_customer_requirements/`.
 
@@ -200,12 +200,14 @@ This sequence takes you from the initial transcript generation to having structu
 │   ├── data_generation/        # Scripts specifically for data generation
 │   │   ├── generate_personalities.py # Generates personality types
 │   │   └── generate_transcripts.py   # Generates synthetic transcripts using LLM
-│   └── evaluation/             # Transcript evaluation scripts
-│       ├── eval_transcript_main.py # Main evaluation script
-│       ├── evaluators/         # Evaluation implementations
-│       ├── processors/         # Result processors
-│       ├── prompts/            # Evaluation prompts
-│       └── utils/              # Evaluation utilities
+│   └── evaluation/             # Evaluation-related scripts and data
+│       └── transcript_evaluation/ # Transcript evaluation scripts (flat structure)
+│           ├── eval_transcript_main.py
+│           ├── eval_transcript_gemini.py
+│           ├── eval_transcript_parser.py
+│           ├── eval_transcript_prompts.py
+│           ├── eval_transcript_results.py
+│           └── eval_transcript_utils.py
 └── tutorials/                  # Tutorial scripts and examples
     ├── llm_service_guide.md    # LLM service documentation
     └── llm_service_tutorial.py # LLM service usage examples
@@ -221,9 +223,21 @@ The project structure supports the workflow illustrated in the diagram above:
    - **Coverage Requirements**: Defined in `data/coverage_requirements/coverage_requirements.py`
 
 2. **Transcript Evaluation**
-   - **Component**: `scripts/evaluation/eval_transcript_main.py`
-   - **Purpose**: Evaluates if transcripts contain all required coverage information
-   - **Output**: Pass/fail decision for each transcript
+   - **Component**: `scripts/evaluation/transcript_evaluation/eval_transcript_main.py`
+   - **Purpose**: Evaluates if transcripts contain all required coverage information (standard and scenario-specific).
+   - **Input**: Raw transcript JSON files (e.g., from `data/transcripts/raw/synthetic/`). Can process a single file or a directory.
+   - **Output**: Evaluation results saved in `data/evaluation/transcript_evaluations/` (by default) in specified formats (JSON, TXT, CSV summary).
+   - **Usage Examples**:
+     ```bash
+     # Evaluate a single transcript
+     python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --transcript data/transcripts/raw/synthetic/transcript_golf_coverage_20250410_220036.json
+
+     # Evaluate all transcripts in a directory
+     python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/
+
+     # Specify output directory and formats
+     python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/ --output-dir custom/eval_results --format json,csv
+     ```
 
 3. **Transcript Processing**
    - **Component**: `src/utils/transcript_processing.py`

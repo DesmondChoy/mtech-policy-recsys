@@ -370,11 +370,11 @@ def generate_transcript(scenario_name=None):
         transcript_output = parsed_transcript
 
     # 7. Prepare Output
-    output_data = {"personality": selected_personality, "transcript": transcript_output}
-
-    # Add scenario information if available
-    if scenario_data:
-        output_data["scenario"] = scenario_data.get("scenario_name")
+    output_data = {
+        "personality": selected_personality,
+        "transcript": transcript_output,
+        "scenario": scenario_data.get("scenario_name") if scenario_data else None,
+    }
 
     # 8. Save Output
     formatted_name = format_filename(personality_name)

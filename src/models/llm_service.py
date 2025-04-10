@@ -136,6 +136,36 @@ class LLMService:
                     )
                     raise
 
+    def _fix_json_format(self, json_str: str) -> str:
+        """
+        Fix common JSON formatting issues in LLM-generated JSON.
+
+        Args:
+            json_str (str): The JSON string to fix
+
+        Returns:
+            str: The fixed JSON string
+        """
+        import re
+
+        # Add missing commas between key-value pairs
+        # Pattern: "key": value\n  "key"
+        fixed_json = re.sub(
+            r'("[^"]+"\s*:\s*[^,{\[\n]+)(\s*^\s*")',
+            r"\1,\2",
+            json_str,
+            flags=re.MULTILINE,
+        )
+
+        # Add missing commas between objects in arrays
+        # Pattern: }\n  {
+        fixed_json = re.sub(r"(})\s*^\s*({)", r"\1,\2", fixed_json, flags=re.MULTILINE)
+
+        logger.debug(f"Original JSON:\n{json_str}")
+        logger.debug(f"Fixed JSON:\n{fixed_json}")
+
+        return fixed_json
+
     def generate_structured_content(
         self,
         prompt: str,
@@ -168,7 +198,7 @@ class LLMService:
         # Use deterministic parameters by default for structured content
         parameters = parameters or GeminiConfig.get_parameters("deterministic")
 
-        # Add instructions to format the response as JSON
+        # Add instructions to format the response as valid JSON
         structured_prompt = f"{prompt}\n\nProvide your response as valid JSON."
 
         response = self.generate_content(
@@ -184,7 +214,31 @@ class LLMService:
             # The response.text contains the generated text
             import json
 
-            return json.loads(response.text)
+            # Get the raw text
+            raw_text = response.text
+
+            # Check if the response is wrapped in a markdown code block
+            if "```json" in raw_text or "```" in raw_text:
+                logger.info(
+                    "Detected markdown code block in response. Extracting JSON content."
+                )
+                # Remove markdown code block indicators
+                cleaned_text = (
+                    raw_text.replace("```json", "").replace("```", "").strip()
+                )
+                raw_text = cleaned_text
+
+            # Try to parse the JSON directly
+            try:
+                return json.loads(raw_text)
+            except json.JSONDecodeError:
+                # If direct parsing fails, try to fix common formatting issues
+                logger.info(
+                    "Initial JSON parsing failed. Attempting to fix JSON format."
+                )
+                fixed_json = self._fix_json_format(raw_text)
+                return json.loads(fixed_json)
+
         except json.JSONDecodeError as e:
             logger.error(f"Failed to parse response as JSON: {str(e)}")
             logger.error(f"Response text: {response.text}")

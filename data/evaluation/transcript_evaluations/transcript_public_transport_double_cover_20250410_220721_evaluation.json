@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about coverage for cancelling the trip due to sudden illness before departure.",
+      "customer_quote": "[14] Well, what happens if we have to cancel the whole trip? Like, if one of us gets suddenly very sick just before we leave?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's concern and correctly identified it as a requirement for trip cancellation coverage due to specified reasons like illness.",
+      "agent_quote": "[15] Not at all, it's a very common concern. So, you're interested in coverage for situations where you might need to cancel your trip beforehand due to specified reasons like unexpected illness. I've noted that requirement."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer specifically asked about coverage for medical expenses incurred during the trip, mentioning doctor visits and hospital stays.",
+      "customer_quote": "[16] And... what about getting sick *during* the trip? In Japan? If we need to see a doctor or, worse, go to a hospital? It must be very expensive there. Does insurance help with that?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed understanding of the need for medical expense coverage during travel, including doctor visits and hospital stays.",
+      "agent_quote": "[17] Okay, so coverage for medical expenses incurred while you are traveling is important for you. That includes things like doctor visits or hospital stays abroad. Understood."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer inquired about coverage for luggage if it is lost or damaged by the airline.",
+      "customer_quote": "[18] Also... our bags. Luggage. What if the airline loses them? Or if they arrive damaged? That would be such a hassle. Does insurance cover that?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly identified the customer's concern as a requirement for lost, damaged, or delayed luggage coverage.",
+      "agent_quote": "[19] Alright, so you're concerned about cover for your luggage in case it gets lost, damaged, or significantly delayed by the airline. I've noted that down."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer asked about coverage for expenses like accommodation and food if their flight is significantly delayed.",
+      "customer_quote": "[20] Oh, and delays! You know how flights can sometimes be delayed for a really long time? Like, many hours? What if we get stuck somewhere overnight and need a hotel room or food? Is that something insurance can help with?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement for coverage related to additional expenses resulting from significant travel delays.",
+      "agent_quote": "[21] Understood. So cover for additional expenses like accommodation or meals due to significant travel delays is another requirement you have."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer specifically asked if injuries sustained while participating in light skiing would be covered.",
+      "customer_quote": "[22] Okay, one more thing, activity-wise... we were thinking of trying some light skiing, maybe just for a day... what if one of us falls and gets injured doing that? Is that covered by the normal medical thing, or is it separate?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly identified the need for coverage related to medical expenses arising from participation in specific activities like skiing.",
+      "agent_quote": "[23] That's a good question to clarify. So you're looking for coverage that includes medical expenses related to participating in specific leisure activities, like skiing. I'll note that requirement as well."
+    },
+    {
+      "coverage_type": "double_payout_public_transport",
+      "name": "Double Payout on Public Transport",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about a specific feature providing a double payout for accidental death occurring on public transport like buses or trains.",
+      "customer_quote": "[24] I read that sometimes, some policies pay out *extra* money, like double, if an accidental death happens while on public transport. Is that a feature you can look for? I want to know if the policy provides extra coverage if an accident happens while I'm on a bus or train.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent accurately understood and confirmed the specific requirement for a double indemnity benefit related to accidental death on public transport.",
+      "agent_quote": "[25] I understand. You are specifically asking about a benefit involving an additional or doubled payout in the unfortunate event of accidental death occurring while traveling as a fare-paying passenger on public transport like a bus or train. I will specifically note this requirement for double indemnity on public transport."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered all standard and scenario-specific coverage requirements mentioned by the customer. The customer was proactive in detailing their concerns, and the agent effectively listened, confirmed understanding for each point, and accurately summarized the needed coverages. No further probing was necessary as the customer provided sufficient detail."
+  },
+  "transcript_name": "transcript_public_transport_double_cover_20250410_220721",
+  "scenario": "public_transport_double_cover"
+}
