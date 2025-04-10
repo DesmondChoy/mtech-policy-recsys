@@ -1,0 +1,8 @@
+{
+  "scenario_name": "pet_care_coverage",
+  "description": "Customer needs coverage for pet accommodation costs if their return is delayed.",
+  "additional_requirements": [
+    "Coverage for additional pet accommodation costs in a pet hotel or kennel if my return to Singapore is delayed."
+  ],
+  "prompt_instructions": "The customer should explicitly ask about coverage for pet accommodation costs if their return is delayed. The customer should provide specific details (e.g., 'I have a cat that would need to stay in a pet hotel if my flight is delayed'). The agent should clearly acknowledge this specific request and note it as a requirement."
+}

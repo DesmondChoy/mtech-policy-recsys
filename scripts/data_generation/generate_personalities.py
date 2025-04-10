@@ -1,7 +1,7 @@
 """
 Generates a list of common insurance customer service personality types using
 the centralized LLMService (which utilizes Google Gemini, specifically
-gemini-2.5-pro-exp-03-25 by default or as specified).
+gemini-2.5-pro-preview-03-25 by default or as specified).
 
 Purpose:
 - Calls the LLMService with a specific prompt to identify 10 distinct personalities.
@@ -51,7 +51,7 @@ from src.models.llm_service import LLMService  # Import LLMService
 # --- Configuration ---
 OUTPUT_DIR = "data/transcripts"
 OUTPUT_FILENAME = "personalities.json"
-MODEL_NAME = "gemini-2.5-pro-exp-03-25"
+MODEL_NAME = "gemini-2.5-pro-preview-03-25"
 
 
 # --- Pydantic Models for Validation ---

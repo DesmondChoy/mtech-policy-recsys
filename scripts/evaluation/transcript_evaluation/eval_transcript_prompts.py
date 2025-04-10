@@ -54,13 +54,38 @@ def format_coverage_requirements_for_prompt(coverage_requirements):
     return "\n".join(formatted_lines)
 
 
-def construct_evaluation_prompt(transcript, coverage_requirements):
+def format_scenario_requirements_for_prompt(scenario_requirements):
+    """
+    Format scenario-specific requirements for inclusion in a prompt.
+
+    Args:
+        scenario_requirements (list): List of scenario-specific requirement strings
+
+    Returns:
+        str: Formatted scenario requirements text
+    """
+    if not scenario_requirements:
+        return ""
+
+    formatted_lines = ["SCENARIO-SPECIFIC REQUIREMENTS:"]
+    for requirement in scenario_requirements:
+        formatted_lines.append(f"- {requirement}")
+    formatted_lines.append("")
+
+    return "\n".join(formatted_lines)
+
+
+def construct_evaluation_prompt(
+    transcript, coverage_requirements, scenario_name=None, scenario_requirements=None
+):
     """
     Construct a detailed prompt for Gemini to evaluate coverage requirements.
 
     Args:
         transcript (list): List of dictionaries containing speaker and dialogue
-        coverage_requirements (dict): Dictionary of coverage requirements
+        coverage_requirements (dict): Dictionary of standard coverage requirements
+        scenario_name (str, optional): Name of the scenario used (if any)
+        scenario_requirements (list, optional): List of additional requirements from the scenario
 
     Returns:
         str: Complete evaluation prompt
@@ -70,10 +95,23 @@ def construct_evaluation_prompt(transcript, coverage_requirements):
         coverage_requirements
     )
 
+    # Format scenario requirements if provided
+    formatted_scenario = ""
+    if scenario_requirements:
+        formatted_scenario = format_scenario_requirements_for_prompt(
+            scenario_requirements
+        )
+
+    # Add scenario context to the prompt
+    scenario_context = ""
+    if scenario_name:
+        scenario_context = f"\nThis transcript was generated using the '{scenario_name}' scenario, which includes additional specific requirements listed below.\n"
+
     prompt = f"""You are an expert judge evaluating if a customer service agent gathered all required travel insurance coverage information from a customer.
 
-COVERAGE REQUIREMENTS:
+STANDARD COVERAGE REQUIREMENTS:
 {formatted_requirements}
+{scenario_context}{formatted_scenario}
 
 TRANSCRIPT:
 {formatted_transcript}

@@ -42,7 +42,6 @@ coverage_requirements = {
             "Elective procedures",
         ],
     },
-    # Removed emergency_evacuation section
     "lost_damaged_luggage": {  # Renamed from baggage_loss_delay
         "name": "Lost/Damaged Luggage",  # Renamed
         "description": "Coverage for lost, damaged, or delayed baggage during your trip",
@@ -88,21 +87,6 @@ coverage_requirements = {
             "Lack of proper certification/guidance",
         ],
     },
-    "war_cover": {
-        "name": "War and Political Unrest",
-        "description": "Limited coverage for losses or medical needs arising from acts of war, terrorism, or political unrest in the travel destination.",
-        "key_features": [
-            "Emergency evacuation from affected areas",
-            "Limited medical expense coverage for related injuries",
-            "Trip cancellation/interruption if unrest begins after purchase",
-        ],
-        "typical_exclusions": [
-            "Travel to destinations with existing government warnings",
-            "Participation in riots or civil commotion",
-            "Nuclear, chemical, biological warfare",
-            "Claims if event was foreseeable before booking",
-        ],
-    },
 }
 
 customer_context_options = {
@@ -134,11 +118,11 @@ customer_context_options = {
             ["asthma"],
             ["diabetes"],
             ["high blood pressure"],
-        ],  # Include None
+        ],
         "prompt_phrases": [
             "One traveler has {value}.",
             "Do we need to declare {value}?",
-            "No, no pre-existing conditions.",  # Phrase for None
+            "No, no pre-existing conditions.",
         ],
     },
     "travel_destination": {
@@ -155,7 +139,6 @@ customer_context_options = {
             "We'll be away for {value}.",
         ],
     },
-    # Add other fields like travel_start_date (maybe generate relative dates?), etc.
 }
 
 

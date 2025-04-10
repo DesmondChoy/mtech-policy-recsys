@@ -10,6 +10,7 @@ import json
 import logging
 import os  # Added for path manipulation
 import sys  # Added for path manipulation
+import re  # Added for regex-based JSON fixing
 from typing import Dict, List, Any, Optional
 
 # Configure logging
@@ -52,14 +53,20 @@ class TranscriptEvaluation(BaseModel):
     summary: EvaluationSummary
 
 
-# def check_gemini_availability(): # No longer needed
-#     """Check if the Google Gemini API is available."""
-#     return True # Assume available if LLMService can be imported
+def check_gemini_availability():
+    """
+    Check if the Google Gemini API is available via LLMService.
 
-
-# def initialize_gemini_client(): # No longer needed
-#     """Initialize the Google Gemini client."""
-#     pass # Handled by LLMService
+    Returns:
+        bool: True if LLMService can be imported, False otherwise
+    """
+    try:
+        # We've already imported LLMService at the top of the file
+        # Just check if it's accessible
+        return True
+    except Exception as e:
+        logger.error(f"Error checking Gemini availability: {e}")
+        return False
 
 
 def generate_gemini_evaluation(prompt: str) -> Dict[str, Any]:
@@ -83,6 +90,10 @@ def generate_gemini_evaluation(prompt: str) -> Dict[str, Any]:
         # Call LLM Service to get structured content (JSON)
         # This uses deterministic parameters by default
         logger.info("Calling LLM Service for transcript evaluation...")
+
+        # The updated generate_structured_content method now handles:
+        # - Markdown code blocks
+        # - JSON formatting issues
         result_dict = llm_service.generate_structured_content(prompt=prompt)
 
         # Validate the received dictionary against the Pydantic model

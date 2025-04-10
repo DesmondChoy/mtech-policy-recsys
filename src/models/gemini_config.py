@@ -28,15 +28,7 @@ class GeminiConfig:
         "temperature": 0.1,
         "top_p": 0.95,
         "top_k": 40,
-        "max_output_tokens": 60000,  # Increased default max tokens
-    }
-
-    # Parameters for more deterministic responses (e.g., for structured data extraction)
-    DETERMINISTIC_PARAMETERS: Dict[str, Any] = {
-        "temperature": 0.2,
-        "top_p": 0.95,
-        "top_k": 40,
-        "max_output_tokens": 2048,
+        "max_output_tokens": 60000,
     }
 
     # Parameters for more creative responses (e.g., for CS agent)
@@ -44,7 +36,7 @@ class GeminiConfig:
         "temperature": 1.0,
         "top_p": 0.99,
         "top_k": 40,
-        "max_output_tokens": 4096,
+        "max_output_tokens": 60000,
     }
 
     # Safety settings
@@ -86,7 +78,6 @@ class GeminiConfig:
         """
         parameter_sets = {
             "default": cls.DEFAULT_PARAMETERS,
-            "deterministic": cls.DETERMINISTIC_PARAMETERS,
             "creative": cls.CREATIVE_PARAMETERS,
         }
 

@@ -1,0 +1,60 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The agent specifically asked if the customer was concerned about cancelling due to reasons like illness, and the customer confirmed they required this coverage.",
+      "customer_quote": "[16] Yes. Trip cancellation cover is required.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively probed for the need for this coverage based on a common reason (illness).",
+      "agent_quote": "[15] And are you concerned about needing to cancel the trip beforehand for reasons like unexpected illness?"
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the need for medical cover. The agent appropriately probed for pre-existing conditions, a key detail for this coverage, and the customer provided this information.",
+      "customer_quote": "[12] Medical cover, obviously. ... [20] One traveler has high blood pressure.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement and asked the crucial follow-up question about pre-existing conditions.",
+      "agent_quote": "[19] Just to ensure we capture everything correctly, do either of the travellers have any pre-existing medical conditions?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "FAIL",
+      "justification": "The agent prompted for the need for coverage for personal belongings, and the customer confirmed they needed cover for lost luggage. However, no specific details were gathered (e.g., value of items, specific concerns, awareness of exclusions like electronics), and the agent did not probe further.",
+      "customer_quote": "[18] Need cover for lost luggage.",
+      "agent_performance": "FAIL",
+      "agent_performance_justification": "The agent identified the need but failed to probe for any specific details or potential exclusions relevant to luggage coverage.",
+      "agent_quote": "[17] What about coverage for your personal belongings during transit?"
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "FAIL",
+      "justification": "The customer mentioned needing cover for 'major delays' specifically for flights. However, no specific details were gathered about what constitutes a 'major' delay for the customer or specific concerns (e.g., accommodation, meals), and the agent did not probe further.",
+      "customer_quote": "[12] And for the flights, need cover if there are major delays.",
+      "agent_performance": "FAIL",
+      "agent_performance_justification": "The agent acknowledged the requirement but did not probe for specific details or concerns related to travel delays.",
+      "agent_quote": "[13] Okay, so that's medical coverage and cover for travel delays."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The agent specifically asked about activities like winter sports, and the customer confirmed they would be skiing and needed coverage for it.",
+      "customer_quote": "[14] Yes, skiing. Need coverage for that.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively probed for specific activities relevant to the destination (Japan) and type of trip.",
+      "agent_quote": "[13] Are there any specific activities planned during your trip, perhaps winter sports?"
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 3,
+    "overall_assessment": "The agent successfully identified the need for all five standard coverage types, either through customer initiation or agent probing. The agent performed well in gathering crucial details for Medical Coverage (pre-existing conditions) and Sports Activities (skiing). However, the agent failed to gather specific details for Lost/Damaged Luggage and Travel Delays beyond the customer's initial general statement, missing opportunities to understand specific concerns or potential exclusions."
+  },
+  "transcript_name": "transcript_20250410_215942"
+}

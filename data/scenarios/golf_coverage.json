@@ -1,0 +1,9 @@
+{
+  "scenario_name": "golf_coverage",
+  "description": "Customer needs comprehensive golf-related coverage including equipment, hole-in-one, green fees, and buggy damage.",
+  "additional_requirements": [
+    "Coverage for my golf equipment, reimbursement for unused green fees if I can't play, and coverage if I damage a golf buggy.",
+    "A special benefit if I get a hole-in-one during my trip."
+  ],
+  "prompt_instructions": "The customer should explicitly ask about comprehensive golf coverage, mentioning specific aspects e.g. equipment protection, hole-in-one achievement benefit, unused green fees, and golf buggy damage. The agent should clearly acknowledge these specific requests and note them as requirements."
+}

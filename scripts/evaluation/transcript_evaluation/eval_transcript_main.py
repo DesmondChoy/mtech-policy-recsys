@@ -20,38 +20,41 @@ Usage:
 
 import os
 import sys
+import json
 import argparse
 import logging
 from typing import Dict, List, Any, Optional
 
 # Add the project root to the Python path to allow imports
-project_root = os.path.dirname(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Go up three levels from the current script directory (transcript_evaluation -> evaluation -> scripts -> project_root)
+project_root = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..", "..")
 )
-sys.path.append(project_root)
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)  # Insert at the beginning for priority
 
 # Import coverage requirements directly
 from data.coverage_requirements.coverage_requirements import get_coverage_requirements
 
-# Import modules from the evaluation package
-from scripts.evaluation.prompts.eval_transcript_prompts import (
+# Import modules from the evaluation package (using absolute paths from project root)
+from scripts.evaluation.transcript_evaluation.eval_transcript_prompts import (
     construct_evaluation_prompt,
 )
-from scripts.evaluation.processors.eval_transcript_parser import (
+from scripts.evaluation.transcript_evaluation.eval_transcript_parser import (
     parse_transcript,
     find_transcript_files,
 )
-from scripts.evaluation.processors.eval_transcript_results import (
+from scripts.evaluation.transcript_evaluation.eval_transcript_results import (
     format_evaluation_results,
     save_evaluation_results,
     create_summary_csv,
     save_prompt_for_manual_evaluation,
 )
-from scripts.evaluation.evaluators.eval_transcript_gemini import (
+from scripts.evaluation.transcript_evaluation.eval_transcript_gemini import (
     check_gemini_availability,
     generate_gemini_evaluation,
 )
-from scripts.evaluation.utils.eval_transcript_utils import (
+from scripts.evaluation.transcript_evaluation.eval_transcript_utils import (
     ensure_output_directory,
     get_transcript_name,
     setup_logging,
@@ -61,6 +64,52 @@ from scripts.evaluation.utils.eval_transcript_utils import (
 
 # Configure logging
 logger = logging.getLogger(__name__)
+
+
+def load_scenario_requirements(scenario_name: str) -> Optional[List[str]]:
+    """
+    Load additional requirements from a scenario file.
+
+    Args:
+        scenario_name (str): Name of the scenario
+
+    Returns:
+        list: List of additional requirement strings, or None if loading fails
+    """
+    if not scenario_name:
+        return None
+
+    # Construct the path to the scenario file
+    scenario_path = os.path.join(
+        project_root, "data", "scenarios", f"{scenario_name}.json"
+    )
+
+    try:
+        with open(scenario_path, "r", encoding="utf-8") as file:
+            scenario_data = json.load(file)
+
+        # Extract the additional requirements
+        additional_requirements = scenario_data.get("additional_requirements", [])
+        if additional_requirements:
+            logger.info(
+                f"Loaded {len(additional_requirements)} additional requirements from scenario: {scenario_name}"
+            )
+            return additional_requirements
+        else:
+            logger.warning(
+                f"No additional requirements found in scenario: {scenario_name}"
+            )
+            return []
+
+    except FileNotFoundError:
+        logger.error(f"Scenario file not found: {scenario_path}")
+        return None
+    except json.JSONDecodeError:
+        logger.error(f"Failed to decode JSON from scenario file: {scenario_path}")
+        return None
+    except Exception as e:
+        logger.error(f"Error loading scenario requirements: {str(e)}")
+        return None
 
 
 def process_single_transcript(
@@ -83,17 +132,25 @@ def process_single_transcript(
     """
     logger.info(f"Processing transcript: {transcript_path}")
 
-    # Parse the transcript
-    transcript = parse_transcript(transcript_path)
+    # Parse the transcript and extract scenario name
+    transcript, scenario_name = parse_transcript(transcript_path)
     if not transcript:
         logger.error(f"Failed to parse transcript: {transcript_path}")
         return None
 
-    # Get coverage requirements
+    # Get standard coverage requirements
     coverage_requirements = get_coverage_requirements()
 
-    # Construct the prompt
-    prompt = construct_evaluation_prompt(transcript, coverage_requirements)
+    # Load scenario-specific requirements if a scenario was used
+    scenario_requirements = None
+    if scenario_name:
+        logger.info(f"Transcript uses scenario: {scenario_name}")
+        scenario_requirements = load_scenario_requirements(scenario_name)
+
+    # Construct the prompt with scenario information if available
+    prompt = construct_evaluation_prompt(
+        transcript, coverage_requirements, scenario_name, scenario_requirements
+    )
 
     # Get transcript name
     transcript_name = get_transcript_name(transcript_path)
@@ -101,10 +158,13 @@ def process_single_transcript(
     # Generate evaluation if Gemini is available
     if check_gemini_availability():
         try:
-            evaluation = generate_gemini_evaluation(prompt, api_key)
+            # API key is now handled internally by LLMService
+            evaluation = generate_gemini_evaluation(prompt)
 
-            # Add transcript name to the evaluation
+            # Add transcript name and scenario to the evaluation
             evaluation["transcript_name"] = transcript_name
+            if scenario_name:
+                evaluation["scenario"] = scenario_name
 
             # Save evaluation results
             save_evaluation_results(evaluation, transcript_name, output_dir, formats)
