@@ -199,21 +199,6 @@ customer_context_options = {
             "No special medical equipment needed.",  # Phrase for None
         ],
     },
-    "excluded_coverages": {
-        "options": [
-            None,
-            ["Sports and Adventure Activities"],
-            ["War and Political Unrest"],
-            ["Sports and Adventure Activities", "War and Political Unrest"],
-        ],
-        "prompt_phrases": [
-            "We don't need coverage for {value}.",
-            "We want to exclude {value} from our policy.",
-            "We're not interested in {value} coverage.",
-            "We want a basic policy without {value}.",
-            "We want to include all coverages.",  # Phrase for None
-        ],
-    },
 }
 
 

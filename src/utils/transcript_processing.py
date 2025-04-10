@@ -39,9 +39,6 @@ class TravelInsuranceRequirement(BaseModel):
     activities_to_cover: Optional[List[str]] = Field(
         None, description="Specific activities that need coverage (e.g., 'Skiing', 'Scuba diving')."
     )
-    excluded_coverages: Optional[List[str]] = Field(
-        None, description="Coverages the customer specifically wants to exclude."
-    )
     age_group: Optional[str] = Field(
         None, description="Age range of the traveler (e.g., '18-25', '26-35', '36-45')."
     )
