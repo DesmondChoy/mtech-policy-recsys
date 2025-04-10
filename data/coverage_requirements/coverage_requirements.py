@@ -147,26 +147,6 @@ customer_context_options = {
             "We're based in {value}.",
         ],
     },
-    "countries_to_cover": {
-        "options": [
-            ["Japan"],
-            ["Europe"],
-            ["USA"],
-            ["Australia"],
-            ["Thailand"],
-            ["UK"],
-            ["Japan", "South Korea"],
-            ["France", "Italy", "Spain"],
-            ["USA", "Canada"],
-            ["Thailand", "Vietnam", "Cambodia"],
-        ],
-        "prompt_phrases": [
-            "We'll be visiting {value}.",
-            "Our trip includes {value}.",
-            "We're planning to go to {value}.",
-            "We need coverage for {value}.",
-        ],
-    },
     "activities_to_cover": {
         "options": [
             None,
@@ -232,21 +212,6 @@ customer_context_options = {
             "We're not interested in {value} coverage.",
             "We want a basic policy without {value}.",
             "We want to include all coverages.",  # Phrase for None
-        ],
-    },
-    "preferred_insurance_provider": {
-        "options": [
-            None,
-            ["FWD"],
-            ["Income"],
-            ["Sompo"],
-        ],
-        "prompt_phrases": [
-            "We prefer {value} insurance.",
-            "We'd like to get coverage from {value}.",
-            "We're interested in {value} policies.",
-            "We have a policy with {value}.",
-            "No specific provider preference.",  # Phrase for None
         ],
     },
 }

@@ -30,14 +30,8 @@ class TravelInsuranceRequirement(BaseModel):
     travel_destination: Optional[str] = Field(
         None, description="Country or region the customer is traveling to."
     )
-    countries_to_cover: Optional[List[str]] = Field(
-        None, description="List of specific countries that need to be covered by the policy."
-    )
     travel_duration: Optional[str] = Field(
         None, description="Duration of the trip (e.g., '7 days', '1 month')."
-    )
-    policy_term_type: Optional[str] = Field(
-        None, description="Type of policy term (e.g., 'Single trip', 'Annual multi-trip')."
     )
     insurance_coverage_type: Optional[List[str]] = Field(
         None,
@@ -58,9 +52,6 @@ class TravelInsuranceRequirement(BaseModel):
     )
     traveler_details: Optional[List[TravelerDetail]] = Field(
         None, description="Detailed demographic information for each traveler."
-    )
-    preferred_insurance_provider: Optional[str] = Field(
-        None, description="Preferred insurance provider, if any."
     )
     additional_requests: Optional[str] = Field(
         None, description="Any special requests or concerns noted by the customer."
