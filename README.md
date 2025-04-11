@@ -119,18 +119,22 @@ This section describes the end-to-end workflow for preparing policy data and gen
 
 This sequence takes you from raw data to structured policy information and customer requirements, ready for downstream analysis and comparison.
 
-## 2. Policy Comparison Report Generation
+## 2. Policy Comparison Report Generation (Insurer-Level)
 
-This step uses the structured requirements and policy data to generate detailed Markdown comparison reports for each policy against a specific customer's needs.
+This step uses the structured requirements and policy data to generate detailed Markdown comparison reports **for each insurer** against a specific customer's needs. This script implements the insurer-level analysis approach, comparing all tiers of an insurer in a single LLM call.
 
-1.  **Input**: Requires structured requirements JSON from step 2 (`data/extracted_customer_requirements/`) and processed policy JSON files from step 1 (`data/policies/processed/`).
-2.  **Processing**: Run the `scripts/generate_policy_comparison.py` script, providing the path to the specific customer requirements file you want to use.
+1.  **Input**: Requires structured requirements JSON from step 6 (`data/extracted_customer_requirements/`) and processed policy JSON files from step 1 (`data/policies/processed/`). Also uses tier rankings from `data/policies/pricing_tiers/tier_rankings.py`.
+2.  **Processing**: Run the `scripts/generate_policy_comparison.py` script, providing the **customer UUID** via the `--customer_id` argument.
     ```bash
-    # Example using the confused novice requirements
-    python scripts/generate_policy_comparison.py data/extracted_customer_requirements/requirements_the_confused_novice_20250403_175921.json
+    # Example using a specific customer UUID
+    python scripts/generate_policy_comparison.py --customer_id 49eb20af-32b0-46e0-a14e-0dbe3e3c6e73
     ```
-    The script uses the Gemini API (`gemini-2.5-pro-exp-03-25`) via the `LLMService` to compare the requirements against *all* policies found in `data/policies/processed/`. It processes policies asynchronously in batches.
-3.  **Output**: Markdown reports are saved to a subdirectory within `results/`, named after the customer ID and timestamp from the input requirements file (e.g., `results/the_confused_novice_20250403_175921/`). Each report file is named `policy_comparison_{provider}_{tier}_{customer_id}_{timestamp}.md`.
+    The script finds the corresponding requirements file (`requirements_*_{uuid}.json`), identifies all available insurers and their tiers from `data/policies/processed/`, and uses the Gemini API via `LLMService` to generate a report for each insurer. It processes insurers asynchronously.
+3.  **Output**: Markdown reports are saved to a subdirectory within `results/` named after the customer UUID (e.g., `results/49eb20af-32b0-46e0-a14e-0dbe3e3c6e73/`). Each report file is named `policy_comparison_report_{insurer}_{customer_uuid}.md` and contains:
+    *   The recommended tier for that insurer.
+    *   Justification for the recommendation.
+    *   A detailed requirement-by-requirement analysis of the recommended tier's coverage.
+    *   A summary of the recommended tier's strengths and weaknesses.
 
 ## 3. Policy Recommendation (Future)
 
@@ -213,13 +217,13 @@ The project structure supports the workflow illustrated in the diagram above:
    - **Output**: Saves a validated JSON file to `data/transcripts/personalities.json`. See the script's docstring for usage details.
    - **Component**: `scripts/data_generation/generate_transcripts.py`
    - **Purpose**: Generates synthetic conversation transcripts using the Gemini API (`gemini-2.5-pro-exp-03-25`), combining personalities from `personalities.json` and requirements from `coverage_requirements.py`. Can optionally use scenario files (`data/scenarios/`).
-   - **Output**: Saves structured, timestamped JSON transcripts to `data/transcripts/raw/synthetic/`. Filenames follow the format `transcript_{scenario_name}_{timestamp}.json` or `transcript_{timestamp}.json` (e.g., `transcript_golf_coverage_20250410_220036.json`). Accepts `-n` and `-s` arguments. See the script's docstring for details.
+   - **Output**: Saves structured JSON transcripts to `data/transcripts/raw/synthetic/`. Filenames follow the format `transcript_{scenario_name_or_no_scenario}_{uuid}.json`. Accepts `-n` and `-s` arguments. See the script's docstring for details.
 
-7. **Policy Comparison Report Generation**
+7. **Policy Comparison Report Generation (Insurer-Level)**
    - **Component**: `scripts/generate_policy_comparison.py`
-   - **Purpose**: Generates detailed Markdown reports comparing extracted customer requirements against multiple processed policies.
-   - **Input**: A structured requirements JSON file (from `data/extracted_customer_requirements/`) and all processed policy JSON files (`data/policies/processed/`).
-   - **Output**: Saves Markdown reports to a subdirectory in `results/` named after the input requirements file (e.g., `results/the_confused_novice_20250403_175921/`).
+   - **Purpose**: Generates detailed Markdown reports comparing extracted customer requirements against all tiers for each available insurer, recommending the best tier per insurer.
+   - **Input**: Customer UUID (`--customer_id`), requirements JSON (`data/extracted_customer_requirements/requirements_*_{uuid}.json`), processed policy JSONs (`data/policies/processed/`), and tier rankings (`data/policies/pricing_tiers/tier_rankings.py`).
+   - **Output**: Saves Markdown reports to `results/{uuid}/policy_comparison_report_{insurer}_{uuid}.md`. Each report includes the recommendation, justification, detailed requirement analysis, and summary. See the script's docstring for more details.
 
 ## Technical Stack
 

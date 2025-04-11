@@ -162,9 +162,9 @@ gantt
 | Integration | 0% | Medium | Depends on agent development |
 | Testing | 0% | Medium | Not started |
 | ML Models | 0% | Low | Later phase |
-| Documentation | 75% | High | Initial docs created, LLM service documented, Memory Bank updated, New scripts documented |
+| Documentation | 80% | High | Initial docs created, LLM service documented, Memory Bank updated, New scripts documented, Comparison plan updated |
 | Personality Data Generation Script | 100% | Medium | Generates personality types for potential use in CS agent or analysis |
-| Policy Comparison Script | 100% | Medium | Generates comparison reports between requirements and policies |
+| Policy Comparison Script | 100% | High | Refactored for insurer-level analysis, detailed output, UUID input, and fixed KeyErrors. |
 
 ## Known Issues
 
@@ -328,6 +328,14 @@ gantt
     - Modified `src/utils/transcript_processing.py` to output processed transcripts as `parsed_transcript_{scenario_name}_{uuid}.json`.
     - Confirmed `src/agents/extractor.py` correctly uses the new input format to output requirements as `requirements_{scenario_name}_{uuid}.json`.
     - Updated Memory Bank (`systemPatterns.md`, `techContext.md`, `activeContext.md`) to reflect the new standard.
+
+26. **Insurer-Level Policy Comparison**:
+    - Refactored `scripts/generate_policy_comparison.py` for insurer-level analysis.
+    - Updated script to take UUID as input (`--customer_id`).
+    - Implemented detailed prompt including requirement analysis and summary sections.
+    - Updated output format and directory structure (`results/{uuid}/policy_comparison_report_{insurer}_{uuid}.md`).
+    - Fixed prompt formatting `KeyError` issues.
+    - Successfully generated reports using the new logic.
 
 ## Next Milestones
 

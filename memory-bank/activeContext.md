@@ -206,6 +206,19 @@ The project is in the initial setup and planning phase. The current focus is on:
     - Confirmed that `src/agents/extractor.py` correctly parses this new input format and generates output files in `data/extracted_customer_requirements/` with the format `requirements_{scenario_name}_{uuid}.json`.
     - Updated `memory-bank/systemPatterns.md` and `memory-bank/techContext.md` to reflect these standardized filename formats.
 
+26. **Insurer-Level Policy Comparison Refactoring (`scripts/generate_policy_comparison.py`)**:
+    - Refactored the script to perform insurer-level analysis instead of tier-level.
+    - Updated input handling to accept `--customer_id` (UUID) and dynamically find requirements and policy files.
+    - Implemented logic to group policies by insurer and use `tier_rankings.py`.
+    - Created a new detailed prompt (`PROMPT_TEMPLATE_INSURER`) instructing the LLM to:
+        - Select the single best tier per insurer using holistic analysis and price tie-breaking.
+        - Provide justification.
+        - Perform a detailed requirement-by-requirement analysis for the chosen tier, including granular source details.
+        - Include a summary of strengths and weaknesses.
+    - Updated output handling to save reports to `results/{uuid}/policy_comparison_report_{insurer}_{uuid}.md`.
+    - Incorporated asynchronous processing for insurers.
+    - Fixed `KeyError` issues related to prompt formatting placeholders by escaping them (`{{Requirement Name}}`, `{{Recommended Tier Name}}`).
+
 ## Next Steps
 
 1. **Agent Development**:
