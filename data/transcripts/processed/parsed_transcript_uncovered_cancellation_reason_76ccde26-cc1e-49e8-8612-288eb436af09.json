@@ -1,0 +1,138 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Sarah. How can I help you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Oh, hello Sarah. Yes, I need... umm... travel insurance? I think? I'm planning a trip and someone said I should get it, but I'm really not sure what it all means. It's quite confusing."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "No worries at all, I can certainly help you with that. Many people find insurance terms a bit confusing at first. To start, perhaps you could tell me a bit about your trip? Where are you planning to travel?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Right, okay. We're planning a trip to Japan."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Japan, lovely! And when will you be travelling, and for how long?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Ah, it's planned for maybe October? We'll be away for 2 weeks. It’s starting from Singapore, of course."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, Japan for 2 weeks, departing from Singapore. And how many people will be travelling on this policy?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "There will be 2 of us traveling. Just me and my partner."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Got it, two travellers. And may I ask which age group the travellers fall into? For example, 18-25, 26-40, 41-55?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're mostly around 26-40 years old."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Perfect, thank you. Now, thinking about your trip to Japan for two weeks, what sort of things are you hoping the insurance would help with, or what concerns do you have?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Well... like, what if one of us gets sick over there? You know, needs to see a doctor, or worse, go to a hospital? Does insurance handle that? Sorry, this might be a basic question."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Not basic at all, it's a very important point. So, you're looking for cover if medical treatment is needed during the trip? Things like doctor visits or hospital stays?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, exactly! That’s one thing. And also... our luggage. What happens if the airline loses our bags, or if they arrive all smashed up? That would be a disaster. Is that something insurance covers?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so assistance regarding lost or damaged luggage is another requirement you have. Understood. Anything else comes to mind?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Hmm. Delays? Like, if the flight is super delayed and we miss a connection, or get stuck somewhere overnight? Would insurance help pay for a hotel or food? It sounds expensive if that happens."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Right, so cover for extra expenses because of significant travel delays is important for you. Okay. Are you planning any specific activities during your trip to Japan?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Oh, activities... yes! We plan to do some Hiking during our trip. Nothing too extreme, just some trails. Does that matter for insurance? Like if someone trips and gets hurt while hiking?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted. So cover related to participating in hiking is something you need included. Anything else planned?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No, I think hiking is the main one. Oh! Before I forget... what if we have to cancel the whole trip *before* we even leave Singapore? Like, if something unexpected happens?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, so cover in case you need to cancel the trip beforehand for certain reasons is another requirement."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, and actually, related to that... this is a bit specific. My sister is planning her wedding, and the date isn't fixed yet, but it might fall right when we planned our Japan trip. If we had to cancel our holiday because we absolutely have to attend her wedding, would the insurance pay us back for the trip cost? It’s a really important family event."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, I understand. So you're specifically asking about cancellation cover if the reason is needing to attend your sister's wedding. I've noted that specific scenario down as a requirement you're asking about. Generally, cancellation cover applies to specific, unforeseen events listed in the policy, and personal events like weddings often aren't standard covered reasons, but I've made a clear note of your question."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Oh. Okay. I see. It’s just… good to know what is and isn't covered. Sorry, it's all a bit complicated."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "It's perfectly alright, that's what we're here for – to gather what you need so we can find the right options. Just a couple more clarifications. Does anyone travelling have any pre-existing medical conditions, like asthma or diabetes, for example?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No, no pre-existing conditions. We’re both quite healthy."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Good to know. And lastly, do you have a particular budget in mind for the insurance policy itself? Perhaps in the range of $100-$200, $200-$300, or is it more flexible?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Hmm, budget... We're hoping to spend maybe $200-$300 if possible?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, thank you. So, just to quickly recap the requirements you've mentioned for your 2-week trip to Japan for two travellers aged 26-40, departing from Singapore: You're looking for cover for emergency medical treatment, lost or damaged luggage, expenses due to significant travel delays, cover related to hiking activities, and cover for trip cancellation. You also specifically asked about cancellation cover if you need to attend your sister's wedding, and you have noted a budget preference of around $200-$300, with no pre-existing conditions to declare. Does that sound correct?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, I think that’s everything. It sounds right when you say it like that. Thank you for being patient, I know I asked a lot of basic things."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Not at all, it's important to clarify everything. Thank you for providing all those details. I have recorded all these requirements. The next step is for our team to look into the plans that best match these needs, and we will get back to you with suitable options and quotes."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Okay, great. Thank you so much for your help, Sarah."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "You're most welcome. Thank you for calling ISS Insurance Ltd. Have a great day!"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "You too, bye bye."
+    }
+]

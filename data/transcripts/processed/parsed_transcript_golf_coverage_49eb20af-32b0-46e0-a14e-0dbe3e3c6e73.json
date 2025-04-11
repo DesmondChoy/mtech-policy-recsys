@@ -1,0 +1,130 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for calling ISS Insurance Ltd Singapore. My name is Sarah. How may I assist you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, hello. I'm looking into travel insurance, but frankly, I'm not convinced it's worth the paper it's written on. I need some information, but don't try to sell me the most expensive thing, okay?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "I understand your concerns, sir. My role today is just to understand your requirements so we can identify what you need coverage for. I won't be making recommendations. To start, could you tell me where you'll be travelling to?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're planning a trip to Thailand. Phuket, specifically."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, Thailand. And how long will you be away for?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It'll be a 10 day trip. Just the two of us."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, 10 days for two travellers to Thailand. And are both travellers based in Singapore?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, travelling from Singapore. We're both in the, uh, 41-55 age group. No pre-existing conditions to worry about, thankfully."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Noted. And what are your main concerns for this trip? What sort of situations are you hoping the insurance would cover?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Well, the basics, I suppose. Like, what happens if I fall sick over there? Getting medical help overseas sounds like a nightmare, cost-wise. Are you *sure* your policies actually cover hospital stays and doctor visits properly? Not just some token amount?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so you require information on the extent of the medical coverage, including emergency treatment and hospitalisation. I've noted that down. What else is important for you?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Flights getting messed up. What if there are long travel delays? Stuck at an airport for hours, needing a hotel... Does the policy *really* pay for that, or is there a catch, like it has to be delayed for 24 hours or something ridiculous?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. You're looking for coverage details related to travel delays, including accommodation and meal expenses due to significant delays. I've noted that requirement as well. Any other potential issues on your mind?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "What about cancelling the whole thing? If one of us gets seriously ill before we even leave, or maybe a family emergency back home... We wouldn't want to lose all the money we paid for flights and the hotel. How does trip cancellation work? I bet there are a million exclusions."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Right, so understanding the conditions under which trip cancellation costs would be reimbursed is another requirement. I've added that."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "And luggage. I hear stories all the time about bags getting lost or damaged. Especially since we're taking expensive equipment. Is the coverage for lost or damaged luggage actually decent, or just enough to buy a toothbrush?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so coverage for lost, damaged, or delayed baggage is a key requirement for you. You mentioned expensive equipment – could you elaborate on that? Are you planning any specific activities?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, it's primarily a golf trip. So, my main concern is specific coverage for my golf equipment. If it gets lost or busted by the airline, I need proper reimbursement, not pennies."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, specific coverage needed for golf equipment. Noted."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "And related to that, what if I get sick or injured *during* the trip and can't play the rounds I've already booked and paid for? I want reimbursement for unused green fees. Is that something you even offer? Seems unlikely."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. So, a requirement for reimbursement of pre-paid, unused green fees due to injury or illness during the trip."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Also, those golf buggies. If I accidentally damage one on the course, am I covered for that liability? I don't want a huge bill from the golf club."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, so cover for accidental damage to a rented golf buggy is another specific requirement you have."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "One more thing about the golf. A bit of a long shot, but does your insurance offer any kind of special benefit, like a payout, if I manage to hit a hole-in-one during the trip? Some specialist policies do."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, I've noted your specific interest in a benefit related to achieving a hole-in-one during your insured trip. That covers the golf aspects. Are there any other types of activities planned, or other general concerns?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No, mostly golf and relaxing. Just the usual tourist stuff. But those are my main worries – getting sick, flights delayed, losing the clubs or having to cancel. And the specific golf things I mentioned. I need to be sure these things are actually covered properly."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, thank you for sharing those details. Just to quickly summarise the requirements you've mentioned: You need details on Medical Coverage overseas, Travel Delay benefits, Trip Cancellation conditions, Lost or Damaged Luggage coverage, and specific Sports and Adventure coverage tailored to golf. This includes cover for your golf equipment, reimbursement for unused green fees if unable to play due to illness/injury, cover for accidental damage to a golf buggy, and you're also inquiring about a potential hole-in-one benefit. Is that an accurate summary of what you're looking for?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, that sounds about right. But I'll need to see the exact terms and conditions, naturally. I don't trust easily when it comes to insurance payouts."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "I understand completely. Thank you for providing that information. I have recorded these requirements. This information will help us identify suitable options based on what you've told me you need. Someone will be in touch regarding the next steps."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Okay. Fine. Thank you."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for calling ISS Insurance Ltd. Have a good day."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "You too. Bye."
+    }
+]

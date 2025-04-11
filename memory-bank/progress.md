@@ -324,6 +324,11 @@ gantt
     - Improved JSON parsing robustness in `LLMService`.
     - Updated `README.md` with new structure and usage.
 
+25. **Filename Standardization**:
+    - Modified `src/utils/transcript_processing.py` to output processed transcripts as `parsed_transcript_{scenario_name}_{uuid}.json`.
+    - Confirmed `src/agents/extractor.py` correctly uses the new input format to output requirements as `requirements_{scenario_name}_{uuid}.json`.
+    - Updated Memory Bank (`systemPatterns.md`, `techContext.md`, `activeContext.md`) to reflect the new standard.
+
 ## Next Milestones
 
 1. **Agent Prototyping** (Target: April 15, 2025)

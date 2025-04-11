@@ -201,6 +201,11 @@ The project is in the initial setup and planning phase. The current focus is on:
     - Improved JSON parsing robustness in `src/models/llm_service.py` (`generate_structured_content` method) to handle markdown code blocks and attempt to fix common formatting errors (like missing commas) before parsing.
     - Updated `README.md` with the new evaluation script location and usage instructions.
 
+25. **Filename Standardization for Processed/Extracted Files**:
+    - Modified `src/utils/transcript_processing.py` to generate output files in `data/transcripts/processed/` with the format `parsed_transcript_{scenario_name}_{uuid}.json`, extracting the scenario and UUID from the raw input filename.
+    - Confirmed that `src/agents/extractor.py` correctly parses this new input format and generates output files in `data/extracted_customer_requirements/` with the format `requirements_{scenario_name}_{uuid}.json`.
+    - Updated `memory-bank/systemPatterns.md` and `memory-bank/techContext.md` to reflect these standardized filename formats.
+
 ## Next Steps
 
 1. **Agent Development**:

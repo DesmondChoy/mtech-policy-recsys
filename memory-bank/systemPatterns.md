@@ -113,9 +113,9 @@ flowchart TD
 - **Processing Steps**:
     1. **Generation**: `scripts/data_generation/generate_transcripts.py` generates raw transcripts using Gemini, incorporating standard requirements, optional scenario requirements, and personality profiles. Output filename: `transcript_{scenario_name_or_no_scenario}_{customer_id}.json`. Output JSON includes `customer_id`, `personality`, `transcript` (dialogue list), and `scenario` (name or null).
     2. **Evaluation**: `scripts/evaluation/transcript_evaluation/eval_transcript_main.py` evaluates raw **JSON** transcript against standard coverage requirements (`data/coverage_requirements/`) and any applicable scenario-specific requirements (loaded from `data/scenarios/` based on the transcript's "scenario" field). Uses modules within the same directory (`eval_transcript_parser.py`, `eval_transcript_prompts.py`, `eval_transcript_gemini.py`).
-    3. **Parsing (if evaluation passes)**: `src/utils/transcript_processing.py` parses raw transcripts (`.txt` or `.json`) from `data/transcripts/raw/synthetic/` and saves structured JSON lists to `data/transcripts/processed/` (batch processing when run directly). Note: While this script *can* handle `.txt`, the preceding evaluation step now only processes `.json`.
-    4. **Extraction**: The `src/agents/extractor.py` script (using `crewai` with OpenAI configured via `.env`) consumes all `.json` files from an input directory (default: `data/transcripts/processed/`) and runs the Extractor Agent on each (batch processing when run directly). Accepts optional `--input_dir` and `--output_dir` arguments.
-- **Outputs**: Structured customer profiles saved as JSON files in `data/extracted_customer_requirements/`. The filename format is `requirements_{original_name_part}.json` (e.g., `requirements_the_anxious_inquirer_20250403_152253.json`). The JSON structure matches the `TravelInsuranceRequirement` Pydantic model.
+    3. **Parsing (if evaluation passes)**: `src/utils/transcript_processing.py` parses raw transcripts (e.g., `transcript_{scenario}_{uuid}.json`) from `data/transcripts/raw/synthetic/` and saves structured JSON lists to `data/transcripts/processed/` using the format `parsed_transcript_{scenario_name}_{uuid}.json` (batch processing when run directly). Note: While this script *can* handle `.txt`, the preceding evaluation step now only processes `.json`.
+    4. **Extraction**: The `src/agents/extractor.py` script (using `crewai` with OpenAI configured via `.env`) consumes all `.json` files from an input directory (default: `data/transcripts/processed/`, expecting `parsed_transcript_{scenario_name}_{uuid}.json` format) and runs the Extractor Agent on each (batch processing when run directly). Accepts optional `--input_dir` and `--output_dir` arguments.
+- **Outputs**: Structured customer profiles saved as JSON files in `data/extracted_customer_requirements/`. The filename format is now `requirements_{scenario_name}_{uuid}.json` (e.g., `requirements_golf_coverage_49eb20af-32b0-46e0-a14e-0dbe3e3c6e73.json`). The JSON structure matches the `TravelInsuranceRequirement` Pydantic model.
 - **Dependencies**: `scripts/data_generation/generate_transcripts.py`, `scripts/evaluation/transcript_evaluation/`, `src/utils/transcript_processing.py` (for model definition and parsing step), `src/agents/extractor.py`, `crewai` framework, OpenAI API (via `.env`), `TravelInsuranceRequirement` model.
 - **Consumers**: Analyzer Agent, ML Models.
 
@@ -189,12 +189,12 @@ sequenceDiagram
 
     alt Evaluation Passes
         Evaluation->>Parsing: Trigger Parsing
-        Note right of Parsing: `transcript_processing.py` batch parses raw transcripts (.txt, .json) to `data/transcripts/processed/`
+        Note right of Parsing: `transcript_processing.py` batch parses raw transcripts (e.g., `transcript_{scenario}_{uuid}.json`) to `data/transcripts/processed/` using format `parsed_transcript_{scenario}_{uuid}.json`
         Parsing->>Extractor: (Extractor reads processed dir)
-        Note right of Extractor: `src/agents/extractor.py` (using `crewai` + OpenAI) batch processes files from `data/transcripts/processed/`
+        Note right of Extractor: `src/agents/extractor.py` (using `crewai` + OpenAI) batch processes files from `data/transcripts/processed/` (expecting `parsed_transcript_{scenario}_{uuid}.json`)
         Extractor->>OpenAI API: Extract requirements from each parsed transcript
         OpenAI API-->>Extractor: Return structured data (Pydantic object validated by `TravelInsuranceRequirement`)
-        Note right of Extractor: Saves result to `data/extracted_customer_requirements/requirements_{name_part}.json`
+        Note right of Extractor: Saves result to `data/extracted_customer_requirements/requirements_{scenario}_{uuid}.json`
         Extractor->>Analyzer: Send structured customer profile path/object
     else Evaluation Fails
         Evaluation->>User: Notify failure (or trigger regeneration - future step)

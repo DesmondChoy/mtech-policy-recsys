@@ -92,13 +92,13 @@
 │   └── demos/                  # Demo notebooks
 ├── data/                       # Data storage
 │   ├── coverage_requirements/  # Standardized coverage requirements
-│   ├── extracted_customer_requirements/ # Extracted requirements from transcripts
+│   ├── extracted_customer_requirements/ # Extracted requirements (e.g., requirements_{scenario}_{uuid}.json)
 │   ├── policies/               # Insurance policy documents
 │   │   ├── raw/                # Raw policy PDFs
 │   │   └── processed/          # Processed policy JSON files (structured output)
 │   ├── transcripts/            # Conversation transcripts
 │   │   ├── raw/                # Raw transcripts (e.g., synthetic/, real/)
-│   │   └── processed/          # Processed/parsed transcripts
+│   │   └── processed/          # Processed/parsed transcripts (e.g., parsed_transcript_{scenario}_{uuid}.json)
 │   └── evaluation/             # Evaluation data
 │       └── transcript_evaluations/ # Transcript evaluation results
 ├── src/                        # Source code
