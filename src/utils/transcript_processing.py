@@ -6,14 +6,6 @@ from typing import List, Optional, Dict, Any
 from datetime import date
 
 
-class TravelerDetail(BaseModel):
-    age: Optional[int] = Field(None, description="Age of the traveler.")
-    gender: Optional[str] = Field(
-        None, description="Gender of the traveler (e.g., 'Male', 'Female')."
-    )
-    citizenship: Optional[str] = Field(None, description="Citizenship of the traveler.")
-
-
 class TravelInsuranceRequirement(BaseModel):
     requirement_id: str = Field(
         ..., description="Unique identifier for tracking the insurance requirement."
@@ -24,18 +16,15 @@ class TravelInsuranceRequirement(BaseModel):
     detailed_description: str = Field(
         ..., description="Detailed narrative extracted from the transcript."
     )
-
+    travel_origin: Optional[str] = Field(
+        None, description="Country or region the customer is traveling from."
+    )
     travel_destination: Optional[str] = Field(
         None, description="Country or region the customer is traveling to."
     )
     travel_duration: Optional[str] = Field(
         None, description="Duration of the trip (e.g., '7 days', '1 month')."
     )
-    travel_start_date: Optional[str] = Field(
-        None, description="Start date of the travel."
-    )
-    travel_end_date: Optional[str] = Field(None, description="End date of the travel.")
-
     insurance_coverage_type: Optional[List[str]] = Field(
         None,
         description="Types of insurance coverage requested (e.g., ['Medical', 'Trip Cancellation']).",
@@ -44,26 +33,15 @@ class TravelInsuranceRequirement(BaseModel):
         None,
         description="Any pre-existing conditions mentioned that might affect coverage.",
     )
+    medical_needs: Optional[List[str]] = Field(
+        None, description="Specific medical coverage needs or requirements."
+    )
+    activities_to_cover: Optional[List[str]] = Field(
+        None, description="Specific activities that need coverage (e.g., 'Skiing', 'Scuba diving')."
+    )
     age_group: Optional[str] = Field(
-        None, description="Overall age bracket of the travelers (e.g., '26-40')."
+        None, description="Age range of the traveler (e.g., '18-25', '26-35', '36-45')."
     )
-    travelers_count: Optional[int] = Field(
-        None,
-        ge=1,
-        description="Number of travelers to be insured (must be at least 1).",
-    )
-
-    traveler_details: Optional[List[TravelerDetail]] = Field(
-        None, description="Detailed demographic information for each traveler."
-    )
-
-    budget_range: Optional[str] = Field(
-        None, description="Budget constraints (e.g., '$100-$200')."
-    )
-    preferred_insurance_provider: Optional[str] = Field(
-        None, description="Preferred insurance provider, if any."
-    )
-
     additional_requests: Optional[str] = Field(
         None, description="Any special requests or concerns noted by the customer."
     )

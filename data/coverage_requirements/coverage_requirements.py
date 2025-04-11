@@ -139,6 +139,66 @@ customer_context_options = {
             "We'll be away for {value}.",
         ],
     },
+    "travel_origin": {
+        "options": ["Singapore"],
+        "prompt_phrases": [
+            "We'll be traveling from {value}.",
+            "Our trip starts in {value}.",
+            "We're based in {value}.",
+        ],
+    },
+    "activities_to_cover": {
+        "options": [
+            None,
+            # Water activities
+            ["Scuba Diving"],
+            ["Paddleboarding"],
+            ["White Water Rafting"],
+            ["Snorkeling"],
+            ["Surfing"],
+            ["Water Skiing"],
+            # Winter activities
+            ["Skiing"],
+            ["Snowboarding"],
+            ["Snowmobiling"],
+            ["Ice Skating"],
+            # Air activities
+            ["Bungee Jumping"],
+            ["Skydiving"],
+            ["Paragliding"],
+            ["Abseiling"],
+            ["Hot Air Ballooning"],
+            # Outdoor activities
+            ["Hiking"],
+            ["Trekking"],
+            ["Motorcycling"],
+            ["Rock Climbing"],
+            ["Camping"],
+        ],
+        "prompt_phrases": [
+            "We plan to do {value} during our trip.",
+            "We'll be participating in {value}.",
+            "We need coverage for {value}.",
+            "We're interested in {value}.",
+            "We want to try {value}.",
+            "No special activities planned.",  # Phrase for None
+        ],
+    },
+    "medical_needs": {
+        "options": [
+            None,
+            ["Wheelchair"],
+            ["Oxygen tank"],
+            ["CPAP machine"],
+            ["Insulin pump"],
+        ],
+        "prompt_phrases": [
+            "We need to bring {value} with us.",
+            "We require {value} for medical reasons.",
+            "We have {value} that needs to be covered.",
+            "No special medical equipment needed.",  # Phrase for None
+        ],
+    },
 }
 
 
