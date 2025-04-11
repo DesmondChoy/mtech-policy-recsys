@@ -29,14 +29,15 @@ Inputs:
   src.models.gemini_config.
 
 Output:
-- A JSON file named `transcript_{scenario_name}_{YYYYMMDD_HHMMSS}.json`
-  (e.g., `transcript_uncovered_cancellation_reason_20250403_151200.json`) or just
-  `transcript_{YYYYMMDD_HHMMSS}.json` if no scenario is specified, saved in the
+- A JSON file named `transcript_{scenario_or_personality}_{customer_id}.json`
+  (e.g., `transcript_uncovered_cancellation_reason_uuid-goes-here.json` or
+  `transcript_the_anxious_inquirer_uuid-goes-here.json`), saved in the
   `data/transcripts/raw/synthetic/` directory.
 - The JSON file contains:
+    - "customer_id": A unique identifier (UUID) for this transcript/customer interaction.
     - "personality": The full dictionary of the randomly selected personality.
-    - "transcript": A list of objects, each with "speaker" and "dialogue".
-    - "scenario": (If a scenario was used) The name of the scenario used.
+    - "transcript": A list of objects, each with "speaker" and "dialogue", or the raw text if parsing failed.
+    - "scenario": (If a scenario was used) The name of the scenario used (e.g., "uncovered_cancellation_reason").
 
 How to Run:
 1. Ensure you are in the project's root directory (mtech-policy-recsys).
@@ -57,6 +58,9 @@ How to Run:
    python scripts/data_generation/generate_transcripts.py --num_transcripts 10
 
    # Generate 1 transcript with a specific scenario
+   python scripts/data_generation/generate_transcripts.py -s golf_coverage
+   python scripts/data_generation/generate_transcripts.py -s pet_care_coverage
+   python scripts/data_generation/generate_transcripts.py -s public_transport_double_cover
    python scripts/data_generation/generate_transcripts.py -s uncovered_cancellation_reason
 
    # Generate 5 transcripts with a specific scenario
@@ -80,6 +84,7 @@ import logging
 import argparse
 import re
 import datetime  # Added for timestamp
+import uuid  # Added for customer ID
 
 # Adjust sys.path to include project root for imports
 # Assumes the script is run from the 'scripts/data_generation' directory
@@ -370,24 +375,26 @@ def generate_transcript(scenario_name=None):
         transcript_output = parsed_transcript
 
     # 7. Prepare Output
+    customer_id = str(uuid.uuid4())  # Generate customer ID
     output_data = {
+        "customer_id": customer_id,  # Add customer ID to output
         "personality": selected_personality,
         "transcript": transcript_output,
         "scenario": scenario_data.get("scenario_name") if scenario_data else None,
     }
 
     # 8. Save Output
-    formatted_name = format_filename(personality_name)
-    # Add timestamp to filename
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    # customer_id was generated in step 7
 
-    # Include scenario name in filename if available
+    # Determine the base name part (scenario or "no_scenario")
     if scenario_name:
-        formatted_scenario_name = format_filename(scenario_name)
-        output_filename = f"transcript_{formatted_scenario_name}_{timestamp}.json"
+        base_name_part = format_filename(scenario_name)
     else:
-        output_filename = f"transcript_{timestamp}.json"
+        # Use "no_scenario" if no scenario is specified
+        base_name_part = "no_scenario"
 
+    # Construct filename using base name part and customer_id
+    output_filename = f"transcript_{base_name_part}_{customer_id}.json"
     output_path = os.path.join(OUTPUT_DIR, output_filename)
 
     save_json(output_data, output_path)

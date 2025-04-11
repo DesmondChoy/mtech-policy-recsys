@@ -1,0 +1,118 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Good morning, thank you for calling ISS Insurance Ltd. My name is Sarah, how can I help you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Hi Sarah, look, I'm really short on time. I need to get travel insurance sorted quickly. Can we just get straight to it?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Of course, sir. I understand you're busy. To help you efficiently, I just need a few details about your trip first. Where will you be travelling from Singapore?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Singapore, yes. We're planning a trip to Japan."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, Japan. And how long will you be away for?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It will be a 10 days trip. Get that down?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Got it, 10 days. And how many people will be travelling?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Just two of us."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, two travellers. And roughly what age group are the travellers in?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're mostly around 26-40 years old. Okay, is that enough? What about the actual insurance?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Almost there, sir. Just a couple more things to understand your needs. Thinking about the trip, are there any specific concerns regarding potential health issues or needing medical attention while you're in Japan?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Well, obviously, if one of us gets sick or has an accident, we need Emergency medical treatment covered. Hospital stays, doctor visits, that sort of thing. Standard stuff, right?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood, coverage for emergency medical needs. And what about anything happening *before* the trip that might force you to cancel? For instance, if someone falls ill?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yeah, definitely need that. What if we have to cancel because of illness or some family emergency? Trip Cancellation is important, yes. Can't lose all that money."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted trip cancellation cover. And regarding your belongings during transit?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Look, if the airline loses my bag or damages it, I expect some Reimbursement for lost items. And maybe for essential purchases if it's delayed for ages. So yes, Lost/Damaged Luggage cover. Quickly now."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Right, Lost/Damaged Luggage. How about potential disruptions *during* your travels, like flight delays causing extra expenses?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, yes! If the flight gets delayed badly, need cover for Accommodation expenses, meals, that kind of thing. Travel Delays, put that down."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, Travel Delays coverage noted. Are you planning any specific activities during your trip to Japan? Maybe any sports or adventure-type activities?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Ah yes, good point. We plan to do Skiing during our trip. Need to make sure that's covered if anything happens on the slopes."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, Skiing cover specifically under Sports and Adventure Activities. That’s important to note. And does either traveller have any pre-existing medical conditions, like asthma or diabetes, for example? Or require any special medical equipment?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No, no pre-existing conditions. And No special medical equipment needed. Just standard health."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Great, thank you. And one last thing, do you have a particular budget in mind for the insurance premium?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, trying to keep it reasonable. We're hoping to spend $200-$300 if possible. Can you find something in that range?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so just to confirm, you're looking for travel insurance for two adults, age group 26-40, travelling from Singapore to Japan for 10 days. You require coverage for Medical Coverage (Emergency), Trip Cancellation, Lost/Damaged Luggage, Travel Delays, and specifically coverage for Sports and Adventure Activities including Skiing. No pre-existing conditions or special medical needs declared, and you have a budget preference of around $200-$300. Is that all correct, sir?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, that's everything. Finally. Got it all?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Yes, sir, I have all the details needed. Thank you for providing that information. We will use this to identify suitable options for you."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Okay good. That's all I have time for now. Bye."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for calling ISS Insurance. Have a good day."
+    }
+]

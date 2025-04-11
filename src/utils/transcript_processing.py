@@ -37,7 +37,8 @@ class TravelInsuranceRequirement(BaseModel):
         None, description="Specific medical coverage needs or requirements."
     )
     activities_to_cover: Optional[List[str]] = Field(
-        None, description="Specific activities that need coverage (e.g., 'Skiing', 'Scuba diving')."
+        None,
+        description="Specific activities that need coverage (e.g., 'Skiing', 'Scuba diving').",
     )
     age_group: Optional[str] = Field(
         None, description="Age range of the traveler (e.g., '18-25', '26-35', '36-45')."
@@ -216,13 +217,42 @@ def main():
         ):
             print(f"\nProcessing file: {filename}")
 
-            # Construct the output filename
-            output_filename = f"parsed_{filename}"
-            # Ensure output is always .json
+            # --- Construct the NEW output filename ---
+            output_filename = f"parsed_{filename}"  # Default fallback
+            base_name_input = os.path.splitext(filename)[
+                0
+            ]  # e.g., transcript_golf_coverage_49eb...
+
+            if base_name_input.startswith("transcript_"):
+                name_part = base_name_input[
+                    len("transcript_") :
+                ]  # e.g., golf_coverage_49eb...
+                # Find the last underscore to separate scenario and UUID
+                last_underscore_index = name_part.rfind("_")
+                if last_underscore_index != -1:
+                    scenario_name = name_part[
+                        :last_underscore_index
+                    ]  # e.g., golf_coverage
+                    uuid = name_part[last_underscore_index + 1 :]  # e.g., 49eb...
+                    # Construct the desired output filename
+                    output_filename = f"parsed_transcript_{scenario_name}_{uuid}.json"
+                else:
+                    # Handle cases where the format might be unexpected (e.g., no underscore)
+                    print(
+                        f"Warning: Could not parse scenario/UUID from filename '{filename}'. Using fallback name."
+                    )
+            else:
+                # Handle cases where filename doesn't start with 'transcript_'
+                print(
+                    f"Warning: Input filename '{filename}' doesn't match expected format 'transcript_*'. Using fallback name."
+                )
+
+            # Ensure output is always .json (redundant if parsed correctly, but safe fallback)
             if not output_filename.lower().endswith(".json"):
                 output_filename = os.path.splitext(output_filename)[0] + ".json"
 
             output_file_path = os.path.join(output_dir, output_filename)
+            # --- End of NEW output filename construction ---
 
             # Process the transcript
             parsed_data, success = process_transcript(input_file_path, output_file_path)
