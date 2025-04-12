@@ -9,10 +9,8 @@ import time
 import logging
 from typing import Dict, List, Any, Optional, Union, Generator, Callable
 
-import google.generativeai as genai
-from google.generativeai.types import GenerationConfig
-from google.generativeai.types.safety_types import HarmCategory, HarmBlockThreshold
-from google.generativeai.types.generation_types import GenerateContentResponse
+from google import genai
+from google.genai import types
 
 from src.models.gemini_config import GeminiConfig
 
@@ -35,11 +33,12 @@ class LLMService:
         self.GeminiConfig = (
             GeminiConfig  # Make GeminiConfig accessible as an instance attribute
         )
+        self.client: Optional[genai.Client] = None
         self._initialize_client()
 
     def _initialize_client(self) -> None:
         """Initialize the Google Gemini client."""
-        genai.configure(api_key=self.api_key)
+        self.client = genai.Client(api_key=self.api_key)
         logger.info("Google Gemini client initialized")
 
     def generate_content(
@@ -52,7 +51,7 @@ class LLMService:
         retry_count: int = 3,
         retry_delay: float = 1.0,
         max_output_tokens: Optional[int] = None,
-    ) -> GenerateContentResponse:
+    ) -> types.GenerateContentResponse:
         """
         Generate content using Google Gemini.
 
@@ -95,32 +94,53 @@ class LLMService:
         if max_output_tokens is not None:
             parameters["max_output_tokens"] = max_output_tokens
 
-        # Convert parameters to GenerationConfig
-        generation_config = GenerationConfig(**parameters)
-
         # Convert safety settings to SafetySetting objects
-        safety_settings_list = [
-            {
-                "category": getattr(HarmCategory, f"HARM_CATEGORY_{category.upper()}"),
-                "threshold": getattr(HarmBlockThreshold, f"{threshold.upper()}"),
-            }
+        safety_settings_objects = [
+            types.SafetySetting(
+                category=getattr(
+                    types.HarmCategory, f"HARM_CATEGORY_{category.upper()}", category
+                ),
+                threshold=getattr(
+                    types.HarmBlockThreshold, f"{threshold.upper()}", threshold
+                ),
+            )
             for category, threshold in safety_settings.items()
         ]
 
-        # Get the model
-        gemini_model = genai.GenerativeModel(
-            model_name=model,
-            generation_config=generation_config,
-            safety_settings=safety_settings_list,
+        # Create configuration object by unpacking parameters and adding safety settings
+        config_payload = types.GenerateContentConfig(
+            **parameters,  # Unpack parameters dictionary directly
+            safety_settings=safety_settings_objects,
         )
 
-        # Determine the content to send
-        content_to_send = contents if contents is not None else prompt
+        # Determine the input content and ensure it's a list
+        input_content = contents if contents is not None else [prompt]
 
-        # Try to generate content with retries
+        # Convert input content to a list of types.Part objects
+        content_parts = []
+        for item in input_content:
+            if isinstance(item, str):
+                content_parts.append(types.Part(text=item))
+            elif isinstance(item, dict) and "mime_type" in item and "data" in item:
+                # Create Blob for inline data like PDF
+                inline_data = types.Blob(mime_type=item["mime_type"], data=item["data"])
+                content_parts.append(types.Part(inline_data=inline_data))
+            else:
+                logger.warning(
+                    f"Unsupported content type in 'contents' list: {type(item)}. Skipping."
+                )
+                # Or raise ValueError(f"Unsupported content type: {type(item)}")
+
+        # Try to generate content with retries using the processed content_parts
         for attempt in range(retry_count):
             try:
-                response = gemini_model.generate_content(content_to_send)
+                if self.client is None:
+                    raise RuntimeError("Gemini client not initialized.")
+                response = self.client.models.generate_content(
+                    model=model,
+                    contents=content_parts,  # Pass the list of Part objects
+                    config=config_payload,
+                )
                 return response
             except Exception as e:
                 if attempt < retry_count - 1:
@@ -270,29 +290,33 @@ class LLMService:
         parameters = parameters or GeminiConfig.get_parameters()
         safety_settings = safety_settings or GeminiConfig.SAFETY_SETTINGS
 
-        # Convert parameters to GenerationConfig
-        generation_config = GenerationConfig(**parameters)
-
         # Convert safety settings to SafetySetting objects
-        safety_settings_list = [
-            {
-                "category": getattr(HarmCategory, f"HARM_CATEGORY_{category.upper()}"),
-                "threshold": getattr(HarmBlockThreshold, f"{threshold.upper()}"),
-            }
+        safety_settings_objects = [
+            types.SafetySetting(
+                category=getattr(
+                    types.HarmCategory, f"HARM_CATEGORY_{category.upper()}", category
+                ),
+                threshold=getattr(
+                    types.HarmBlockThreshold, f"{threshold.upper()}", threshold
+                ),
+            )
             for category, threshold in safety_settings.items()
         ]
 
-        # Get the model
-        gemini_model = genai.GenerativeModel(
-            model_name=model,
-            generation_config=generation_config,
-            safety_settings=safety_settings_list,
+        # Create configuration object by unpacking parameters and adding safety settings
+        config_payload = types.GenerateContentConfig(
+            **parameters,  # Unpack parameters dictionary directly
+            safety_settings=safety_settings_objects,
         )
 
         try:
-            response = gemini_model.generate_content(prompt, stream=True)
-            for chunk in response:
-                if chunk.text:
+            if self.client is None:
+                raise RuntimeError("Gemini client not initialized.")
+            stream = self.client.models.generate_content_stream(
+                model=model, contents=prompt, config=config_payload
+            )
+            for chunk in stream:
+                if hasattr(chunk, "text") and chunk.text:
                     yield chunk.text
         except Exception as e:
             logger.error(f"Streaming API call failed: {str(e)}")
@@ -306,7 +330,7 @@ class LLMService:
         safety_settings: Optional[Dict[str, str]] = None,
         retry_count: int = 3,
         retry_delay: float = 1.0,
-    ) -> List[GenerateContentResponse]:
+    ) -> List[types.GenerateContentResponse]:
         """
         Generate content for multiple prompts.
 
@@ -346,7 +370,7 @@ class LLMService:
         max_retries: int = 3,
         retry_delay: float = 1.0,
         validation_func: Optional[Callable[[str], bool]] = None,
-    ) -> GenerateContentResponse:
+    ) -> types.GenerateContentResponse:
         """
         Generate content with retry logic for validation failures.
 
