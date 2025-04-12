@@ -24,44 +24,6 @@
    - Data interchange format
    - Used for: Structured data representation, agent communication
 
-### Data Processing
-
-1. **Pandas**:
-   - Data manipulation and analysis library
-   - Used for: Structured data processing, dataset creation
-
-2. **NumPy**:
-   - Numerical computing library
-   - Used for: Mathematical operations, array manipulation
-
-3. **Scikit-learn**:
-   - Machine learning library
-   - Used for: Supervised learning models, evaluation metrics
-
-### Web Components
-
-1. **Flask**:
-   - Lightweight web framework
-   - Used for: API endpoints, web interface
-
-2. **HTML/CSS/JavaScript**:
-   - Frontend technologies
-   - Used for: User interface (if applicable)
-
-### Utilities
-
-1. **NLTK/spaCy**:
-   - Natural language processing libraries
-   - Used for: Text preprocessing, tokenization (Note: PDF text extraction for policy analysis is now handled by the Gemini model via the `LLMService` as used in `scripts/extract_policy_tier.py`)
-
-3. **Matplotlib/Seaborn**:
-   - Data visualization libraries
-   - Used for: Creating visualizations for analysis and reporting
-
-4. **pytest**:
-   - Testing framework
-   - Used for: Unit and integration testing
-
 ## Development Setup
 
 ### Environment
@@ -196,11 +158,10 @@
 
 ### External Dependencies
 
-1. **Google Generative AI SDK**:
+1. **Google GenAI SDK**:
    - Purpose: Interface with Google Gemini API
    - Installation: `pip install google-genai`
    - Usage: Core dependency for LLM service
-   - Version: `1.10.0`
 
 2. **CrewAI**:
    - Purpose: Framework for orchestrating autonomous AI agents
@@ -208,30 +169,10 @@
    - Usage: Used for Extractor Agent implementation
    - Version: Check `requirements.txt`
 
-3. **Data Processing Libraries**:
-   - Purpose: Data manipulation and analysis
-   - Installation: `pip install pandas numpy scikit-learn`
-
-4. **NLP Libraries**:
-   - Purpose: Text processing
-   - Installation: `pip install nltk spacy`
-
-4. **Pydantic & DotEnv**:
+3. **Pydantic & DotEnv**:
    - Purpose: Data validation and environment variable management
-   - Installation: `pip install pydantic python-dotenv` (Included in requirements.txt)
+   - Installation: `pip install pydantic python-dotenv`
    - Usage: Used extensively by `scripts/extract_policy_tier.py` to define and validate the complex nested JSON structure (including `PolicyExtraction`, `CoverageDetail`, `LimitDetail`, `ConditionalLimit`, `SourceDetail`) extracted by Gemini. Also used for loading API keys via `dotenv`.
-
-5. **Web Framework**:
-   - Purpose: API and web interface
-   - Installation: `pip install flask`
-
-6. **Visualization**:
-   - Purpose: Data visualization
-   - Installation: `pip install matplotlib seaborn`
-
-7. **Testing**:
-   - Purpose: Unit and integration testing
-   - Installation: `pip install pytest`
 
 4. **OpenAI**:
    - Purpose: LLM used by the Extractor agent

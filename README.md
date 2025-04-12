@@ -8,75 +8,18 @@ This system addresses common pain points in insurance purchasing by providing pe
 
 ### Key Features
 
-- **Conversational Interface**: Natural interaction with a Customer Service agent
-- **Personalized Analysis**: Tailored recommendations based on individual needs
-- **Multi-Agent Voting**: Consensus-based recommendations for increased reliability
-- **Transparent Justifications**: Clear explanations linked to policy clauses
-- **Iterative Refinement**: Ability to update requirements and receive new recommendations
+- **Automated Policy Extraction**: Uses LLMs to parse policy PDFs, extracting tier-specific coverage into structured JSON, including base/conditional limits and source-linked details.
+- **Synthetic Transcript Generation**: Creates realistic, scenario-driven customer conversations using LLMs, incorporating personalities and specific coverage requirements.
+- **LLM-Based Transcript Evaluation**: Assesses generated transcripts for requirement coverage completeness (standard and scenario-specific) using LLMs, providing JSON results with quote-based justifications.
+- **Structured Requirement Extraction**: Employs an AI agent (using the CrewAI framework) to analyze transcripts and convert customer needs into validated, structured JSON based on a predefined schema.
+- **Insurer-Level Policy Comparison**: Generates Markdown reports via LLMs comparing customer requirements against all policy tiers for an insurer, recommending the best-fit tier with justification and detailed coverage analysis.
+- **(Future) Conversational Interface**: Planned natural language interaction for requirement gathering.
+- **(Future) Multi-Agent Voting & Recommendation**: Planned consensus-based system for robust policy recommendations.
+- **(Future) Iterative Refinement**: Planned capability for users to update needs and receive refined recommendations.
 
 ## How To Use
 
 This section outlines the primary workflows for preparing data, processing transcripts, and generating comparison reports within the system.
-
-```mermaid
-flowchart TD
-    %% Modern color scheme with improved text contrast
-    classDef dataNode fill:#5D87E1,stroke:#4668B0,color:white,stroke-width:1px
-    classDef processNode fill:#4CAF50,stroke:#388E3C,color:white,stroke-width:1px
-    classDef decisionNode fill:#FF9800,stroke:#F57C00,color:white,stroke-width:1px
-
-    %% Subgraph styling with black text
-    classDef prepSubgraph fill:#E3F2FD,stroke:#90CAF9,color:black,stroke-width:2px
-    classDef processSubgraph fill:#E8F5E9,stroke:#A5D6A7,color:black,stroke-width:2px
-    classDef comparisonSubgraph fill:#FFF3E0,stroke:#FFCC80,color:black,stroke-width:2px %% Kept for Report Gen style
-
-    %% Edge styling with black text
-    linkStyle default color:black
-
-    subgraph prep["Prep"]
-        RawPolicies[("Raw PDFs")] -->|Input| ExtractScript["Policy Extract (Gemini)"]
-        ExtractScript --> ProcessedPolicies[("Policy JSON")]
-
-        GenPersonalities["Gen Personalities (Gemini)"] --> PersonalitiesJSON[("Pers. JSON")]
-        CoverageReqs[("Cov. Reqs")] -->|Input| GenTranscripts["Gen Transcripts (Gemini)"]
-        PersonalitiesJSON -->|Input| GenTranscripts
-        GenTranscripts --> RawTranscripts[("Raw Transcripts")]
-    end
-
-    subgraph process["Processing"]
-        RawTranscripts -->|Input| TranscriptEval["Transcript Eval (Gemini)"]
-        TranscriptEval -->|Evaluate| EvalDecision{Pass/Fail?}
-        EvalDecision -->|Fail| Regenerate["Regen Transcript (Gemini)"]
-        EvalDecision -->|Pass| TranscriptParsing["Parsing"]
-        TranscriptParsing --> ParsedTranscripts[("Parsed Transcripts")]
-        ParsedTranscripts -->|Input| RequirementExtraction["Req Extract (OpenAI)"]
-        RequirementExtraction --> StructuredReqs[("Reqs JSON")]
-    end
-
-    %% Apply styles to nodes
-    class RawPolicies,ProcessedPolicies,PersonalitiesJSON,CoverageReqs,RawTranscripts,ParsedTranscripts,StructuredReqs dataNode
-    class ExtractScript,GenPersonalities,GenTranscripts,TranscriptEval,TranscriptParsing,RequirementExtraction,Regenerate processNode
-    class EvalDecision decisionNode
-
-    %% Apply styles to subgraphs
-    class prep prepSubgraph
-    class process processSubgraph
-    %% Removed comparison class assignment comment is fine here
-
-    %% Add Policy Comparison Script to Diagram
-    subgraph comparisonReportGen ["Report Gen"]
-        StructuredReqs -->|Input| GenComparisonScript["Compare Script"]
-        ProcessedPolicies -->|Input| GenComparisonScript
-        GenComparisonScript -- Uses --> LLMServiceNode["LLM Service"]
-        GenComparisonScript --> ComparisonReports[("Compare Reports (MD)")]
-    end
-
-    %% Apply styles to comparison report nodes and subgraph
-    class GenComparisonScript processNode
-    class ComparisonReports dataNode
-    class comparisonReportGen comparisonSubgraph
-    %% Use comparison style for this subgraph -- Moved comment to its own line
-```
 
 ## 1. Data Preparation and Processing Pipeline
 

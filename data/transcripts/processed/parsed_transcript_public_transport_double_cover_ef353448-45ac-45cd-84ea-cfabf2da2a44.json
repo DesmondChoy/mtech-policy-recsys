@@ -1,0 +1,170 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Good morning, thank you for calling ISS Insurance Ltd. My name is Sarah. How can I help you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Oh, hello Sarah. Yes, I need... uh... insurance? For a trip. I've never bought this before, it's all a bit confusing, sorry."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "No problem at all, I can certainly help guide you through gathering the details we need. Could you tell me where you'll be traveling from?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're based in Singapore. So, traveling from Singapore."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted. And where are you planning to travel to?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're planning a trip to Japan."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Japan, lovely. And how long will you be away for?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It will be a 2 weeks trip. Just two weeks."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright. And how many people will be traveling?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "There will be 2 of us traveling. Me and my partner."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Got it, two travelers for two weeks to Japan, departing from Singapore. Are there any specific concerns you have about the trip that you'd like insurance to help with?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Concerns... well, yes. I worry about... what if one of us gets sick there? Like, really sick? Does insurance help with hospital bills? Because I heard healthcare overseas can be very expensive."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so you're concerned about potential medical expenses if someone falls ill or has an accident during the trip?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, exactly! Like doctor visits, or... needing medicine? Is that what 'medical coverage' is? Sorry, I don't know the terms."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "That's generally what it covers, yes – emergency medical treatment, hospitalisation, things like that. Thank you for mentioning it. Do either of you have any pre-existing medical conditions we should be aware of, like asthma or high blood pressure?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No, no pre-existing conditions. Thankfully."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. Any other worries for the trip?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Um... luggage! What if the airline loses our bags? Or if they arrive damaged? That would be terrible. Is there... help for that?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "So, cover for issues with your baggage – like it being lost, damaged, or even delayed for a long time – is something you're looking for?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, please! That would make me feel much better. Losing luggage sounds like a nightmare."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted cover for luggage issues. What about your plans in Japan? Any specific activities you'll be doing?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Activities... Hmm, not really extreme things. We plan to do hiking during our trip. Just some scenic trails, nothing too crazy."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Right, hiking. So you'd want to ensure any potential incidents during such activities are covered?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Oh, do I need special cover for hiking? I didn't even think of that. Yes, if hiking isn't normally covered, then yes, we need coverage for hiking."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, I've noted down cover related to participating in listed activities like hiking. What about the travel itself? Any concerns about flights or getting there?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Well... yes, actually. What happens if... say, our flight is delayed for many, many hours? Do we just wait at the airport? Or if... something happens and we have to cancel the whole trip *before* we even leave? Like if one of us gets a really bad flu?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "So you're thinking about potential disruptions like significant travel delays, and also the possibility of having to cancel the trip beforehand due to unforeseen reasons like illness?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes! Those things worry me a lot. Especially the cancelling part. All that money for flights and hotels... it's confusing what happens then."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "I understand. So cover for trip cancellation and significant travel delays are requirements. Noted. Any other specific things you've heard about or want to check?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Um... sorry, one more thing, this might be a strange question. I was reading something online... it mentioned... something about... if there's a very serious accident, like... death... but specifically when you're on public transport, like a bus or a train overseas? It said something about... getting double the money? Is that... a real thing? I want to know if the policy provides extra coverage if an accident happens while I'm on a bus or train."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, I understand. You're asking about a specific benefit related to accidental death occurring while traveling as a fare-paying passenger on public transport – specifically, if there's a double payout feature for that scenario. I've noted that as a specific requirement to check for."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, that's it! Sorry if it sounds morbid, but I just saw it mentioned."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Not at all, it's good to clarify all requirements. Just a couple more details to help us find suitable options later. Roughly what age group do the travelers fall into?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're mostly around 26-40 years old."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, 26-40 age group. And do you have a budget in mind for the insurance premium per person?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Hmm, budget... We're hoping to spend maybe around $400 for both of us, if possible? So maybe $200 each? Is that realistic? I'm not sure. Let's say our budget for insurance is about around $400 total."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, noted the budget indication. And finally, will you be traveling with any special medical equipment, like a wheelchair or CPAP machine?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Oh, no. No special medical equipment needed."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Perfect, thank you. Okay, let me just quickly recap the requirements you've mentioned to make sure I have everything correct. You're looking for travel insurance for two adults, aged 26-40, traveling from Singapore to Japan for two weeks. The key things you need coverage for are:"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, I think... I think that covers everything I was worried about. It's still a bit confusing, but yes, those are the things. Thank you for being patient."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "You're very welcome. I've noted down all these requirements clearly. The next step would be for our team to use this information to identify suitable policy options for you. Thank you for calling ISS Insurance Ltd."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Okay, thank you so much for your help, Sarah. Bye bye."
+    }
+]

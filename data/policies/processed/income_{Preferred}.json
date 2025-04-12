@@ -1,8 +1,8 @@
 {
-  "provider_name": "Income Insurance",
+  "provider_name": "Income Insurance Limited",
   "policy_name": "Travel Insurance",
   "tier_name": "Preferred",
-  "extraction_date": "2024-07-27",
+  "extraction_date": "2024-07-29",
   "currency": "SGD",
   "coverage_categories": [
     {
@@ -12,12 +12,12 @@
           "coverage_name": "Cancelling your trip",
           "base_limits": [
             {
-              "type": "Per Insured Person",
+              "type": "Per insured person",
               "limit": 15000,
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Family total",
               "limit": 45000,
               "basis": null
             }
@@ -25,8 +25,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers non-refundable overseas transport and accommodation expenses if trip is cancelled due to unforeseen circumstances. For COVID-19 cancellation, the event must occur after policy purchase and within 30 days before Singapore departure. Policy must be bought >=3 days before departure unless cancellation is due to accidental causes. COVID-19 must result in serious sickness.",
-              "source_location": "Page 5, Section 1; Page 10, Note 5; Page 11, Note 10"
+              "detail_snippet": "Covers non-refundable overseas transport and accommodation expenses paid in advance if the trip is cancelled due to specified reasons.",
+              "source_location": "Page 2, Item 1 & Page 5, Section 1"
+            },
+            {
+              "detail_snippet": "COVID-19 related cancellation is covered up to $15,000 if it results in serious sickness. The event must occur after policy purchase and within 30 days before leaving Singapore. Policy must be bought three days (or earlier) before departure unless the event is accidental.",
+              "source_location": "Page 3, 'Up to $15,000...' & Page 10, Note 5 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
             }
           ]
         },
@@ -34,12 +46,12 @@
           "coverage_name": "Postponing your trip",
           "base_limits": [
             {
-              "type": "Per Insured Person",
+              "type": "Per insured person",
               "limit": 2000,
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Family total",
               "limit": 6000,
               "basis": null
             }
@@ -47,8 +59,16 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers additional administrative costs or charges for postponing the trip due to specified reasons.",
+              "detail_snippet": "Covers additional transport or accommodation expenses incurred due to postponing the trip for specified reasons.",
               "source_location": "Page 5, Section 2"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
             }
           ]
         },
@@ -56,17 +76,17 @@
           "coverage_name": "Shortening your trip",
           "base_limits": [
             {
-              "type": "Overall Section Limit - Per Insured Person",
+              "type": "Overall section limit - Per insured person",
               "limit": 15000,
               "basis": null
             },
             {
-              "type": "Overall Section Limit - Family Total",
+              "type": "Overall section limit - Family total",
               "limit": 45000,
               "basis": null
             },
             {
-              "type": "Limit for extra expenses to return to Singapore - Per Insured Person",
+              "type": "Limit for extra expenses to return to Singapore - Per insured person",
               "limit": 3000,
               "basis": null
             }
@@ -74,8 +94,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers unused, non-refundable transport and accommodation expenses if trip is cut short due to specified reasons, including COVID-19. For COVID-19 shortening, it must result in serious sickness.",
-              "source_location": "Page 5, Section 3; Page 10, Note 5; Page 11, Note 10"
+              "detail_snippet": "Covers non-refundable expenses and additional costs to return to Singapore if the trip is shortened due to specified reasons, including COVID-19.",
+              "source_location": "Page 2, Item 1 & Page 3, 'Up to $15,000...' & Page 5, Section 3 & Page 10, Note 5"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -83,26 +115,38 @@
           "coverage_name": "Trip disruption",
           "base_limits": [
             {
-              "type": "Overall Section Limit - Per Insured Person",
+              "type": "Overall section limit - Per insured person",
               "limit": 3000,
               "basis": null
             },
             {
-              "type": "Overall Section Limit - Family Total",
+              "type": "Overall section limit - Family total",
               "limit": 9000,
               "basis": null
             },
             {
-              "type": "Limit for accommodation expenses",
+              "type": "Limit for accommodation expenses per room per night - Per insured person",
               "limit": 400,
-              "basis": "Per room per night"
+              "basis": null
             }
           ],
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers additional accommodation and transport expenses due to trip disruption caused by specified events.",
+              "detail_snippet": "Covers additional accommodation expenses if the trip is disrupted due to specified reasons.",
               "source_location": "Page 5, Section 4"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -110,41 +154,53 @@
           "coverage_name": "Travel delay",
           "base_limits": [
             {
-              "type": "Overall Section Limit - Per Insured Person",
+              "type": "Overall section limit - Per insured person",
               "limit": 2000,
               "basis": null
             },
             {
-              "type": "Delay while overseas - Adult",
-              "limit": 100,
-              "basis": "For every 6 hours of delay"
-            },
-            {
-              "type": "Delay while overseas - Child",
-              "limit": 50,
-              "basis": "For every 6 hours of delay"
-            },
-            {
-              "type": "Delay while overseas - Family Total",
+              "type": "Family total (Overseas delay)",
               "limit": 4000,
               "basis": null
             },
             {
-              "type": "Delay after 6 hours while in Singapore - Adult",
-              "limit": 150,
-              "basis": null
+              "type": "Adult - Overseas delay",
+              "limit": 100,
+              "basis": "every six hours of delay"
             },
             {
-              "type": "Delay after 6 hours while in Singapore - Child",
+              "type": "Child - Overseas delay",
               "limit": 50,
-              "basis": null
+              "basis": "every six hours of delay"
+            },
+            {
+              "type": "Adult - Delay while in Singapore",
+              "limit": 150,
+              "basis": "after six hours of delay"
+            },
+            {
+              "type": "Child - Delay while in Singapore",
+              "limit": 50,
+              "basis": "after six hours of delay"
             }
           ],
           "conditional_limits": null,
           "source_specific_details": [
             {
               "detail_snippet": "Payable if the scheduled public transport is delayed for more than six consecutive hours and the delay is not caused by you.",
-              "source_location": "Page 5, Section 5; Page 10, Note 3"
+              "source_location": "Page 2, Item 4 & Page 3, 'Coverage for unexpected travel delays' & Page 5, Section 5 & Page 10, Note 3"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -152,12 +208,12 @@
           "coverage_name": "Missed connections",
           "base_limits": [
             {
-              "type": "Per Insured Person",
+              "type": "Per insured person",
               "limit": 500,
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Family total",
               "limit": 5000,
               "basis": null
             }
@@ -165,8 +221,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers additional travel and accommodation expenses incurred to arrange alternative transport to catch the connecting trip.",
+              "detail_snippet": "Covers additional travel and accommodation expenses incurred to arrange alternative transport to the next destination due to missed connection.",
               "source_location": "Page 5, Section 6"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -174,12 +242,12 @@
           "coverage_name": "Overbooked public transport",
           "base_limits": [
             {
-              "type": "Per Insured Person",
+              "type": "Per insured person",
               "limit": 500,
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Family total",
               "limit": 5000,
               "basis": null
             }
@@ -187,21 +255,33 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Payable if you are denied boarding on scheduled public transport due to overbooking and no alternative transport is made available within 6 hours.",
+              "detail_snippet": "Payable if denied boarding on scheduled public transport due to overbooking and no alternative transport is made available within 6 hours.",
               "source_location": "Page 5, Section 7"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
         {
-          "coverage_name": "Travel agency insolvency",
+          "coverage_name": "If the travel agency becomes insolvent",
           "base_limits": [
             {
-              "type": "Per Insured Person",
+              "type": "Per insured person",
               "limit": 5000,
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Family total",
               "limit": 25000,
               "basis": null
             }
@@ -209,8 +289,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers irrecoverable travel or accommodation expenses paid in advance if the licensed travel agency becomes insolvent.",
+              "detail_snippet": "Covers loss of travel or accommodation costs paid in advance due to insolvency of the travel agency.",
               "source_location": "Page 5, Section 8"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension does NOT apply to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -218,41 +310,53 @@
           "coverage_name": "Baggage delay",
           "base_limits": [
             {
-              "type": "Overall Section Limit - Per Insured Person",
+              "type": "Overall section limit - Per insured person",
               "limit": 2000,
               "basis": null
             },
             {
-              "type": "Delay while overseas - Adult",
-              "limit": 200,
-              "basis": "For every 6 hours of delay"
-            },
-            {
-              "type": "Delay while overseas - Child",
-              "limit": 50,
-              "basis": "For every 6 hours of delay"
-            },
-            {
-              "type": "Delay while overseas - Family Total",
+              "type": "Family total (Overseas delay)",
               "limit": 4000,
               "basis": null
             },
             {
-              "type": "Delay after 6 hours when arriving in Singapore - Adult",
+              "type": "Adult - Overseas delay",
               "limit": 200,
-              "basis": null
+              "basis": "every six hours of delay"
             },
             {
-              "type": "Delay after 6 hours when arriving in Singapore - Child",
+              "type": "Child - Overseas delay",
               "limit": 50,
-              "basis": null
+              "basis": "every six hours of delay"
+            },
+            {
+              "type": "Adult - Delay arriving in Singapore",
+              "limit": 200,
+              "basis": "after six hours of delay"
+            },
+            {
+              "type": "Child - Delay arriving in Singapore",
+              "limit": 50,
+              "basis": "after six hours of delay"
             }
           ],
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Payable for the purchase of essential clothing and toiletries if checked-in baggage is delayed for more than six consecutive hours.",
+              "detail_snippet": "Payable for delay of checked-in baggage for more than six consecutive hours upon arrival at destination overseas or back in Singapore.",
               "source_location": "Page 6, Section 9"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -260,27 +364,27 @@
           "coverage_name": "Loss or damage of baggage and personal belongings",
           "base_limits": [
             {
-              "type": "Overall Section Limit - Per Insured Person",
+              "type": "Overall section limit - Per insured person",
               "limit": 8000,
               "basis": null
             },
             {
-              "type": "Overall Section Limit - Family Total",
+              "type": "Overall section limit - Family total",
               "limit": 20000,
               "basis": null
             },
             {
-              "type": "Limit for laptop - Per Insured Person",
+              "type": "Limit for laptop - Per insured person",
               "limit": 1000,
               "basis": null
             },
             {
-              "type": "Limit for watches, jewellery or valuables in total - Per Insured Person",
+              "type": "Limit for watches, jewellery or valuables in total - Per insured person",
               "limit": 750,
               "basis": null
             },
             {
-              "type": "Limit for other items (per item, set or pair) - Per Insured Person",
+              "type": "Limit for other items (for each item, set or pair) - Per insured person",
               "limit": 500,
               "basis": null
             }
@@ -288,8 +392,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers accidental loss or damage to baggage, clothing, personal belongings, and valuables during the trip.",
+              "detail_snippet": "Covers accidental loss or damage to baggage, clothing, personal belongings, and portable electronic/electrical equipment during the trip.",
               "source_location": "Page 6, Section 10"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -307,7 +423,7 @@
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Family total",
               "limit": 800,
               "basis": null
             }
@@ -315,8 +431,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers loss of cash, bank notes, currency notes, postal orders or money orders due to theft, robbery or burglary during the trip.",
+              "detail_snippet": "Covers loss of cash, bank notes, currency notes, postal orders or money orders during the trip due to theft or robbery.",
               "source_location": "Page 6, Section 11"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -324,26 +452,38 @@
           "coverage_name": "Losing travel documents",
           "base_limits": [
             {
-              "type": "Overall Section Limit - Per Insured Person",
+              "type": "Overall section limit - Per insured person",
               "limit": 8000,
               "basis": null
             },
             {
-              "type": "Overall Section Limit - Family Total",
+              "type": "Overall section limit - Family total",
               "limit": 20000,
               "basis": null
             },
             {
-              "type": "Limit for accommodation expenses",
+              "type": "Limit for accommodation expenses per room per night - Per insured person",
               "limit": 400,
-              "basis": "Per room per night"
+              "basis": null
             }
           ],
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers costs of obtaining replacement passports, visas, and travel tickets, plus related additional travel and accommodation expenses if lost due to theft, robbery or burglary during the trip.",
+              "detail_snippet": "Covers costs of replacing lost passport, visa, and travel tickets, plus related additional travel and accommodation expenses.",
               "source_location": "Page 6, Section 12"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         }
@@ -371,7 +511,7 @@
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Family total",
               "limit": 1500000,
               "basis": null
             }
@@ -396,7 +536,7 @@
                   "basis": null
                 },
                 {
-                  "type": "Family Total",
+                  "type": "Family total",
                   "limit": 3000000,
                   "basis": null
                 }
@@ -406,8 +546,20 @@
           ],
           "source_specific_details": [
             {
-              "detail_snippet": "Provides compensation for accidental death or permanent disability based on the scale of compensation (a-h). Total compensation will not exceed the maximum benefit limit.",
+              "detail_snippet": "Provides compensation based on a scale for accidental death or permanent disability occurring during the trip. Scale includes: Accidental death (100%), Permanent total disability (100%), Loss of two or more limbs (100%), Loss of sight in both eyes (100%), Loss of one limb (50%), Loss of sight in one eye (50%), Loss of speech (50%), Loss of hearing (50%). Total compensation cannot exceed the maximum benefit limit.",
               "source_location": "Page 7, Section 13"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -430,12 +582,12 @@
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Family total",
               "limit": 3000000,
               "basis": null
             },
             {
-              "type": "Limit for medical aids and equipment - Per Insured Person",
+              "type": "Limit for medical aids and equipment - Per insured person",
               "limit": 1500,
               "basis": null
             }
@@ -443,8 +595,24 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers necessary medical expenses incurred overseas due to injury or sickness, including treatment related to COVID-19 (up to $1,000,000 for adult under 70). Requires fulfilling vaccination/test requirements for COVID-19 cover.",
-              "source_location": "Page 7, Section 14; Page 3; Page 11, Note 10"
+              "detail_snippet": "Covers necessary medical expenses incurred overseas due to injury or sickness, including treatment by a Chinese medicine practitioner or chiropractor (subject to Section 16 limits).",
+              "source_location": "Page 2, Item 5 & Page 3, 'Coverage for medical expenses' & Page 7, Section 14"
+            },
+            {
+              "detail_snippet": "Includes coverage up to $1,000,000 for treatment relating to COVID-19 while overseas (based on Preferred plan for adult under 70).",
+              "source_location": "Page 3, 'Coverage for medical expenses'"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 4 & Page 9, Section 28"
             }
           ]
         },
@@ -452,27 +620,27 @@
           "coverage_name": "Medical expenses in Singapore",
           "base_limits": [
             {
-              "type": "Adult 70 years old or over",
+              "type": "Overall section limit - Adult 70 years old or over",
               "limit": 5000,
               "basis": null
             },
             {
-              "type": "Adult under 70 years old",
+              "type": "Overall section limit - Adult under 70 years old",
               "limit": 50000,
               "basis": null
             },
             {
-              "type": "Child",
+              "type": "Overall section limit - Child",
               "limit": 25000,
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Overall section limit - Family total",
               "limit": 200000,
               "basis": null
             },
             {
-              "type": "Limit for medical aids and equipment - Per Insured Person",
+              "type": "Limit for medical aids and equipment - Per insured person",
               "limit": 1500,
               "basis": null
             }
@@ -480,8 +648,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers medical expenses incurred in Singapore for follow-up treatment within a specified period after returning, if initially treated overseas for injury or sickness during the trip. COVID-19 cover is excluded for this section.",
-              "source_location": "Page 8, Section 15; Page 9, Section 27"
+              "detail_snippet": "Covers follow-up medical expenses incurred in Singapore within a specified period after returning, for injury or sickness sustained overseas.",
+              "source_location": "Page 8, Section 15"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover does NOT apply to this section.",
+              "source_location": "Page 9, Section 27"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -489,17 +669,17 @@
           "coverage_name": "Treatment by a Chinese medicine practitioner or a chiropractor",
           "base_limits": [
             {
-              "type": "Overall Section Limit - Per Insured Person",
+              "type": "Overall section limit - Per insured person",
               "limit": 1000,
               "basis": null
             },
             {
-              "type": "Overall Section Limit - Family Total",
+              "type": "Overall section limit - Family total",
               "limit": 3000,
               "basis": null
             },
             {
-              "type": "Limit per visit - Per Insured Person",
+              "type": "Limit per visit - Per insured person",
               "limit": 100,
               "basis": null
             }
@@ -507,8 +687,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers expenses for treatment by a licensed Chinese medicine practitioner or chiropractor incurred during the trip. Subject to requirements and sub-limit per visit as per policy conditions.",
-              "source_location": "Page 8, Section 16; Page 10, Note 4"
+              "detail_snippet": "Covers expenses for treatment by a registered Chinese medicine practitioner or chiropractor overseas or as follow-up in Singapore. Refer to policy conditions for requirements.",
+              "source_location": "Page 2, Item 5 & Page 8, Section 16 & Page 10, Note 4"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -516,17 +708,17 @@
           "coverage_name": "Overseas hospital allowance",
           "base_limits": [
             {
-              "type": "Overall Section Limit - Per Insured Person",
+              "type": "Overall section limit - Per insured person",
               "limit": 50000,
               "basis": null
             },
             {
-              "type": "Overall Section Limit - Family Total",
+              "type": "Overall section limit - Family total",
               "limit": 150000,
               "basis": null
             },
             {
-              "type": "Benefit per day - Per Insured Person",
+              "type": "Benefit per day - Per insured person",
               "limit": 200,
               "basis": null
             }
@@ -534,8 +726,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Provides a daily cash benefit for each full 24-hour period of hospital confinement overseas due to injury or sickness.",
+              "detail_snippet": "Provides a daily cash benefit for each full day of hospital confinement overseas due to injury or sickness.",
               "source_location": "Page 8, Section 17"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -544,7 +748,7 @@
           "base_limits": [
             {
               "type": "Adult 70 years old or over",
-              "limit": "See limit under section 14 (350,000)",
+              "limit": "See limit under section 14",
               "basis": null
             },
             {
@@ -558,7 +762,7 @@
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Family total",
               "limit": 2000000,
               "basis": null
             }
@@ -566,8 +770,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers expenses for emergency medical evacuation to the nearest suitable medical facility or back to Singapore if medically necessary.",
-              "source_location": "Page 8, Section 18"
+              "detail_snippet": "Covers expenses for emergency medical evacuation to Singapore or the nearest appropriate medical facility if necessary due to serious injury or sickness overseas. Limit for Adult 70+ is combined with Sections 14 and 19 (S$350,000 total).",
+              "source_location": "Page 4 & Page 8, Section 18"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 4 & Page 9, Section 28"
             }
           ]
         },
@@ -576,7 +792,7 @@
           "base_limits": [
             {
               "type": "Adult 70 years old or over",
-              "limit": "See limit under section 14 (350,000)",
+              "limit": "See limit under section 14",
               "basis": null
             },
             {
@@ -590,7 +806,7 @@
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Family total",
               "limit": 2000000,
               "basis": null
             }
@@ -598,8 +814,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers expenses for returning your mortal remains to Singapore or for local burial/cremation overseas in the event of death during the trip.",
+              "detail_snippet": "Covers expenses for returning mortal remains to Singapore or for local burial/cremation overseas in the event of death during the trip. Limit for Adult 70+ is combined with Sections 14 and 18 (S$350,000 total).",
               "source_location": "Page 8, Section 19"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -607,26 +835,38 @@
           "coverage_name": "Compassionate visit",
           "base_limits": [
             {
-              "type": "Overall Section Limit - Per Insured Person",
+              "type": "Overall section limit - Per insured person",
               "limit": 15000,
               "basis": null
             },
             {
-              "type": "Overall Section Limit - Family Total",
+              "type": "Overall section limit - Family total",
               "limit": 45000,
               "basis": null
             },
             {
-              "type": "Limit for accommodation expenses",
+              "type": "Limit for accommodation expenses per room per night - Per insured person",
               "limit": 400,
-              "basis": "Per room per night"
+              "basis": null
             }
           ],
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers travel and accommodation expenses for one relative or friend to travel to you if you are hospitalised overseas for a specified period, or for you to return to Singapore in case of death/serious injury of a close relative back home.",
+              "detail_snippet": "Covers travel and accommodation expenses for one relative or friend to travel to be with the insured person if hospitalised overseas for a specified period.",
               "source_location": "Page 8, Section 20"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         }
@@ -636,31 +876,20 @@
       "category_name": "Other Benefits",
       "coverages": [
         {
-          "coverage_name": "Adventurous Activities Cover",
-          "base_limits": [],
-          "conditional_limits": null,
-          "source_specific_details": [
-            {
-              "detail_snippet": "Covers participation in recreational activities commonly available to the public for leisure, provided safety procedures are followed, licensed guides/instructors are used where available, and the activity is not an excluded extreme sport. Specific conditions apply for scuba diving (PADI cert or instructor, max 30m depth) and trekking (below 4,000m, public access or organised/guided).",
-              "source_location": "Page 3; Page 10, Notes 2, 6, 7"
-            }
-          ]
-        },
-        {
           "coverage_name": "Kidnap and hostage",
           "base_limits": [
             {
-              "type": "Overall Section Limit - Per Insured Person",
+              "type": "Overall section limit - Per insured person",
               "limit": 10000,
               "basis": null
             },
             {
-              "type": "Overall Section Limit - Family Total",
+              "type": "Overall section limit - Family total",
               "limit": 30000,
               "basis": null
             },
             {
-              "type": "Benefit per 24 hours - Per Insured Person",
+              "type": "Benefit per 24 hours - Per insured person",
               "limit": 500,
               "basis": null
             }
@@ -668,8 +897,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Provides a daily benefit if you are unlawfully detained for ransom.",
+              "detail_snippet": "Provides a daily benefit if the insured person is unlawfully detained for ransom.",
               "source_location": "Page 9, Section 21"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -677,12 +918,12 @@
           "coverage_name": "Emergency phone charges",
           "base_limits": [
             {
-              "type": "Per Insured Person",
+              "type": "Overall section limit - Per insured person",
               "limit": 300,
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Overall section limit - Family total",
               "limit": 900,
               "basis": null
             }
@@ -690,26 +931,38 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers overseas telephone charges incurred for contacting assistance services or family members during an emergency.",
+              "detail_snippet": "Covers overseas telephone charges incurred for contacting emergency assistance services provided by the insurer.",
               "source_location": "Page 9, Section 22"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
         {
-          "coverage_name": "Home cover (contents)",
+          "coverage_name": "Home cover",
           "base_limits": [
             {
-              "type": "Overall Section Limit - Per Incident",
+              "type": "Overall section limit - Per insured person",
               "limit": 15000,
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Overall section limit - Family total",
               "limit": 15000,
               "basis": null
             },
             {
-              "type": "Limit per item (set or pair)",
+              "type": "Limit per item (for each item, set or pair) - Per insured person",
               "limit": 500,
               "basis": null
             }
@@ -717,8 +970,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers loss or damage to home contents due to burglary or fire while your home in Singapore is unoccupied during your trip.",
+              "detail_snippet": "Covers loss or damage to home contents due to fire or burglary while the insured person's home in Singapore is left vacant during the trip.",
               "source_location": "Page 9, Section 23"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -726,12 +991,12 @@
           "coverage_name": "Personal liability",
           "base_limits": [
             {
-              "type": "Per Insured Person / Per Incident",
+              "type": "Per insured person",
               "limit": 1000000,
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Family total",
               "limit": 1000000,
               "basis": null
             }
@@ -739,8 +1004,20 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers legal liability for accidentally injuring someone or damaging their property during the trip.",
+              "detail_snippet": "Covers legal liability for accidentally causing injury to other people or damage to their property during the trip.",
               "source_location": "Page 9, Section 24"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -748,12 +1025,12 @@
           "coverage_name": "Rental vehicle excess cover",
           "base_limits": [
             {
-              "type": "Per Insured Person / Per Incident",
+              "type": "Per insured person",
               "limit": 2500,
               "basis": null
             },
             {
-              "type": "Family Total",
+              "type": "Family total",
               "limit": 2500,
               "basis": null
             }
@@ -761,84 +1038,108 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers the insurance excess you are liable to pay if your rental vehicle is lost or damaged.",
+              "detail_snippet": "Covers the insurance excess the insured person is liable to pay under the rental vehicle agreement due to loss or damage to the rental vehicle.",
               "source_location": "Page 9, Section 25"
+            },
+            {
+              "detail_snippet": "Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.",
+              "source_location": "Page 9, Section 26"
+            },
+            {
+              "detail_snippet": "COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.",
+              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Post-departure purchase extension applies to this benefit.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
         {
-          "coverage_name": "Full terrorism cover",
+          "coverage_name": "Adventurous activities",
           "base_limits": [
             {
-              "type": "Adult 70 years old or over",
-              "limit": 200000,
-              "basis": null
-            },
-            {
-              "type": "Adult under 70 years old",
-              "limit": 500000,
-              "basis": null
-            },
-            {
-              "type": "Child",
-              "limit": 125000,
-              "basis": null
-            },
-            {
-              "type": "Family Total",
-              "limit": 1500000,
+              "type": "Covered under relevant sections",
+              "limit": "Subject to section limits",
               "basis": null
             }
           ],
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Provides cover for losses arising from acts of terrorism under sections 1 to 25, up to the specified limits.",
-              "source_location": "Page 9, Section 26"
-            }
-          ]
-        },
-        {
-          "coverage_name": "COVID-19 cover",
-          "base_limits": [],
-          "conditional_limits": null,
-          "source_specific_details": [
+              "detail_snippet": "Covers participation in recreational activities commonly available to the public for leisure, provided safety procedures are followed, under guidance/supervision if available, and not excluded. Examples: scuba diving (PADI certified or with instructor, max depth per certification/30m), paddleboarding, white water rafting, skiing, snowboarding, snowmobiling, bungee jumping, skydiving, paragliding, abseiling, hiking, trekking (below 4,000m, public access or organised tour/guide), motorcycling, hot air ballooning.",
+              "source_location": "Page 2, Item 3 & Page 3, 'Coverage for adventurous activities'"
+            },
             {
-              "detail_snippet": "Provides cover for specified benefits under sections 1 to 25 (excluding section 15 - Medical Expenses in Singapore) if impacted by COVID-19. Eligibility requires fulfilling all vaccination, pre-departure/post-arrival test requirements imposed by destination/carrier. Specific conditions apply per section (e.g., serious sickness required for trip cancellation/shortening).",
-              "source_location": "Page 9, Section 27; Page 11, Note 10; Page 10, Note 5"
-            }
-          ]
-        },
-        {
-          "coverage_name": "Post-departure purchase extension",
-          "base_limits": [],
-          "conditional_limits": null,
-          "source_specific_details": [
+              "detail_snippet": "Scuba diving requires PADI (or similar) certification diving with a similarly certified buddy, or diving with a qualified instructor. Max depth as per certification or 30m, whichever is shallower.",
+              "source_location": "Page 10, Note 6"
+            },
             {
-              "detail_snippet": "Allows purchase within one day after departing Singapore (Per-trip plans only). Provides cover under sections 3 to 27 (excluding section 8 - Travel Agency Insolvency) with limits as per respective sections. Excludes claims arising from events known before purchase, related to transport taken before purchase, or losses occurring before purchase.",
-              "source_location": "Page 9, Section 28; Page 4; Page 11, Note 9"
+              "detail_snippet": "Trekking covered below 4,000m if in a public area without restriction, organised by a recognised commercial operator, or under licensed guide/instructor supervision with safety compliance.",
+              "source_location": "Page 10, Note 7"
+            },
+            {
+              "detail_snippet": "Excludes extreme sports involving speed, height, danger, high physical exertion, specialized gear, or stunts.",
+              "source_location": "Page 10, Note 2"
             }
           ]
         },
         {
           "coverage_name": "Automatic extension",
-          "base_limits": [],
+          "base_limits": [
+            {
+              "type": "Duration",
+              "limit": "First 14 days",
+              "basis": null
+            }
+          ],
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Coverage period automatically extended at no extra cost for the first 14 days while overseas if unable to return before policy expiry due to delay of public transport (not caused by you) or hospitalisation advised by a medical practitioner.",
-              "source_location": "Page 4; Page 11, Note 8"
+              "detail_snippet": "Coverage period automatically extended at no extra cost for the first 14 days if unable to return before policy expiry due to delay of public transport (not caused by you) or hospitalisation advised by a medical practitioner.",
+              "source_location": "Page 4, 'Automatic extension' & Page 11, Note 8"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Post-departure purchase",
+          "base_limits": [
+            {
+              "type": "Availability",
+              "limit": "Within 1 day after departure from Singapore",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Policy can be purchased within one day after departing Singapore (only applicable to Per-trip plans).",
+              "source_location": "Page 2, Item 6 & Page 4, 'Post-departure purchase'"
+            },
+            {
+              "detail_snippet": "Provides cover under sections 3 to 27 (except section 8). Does not cover claims arising from, related to, or taking place on transport taken before purchase, known events, or losses occurring before purchase.",
+              "source_location": "Page 9, Section 28 & Page 11, Note 9"
             }
           ]
         },
         {
           "coverage_name": "Family Cover Definition",
-          "base_limits": [],
+          "base_limits": [
+            {
+              "type": "Children covered",
+              "limit": "Unlimited number",
+              "basis": null
+            }
+          ],
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers 1 or 2 adults (spouses/partners, >=16 years, parent/legal guardian) and any number of their children/wards (below 21 years, biological/legally adopted). All must be insured under the same policy. Must travel together if insured under single trip plans (not applicable for yearly plans).",
-              "source_location": "Page 10, Note 1"
+              "detail_snippet": "Covers 1 or 2 adults (spouses/partners, >=16 yrs, parent/legal guardian) and any number of their children (<21 yrs, biological/adopted/ward). All must be insured under the same policy. Must travel together for single trip plans.",
+              "source_location": "Page 2, Item 2 & Page 10, Note 1"
+            },
+            {
+              "detail_snippet": "Family total is the maximum amount payable per benefit section for the family during one trip. Each insured person is still subject to the maximum benefit per insured person limit.",
+              "source_location": "Page 5, 6, 7, 8, 9 Footnote ^"
             }
           ]
         }

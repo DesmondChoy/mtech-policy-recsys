@@ -267,7 +267,7 @@ def main():
     )
     parser.add_argument(
         "--format",
-        default="json,txt",
+        default="json",
         help="Output formats (comma-separated: json,txt,csv)",
     )
     parser.add_argument(

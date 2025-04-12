@@ -1,0 +1,7 @@
+[project]
+name = "mtech-policy-recsys" # Placeholder name, can be updated later if needed
+version = "0.1.0" # Placeholder version
+description = "" # Placeholder description
+requires-python = ">=3.11, <3.13" # Compatible with 3.11 and 3.12 due to dependencies
+
+# Add other project metadata or tool configurations below as needed

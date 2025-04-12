@@ -1,0 +1,87 @@
+{
+    "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip from Singapore to Japan for two adults.\",\n  \"detailed_description\": \"The customer requires insurance coverage for medical expenses, baggage issues, trip cancellation, significant travel delays, accidents during hiking, and accidental death while using public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"baggage coverage\",\n    \"trip cancellation coverage\",\n    \"travel delay coverage\",\n    \"hiking coverage\",\n    \"accidental death coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death while using public transport.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical expenses\",\n    \"baggage issues\",\n    \"trip cancellation\",\n    \"hiking coverage\",\n    \"accidental death\",\n    \"public transport\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "req-001",
+        "requirement_summary": "Travel insurance coverage for a trip from Singapore to Japan for two adults.",
+        "detailed_description": "The customer requires insurance coverage for medical expenses, baggage issues, trip cancellation, significant travel delays, accidents during hiking, and accidental death while using public transport.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "medical coverage",
+            "baggage coverage",
+            "trip cancellation coverage",
+            "travel delay coverage",
+            "hiking coverage",
+            "accidental death coverage"
+        ],
+        "pre_existing_conditions": [],
+        "medical_needs": [],
+        "activities_to_cover": [
+            "hiking"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Double payout for accidental death while using public transport.",
+        "keywords": [
+            "travel insurance",
+            "medical expenses",
+            "baggage issues",
+            "trip cancellation",
+            "hiking coverage",
+            "accidental death",
+            "public transport"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd. My name is Sarah. How can I help you today?\nCustomer: Oh, hello Sarah. Yes, I need... uh... insurance? For a trip. I've never bought this before, it's all a bit confusing, sorry.\nCustomer Service Agent: No problem at all, I can certainly help guide you through gathering the details we need. Could you tell me where you'll be traveling from?\nCustomer: We're based in Singapore. So, traveling from Singapore.\nCustomer Service Agent: Okay, noted. And where are you planning to travel to?\nCustomer: We're planning a trip to Japan.\nCustomer Service Agent: Japan, lovely. And how long will you be away for?\nCustomer: It will be a 2 weeks trip. Just two weeks.\nCustomer Service Agent: Alright. And how many people will be traveling?\nCustomer: There will be 2 of us traveling. Me and my partner.\nCustomer Service Agent: Got it, two travelers for two weeks to Japan, departing from Singapore. Are there any specific concerns you have about the trip that you'd like insurance to help with?\nCustomer: Concerns... well, yes. I worry about... what if one of us gets sick there? Like, really sick? Does insurance help with hospital bills? Because I heard healthcare overseas can be very expensive.\nCustomer Service Agent: Okay, so you're concerned about potential medical expenses if someone falls ill or has an accident during the trip?\nCustomer: Yes, exactly! Like doctor visits, or... needing medicine? Is that what 'medical coverage' is? Sorry, I don't know the terms.\nCustomer Service Agent: That's generally what it covers, yes – emergency medical treatment, hospitalisation, things like that. Thank you for mentioning it. Do either of you have any pre-existing medical conditions we should be aware of, like asthma or high blood pressure?\nCustomer: No, no pre-existing conditions. Thankfully.\nCustomer Service Agent: Understood. Any other worries for the trip?\nCustomer: Um... luggage! What if the airline loses our bags? Or if they arrive damaged? That would be terrible. Is there... help for that?\nCustomer Service Agent: So, cover for issues with your baggage – like it being lost, damaged, or even delayed for a long time – is something you're looking for?\nCustomer: Yes, please! That would make me feel much better. Losing luggage sounds like a nightmare.\nCustomer Service Agent: Okay, noted cover for luggage issues. What about your plans in Japan? Any specific activities you'll be doing?\nCustomer: Activities... Hmm, not really extreme things. We plan to do hiking during our trip. Just some scenic trails, nothing too crazy.\nCustomer Service Agent: Right, hiking. So you'd want to ensure any potential incidents during such activities are covered?\nCustomer: Oh, do I need special cover for hiking? I didn't even think of that. Yes, if hiking isn't normally covered, then yes, we need coverage for hiking.\nCustomer Service Agent: Okay, I've noted down cover related to participating in listed activities like hiking. What about the travel itself? Any concerns about flights or getting there?\nCustomer: Well... yes, actually. What happens if... say, our flight is delayed for many, many hours? Do we just wait at the airport? Or if... something happens and we have to cancel the whole trip *before* we even leave? Like if one of us gets a really bad flu?\nCustomer Service Agent: So you're thinking about potential disruptions like significant travel delays, and also the possibility of having to cancel the trip beforehand due to unforeseen reasons like illness?\nCustomer: Yes! Those things worry me a lot. Especially the cancelling part. All that money for flights and hotels... it's confusing what happens then.\nCustomer Service Agent: I understand. So cover for trip cancellation and significant travel delays are requirements. Noted. Any other specific things you've heard about or want to check?\nCustomer: Um... sorry, one more thing, this might be a strange question. I was reading something online... it mentioned... something about... if there's a very serious accident, like... death... but specifically when you're on public transport, like a bus or a train overseas? It said something about... getting double the money? Is that... a real thing? I want to know if the policy provides extra coverage if an accident happens while I'm on a bus or train.\nCustomer Service Agent: Okay, I understand. You're asking about a specific benefit related to accidental death occurring while traveling as a fare-paying passenger on public transport – specifically, if there's a double payout feature for that scenario. I've noted that as a specific requirement to check for.\nCustomer: Yes, that's it! Sorry if it sounds morbid, but I just saw it mentioned.\nCustomer Service Agent: Not at all, it's good to clarify all requirements. Just a couple more details to help us find suitable options later. Roughly what age group do the travelers fall into?\nCustomer: We're mostly around 26-40 years old.\nCustomer Service Agent: Okay, 26-40 age group. And do you have a budget in mind for the insurance premium per person?\nCustomer: Hmm, budget... We're hoping to spend maybe around $400 for both of us, if possible? So maybe $200 each? Is that realistic? I'm not sure. Let's say our budget for insurance is about around $400 total.\nCustomer Service Agent: Alright, noted the budget indication. And finally, will you be traveling with any special medical equipment, like a wheelchair or CPAP machine?\nCustomer: Oh, no. No special medical equipment needed.\nCustomer Service Agent: Perfect, thank you. Okay, let me just quickly recap the requirements you've mentioned to make sure I have everything correct. You're looking for travel insurance for two adults, aged 26-40, traveling from Singapore to Japan for two weeks. The key things you need coverage for are:\nCustomer: Yes, I think... I think that covers everything I was worried about. It's still a bit confusing, but yes, those are the things. Thank you for being patient.\nCustomer Service Agent: You're very welcome. I've noted down all these requirements clearly. The next step would be for our team to use this information to identify suitable policy options for you. Thank you for calling ISS Insurance Ltd.\nCustomer: Okay, thank you so much for your help, Sarah. Bye bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip from Singapore to Japan for two adults.\",\n  \"detailed_description\": \"The customer requires insurance coverage for medical expenses, baggage issues, trip cancellation, significant travel delays, accidents during hiking, and accidental death while using public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"baggage coverage\",\n    \"trip cancellation coverage\",\n    \"travel delay coverage\",\n    \"hiking coverage\",\n    \"accidental death coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death while using public transport.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical expenses\",\n    \"baggage issues\",\n    \"trip cancellation\",\n    \"hiking coverage\",\n    \"accidental death\",\n    \"public transport\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "req-001",
+                "requirement_summary": "Travel insurance coverage for a trip from Singapore to Japan for two adults.",
+                "detailed_description": "The customer requires insurance coverage for medical expenses, baggage issues, trip cancellation, significant travel delays, accidents during hiking, and accidental death while using public transport.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "medical coverage",
+                    "baggage coverage",
+                    "trip cancellation coverage",
+                    "travel delay coverage",
+                    "hiking coverage",
+                    "accidental death coverage"
+                ],
+                "pre_existing_conditions": [],
+                "medical_needs": [],
+                "activities_to_cover": [
+                    "hiking"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Double payout for accidental death while using public transport.",
+                "keywords": [
+                    "travel insurance",
+                    "medical expenses",
+                    "baggage issues",
+                    "trip cancellation",
+                    "hiking coverage",
+                    "accidental death",
+                    "public transport"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 7936,
+        "prompt_tokens": 6780,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 1156,
+        "successful_requests": 4
+    }
+}

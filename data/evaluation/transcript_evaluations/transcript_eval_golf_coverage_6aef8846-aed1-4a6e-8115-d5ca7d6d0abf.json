@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the need for Trip Cancellation coverage and provided a specific reason (serious illness).",
+      "customer_quote": "[4] And let me be clear, if something happens and we have to cancel \u2013 like someone gets seriously ill \u2013 I expect full coverage for that. No excuses about fine print. So, proper **Trip Cancellation** is non-negotiable.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement and proceeded to gather necessary trip details.",
+      "agent_quote": "[5] Okay, thank you. I've noted down Trip Cancellation coverage. And how long will your trip to Japan be?"
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Medical Coverage and specified the need to cover illness/injury, hospital stays, and doctor visits, excluding pre-existing conditions.",
+      "customer_quote": "[12] And obviously, standard things apply. If one of us gets sick or injured over there \u2013 nothing pre-existing, just bad luck \u2013 we need solid **Medical Coverage**. Hospital stays, doctors, the works. I don't want to be worrying about huge bills.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement for comprehensive medical coverage and asked a relevant clarifying question about other activities.",
+      "agent_quote": "[13] Right, comprehensive Medical Coverage for emergency treatment needed during the trip is noted. And just to confirm, are there any other specific sports or adventure activities planned besides golf?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer clearly stated the need for Lost/Damaged Luggage coverage, expressing concern about items being lost or damaged.",
+      "customer_quote": "[8] And you better make sure our luggage is covered properly. I've heard horror stories, and I don't want my things lost or smashed up with no recourse. So, **Lost/Damaged Luggage** cover is essential.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement and gathered further relevant details like the number of travellers and age group.",
+      "agent_quote": "[9] Noted, Lost/Damaged Luggage cover for two travellers in the 41-55 age group, travelling from Singapore for 10 days to Japan."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for significant Travel Delays and specified the need for coverage of extra accommodation and meals.",
+      "customer_quote": "[6] And what about flight delays? Last time we were stuck for hours with barely an apology from the airline. I need assurance that if there are significant **Travel Delays**, we'll be covered for extra accommodation and meals. It's only fair!",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement for Travel Delay coverage and asked a relevant follow-up question about the number of travellers.",
+      "agent_quote": "[7] Understood, cover for significant Travel Delays causing additional expenses. And how many people will be travelling on this policy?"
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the trip was for golf and provided very specific details required under this coverage: golf equipment protection, unused green fee reimbursement, golf buggy damage liability, and a hole-in-one benefit. These fall under the specific scenario requirements for sports/activities.",
+      "customer_quote": "[10] Yes! This is the main point... It\u2019s a *golfing* trip. I need specific, comprehensive **coverage for my golf equipment**... And what happens if I twist my ankle and can't play the rounds I've already paid for? I expect **reimbursement for unused green fees**. Also, those golf buggies can be tricky; what if I accidentally **damage one? Is that covered**? And, call me optimistic, but is there any kind of **benefit if I actually score a hole-in-one** during the trip?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent actively listened, explicitly sought clarification and confirmation of all the customer's specific golf-related requirements, and probed whether other activities were planned.",
+      "agent_quote": "[11] Okay, I understand. So, just to clarify those specific requirements for your golf activities: protection for your golf equipment, reimbursement for pre-paid green fees if you're unable to play due to injury or illness, cover for accidental damage liability for a rented golf buggy, and a defined benefit payout for achieving a hole-in-one. Have I captured those golf-related needs correctly? \n[13] And just to confirm, are there any other specific sports or adventure activities planned besides golf?"
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered information on all standard coverage types mentioned by the customer (Trip Cancellation, Medical, Luggage, Delays) and meticulously captured the highly specific requirements related to the golf activities (equipment, green fees, buggy damage, hole-in-one benefit) which fall under the Sports/Adventure category. The agent effectively used clarifying questions and summarization to ensure all points were captured accurately, despite the customer's initial frustration. Excellent performance in information gathering."
+  },
+  "transcript_name": "transcript_golf_coverage_6aef8846-aed1-4a6e-8115-d5ca7d6d0abf",
+  "scenario": "golf_coverage"
+}

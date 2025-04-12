@@ -1,8 +1,8 @@
 {
-  "provider_name": "Income Insurance",
+  "provider_name": "Income Insurance Limited",
   "policy_name": "Travel Insurance",
   "tier_name": "Deluxe",
-  "extraction_date": "2024-07-29",
+  "extraction_date": "2024-07-27",
   "currency": "SGD",
   "coverage_categories": [
     {
@@ -22,50 +22,19 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers overseas transport and accommodation expenses due to trip cancellation.",
-              "source_location": "Page 2, Key Benefit 1"
+              "detail_snippet": "Covers non-refundable overseas transport and accommodation expenses if trip is cancelled due to unforeseen circumstances like COVID-19 (must result in serious sickness).",
+              "source_location": "Page 2, Key Benefit 1; Page 3, COVID-19 mention"
             },
             {
-              "detail_snippet": "For COVID-19 related cancellation: Event must occur after policy purchase & within 30 days before leaving Singapore (unless accidental). Policy must be bought >=3 days before departure (unless accidental). COVID-19 must result in a serious sickness. Must fulfill vaccination/testing requirements.",
-              "source_location": "Page 10, Note 5 & Page 11, Note 10"
+              "detail_snippet": "For COVID-19 related cancellation, the event must occur after policy purchase and within 30 days before leaving Singapore. Policy must be bought 3 days or earlier before departure unless the event is accidental. Must fulfill vaccination/test requirements.",
+              "source_location": "Page 10, Note 5; Page 11, Note 10"
             },
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' maximum.",
-              "source_location": "Page 5, Footnote ^"
+              "detail_snippet": "Benefit limits specified in the table.",
+              "source_location": "Page 5, Section 1"
             }
           ]
         },
@@ -83,42 +52,11 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' maximum.",
-              "source_location": "Page 5, Footnote ^"
+              "detail_snippet": "Benefit limits specified in the table.",
+              "source_location": "Page 5, Section 2"
             }
           ]
         },
@@ -136,59 +74,28 @@
               "basis": null
             },
             {
-              "type": "Limit for extra expenses to return to Singapore (within overall limit)",
+              "type": "Limit for extra expenses to return to Singapore",
               "limit": 2000,
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers overseas transport and accommodation expenses due to trip shortening.",
-              "source_location": "Page 2, Key Benefit 1"
+              "detail_snippet": "Covers non-refundable overseas transport and accommodation expenses if trip is shortened due to unforeseen circumstances like COVID-19 (must result in serious sickness).",
+              "source_location": "Page 2, Key Benefit 1; Page 3, COVID-19 mention"
             },
             {
-              "detail_snippet": "For COVID-19 related shortening: Pays for unused transport/accommodation. Must fulfill vaccination/testing requirements.",
-              "source_location": "Page 10, Note 5 & Page 11, Note 10"
+              "detail_snippet": "For COVID-19 related shortening, the event must occur after policy purchase. Must fulfill vaccination/test requirements.",
+              "source_location": "Page 10, Note 5; Page 11, Note 10"
             },
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Benefit limits specified in the table.",
+              "source_location": "Page 5, Section 3"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' maximum.",
-              "source_location": "Page 5, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -211,46 +118,15 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Benefit limits specified in the table.",
+              "source_location": "Page 5, Section 4"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' maximum.",
-              "source_location": "Page 5, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -258,84 +134,53 @@
           "coverage_name": "Travel delay",
           "base_limits": [
             {
-              "type": "Overall limit per insured person",
+              "type": "Overall section limit - Per insured person",
               "limit": 1500,
               "basis": null
             },
             {
-              "type": "Family total",
+              "type": "Overall section limit - Family total",
               "limit": 3000,
               "basis": null
             },
             {
-              "type": "Delay while overseas - Adult",
+              "type": "For every six hours of delay while overseas - Adult",
               "limit": 100,
-              "basis": "For every six hours of delay"
+              "basis": "Per 6 hours"
             },
             {
-              "type": "Delay while overseas - Child",
+              "type": "For every six hours of delay while overseas - Child",
               "limit": 50,
-              "basis": "For every six hours of delay"
+              "basis": "Per 6 hours"
             },
             {
-              "type": "Delay after six hours while in Singapore - Adult",
+              "type": "After six hours of delay while in Singapore - Adult",
               "limit": 150,
-              "basis": null
+              "basis": "After 6 hours"
             },
             {
-              "type": "Delay after six hours while in Singapore - Child",
+              "type": "After six hours of delay while in Singapore - Child",
               "limit": 50,
-              "basis": null
+              "basis": "After 6 hours"
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
               "detail_snippet": "Coverage for travel delay not caused by you.",
               "source_location": "Page 2, Key Benefit 4"
             },
             {
-              "detail_snippet": "Payable if the public transport is delayed for more than six hours in a row and not caused by you.",
+              "detail_snippet": "Payable if the scheduled public transport is delayed for more than six hours in a row and not caused by you.",
               "source_location": "Page 10, Note 3"
             },
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Benefit limits specified in the table.",
+              "source_location": "Page 5, Section 5"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' overall limit.",
-              "source_location": "Page 5, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -353,46 +198,15 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Benefit limits specified in the table.",
+              "source_location": "Page 5, Section 6"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' maximum.",
-              "source_location": "Page 5, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -410,46 +224,15 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Benefit limits specified in the table.",
+              "source_location": "Page 5, Section 7"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' maximum.",
-              "source_location": "Page 5, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -470,15 +253,11 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Benefit limits specified in the table.",
+              "source_location": "Page 5, Section 8"
             },
             {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' maximum.",
-              "source_location": "Page 5, Footnote ^"
-            },
-            {
-              "detail_snippet": "This benefit (Section 8) is excluded from the Post-departure purchase extension.",
+              "detail_snippet": "Not covered under post-departure purchase extension.",
               "source_location": "Page 9, Section 28"
             }
           ]
@@ -487,76 +266,45 @@
           "coverage_name": "Baggage delay",
           "base_limits": [
             {
-              "type": "Overall limit per insured person",
+              "type": "Overall section limit - Per insured person",
               "limit": 1200,
               "basis": null
             },
             {
-              "type": "Family total",
+              "type": "Overall section limit - Family total",
               "limit": 2400,
               "basis": null
             },
             {
-              "type": "Delay while overseas - Adult",
+              "type": "For every six hours of delay while overseas - Adult",
               "limit": 200,
-              "basis": "For every six hours of delay"
+              "basis": "Per 6 hours"
             },
             {
-              "type": "Delay while overseas - Child",
+              "type": "For every six hours of delay while overseas - Child",
               "limit": 50,
-              "basis": "For every six hours of delay"
+              "basis": "Per 6 hours"
             },
             {
-              "type": "Delay after six hours when arriving in Singapore - Adult",
+              "type": "Baggage delay after six hours when arriving in Singapore - Adult",
               "limit": 200,
-              "basis": null
+              "basis": "After 6 hours"
             },
             {
-              "type": "Delay after six hours when arriving in Singapore - Child",
+              "type": "Baggage delay after six hours when arriving in Singapore - Child",
               "limit": 50,
-              "basis": null
+              "basis": "After 6 hours"
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Benefit limits specified in the table.",
+              "source_location": "Page 6, Section 9"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' overall limit.",
-              "source_location": "Page 6, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -564,71 +312,40 @@
           "coverage_name": "Loss or damage of baggage and personal belongings",
           "base_limits": [
             {
-              "type": "Overall limit per insured person",
+              "type": "Overall section limit - Per insured person",
               "limit": 5000,
               "basis": null
             },
             {
-              "type": "Family total",
+              "type": "Overall section limit - Family total",
               "limit": 12500,
               "basis": null
             },
             {
-              "type": "Sub-limit for laptop",
+              "type": "Limit for laptop",
               "limit": 1000,
               "basis": null
             },
             {
-              "type": "Sub-limit for watches, jewellery or valuables in total",
+              "type": "Limit for watches, jewellery or valuables in total",
               "limit": 500,
               "basis": null
             },
             {
-              "type": "Sub-limit for other items (for each item, set or pair)",
+              "type": "Limit for other items (for each item, set or pair)",
               "limit": 500,
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Benefit limits specified in the table.",
+              "source_location": "Page 6, Section 10"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' overall limit.",
-              "source_location": "Page 6, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -636,12 +353,12 @@
           "coverage_name": "Losing money",
           "base_limits": [
             {
-              "type": "Adult",
+              "type": "Adult - Per insured person",
               "limit": 350,
               "basis": null
             },
             {
-              "type": "Child",
+              "type": "Child - Per insured person",
               "limit": 125,
               "basis": null
             },
@@ -651,46 +368,15 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Benefit limits specified in the table.",
+              "source_location": "Page 6, Section 11"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to their respective Adult/Child limit.",
-              "source_location": "Page 6, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -698,12 +384,12 @@
           "coverage_name": "Losing travel documents",
           "base_limits": [
             {
-              "type": "Overall limit per insured person",
+              "type": "Overall section limit - Per insured person",
               "limit": 5000,
               "basis": null
             },
             {
-              "type": "Family total",
+              "type": "Overall section limit - Family total",
               "limit": 12500,
               "basis": null
             },
@@ -713,46 +399,15 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Benefit limits specified in the table.",
+              "source_location": "Page 6, Section 12"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' overall limit.",
-              "source_location": "Page 6, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         }
@@ -765,13 +420,13 @@
           "coverage_name": "Personal accident",
           "base_limits": [
             {
-              "type": "Adult under 70 years old",
-              "limit": 200000,
+              "type": "Adult 70 years old or over",
+              "limit": 125000,
               "basis": null
             },
             {
-              "type": "Adult 70 years old or over",
-              "limit": 125000,
+              "type": "Adult under 70 years old",
+              "limit": 200000,
               "basis": null
             },
             {
@@ -787,16 +442,16 @@
           ],
           "conditional_limits": [
             {
-              "condition": "Accidental death occurring on public transport",
+              "condition": "Public transport double cover for accidental death",
               "limits": [
-                {
-                  "type": "Adult under 70 years old",
-                  "limit": 400000,
-                  "basis": null
-                },
                 {
                   "type": "Adult 70 years old or over",
                   "limit": 250000,
+                  "basis": null
+                },
+                {
+                  "type": "Adult under 70 years old",
+                  "limit": 400000,
                   "basis": null
                 },
                 {
@@ -811,54 +466,16 @@
                 }
               ],
               "source_location": "Page 7, Section 13"
-            },
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
             }
           ],
           "source_specific_details": [
             {
-              "detail_snippet": "Scale of compensation applies: Accidental death (100%), Permanent total disability (100%), Losing two or more limbs (100%), Losing sight in both eyes (100%), Losing one limb (50%), Losing sight in one eye (50%), Losing speech (50%), Losing hearing (50%). Total compensation from a to h will not exceed the maximum benefit limit.",
+              "detail_snippet": "Provides compensation based on a scale for accidental death, permanent total disability, loss of limbs, sight, speech, or hearing. Total compensation capped at the maximum benefit limit.",
               "source_location": "Page 7, Section 13"
             },
             {
-              "detail_snippet": "Coverage applies for accidents during adventurous activities if conditions met (leisure, safety compliance, guidance if available, not excluded). Excludes extreme sports.",
-              "source_location": "Page 3, Coverage for adventurous activities & Page 10, Note 2"
-            },
-            {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
-            },
-            {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to their respective age/status limit.",
-              "source_location": "Page 7, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -866,13 +483,13 @@
           "coverage_name": "Medical expenses overseas",
           "base_limits": [
             {
-              "type": "Adult under 70 years old",
-              "limit": 500000,
+              "type": "Adult 70 years old or over (combined for sections 14, 18 and 19)",
+              "limit": 300000,
               "basis": null
             },
             {
-              "type": "Adult 70 years old or over (combined for sections 14, 18 and 19)",
-              "limit": 300000,
+              "type": "Adult under 70 years old",
+              "limit": 500000,
               "basis": null
             },
             {
@@ -891,54 +508,23 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers overseas medical expenses including treatment by Chinese medicine practitioner or chiropractor (subject to Section 16 limits). Includes coverage for treatment relating to COVID-19 while overseas.",
-              "source_location": "Page 2, Key Benefit 5 & Page 3, Coverage for medical expenses"
+              "detail_snippet": "Covers medical expenses for unexpected injuries or illnesses incurred during the trip, including treatment by a Chinese medicine practitioner or chiropractor (subject to Section 16 limits).",
+              "source_location": "Page 2, Key Benefit 5; Page 3; Page 7, Section 14"
             },
             {
-              "detail_snippet": "Coverage applies for injuries during adventurous activities if conditions met (leisure, safety compliance, guidance if available, not excluded). Excludes extreme sports.",
-              "source_location": "Page 3, Coverage for adventurous activities & Page 10, Note 2"
+              "detail_snippet": "Includes coverage for treatment relating to COVID-19 while overseas, provided eligibility criteria (vaccination/tests) are met.",
+              "source_location": "Page 3; Page 9, Section 27; Page 11, Note 10"
             },
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 4; Page 9, Section 28"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to their respective age/status limit.",
-              "source_location": "Page 7, Footnote ^"
+              "detail_snippet": "Standard plans do not cover pre-existing medical conditions.",
+              "source_location": "Page 5"
             }
           ]
         },
@@ -946,13 +532,13 @@
           "coverage_name": "Medical expenses in Singapore",
           "base_limits": [
             {
-              "type": "Adult under 70 years old",
-              "limit": 25000,
+              "type": "Adult 70 years old or over",
+              "limit": 2000,
               "basis": null
             },
             {
-              "type": "Adult 70 years old or over",
-              "limit": 2000,
+              "type": "Adult under 70 years old",
+              "limit": 25000,
               "basis": null
             },
             {
@@ -974,20 +560,16 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers medical expenses incurred in Singapore after returning from the trip for injury/sickness sustained overseas.",
+              "detail_snippet": "Covers medical expenses incurred in Singapore after returning from the trip.",
               "source_location": "Page 8, Section 15"
             },
             {
-              "detail_snippet": "This benefit (Section 15) is excluded from COVID-19 cover.",
+              "detail_snippet": "This section is explicitly excluded from the COVID-19 cover.",
               "source_location": "Page 9, Section 27"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to their respective age/status limit.",
-              "source_location": "Page 8, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -995,12 +577,12 @@
           "coverage_name": "Treatment by a Chinese medicine practitioner or a chiropractor",
           "base_limits": [
             {
-              "type": "Overall limit per insured person",
+              "type": "Overall section limit - Per insured person",
               "limit": 500,
               "basis": null
             },
             {
-              "type": "Family total",
+              "type": "Overall section limit - Family total",
               "limit": 1500,
               "basis": null
             },
@@ -1010,50 +592,19 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers treatment incurred during your trip. Refer to policy conditions for specific requirements.",
-              "source_location": "Page 2, Key Benefit 5 & Page 10, Note 4"
+              "detail_snippet": "Covers treatment incurred during the trip. Included as part of overseas medical expenses.",
+              "source_location": "Page 2, Key Benefit 5; Page 8, Section 16"
             },
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Refer to policy conditions for specific requirements and sub-limit per visit.",
+              "source_location": "Page 10, Note 4"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' overall limit.",
-              "source_location": "Page 8, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -1061,12 +612,12 @@
           "coverage_name": "Overseas hospital allowance",
           "base_limits": [
             {
-              "type": "Overall limit per insured person",
+              "type": "Overall section limit - Per insured person",
               "limit": 20000,
               "basis": null
             },
             {
-              "type": "Family total",
+              "type": "Overall section limit - Family total",
               "limit": 60000,
               "basis": null
             },
@@ -1076,50 +627,15 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Payable for each day of hospital confinement overseas.",
+              "detail_snippet": "Provides a daily cash benefit for each day of hospitalisation overseas.",
               "source_location": "Page 8, Section 17"
             },
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
-            },
-            {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' overall limit.",
-              "source_location": "Page 8, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -1127,14 +643,14 @@
           "coverage_name": "Emergency medical evacuation",
           "base_limits": [
             {
-              "type": "Adult under 70 years old",
-              "limit": "Unlimited",
+              "type": "Adult 70 years old or over",
+              "limit": "See limit under section 14",
               "basis": null
             },
             {
-              "type": "Adult 70 years old or over",
-              "limit": 300000,
-              "basis": "Combined limit with sections 14 and 19"
+              "type": "Adult under 70 years old",
+              "limit": "Unlimited",
+              "basis": null
             },
             {
               "type": "Child",
@@ -1147,50 +663,19 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers evacuation to the nearest medical facility or back to Singapore if medically necessary.",
+              "detail_snippet": "Covers expenses for emergency evacuation to the nearest medical facility or back to Singapore.",
               "source_location": "Page 8, Section 18"
             },
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Limit for Adult 70+ is combined with Sections 14 (Medical Expenses Overseas) and 19 (Sending You Home).",
+              "source_location": "Page 8, Section 18"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Individual limits apply, including the combined limit for Adults 70+.",
-              "source_location": "Page 8, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 4; Page 9, Section 28"
             }
           ]
         },
@@ -1198,14 +683,14 @@
           "coverage_name": "Sending you home",
           "base_limits": [
             {
-              "type": "Adult under 70 years old",
-              "limit": "Unlimited",
+              "type": "Adult 70 years old or over",
+              "limit": "See limit under section 14",
               "basis": null
             },
             {
-              "type": "Adult 70 years old or over",
-              "limit": 300000,
-              "basis": "Combined limit with sections 14 and 18"
+              "type": "Adult under 70 years old",
+              "limit": "Unlimited",
+              "basis": null
             },
             {
               "type": "Child",
@@ -1218,50 +703,19 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers repatriation of mortal remains or costs of transport back to Singapore if medically unfit to continue the trip.",
+              "detail_snippet": "Covers expenses for returning the insured person's body or ashes to Singapore, or for local burial/cremation overseas.",
               "source_location": "Page 8, Section 19"
             },
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Limit for Adult 70+ is combined with Sections 14 (Medical Expenses Overseas) and 18 (Emergency Medical Evacuation).",
+              "source_location": "Page 8, Section 19"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Individual limits apply, including the combined limit for Adults 70+.",
-              "source_location": "Page 8, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -1269,12 +723,12 @@
           "coverage_name": "Compassionate visit",
           "base_limits": [
             {
-              "type": "Overall limit per insured person",
+              "type": "Overall section limit - Per insured person",
               "limit": 10000,
               "basis": null
             },
             {
-              "type": "Family total",
+              "type": "Overall section limit - Family total",
               "limit": 30000,
               "basis": null
             },
@@ -1284,50 +738,15 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers travel and accommodation costs for one relative or friend to travel to you if you are hospitalised overseas for a specified period.",
+              "detail_snippet": "Covers travel and accommodation expenses for one relative or friend to visit the insured person if hospitalised overseas for a specified period.",
               "source_location": "Page 8, Section 20"
             },
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
-            },
-            {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' overall limit.",
-              "source_location": "Page 8, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         }
@@ -1340,61 +759,30 @@
           "coverage_name": "Kidnap and hostage",
           "base_limits": [
             {
-              "type": "Overall limit per insured person",
+              "type": "Overall section limit - Per insured person",
               "limit": 5000,
               "basis": null
             },
             {
-              "type": "Family total",
+              "type": "Overall section limit - Family total",
               "limit": 15000,
               "basis": null
             },
             {
-              "type": "Benefit per 24 hours",
+              "type": "Every 24 hours",
               "limit": 200,
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
+              "detail_snippet": "Benefit limits specified in the table.",
+              "source_location": "Page 9, Section 21"
             },
             {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' overall limit.",
-              "source_location": "Page 9, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -1402,7 +790,7 @@
           "coverage_name": "Emergency phone charges",
           "base_limits": [
             {
-              "type": "Overall limit per insured person",
+              "type": "Per insured person",
               "limit": 150,
               "basis": null
             },
@@ -1412,50 +800,15 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers overseas phone charges incurred for emergency calls related to a covered event.",
+              "detail_snippet": "Benefit limits specified in the table.",
               "source_location": "Page 9, Section 22"
             },
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
-            },
-            {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' overall limit.",
-              "source_location": "Page 9, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -1463,12 +816,12 @@
           "coverage_name": "Home cover",
           "base_limits": [
             {
-              "type": "Overall limit per insured person",
+              "type": "Overall section limit - Per insured person",
               "limit": 5000,
               "basis": null
             },
             {
-              "type": "Family total",
+              "type": "Overall section limit - Family total",
               "limit": 5000,
               "basis": null
             },
@@ -1478,50 +831,15 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers loss or damage to home contents due to burglary or fire while you are overseas on your trip.",
+              "detail_snippet": "Covers loss or damage to home contents due to burglary while the insured person is overseas.",
               "source_location": "Page 9, Section 23"
             },
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
-            },
-            {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' overall limit.",
-              "source_location": "Page 9, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -1539,50 +857,15 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers legal liability for accidental injury to third parties or accidental damage to third party property.",
+              "detail_snippet": "Covers legal liability for accidental injury to third parties or accidental damage to third-party property.",
               "source_location": "Page 9, Section 24"
             },
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
-            },
-            {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' limit.",
-              "source_location": "Page 9, Footnote ^"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
@@ -1600,100 +883,91 @@
               "basis": null
             }
           ],
-          "conditional_limits": [
-            {
-              "condition": "Claim due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers the excess amount you are liable to pay under the rental agreement if the rental vehicle is lost or damaged.",
+              "detail_snippet": "Covers the excess amount the insured is liable to pay under the rental agreement if the rental vehicle is damaged or stolen.",
               "source_location": "Page 9, Section 25"
             },
             {
-              "detail_snippet": "Benefit limits apply if claim is due to COVID-19 (subject to conditions in Note 10).",
-              "source_location": "Page 9, Section 27 & Page 11, Note 10"
-            },
-            {
-              "detail_snippet": "Benefit limits apply if policy was purchased after departure (subject to conditions in Note 9).",
-              "source_location": "Page 9, Section 28 & Page 11, Note 9"
-            },
-            {
-              "detail_snippet": "Family total is the maximum amount for the family cover during one trip. Each insured person is limited to the 'Per insured person' limit.",
-              "source_location": "Page 9, Footnote ^"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "category_name": "General Policy Features",
-      "coverages": [
-        {
-          "coverage_name": "Family Cover Definition",
-          "base_limits": [],
-          "conditional_limits": null,
-          "source_specific_details": [
-            {
-              "detail_snippet": "Provides coverage for 1 or 2 adults (spouses/partners, >=16yrs, parent/legal guardian) and any number of their children (<21yrs, biological/legally adopted/ward). All must be insured under the same policy. Must travel together if insured under single trip plans (not applicable for yearly plans).",
-              "source_location": "Page 10, Note 1"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
         {
-          "coverage_name": "Adventurous Activities Cover",
-          "base_limits": [],
+          "coverage_name": "Full terrorism cover",
+          "base_limits": [
+            {
+              "type": "Adult 70 years old or over",
+              "limit": 125000,
+              "basis": null
+            },
+            {
+              "type": "Adult under 70 years old",
+              "limit": 200000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 100000,
+              "basis": null
+            },
+            {
+              "type": "Family total",
+              "limit": 800000,
+              "basis": null
+            }
+          ],
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Covers recreational activities commonly available to the public, done overseas for leisure/as part of tour. Must comply with safety procedures/rules (e.g., wear equipment). If guides/instructors available, must be under their guidance/supervision. Activity must not be excluded under general exclusions. Examples: scuba diving (Note 6), paddleboarding, white water rafting, skiing, snowboarding, snowmobiling, bungee jumping, skydiving, paragliding, abseiling, hiking, trekking (Note 7), motorcycling, hot air balloon riding.",
-              "source_location": "Page 3, Coverage for adventurous activities & Page 10, Note 2"
+              "detail_snippet": "Provides cover for losses arising from acts of terrorism, applying the specified limits to benefits under sections 1 to 25.",
+              "source_location": "Page 9, Section 26"
             },
             {
-              "detail_snippet": "Excludes extreme sports involving speed, height, danger, high physical exertion, specialized gear or spectacular stunts (competitive or non-competitive, team or individual).",
-              "source_location": "Page 10, Note 2"
-            },
-            {
-              "detail_snippet": "Scuba diving covered if for leisure, holding PADI (or similar) cert diving with certified buddy OR diving with qualified instructor. Max depth per cert, max 30m.",
-              "source_location": "Page 10, Note 6"
-            },
-            {
-              "detail_snippet": "Trekking covered if for leisure, below 4,000m, in public area without restriction OR organised by recognised commercial operator/provider OR under licensed guide/instructor supervision following safety procedures.",
-              "source_location": "Page 10, Note 7"
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         },
         {
-          "coverage_name": "Automatic Extension",
+          "coverage_name": "Adventurous activities",
           "base_limits": [],
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Coverage period automatically extended at no extra cost for the first 14 days while overseas if unable to return before policy expiry due to delay of public transport (not caused by you) OR hospitalisation advised by a medical practitioner.",
-              "source_location": "Page 4, Automatic extension & Page 11, Note 8"
+              "detail_snippet": "Coverage provided for participation in adventurous activities for leisure.",
+              "source_location": "Page 2, Key Benefit 3"
+            },
+            {
+              "detail_snippet": "Includes water activities (scuba diving, paddleboarding, white water rafting), winter activities (skiing, snowboarding, snowmobiling), air activities (bungee jumping, skydiving, paragliding, abseiling), and other outdoor activities (hiking, trekking, motorcycling, hot air balloon).",
+              "source_location": "Page 3"
+            },
+            {
+              "detail_snippet": "Activity must be commonly available, done for leisure, comply with safety procedures/rules, use licensed guides/instructors where available, and not be an excluded extreme sport. Scuba diving requires PADI (or similar) certification or qualified instructor, max depth per certification or 30m. Trekking must be below 4,000m, in public areas or organised/guided.",
+              "source_location": "Page 10, Note 2, Note 6, Note 7"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Family cover",
+          "base_limits": [
+            {
+              "type": "Number of children insured",
+              "limit": "Unlimited",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers 1 or 2 adults (spouses/partners, >=16 yrs, parent/guardian) and any number of their children (<21 yrs, biological/adopted/ward). All must be insured under the same policy. Must travel together for single trip plans.",
+              "source_location": "Page 2, Key Benefit 2; Page 10, Note 1"
+            },
+            {
+              "detail_snippet": "Family total limit means the maximum amount payable for each benefit section under the family cover during any one trip. Each insured person is also subject to the maximum benefit per insured person.",
+              "source_location": "Page 5, Footnote ^"
             }
           ]
         },
@@ -1703,73 +977,50 @@
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Available for purchase within one day after departing Singapore (only applicable to Per-trip plans).",
-              "source_location": "Page 2, Key Benefit 6 & Page 4, Post-departure purchase"
+              "detail_snippet": "Policy can be purchased within one day after departing Singapore (only applicable to Per-trip plans).",
+              "source_location": "Page 2, Key Benefit 6; Page 4"
             },
             {
-              "detail_snippet": "Provides cover under sections 3 to 27 (except section 8) subject to their respective limits.",
-              "source_location": "Page 9, Section 28"
+              "detail_snippet": "Provides post-departure benefits (Sections 3 to 27 except Section 8) such as medical expenses overseas and emergency medical evacuation.",
+              "source_location": "Page 4; Page 9, Section 28"
             },
             {
-              "detail_snippet": "Does not cover claims arising from transport taken before/while buying policy, known events, or losses that occurred before policy purchase.",
+              "detail_snippet": "Does not cover claims arising from transport taken before purchase, known events, or losses that occurred before purchase.",
               "source_location": "Page 11, Note 9"
             }
           ]
         },
         {
-          "coverage_name": "COVID-19 Cover",
+          "coverage_name": "Automatic extension",
           "base_limits": [],
           "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Applies the limits of respective sections (1 to 25 except section 15) to claims arising from COVID-19.",
-              "source_location": "Page 9, Section 27"
-            },
-            {
-              "detail_snippet": "Eligibility requires fulfilling all vaccination, pre-departure tests, and post-arrival tests (if any) imposed by destination country or transport operator at time of trip. Must also fulfill conditions in the relevant section (e.g., Section 1 Cancellation requires COVID-19 to result in serious sickness).",
-              "source_location": "Page 11, Note 10"
-            },
-            {
-              "detail_snippet": "For trip cancellation/shortening due to COVID-19, event must occur after policy purchase & within 30 days before departure (unless accidental). Policy must be bought >=3 days before departure (unless accidental).",
-              "source_location": "Page 10, Note 5"
+              "detail_snippet": "Policy automatically extended at no extra cost for the first 14 days if delayed overseas due to unforeseen circumstances (e.g., public transport delay not caused by insured, hospitalisation).",
+              "source_location": "Page 4; Page 11, Note 8"
             }
           ]
         },
         {
-          "coverage_name": "Full Terrorism Cover",
+          "coverage_name": "COVID-19 cover",
           "base_limits": [],
-          "conditional_limits": [
-            {
-              "condition": "Claim under Sections 1 to 25 due to Terrorism",
-              "limits": [
-                {
-                  "type": "Adult under 70 years",
-                  "limit": 200000,
-                  "basis": null
-                },
-                {
-                  "type": "Adult 70 years old or over",
-                  "limit": 125000,
-                  "basis": null
-                },
-                {
-                  "type": "Child",
-                  "limit": 100000,
-                  "basis": null
-                },
-                {
-                  "type": "Family total",
-                  "limit": 800000,
-                  "basis": null
-                }
-              ],
-              "source_location": "Page 9, Section 26"
-            }
-          ],
+          "conditional_limits": null,
           "source_specific_details": [
             {
-              "detail_snippet": "Provides specific limits for claims arising from acts of terrorism under sections 1 to 25. These limits apply instead of the standard section limits when terrorism is the cause.",
-              "source_location": "Page 9, Section 26"
+              "detail_snippet": "Provides coverage under relevant sections (1 to 25 except 15) for events related to COVID-19, subject to policy terms.",
+              "source_location": "Page 9, Section 27"
+            },
+            {
+              "detail_snippet": "Eligibility requires fulfilling all vaccination, pre-departure tests, and post-arrival tests imposed by destination country or transport operator. For cancellation/shortening (Sections 1, 3), COVID-19 must result in a serious sickness.",
+              "source_location": "Page 11, Note 10"
+            },
+            {
+              "detail_snippet": "Covers overseas transport/accommodation expenses for cancellation/shortening (up to plan limits). Covers overseas medical expenses (up to plan limits).",
+              "source_location": "Page 3"
+            },
+            {
+              "detail_snippet": "Covered under post-departure purchase extension.",
+              "source_location": "Page 9, Section 28"
             }
           ]
         }

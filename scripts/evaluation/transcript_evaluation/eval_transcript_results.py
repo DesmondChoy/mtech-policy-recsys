@@ -86,14 +86,18 @@ def save_evaluation_results(
     os.makedirs(output_dir, exist_ok=True)
 
     for fmt in formats:
+        # Construct the new base filename by replacing the first 'transcript_' with 'transcript_eval_'
+        new_base_name = transcript_name.replace("transcript_", "transcript_eval_", 1)
+
         if fmt == "json":
-            output_path = os.path.join(output_dir, f"{transcript_name}_evaluation.json")
+            output_path = os.path.join(output_dir, f"{new_base_name}.json")
+            # Ensure ensure_ascii=True (default) for standard JSON escaping
             with open(output_path, "w", encoding="utf-8") as f:
-                json.dump(evaluation, f, indent=2)
+                json.dump(evaluation, f, indent=2, ensure_ascii=True)
             logger.info(f"Saved JSON evaluation to: {output_path}")
 
         elif fmt == "txt":
-            output_path = os.path.join(output_dir, f"{transcript_name}_evaluation.txt")
+            output_path = os.path.join(output_dir, f"{new_base_name}.txt")
             with open(output_path, "w", encoding="utf-8") as f:
                 f.write(format_evaluation_results(evaluation, "text"))
             logger.info(f"Saved text evaluation to: {output_path}")
