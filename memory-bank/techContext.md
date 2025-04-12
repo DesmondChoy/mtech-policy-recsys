@@ -196,11 +196,11 @@
 
 ### External Dependencies
 
-1. **Google AI Python SDK**:
+1. **Google Generative AI SDK**:
    - Purpose: Interface with Google Gemini API
-   - Installation: `pip install google-generativeai`
+   - Installation: `pip install google-genai`
    - Usage: Core dependency for LLM service
-   - Version: >=0.3.0
+   - Version: `1.10.0`
 
 2. **CrewAI**:
    - Purpose: Framework for orchestrating autonomous AI agents
@@ -242,7 +242,7 @@
 
 1. **LLM Service**:
    - Location: `src/models/llm_service.py`
-   - Purpose: Provides a unified interface to Google Gemini, loading configuration (API key, default model, parameters) from `src/models/gemini_config.py`.
+   - Purpose: Provides a unified interface to Google Gemini. Initializes a `genai.Client` using configuration (API key, default model, parameters) loaded from `src/models/gemini_config.py`.
    - Features: Content generation (supports text prompts and multi-modal `contents` input), structured JSON output (with markdown/formatting fixes), streaming, batch processing, internal retry logic.
    - Used by: All scripts/agents requiring Gemini capabilities (e.g., `extract_policy_tier.py`, `generate_transcripts.py`, `eval_transcript_gemini.py`, `generate_personalities.py`).
 
