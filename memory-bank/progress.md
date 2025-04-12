@@ -35,6 +35,7 @@ gantt
 8.  **Extractor Agent (CrewAI/OpenAI)**: Functional agent (`src/agents/extractor.py`) extracts structured requirements from processed transcripts using OpenAI via `crewai`. Includes batch processing.
 9.  **Policy Extraction Script**: Script (`scripts/extract_policy_tier.py`) extracts structured policy details from PDFs using `LLMService`. Includes detailed extraction logic (base/conditional limits, source details).
 10. **Policy Comparison Script**: Script (`scripts/generate_policy_comparison.py`) generates insurer-level Markdown comparison reports using `LLMService`, extracted requirements, and processed policies.
+11. **PDF Extraction Evaluation Script**: Script (`scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py`) compares processed policy JSON against source PDF using multi-modal LLM (`LLMService`) for accuracy/completeness checks.
 
 ## What's Left to Build
 
@@ -84,7 +85,8 @@ gantt
 | Extractor Agent (CrewAI/OpenAI)    | 100%        | High     | `src/agents/extractor.py` - Extracts requirements. Uses OpenAI.                                      |
 | Policy Extraction Script           | 100%        | High     | `scripts/extract_policy_tier.py` - Extracts structured policy data. Uses Gemini.                     |
 | Policy Comparison Script           | 100%        | High     | `scripts/generate_policy_comparison.py` - Generates insurer-level reports. Uses Gemini.              |
-| **Evaluation Enhancements**        | **Planned** | **High** | **Policy Extraction & Comparison Report evaluations.**                                               |
+| **PDF Extraction Evaluation**      | **95%**     | **High** | **Script implemented (`eval_pdf_extraction.py`). Testing pending.**                                  |
+| Policy Comparison Evaluation       | Planned     | High     | Design and implement evaluation for `generate_policy_comparison.py`.                                 |
 | **Recommender Logic**              | **0%**      | **High** | **Definition and implementation pending. `recommender.py` is empty.**                                |
 | **Component Integration**          | **0%**      | **Medium** | **Orchestration between components not implemented.**                                                |
 | Testing Framework                  | 0%          | Medium   | Unit/Integration tests needed.                                                                       |
@@ -97,7 +99,7 @@ gantt
     *   Ensuring high accuracy and consistent formatting from LLMs for extraction (policy, requirements) and comparison tasks remains a challenge. Requires ongoing prompt tuning and potentially model updates.
     *   Adherence to complex JSON schemas (e.g., policy extraction) needs careful validation.
 2.  **Evaluation Gaps**:
-    *   Lack of automated evaluation for policy extraction and comparison report quality. Manual review is currently required.
+    *   Lack of automated evaluation for *comparison report* quality. Manual review is currently required for that step. (Policy extraction evaluation script now exists but needs testing).
 3.  **Synthetic Data Limitations**:
     *   Generated transcripts might not fully capture the nuances of real user interactions.
 4.  **LLM Constraints**:

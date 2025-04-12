@@ -1,0 +1,69 @@
+{
+  "policy_tier_evaluated": "Business",
+  "json_source": "data\\policies\\processed\\fwd_{Business}.json",
+  "pdf_source": "data\\policies\\raw\\fwd_{Business}.pdf",
+  "evaluation_results": [
+    {
+      "result": "match",
+      "coverage_name": "Trip cancellation and loss of deposit",
+      "json_detail": "Base Limits: Per Person S$10,000, Family S$25,000. Conditional Limits: Pre-ex add-on S$10,000 (50% co-pay), Cancel for any reason add-on S$3,000/S$7,500 (50% reimbursement). Details: Covers cancellation within 30 days pre-departure for specified events (illness/death, witness, home damage, public event, hijack, onward flight cancellation). Excludes policy <72hrs before departure, refundable amounts, upgrades. Add-on conditions apply (e.g., 7 days purchase for CFAR, co-payment for Pre-ex). Source: Pages 5, 9, 10, 11, 22, 27, 31.",
+      "pdf_detail": "Base Limits (Page 5): Per Person S$10,000, Family S$25,000. Conditional Limits (Page 9): Pre-ex add-on S$10,000 (50% co-pay), Cancel for any reason add-on S$3,000/S$7,500 (50% reimbursement). Details (Page 10-11): Covers cancellation within 30 days pre-departure for specified events (serious injury/illness/death of insured/companion/family, witness duty, home damage, serious public event, hijack >12hrs, onward flight cancellation by airline). Exclusions (Page 11): Policy bought <72hrs before departure (unless accidental death), refundable amounts, upgrades. Add-on details on Pages 22 & 27 confirm conditions."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Travel delay",
+      "json_detail": "Base Limits: Overseas S$100 per 6 hours (Max S$500), Singapore S$100 for first 6 hours only. Details: Pays if scheduled public transport delayed/overbooked >= 6 continuous hours. Must check-in on time. Requires written proof. Excludes delay caused by insured/family/companion. Source: Pages 5, 12, 13.",
+      "pdf_detail": "Base Limits (Page 5): Max S$500 (S$100 per 6 hours delay overseas, S$100 for the first 6 hours delay in Singapore only). Details (Page 12-13): Pays if scheduled public transport delayed or overbooked for >= 6 continuous hours. Requires check-in on time. Requires written proof from provider showing hours and reason. Excludes delay caused by insured/family/companion."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Theft of or damage to baggage or personal belongings",
+      "json_detail": "Base Limits: Per Person S$5,000, Family S$12,500. Sub-limits: Laptop/Tablet S$1,000, Mobile Phone S$500, Jewellery S$500, Other items S$500 per item. Details: Pays if stolen/accidentally damaged during trip or lost by airline. Payment based on depreciation/market value (max S$50/item, max 5 items without proof). Conditions: Electronics/jewellery must be carried on person, items under care, report theft within 24hrs. Exclusions: Perishables, vehicles, cards, instruments, business goods, sports equip, data, wear & tear. Reduced by Baggage Delay payout. Source: Pages 6, 14, 15, 36.",
+      "pdf_detail": "Base Limits (Page 6): Per Person S$5,000, Family S$12,500. Sub-limits: Laptop/Tablet S$1,000, Mobile Phone S$500, Jewellery S$500, Other items S$500 per item. Details (Page 14-15): Pays if stolen/accidentally damaged or lost by airline. Payment based on depreciation table (Page 15) or market value (S$50/item, max 5 items without proof - Page 15 & 36). Conditions: Mobile/laptop/tablet/jewellery carried on person, items under care, report theft within 24hrs. Exclusions: Perishables, vehicles, cards, instruments, business goods, sports equip, data, wear & tear, unexplained loss. Reduced by Baggage Delay payout (Page 15)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Car rental excess",
+      "json_detail": "Base Limits: Per Incident S$500. Details: Included in base cover for Business plan. Covers excess/deductible for accidental loss/damage to rental car. Conditions: Named driver, legally allowed, driving at time, followed rules/laws, car collected overseas, requires agreement/receipts/reports. One claim per car. Source: Pages 6, 9, 28.",
+      "pdf_detail": "Base Limits (Page 6): S$500. Details (Page 9): Confirmed as 'Included in base cover' for Business plan. Details (Page 28): Covers excess/deductible for accidental loss/damage to rental car from licensed operator. Conditions: Named driver/co-driver, legally allowed, driving at time, followed rental agreement/local laws, car collected overseas, requires copy of agreement/receipts/reports. Only one claim paid per insured rental car."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Personal accident",
+      "json_detail": "Base Limits: Adult <70 S$300,000, Adult >=70 S$60,000, Child S$90,000, Family Overall S$750,000. Details: Lump sum for accidental death or total permanent disability (TPD) within 90 days. Percentage scale for specific injuries. TPD defined (unable to work 6 months, unlikely ever). Disappearance clause. General exclusion for suicide/self-inflicted acts. Source: Pages 7, 18, 31.",
+      "pdf_detail": "Base Limits (Page 7): Adult <70 S$300,000, Adult >=70 S$60,000, Child S$90,000, Family Overall S$750,000. Details (Page 18): Pays lump sum for accident causing death or TPD within 90 days. Percentage scale for specific injuries (table provided). TPD definition matches JSON. Disappearance clause matches JSON. General exclusion for suicide/self-inflicted acts (Page 31)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Medical expenses incurred overseas",
+      "json_detail": "Base Limits: Adult <70 S$500,000, Adult >=70 S$100,000, Child S$150,000, Family Overall S$1,250,000. Sub-limits: Mobility aids S$500, Dental (accident) S$5,000. Conditional Limit: Pre-ex add-on S$100,000. Details: Reimburses medically necessary treatment for unexpected illness/injury overseas (up to 30 days from first treatment). Includes dental (accident), ambulance, specialist (GP referral), mobility aids, medical equipment. Excludes non-accident dental, non-natural teeth, interested party, planned treatment. Pre-ex add-on details match. Source: Pages 7, 9, 19, 24, 26.",
+      "pdf_detail": "Base Limits (Page 7): Adult <70 S$500,000, Adult >=70 S$100,000, Child S$150,000, Family Overall S$1,250,000. Sub-limits: Mobility aids S$500, Dental (accident) S$5,000. Conditional Limit (Page 9): Pre-ex add-on S$100,000. Details (Page 19): Reimburses medically necessary treatment for unexpected illness/injury overseas (up to 30 days from first treatment). Includes dental (accident), ambulance, specialist (GP referral), mobility aids (excl prosthesis), medical equipment. Exclusions (Page 19): Non-accident dental, non-natural teeth, interested party, planned/pre-arranged treatment. Pre-ex add-on details (Page 24, 26) match."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Automatic policy extension",
+      "json_detail": "Base Limit: 14 days duration. Conditional Limit: Pre-ex add-on 30 days duration. Details: Free extension if return delayed by serious public event OR hospital confinement overseas. Pre-ex add-on extends if delay due to hospitalisation/unfit to travel from pre-ex condition. Source: Pages 7, 9, 19, 24.",
+      "pdf_detail": "Base Limit (Page 7): 14 days. Conditional Limit (Page 9): Pre-ex add-on 30 days. Details (Page 19): Automatic extension free of charge if return delayed by serious public event OR confined to hospital overseas on medical advice. Pre-ex add-on details (Page 24): Extension if suffer unexpected illness/injury due to pre-ex condition and medically unfit to travel OR confined to hospital overseas due to pre-ex condition."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Emergency phone charges",
+      "json_detail": "Base Limit: Per Person S$300. Details: Reimburses costs of calls made overseas to FWD Emergency Assistance, police, medical facilities, consulates, or family in Singapore for assistance due to serious illness/injury. Source: Pages 8, 19.",
+      "pdf_detail": "Base Limit (Page 8): S$300. Details (Page 19): Reimburses costs of phone calls made while overseas to Emergency Assistance hotline, police, medical facilities, consulates, or family member(s) in Singapore for assistance/support due to serious illness/injury during trip."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Chinese medicine practitioner, physiotherapist and chiropractor expenses",
+      "json_detail": "Base Limit: Per Person S$500, capped at S$50 per visit. Details: Pays for treatment overseas or within 48 hours of return to SG, due to unexpected illness/injury suffered overseas. Conditions: Must have received medical treatment overseas OR seek this treatment within 48 hours of return. Excludes interested party. Excluded under Pre-ex add-on. Source: Pages 8, 20, 26.",
+      "pdf_detail": "Base Limit (Page 8): S$500, capped at S$50 per visit. Details (Page 20): Pays for treatment overseas or within 48 hours of returning to Singapore due to unexpected illness/injury suffered overseas. Conditions: Must have received medical treatment overseas OR seek this treatment within 48 hours of return. Excludes interested party. Excluded under Pre-ex add-on (Page 26)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Cancel for any reason",
+      "json_detail": "Optional Add-on. Limits (50% reimbursement): Trip Cancellation S$3,000 (Per Person) / S$7,500 (Family); Trip Postponement S$500 (Per Person) / S$1,250 (Family); Trip Cut Short S$3,000 (Per Person) / S$7,500 (Family). Details: Provides 50% reimbursement for cancellation/postponement/cut short for reasons not covered by base policy. Must purchase within 7 days of initial trip deposit. Trip Cut Short requires trip commenced >= 48 hours. Exclusions: Refunded amounts, upgrades, extra costs not in original itinerary (cut short). Source: Pages 9, 27, 28.",
+      "pdf_detail": "Optional Add-on (Page 27). Limits (Page 9): Trip Cancellation S$3,000 / S$7,500; Trip Postponement S$500 / S$1,250; Trip Cut Short S$3,000 / S$7,500. Details (Page 27): Reimburses up to 50% for covered travel costs for cancellation/postponement/cut short for reasons other than those covered under base benefits. Must purchase within 7 days from initial trip deposit. Trip Cut Short requires trip commenced >= 48 hours. Exclusions (Page 27-28): Refunded amounts, upgrades, extra costs not in original itinerary (cut short). Policy ends if cancellation/postponement paid."
+    }
+  ],
+  "pdf_only_findings": [],
+  "llm_call_status": "SUCCESS"
+}

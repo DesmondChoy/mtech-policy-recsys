@@ -1,0 +1,75 @@
+{
+  "policy_tier_evaluated": "Elite",
+  "json_source": "data\\policies\\processed\\sompo_{Elite}.json",
+  "pdf_source": "data\\policies\\raw\\sompo_{Elite}.pdf",
+  "evaluation_results": [
+    {
+      "result": "match",
+      "coverage_name": "Medical Expenses Incurred Overseas",
+      "json_detail": "Limits: Per Insured Person (70&below) SGD 1,000,000; Per Insured Person (Over 70) SGD 100,000; Per Family SGD 1,200,000; Physio/Chinese Physician/Chiropractor SGD 300 ($50/visit); Dentist SGD 500. Details: Covers outpatient/hospitalisation overseas (accident/sickness), emergency dental (accident), accidental miscarriage. Includes specified practitioners. Source: Page 3, Section 2; Page 2 Highlight.",
+      "pdf_detail": "Limits (Elite): Per Insured Person (70&below) $1,000,000; Per Insured Person (Over 70) $100,000; Per Family $1,200,000; Physio/Chinese Physician/Chiropractor Up to $300 ($50/visit); Dentist Up to $500. Details: Covers outpatient and hospitalisation medical expenses incurred overseas arising from accident or sickness, emergency dental expenses arising from accident, and accidental miscarriage. Includes Treatment by specified practitioners. Source: Page 3, Section 2; Page 2 Highlight confirms $1M limit and inclusion of Chinese Physicians/Chiropractors."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Overseas Hospitalisation Allowance",
+      "json_detail": "Limit: Per Insured Person SGD 200 per day, up to 200 days. Details: Payable for each complete day hospitalised overseas as an inpatient. Source: Page 3, Section 5.",
+      "pdf_detail": "Limit (Elite): Per Insured Person $200 per day, up to 200 days. Details: For each complete day you are hospitalised overseas. Source: Page 3, Section 5."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Loss or Damage to Baggage & Personal Effects",
+      "json_detail": "Limits: Per Person SGD 8,000; Per Family SGD 16,000; Sub-limits: Article/Pair/Set SGD 500; Video/Camera SGD 1,000; Laptop/Tablet SGD 1,000; Mobile Phone SGD 500; Jewellery (aggregate) SGD 500; Electronics (aggregate) SGD 3,000; Suitcase/Bag (aggregate) SGD 5,000. Details: Covers loss/damage to baggage, personal effects, electronics. Section (A) limits apply. Source: Page 4, Section 11.",
+      "pdf_detail": "Limits (Elite): Per Insured Person $8,000; Per Family $16,000. Sub-limits (Section A applies): Any one article/pair/set $500; Video equip/camera/lenses $1,000; Laptop/tablet $1,000; Mobile phone $500; Jewellery aggregate $500; Electronic items aggregate $3,000; Per suitcase/bag aggregate $5,000. Details: Covers loss or damage to baggage & personal effects. Source: Page 4, Section 11."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Trip Cancellation or Postponement",
+      "json_detail": "Limits: Per Insured Person SGD 15,000; Per Family SGD 25,000. Details: Covers loss of irrecoverable travel deposits/charges paid in advance due to necessary cancellation/postponement from Insured Events within 30 days before departure. Includes loss of frequent flyer points. Source: Page 4, Section 13; Page 2 Highlight.",
+      "pdf_detail": "Limits (Elite): Per Insured Person $15,000; Per Family $25,000. Details: Covers trip cancellation, postponement or replacement of traveller arising from Insured Events within 30 days before departure. Page 2 Highlight confirms up to $15,000 limit and inclusion of frequent flyer points loss. Source: Page 4, Section 13; Page 2 Highlight."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Personal Liability / Family Liability",
+      "json_detail": "Limit: Per Insured Person or Family SGD 1,000,000. Details: Covers legal liability for accidental bodily injury to third parties or accidental loss/damage to third party property during the trip. Source: Page 4, Section 17.",
+      "pdf_detail": "Limit (Elite): $1,000,000 Per Insured Person or Family. Details: Covers legal liability for accidental injury/damage to third parties. Source: Page 4, Section 17."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Travel Delay",
+      "json_detail": "Limits: Per Insured Person SGD 100 for 1st full 6 hours (overseas or S'pore), SGD 65 per 4 hours thereafter (overseas); Maximum Limit SGD 2,000. Details: Pays cash benefit for delay of scheduled public conveyance due to any cause outside control. Based on actual vs scheduled arrival. Source: Page 4, Section 19; Page 1 & 2 Highlight.",
+      "pdf_detail": "Limits (Elite): Per Insured Person $100 for 1st full 6 hours (overseas or in S'pore), $65 per 4 hours thereafter (overseas); Maximum Limit $2,000. Details: Due to any cause outside your control. Payout based on actual arrival time vs original scheduled arrival time. Source: Page 4, Section 19; Page 1 & 2 Highlight confirms 'all causes'."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Full Terrorism Cover",
+      "json_detail": "Limit: Per Insured Person SGD 500,000 (In aggregate for the relevant Sections). Details: Provides cover for losses arising directly from an Act of Terrorism, subject to the aggregate limit, under relevant benefit sections. Source: Page 5, Section 26.",
+      "pdf_detail": "Limit (Elite): Per Insured Person $500,000 (In aggregate for the above Sections). Details: Covers losses arising from Terrorism. Source: Page 5, Section 26."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Alternative Travel Arrangement",
+      "json_detail": "Limits: Per Insured Person SGD 500; Per Family SGD 1,500. Details: Covers additional costs for alternative travel arrangements if original scheduled public transport is cancelled/delayed due to specified events (strike, riot, natural disaster). Source: Page 5, Section 30.",
+      "pdf_detail": "Limits (Elite): Per Insured Person $500; Per Family $1,500. Details: Covers additional costs for alternative travel if original transport is cancelled/delayed due to specified events. Source: Page 5, Section 30."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Rental Vehicle Excess Cover",
+      "json_detail": "Limit: Per Vehicle SGD 2,000. Details: Covers the insurance excess or deductible amount legally liable to pay for loss/damage to a rented vehicle. Source: Page 5, Section 32.",
+      "pdf_detail": "Limit (Elite): Per Vehicle $2,000. Details: Covers excess/deductible for loss/damage to rental vehicle. Source: Page 5, Section 32."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Golf Cover",
+      "json_detail": "Limits: Loss/damage of golf equipment SGD 1,000; Hole-in-one SGD 500; Unused green fees SGD 250; Damage of buggy SGD 500. Details: Covers loss/damage to owned equipment, hole-in-one celebration costs, unused green fees reimbursement, liability for buggy damage. Source: Page 6, Section 36.",
+      "pdf_detail": "Limits (Elite): Loss or damage of golf equipment $1,000; Hole-in-one $500; Unused green fees $250; Damage of buggy $500. Details: Covers specified golf-related incidents. Source: Page 6, Section 36."
+    }
+  ],
+  "pdf_only_findings": [
+    {
+      "coverage_name": "24-Hour Medical Assistance Service",
+      "pdf_detail": "Provides access to a 24-Hour Emergency Assistance Japan (EAJ) Hotline for medical assistance, including locating clinics/hospitals and arranging appointments. Specific mention of cashless services in Japan (though limits differ for GO Japan! plan).",
+      "pdf_source_location": "Page 2, 24-Hour Medical Assistance section"
+    }
+  ],
+  "llm_call_status": "SUCCESS"
+}

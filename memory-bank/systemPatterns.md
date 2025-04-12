@@ -40,7 +40,9 @@ flowchart TD
     subgraph Evaluation Focus
         direction TB
         EvalTranscripts --> EvalTranscriptResults[data/evaluation/transcript_evaluations/*.json]
-        ExtractPolicyScript --> PlannedPolicyEval{Planned: Policy Extraction Evaluation}
+        ExtractPolicyScript --> EvalPdfExtraction[scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py]
+        RawPolicies --> EvalPdfExtraction
+        EvalPdfExtraction --> EvalPdfResults[data/evaluation/pdf_extraction_evaluations/*.json]
         ComparisonScript --> PlannedComparisonEval{Planned: Comparison Report Evaluation}
     end
 
@@ -51,6 +53,8 @@ flowchart TD
     Transcript Processing & Extraction --> Evaluation Focus
     Policy Processing --> Evaluation Focus
     Reporting & Analysis (Standalone) --> Evaluation Focus
+
+    EvalPdfExtraction --> Evaluation Focus # Connect new eval script
 
     ComparisonReports --> User[User/Developer]
     ExtractedReqs --> FutureML{Future: ML Models}
@@ -170,6 +174,7 @@ sequenceDiagram
     participant ParseT as Transcript Parsing Script
     participant Extractor as Extractor Agent (CrewAI/OpenAI)
     participant ExtractP as Policy Extraction Script (LLMService)
+    participant EvalPDF as PDF Extraction Eval Script (LLMService)
     participant CompareP as Policy Comparison Script (LLMService)
     participant LLM_Gemini as LLM Service (Gemini)
     participant LLM_OpenAI as OpenAI API
@@ -194,10 +199,14 @@ sequenceDiagram
         EvalT->>UserDev: Notify Failure / Log Issue
     end
 
-    %% Policy Path
+    %% Policy Path & PDF Eval Path
     ExtractP->>LLM_Gemini: Extract Policy Details from PDF
     LLM_Gemini-->>ExtractP: Structured Policy JSON
     Note right of ExtractP: Saves to data/policies/processed/
+
+    EvalPDF->>LLM_Gemini: Evaluate Policy JSON vs PDF (Multi-modal)
+    LLM_Gemini-->>EvalPDF: Evaluation Result JSON
+    Note right of EvalPDF: Saves to data/evaluation/pdf_extraction_evaluations/
 
     %% Comparison Path (Requires both transcript and policy paths completed)
     CompareP->>LLM_Gemini: Compare Requirements vs Policies
@@ -206,7 +215,7 @@ sequenceDiagram
     CompareP->>UserDev: Provide Report
 
     %% Planned Evaluations
-    Note over ExtractP: Planned: Policy Extraction Evaluation
+    Note over EvalPDF: PDF Extraction Evaluation Implemented
     Note over CompareP: Planned: Comparison Report Evaluation
 
 ```

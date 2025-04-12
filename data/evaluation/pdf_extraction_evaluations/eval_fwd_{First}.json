@@ -1,0 +1,69 @@
+{
+  "policy_tier_evaluated": "First",
+  "json_source": "data\\policies\\processed\\fwd_{First}.json",
+  "pdf_source": "data\\policies\\raw\\fwd_{First}.pdf",
+  "evaluation_results": [
+    {
+      "result": "match",
+      "coverage_name": "Trip postponement",
+      "json_detail": "Base Limit: S$1,500 (Per Person). Conditional Limits: Pre-existing S$1,500 (50% co-pay), Cancel for Any Reason S$1,000/S$2,500 Family (50% reimb). Details cover specified postponement events (illness, death, witness, home damage, public event), costs covered (rebooking fees), key exclusions (<72hr purchase, refunds, upgrades), and policy end condition. Sources: Pg 5, 9, 10, 11, 22, 27.",
+      "pdf_detail": "PDF confirms First tier limit S$1,500 (Pg 5). Optional cover limits match on Pg 9 (Pre-existing S$1,500, CFAR S$1,000/S$2,500). Details on Pg 10-11 confirm covered events (serious illness/death of insured/companion/family, witness, home damage, public event), covered costs (rebooking fees within 180 days), exclusions (<72hr purchase, refunds, upgrades), and policy end condition. Optional cover details confirmed on Pg 22 & 27."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Insolvency protection",
+      "json_detail": "Base Limit: S$5,000 (Per Person). Details cover trigger (insolvency of travel agent, transport provider, tour operator, accommodation provider), costs covered (unrecoverable pre-paid items, additional transport/accommodation), definition of insolvency, and exclusions (<72hr purchase, refunds received). Sources: Pg 5, 12.",
+      "pdf_detail": "PDF confirms First tier limit S$5,000 (Pg 5). Details on Pg 12 confirm trigger (provider declared insolvent), covered costs (pre-paid unrecoverable items, additional economy/standard transport/accommodation), definition of insolvency, and exclusions (<72hr purchase, refunds received). Source locations match."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Missed connections",
+      "json_detail": "Base Limit: S$500 (Per Person), basis S$100 per 6 hours stranded. Details cover trigger (missed connection due to late arrival of scheduled public transport, no alternative within 6 hours), payment basis, conditions (written proof, checked in on time), and exclusions (delay caused by insured party). Sources: Pg 5, 12, 13.",
+      "pdf_detail": "PDF confirms First tier limit S$500 (S$100 per 6 hours) (Pg 5). Details on Pg 12-13 confirm trigger (missed connection due to late arrival, no alternative travel within 6 hours), payment basis (S$100 per 6 continuous hours stranded), conditions (written proof, checked in on time), and exclusions (delay caused by insured party). Source locations match."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Theft of or damage to baggage or personal belongings",
+      "json_detail": "Overall Limit: S$7,500. Sub-limits: Laptop/Tablet S$1,000, Mobile S$500, Jewellery S$500, Other items S$500/item. Family Overall: S$18,750. Details cover trigger (theft, accidental damage, loss by airline), payment basis (depreciation/market value with/without proof), conditions (high value items carried, under care, police report within 24hrs), and exclusions (perishables, wear & tear, business goods, etc.). Sources: Pg 6, 14, 15.",
+      "pdf_detail": "PDF confirms First tier limits (Pg 6): Overall S$7,500, Laptop S$1,000, Mobile S$500, Jewellery S$500, Other item S$500, Family S$18,750. Details on Pg 14-15 confirm trigger (stolen, accidentally damaged, lost by airline), payment basis (depreciation table matching JSON summary), conditions (high value items carried, under care/authorised person, police report within 24hrs for theft), and exclusions (perishables, consumables, wear & tear, musical instruments, etc.). Source locations match."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Fraudulent personal credit card usage",
+      "json_detail": "Base Limit: S$1,000 (Per Person). Details cover trigger (unauthorised charges overseas), conditions (report to issuer and police within 24hrs, follow issuer rules), and exclusions (charges by family member, travel companion, or entrusted person). Sources: Pg 6, 16.",
+      "pdf_detail": "PDF confirms First tier limit S$1,000 (Pg 6). Details on Pg 16 confirm trigger (reimbursing unauthorised charges overseas), conditions (report to issuer & police within 24hrs, follow issuer rules), and exclusions (charges by family member, travel companion, entrusted person). Source locations match."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Sports equipment protector",
+      "json_detail": "Optional Cover. Limits: Overall S$2,000, Rental Replacement S$100/day. Details cover trigger (owned equipment stolen, damaged, lost by carrier), costs covered (rental replacement, compensation based on depreciation), conditions (under care, police report within 24hrs), definition of covered equipment (golf, diving, skis, etc.), and exclusion (damage while in use). Sources: Pg 9, 28, 29.",
+      "pdf_detail": "PDF confirms First tier optional cover limits (Pg 9): Overall S$2,000, Rental S$100/day. Details on Pg 28-29 confirm trigger (stolen, accidentally damaged, lost by carrier), costs covered (rental up to S$100/day, compensation based on depreciation table matching JSON summary), conditions (under care/authorised person, police report within 24hrs), definition of covered equipment, and exclusion (damage while in use). Source locations match."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Personal liability while on your trip",
+      "json_detail": "Base Limit: S$1,000,000 (Per event). Details cover trigger (legal responsibility for accidental death/injury to another person or damage to their property overseas), costs covered (damages awarded, agreed legal costs), conditions (no admission of liability, FWD may take over defence), and exclusions (criminal proceedings, property in care, firearms, vehicles, business activities, etc.). Sources: Pg 7, 17.",
+      "pdf_detail": "PDF confirms First tier limit S$1,000,000 (Pg 7). Details on Pg 17 confirm trigger (held legally responsible for accidental death/injury/property damage to another person [not interested party] overseas), costs covered (damages except punitive, agreed legal costs), conditions (must not admit liability, FWD may take over defence, must agree costs before engaging own lawyer), and exclusions (criminal, property in care/custody, liability from owning/using firearms, animals, motorised vehicles, watercraft, aircraft, drones, bicycles, trade/business). Source locations match."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Hospitalisation visit",
+      "json_detail": "Base Limit: S$10,000 (Per Person). Details cover trigger (hospitalised overseas >=5 days due to unexpected illness/injury, medically unable to return, no adult family member present), costs covered (reasonable return economy transport & standard accommodation for one adult family member to visit, or companion to stay), payment duration limit (stops at 30 days or fit to travel), and condition (only one of Hosp Visit/Child Comp/Compassionate Travel paid if death occurs). Sources: Pg 8, 19, 20.",
+      "pdf_detail": "PDF confirms First tier limit S$10,000 (Pg 8). Details on Pg 19-20 confirm trigger (unexpected illness/injury overseas, hospitalised >=5 continuous days, practitioner confirms cannot return, no adult family member with you), costs covered (reasonable return economy transport & standard accommodation for one adult family member or travel companion stay), payment stop condition (earlier of 30 days from confinement or date confirmed fit to travel), and condition (only highest of Hosp Visit/Child Comp/Compassionate Travel paid if death occurs after hospitalisation). Source locations match."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Chinese medicine practitioner, physiotherapist and chiropractor expenses",
+      "json_detail": "Limits: Overall S$500, Per visit S$50. Details cover trigger (treatment due to unexpected illness/injury overseas), conditions (treatment sought overseas OR within 48hrs return; must have received overseas treatment for same issue OR seek treatment within 48hrs return), and exclusion (interested party). Also notes exclusion under optional Pre-existing conditions cover. Sources: Pg 8, 20, 26.",
+      "pdf_detail": "PDF confirms First tier limits S$500 overall, S$50 per visit (Pg 8). Details on Pg 20 confirm trigger (treatment by Chinese med practitioner, physio, chiro due to overseas illness/injury), conditions (treatment sought overseas OR within 48hrs return; AND received medical treatment overseas for same issue OR seek medical treatment within 48hrs return for issue suffered overseas), and exclusion (interested party). Exclusion under Pre-existing cover confirmed on Pg 26. Source locations match."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Daily hospital cash while in Singapore",
+      "json_detail": "Limits: Overall S$1,500, Per day S$100, ICU Per day S$200. Details cover trigger (confined to hospital in SG due to unexpected illness/injury suffered overseas), conditions (confinement within 48hrs return OR within 30 days if treated overseas; medically necessary), and double benefit for ICU. Sources: Pg 8, 21.",
+      "pdf_detail": "PDF confirms First tier limits (Pg 8): Overall S$1,500, Per day S$100, ICU S$200. Details on Pg 21 confirm trigger (confined to SG hospital for continuous 24-hr period due to unexpected illness/injury suffered overseas), conditions (confined within 48hrs return OR within 30 days after return if sought medical treatment during trip; medically necessary), and double daily amount for ICU. Source locations match."
+    }
+  ],
+  "pdf_only_findings": [],
+  "llm_call_status": "SUCCESS"
+}

@@ -1,0 +1,69 @@
+{
+  "policy_tier_evaluated": "Preferred",
+  "json_source": "data\\policies\\processed\\income_{Preferred}.json",
+  "pdf_source": "data\\policies\\raw\\income_{Preferred}.pdf",
+  "evaluation_results": [
+    {
+      "result": "match",
+      "coverage_name": "Medical expenses in Singapore",
+      "json_detail": "Limits: Adult 70+ SGD 5k, Adult <70 SGD 50k, Child SGD 25k, Family SGD 200k, Aids SGD 1.5k. Details: Covers follow-up medical expenses incurred in Singapore within a specified period after returning. COVID-19 cover does NOT apply. Post-departure purchase extension applies. Sources: Pg 8 Sec 15, Pg 9 Sec 26/27/28.",
+      "pdf_detail": "PDF Page 8, Section 15 (Preferred): Overall limits match JSON (Adult 70+ SGD 5k, Adult <70 SGD 50k, Child SGD 25k, Family SGD 200k). Limit for medical aids and equipment matches (SGD 1.5k). PDF Page 9, Section 27 confirms COVID-19 cover excludes Section 15. PDF Page 9, Section 28 confirms Post-departure purchase extension applies to Section 15."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Rental vehicle excess cover",
+      "json_detail": "Limits: Per insured person SGD 2.5k, Family total SGD 2.5k. Details: Covers the insurance excess liable under rental agreement due to loss/damage. Full terrorism cover, COVID-19 cover, and Post-departure purchase extension apply. Sources: Pg 9 Sec 25, 26, 27, 28.",
+      "pdf_detail": "PDF Page 9, Section 25 (Preferred): Limits match JSON (Per insured person SGD 2.5k, Family total SGD 2.5k). PDF Page 9, Section 26 confirms Terrorism cover applies. PDF Page 9, Section 27 confirms COVID-19 cover applies. PDF Page 9, Section 28 confirms Post-departure purchase extension applies."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Travel delay",
+      "json_detail": "Limits: Overall section SGD 2k (person), Family SGD 4k (Overseas). Overseas delay: Adult SGD 100/6hrs, Child SGD 50/6hrs. Delay in SG: Adult SGD 150/6hrs, Child SGD 50/6hrs. Details: Payable if scheduled public transport delayed >6 consecutive hours, not caused by insured. Full terrorism cover, COVID-19 cover, and Post-departure purchase extension apply. Sources: Pg 2 Item 4, Pg 3 'Coverage...', Pg 5 Sec 5, Pg 9 Sec 26/27/28, Pg 10 Note 3.",
+      "pdf_detail": "PDF Page 5, Section 5 (Preferred): Limits match JSON (Overall SGD 2k; Overseas: Adult SGD 100/6hrs, Child SGD 50/6hrs, Family SGD 4k; SG delay: Adult SGD 150/6hrs, Child SGD 50/6hrs). PDF Page 10, Note 3 confirms condition of delay >6 hours and not caused by insured. PDF Page 9, Sections 26, 27, 28 confirm Terrorism, COVID-19, and Post-departure purchase applicability. PDF Page 2 Item 4 & Page 3 mention coverage."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Losing money",
+      "json_detail": "Limits: Adult SGD 500, Child SGD 150, Family total SGD 800. Details: Covers loss of cash, bank notes, currency notes, postal/money orders due to theft or robbery during the trip. Full terrorism cover, COVID-19 cover, and Post-departure purchase extension apply. Sources: Pg 6 Sec 11, Pg 9 Sec 26/27/28.",
+      "pdf_detail": "PDF Page 6, Section 11 (Preferred): Limits match JSON (Adult SGD 500, Child SGD 150, Family total SGD 800). Details implied by section title 'Losing money'. PDF Page 9, Sections 26, 27, 28 confirm Terrorism, COVID-19, and Post-departure purchase applicability."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Emergency medical evacuation",
+      "json_detail": "Limits: Adult 70+ 'See limit under section 14' (combined SGD 350k), Adult <70 Unlimited, Child Unlimited, Family total SGD 2M. Details: Covers expenses for emergency medical evacuation to SG or nearest appropriate facility due to serious injury/sickness overseas. Limit for Adult 70+ combined with Sec 14 & 19. Full terrorism cover, COVID-19 cover, and Post-departure purchase extension apply. Sources: Pg 4, Pg 8 Sec 18, Pg 9 Sec 26/27/28.",
+      "pdf_detail": "PDF Page 8, Section 18 (Preferred): Limits match JSON (Adult 70+ 'See limit under section 14', Adult <70 Unlimited, Child Unlimited, Family total SGD 2M). PDF Page 7, Section 14 confirms combined limit for Adult 70+ (Sec 14, 18, 19) is SGD 350k. PDF Page 9, Sections 26, 27, 28 confirm Terrorism, COVID-19, and Post-departure purchase applicability. PDF Page 4 mentions post-departure benefits including emergency medical evacuation."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Family Cover Definition",
+      "json_detail": "Limits: Unlimited number of children covered. Details: Covers 1 or 2 adults (spouses/partners, >=16 yrs, parent/legal guardian) and any number of their children (<21 yrs, biological/adopted/ward). All must be insured under the same policy. Must travel together for single trip plans. Family total is the maximum amount payable per benefit section for the family during one trip; individual limits still apply. Sources: Pg 2 Item 2, Pg 10 Note 1, Pg 5-9 Footnote ^.",
+      "pdf_detail": "PDF Page 10, Note 1 defines Family Cover matching JSON details (1-2 adults >=16, unlimited children <21, same policy, travel together for single trips). PDF Page 2, Item 2 confirms unlimited children. PDF Pages 5-9, Footnote ^ defines Family total limit application matching JSON details."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Shortening your trip",
+      "json_detail": "Limits: Overall section limit SGD 15k (person), SGD 45k (family). Limit for extra expenses to return to Singapore SGD 3k (person). Details: Covers non-refundable expenses and additional costs to return to Singapore if trip shortened due to specified reasons, including COVID-19. Full terrorism cover, COVID-19 cover, and Post-departure purchase extension apply. Sources: Pg 2 Item 1, Pg 3 'Up to $15,000...', Pg 5 Sec 3, Pg 9 Sec 26/27/28, Pg 10 Note 5.",
+      "pdf_detail": "PDF Page 5, Section 3 (Preferred): Limits match JSON (Overall SGD 15k person / SGD 45k family; Extra expenses SGD 3k). PDF Page 10, Note 5 confirms cover for shortening due to COVID-19. PDF Page 2 Item 1 & Page 3 mention cover up to SGD 15k. PDF Page 9, Sections 26, 27, 28 confirm Terrorism, COVID-19, and Post-departure purchase applicability."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Kidnap and hostage",
+      "json_detail": "Limits: Overall section limit SGD 10k (person), SGD 30k (family). Benefit per 24 hours SGD 500 (person). Details: Provides a daily benefit if the insured person is unlawfully detained for ransom. Full terrorism cover, COVID-19 cover, and Post-departure purchase extension apply. Sources: Pg 9 Sec 21, 26, 27, 28.",
+      "pdf_detail": "PDF Page 9, Section 21 (Preferred): Limits match JSON (Overall SGD 10k person / SGD 30k family; Per 24 hours SGD 500). Details implied by section title. PDF Page 9, Sections 26, 27, 28 confirm Terrorism, COVID-19, and Post-departure purchase applicability."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Baggage delay",
+      "json_detail": "Limits: Overall section SGD 2k (person), Family SGD 4k (Overseas). Overseas delay: Adult SGD 200/6hrs, Child SGD 50/6hrs. Delay arriving in SG: Adult SGD 200/6hrs, Child SGD 50/6hrs. Details: Payable for delay of checked-in baggage >6 consecutive hours upon arrival overseas or back in SG. Full terrorism cover, COVID-19 cover, and Post-departure purchase extension apply. Sources: Pg 6 Sec 9, Pg 9 Sec 26/27/28.",
+      "pdf_detail": "PDF Page 6, Section 9 (Preferred): Limits match JSON (Overall SGD 2k; Overseas: Adult SGD 200/6hrs, Child SGD 50/6hrs, Family SGD 4k; SG arrival: Adult SGD 200/6hrs, Child SGD 50/6hrs). Details mention delay >6hrs. PDF Page 9, Sections 26, 27, 28 confirm Terrorism, COVID-19, and Post-departure purchase applicability."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Personal accident",
+      "json_detail": "Base Limits: Adult 70+ SGD 200k, Adult <70 SGD 500k, Child SGD 125k, Family SGD 1.5M. Conditional Limits (Public transport double cover): Adult 70+ SGD 400k, Adult <70 SGD 1M, Child SGD 250k, Family SGD 3M. Details: Provides compensation based on a scale for accidental death or permanent disability (Scale listed: Death 100%, Total Disability 100%, Loss of 2+ limbs/both eyes 100%, Loss of 1 limb/1 eye/speech/hearing 50%). Full terrorism cover, COVID-19 cover, and Post-departure purchase extension apply. Sources: Pg 7 Sec 13, Pg 9 Sec 26/27/28.",
+      "pdf_detail": "PDF Page 7, Section 13 (Preferred): Base limits and Public transport double cover limits match JSON exactly. Scale of compensation percentages listed match JSON details. PDF Page 9, Sections 26, 27, 28 confirm Terrorism, COVID-19, and Post-departure purchase applicability."
+    }
+  ],
+  "pdf_only_findings": [],
+  "llm_call_status": "SUCCESS"
+}

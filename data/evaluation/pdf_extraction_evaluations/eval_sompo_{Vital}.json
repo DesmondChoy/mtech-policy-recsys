@@ -1,0 +1,75 @@
+{
+  "policy_tier_evaluated": "Vital",
+  "json_source": "data\\policies\\processed\\sompo_{Vital}.json",
+  "pdf_source": "data\\policies\\raw\\sompo_{Vital}.pdf",
+  "evaluation_results": [
+    {
+      "result": "match",
+      "coverage_name": "Personal Accident",
+      "json_detail": "Limits: 70&below=SGD 150k, Over70=SGD 50k, Child=SGD 50k, Family=No aggregate. Details: Covers Accidental Death, Permanent Disablement, Third Degree Burns. War Cover extension (Sec 27) applies for innocent bystander Death/Disablement. Source: Pg 3 Sec 1, Pg 5 Sec 27.",
+      "pdf_detail": "Limits (Vital): 70&below=SGD 150k, Over70=SGD 50k, Child=SGD 50k, Family=No aggregate limit. Details: Covers Accidental Death, Permanent Disablement and Third Degree Burns (Sec 1). War Cover (Sec 27) provides Extension to Section 1 for innocent bystander Death/Disablement."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Medical Expenses Incurred Overseas",
+      "json_detail": "Limits: 70&below=SGD 150k, Over70=SGD 50k, Family=SGD 300k. Sub-limits: Physio/Chinese/Chiro=SGD 300 ($50/visit), Dentist=SGD 500. Details: Covers outpatient/hospitalisation overseas (accident/sickness), emergency dental (accident), accidental miscarriage. Source: Pg 3 Sec 2.",
+      "pdf_detail": "Limits (Vital): 70&below=SGD 150k, Over70=SGD 50k, Family=SGD 300k. Sub-limits: Physio/Chinese/Chiro=Up to SGD 300 ($50/visit), Dentist=Up to SGD 500. Details: Covers outpatient and hospitalisation medical expenses incurred overseas arising from accident or sickness, emergency dental expenses arising from accident, and accidental miscarriage. Source: Pg 3 Sec 2."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Emergency Medical Evacuation & Repatriation (Including Mortal Remains) Back to Singapore",
+      "json_detail": "Limits: <=70yrs=SGD 600k, >70yrs=SGD 100k, Family=No aggregate. Conditional (Pre-existing): <=70yrs=N.A., >70yrs=N.A. Details: Covers evac/repat/mortal remains. Includes pregnancy complications. Pre-existing not covered under Vital. Source: Pg 3 Sec 4 & Pg 2 Highlights.",
+      "pdf_detail": "Limits (Vital): <=70yrs=SGD 600k, >70yrs=SGD 100k. Family=No aggregate limit. Pre-existing Conditions Limits (Vital): <=70yrs=N.A., >70yrs=N.A. Details: Includes pregnancy-related complications. Pre-existing medical conditions cover is Not Applicable (N.A.) for Vital plan based on limits table. Source: Pg 3 Sec 4."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Overseas Hospitalisation Allowance",
+      "json_detail": "Limits: Per Person=SGD 200/day, up to 20 days. Details: Payable per complete day hospitalised overseas. Source: Pg 3 Sec 5.",
+      "pdf_detail": "Limits (Vital): Per Insured Person=SGD 200 per day, up to 20 days. Details: For each complete day you are hospitalised overseas. Source: Pg 3 Sec 5."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Loss or Damage to Baggage & Personal Effects",
+      "json_detail": "Limits: Person=SGD 3k, Family=SGD 6k. Sub-limits: Article/pair/set=SGD 250, Video/camera=SGD 500, Laptop/tablet=SGD 500, Mobile=SGD 250, Jewellery=SGD 500 aggregate. Details: Covers loss/damage during trip. Section (C) sub-limits apply. Source: Pg 4 Sec 11.",
+      "pdf_detail": "Limits (Vital): Person=SGD 3k, Family=SGD 6k. Sub-limits (Section C): Article/pair/set=SGD 250, Video/camera/lenses=SGD 500, Laptop/tablet=SGD 500, Mobile=SGD 250, Jewellery aggregate=SGD 500. Details: Covers loss or damage to baggage & personal effects. Source: Pg 4 Sec 11."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Trip Cancellation or Postponement",
+      "json_detail": "Limits: Person=SGD 5k, Family=SGD 10k. Details: Covers non-refundable travel/accommodation costs if trip is cancelled/postponed due to Insured Events within 30 days before departure. Includes loss of frequent flyer points. Source: Pg 4 Sec 13 & Pg 2 Highlights.",
+      "pdf_detail": "Limits (Vital): Person=SGD 5k, Family=SGD 10k. Details: Covers trip cancellation, postponement or replacement of traveller arising from Insured Events within 30 days before departure. Loss of frequent flyer points mentioned in Highlights (Pg 2). Source: Pg 4 Sec 13."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Personal Liability / Family Liability",
+      "json_detail": "Limits: Person/Family=SGD 1,000,000. Details: Covers legal liability for accidental injury to third parties or accidental damage to third party property. Source: Pg 4 Sec 17.",
+      "pdf_detail": "Limit (Vital): SGD 1,000,000 Per Insured Person or Family. Details: Covers Personal Liability / Family Liability. Source: Pg 4 Sec 17."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Baggage Delay",
+      "json_detail": "Limits: Person=SGD 100/6hrs (overseas), Person (SG arrival)=SGD 100 for 1st 6hrs only, Max=SGD 1k. Details: Pays cash benefit for delay > 6hrs. Covers wrong pickup overseas. Source: Pg 4 Sec 18.",
+      "pdf_detail": "Limits (Vital): Person=SGD 100 per full 6 hours (overseas), SGD 100 for 1st full 6 hours only (Singapore). Max=SGD 1k. Details: Extended to cover delay as a result of your baggage being wrongly picked up at the bag carousel by another passenger whilst overseas. Source: Pg 4 Sec 18."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Flight Deviation",
+      "json_detail": "Limits: Person=SGD 100/6hrs, Max=SGD 1k. Details: Pays cash benefit per 6 full hrs delay due to adverse weather or emergency landing for fellow passenger. Source: Pg 5 Sec 21.",
+      "pdf_detail": "Limits (Vital): Person=SGD 100 per 6 hours. Max=SGD 1k. Details: Due to (a) adverse weather conditions; or (b) landing at alternative destination for emergency medical treatment of a fellow passenger. Source: Pg 5 Sec 21."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Quarantine Allowance Due to 17 Infectious Diseases Upon Return to Singapore",
+      "json_detail": "Limits: Person=SGD 50/day for 5 days. Details: Pays daily cash benefit if quarantined upon return due to exposure to 1 of 17 specified diseases (list provided). Source: Pg 6 Sec 35.",
+      "pdf_detail": "Limits (Vital): Person=SGD 50 per day for 5 days. Details: Payable if quarantined upon return to Singapore due to exposure to one of the 17 specified infectious diseases listed (SARS, Dengue, vCJD, Nipah, JE, Malaria, TB, Measles, Rabies, Melioidosis, HFMD, Avian Flu strains, Chikungunya, Mumps, Rubella, MERS, Zika). Source: Pg 6 Sec 35."
+    }
+  ],
+  "pdf_only_findings": [
+    {
+      "coverage_name": "Full Terrorism Cover",
+      "pdf_detail": "Provides cover up to SGD 250,000 in aggregate for benefits covered under Sections 1-14, 16-21, 24, 29, 31 if caused by an Act of Terrorism.",
+      "pdf_source_location": "Page 5, Section 26"
+    }
+  ],
+  "llm_call_status": "SUCCESS"
+}

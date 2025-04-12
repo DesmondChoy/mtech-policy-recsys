@@ -1,0 +1,69 @@
+{
+  "policy_tier_evaluated": "GO Japan!",
+  "json_source": "data\\policies\\processed\\sompo_{GO Japan!}.json",
+  "pdf_source": "data\\policies\\raw\\sompo_{GO Japan!}.pdf",
+  "evaluation_results": [
+    {
+      "result": "match",
+      "coverage_name": "Personal Accident",
+      "json_detail": "Limits: SGD 250,000 (<=70 years), SGD 50,000 (>70 years), SGD 100,000 (Child), No aggregate limit (Family). Details: Covers Accidental Death, Permanent Disablement, Third Degree Burns; Includes amateur sports (skydiving, trekking up to 3,500m, etc.). Sources: Page 3, Section 1; Page 2, Amateur Sports Cover.",
+      "pdf_detail": "Limits (GO Japan! column, Pg 3, Sec 1): SGD 250,000 (70 years & below), SGD 50,000 (Over 70 years), SGD 100,000 (Child). Family: No aggregate limit for family. Details: Covers Accidental Death, Permanent Disablement and Third Degree Burns. Amateur sports cover described on Pg 2."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Medical Expenses Incurred Overseas",
+      "json_detail": "Limits: SGD 500,000 (<=70 years), SGD 50,000 (>70 years), SGD 800,000 (Family), SGD 300 (Physio/Chinese/Chiro @ $50/visit), SGD 500 (Dentist). Details: Covers outpatient/hospitalisation (accident/sickness), emergency dental (accident), accidental miscarriage; Cashless services at 740 clinics/hospitals in Japan; 24-Hour EAJ Hotline (+81-3-3811-8212); Includes amateur sports. Sources: Page 3, Section 2; Page 2, GO Japan!; Page 2, 24-Hour Medical Assistance; Page 2, Amateur Sports Cover.",
+      "pdf_detail": "Limits (GO Japan! column, Pg 3, Sec 2): SGD 500,000 (70 years & below), SGD 50,000 (Over 70 years), SGD 800,000 (Per Family). Includes Treatment by Physiotherapist, Chinese Physician or Chiropractor up to SGD 300 ($50 per visit), Dentist up to SGD 500. Details: Covers outpatient/hospitalisation (accident/sickness), emergency dental (accident), accidental miscarriage. Cashless services mentioned. Pg 2 GO Japan! highlights: Cashless at 740 clinics/hospitals, Medical expenses up to $500,000 (Individuals) / $800,000 (Families). Pg 2 24-Hour Medical Assistance mentions EAJ hotline. Pg 2 Amateur Sports mentions coverage."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Emergency Medical Evacuation & Repatriation (Including Mortal Remains) Back to Singapore",
+      "json_detail": "Limits: Unlimited (<=70 years), SGD 100,000 (>70 years), SGD 100,000 (<=70 years, Pre-existing), SGD 50,000 (>70 years, Pre-existing), No aggregate limit (Family). Details: Includes pregnancy-related complications and pre-existing medical conditions. Sources: Page 3, Section 4; Page 2, Medical Evacuation & Repatriation.",
+      "pdf_detail": "Limits (GO Japan! column, Pg 3, Sec 4): Unlimited (up to 70 years), SGD 100,000 (above 70 years), SGD 100,000 (up to 70 years, Pre-existing Conditions), SGD 50,000 (above 70 years, Pre-existing Conditions). Family: No aggregate limit for family. Details: Includes pregnancy-related complications and pre-existing medical conditions."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Loss or Damage to Baggage & Personal Effects",
+      "json_detail": "Limits: SGD 5,000 (Person), SGD 10,000 (Family). Sub-limits: SGD 500 (article/pair/set), SGD 1,000 (video/camera equip), SGD 1,000 (laptop/tablet), SGD 350 (mobile phone), SGD 500 (jewellery agg.), SGD 3,000 (electronic items agg.), SGD 5,000 (suitcase/bag agg.). Details: Covers loss/damage during trip, sub-limits apply per Section (B). Source: Page 4, Section 11.",
+      "pdf_detail": "Limits (GO Japan! column, Pg 4, Sec 11): SGD 5,000 (Per Insured Person), SGD 10,000 (Per Family). Sub-limits: Section (B) limits apply. Section (B) limits listed are: $500 (any one article/pair/set), $1,000 (video equip/camera/etc.), $1,000 (laptop/tablet), $350 (mobile phone), $500 (jewellery agg.), $3,000 (electronic items agg.), $5,000 (suitcase/bag agg.)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Trip Cancellation or Postponement",
+      "json_detail": "Limits: SGD 6,000 (Person), SGD 10,000 (Family). Details: Covers non-refundable expenses if cancelled/postponed due to Insured Events within 30 days before departure; includes loss of frequent flyer points. Sources: Page 4, Section 13; Page 2, Trip Cancellation or Postponement.",
+      "pdf_detail": "Limits (GO Japan! column, Pg 4, Sec 13): SGD 6,000 (Per Insured Person), SGD 10,000 (Per Family). Details: Covers trip cancellation, postponement or replacement of traveller arising from Insured Events within 30 days before departure. Pg 2 Highlight mentions coverage up to $15,000 (applies to Elite) but also mentions loss of frequent flyer points coverage."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Travel Delay",
+      "json_detail": "Limits: SGD 100 (1st full 6 hrs, Overseas or Singapore), SGD 65 (per full 4 hrs thereafter, Overseas), Max Limit SGD 1,000. Details: Payable for delay of scheduled public conveyance due to any cause outside control; payout based on actual vs scheduled arrival; Covers all causes of unexpected delays. Sources: Page 4, Section 19; Page 1/2 Travel Delay For All Risks.",
+      "pdf_detail": "Limits (GO Japan! column, Pg 4, Sec 19): SGD 100 for 1st full 6 hours (overseas or in S'pore), SGD 65 per 4 hours thereafter (overseas). Maximum Limit SGD 1,000. Details: Due to any cause outside your control. Payout based on actual arrival time vs original scheduled arrival time. Pg 1/2 Highlight mentions 'Travel Delay for All Risks'."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Flight Deviation",
+      "json_detail": "Limits: SGD 100 (1st full 6 hrs), SGD 65 (per full 4 hrs thereafter), Max Limit SGD 1,000. Details: Payable for delay upon arrival due to flight deviation caused by adverse weather or emergency medical landing for fellow passenger. Source: Page 5, Section 21.",
+      "pdf_detail": "Limits (GO Japan! column, Pg 5, Sec 21): SGD 100 for 1st full 6 hours, SGD 65 per 4 hours thereafter. Maximum Limit SGD 1,000. Details: Due to (a) adverse weather conditions; or (b) landing at alternative destination for emergency medical treatment of a fellow passenger."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Full Terrorism Cover",
+      "json_detail": "Limits: SGD 250,000 (Aggregate Limit for applicable sections). Details: Provides cover for losses arising from acts of terrorism, up to an aggregate limit across applicable sections. Source: Page 5, Section 26.",
+      "pdf_detail": "Limit (GO Japan! column, Pg 5, Sec 26): SGD 250,000 (In aggregate for the above Sections)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Rental Vehicle Excess Cover",
+      "json_detail": "Limits: SGD 1,000 (Per Vehicle). Details: Covers the insurance excess payable if rental vehicle is damaged or stolen. Source: Page 5, Section 32.",
+      "pdf_detail": "Limit (GO Japan! column, Pg 5, Sec 32): SGD 1,000 (Per Vehicle)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Golf Cover",
+      "json_detail": "Limits: SGD 500 (Loss or damage of golf equipment), N.A. (Hole-in-one), N.A. (Unused green fees), N.A. (Damage of buggy). Details: Covers loss/damage to golf equipment; Hole-in-one, unused fees, buggy damage are N.A. for GO Japan! plan. Source: Page 6, Section 36.",
+      "pdf_detail": "Limits (GO Japan! column, Pg 6, Sec 36): SGD 500 (Loss or damage of golf equipment), N.A. (Hole-in-one), N.A. (Unused green fees), N.A. (Damage of buggy)."
+    }
+  ],
+  "pdf_only_findings": [],
+  "llm_call_status": "SUCCESS"
+}

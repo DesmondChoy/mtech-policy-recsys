@@ -1,0 +1,69 @@
+{
+  "policy_tier_evaluated": "Classic",
+  "json_source": "data\\policies\\processed\\income_{Classic}.json",
+  "pdf_source": "data\\policies\\raw\\income_{Classic}.pdf",
+  "evaluation_results": [
+    {
+      "result": "match",
+      "coverage_name": "Shortening your trip",
+      "json_detail": "Overall S$5000 (Per insured person), S$15000 (Family total); Extra expenses to return S$1000 (Per insured person). Covers non-refundable overseas transport/accommodation expenses + extra expenses to return due to unforeseen circumstances (incl. COVID-19 if serious sickness). Full terrorism, COVID-19 cover, Post-departure purchase apply. Excludes known events/pre-purchase losses/transport taken before purchase. Sources: P2(KB1), P3, P5(S3), P9(S26, S27, S28), P10(N5), P11(N9, N10).",
+      "pdf_detail": "PDF Page 5, Section 3 (Classic Tier): Overall section limit S$5,000 (Per insured person), S$15,000 (Family total); Limit for extra expenses to return S$1,000 (Per insured person). PDF Page 2/3 mention cover for shortening due to unforeseen circumstances like COVID-19. PDF Page 9 confirms Terrorism (S26), COVID-19 (S27), Post-departure (S28) apply. PDF Page 10/11 provide conditions (Note 5, 10) and exclusions (Note 9)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Travel delay",
+      "json_detail": "Overall S$1000 (Per insured person); Overseas delay: S$100 every 6 hours (Adult), S$50 every 6 hours (Child), Family total S$2000; Singapore delay (after 6 hours): S$150 (Adult), S$50 (Child). Payable if scheduled public transport delayed > 6 consecutive hours, not caused by you. Full terrorism, COVID-19 cover, Post-departure purchase apply. Sources: P2(KB4), P3, P5(S5), P9(S26, S27, S28), P10(N3), P11(N10).",
+      "pdf_detail": "PDF Page 5, Section 5 (Classic Tier): Overall section limit S$1,000; Overseas delay: S$100 (Adult)/S$50 (Child) every 6 hours, Family total S$2,000; Singapore delay (after 6 hours): S$150 (Adult)/S$50 (Child). PDF Page 10 Note 3 confirms payable if delay > 6 hours in a row and not caused by insured. PDF Page 9 confirms Terrorism (S26), COVID-19 (S27), Post-departure (S28) apply."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Baggage delay",
+      "json_detail": "Overall S$1000 (Per insured person); Overseas delay: S$200 every 6 hours (Adult), S$50 every 6 hours (Child), Family total S$2000; Singapore arrival delay (after 6 hours): S$200 (Adult), S$50 (Child). Payable for delay of checked-in baggage > 6 consecutive hours. Full terrorism, COVID-19 cover, Post-departure purchase apply. Sources: P6(S9), P9(S26, S27, S28), P11(N10).",
+      "pdf_detail": "PDF Page 6, Section 9 (Classic Tier): Overall section limit S$1,000; Overseas delay: S$200 (Adult)/S$50 (Child) every 6 hours, Family total S$2,000; Singapore arrival delay (after 6 hours): S$200 (Adult)/S$50 (Child). Payable for delay > 6 hours. PDF Page 9 confirms Terrorism (S26), COVID-19 (S27), Post-departure (S28) apply."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Losing money",
+      "json_detail": "S$250 (Adult - Per insured person), S$100 (Child - Per insured person), Family total S$450. Covers loss of cash or traveller's cheques due to theft or robbery during the trip. Full terrorism, COVID-19 cover, Post-departure purchase apply. Sources: P6(S11), P9(S26, S27, S28), P11(N10).",
+      "pdf_detail": "PDF Page 6, Section 11 (Classic Tier): S$250 (Adult), S$100 (Child), Family total S$450. PDF Page 9 confirms Terrorism (S26), COVID-19 (S27), Post-departure (S28) apply. Detail regarding theft/robbery assumed to be from full policy conditions but consistent with benefit name."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Medical expenses overseas",
+      "json_detail": "Adult >=70 S$300,000 (combined for sections 14, 18 and 19), Adult <70 S$250,000, Child S$150,000, Family total S$1,000,000; Limit for medical aids S$500 (Per insured person). Covers necessary medical treatment for unexpected injury/illness overseas (incl. COVID-19). Standard plans exclude pre-existing conditions. Full terrorism, COVID-19 cover, Post-departure purchase apply. Auto extension up to 14 days if hospitalised. Sources: P3, P5, P7(S14), P9(S26, S27, S28), P11(N8, N10).",
+      "pdf_detail": "PDF Page 7, Section 14 (Classic Tier): Adult >=70 S$300,000 (combined S14,18,19), Adult <70 S$250,000, Child S$150,000, Family total S$1,000,000; Limit for medical aids S$500. PDF Page 3 confirms overseas medical/COVID cover. PDF Page 5 excludes pre-existing for standard plans. PDF Page 9 confirms Terrorism (S26), COVID-19 (S27), Post-departure (S28) apply. PDF Page 11 Note 8 confirms auto extension if hospitalised."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Treatment by a Chinese medicine practitioner or a chiropractor",
+      "json_detail": "Overall S$300 (Per insured person), Family total S$1000; Limit per visit S$50 (Per insured person). Covers treatment by a registered practitioner during the trip. Refer to policy conditions for requirements/sub-limit (Note 4). Full terrorism, COVID-19 cover, Post-departure purchase apply. Sources: P2(KB5), P8(S16), P9(S26, S27, S28), P10(N4), P11(N10).",
+      "pdf_detail": "PDF Page 8, Section 16 (Classic Tier): Overall section limit S$300, Family total S$1,000; Limit per visit S$50. PDF Page 2 Key Benefit 5 mentions cover. PDF Page 10 Note 4 refers to policy conditions for requirements/sub-limit. PDF Page 9 confirms Terrorism (S26), COVID-19 (S27), Post-departure (S28) apply."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Emergency medical evacuation",
+      "json_detail": "Adult >=70 'See limit under section 14' (S$300k combined), Adult <70 S$500,000, Child S$500,000, Family total S$1,250,000. Covers expenses for emergency medical evacuation. Limit for Adult >=70 combined with S14/S19. Full terrorism, COVID-19 cover, Post-departure purchase apply. Sources: P4, P7(S14), P8(S18), P9(S26, S27, S28), P11(N10).",
+      "pdf_detail": "PDF Page 8, Section 18 (Classic Tier): Adult >=70 'See limit under section 14', Adult <70 S$500,000, Child S$500,000, Family total S$1,250,000. PDF Page 7 Section 14 confirms the combined limit for Adult >=70 is S$300,000 (covering S14, 18, 19). PDF Page 4 mentions post-departure cover includes this. PDF Page 9 confirms Terrorism (S26), COVID-19 (S27), Post-departure (S28) apply."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Home cover",
+      "json_detail": "Overall S$3000 (Per insured person), Family total S$3000; Limit per item S$500 (Per insured person). Covers loss or damage to home contents due to burglary or fire while home is unoccupied during trip. Full terrorism, COVID-19 cover, Post-departure purchase apply. Sources: P9(S23, S26, S27, S28), P11(N10).",
+      "pdf_detail": "PDF Page 9, Section 23 (Classic Tier): Overall section limit S$3,000, Family total S$3,000; Limit per item S$500. PDF Page 9 confirms Terrorism (S26), COVID-19 (S27), Post-departure (S28) apply. Detail regarding burglary/fire while unoccupied assumed to be from full policy conditions but consistent with benefit name."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Rental vehicle excess cover",
+      "json_detail": "S$1500 (Per insured person), Family total S$1500. Covers the insurance excess liable if rental vehicle is damaged or stolen during the trip. Full terrorism, COVID-19 cover, Post-departure purchase apply. Sources: P9(S25, S26, S27, S28), P11(N10).",
+      "pdf_detail": "PDF Page 9, Section 25 (Classic Tier): S$1,500 (Per insured person), Family total S$1,500. PDF Page 9 confirms Terrorism (S26), COVID-19 (S27), Post-departure (S28) apply. Detail regarding damage/theft assumed to be from full policy conditions but consistent with benefit name."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Full terrorism cover",
+      "json_detail": "Limits: Adult >=70 S$100,000, Adult <70 S$150,000, Child S$75,000, Family total S$600,000. Provides cover for losses arising from acts of terrorism for benefits under sections 1 to 25, up to these specified limits. Post-departure purchase applies. Sources: P9(S26, S28).",
+      "pdf_detail": "PDF Page 9, Section 26 (Classic Tier): Limits: Adult >=70 S$100,000, Adult <70 S$150,000, Child S$75,000, Family total S$600,000. Applies to sections 1 to 25. PDF Page 9 Section 28 confirms Post-departure purchase extension applies to this section."
+    }
+  ],
+  "pdf_only_findings": [],
+  "llm_call_status": "SUCCESS"
+}

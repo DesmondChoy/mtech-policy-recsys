@@ -1,0 +1,69 @@
+{
+  "policy_tier_evaluated": "Deluxe",
+  "json_source": "data\\policies\\processed\\sompo_{Deluxe}.json",
+  "pdf_source": "data\\policies\\raw\\sompo_{Deluxe}.pdf",
+  "evaluation_results": [
+    {
+      "result": "match",
+      "coverage_name": "Personal Accident",
+      "json_detail": "Limits: Per Insured Person - 70 years & below: SGD 250000, Per Insured Person - Over 70 years: SGD 50000, Per Insured Child: SGD 100000, Per Family: No aggregate limit. Details: Covers Accidental Death, Permanent Disablement and Third Degree Burns (Page 3, Section 1). Includes Amateur Sports Cover (Page 2).",
+      "pdf_detail": "Limits (Deluxe): Per Insured Person 70 & below: $250,000, Over 70 years: $50,000, Child: $100,000. Per Family: No aggregate limit. Details: Covers Accidental Death, Permanent Disablement and Third Degree Burns (Page 3, Section 1). Amateur Sports Cover highlighted on Page 2."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Medical Expenses Incurred Upon Return to Singapore",
+      "json_detail": "Limits: Per Insured Person - 70 years & below: SGD 15000, Per Insured Person - Over 70 years: SGD 2500, Per Family: SGD 30000. Sub-limits: Treatment by Physiotherapist, Chinese Physician or Chiropractor: SGD 300 ($50 per visit), Treatment by Dentist: SGD 500. Details: Follow-up within 31 days, or treatment within 48hrs if not sought overseas (Page 3, Section 3).",
+      "pdf_detail": "Limits (Deluxe): Per Insured Person 70 & below: $15,000, Over 70 years: $2,500, Per Family: $30,000. Includes Treatment by Physio/Chinese Physician/Chiropractor ($50 per visit) up to $300. Includes Dentist up to $500. Details: Follow-up treatment within 31 days from return date. If initial treatment not sought overseas, treatment in Singapore must be sought within 48 hours from return date and up to 31 days (Page 3, Section 3)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Overseas Hospitalisation Allowance",
+      "json_detail": "Limit: Per Insured Person: SGD 200 per day, up to 100 days. Details: Payable for each complete day hospitalised overseas (Page 3, Section 5).",
+      "pdf_detail": "Limit (Deluxe): Per Insured Person: $200 per day, up to 100 days. Details: For each complete day you are hospitalised overseas (Page 3, Section 5)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Compassionate Visit by a Relative or Friend",
+      "json_detail": "Limits: Due to injury/sickness: Per Insured Person SGD 15000, Per Family SGD 30000. In event of death: Per Insured Person SGD 3000, Per Family SGD 6000. Details: Covers travel costs for one relative/friend to visit if hospitalised or assist in arrangements upon death (Page 3, Section 10).",
+      "pdf_detail": "Limits (Deluxe): Due to your injury, sickness or disease: Per Insured Person $15,000, Per Family $30,000. In the event of your death: Per Insured Person $3,000, Per Family $6,000. (Page 3, Section 10)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Trip Cancellation or Postponement",
+      "json_detail": "Limits: Per Insured Person: SGD 6000, Per Family: SGD 10000. Details: Covers non-refundable travel/accommodation costs due to trip cancellation/postponement/replacement arising from Insured Events within 30 days before departure. Includes loss of frequent flyer points (Page 4, Section 13 & Page 2).",
+      "pdf_detail": "Limits (Deluxe): Per Insured Person: $6,000, Per Family: $10,000. Details: Covers trip cancellation, postponement or replacement of traveller arising from Insured Events within 30 days before departure (Page 4, Section 13). Note: Page 2 highlight mentions 'up to $15,000' which corresponds to Elite plan, but the Deluxe table value is correctly reflected in JSON."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Travel Delay",
+      "json_detail": "Limits: Per Insured Person: SGD 100 for 1st full 6 hours (overseas or S'pore), SGD 65 per 4 hours thereafter (overseas). Maximum Limit Per Insured Person: SGD 1000. Details: Covers delays due to any cause outside control, based on actual vs scheduled arrival (Page 4, Section 19 & Page 1/2).",
+      "pdf_detail": "Limits (Deluxe): Per Insured Person: $100 for 1st full 6 hours (overseas or in S'pore), $65 per 4 hours thereafter (overseas). Maximum Limit: $1,000. Details: Due to any cause outside your control. Payout based on actual arrival time vs original scheduled arrival time (Page 4, Section 19). Highlight on Page 1/2 confirms 'Travel Delay for All Risks'."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Flight Deviation",
+      "json_detail": "Limits: Per Insured Person: SGD 100 for 1st full 6 hours, SGD 65 per 4 hours thereafter. Maximum Limit Per Insured Person: SGD 1000. Details: Covers delay due to adverse weather or emergency landing for fellow passenger (Page 5, Section 21).",
+      "pdf_detail": "Limits (Deluxe): Per Insured Person: $100 for 1st full 6 hours, $65 per 4 hours thereafter. Maximum Limit: $1,000. Details: Due to (a) adverse weather conditions; or (b) landing at alternative destination for emergency medical treatment of a fellow passenger (Page 5, Section 21)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Kidnap Benefit",
+      "json_detail": "Limits: Per Insured Person: SGD 500 per 48 hours. Maximum Limit Per Insured Person: SGD 5000. Details: Provides cash benefit if kidnapped during trip (Page 5, Section 25).",
+      "pdf_detail": "Limits (Deluxe): Per Insured Person: $500 per 48 hours. Maximum Limit: $5,000. (Page 5, Section 25)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Loss or Damage to Baggage & Personal Effects",
+      "json_detail": "Limits: Per Insured Person: SGD 5000, Per Family: SGD 10000. Sub-limits: Any one article/pair/set: SGD 500; Video/camera: SGD 1000; Laptop/tablet: SGD 1000; Mobile phone: SGD 350; Jewellery aggregate: SGD 500; Electronic items aggregate: SGD 3000; Suitcase/bag aggregate: SGD 5000. Details: Covers loss/damage during trip (Page 4, Section 11).",
+      "pdf_detail": "Limits (Deluxe): Per Insured Person: $5,000, Per Family: $10,000. Sub-limits (Section B): $500 per article/pair/set; $1,000 per video/camera item; $1,000 per laptop/tablet; $350 per mobile phone; $500 aggregate jewellery; $3,000 aggregate electronics; $5,000 aggregate per suitcase/bag. (Page 4, Section 11)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Full Terrorism Cover",
+      "json_detail": "Limit: Per Insured Person (In aggregate for applicable sections): SGD 250000. Details: Provides cover for losses arising from acts of terrorism, up to an aggregate limit across relevant benefit sections (Page 5, Section 26).",
+      "pdf_detail": "Limit (Deluxe): Per Insured Person: $250,000. Details: In aggregate for the above Sections (Page 5, Section 26)."
+    }
+  ],
+  "pdf_only_findings": [],
+  "llm_call_status": "SUCCESS"
+}

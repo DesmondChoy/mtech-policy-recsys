@@ -1,0 +1,69 @@
+{
+  "policy_tier_evaluated": "Premium",
+  "json_source": "data\\policies\\processed\\fwd_{Premium}.json",
+  "pdf_source": "data\\policies\\raw\\fwd_{Premium}.pdf",
+  "evaluation_results": [
+    {
+      "result": "match",
+      "coverage_name": "Trip cancellation and loss of deposit",
+      "json_detail": "Base Limits: S$7500 (Per Person), S$18750 (Family). Conditional Limits: S$7500 (Pre-existing, 50% co-pay), S$1000/S$2500 (Cancel for any reason, 50% cost). Details: Covers cancellation within 30 days pre-departure for specified events (illness, death, witness duty, etc.). Covers unused non-refundable costs. Mentions seeking refunds first, exclusions (policy <72hrs pre-departure, upgrades). Source locations cited: Pages 9, 10, 11, 22, 27, 31.",
+      "pdf_detail": "Base Limits (Page 5): S$7,500 (Per Person), S$18,750 (Overall family). Conditional Limits (Page 9): S$7,500 (Pre-existing, 50% co-pay), S$1,000/S$2,500 (Cancel for any reason). Details: Covers cancellation within 30 days pre-departure for specified events (Page 10: serious injury/illness, death, witness duty, home damage, public event, onward flight cancellation, hijack >12hrs). Pays unused costs/fees (Page 11). Must seek refunds first, claim reduced (Page 11). Excludes claims if policy bought <72hrs before departure, upgrades (Page 11). Pre-existing (Page 22) and Cancel for any reason (Page 27) details align. General exclusions apply (Page 31)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Trip diversion",
+      "json_detail": "Base Limits: S$500 (Per Person), Basis: S$100 for every six hours diverted while overseas. Details: Pays if airplane diverted for 6+ continuous hours before reaching destination. Requires written proof from provider. Source locations cited: Pages 12, 13.",
+      "pdf_detail": "Base Limits (Page 5): S$500 (Overall), Basis: S$100 for every six hours diverted while overseas. Details: Pays S$100 for every 6 continuous hours airplane is diverted (Page 12, 13). Requires written proof showing hours and reason. Cannot claim if traveller caused delay (Page 13)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Baggage delay",
+      "json_detail": "Base Limits: S$150 (Per Person), Basis: S$150 for every six hours of delay overseas OR S$150 for first six hour delay in Singapore only. Details: Pays if checked-in baggage delayed/misdirected 6+ continuous hours after arrival. Requires written proof. Paid per claim, not per bag. Source locations cited: Pages 14.",
+      "pdf_detail": "Base Limits (Page 6): S$150 (Overall), Basis: S$150 for every six hours of delay / S$150 for first six hour delay in Singapore only. Details: Pays if checked-in baggage delayed/misdirected/misplaced for 6+ continuous hours after arrival (Page 14). Pays S$150 per 6-hour period overseas, or S$150 for first 6 hours in SG (Page 14). Requires written proof. Paid per claim, not per bag (Page 14)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Theft of or damage to baggage or personal belongings",
+      "json_detail": "Base Limits: S$3000 (Per Person), S$7500 (Family). Sub-limits: Laptop/Tablet S$1000, Mobile S$300, Jewellery S$300, Other items S$300. Details: Pays for theft/accidental damage/loss by airline. Pays lower of depreciated value or repair/replacement. Depreciation rules specified (Mobile 24m, Laptop 36m, etc.). Proof of purchase rules. Electronics/jewellery must be carried on. Police report within 24hrs. Exclusions listed. Source locations cited: Pages 14, 15, 36.",
+      "pdf_detail": "Base Limits (Page 6): S$3,000 (Overall), S$7,500 (Family). Sub-limits: S$1,000 (Laptop/Tablet), S$300 (Mobile), S$300 (Jewellery), S$300 (Other items per item). Details: Pays for theft/accidental damage/loss by airline (Page 14). Pays lower of depreciated value or repair/replacement (Page 14). Depreciation table provided (Page 15: Mobile 24m, Laptop 36m, Belongings 60m, Jewellery 100%). Proof of purchase rules (Page 15). Electronics/jewellery must be carried on (Page 15). Police report within 24hrs (Page 15). Exclusions listed (Page 15: perishables, wear & tear, etc.). Replaced item becomes FWD property (Page 36)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Emergency medical evacuation & repatriation",
+      "json_detail": "Base Limits: Unlimited (Per Person). Conditional Limits: Unlimited (Pre-existing). Details: Covers moving traveller for life-threatening condition (overseas/SG) or return of remains. Must call Emergency Assistance. FWD decides method/facility. Covers transport, admin fees, basic mortician costs. Source locations cited: Pages 9, 17, 24, 31.",
+      "pdf_detail": "Base Limits (Page 7): Unlimited. Conditional Limits (Page 9): No specific limit shown for Pre-existing, implies base Unlimited applies. Details: Covers transport for life-threatening condition from unexpected illness/injury overseas, to appropriate facility or SG, or return of remains (Page 17). Must call Emergency Assistance (+65 6322 2072) (Page 17). FWD decides method/facility (Page 17). Covers transport (air ambulance etc.), admin fees, reasonable mortician costs (embalmment, cremation, basic casket/urn) (Page 17). Pre-existing cover confirmed (Page 24). General exclusions apply (Page 31)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Personal accident",
+      "json_detail": "Base Limits: S$200k (Adult <70), S$40k (Adult >=70), S$60k (Child), S$500k (Family). Details: Pays lump sum for death/TPD from accident during trip within 90 days. Pays % based on injury scale (death/TPD 100%, limb loss 50%, etc.). TPD definition provided. Disappearance clause included. Source locations cited: Pages 18, 31.",
+      "pdf_detail": "Base Limits (Page 7): S$200,000 (Adult <70), S$40,000 (Adult >=70), S$60,000 (Child), S$500,000 (Overall family). Details: Pays lump sum if accident during trip causes death/TPD within 90 days (Page 18). Payment scale table provided (% for death/TPD, loss of limbs/sight/hearing/speech, burns) (Page 18). TPD defined as unable to work 6 months and unlikely ever (Page 18). Max 100% payout per person/accident. Disappearance clause included (Page 18). General exclusions apply (Page 31)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Medical expenses incurred overseas",
+      "json_detail": "Base Limits: S$200k (Adult <70), S$40k (Adult >=70), S$60k (Child), S$500k (Family). Sub-limits: Mobility aids 'Not covered', Dental (accident) S$2000. Conditional Limits: S$50k (Pre-existing, 50% co-pay). Details: Reimburses medically necessary treatment for unexpected illness/injury overseas up to 30 days. Includes ambulance, specialist (referred), accidental dental. Excludes planned treatment, non-natural teeth, mobility aids. Source locations cited: Pages 9, 19, 24, 31-32.",
+      "pdf_detail": "Base Limits (Page 7): S$200,000 (Adult <70), S$40,000 (Adult >=70), S$60,000 (Child), S$500,000 (Overall family). Sub-limits: Mobility aids 'Not covered', Dental (accident) S$2,000. Conditional Limits (Page 9): S$50,000 (Pre-existing, 50% co-pay). Details: Reimburses medically necessary treatment costs for unexpected illness/injury overseas (Page 19). Covers up to 30 days from first treatment (Page 19). Includes ambulance, specialist (referred), accidental dental, medical equipment (Page 19). Excludes mobility aids, dental disease, non-natural teeth, planned treatment (Page 19). Pre-existing cover confirmed (Page 24). General exclusions apply (Page 31-32)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Daily hospital cash while overseas",
+      "json_detail": "Base Limits: S$5000 (Per Person), Capped at S$200 per day. ICU Rate: Benefit doubled (Capped at S$400 per day). Details: Pays daily benefit for continuous 24-hr confinement in overseas hospital due to unexpected illness/injury, if medically necessary. Source locations cited: Page 19.",
+      "pdf_detail": "Base Limits (Page 7): S$5,000 (Overall), Capped at S$200 per day. ICU Rate: Note confirms daily amount doubled if in ICU, capped at S$400 per day. Details: Pays benefit for every continuous 24-hour period confined to overseas hospital due to unexpected illness/injury suffered overseas (Page 19). Admission must be medically necessary. ICU doubling confirmed (Page 19)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Chinese medicine practitioner, physiotherapist and chiropractor expenses",
+      "json_detail": "Base Limits: S$300 (Per Person), Capped at S$50 per visit. Details: Pays for treatment overseas or within 48hrs of return due to overseas illness/injury. Claimable if prior overseas treatment OR sought within 48hrs return. Covers up to 30 days post-return. Excludes interested party. Source locations cited: Page 20.",
+      "pdf_detail": "Base Limits (Page 8): S$300 (Overall), Capped at S$50 per visit. Details: Pays for treatment from Chinese med practitioner, physio, or chiro overseas or within 48hrs of return, if needed due to unexpected illness/injury overseas (Page 20). Cap S$50/visit confirmed (Page 20). Claimable only if received medical treatment overseas for same condition OR sought treatment within 48hrs of return (Page 20). Covers treatment up to 30 days from return date (if sought within 48hrs) (Page 20). Excludes treatment from interested party (Page 20)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Car rental excess",
+      "json_detail": "Optional Cover. Base Limits: S$300 (Per Incident). Details: Reimburses excess/deductible for accidental loss/damage to rental car overseas. Conditions: named driver, legally allowed, followed rules. Requires docs (agreement, receipts). Rental collected overseas. One claim per car. Source locations cited: Pages 9, 28.",
+      "pdf_detail": "Optional Cover (Page 9): Premium tier shows S$300 limit. Details (Page 28): Reimburses car rental excess/deductible for accidental loss/damage to rental car from licensed operator overseas. Conditions: named driver/co-driver, legally allowed, driving at time, followed rental agreement/local laws. Requires copy of agreement, receipts, reports. Rental car must be collected overseas. Only one claim paid per rental car. Note confirms it's optional for Premium (included base for Business/First)."
+    }
+  ],
+  "pdf_only_findings": [],
+  "llm_call_status": "SUCCESS"
+}

@@ -1,0 +1,69 @@
+{
+  "policy_tier_evaluated": "Deluxe",
+  "json_source": "data\\policies\\processed\\income_{Deluxe}.json",
+  "pdf_source": "data\\policies\\raw\\income_{Deluxe}.pdf",
+  "evaluation_results": [
+    {
+      "result": "match",
+      "coverage_name": "Cancelling your trip",
+      "json_detail": "Limits: Per insured person SGD 10000, Family total SGD 30000. Details: Covers non-refundable overseas transport/accommodation due to unforeseen circumstances like COVID-19 (serious sickness). COVID conditions: event after policy purchase, within 30 days pre-departure, policy bought >=3 days prior (unless accidental), vaccination/test requirements met. Sources: Pg 2 KB1, Pg 3 COVID, Pg 10 Note 5, Pg 11 Note 10, Pg 5 Sec 1.",
+      "pdf_detail": "Limits (Page 5, Section 1, Deluxe): Per insured person S$10,000, Family total S$30,000. Details: Covers overseas transport/accommodation (Pg 2 KB1). COVID-19 conditions mentioned in Notes: event after purchase, within 30 days pre-departure, policy bought >=3 days prior unless accidental (Pg 10 Note 5); must fulfill vaccination/test requirements, COVID-19 must result in serious sickness (Pg 11 Note 10)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Travel delay",
+      "json_detail": "Limits: Overall Person SGD 1500, Family SGD 3000. Overseas: SGD 100/adult, SGD 50/child per 6 hrs. Singapore: SGD 150/adult, SGD 50/child after 6 hrs. Details: Delay > 6hrs, not caused by insured. Sources: Pg 2 KB4, Pg 10 Note 3, Pg 5 Sec 5, Pg 9 Sec 28.",
+      "pdf_detail": "Limits (Page 5, Section 5, Deluxe): Overall section limit S$1,500. Overseas delay: Adult S$100, Child S$50 (per 6 hrs). Singapore delay: Adult S$150, Child S$50 (after 6 hrs). Family total S$3,000. Details: Delay must be > 6 hours in a row, not caused by insured (Pg 10 Note 3). Covered under post-departure purchase (Pg 9 Sec 28)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Loss or damage of baggage and personal belongings",
+      "json_detail": "Limits: Overall Person SGD 5000, Family SGD 12500. Sub-limits: Laptop SGD 1000, Valuables SGD 500, Other items SGD 500. Sources: Pg 6 Sec 10, Pg 9 Sec 28.",
+      "pdf_detail": "Limits (Page 6, Section 10, Deluxe): Overall section limit S$5,000. Sub-limits: Laptop S$1,000, Watches/jewellery/valuables S$500, Other items (each item/set/pair) S$500. Family total S$12,500. Covered under post-departure purchase (Pg 9 Sec 28)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Personal accident",
+      "json_detail": "Limits (Base): Adult 70+ SGD 125k, Adult <70 SGD 200k, Child SGD 100k, Family SGD 800k. Limits (Public transport double): Adult 70+ SGD 250k, Adult <70 SGD 400k, Child SGD 200k, Family SGD 1.6M. Details: Scale of compensation applies. Sources: Pg 7 Sec 13, Pg 9 Sec 28.",
+      "pdf_detail": "Limits (Page 7, Section 13, Deluxe): Base: Adult 70+ S$125,000, Adult <70 S$200,000, Child S$100,000. Family total S$800,000. Public transport double cover: Adult 70+ S$250,000, Adult <70 S$400,000, Child S$200,000. Family total S$1,600,000. Details: Scale of compensation (death, disability, loss of limb/sight/speech/hearing) detailed below table, total not exceeding max benefit. Covered under post-departure purchase (Pg 9 Sec 28)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Medical expenses overseas",
+      "json_detail": "Limits: Adult 70+ SGD 300k (combined 14, 18, 19), Adult <70 SGD 500k, Child SGD 200k, Family SGD 1.5M. Medical aids SGD 1000. Details: Unexpected injury/illness, includes Chinese med/chiro (ref Sec 16), COVID-19 (vaccination/tests required), post-departure cover, no pre-existing conditions. Sources: Pg 2 KB5, Pg 3, Pg 7 Sec 14, Pg 9 Sec 27, Pg 11 Note 10, Pg 4, Pg 9 Sec 28, Pg 5.",
+      "pdf_detail": "Limits (Page 7, Section 14, Deluxe): Adult 70+ S$300,000 (combined for sections 14, 18, 19), Adult <70 S$500,000, Child S$200,000. Family total S$1,500,000. Limit for medical aids S$1,000. Details: Covers unexpected injury/illness (Pg 3), includes Chinese med/chiro (Pg 2 KB5, subject to Sec 16 limits). COVID-19 covered (Pg 9 Sec 27) subject to eligibility (Pg 11 Note 10). Covered under post-departure purchase (Pg 4, Pg 9 Sec 28). Standard plans exclude pre-existing conditions (Pg 5)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Treatment by a Chinese medicine practitioner or a chiropractor",
+      "json_detail": "Limits: Overall Person SGD 500, Family SGD 1500. Per visit SGD 75. Details: Incurred during trip, part of overseas medical. Sources: Pg 2 KB5, Pg 8 Sec 16, Pg 10 Note 4, Pg 9 Sec 28.",
+      "pdf_detail": "Limits (Page 8, Section 16, Deluxe): Overall section limit S$500, Limit per visit S$75. Family total S$1,500. Details: Part of medical expenses incurred during trip (Pg 2 KB5). Refer to policy conditions for requirements (Pg 10 Note 4). Covered under post-departure purchase (Pg 9 Sec 28)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Emergency medical evacuation",
+      "json_detail": "Limits: Adult 70+ 'See limit under section 14', Adult <70 'Unlimited', Child 'Unlimited', Family SGD 1.5M. Details: Evacuation to facility or SG, combined limit for 70+. Sources: Pg 8 Sec 18, Pg 4, Pg 9 Sec 28.",
+      "pdf_detail": "Limits (Page 8, Section 18, Deluxe): Adult 70+ 'See limit under section 14' (i.e., combined S$300k with Sec 14 & 19), Adult <70 'Unlimited', Child 'Unlimited'. Family total S$1,500,000 (max payout for family under this section, subject to individual limits per footnote ^). Details: Covers emergency evacuation. Covered under post-departure purchase (Pg 4, Pg 9 Sec 28)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Kidnap and hostage",
+      "json_detail": "Limits: Overall Person SGD 5000, Family SGD 15000. Per 24 hours SGD 200. Sources: Pg 9 Sec 21, Pg 9 Sec 28.",
+      "pdf_detail": "Limits (Page 9, Section 21, Deluxe): Overall section limit S$5,000, Every 24 hours S$200. Family total S$15,000. Covered under post-departure purchase (Pg 9 Sec 28)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Home cover",
+      "json_detail": "Limits: Overall Person SGD 5000, Family SGD 5000. Per item SGD 500. Details: Covers loss/damage to home contents due to burglary while overseas. Sources: Pg 9 Sec 23, Pg 9 Sec 28.",
+      "pdf_detail": "Limits (Page 9, Section 23, Deluxe): Overall section limit S$5,000, Limit per item (each item/set/pair) S$500. Family total S$5,000. Details: Covers home contents against events like burglary while insured is overseas (standard definition, implied). Covered under post-departure purchase (Pg 9 Sec 28)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Adventurous activities",
+      "json_detail": "Limits: None specified directly for the activity type (base_limits: []). Details: Leisure participation covered. Lists activities (water, winter, air, outdoor). Conditions: safety compliance, licensed guides where available, not excluded extreme sports, scuba (PADI/similar cert or instructor, max depth 30m/cert limit), trekking (<4000m, public/organised/guided). Sources: Pg 2 KB3, Pg 3, Pg 10 Note 2, Note 6, Note 7.",
+      "pdf_detail": "Limits: No specific monetary limit assigned to 'Adventurous Activities' in the benefit table. Coverage applies to claims under other sections (e.g., Medical, Accident) arising from these activities. Details: Coverage mentioned (Pg 2 KB3). Activities listed (Pg 3). Conditions defined: leisure, safety, guides, not excluded extreme sports (Pg 10 Note 2); Scuba conditions (Pg 10 Note 6); Trekking conditions (Pg 10 Note 7)."
+    }
+  ],
+  "pdf_only_findings": [],
+  "llm_call_status": "SUCCESS"
+}

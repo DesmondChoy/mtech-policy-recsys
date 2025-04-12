@@ -206,14 +206,21 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Updated output handling to save reports to `results/{uuid}/policy_comparison_report_{insurer}_{uuid}.md`.
     - Incorporated asynchronous processing for insurers.
     - Fixed `KeyError` issues related to prompt formatting placeholders by escaping them (`{{Requirement Name}}`, `{{Recommended Tier Name}}`).
+27. **PDF Extraction Evaluation Script**:
+    - Created `scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py` to compare processed policy JSON against the source PDF using a multi-modal LLM (`LLMService`).
+    - Implements two-way verification (JSON vs. PDF, PDF vs. JSON).
+    - Renamed directory and script from `policy_extraction_evaluation` to `pdf_extraction_evaluation`.
+    - Updated associated plan document (`memory-bank/major_changes/pdf_to_json_eval.md`).
 
 ## Next Steps (Revised Focus)
 
-1.  **Implement Evaluation Framework**:
-    *   Develop scripts/processes to evaluate the accuracy and quality of outputs from:
-        *   Policy Extraction (`scripts/extract_policy_tier.py`)
-        *   Policy Comparison (`scripts/generate_policy_comparison.py`)
-    *   Define clear metrics for these evaluations.
+1.  **Test & Refine PDF Extraction Evaluation**:
+    *   Run the new `eval_pdf_extraction.py` script with sample data.
+    *   Analyze results and refine the script/prompt as needed.
+    *   Define clear metrics for this evaluation (potentially derived from the script's JSON output).
+2.  **Implement Comparison Report Evaluation**:
+    *   Design and implement the evaluation script/process for `scripts/generate_policy_comparison.py` output.
+    *   Define metrics for report quality, accuracy, and justification clarity.
 
 2.  **Refine Core Logic**:
     *   Iteratively improve prompts, models, and processing logic within existing scripts based on evaluation results and testing.
@@ -272,10 +279,11 @@ The project has moved beyond initial setup and is focused on refining the existi
 ## Current Challenges
 
 1.  **LLM Accuracy & Consistency**:
-    *   Ensuring high accuracy and consistent formatting from LLMs for extraction (policy, requirements) and comparison tasks remains a primary challenge. Requires ongoing prompt tuning.
-    *   Strict adherence to complex JSON schemas (especially policy extraction) needs robust validation and potentially LLM fine-tuning.
+    *   Ensuring high accuracy and consistent formatting from LLMs for extraction (policy, requirements), comparison, and *evaluation* tasks remains a primary challenge. Requires ongoing prompt tuning.
+    *   Strict adherence to complex JSON schemas (policy extraction, evaluation output) needs robust validation.
 2.  **Evaluation Gaps**:
-    *   Lack of automated evaluation for policy extraction and comparison report quality hinders rapid iteration and objective assessment. Implementing these is a key next step.
+    *   The new PDF extraction evaluation script (`eval_pdf_extraction.py`) needs testing and validation.
+    *   Lack of automated evaluation for *comparison report* quality hinders rapid iteration. Implementing this is a key next step.
 3.  **Lack of Integration**:
     *   Components are disconnected scripts, requiring manual execution and data flow management. This increases complexity and potential for errors.
 4.  **Recommendation Logic Definition**:

@@ -188,7 +188,8 @@ class LLMService:
 
     def generate_structured_content(
         self,
-        prompt: str,
+        prompt: Optional[str] = None,  # Make prompt optional
+        contents: Optional[List[Union[str, Dict]]] = None,  # Add contents parameter
         model: Optional[str] = None,
         parameters: Optional[Dict[str, Any]] = None,
         safety_settings: Optional[Dict[str, str]] = None,
@@ -196,13 +197,16 @@ class LLMService:
         retry_delay: float = 1.0,
     ) -> Dict[str, Any]:
         """
-        Generate structured content (JSON) using Google Gemini.
+        Generate structured content (JSON) using Google Gemini, supporting multi-modal input.
 
         This method is optimized for generating structured data by using more deterministic
-        parameters and adding instructions to format the response as JSON.
+        parameters and adding instructions to format the response as JSON. It accepts
+        either a simple text prompt or a list of contents for multi-modal input.
 
         Args:
-            prompt: The prompt to generate content from.
+            prompt: The text prompt (used if contents is None).
+            contents: A list of content parts (e.g., text, PDF data) for multi-modal input.
+                      If provided, this overrides the prompt argument.
             model: The model to use. If not provided, the default model will be used.
             parameters: The parameters to use. If not provided, deterministic parameters will be used.
             safety_settings: The safety settings to use. If not provided, the default safety settings will be used.
@@ -213,18 +217,45 @@ class LLMService:
             The generated content as a dictionary.
 
         Raises:
+            ValueError: If neither prompt nor contents is provided.
             Exception: If the API call fails after all retries or if the response cannot be parsed as JSON.
         """
+        if prompt is None and contents is None:
+            raise ValueError("Either 'prompt' or 'contents' must be provided.")
+        if prompt is not None and contents is not None:
+            logger.warning(
+                "Both 'prompt' and 'contents' provided for generate_structured_content. 'contents' will be used."
+            )
+
         # Use deterministic parameters by default for structured content
-        parameters = parameters or GeminiConfig.get_parameters("deterministic")
+        parameters = parameters or self.GeminiConfig.get_parameters(
+            "deterministic"
+        )  # Use instance attribute
 
-        # Add instructions to format the response as valid JSON
-        structured_prompt = f"{prompt}\n\nProvide your response as valid JSON."
+        # Determine the input content list
+        input_contents = contents if contents is not None else [prompt]
 
+        # Find the last text part in the list to append JSON instructions
+        last_text_index = -1
+        for i in range(len(input_contents) - 1, -1, -1):
+            if isinstance(input_contents[i], str):
+                last_text_index = i
+                break
+
+        # Append JSON instructions to the last text part
+        if last_text_index != -1:
+            input_contents[last_text_index] = (
+                f"{input_contents[last_text_index]}\n\nProvide your response as valid JSON."
+            )
+        else:
+            # If no text part found (e.g., only file input), add instructions as a new text part
+            input_contents.append("\n\nProvide your response as valid JSON.")
+
+        # Call generate_content with the prepared contents list
         response = self.generate_content(
-            prompt=structured_prompt,
+            contents=input_contents,  # Pass the list
             model=model,
-            parameters=parameters,
+            parameters=parameters,  # Pass potentially modified parameters
             safety_settings=safety_settings,
             retry_count=retry_count,
             retry_delay=retry_delay,
