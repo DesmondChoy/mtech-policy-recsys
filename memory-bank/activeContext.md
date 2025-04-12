@@ -2,24 +2,12 @@
 
 ## Current Work Focus
 
-The project is in the initial setup and planning phase. The current focus is on:
+The project has moved beyond initial setup and is focused on refining the existing script-based pipelines and planning next steps. The current focus is on:
 
-1. **Memory Bank Initialization**:
-   - Creating and populating the core memory bank files
-   - Establishing documentation structure for the project
-
-2. **Project Structure Setup**:
-   - Organizing directories and files according to the defined structure
-   - Setting up the development environment
-
-3. **Data Collection and Preparation**:
-   - Gathering insurance policy documents
-   - Creating synthetic conversation transcripts
-   - Processing raw data into usable formats
-
-4. **Agent Prototyping**:
-   - Developing initial prototypes for each agent
-   - Experimenting with prompt engineering for LLM-based agents
+1.  **Memory Bank Update**: Aligning all Memory Bank documents (`projectbrief.md`, `productContext.md`, `systemPatterns.md`, `techContext.md`, `progress.md`, `activeContext.md`) with the actual codebase and current workflow reality.
+2.  **Evaluation Framework Development**: Planning and designing evaluation mechanisms for the policy extraction script (`scripts/extract_policy_tier.py`) and the policy comparison script (`scripts/generate_policy_comparison.py`).
+3.  **Script Refinement**: Improving existing scripts based on testing and initial results (e.g., prompt engineering, error handling).
+4.  **Next Phase Planning**: Defining the implementation strategy for recommendation logic and potential integration of components.
 
 ## Recent Changes
 
@@ -219,105 +207,84 @@ The project is in the initial setup and planning phase. The current focus is on:
     - Incorporated asynchronous processing for insurers.
     - Fixed `KeyError` issues related to prompt formatting placeholders by escaping them (`{{Requirement Name}}`, `{{Recommended Tier Name}}`).
 
-## Next Steps
+## Next Steps (Revised Focus)
 
-1. **Agent Development**:
-   - Implement CS Agent prototype
-     - Develop conversation handling capabilities
-     - Create prompt templates for guiding user interactions
-     - Integrate with LLM service for natural language understanding
+1.  **Implement Evaluation Framework**:
+    *   Develop scripts/processes to evaluate the accuracy and quality of outputs from:
+        *   Policy Extraction (`scripts/extract_policy_tier.py`)
+        *   Policy Comparison (`scripts/generate_policy_comparison.py`)
+    *   Define clear metrics for these evaluations.
 
-   - Implement Analyzer Agent prototype
-     - Develop policy analysis capabilities (Note: Notebook prototype was found to be blank and can be removed)
-     - Input will be the structured JSON from the Extractor step (`data/extracted_customer_requirements/`) and processed policy JSON (`data/policies/processed/`).
-     - Could potentially leverage or adapt the output format from `scripts/generate_policy_comparison.py`.
-     - Create structured analysis report schema.
-     - Leverage LLM service for policy comparison.
+2.  **Refine Core Logic**:
+    *   Iteratively improve prompts, models, and processing logic within existing scripts based on evaluation results and testing.
 
-   - Implement Voting System prototype
-     - Develop consensus mechanism (Leveraging LLM service batch generation)
-     - Create aggregation algorithms
-     - Implement confidence scoring
+3.  **Develop Recommendation Logic**:
+    *   Define the process for generating final recommendations (e.g., selecting top insurers/tiers from comparison reports).
+    *   Implement this logic, potentially as a new script or a simple agent (`src/agents/recommender.py` is currently empty).
+    *   Determine the desired output format for recommendations.
 
-   - Implement Recommender Agent prototype
-     - Develop recommendation generation
-     - Create email formatting templates
-     - Use LLM service for justification generation
+4.  **Plan Integration/Workflow V1**:
+    *   Design a basic workflow to connect the key steps (e.g., Extraction -> Comparison -> Recommendation).
+    *   Consider orchestration methods (script chaining, `crewai`, etc.).
 
-2. **Data Processing Pipeline**:
-   - Complete policy document processing
-   - Standardize policy data format
-   - Create additional synthetic conversation scenarios
+5.  **ML Model Development (Later Phase)**:
+    *   Prepare dataset using extracted requirements and comparison results.
+    *   Train initial models to derive insights.
 
-3. **Integration Testing**:
-   - Test agent interactions (Extractor -> Analyzer)
-   - Validate end-to-end workflow
-   - Measure system performance
-
-4. **ML Model Development**:
-   - Create supervised learning dataset using extracted requirements
-   - Train initial models
-   - Evaluate feature importance
+6.  **Define Future Architecture**:
+    *   Solidify the plan for integrating components and decide on the final architecture (script-based, agent-based, or hybrid) based on refined goals and the performance of the current approach.
 
 ## Active Decisions and Considerations
 
-1. **LLM Selection & Configuration**:
-   - Primarily using Google Gemini via the centralized `LLMService`.
-   - Default Gemini model (`gemini-2.5-pro-exp-03-25`) and parameters (e.g., `max_output_tokens=10000`) are now set in `src/models/gemini_config.py` and used by `LLMService`.
-   - Specific models or parameters can still be overridden per call if needed (e.g., `generate_structured_content` uses deterministic parameters).
-   - The Extractor Agent (`src/agents/extractor.py`) still uses OpenAI via `crewai`, configured through `.env` variables.
+1.  **LLM Selection & Configuration**:
+    *   Continue primary use of Google Gemini via `LLMService` for most tasks due to centralized control and features.
+    *   Maintain OpenAI via `crewai` for the Extractor Agent, but monitor performance and cost implications. Consider potential future migration to `LLMService` if feasible within `crewai` or if the agent is refactored.
+    *   Refine default parameters in `gemini_config.py` as needed based on ongoing testing.
 
-2. **Agent Architecture**:
-   - Using `crewai` framework for agent definition and task execution (as seen in Extractor).
-   - Determining optimal level of modularity vs. monolithic crew.
-   - Considering whether to implement agents as separate services or within a single application.
-   - Evaluating synchronous vs. asynchronous communication between agents.
+2.  **Architecture Strategy**:
+    *   The current architecture is script-heavy with only one agent (`Extractor` using `crewai`/OpenAI).
+    *   Need to decide whether to:
+        *   Continue with a primarily script-based workflow.
+        *   Implement future logic (Recommender) as simple scripts or agents.
+        *   Adopt `crewai` (or another framework) more broadly if complex agent interactions become necessary.
 
-3. **Data Representation**:
-   - Using Pydantic models (`TravelInsuranceRequirement`) for structured agent output (Extractor).
-   - Designing schemas for analysis reports (Analyzer).
-   - Determining level of structure vs. flexibility in data formats.
-   - Considering how to handle edge cases and unusual requirements.
+3.  **Data Representation**:
+    *   Continue using Pydantic models (`TravelInsuranceRequirement`, policy extraction schemas) for structured JSON validation and clarity.
+    *   Define schema for final recommendation output.
+    *   Refine existing schemas based on extraction/comparison needs and edge cases encountered.
 
-4. **Evaluation Metrics**:
-   - Defining success criteria for recommendations
-   - Developing evaluation framework for system performance
-   - Creating benchmarks for comparison
+4.  **Evaluation Metrics & Strategy**:
+    *   Define specific, measurable metrics for the *planned* policy extraction and comparison report evaluations (e.g., F1 score for specific field extraction, ROUGE score for summary quality, human rating for justification clarity).
+    *   Determine how evaluation results will feedback into prompt/logic refinement.
 
-5. **User Experience**:
-   - Determining the optimal conversation flow for the CS Agent
-   - Designing the format and content of recommendation emails
-   - Balancing comprehensiveness with clarity in recommendations
+5.  **User Experience (Developer vs. End-User)**:
+    *   Current UX is developer-focused (running scripts).
+    *   If end-user interaction is a future goal, decisions are needed on the interface (conversational AI vs. GUI) and how to integrate it with the backend logic.
+    *   Focus comparison report (`generate_policy_comparison.py`) output on clarity and justification for potential end-user consumption, even if delivered via script currently.
 
-6. **Deployment Strategy**:
-   - Current execution via CLI script (`src/web/app.py`).
-   - Considering deployment options (local, cloud-based).
-   - Evaluating scalability requirements.
-   - Planning for potential production use cases.
+6.  **Integration & Orchestration**:
+    *   Decide on the mechanism for connecting the different processing steps (manual script execution, simple chaining script, workflow engine, `crewai` crew). This impacts maintainability and ease of execution.
+
+7.  **Deployment Strategy**:
+    *   Current execution via CLI scripts is suitable for development.
+    *   Re-evaluate deployment options (local application, containerization, cloud functions/services) if the system needs to be accessible to non-developers or scale significantly.
 
 ## Current Challenges
 
-1. **Policy Extraction Accuracy**:
-   - While `scripts/extract_policy_tier.py` automates extraction, ensuring the LLM accurately interprets complex policy documents and adheres strictly to the JSON schema remains crucial.
-   - Requires careful prompt engineering and potentially fine-tuning or few-shot examples.
-
-2. **Requirement Extraction Accuracy**:
-   - Ensuring the Extractor Agent accurately captures all nuances, including implicit needs.
-   - Validating the structured output against the transcript.
-   - Handling ambiguous or contradictory statements effectively.
-
-3. **Recommendation Justification**:
-   - Providing clear, understandable explanations (Recommender task)
-   - Linking recommendations directly to policy clauses (Analyzer/Recommender task)
-   - Balancing detail with readability
-
-4. **Performance Optimization**:
-   - Managing latency from multiple LLM calls
-   - Optimizing prompt design for efficiency
-   - Implementing appropriate caching strategies
-   - Added retry logic and error handling in LLM service
-   - Batch processing capabilities for parallel operations
-
-5. **LLM Output Limits**:
-   - Challenge: LLM settings (like `max_output_tokens`) can cause unexpected truncation of generated content.
-   - Mitigation: Default `max_output_tokens` is now centrally managed in `src/models/gemini_config.py` (currently 10000). `LLMService` allows overriding this default per call if a specific task requires a different limit. Continuous monitoring for potential truncation is still advised.
+1.  **LLM Accuracy & Consistency**:
+    *   Ensuring high accuracy and consistent formatting from LLMs for extraction (policy, requirements) and comparison tasks remains a primary challenge. Requires ongoing prompt tuning.
+    *   Strict adherence to complex JSON schemas (especially policy extraction) needs robust validation and potentially LLM fine-tuning.
+2.  **Evaluation Gaps**:
+    *   Lack of automated evaluation for policy extraction and comparison report quality hinders rapid iteration and objective assessment. Implementing these is a key next step.
+3.  **Lack of Integration**:
+    *   Components are disconnected scripts, requiring manual execution and data flow management. This increases complexity and potential for errors.
+4.  **Recommendation Logic Definition**:
+    *   Defining how to translate comparison reports into actionable, justified final recommendations is an open task.
+5.  **Extractor Agent Dependency**:
+    *   The Extractor Agent's reliance on OpenAI/CrewAI introduces a separate dependency and configuration path compared to the Gemini/LLMService used elsewhere.
+6.  **Synthetic Data Limitations**:
+    *   Generated transcripts might not fully capture real-world complexities, potentially limiting the robustness of downstream components.
+7.  **Performance Optimization**:
+    *   Latency of multiple LLM calls (generation, evaluation, extraction, comparison) needs monitoring. Batch processing helps but overall workflow time can be significant.
+8.  **LLM Constraints**:
+    *   Managing API rate limits, costs, and potential output token limits across both Gemini and OpenAI.

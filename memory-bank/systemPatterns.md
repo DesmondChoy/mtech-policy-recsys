@@ -2,241 +2,229 @@
 
 ## System Architecture
 
-The project follows a multi-agent architecture with specialized components working together to deliver personalized insurance recommendations:
+The project currently follows a script-driven workflow focused on data generation, processing, extraction, and evaluation, with a single implemented agent (Extractor). The original multi-agent concept (CS, Analyzer, Voting, Recommender) is not yet implemented.
 
 ```mermaid
 flowchart TD
-    User[User] <--> CSAgent[CS Agent]
-    CSAgent --> Transcript[Conversation Transcript]
-    
-    subgraph Extraction
-        Transcript --> Extractor[Extractor Agent]
-        Extractor --> CustomerProfile[Customer Profile]
+    subgraph Data Generation
+        direction LR
+        GenPersonalities[scripts/data_generation/generate_personalities.py] --> PersonalitiesJson[data/transcripts/personalities.json]
+        CoverageReqs[data/coverage_requirements/coverage_requirements.py] --> GenTranscripts
+        Scenarios[data/scenarios/*.json] --> GenTranscripts
+        PersonalitiesJson --> GenTranscripts
+        GenTranscripts[scripts/data_generation/generate_transcripts.py] --> RawTranscripts[data/transcripts/raw/synthetic/*.json]
     end
-    
-    subgraph Analysis
-        CustomerProfile --> Analyzer[Analyzer Agent]
-        Policies[Insurance Policies] --> Analyzer
-        Analyzer --> AnalysisReports[Analysis Reports]
+
+    subgraph Transcript Processing & Extraction
+        direction LR
+        RawTranscripts --> EvalTranscripts[scripts/evaluation/transcript_evaluation/eval_transcript_main.py]
+        EvalTranscripts -- Pass --> ParseTranscripts[src/utils/transcript_processing.py]
+        ParseTranscripts --> ProcessedTranscripts[data/transcripts/processed/*.json]
+        ProcessedTranscripts --> ExtractorAgent[src/agents/extractor.py (CrewAI/OpenAI)]
+        ExtractorAgent --> ExtractedReqs[data/extracted_customer_requirements/*.json]
     end
-    
-    subgraph Recommendation
-        AnalysisReports --> VotingSystem[Voting System]
-        VotingSystem --> Recommender[Recommender Agent]
-        Recommender --> Recommendations[Final Recommendations]
+
+    subgraph Policy Processing
+        direction LR
+        RawPolicies[data/policies/raw/*.pdf] --> ExtractPolicyScript[scripts/extract_policy_tier.py (LLMService/Gemini)]
+        ExtractPolicyScript --> ProcessedPolicies[data/policies/processed/*.json]
     end
-    
-    Recommendations --> User
-    CustomerProfile --> ML[ML Models]
-    Recommendations --> ML
+
+    subgraph Reporting & Analysis (Standalone)
+        direction LR
+        ExtractedReqs --> ComparisonScript[scripts/generate_policy_comparison.py (LLMService/Gemini)]
+        ProcessedPolicies --> ComparisonScript
+        ComparisonScript --> ComparisonReports[results/{uuid}/*.md]
+    end
+
+    subgraph Evaluation Focus
+        direction TB
+        EvalTranscripts --> EvalTranscriptResults[data/evaluation/transcript_evaluations/*.json]
+        ExtractPolicyScript --> PlannedPolicyEval{Planned: Policy Extraction Evaluation}
+        ComparisonScript --> PlannedComparisonEval{Planned: Comparison Report Evaluation}
+    end
+
+    Data Generation --> Transcript Processing & Extraction
+    Policy Processing --> Reporting & Analysis (Standalone)
+    Transcript Processing & Extraction --> Reporting & Analysis (Standalone)
+
+    Transcript Processing & Extraction --> Evaluation Focus
+    Policy Processing --> Evaluation Focus
+    Reporting & Analysis (Standalone) --> Evaluation Focus
+
+    ComparisonReports --> User[User/Developer]
+    ExtractedReqs --> FutureML{Future: ML Models}
 ```
 
 ## Key Technical Decisions
 
-1. **Multi-Agent System**:
-   - Decision: Use specialized agents for different tasks rather than a monolithic approach
-   - Rationale: Improves modularity, allows for independent optimization, and enables consensus-based recommendations
-   - Implementation: Five distinct agents (CS Agent, Extractor, Analyzer, Voting, Recommender). Extractor implemented using `crewai`.
+1.  **Script-Driven Workflow**:
+    *   Decision: Implement core logic (data generation, policy extraction, comparison) as standalone Python scripts.
+    *   Rationale: Allows for modular development and testing of individual components before full agent integration. Enables batch processing.
+    *   Implementation: Various scripts in `scripts/` directory (e.g., `generate_transcripts.py`, `extract_policy_tier.py`, `generate_policy_comparison.py`).
 
-2. **LLM-Based Reasoning**:
-   - Decision: Use LLMs for natural language understanding and reasoning
-   - Rationale: Enables complex pattern recognition in unstructured text and natural conversation
-   - Implementation: Primarily Google Gemini accessed via `LLMService`. However, the Extractor agent currently uses OpenAI (configured via `.env` variables) through the `crewai` framework. Other agents may also use specific LLMs if needed (e.g., policy extraction script).
+2.  **Single Agent Implementation (Extractor)**:
+    *   Decision: Implement the Extractor using the `crewai` framework with OpenAI.
+    *   Rationale: Leverages existing agent framework for a specific, well-defined task (requirement extraction). Allows experimentation with agent-based approaches.
+    *   Implementation: `src/agents/extractor.py`.
 
-3. **Voting Mechanism**:
-   - Decision: Implement a consensus-based voting system with multiple independent LLM calls
-   - Rationale: Reduces bias and improves reliability of recommendations
-   - Implementation: Multiple asynchronous LLM instances evaluating the same data
+3.  **Centralized LLM Service (Gemini)**:
+    *   Decision: Create a reusable service (`LLMService`) for interacting with Google Gemini.
+    *   Rationale: Standardizes API calls, configuration, error handling, and retry logic for most LLM tasks.
+    *   Implementation: `src/models/llm_service.py` used by most scripts. Note: Extractor agent uses OpenAI directly via `crewai`.
 
-4. **Hybrid Approach**:
-   - Decision: Combine LLM-based reasoning with traditional ML
-   - Rationale: Leverages strengths of both approaches (LLM for reasoning, ML for pattern recognition)
-   - Implementation: LLMs for agent reasoning, supervised ML for insights
+4.  **Emphasis on Evaluation**:
+    *   Decision: Integrate evaluation steps at key points in the workflow.
+    *   Rationale: Ensures data quality and component performance before proceeding to downstream tasks. Provides metrics for improvement.
+    *   Implementation: `scripts/evaluation/transcript_evaluation/` for transcript quality. Planned evaluations for policy extraction and comparison report accuracy.
 
-5. **Structured Knowledge Representation**:
-   - Decision: Transform unstructured policy documents and conversations into structured data
-   - Rationale: Enables systematic comparison and analysis
-   - Implementation: Pydantic models (`TravelInsuranceRequirement`) for validated JSON-structured customer profiles (Extractor output), analysis reports, and standardized coverage requirements.
+5.  **Structured Knowledge Representation**:
+    *   Decision: Transform unstructured policy documents and conversations into structured data using Pydantic models.
+    *   Rationale: Enables systematic comparison, analysis, and validation.
+    *   Implementation: Pydantic models (`TravelInsuranceRequirement`, policy extraction models) for validated JSON outputs.
+
+6.  **Hybrid Approach (Planned)**:
+    *   Decision: Combine LLM-based reasoning with traditional ML (Future Goal).
+    *   Rationale: Leverages strengths of both approaches (LLM for reasoning, ML for pattern recognition).
+    *   Implementation: LLMs used in scripts/agent. Supervised ML for insights is planned for a later phase.
 
 ## Design Patterns
 
-1. **Agent Pattern**:
-   - Each agent is a specialized entity with specific responsibilities
-   - Agents communicate through structured data formats
-   - Implementation: Python classes with defined interfaces, potentially managed by frameworks like `crewai`.
+1.  **Pipeline Pattern**:
+    *   Sequential processing of data through specialized scripts/stages (e.g., Generation -> Evaluation -> Parsing -> Extraction).
+    *   Each stage transforms or enriches the data.
+    *   Implementation: Current script execution order forms pipelines.
 
-2. **Pipeline Pattern**:
-   - Sequential processing of data through specialized stages (e.g., Transcript -> Extractor -> Analyzer)
-   - Each stage transforms or enriches the data
-   - Implementation: Workflow from conversation to extraction to analysis to recommendation
+2.  **Agent Pattern**:
+    *   Used for the Extractor Agent (`src/agents/extractor.py`).
+    *   A specialized entity with specific responsibilities.
+    *   Implementation: Managed by `crewai` framework.
 
-3. **Observer Pattern**:
-   - The CS Agent observes and responds to user inputs
-   - The Recommender observes voting results
-   - Implementation: Event-driven communication
+3.  **Service Layer Pattern**:
+    *   The `LLMService` acts as a service layer abstracting direct Gemini API calls.
+    *   Provides a consistent interface for LLM interactions.
+    *   Implementation: `src/models/llm_service.py`.
 
-4. **Strategy Pattern**:
-   - Different strategies for policy analysis based on customer needs
-   - Flexible approach to recommendation generation
-   - Implementation: Configurable analysis parameters
-
-5. **Factory Pattern**:
-   - Creation of appropriate analysis and recommendation objects
-   - Standardized interfaces for different types of analyses
-   - Implementation: Factory methods for creating analysis instances
-
-6. **Composite Pattern**:
-   - Complex customer requirements composed of simpler components
-   - Hierarchical organization of policy features
-   - Implementation: Nested JSON structures
+4.  **Composite Pattern**:
+    *   Complex customer requirements and policy details composed of simpler components.
+    *   Hierarchical organization of data.
+    *   Implementation: Nested JSON structures validated by Pydantic models.
 
 ## Component Relationships
 
-### LLM Service
-- **Inputs**: Prompts, parameters (including optional `max_output_tokens`), model selection
-- **Outputs**: Generated content, structured data
-- **Dependencies**: Google Gemini API
-- **Consumers**: All agents (CS, Extractor, Analyzer, Voting, Recommender)
+### LLM Service (`src/models/llm_service.py`)
+- **Purpose**: Centralized interface for Google Gemini API calls.
+- **Inputs**: Prompts, parameters (model, tokens, etc.), content (text/multi-modal).
+- **Outputs**: Generated content (text, structured JSON).
+- **Dependencies**: Google Gemini API, `src/models/gemini_config.py`.
+- **Consumers**: `scripts/extract_policy_tier.py`, `scripts/generate_policy_comparison.py`, `scripts/data_generation/*`, `scripts/evaluation/transcript_evaluation/eval_transcript_gemini.py`.
 
-### CS Agent
-- **Inputs**: User queries and responses
-- **Outputs**: Conversation transcripts
-- **Dependencies**: LLM Service
-- **Consumers**: Extractor Agent
+### Transcript Generation (`scripts/data_generation/generate_transcripts.py`)
+- **Purpose**: Generates synthetic transcripts based on scenarios, requirements, and personalities.
+- **Inputs**: `data/scenarios/*.json`, `data/coverage_requirements/coverage_requirements.py`, `data/transcripts/personalities.json`.
+- **Outputs**: Raw transcript JSON files (`data/transcripts/raw/synthetic/*.json`).
+- **Dependencies**: `LLMService`.
 
-### Extractor Agent (and preceding steps)
-- **Inputs**:
-    - Raw Conversation Transcripts (`data/transcripts/raw/*`)
-    - Raw Conversation Transcripts (`data/transcripts/raw/*.json`) - Now expects JSON format.
-    - Coverage Requirements (`data/coverage_requirements/coverage_requirements.py`)
-    - Scenario Definitions (`data/scenarios/*.json`) - Optional scenario-specific requirements.
-- **Processing Steps**:
-    1. **Generation**: `scripts/data_generation/generate_transcripts.py` generates raw transcripts using Gemini, incorporating standard requirements, optional scenario requirements, and personality profiles. Output filename: `transcript_{scenario_name_or_no_scenario}_{customer_id}.json`. Output JSON includes `customer_id`, `personality`, `transcript` (dialogue list), and `scenario` (name or null).
-    2. **Evaluation**: `scripts/evaluation/transcript_evaluation/eval_transcript_main.py` evaluates raw **JSON** transcript against standard coverage requirements (`data/coverage_requirements/`) and any applicable scenario-specific requirements (loaded from `data/scenarios/` based on the transcript's "scenario" field). Uses modules within the same directory (`eval_transcript_parser.py`, `eval_transcript_prompts.py`, `eval_transcript_gemini.py`).
-    3. **Parsing (if evaluation passes)**: `src/utils/transcript_processing.py` parses raw transcripts (e.g., `transcript_{scenario}_{uuid}.json`) from `data/transcripts/raw/synthetic/` and saves structured JSON lists to `data/transcripts/processed/` using the format `parsed_transcript_{scenario_name}_{uuid}.json` (batch processing when run directly). Note: While this script *can* handle `.txt`, the preceding evaluation step now only processes `.json`.
-    4. **Extraction**: The `src/agents/extractor.py` script (using `crewai` with OpenAI configured via `.env`) consumes all `.json` files from an input directory (default: `data/transcripts/processed/`, expecting `parsed_transcript_{scenario_name}_{uuid}.json` format) and runs the Extractor Agent on each (batch processing when run directly). Accepts optional `--input_dir` and `--output_dir` arguments.
-- **Outputs**: Structured customer profiles saved as JSON files in `data/extracted_customer_requirements/`. The filename format is now `requirements_{scenario_name}_{uuid}.json` (e.g., `requirements_golf_coverage_49eb20af-32b0-46e0-a14e-0dbe3e3c6e73.json`). The JSON structure matches the `TravelInsuranceRequirement` Pydantic model.
-- **Dependencies**: `scripts/data_generation/generate_transcripts.py`, `scripts/evaluation/transcript_evaluation/`, `src/utils/transcript_processing.py` (for model definition and parsing step), `src/agents/extractor.py`, `crewai` framework, OpenAI API (via `.env`), `TravelInsuranceRequirement` model.
-- **Consumers**: Analyzer Agent, ML Models.
+### Transcript Evaluation (`scripts/evaluation/transcript_evaluation/`)
+- **Purpose**: Evaluates the quality and coverage of generated raw transcripts.
+- **Inputs**: Raw transcript JSON (`data/transcripts/raw/synthetic/*.json`), `data/coverage_requirements/`, `data/scenarios/`.
+- **Outputs**: Evaluation results JSON (`data/evaluation/transcript_evaluations/*.json`).
+- **Dependencies**: `LLMService`.
 
-### Policy Processing
-- **Script**: `scripts/extract_policy_tier.py`
-- **Inputs**: Raw Policy PDFs (`data/policies/raw/insurer_{policy_tier}.pdf`)
-- **Processing**: Uses Gemini API via `LLMService` to extract tier-specific coverage details based on a detailed prompt emphasizing benefit consolidation. It identifies base limits, optional conditional limits (e.g., for add-ons), and extracts specific detail snippets linked to their source locations within the PDF. Validates the complex nested output structure using Pydantic models (`PolicyExtraction`, `CoverageCategory`, `CoverageDetail`, `LimitDetail`, `ConditionalLimit`, `SourceDetail`).
-- **Outputs**: Structured Policy JSON files (`data/policies/processed/insurer_{policy_tier}.json`). The JSON structure includes:
-    - `provider_name`, `policy_name`, `tier_name`, `extraction_date`, `currency`
-    - `coverage_categories`: List of categories.
-        - Each category contains `coverages`: List of consolidated benefits.
-            - Each coverage includes:
-                - `coverage_name`
-                - `base_limits`: List of standard limits (`LimitDetail`).
-                - `conditional_limits`: Optional list of limits under specific conditions (`ConditionalLimit`).
-                - `source_specific_details`: List of detail snippets linked to their source (`SourceDetail`).
+### Transcript Parsing (`src/utils/transcript_processing.py`)
+- **Purpose**: Parses evaluated raw transcripts into a simpler list format. Defines `TravelInsuranceRequirement` model.
+- **Inputs**: Raw transcript JSON (`data/transcripts/raw/synthetic/*.json`).
+- **Outputs**: Processed transcript JSON (`data/transcripts/processed/*.json`).
+- **Dependencies**: None (when run for parsing).
+
+### Extractor Agent (`src/agents/extractor.py`)
+- **Purpose**: Extracts structured customer requirements from processed transcripts.
+- **Inputs**: Processed transcript JSON (`data/transcripts/processed/*.json`).
+- **Outputs**: Extracted requirements JSON (`data/extracted_customer_requirements/*.json`) conforming to `TravelInsuranceRequirement`.
+- **Dependencies**: `crewai` framework, OpenAI API (via `.env`), `src/utils/transcript_processing.py` (for model definition).
+
+### Policy Extraction Script (`scripts/extract_policy_tier.py`)
+- **Purpose**: Extracts structured policy details from raw PDFs.
+- **Inputs**: Raw policy PDFs (`data/policies/raw/*.pdf`).
+- **Outputs**: Processed policy JSON (`data/policies/processed/*.json`) with detailed structure (base/conditional limits, source details).
 - **Dependencies**: `LLMService`, Pydantic models defined within the script.
-- **Consumers**: Analyzer Agent, Policy Comparison Script
 
-### Policy Comparison Script
-- **Script**: `scripts/generate_policy_comparison.py`
-- **Inputs**: Structured Requirements JSON (`data/extracted_customer_requirements/`), Processed Policy JSONs (`data/policies/processed/`)
-- **Processing**: Uses Gemini API via `LLMService` to compare requirements against each policy based on a detailed prompt. Processes asynchronously in batches.
-- **Outputs**: Markdown comparison reports (`results/{customer_id}_{timestamp}/policy_comparison_{provider}_{tier}_{customer_id}_{timestamp}.md`)
-- **Dependencies**: LLM Service, Extractor Agent output, Policy Processing Script output.
-- **Consumers**: End users (for viewing reports), potentially Analyzer Agent (for input/inspiration).
+### Policy Comparison Script (`scripts/generate_policy_comparison.py`)
+- **Purpose**: Generates Markdown reports comparing extracted requirements against processed policies at the insurer level.
+- **Inputs**: Extracted requirements JSON (`data/extracted_customer_requirements/*.json`), Processed policy JSON (`data/policies/processed/*.json`), `data/policies/pricing_tiers/tier_rankings.py`.
+- **Outputs**: Markdown comparison reports (`results/{uuid}/*.md`).
+- **Dependencies**: `LLMService`, Extractor Agent output, Policy Extraction Script output.
 
-### Analyzer Agent
-- **Inputs**: Customer profiles (JSON), Structured Policy Data (JSON from `extract_policy_tier.py`)
-- **Outputs**: Analysis reports
-- **Dependencies**: Extractor Agent, Policy Processing Script Output, LLM Service
-- **Consumers**: Voting System
-
-### Voting System
-- **Inputs**: Analysis reports
-- **Outputs**: Aggregated voting results
-- **Dependencies**: Analyzer Agent, LLM Service (batch generation)
-- **Consumers**: Recommender Agent
-
-### Recommender Agent
-- **Inputs**: Voting results
-- **Outputs**: Final recommendations with justifications
-- **Dependencies**: Voting System, LLM Service
-- **Consumers**: User, ML Models
-
-### ML Models
-- **Inputs**: Customer profiles, Final recommendations
-- **Outputs**: Insights on feature importance, product positioning
-- **Dependencies**: Extractor Agent, Recommender Agent
-- **Consumers**: System administrators, Insurance companies
+### ML Models (Future)
+- **Purpose**: Uncover insights from data.
+- **Inputs**: Extracted requirements JSON, potentially comparison results or final recommendations.
+- **Outputs**: Insights on feature importance, product positioning.
+- **Dependencies**: Extractor Agent output, potentially other data sources.
 
 ## Data Flow
 
 ```mermaid
 sequenceDiagram
-    participant User
-    participant CSAgent as CS Agent
-    participant LLMService as LLM Service
-    participant Extractor
-    participant Analyzer
-    participant Voting
-    participant Recommender
-    
-    User->>CSAgent: Express insurance needs
-    CSAgent->>LLMService: Process conversation
-    LLMService-->>CSAgent: Generate responses
-    CSAgent->>Evaluation: Provide Raw Transcript Path (JSON)
-    Note right of Evaluation: `scripts/evaluation/transcript_evaluation/eval_transcript_main.py` reads JSON transcript, checks for scenario, loads standard + scenario requirements
-    Evaluation->>LLMService: Evaluate transcript coverage
-    LLMService-->>Evaluation: Return evaluation result (Pass/Fail)
+    participant GenT as Transcript Generation Script
+    participant EvalT as Transcript Evaluation Script
+    participant ParseT as Transcript Parsing Script
+    participant Extractor as Extractor Agent (CrewAI/OpenAI)
+    participant ExtractP as Policy Extraction Script (LLMService)
+    participant CompareP as Policy Comparison Script (LLMService)
+    participant LLM_Gemini as LLM Service (Gemini)
+    participant LLM_OpenAI as OpenAI API
+    participant UserDev as User/Developer
+
+    %% Transcript Path
+    GenT->>LLM_Gemini: Generate Raw Transcript
+    LLM_Gemini-->>GenT: Raw Transcript Text/JSON
+    Note right of GenT: Saves to data/transcripts/raw/synthetic/
+
+    EvalT->>LLM_Gemini: Evaluate Raw Transcript
+    LLM_Gemini-->>EvalT: Evaluation Result (Pass/Fail)
+    Note right of EvalT: Saves result to data/evaluation/transcript_evaluations/
 
     alt Evaluation Passes
-        Evaluation->>Parsing: Trigger Parsing
-        Note right of Parsing: `transcript_processing.py` batch parses raw transcripts (e.g., `transcript_{scenario}_{uuid}.json`) to `data/transcripts/processed/` using format `parsed_transcript_{scenario}_{uuid}.json`
-        Parsing->>Extractor: (Extractor reads processed dir)
-        Note right of Extractor: `src/agents/extractor.py` (using `crewai` + OpenAI) batch processes files from `data/transcripts/processed/` (expecting `parsed_transcript_{scenario}_{uuid}.json`)
-        Extractor->>OpenAI API: Extract requirements from each parsed transcript
-        OpenAI API-->>Extractor: Return structured data (Pydantic object validated by `TravelInsuranceRequirement`)
-        Note right of Extractor: Saves result to `data/extracted_customer_requirements/requirements_{scenario}_{uuid}.json`
-        Extractor->>Analyzer: Send structured customer profile path/object
+        ParseT->>ParseT: Parse Raw Transcript JSON
+        Note right of ParseT: Saves to data/transcripts/processed/
+        Extractor->>LLM_OpenAI: Extract Requirements from Processed Transcript
+        LLM_OpenAI-->>Extractor: Structured Requirements (Pydantic Object)
+        Note right of Extractor: Saves to data/extracted_customer_requirements/
     else Evaluation Fails
-        Evaluation->>User: Notify failure (or trigger regeneration - future step)
+        EvalT->>UserDev: Notify Failure / Log Issue
     end
 
-    %% Policy Comparison Report Generation (Parallel Path)
-    Extractor->>ComparisonScript: Send structured customer profile path/object
-    ComparisonScript->>LLMService: Compare requirements vs each policy
-    LLMService-->>ComparisonScript: Return Markdown report content
-    Note right of ComparisonScript: Saves report to `results/` directory
+    %% Policy Path
+    ExtractP->>LLM_Gemini: Extract Policy Details from PDF
+    LLM_Gemini-->>ExtractP: Structured Policy JSON
+    Note right of ExtractP: Saves to data/policies/processed/
 
-    %% Main Analysis Path (Future)
-    Analyzer->>LLMService: Analyze policies (Future)
-    LLMService-->>Analyzer: Return analysis (Future)
-    Analyzer->>Voting: Submit analysis reports (Future)
-    Voting->>LLMService: Multiple independent evaluations
-    LLMService-->>Voting: Return voting results
-    Voting->>Recommender: Provide aggregated voting results
-    Recommender->>LLMService: Generate justifications
-    LLMService-->>Recommender: Return formatted recommendations
-    Recommender->>User: Deliver final recommendations
-    User->>CSAgent: Request refinement (optional)
-    CSAgent->>Extractor: Update requirements
-    Note over Extractor,Recommender: Repeat process with updated requirements
+    %% Comparison Path (Requires both transcript and policy paths completed)
+    CompareP->>LLM_Gemini: Compare Requirements vs Policies
+    LLM_Gemini-->>CompareP: Comparison Report Content
+    Note right of CompareP: Saves report to results/{uuid}/
+    CompareP->>UserDev: Provide Report
 
-    Note right of Analyzer: Analyzer consumes structured policy JSON from extract_policy_tier.py
+    %% Planned Evaluations
+    Note over ExtractP: Planned: Policy Extraction Evaluation
+    Note over CompareP: Planned: Comparison Report Evaluation
+
 ```
 
 ## Error Handling and Resilience
 
-1. **Input Validation**:
-   - Each agent validates inputs before processing
-   - Structured schemas enforce data consistency
+1.  **Input Validation**:
+    *   Scripts often validate input paths and file formats.
+    *   Pydantic models enforce schema validation for structured JSON outputs (Extractor, Policy Extraction).
+    *   `LLMService` includes robustness checks for JSON parsing.
 
-2. **Fallback Mechanisms**:
-   - Default recommendations when specific requirements can't be met
-   - Graceful degradation when optimal solutions aren't available
+2.  **Fallback Mechanisms**:
+    *   Some scripts include basic fallbacks (e.g., saving raw text if JSON parsing fails during transcript generation).
+    *   `LLMService` implements retry logic for API calls.
 
-3. **Uncertainty Management**:
-   - Explicit confidence scores for recommendations
-   - Multiple voting rounds for ambiguous cases
+3.  **Logging**:
+    *   Some scripts incorporate logging for debugging (e.g., transcript generation prompt).
 
-4. **Feedback Loops**:
-   - User feedback incorporated into recommendation refinement
-   - System performance metrics tracked for continuous improvement
+4.  **Evaluation Gates**:
+    *   Transcript evaluation acts as a quality gate before extraction.
+    *   Planned evaluations will add further checks.

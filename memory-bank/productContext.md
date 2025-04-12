@@ -42,67 +42,59 @@ This project addresses significant challenges in the travel insurance market:
    - Reduces information asymmetry
    - Promotes fair competition based on actual policy value
 
-## How It Should Work
+## How It Should Work (Current Implementation & Vision)
 
-The system follows a multi-agent workflow:
+The system currently operates through a series of interconnected scripts and a single agent, focusing on data processing, extraction, and comparison. The original multi-agent conversational vision is not yet implemented.
 
-1. **Conversational Interface**:
-   - Users interact with a Customer Service agent in natural language
-   - The system guides users to express their travel insurance needs and preferences
+1.  **Data Generation**:
+    *   Synthetic conversation transcripts are generated using LLMs (`scripts/data_generation/generate_transcripts.py`), incorporating defined scenarios, coverage requirements, and customer personalities.
 
-2. **Information Extraction**:
-   - An Extractor agent processes conversation transcripts
-   - Key requirements are identified and structured into a customer profile
+2.  **Transcript Evaluation**:
+    *   Generated transcripts are evaluated for quality and coverage using LLMs (`scripts/evaluation/transcript_evaluation/`) before further processing. This acts as a quality gate.
 
-3. **Policy Analysis**:
-   - An Analyzer agent evaluates insurance policies against customer requirements
-   - Structured analysis reports are generated for each policy
+3.  **Information Extraction**:
+    *   An Extractor agent (`src/agents/extractor.py` using CrewAI/OpenAI) processes the *evaluated and parsed* transcripts.
+    *   Key customer requirements are identified and structured into a validated JSON customer profile (`data/extracted_customer_requirements/`).
 
-4. **Consensus Building**:
-   - Multiple independent LLM instances vote on suitable policies
-   - A Voting agent aggregates results to ensure robust recommendations
+4.  **Policy Extraction**:
+    *   A script (`scripts/extract_policy_tier.py` using LLMService/Gemini) processes raw policy PDFs.
+    *   It extracts structured details about coverage, limits, conditions, and source references into JSON format (`data/policies/processed/`).
 
-5. **Recommendation Delivery**:
-   - A Recommender agent reviews voting results
-   - Clear, justified recommendations are provided
-   - Supporting evidence links directly to policy clauses
+5.  **Policy Comparison & Reporting**:
+    *   A script (`scripts/generate_policy_comparison.py` using LLMService/Gemini) compares the extracted customer requirements (JSON) against the structured policy data (JSON).
+    *   It generates detailed Markdown reports comparing policies at the insurer level, selecting the best tier per insurer and providing justifications.
 
-6. **Iterative Refinement**:
-   - Users can update their requirements
-   - The system provides refined recommendations based on feedback
+6.  **Further Evaluation (Planned)**:
+    *   Additional evaluation steps are planned to assess the accuracy of the policy extraction and the quality of the comparison reports.
 
-7. **Machine Learning Integration**:
-   - Supervised ML models analyze patterns in recommendations
-   - Insights on feature importance inform future recommendations
+7.  **Iterative Refinement (Manual)**:
+    *   Developers can manually update inputs (scenarios, requirements definitions, prompts) and re-run the scripts to refine the outputs (transcripts, extractions, reports). Direct user interaction for refinement is not currently implemented.
 
-## User Experience Goals
+8.  **Machine Learning Integration (Future)**:
+    *   Supervised ML models are planned to analyze patterns in extracted requirements and comparison results.
+    *   Insights on feature importance will inform future development or business strategy.
 
-1. **Simplicity**:
-   - Natural conversation flow
-   - No technical insurance knowledge required
-   - Clear, jargon-free explanations
+## User Experience Goals (Developer/Analyst Focused Currently)
 
-2. **Transparency**:
-   - Explicit reasoning for all recommendations
-   - Direct references to policy clauses
-   - Clear explanation of the recommendation process
+While the end-goal includes a user-friendly conversational interface, the current focus delivers value primarily to developers and analysts running the scripts.
 
-3. **Personalization**:
-   - Recommendations tailored to individual needs
-   - Recognition of unique travel contexts
-   - Consideration of personal priorities and preferences
+1.  **Automation**:
+    *   Automates the tedious tasks of transcript generation, requirement extraction, policy data extraction, and comparison.
 
-4. **Trust**:
-   - Unbiased, objective recommendations
-   - Multiple independent evaluations
-   - Consensus-based approach
+2.  **Consistency**:
+    *   Ensures requirements and policy data are extracted into standardized, structured formats (JSON).
+    *   Provides consistent comparison reports based on defined logic.
 
-5. **Efficiency**:
-   - Quick path to relevant recommendations
-   - Focused on high-priority needs
-   - Time-saving compared to manual comparison
+3.  **Transparency (Code & Reports)**:
+    *   The logic is contained within Python scripts and agent prompts.
+    *   Comparison reports aim to provide clear justifications (though direct user interaction is missing).
 
-6. **Adaptability**:
-   - Support for changing requirements
-   - Iterative refinement of recommendations
-   - Responsive to user feedback
+4.  **Data Quality Assurance**:
+    *   Evaluation steps (transcript evaluation, planned policy/comparison evaluation) provide checks on the quality of intermediate data.
+
+5.  **Efficiency**:
+    *   Significantly faster than manual extraction and comparison.
+    *   Batch processing capabilities in scripts enhance throughput.
+
+6.  **Adaptability (Code Level)**:
+    *   The script-based nature allows modification of prompts, models, and logic to adapt to changing needs or improve performance.

@@ -17,20 +17,28 @@
 
 # Project Scope - Key Features
 
-- Decision Automation (Knowledge-Based Reasoning): LLMs will analyze policies and customer conversations to extract data. An agent will apply reasoning and oversee a voting system before finalizing recommendations.
-- Business Resource Optimization (Informed Search): Guided search for optimal insurance policies based on customer-defined constraints and preferences.
-- Knowledge Discovery & Data Mining (Recommendation & Supervised ML): Personalized travel insurance recommendations derived from customer data and policy analysis.
-- ML models trained on customer data e.g. age, gender, insurance requirements, final recommendation, to uncover critical insights on product/market positioning.
-- Cognitive Techniques/Tools: Structured and dynamic knowledge bases, with transparent justification of recommendations.
+- **Knowledge Extraction & Processing**: LLMs are used extensively to:
+    - Generate synthetic customer service transcripts based on defined scenarios and requirements (`scripts/data_generation/generate_transcripts.py`).
+    - Evaluate the quality and coverage of generated transcripts (`scripts/evaluation/transcript_evaluation/`).
+    - Extract structured customer requirements from processed transcripts using an agent (`src/agents/extractor.py` with CrewAI/OpenAI).
+    - Extract structured policy details (coverage, limits, conditions) from raw PDF documents (`scripts/extract_policy_tier.py` with LLMService/Gemini).
+- **Policy Comparison & Reporting**: LLMs compare extracted customer requirements against structured policy data to generate detailed comparison reports (`scripts/generate_policy_comparison.py` with LLMService/Gemini).
+- **Evaluation Focus**: Significant emphasis on evaluating the outputs of LLM-driven steps (transcript generation, planned: policy extraction, planned: comparison reports) to ensure quality and accuracy.
+- **Knowledge Discovery & Data Mining (Future)**: Planned use of supervised ML models trained on customer data (e.g., extracted requirements) and potentially comparison results to uncover insights on product/market positioning.
+- **Cognitive Techniques/Tools**: Use of structured knowledge bases (processed policies, extracted requirements) and planned transparent justification in comparison reports.
 
-# Project Scope - Technical Architecture
+# Project Scope - Technical Architecture (Current Implementation)
 
-- Knowledge Extraction: LLM extracts key customer requirements from conversation transcripts, forming structured, prioritized customer profiles.
-- Policy Reasoning: LLM analyzes and evaluates insurance policies against customer requirements, generating structured Analysis Reports.
-- Voting Mechanism: Multiple asynchronous LLM calls independently recommend policies; results aggregated to ensure robust outcomes.
-- Recommendation Delivery Agent: Reviews aggregated voting results and provides clearly justified recommendations via email, supporting iterative refinement through additional user interactions.
-- Machine Learning: Supervised ML model is trained on a dataset augmented with final recommendations to uncover feature importance and critical insights.
-- Feedback Loop: Customers can iteratively refine their initial requirements, enhancing the accuracy and personalization of subsequent recommendations.
+- **Data Generation Pipeline**: Scripts generate synthetic transcripts (`generate_transcripts.py`) using personalities, scenarios, and coverage requirements.
+- **Transcript Processing Pipeline**:
+    - **Evaluation**: Transcripts are evaluated for quality (`scripts/evaluation/transcript_evaluation/`).
+    - **Parsing**: Passed transcripts are parsed into a standard format (`src/utils/transcript_processing.py`).
+    - **Extraction**: An Extractor Agent (`src/agents/extractor.py` using CrewAI/OpenAI) processes parsed transcripts to produce structured customer requirement JSON files.
+- **Policy Processing Pipeline**: A script (`scripts/extract_policy_tier.py` using LLMService/Gemini) extracts detailed structured information from policy PDFs into JSON format.
+- **Comparison Reporting**: A script (`scripts/generate_policy_comparison.py` using LLMService/Gemini) takes extracted requirements and processed policies to generate insurer-level comparison reports in Markdown format.
+- **Evaluation Framework**: Includes transcript evaluation; planned evaluations for policy extraction and comparison report quality.
+- **Machine Learning (Future)**: Supervised ML models planned for analyzing extracted requirements and comparison outcomes.
+- **Feedback Loop (Conceptual)**: While direct user interaction agents (CS Agent, Recommender) are not implemented, the script-based workflow allows for iterative refinement by modifying inputs (scenarios, requirements) and re-running the pipeline.
 
 # Data Collection and Preparation
 
@@ -39,5 +47,3 @@
     - Initially synthetically generated via LLMs for diverse scenario coverage.
     - Potential inclusion of real human-AI conversational data
 - Ground Truth Labels: Derived from clearly defined user needs and expected recommendation outcomes.
-
-

@@ -4,25 +4,37 @@
 
 ### Core Technologies
 
-1. **Python**:
-   - Primary programming language
-   - Version: Latest stable (3.x)
-   - Used for: All agent implementations, data processing, and API integrations
+1.  **Python**:
+    *   Primary programming language
+    *   Version: Latest stable (3.x)
+    *   Used for: All agent implementations (currently Extractor), utility scripts, data processing, and API integrations.
 
-2. **Google Gemini & OpenAI**:
-   - Large Language Models for natural language processing and reasoning
-   - Used for: Agent reasoning, text analysis, and generation tasks
-   - Implementation:
-     - Google Gemini: Used via the centralized `LLMService` (`src/models/llm_service.py`), which loads configuration (default model, parameters like `max_output_tokens`, API key) from `src/models/gemini_config.py`. Handles retries internally.
-     - OpenAI: Used by the Extractor agent via the `crewai` framework (configured with `.env` variables).
+2.  **Large Language Models (LLMs)**:
+    *   **Google Gemini**:
+        *   Primary LLM for most tasks (data generation, policy extraction, evaluation, comparison).
+        *   Accessed via the centralized `LLMService` (`src/models/llm_service.py`).
+        *   Configuration managed in `src/models/gemini_config.py`.
+    *   **OpenAI Models (e.g., GPT-4o)**:
+        *   Used *specifically* by the Extractor Agent (`src/agents/extractor.py`).
+        *   Accessed via the `crewai` framework.
+        *   Configuration (API Key, Model Name) managed via `.env` file.
 
-3. **Jupyter Notebooks**:
-   - Interactive development environment
-   - Used for: Prototyping, experimentation, and demonstration
+3.  **CrewAI**:
+    *   Agent framework used for orchestrating the Extractor Agent.
+    *   Handles agent definition, task management, and interaction with the configured LLM (OpenAI).
+    *   Location: `src/agents/extractor.py`.
 
-4. **JSON**:
-   - Data interchange format
-   - Used for: Structured data representation, agent communication
+4.  **Pydantic**:
+    *   Data validation and settings management library.
+    *   Used for: Defining and validating structured JSON outputs (e.g., `TravelInsuranceRequirement`, policy extraction schemas), managing configuration.
+
+5.  **Jupyter Notebooks**:
+    *   Interactive development environment.
+    *   Used for: Initial prototyping, experimentation, and demonstration (though core logic is now in scripts/agents).
+
+6.  **JSON**:
+    *   Primary data interchange format.
+    *   Used for: Structured data representation (transcripts, requirements, policies, evaluations), configuration.
 
 ## Development Setup
 
@@ -64,11 +76,10 @@
 │   └── evaluation/             # Evaluation data
 │       └── transcript_evaluations/ # Transcript evaluation results
 ├── src/                        # Source code
-│   ├── agents/                 # Agent implementations
-│   ├── models/                 # LLM configurations and services
-│   ├── prompts/                # Prompts for LLM tasks
-│   ├── utils/                  # Utility functions
-│   └── web/                    # Web interface components
+│   ├── agents/                 # Agent implementations (currently extractor.py, recommender.py [empty])
+│   ├── models/                 # LLM configurations (gemini_config.py) and services (llm_service.py)
+│   ├── utils/                  # Utility functions (transcript_processing.py, etc.)
+│   └── web/                    # Basic CLI runner (app.py)
 ├── tests/                      # Test cases
 ├── scripts/                    # Utility scripts
 │   ├── extract_policy_tier.py  # Extracts structured policy details (base/conditional limits, source-specific details) from PDFs into JSON.
@@ -118,9 +129,9 @@
    - Challenge: LLM API calls introduce latency
    - Mitigation: Asynchronous processing, caching where appropriate
 
-2. **Scalability**:
-   - Challenge: Multiple LLM calls for voting mechanism
-   - Mitigation: Efficient prompt design, parallel processing
+2.  **Scalability**:
+    *   Challenge: Multiple LLM calls across the script pipeline (generation, evaluation, extraction, comparison) can lead to long processing times for large batches.
+    *   Mitigation: Efficient prompt design, parallel/asynchronous processing (used in comparison script), potential caching.
 
 3. **Resource Usage**:
    - Challenge: Memory requirements for processing large policy documents
@@ -150,9 +161,9 @@
    - Challenge: Potential for prompt manipulation
    - Mitigation: Input validation, prompt engineering best practices
 
-3. **Output Reliability**:
-   - Challenge: Ensuring accurate and appropriate recommendations
-   - Mitigation: Voting mechanism, confidence thresholds
+3.  **Output Reliability**:
+    *   Challenge: Ensuring accurate and appropriate outputs from LLM-driven steps (extraction, comparison).
+    *   Mitigation: Evaluation gates (transcript evaluation), planned evaluations (policy extraction, comparison), prompt engineering, structured output validation (Pydantic).
 
 ## Dependencies
 
@@ -181,46 +192,46 @@
 
 ### Internal Dependencies
 
-1. **LLM Service**:
-   - Location: `src/models/llm_service.py`
-   - Purpose: Provides a unified interface to Google Gemini. Initializes a `genai.Client` using configuration (API key, default model, parameters) loaded from `src/models/gemini_config.py`.
-   - Features: Content generation (supports text prompts and multi-modal `contents` input), structured JSON output (with markdown/formatting fixes), streaming, batch processing, internal retry logic.
-   - Used by: All scripts/agents requiring Gemini capabilities (e.g., `extract_policy_tier.py`, `generate_transcripts.py`, `eval_transcript_gemini.py`, `generate_personalities.py`).
+1.  **LLM Service (`src/models/llm_service.py`)**:
+    *   Provides a unified interface to **Google Gemini**.
+    *   Handles configuration loading (`gemini_config.py`), API calls, retries, and robust JSON parsing.
+    *   Consumed by most utility scripts (`extract_policy_tier.py`, `generate_policy_comparison.py`, data generation, evaluation).
 
-2. **Agent Interdependencies**:
-   - CS Agent → Extractor → Analyzer → Voting → Recommender
-   - Most agents depend on the internal `LLMService` (Gemini) for reasoning.
-   - The Extractor agent depends directly on the OpenAI API via `crewai`.
+2.  **Extractor Agent (`src/agents/extractor.py`)**:
+    *   Depends on the **`crewai`** framework and **OpenAI** API (configured via `.env`).
+    *   Consumes processed transcripts (`data/transcripts/processed/`).
+    *   Uses the `TravelInsuranceRequirement` model from `src/utils/transcript_processing.py`.
+    *   Produces extracted requirements (`data/extracted_customer_requirements/`).
+    *   *Does not* currently interact with other agents or the `LLMService`.
 
-3. **Transcript Evaluation Modules**:
-   - Location: `scripts/evaluation/transcript_evaluation/`
-   - Purpose: Evaluate generated transcripts against standard and scenario-specific requirements.
-   - Structure: Flat structure containing `eval_transcript_main.py` (entry point), `eval_transcript_parser.py` (reads transcript/scenario), `eval_transcript_prompts.py` (builds LLM prompt), `eval_transcript_gemini.py` (interfaces with LLMService), `eval_transcript_results.py` (saves results), `eval_transcript_utils.py` (helpers).
-   - Dependencies: `LLMService`, `data/coverage_requirements/`, `data/scenarios/`.
+3.  **Utility Scripts (`scripts/`)**:
+    *   **Data Generation (`scripts/data_generation/`)**: Depend on `LLMService`.
+    *   **Policy Extraction (`scripts/extract_policy_tier.py`)**: Depends on `LLMService`.
+    *   **Transcript Evaluation (`scripts/evaluation/transcript_evaluation/`)**: Depends on `LLMService`.
+    *   **Policy Comparison (`scripts/generate_policy_comparison.py`)**: Depends on `LLMService`, Extractor output, and Policy Extraction output.
 
-4. **Utility Modules**:
-   - Document processing utilities
-   - Transcript processing utilities (`src/utils/transcript_processing.py`)
-   - Email service utilities
+4.  **Utility Modules (`src/utils/`)**:
+    *   `transcript_processing.py`: Defines `TravelInsuranceRequirement` Pydantic model (used by Extractor) and parsing logic.
+    *   Other utilities as needed.
 
-4. **Data Dependencies**:
-   - Insurance policy documents
-   - Conversation transcripts (synthetic or real)
-   - Evaluation datasets
+5.  **Data Dependencies**:
+    *   Raw/Processed Policies (`data/policies/`)
+    *   Raw/Processed Transcripts (`data/transcripts/`)
+    *   Extracted Requirements (`data/extracted_customer_requirements/`)
+    *   Evaluation Results (`data/evaluation/`)
+    *   Supporting data (Scenarios, Coverage Requirements, Personalities).
 
 ## Configuration Management
 
-1. **Environment Variables**:
-   - API keys and credentials (e.g., `GEMINI_API_KEY`, `OPENAI_API_KEY`, `OPENAI_MODEL_NAME`)
-   - Environment-specific settings
-   - Managed via `python-dotenv` for local development (primarily for OpenAI keys used by `crewai`). Google API key is also loaded via `dotenv` by `GeminiConfig`.
+1.  **Environment Variables (`.env`)**:
+    *   Used primarily for **OpenAI** configuration needed by `crewai` (Extractor Agent): `OPENAI_API_KEY`, `OPENAI_MODEL_NAME`.
+    *   Also used for `GEMINI_API_KEY` loaded by `GeminiConfig`.
+    *   Managed via `python-dotenv`.
 
-2. **Configuration Files**:
-   - Central Gemini LLM configuration: `src/models/gemini_config.py` (defines default model, parameters like temperature, `max_output_tokens`, safety settings). Loaded and used by `LLMService`.
-   - Agent-specific configurations (e.g., within `crewai` agent definitions for the Extractor agent).
-   - System-wide settings (potentially other config files if needed).
+2.  **Configuration Files**:
+    *   **Gemini LLM Configuration (`src/models/gemini_config.py`)**: Central configuration for Google Gemini models used by `LLMService`. Defines default model, parameters (temperature, `max_output_tokens`), safety settings, and loads API key from `.env`.
+    *   **Agent Configuration (Implicit)**: The Extractor Agent's configuration (role, goal, LLM choice) is defined directly within `src/agents/extractor.py` using `crewai` constructs.
 
-3. **Prompt Templates**:
-   - Stored as separate files
-   - Parameterized for flexibility
-   - Versioned for consistency
+3.  **Prompt Templates**:
+    *   Defined as constants or formatted strings within the Python scripts/agents that use them (e.g., `extractor.py`, `generate_policy_comparison.py`, `extract_policy_tier.py`).
+    *   Parameterized for dynamic content injection.
