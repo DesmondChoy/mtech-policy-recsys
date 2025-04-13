@@ -4,12 +4,13 @@
     "sompo_{Elite}.json",
     "sompo_{GO Japan!}.json"
   ],
-  "Adventurous Activities Cover": [
+  "Adventurous Activities or Amateur Sports": [
     "income_{Deluxe}.json",
-    "income_{Preferred}.json"
-  ],
-  "Adventurous activities": [
-    "income_{Classic}.json"
+    "income_{Preferred}.json",
+    "income_{Classic}.json",
+    "sompo_{Deluxe}.json",
+    "sompo_{Elite}.json",
+    "sompo_{GO Japan!}.json"
   ],
   "Alternative Accommodation Arrangement": [
     "sompo_{Deluxe}.json",
@@ -23,20 +24,13 @@
     "sompo_{GO Japan!}.json",
     "sompo_{Vital}.json"
   ],
-  "Amateur Sports Cover": [
-    "sompo_{Deluxe}.json",
-    "sompo_{Elite}.json",
-    "sompo_{GO Japan!}.json"
-  ],
-  "Automatic Extension": [
-    "income_{Classic}.json",
-    "income_{Deluxe}.json",
-    "income_{Preferred}.json"
-  ],
   "Automatic policy extension": [
     "fwd_{Business}.json",
     "fwd_{First}.json",
-    "fwd_{Premium}.json"
+    "fwd_{Premium}.json",
+    "income_{Classic}.json",
+    "income_{Deluxe}.json",
+    "income_{Preferred}.json"
   ],
   "Baggage delay": [
     "fwd_{Business}.json",
@@ -48,14 +42,12 @@
     "sompo_{Deluxe}.json",
     "sompo_{Elite}.json",
     "sompo_{GO Japan!}.json",
-    "sompo_{Vital}.json"
+    "sompo_{Vital}.json",
+    "fwd_{Business}.json",
+    "fwd_{First}.json",
+    "fwd_{Premium}.json"
   ],
   "COVID-19 Cover": [
-    "income_{Classic}.json",
-    "income_{Deluxe}.json",
-    "income_{Preferred}.json"
-  ],
-  "Cancelling your trip": [
     "income_{Classic}.json",
     "income_{Deluxe}.json",
     "income_{Preferred}.json"
@@ -75,18 +67,14 @@
     "fwd_{First}.json",
     "fwd_{Premium}.json"
   ],
-  "Compassionate Visit by a Relative or Friend": [
+  "Compassionate Visit": [
     "sompo_{Deluxe}.json",
     "sompo_{Elite}.json",
     "sompo_{GO Japan!}.json",
-    "sompo_{Vital}.json"
-  ],
-  "Compassionate travel": [
+    "sompo_{Vital}.json",
     "fwd_{Business}.json",
     "fwd_{First}.json",
-    "fwd_{Premium}.json"
-  ],
-  "Compassionate visit": [
+    "fwd_{Premium}.json",
     "income_{Classic}.json",
     "income_{Deluxe}.json",
     "income_{Preferred}.json"
@@ -111,21 +99,29 @@
     "sompo_{Elite}.json",
     "sompo_{GO Japan!}.json"
   ],
-  "Emergency Medical Evacuation & Repatriation (Including Mortal Remains) Back to Singapore": [
-    "sompo_{Deluxe}.json",
-    "sompo_{Elite}.json",
-    "sompo_{GO Japan!}.json",
-    "sompo_{Vital}.json"
-  ],
   "Emergency medical evacuation": [
     "income_{Classic}.json",
     "income_{Deluxe}.json",
-    "income_{Preferred}.json"
-  ],
-  "Emergency medical evacuation & repatriation": [
+    "income_{Preferred}.json",
+    "sompo_{Deluxe}.json",
+    "sompo_{Elite}.json",
+    "sompo_{GO Japan!}.json",
+    "sompo_{Vital}.json",
     "fwd_{Business}.json",
     "fwd_{First}.json",
     "fwd_{Premium}.json"
+  ],
+  "Emergency medical Repatriation (Including Mortal Remains) Back to Singapore": [
+    "fwd_{Business}.json",
+    "fwd_{First}.json",
+    "fwd_{Premium}.json",
+    "sompo_{Deluxe}.json",
+    "sompo_{Elite}.json",
+    "sompo_{GO Japan!}.json",
+    "sompo_{Vital}.json",
+    "income_{Classic}.json",
+    "income_{Deluxe}.json",
+    "income_{Preferred}.json"
   ],
   "Emergency phone charges": [
     "fwd_{Business}.json",
@@ -143,12 +139,6 @@
     "income_{Classic}.json",
     "income_{Deluxe}.json",
     "income_{Preferred}.json"
-  ],
-  "Financial Collapse of Licensed Tour Operators": [
-    "sompo_{Deluxe}.json",
-    "sompo_{Elite}.json",
-    "sompo_{GO Japan!}.json",
-    "sompo_{Vital}.json"
   ],
   "Flight Deviation": [
     "sompo_{Deluxe}.json",
@@ -173,14 +163,6 @@
     "sompo_{GO Japan!}.json",
     "sompo_{Vital}.json"
   ],
-  "Full Terrorism Cover": [
-    "income_{Classic}.json",
-    "income_{Deluxe}.json",
-    "income_{Preferred}.json",
-    "sompo_{Deluxe}.json",
-    "sompo_{Elite}.json",
-    "sompo_{GO Japan!}.json"
-  ],
   "Golf Cover": [
     "sompo_{Deluxe}.json",
     "sompo_{Elite}.json",
@@ -191,16 +173,12 @@
     "sompo_{Elite}.json",
     "sompo_{GO Japan!}.json"
   ],
-  "Home contents": [
+  "Home contents cover (burglary and fire in your home while you are overseas)": [
     "fwd_{Business}.json",
     "fwd_{First}.json",
-    "fwd_{Premium}.json"
-  ],
-  "Home cover": [
+    "fwd_{Premium}.json",
     "income_{Classic}.json",
-    "income_{Deluxe}.json"
-  ],
-  "Home cover (contents)": [
+    "income_{Deluxe}.json",
     "income_{Preferred}.json"
   ],
   "Hospital Allowance for Hospitalisation in Singapore": [
@@ -213,38 +191,30 @@
     "fwd_{First}.json",
     "fwd_{Premium}.json"
   ],
-  "If the travel agency becomes insolvent": [
-    "income_{Deluxe}.json"
-  ],
-  "Insolvency protection": [
+  "If your travel service provider is insolvent": [
+    "income_{Classic}.json",
+    "income_{Deluxe}.json",
+    "income_{Preferred}.json",
     "fwd_{Business}.json",
     "fwd_{First}.json",
-    "fwd_{Premium}.json"
-  ],
-  "Kidnap Benefit": [
+    "fwd_{Premium}.json",
     "sompo_{Deluxe}.json",
     "sompo_{Elite}.json",
-    "sompo_{GO Japan!}.json"
+    "sompo_{GO Japan!}.json",
+    "sompo_{Vital}.json"
   ],
   "Kidnap and hostage": [
     "income_{Classic}.json",
     "income_{Deluxe}.json",
-    "income_{Preferred}.json"
+    "income_{Preferred}.json",
+    "sompo_{Deluxe}.json",
+    "sompo_{Elite}.json",
+    "sompo_{GO Japan!}.json"
   ],
   "Leisure Underwater Activities": [
     "sompo_{Deluxe}.json",
     "sompo_{Elite}.json",
     "sompo_{GO Japan!}.json"
-  ],
-  "Losing money": [
-    "income_{Classic}.json",
-    "income_{Deluxe}.json",
-    "income_{Preferred}.json"
-  ],
-  "Losing travel documents": [
-    "income_{Classic}.json",
-    "income_{Deluxe}.json",
-    "income_{Preferred}.json"
   ],
   "Loss of Hotel Facilities": [
     "sompo_{Deluxe}.json",
@@ -254,31 +224,31 @@
   "Loss of passport, travel documents & theft of money": [
     "fwd_{Business}.json",
     "fwd_{First}.json",
-    "fwd_{Premium}.json"
-  ],
-  "Loss or Damage to Baggage & Personal Effects": [
-    "sompo_{Deluxe}.json",
-    "sompo_{Elite}.json",
-    "sompo_{GO Japan!}.json",
-    "sompo_{Vital}.json"
+    "fwd_{Premium}.json",
+    "income_{Classic}.json",
+    "income_{Deluxe}.json",
+    "income_{Preferred}.json"
   ],
   "Loss or damage of baggage and personal belongings": [
     "income_{Classic}.json",
     "income_{Deluxe}.json",
-    "income_{Preferred}.json"
+    "income_{Preferred}.json",
+    "sompo_{Deluxe}.json",
+    "sompo_{Elite}.json",
+    "sompo_{GO Japan!}.json",
+    "sompo_{Vital}.json",
+    "fwd_{Business}.json",
+    "fwd_{First}.json",
+    "fwd_{Premium}.json"
   ],
   "Medical Expenses Incurred Upon Return to Singapore": [
     "sompo_{Deluxe}.json",
     "sompo_{Elite}.json",
     "sompo_{GO Japan!}.json",
-    "sompo_{Vital}.json"
-  ],
-  "Medical expenses in Singapore": [
+    "sompo_{Vital}.json",
     "income_{Classic}.json",
     "income_{Deluxe}.json",
-    "income_{Preferred}.json"
-  ],
-  "Medical expenses incurred in Singapore": [
+    "income_{Preferred}.json",
     "fwd_{Business}.json",
     "fwd_{First}.json",
     "fwd_{Premium}.json"
@@ -290,9 +260,7 @@
     "sompo_{Deluxe}.json",
     "sompo_{Elite}.json",
     "sompo_{GO Japan!}.json",
-    "sompo_{Vital}.json"
-  ],
-  "Medical expenses overseas": [
+    "sompo_{Vital}.json",
     "income_{Classic}.json",
     "income_{Deluxe}.json",
     "income_{Preferred}.json"
@@ -314,23 +282,12 @@
     "sompo_{Deluxe}.json",
     "sompo_{Elite}.json",
     "sompo_{GO Japan!}.json",
-    "sompo_{Vital}.json"
-  ],
-  "Overseas hospital allowance": [
+    "sompo_{Vital}.json",
     "income_{Classic}.json",
     "income_{Deluxe}.json",
     "income_{Preferred}.json"
   ],
   "Personal Accident (Accidental Death, Permanent Disablement, Third Degree Burns)": [
-    "sompo_{GO Japan!}.json"
-  ],
-  "Personal Liability / Family Liability": [
-    "sompo_{Deluxe}.json",
-    "sompo_{Elite}.json",
-    "sompo_{GO Japan!}.json",
-    "sompo_{Vital}.json"
-  ],
-  "Personal accident": [
     "fwd_{Business}.json",
     "fwd_{First}.json",
     "fwd_{Premium}.json",
@@ -339,31 +296,33 @@
     "income_{Preferred}.json",
     "sompo_{Deluxe}.json",
     "sompo_{Elite}.json",
+    "sompo_{Vital}.json",
+    "sompo_{GO Japan!}.json"
+  ],
+  "Family Liability": [
+    "sompo_{Deluxe}.json",
+    "sompo_{Elite}.json",
+    "sompo_{GO Japan!}.json",
     "sompo_{Vital}.json"
   ],
   "Personal liability": [
     "income_{Classic}.json",
     "income_{Deluxe}.json",
-    "income_{Preferred}.json"
-  ],
-  "Personal liability while on your trip": [
+    "income_{Preferred}.json",
     "fwd_{Business}.json",
     "fwd_{First}.json",
-    "fwd_{Premium}.json"
+    "fwd_{Premium}.json",
+    "sompo_{Deluxe}.json",
+    "sompo_{Elite}.json",
+    "sompo_{GO Japan!}.json",
+    "sompo_{Vital}.json"
   ],
   "Pet care": [
     "fwd_{Business}.json",
     "fwd_{First}.json",
     "fwd_{Premium}.json"
   ],
-  "Post-departure purchase": [
-    "income_{Deluxe}.json"
-  ],
   "Post-departure purchase extension": [
-    "income_{Classic}.json",
-    "income_{Preferred}.json"
-  ],
-  "Postponing your trip": [
     "income_{Classic}.json",
     "income_{Deluxe}.json",
     "income_{Preferred}.json"
@@ -392,13 +351,6 @@
     "sompo_{Elite}.json",
     "sompo_{GO Japan!}.json"
   ],
-  "Sending you home": [
-    "income_{Classic}.json",
-    "income_{Deluxe}.json"
-  ],
-  "Sending you home (Repatriation)": [
-    "income_{Preferred}.json"
-  ],
   "Shortening your trip": [
     "income_{Classic}.json",
     "income_{Deluxe}.json",
@@ -410,11 +362,12 @@
     "fwd_{Premium}.json"
   ],
   "Terrorism cover": [
-    "fwd_{Business}.json",
-    "fwd_{First}.json",
-    "fwd_{Premium}.json"
-  ],
-  "Theft of or damage to baggage or personal belongings": [
+    "income_{Classic}.json",
+    "income_{Deluxe}.json",
+    "income_{Preferred}.json",
+    "sompo_{Deluxe}.json",
+    "sompo_{Elite}.json",
+    "sompo_{GO Japan!}.json",
     "fwd_{Business}.json",
     "fwd_{First}.json",
     "fwd_{Premium}.json"
@@ -431,8 +384,60 @@
     "sompo_{GO Japan!}.json",
     "sompo_{Vital}.json"
   ],
-  "Travel agency insolvency": [
+  "Treatment by a Chinese medicine practitioner or a chiropractor": [
     "income_{Classic}.json",
+    "income_{Deluxe}.json",
+    "income_{Preferred}.json"
+  ],
+  "Trip Curtailment": [
+    "sompo_{Deluxe}.json",
+    "sompo_{Elite}.json",
+    "sompo_{GO Japan!}.json",
+    "sompo_{Vital}.json"
+  ],
+  "If your trip is disrupted while you are on your trip": [
+    "sompo_{Deluxe}.json",
+    "sompo_{Elite}.json",
+    "sompo_{GO Japan!}.json",
+    "fwd_{Business}.json",
+    "fwd_{First}.json",
+    "fwd_{Premium}.json",
+    "income_{Classic}.json",
+    "income_{Deluxe}.json",
+    "income_{Preferred}.json"
+  ],
+  "Trip cancellation": [
+    "fwd_{Business}.json",
+    "fwd_{First}.json",
+    "fwd_{Premium}.json",
+    "income_{Classic}.json",
+    "income_{Deluxe}.json",
+    "income_{Preferred}.json",
+    "sompo_{Deluxe}.json",
+    "sompo_{Elite}.json",
+    "sompo_{GO Japan!}.json",
+    "sompo_{Vital}.json"
+  ],
+  "Trip cut short": [
+    "fwd_{Business}.json",
+    "fwd_{First}.json",
+    "fwd_{Premium}.json"
+  ],
+  "Trip diversion": [
+    "fwd_{Business}.json",
+    "fwd_{First}.json",
+    "fwd_{Premium}.json"
+  ],
+  "Trip postponement or delay": [
+    "fwd_{Business}.json",
+    "fwd_{First}.json",
+    "fwd_{Premium}.json",
+    "sompo_{Deluxe}.json",
+    "sompo_{Elite}.json",
+    "sompo_{GO Japan!}.json",
+    "sompo_{Vital}.json",
+    "income_{Classic}.json",
+    "income_{Deluxe}.json",
     "income_{Preferred}.json"
   ],
   "Travel delay": [
@@ -447,61 +452,9 @@
     "sompo_{GO Japan!}.json",
     "sompo_{Vital}.json"
   ],
-  "Treatment by a Chinese medicine practitioner or a chiropractor": [
-    "income_{Classic}.json",
-    "income_{Deluxe}.json",
-    "income_{Preferred}.json"
-  ],
-  "Trip Cancellation or Postponement": [
-    "sompo_{Deluxe}.json",
-    "sompo_{Elite}.json",
-    "sompo_{GO Japan!}.json",
-    "sompo_{Vital}.json"
-  ],
-  "Trip Curtailment": [
-    "sompo_{Deluxe}.json",
-    "sompo_{Elite}.json",
-    "sompo_{GO Japan!}.json",
-    "sompo_{Vital}.json"
-  ],
-  "Trip Disruption Including Ticketed Cancellation": [
-    "sompo_{Deluxe}.json",
-    "sompo_{Elite}.json",
-    "sompo_{GO Japan!}.json"
-  ],
-  "Trip cancellation and loss of deposit": [
-    "fwd_{Business}.json",
-    "fwd_{First}.json",
-    "fwd_{Premium}.json"
-  ],
-  "Trip cut short": [
-    "fwd_{Business}.json",
-    "fwd_{First}.json",
-    "fwd_{Premium}.json"
-  ],
-  "Trip disruption": [
-    "fwd_{Business}.json",
-    "fwd_{First}.json",
-    "fwd_{Premium}.json",
-    "income_{Classic}.json",
-    "income_{Deluxe}.json",
-    "income_{Preferred}.json"
-  ],
-  "Trip diversion": [
-    "fwd_{Business}.json",
-    "fwd_{First}.json",
-    "fwd_{Premium}.json"
-  ],
-  "Trip postponement": [
-    "fwd_{Business}.json",
-    "fwd_{First}.json",
-    "fwd_{Premium}.json"
-  ],
   "War Cover": [
     "sompo_{Deluxe}.json",
-    "sompo_{Elite}.json"
-  ],
-  "War Cover (Accidental Death & Permanent Disablement)": [
+    "sompo_{Elite}.json",
     "sompo_{GO Japan!}.json"
   ]
 }
