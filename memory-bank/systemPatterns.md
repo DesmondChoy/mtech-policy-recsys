@@ -213,7 +213,7 @@ sequenceDiagram
     LLM_Gemini-->>ExtractP: Structured Policy JSON
     Note right of ExtractP: Saves to data/policies/processed/
 
-    EvalPDF->>LLM_Gemini: Evaluate Policy JSON vs PDF (Multi-modal)
+    EvalPDF->>LLM_Gemini: Evaluate Policy JSON vs PDF (Multi-modal, uses --file_pattern)
     LLM_Gemini-->>EvalPDF: Evaluation Result JSON
     Note right of EvalPDF: Saves to data/evaluation/pdf_extraction_evaluations/
 

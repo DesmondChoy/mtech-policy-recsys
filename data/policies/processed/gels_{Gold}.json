@@ -1,0 +1,1163 @@
+{
+  "provider_name": "Great Eastern",
+  "policy_name": "GREAT TravelCare",
+  "tier_name": "Gold",
+  "extraction_date": "2024-07-27",
+  "currency": "SGD",
+  "coverage_categories": [
+    {
+      "category_name": "Personal accident and medical benefits",
+      "coverages": [
+        {
+          "coverage_name": "Accidental death and permanent disability",
+          "base_limits": [
+            {
+              "type": "Adult under 70 years",
+              "limit": 250000,
+              "basis": null
+            },
+            {
+              "type": "Adult age 70 years or above",
+              "limit": 100000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 75000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 650000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides lump sum payment for accidental death or permanent disability during the trip.",
+              "source_location": "Page 3, Item 1"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Public transport double indemnity",
+          "base_limits": [
+            {
+              "type": "Adult under 70 years",
+              "limit": 500000,
+              "basis": null
+            },
+            {
+              "type": "Adult age 70 years or above",
+              "limit": 200000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 150000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 1250000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Doubles the accidental death/permanent disability payout if the accident occurs while on public transport.",
+              "source_location": "Page 3, Item 2"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Emergency medical evacuation / Repatriation",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 1000000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": [
+            {
+              "condition": "With pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 150000,
+                  "basis": null
+                }
+              ],
+              "source_location": "Page 5, Item 38c/d"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers expenses for emergency medical evacuation to the nearest appropriate facility or repatriation back to Singapore.",
+              "source_location": "Page 3, Item 3/4"
+            },
+            {
+              "detail_snippet": "Limit is S$150,000 if evacuation/repatriation is due to a covered pre-existing condition and the optional add-on benefit was purchased. Add-on available for Gold/Platinum plans with additional premium for single/annual trips up to 45 days.",
+              "source_location": "Page 5, Item 38c/d & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Medical expenses while overseas",
+          "base_limits": [
+            {
+              "type": "Adult under 70 years",
+              "limit": 500000,
+              "basis": null
+            },
+            {
+              "type": "Adult age 70 years or above",
+              "limit": 100000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 200000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 1000000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": [
+            {
+              "condition": "With pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Adult below 70 years old",
+                  "limit": 150000,
+                  "basis": "Co-payment: S$100 per outpatient visit"
+                },
+                {
+                  "type": "Child or adult 70 years old and above",
+                  "limit": 100000,
+                  "basis": "Co-payment: S$100 per outpatient visit"
+                }
+              ],
+              "source_location": "Page 5, Item 38a"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers necessary medical expenses incurred overseas due to accidental injury or illness during the trip.",
+              "source_location": "Page 3, Item 5"
+            },
+            {
+              "detail_snippet": "Covers overseas medical expenses for specified pre-existing conditions (e.g., diabetes, high blood pressure, asthma, arthritis, stroke, heart disease) up to specified limits with co-payment, if the optional add-on benefit was purchased. Add-on available for Gold/Platinum plans with additional premium for single/annual trips up to 45 days.",
+              "source_location": "Page 5, Item 38a & Page 2 & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Medical expenses while in Singapore",
+          "base_limits": [
+            {
+              "type": "Adult under 70 years",
+              "limit": 15000,
+              "basis": null
+            },
+            {
+              "type": "Adult age 70 years or above",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 10000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 50000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers follow-up medical treatment expenses incurred in Singapore within a specified period after returning, for injury/illness sustained overseas.",
+              "source_location": "Page 3, Item 6"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Traditional Chinese medicine",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 500,
+              "basis": null
+            },
+            {
+              "type": "Limit per visit",
+              "limit": 80,
+              "basis": null
+            }
+          ],
+          "conditional_limits": [
+            {
+              "condition": "With pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 500,
+                  "basis": "Limit per visit: S$80"
+                }
+              ],
+              "source_location": "Page 5, Item 38b"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers expenses for Traditional Chinese Medicine treatment overseas or as follow-up in Singapore.",
+              "source_location": "Page 3, Item 7"
+            },
+            {
+              "detail_snippet": "Covers TCM treatment related to specified pre-existing conditions up to the same limits, if the optional add-on benefit was purchased. Add-on available for Gold/Platinum plans with additional premium for single/annual trips up to 45 days.",
+              "source_location": "Page 5, Item 38b & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Emergency dental treatment",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 2000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers emergency dental treatment needed due to accidental injury during the trip.",
+              "source_location": "Page 3, Item 8"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Maternity care",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 2000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers emergency medical treatment related to pregnancy complications arising during the trip.",
+              "source_location": "Page 3, Item 9"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Hospital cash",
+          "base_limits": [
+            {
+              "type": "Hospital stay overseas",
+              "limit": 30000,
+              "basis": "S$200 per day"
+            },
+            {
+              "type": "Maximum limit for family cover (overseas)",
+              "limit": 60000,
+              "basis": "S$200 per day"
+            },
+            {
+              "type": "Hospital stay in Singapore",
+              "limit": 1000,
+              "basis": "S$100 per day"
+            },
+            {
+              "type": "Maximum limit for family cover (Singapore)",
+              "limit": 2000,
+              "basis": "S$100 per day"
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides a daily cash benefit for each day of hospital confinement (overseas or upon return to Singapore) due to injury/illness sustained during the trip.",
+              "source_location": "Page 3, Item 10a/b"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Hospital visit or compassionate visit",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 10000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 20000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": [
+            {
+              "condition": "With pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 3000,
+                  "basis": null
+                }
+              ],
+              "source_location": "Page 5, Item 38e"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers reasonable travel and accommodation expenses for one relative or friend to travel to the insured if hospitalized overseas for a specified period, or for the insured to return due to death/serious illness of a close relative.",
+              "source_location": "Page 3, Item 11"
+            },
+            {
+              "detail_snippet": "Limit is S$3,000 if the visit is related to hospitalization for a covered pre-existing condition and the optional add-on benefit was purchased. Add-on available for Gold/Platinum plans with additional premium for single/annual trips up to 45 days.",
+              "source_location": "Page 5, Item 38e & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Child companion",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 10000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 20000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers reasonable travel and accommodation expenses for one relative or friend to accompany the insured's child(ren) back to Singapore if the insured is hospitalized overseas.",
+              "source_location": "Page 3, Item 12"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Child education grant",
+          "base_limits": [
+            {
+              "type": "Per child",
+              "limit": 2000,
+              "basis": null
+            },
+            {
+              "type": "Maximum per event",
+              "limit": 8000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides a grant for the insured's child's education in the event of the insured's accidental death or permanent total disablement during the trip.",
+              "source_location": "Page 3, Item 13"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Condolence cash",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 2000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": [
+            {
+              "condition": "With pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 2000,
+                  "basis": null
+                }
+              ],
+              "source_location": "Page 5, Item 38i"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides a lump sum cash payment in the event of the insured's death during the trip.",
+              "source_location": "Page 3, Item 14"
+            },
+            {
+              "detail_snippet": "Benefit is payable if death results from a covered pre-existing condition and the optional add-on benefit was purchased. Add-on available for Gold/Platinum plans with additional premium for single/annual trips up to 45 days.",
+              "source_location": "Page 5, Item 38i & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Emergency phone charges",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 150,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Reimburses the cost of emergency telephone calls made due to hospitalization or a covered event during the trip.",
+              "source_location": "Page 3, Item 15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Travel inconvenience benefits",
+      "coverages": [
+        {
+          "coverage_name": "Trip cancellation",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 10000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 25000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": [
+            {
+              "condition": "With pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 10000,
+                  "basis": "Co-payment: 50%"
+                }
+              ],
+              "source_location": "Page 5, Item 38f"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers loss of irrecoverable travel and accommodation costs paid in advance if the trip is necessarily cancelled before departure due to specified reasons (e.g., death, serious injury/illness).",
+              "source_location": "Page 4, Item 16"
+            },
+            {
+              "detail_snippet": "Covers cancellation due to specified pre-existing conditions up to S$10,000 with 50% co-payment, if the optional add-on benefit was purchased. Add-on available for Gold/Platinum plans with additional premium for single/annual trips up to 45 days.",
+              "source_location": "Page 5, Item 38f & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Trip postponement",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 2000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 5000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": [
+            {
+              "condition": "With pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 2000,
+                  "basis": "Co-payment: 50%"
+                }
+              ],
+              "source_location": "Page 5, Item 38g"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers administrative fees or charges incurred for postponing the trip due to specified reasons occurring within a certain period before departure.",
+              "source_location": "Page 4, Item 17"
+            },
+            {
+              "detail_snippet": "Covers postponement due to specified pre-existing conditions up to S$2,000 with 50% co-payment, if the optional add-on benefit was purchased. Add-on available for Gold/Platinum plans with additional premium for single/annual trips up to 45 days.",
+              "source_location": "Page 5, Item 38g & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Trip disruption",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 10000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 25000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": [
+            {
+              "condition": "With pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 10000,
+                  "basis": "Co-payment: 50%"
+                }
+              ],
+              "source_location": "Page 5, Item 38h"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers additional reasonable travel and accommodation expenses incurred overseas if the trip is disrupted due to specified reasons.",
+              "source_location": "Page 4, Item 18"
+            },
+            {
+              "detail_snippet": "Covers disruption due to specified pre-existing conditions up to S$10,000 with 50% co-payment, if the optional add-on benefit was purchased. Add-on available for Gold/Platinum plans with additional premium for single/annual trips up to 45 days. Example on Page 6 shows 50% payout.",
+              "source_location": "Page 5, Item 38h & Page 6 & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Travel inconvenience for any reason",
+          "base_limits": [
+            {
+              "type": "Trip cancellation for any reason",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover (cancellation)",
+              "limit": 6000,
+              "basis": null
+            },
+            {
+              "type": "Trip postponement for any reason",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover (postponement)",
+              "limit": 2000,
+              "basis": null
+            },
+            {
+              "type": "Trip curtailment for any reason",
+              "limit": 4000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover (curtailment)",
+              "limit": 8000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides coverage for cancellation, postponement, or shortening of the trip for any reason. Applicable for Gold plan. Requires plan purchase within 30 days of initial travel booking/deposit. Example on Page 6 shows 50% payout of non-refundable costs for cancellation.",
+              "source_location": "Page 4, Item 19a/b/c & Page 2 Footnote * & Page 5 Footnote * & Page 6"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Insolvency protection",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 10000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers loss of irrecoverable deposits or charges paid in advance due to the insolvency or bankruptcy of the licensed travel agent, airline, or other travel provider.",
+              "source_location": "Page 4, Item 20"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Travel delay",
+          "base_limits": [
+            {
+              "type": "Travel delay while overseas",
+              "limit": 1500,
+              "basis": "S$100 for every 6 hours"
+            },
+            {
+              "type": "Travel delay while in Singapore",
+              "limit": 200,
+              "basis": "S$100 for every 6 hours"
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides cash payout for delays of scheduled public transport. For Gold plan, payout starts after a full 6 consecutive hours of delay.",
+              "source_location": "Page 4, Item 21a/b & Page 2"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Baggage loss",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 10000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers accidental loss of or damage to personal baggage and belongings during the trip. Sub-limits per item/pair and for valuables typically apply (refer to policy document).",
+              "source_location": "Page 4, Item 22"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Personal money and travel documents",
+          "base_limits": [
+            {
+              "type": "Replacement of travel documents",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover (documents)",
+              "limit": 10000,
+              "basis": null
+            },
+            {
+              "type": "Loss of money",
+              "limit": 250,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover (money)",
+              "limit": 500,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers the cost of replacing lost or stolen travel documents (like passports, visas) and loss of personal cash or currency notes during the trip.",
+              "source_location": "Page 4, Item 23"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Jewellery cover",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 300,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 600,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Specific sub-limit for accidental loss of or damage to jewellery forming part of personal baggage.",
+              "source_location": "Page 4, Item 24"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Baggage delay",
+          "base_limits": [
+            {
+              "type": "Baggage delay while overseas",
+              "limit": 1000,
+              "basis": "S$200 for every 6 hours"
+            },
+            {
+              "type": "Maximum limit for family cover (overseas)",
+              "limit": 2000,
+              "basis": "S$200 for every 6 hours"
+            },
+            {
+              "type": "Baggage delay upon arrival in Singapore",
+              "limit": 200,
+              "basis": "S$200 for every 6 hours"
+            },
+            {
+              "type": "Maximum limit for family cover (Singapore)",
+              "limit": 400,
+              "basis": "S$200 for every 6 hours"
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides cash payout for delay in arrival of checked-in baggage. For Gold plan, payout starts after a full 6 consecutive hours of delay. Covers emergency purchase of essential items.",
+              "source_location": "Page 4, Item 25a/b & Page 2"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Kidnap and hostage",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 5000,
+              "basis": "S$250 for every 6 hours"
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 12500,
+              "basis": "S$250 for every 6 hours"
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides a benefit for each full 6-hour period the insured is unlawfully detained against their will during the trip.",
+              "source_location": "Page 4, Item 26"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Loss of frequent flyer points",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 500,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Reimburses the monetary value of frequent flyer points or similar rewards used to pay for travel or accommodation if the trip is cancelled or curtailed due to a covered reason.",
+              "source_location": "Page 4, Item 27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Lifestyle benefits",
+      "coverages": [
+        {
+          "coverage_name": "Home contents",
+          "base_limits": [
+            {
+              "type": "Per Household",
+              "limit": 5000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers loss or damage to household contents due to fire or burglary at the insured's residence in Singapore while it is left vacant during the trip.",
+              "source_location": "Page 5, Item 28"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Fraudulent use of a card",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 1000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers financial loss resulting from fraudulent use of the insured's credit or charge cards lost or stolen during the trip.",
+              "source_location": "Page 5, Item 29"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Pet care",
+          "base_limits": [
+            {
+              "type": "Per Pet",
+              "limit": 500,
+              "basis": "S$100 per day"
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers additional commercial kennel or cattery fees if the insured's return to Singapore is unavoidably delayed due to a covered reason.",
+              "source_location": "Page 5, Item 30"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Rental vehicle excess and return",
+          "base_limits": [
+            {
+              "type": "Per Incident",
+              "limit": 1000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers the insurance excess or deductible the insured is liable to pay for loss or damage to a rental vehicle, or the cost to return the vehicle if the insured is unfit to do so.",
+              "source_location": "Page 5, Item 31"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Golfer's cover",
+          "base_limits": [
+            {
+              "type": "For damage to or loss of golf equipment",
+              "limit": 500,
+              "basis": null
+            },
+            {
+              "type": "For unused green fees due to an insured person's injury or illness",
+              "limit": 250,
+              "basis": null
+            },
+            {
+              "type": "Hole-in-one",
+              "limit": 250,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides specific coverage for golfers including equipment loss/damage, reimbursement for unused green fees due to injury/illness, and a celebratory amount for achieving a hole-in-one during the trip.",
+              "source_location": "Page 5, Item 32a/b/c"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Sports equipment cover",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for loss or damage to owned or rented sports equipment is not included in the Gold plan.",
+              "source_location": "Page 5, Item 33 & Page 2 Footnote $"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Automatic extension of cover",
+          "base_limits": [
+            {
+              "type": "Duration",
+              "limit": "Up to 30 days",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "The insurance cover period is automatically extended for up to 30 days without additional premium if the insured's return journey is unavoidably delayed due to reasons covered by the policy.",
+              "source_location": "Page 5, Item 34"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Terrorism extension",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 100000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides cover up to the specified limit for certain losses (typically Personal Accident and Medical) arising directly from an Act of Terrorism during the trip.",
+              "source_location": "Page 5, Item 35"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Personal liability",
+          "base_limits": [
+            {
+              "type": "Per Incident",
+              "limit": 1000000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers the insured's legal liability to third parties for accidental bodily injury or accidental damage to property occurring during the trip.",
+              "source_location": "Page 5, Item 36"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Adventurous leisure activities",
+          "base_limits": [
+            {
+              "type": "Coverage Status",
+              "limit": "Covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "The policy covers participation in adventurous leisure activities such as mountaineering, bungee jumping, and scuba diving. Claims arising from these activities are subject to the limits and conditions of the relevant policy sections (e.g., Personal Accident, Medical Expenses). Applicable for Gold plan.",
+              "source_location": "Page 5, Item 37 & Page 2 & Page 2 Footnote $"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Pre-existing conditions add-on benefit",
+      "coverages": [
+        {
+          "coverage_name": "Medical expenses while overseas (Pre-existing condition)",
+          "base_limits": [],
+          "conditional_limits": [
+            {
+              "condition": "Requires optional pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Adult below 70 years old",
+                  "limit": 150000,
+                  "basis": "Co-payment: S$100 per outpatient visit"
+                },
+                {
+                  "type": "Child or adult 70 years old and above",
+                  "limit": 100000,
+                  "basis": "Co-payment: S$100 per outpatient visit"
+                }
+              ],
+              "source_location": "Page 5, Item 38a"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "This optional add-on covers overseas medical expenses arising from specified pre-existing conditions (e.g., diabetes, high blood pressure, asthma). Requires additional premium and applies to Gold/Platinum single/annual plans up to 45 days per trip. Co-payment applies for outpatient visits.",
+              "source_location": "Page 5, Item 38a & Page 2 & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Overseas traditional Chinese medicine (Pre-existing condition)",
+          "base_limits": [],
+          "conditional_limits": [
+            {
+              "condition": "Requires optional pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 500,
+                  "basis": "Limit per visit: S$80"
+                }
+              ],
+              "source_location": "Page 5, Item 38b"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "This optional add-on covers overseas TCM treatment related to specified pre-existing conditions. Requires additional premium and applies to Gold/Platinum single/annual plans up to 45 days per trip.",
+              "source_location": "Page 5, Item 38b & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Emergency medical evacuation / Repatriation (Pre-existing condition)",
+          "base_limits": [],
+          "conditional_limits": [
+            {
+              "condition": "Requires optional pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 150000,
+                  "basis": null
+                }
+              ],
+              "source_location": "Page 5, Item 38c/d"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "This optional add-on covers emergency medical evacuation or repatriation due to specified pre-existing conditions. Requires additional premium and applies to Gold/Platinum single/annual plans up to 45 days per trip.",
+              "source_location": "Page 5, Item 38c/d & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Hospital visit or compassionate visit (Pre-existing condition)",
+          "base_limits": [],
+          "conditional_limits": [
+            {
+              "condition": "Requires optional pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 3000,
+                  "basis": null
+                }
+              ],
+              "source_location": "Page 5, Item 38e"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "This optional add-on covers hospital or compassionate visit expenses related to hospitalization for specified pre-existing conditions. Requires additional premium and applies to Gold/Platinum single/annual plans up to 45 days per trip.",
+              "source_location": "Page 5, Item 38e & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Trip cancellation (Pre-existing condition)",
+          "base_limits": [],
+          "conditional_limits": [
+            {
+              "condition": "Requires optional pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 10000,
+                  "basis": "Co-payment: 50%"
+                }
+              ],
+              "source_location": "Page 5, Item 38f"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "This optional add-on covers trip cancellation due to specified pre-existing conditions. A 50% co-payment applies to the claim amount. Requires additional premium and applies to Gold/Platinum single/annual plans up to 45 days per trip.",
+              "source_location": "Page 5, Item 38f & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Trip postponement (Pre-existing condition)",
+          "base_limits": [],
+          "conditional_limits": [
+            {
+              "condition": "Requires optional pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 2000,
+                  "basis": "Co-payment: 50%"
+                }
+              ],
+              "source_location": "Page 5, Item 38g"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "This optional add-on covers trip postponement due to specified pre-existing conditions. A 50% co-payment applies to the claim amount. Requires additional premium and applies to Gold/Platinum single/annual plans up to 45 days per trip.",
+              "source_location": "Page 5, Item 38g & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Trip disruption (Pre-existing condition)",
+          "base_limits": [],
+          "conditional_limits": [
+            {
+              "condition": "Requires optional pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 10000,
+                  "basis": "Co-payment: 50%"
+                }
+              ],
+              "source_location": "Page 5, Item 38h"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "This optional add-on covers trip disruption due to specified pre-existing conditions. A 50% co-payment applies to the claim amount. Requires additional premium and applies to Gold/Platinum single/annual plans up to 45 days per trip.",
+              "source_location": "Page 5, Item 38h & Footnote +, #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Condolence cash (Pre-existing condition)",
+          "base_limits": [],
+          "conditional_limits": [
+            {
+              "condition": "Requires optional pre-existing conditions add-on benefit purchase",
+              "limits": [
+                {
+                  "type": "Per Person",
+                  "limit": 2000,
+                  "basis": null
+                }
+              ],
+              "source_location": "Page 5, Item 38i"
+            }
+          ],
+          "source_specific_details": [
+            {
+              "detail_snippet": "This optional add-on provides condolence cash if death occurs due to specified pre-existing conditions. Requires additional premium and applies to Gold/Platinum single/annual plans up to 45 days per trip.",
+              "source_location": "Page 5, Item 38i & Footnote +, #"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

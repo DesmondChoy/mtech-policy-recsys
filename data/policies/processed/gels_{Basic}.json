@@ -1,0 +1,928 @@
+{
+  "provider_name": "Great Eastern",
+  "policy_name": "GREAT TravelCare",
+  "tier_name": "Basic",
+  "extraction_date": "2024-07-29",
+  "currency": "SGD",
+  "coverage_categories": [
+    {
+      "category_name": "Personal accident and medical benefits",
+      "coverages": [
+        {
+          "coverage_name": "Accidental death and permanent disability",
+          "base_limits": [
+            {
+              "type": "Adult under 70 years",
+              "limit": 100000,
+              "basis": null
+            },
+            {
+              "type": "Adult age 70 years or above",
+              "limit": 50000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 30000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 250000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides coverage for accidental death or permanent disability.",
+              "source_location": "Page 3, Section 1"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Public transport double indemnity",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "This benefit is not covered under the Basic plan.",
+              "source_location": "Page 3, Section 2"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Emergency medical evacuation, Repatriation",
+          "base_limits": [
+            {
+              "type": "Combined Limit",
+              "limit": 200000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers emergency medical evacuation and repatriation up to the specified limit. Explicitly states there is no cover for pre-existing conditions under the Basic plan.",
+              "source_location": "Page 3, Section 3 & 4"
+            },
+            {
+              "detail_snippet": "Coverage for pre-existing conditions is available as an optional add-on for Gold and Platinum plans only.",
+              "source_location": "Page 2, Why GREAT TravelCare & Page 5, Footnote #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Medical expenses while overseas",
+          "base_limits": [
+            {
+              "type": "Adult under 70 years",
+              "limit": 100000,
+              "basis": null
+            },
+            {
+              "type": "Adult age 70 years or above",
+              "limit": 20000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 30000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 200000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers necessary medical expenses incurred overseas due to accidental injury or illness. Does not cover pre-existing conditions for the Basic plan.",
+              "source_location": "Page 3, Section 5"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Medical expenses while in Singapore",
+          "base_limits": [
+            {
+              "type": "Adult under 70 years",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Adult age 70 years or above",
+              "limit": 2000,
+              "basis": null
+            },
+            {
+              "type": "Child",
+              "limit": 3000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 15000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers follow-up medical expenses incurred in Singapore within a specified period after returning, related to an injury or illness sustained overseas during the trip.",
+              "source_location": "Page 3, Section 6"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Traditional Chinese medicine",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "This benefit is not covered under the Basic plan.",
+              "source_location": "Page 3, Section 7"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Emergency dental treatment",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "This benefit is not covered under the Basic plan.",
+              "source_location": "Page 3, Section 8"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Maternity care",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "This benefit is not covered under the Basic plan.",
+              "source_location": "Page 3, Section 9"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Hospital cash",
+          "base_limits": [
+            {
+              "type": "Hospital stay overseas",
+              "limit": "Not covered",
+              "basis": null
+            },
+            {
+              "type": "Hospital stay in Singapore",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "This benefit (cash allowance for hospital stays overseas or in Singapore) is not covered under the Basic plan.",
+              "source_location": "Page 3, Section 10"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Hospital visit or compassionate visit",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 2000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers the travel and accommodation expenses for one relative or friend to visit or travel with the insured person if hospitalized overseas.",
+              "source_location": "Page 3, Section 11"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Child companion",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 2000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers the travel and accommodation expenses for one relative or friend to accompany the insured child(ren) back to Singapore if the insured parent/guardian is hospitalized overseas.",
+              "source_location": "Page 3, Section 12"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Child education grant",
+          "base_limits": [
+            {
+              "type": "Per Child",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "This benefit is not covered under the Basic plan.",
+              "source_location": "Page 3, Section 13"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Condolence cash",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "This benefit is not covered under the Basic plan.",
+              "source_location": "Page 3, Section 14"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Emergency phone charges",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 100,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers overseas telephone charges incurred for seeking assistance during an emergency.",
+              "source_location": "Page 3, Section 15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Travel inconvenience benefits",
+      "coverages": [
+        {
+          "coverage_name": "Trip cancellation",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 2000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 5000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers non-refundable travel and accommodation costs paid in advance if the trip is cancelled due to specified reasons before departure.",
+              "source_location": "Page 4, Section 16"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Trip postponement",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 500,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 1500,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers additional administrative charges or rearrangement fees if the trip is postponed due to specified reasons before departure.",
+              "source_location": "Page 4, Section 17"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Trip disruption",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 2000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 5000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers additional travel or accommodation expenses incurred overseas if the trip is disrupted due to specified reasons.",
+              "source_location": "Page 4, Section 18"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Travel inconvenience for any reason",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "This benefit (covering cancellation, postponement, or curtailment for any reason) is not covered under the Basic plan. It is applicable for Gold and Platinum plans only, and requires purchase within 30 days of initial travel booking.",
+              "source_location": "Page 4, Section 19 & Page 2, Footnote *"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Insolvency protection",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 1000,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 2000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers loss of irrecoverable travel deposits or expenses paid in advance due to insolvency of the licensed travel agent, airline, or accommodation provider.",
+              "source_location": "Page 4, Section 20"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Travel delay",
+          "base_limits": [
+            {
+              "type": "Travel delay while overseas",
+              "limit": 500,
+              "basis": "S$100 for every 6 hours"
+            },
+            {
+              "type": "Travel delay while in Singapore",
+              "limit": 100,
+              "basis": "S$100 for every 6 hours"
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides cash payout for travel delays starting from 6 hours for the Basic plan. Covers delays while overseas or in Singapore before departure.",
+              "source_location": "Page 4, Section 21 & Page 2, Payout for travel or baggage delays"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Baggage loss",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 2500,
+              "basis": null
+            },
+            {
+              "type": "Maximum limit for family cover",
+              "limit": 5000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers loss or damage to baggage, clothing, and personal effects during the trip.",
+              "source_location": "Page 4, Section 22"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Personal money and travel documents",
+          "base_limits": [
+            {
+              "type": "Replacement of travel documents (Per Person)",
+              "limit": 2500,
+              "basis": null
+            },
+            {
+              "type": "Replacement of travel documents (Max Family)",
+              "limit": 5000,
+              "basis": null
+            },
+            {
+              "type": "Loss of money (Per Person)",
+              "limit": 100,
+              "basis": null
+            },
+            {
+              "type": "Loss of money (Max Family)",
+              "limit": 200,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers the cost of replacing lost or stolen travel documents (like passports, visas) and loss of cash or traveller's cheques.",
+              "source_location": "Page 4, Section 23"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Jewellery cover",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "This benefit is not covered under the Basic plan.",
+              "source_location": "Page 4, Section 24"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Baggage delay",
+          "base_limits": [
+            {
+              "type": "Baggage delay while overseas",
+              "limit": 400,
+              "basis": "S$100 for every 6 hours"
+            },
+            {
+              "type": "Baggage delay upon arrival in Singapore",
+              "limit": 100,
+              "basis": "S$100 for every 6 hours"
+            },
+            {
+              "type": "Maximum limit for family cover (Overseas)",
+              "limit": 800,
+              "basis": "S$100 for every 6 hours"
+            },
+            {
+              "type": "Maximum limit for family cover (Arrival in SG)",
+              "limit": 200,
+              "basis": "S$100 for every 6 hours"
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides cash payout for baggage delays starting from 6 hours for the Basic plan. Covers delays while overseas or upon arrival back in Singapore.",
+              "source_location": "Page 4, Section 25 & Page 2, Payout for travel or baggage delays"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Kidnap and hostage",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "This benefit is not covered under the Basic plan.",
+              "source_location": "Page 4, Section 26"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Loss of frequent flyer points",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "This benefit is not covered under the Basic plan.",
+              "source_location": "Page 4, Section 27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Lifestyle benefits",
+      "coverages": [
+        {
+          "coverage_name": "Home contents",
+          "base_limits": [
+            {
+              "type": "Per Household",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for loss or damage to home contents due to burglary while the insured is overseas is not covered under the Basic plan.",
+              "source_location": "Page 5, Section 28"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Fraudulent use of a card",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for financial loss due to fraudulent use of lost or stolen credit/charge cards during the trip is not covered under the Basic plan.",
+              "source_location": "Page 5, Section 29"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Pet care",
+          "base_limits": [
+            {
+              "type": "Per Pet",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for additional pet boarding fees due to travel delay is not covered under the Basic plan.",
+              "source_location": "Page 5, Section 30"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Rental vehicle excess and return",
+          "base_limits": [
+            {
+              "type": "Per Incident",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for rental vehicle excess or cost of returning the vehicle due to hospitalization is not covered under the Basic plan.",
+              "source_location": "Page 5, Section 31"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Golfer's cover",
+          "base_limits": [
+            {
+              "type": "Damage/loss of golf equipment",
+              "limit": "Not covered",
+              "basis": null
+            },
+            {
+              "type": "Unused green fees",
+              "limit": "Not covered",
+              "basis": null
+            },
+            {
+              "type": "Hole-in-one",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Golfer's specific coverages (equipment, green fees, hole-in-one celebration) are not covered under the Basic plan.",
+              "source_location": "Page 5, Section 32"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Sports equipment cover",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for loss or damage to owned or rented sports equipment is not covered under the Basic plan. Sports equipment coverage is applicable for Platinum plan only.",
+              "source_location": "Page 5, Section 33 & Page 2, Footnote $"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Automatic extension of cover",
+          "base_limits": [
+            {
+              "type": "Duration",
+              "limit": "Up to 14 days",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "The insurance cover will be automatically extended free of charge for up to 14 days if the return journey is unavoidably delayed due to specified reasons.",
+              "source_location": "Page 5, Section 34"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Terrorism extension",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 100000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Provides cover for certain benefits (e.g., medical expenses, evacuation) if they arise due to an act of terrorism.",
+              "source_location": "Page 5, Section 35"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Personal liability",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": 500000,
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Covers legal liability for accidental injury to third parties or accidental damage to third-party property occurring during the trip.",
+              "source_location": "Page 5, Section 36"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Adventurous leisure activities",
+          "base_limits": [
+            {
+              "type": "Coverage",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for engaging in adventurous leisure activities like mountaineering, bungee jumping, scuba diving is not included in the Basic plan. This coverage is applicable for Gold and Platinum plans.",
+              "source_location": "Page 5, Section 37 & Page 2, Footnote $"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Pre-existing conditions add-on benefit",
+      "coverages": [
+        {
+          "coverage_name": "Medical expenses while overseas (Pre-existing conditions)",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for pre-existing medical conditions is not available under the Basic plan. It is an optional add-on benefit available only for Gold and Platinum plans with an additional premium.",
+              "source_location": "Page 5, Section 38 & Footnote #; Page 3, Section 3&4 Note; Page 2, Footnote +"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Overseas traditional Chinese medicine (Pre-existing conditions)",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for pre-existing medical conditions is not available under the Basic plan.",
+              "source_location": "Page 5, Section 38b & Footnote #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Emergency medical evacuation (Pre-existing conditions)",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for pre-existing medical conditions is not available under the Basic plan.",
+              "source_location": "Page 5, Section 38c & Footnote #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Repatriation (Pre-existing conditions)",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for pre-existing medical conditions is not available under the Basic plan.",
+              "source_location": "Page 5, Section 38d & Footnote #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Hospital visit or compassionate visit (Pre-existing conditions)",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for pre-existing medical conditions is not available under the Basic plan.",
+              "source_location": "Page 5, Section 38e & Footnote #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Trip cancellation (Pre-existing conditions)",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for pre-existing medical conditions is not available under the Basic plan.",
+              "source_location": "Page 5, Section 38f & Footnote #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Trip postponement (Pre-existing conditions)",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for pre-existing medical conditions is not available under the Basic plan.",
+              "source_location": "Page 5, Section 38g & Footnote #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Trip disruption (Pre-existing conditions)",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for pre-existing medical conditions is not available under the Basic plan.",
+              "source_location": "Page 5, Section 38h & Footnote #"
+            }
+          ]
+        },
+        {
+          "coverage_name": "Condolence cash (Pre-existing conditions)",
+          "base_limits": [
+            {
+              "type": "Per Person",
+              "limit": "Not covered",
+              "basis": null
+            }
+          ],
+          "conditional_limits": null,
+          "source_specific_details": [
+            {
+              "detail_snippet": "Coverage for pre-existing medical conditions is not available under the Basic plan.",
+              "source_location": "Page 5, Section 38i & Footnote #"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

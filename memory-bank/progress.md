@@ -35,16 +35,16 @@ gantt
 8.  **Extractor Agent (CrewAI/OpenAI)**: Functional agent (`src/agents/extractor.py`) extracts structured requirements from processed transcripts using OpenAI via `crewai`. Includes batch processing.
 9.  **Policy Extraction Script**: Script (`scripts/extract_policy_tier.py`) extracts structured policy details from PDFs using `LLMService`. Includes detailed extraction logic (base/conditional limits, source details).
 10. **Policy Comparison Script**: Script (`scripts/generate_policy_comparison.py`) generates insurer-level Markdown comparison reports using `LLMService`, extracted requirements, and processed policies.
-11. **PDF Extraction Evaluation Script**: Script (`scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py`) compares processed policy JSON against source PDF using multi-modal LLM (`LLMService`) for accuracy/completeness checks.
+11. **PDF Extraction Evaluation Script**: Script (`scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py`) compares processed policy JSON against source PDF using multi-modal LLM (`LLMService`) for accuracy/completeness checks. Enhanced with `--file_pattern` argument for flexible input filtering.
 12. **Recommendation Report Script**: Script (`scripts/generate_recommendation_report.py`) orchestrates the two-stage recommendation process: parses comparison reports, applies Stage 1 scoring, calls `LLMService` for Stage 2 re-ranking (prompt updated to request source references), generates a final customer-friendly Markdown report, and saves it. Includes unit tests for parser, scoring, and Markdown generation.
 
 ## What's Left to Build
 
 ### Phase 1: Core Logic & Evaluation Enhancement
 
-1.  **Policy Extraction Evaluation**:
-    *   [ ] Design and implement evaluation script/process for `scripts/extract_policy_tier.py` output.
-    *   [ ] Define metrics for accuracy and completeness of extracted policy data.
+1.  **PDF Extraction Evaluation**:
+    *   [ ] Test and refine the existing evaluation script (`eval_pdf_extraction.py`).
+    *   [ ] Define clear metrics based on the script's output for accuracy and completeness.
 2.  **Policy Comparison Evaluation**:
     *   [ ] Design and implement evaluation script/process for `scripts/generate_policy_comparison.py` output.
     *   [ ] Define metrics for report quality, accuracy of comparison, and justification clarity.
@@ -84,7 +84,7 @@ gantt
 | Extractor Agent (CrewAI/OpenAI)    | 100%        | High     | `src/agents/extractor.py` - Extracts requirements. Uses OpenAI.                                      |
 | Policy Extraction Script           | 100%        | High     | `scripts/extract_policy_tier.py` - Extracts structured policy data. Uses Gemini.                     |
 | Policy Comparison Script           | 100%        | High     | `scripts/generate_policy_comparison.py` - Generates insurer-level reports. Uses Gemini.              |
-| **PDF Extraction Evaluation**      | **95%**     | **High** | **Script implemented (`eval_pdf_extraction.py`). Testing pending.**                                  |
+| **PDF Extraction Evaluation**      | **100%**    | **High** | **Script implemented (`eval_pdf_extraction.py`) with `--file_pattern` enhancement. Testing/Refinement pending.** |
 | Policy Comparison Evaluation       | Planned     | High     | Design and implement evaluation for `generate_policy_comparison.py`.                                 |
 | **Recommender Logic Script**       | **100%**    | **High** | **`scripts/generate_recommendation_report.py` implemented (parser, score, re-rank, MD report).**     |
 | **Component Integration**          | **20%**     | **Medium** | **Internal Stage 1/2 integration done. Full pipeline orchestration pending.**                        |
@@ -114,12 +114,12 @@ gantt
 2.  **Data Pipelines**: Scripts for generating personalities, transcripts (with scenarios), evaluating transcripts, parsing transcripts, extracting policy details (PDF to structured JSON), and generating comparison reports.
 3.  **Extractor Agent**: Implemented using CrewAI/OpenAI for requirement extraction.
 4.  **Recommender Script**: Implemented `scripts/generate_recommendation_report.py` with Stage 1 scoring, Stage 2 LLM re-ranking (with source ref prompt update), and Markdown report generation. Added unit tests.
-5.  **Refinements**: Centralized Gemini config, improved policy extraction detail, standardized filenames, refactored comparison script for insurer-level analysis, enhanced evaluation robustness.
+5.  **Refinements**: Centralized Gemini config, improved policy extraction detail, standardized filenames, refactored comparison script for insurer-level analysis, enhanced evaluation robustness, added file pattern filtering to PDF eval script.
 
 ## Next Milestones (Revised Focus)
 
-1.  **Evaluation Implementation** (Target: End April 2025)
-    *   Implement automated evaluation for policy extraction (`scripts/extract_policy_tier.py`).
+1.  **Evaluation Implementation & Refinement** (Target: End April 2025)
+    *   Test and refine the existing PDF extraction evaluation script (`eval_pdf_extraction.py`).
     *   Implement automated evaluation for comparison reports (`scripts/generate_policy_comparison.py`).
 2.  **Core Logic Refinement** (Target: Mid May 2025)
     *   Refine generation/extraction/comparison based on evaluation results.

@@ -12,6 +12,7 @@ INSURER_TIER_RANKING = {
     "fwd": ["Premium", "Business", "First"],  # Cheapest to Most Expensive
     "income": ["Classic", "Deluxe", "Preferred"],
     "sompo": ["Vital", "Deluxe", "GO Japan!", "Elite"],
+    "gels": ["Basic", "Gold", "Platinum"],
 }
 
 
