@@ -56,6 +56,7 @@
 -   [ ] **Task 0 (Prerequisite)**: Refine the `PROMPT_TEMPLATE_INSURER` in `scripts/generate_policy_comparison.py`:
     -   Define a strict, consistent Markdown structure for the report output (exact headers, section order, formatting).
     -   Incorporate few-shot examples (positive/negative) and explicit instructions for the structure, including the comparative analysis within the `Justification` section.
+    -   **Note:** The `Coverage Assessment:` instruction must be updated to require *only* the exact phrases "Fully Met", "Partially Met", or "Not Met". Examples must be updated to reflect this.
     -   **Proposed Prompt Draft:**
         ```python
         # Placeholder for the actual prompt variable in generate_policy_comparison.py
@@ -217,11 +218,20 @@
     -   Test the updated prompt by regenerating sample reports and verifying the improved consistency.
 -   [ ] **Task 1**: Develop a robust Markdown parser function based on the *refined* report structure from Task 0 to extract:
     -   List of requirement names (from `### Requirement:` headers).
-    -   Content of each requirement's detailed analysis section (including the `Coverage Assessment` statement).
-    -   List of bullet points under the `Weaknesses/Gaps` summary.
--   [ ] **Task 2**: Implement the Stage 1 scoring logic (`Requirement Coverage Check + Weakness Penalty`) using the parser output from Task 1.
-    -   Define logic/keywords to identify "explicit non-coverage or critical limitation" based on the `Coverage Assessment` statement and detailed text.
--   [ ] **Task 3**: Create a new script or function (e.g., in `src/agents/recommender.py` or `scripts/generate_recommendation.py`) that orchestrates the process:
+    -   Content of each requirement's detailed analysis section.
+    -   The exact text following the `Coverage Assessment:` line for each requirement.
+    -   List of structured bullet points under the `Weaknesses/Gaps` summary (format: `[Req Name]: Description`).
+-   [ ] **Task 2**: Implement the Stage 1 scoring logic (Additive Score based on Assessment) using the parser output from Task 1.
+    -   **Scoring Logic:**
+        -   Initialize score = 0.0.
+        -   Iterate through the parsed requirements.
+        -   For each requirement, check the extracted `assessment` text:
+            -   If assessment is exactly "Fully Met", add 1.0 point.
+            -   If assessment is exactly "Partially Met", add 0.5 points.
+            -   If assessment is exactly "Not Met", add 0.0 points.
+        -   Sum the points to get the final score.
+    -   **Note:** This scoring method ignores the `Weaknesses/Gaps` summary section entirely.
+-   [ ] **Task 3**: Create a new script or function (in `scripts/generate_recommendation_report.py`) that orchestrates the process:
     -   Takes `customer_id` (`uuid`) as input.
     -   Finds relevant comparison reports (assuming they are generated using the refined prompt from Task 0).
     -   Runs the Stage 1 ranking (Task 2).
