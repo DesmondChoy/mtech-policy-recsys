@@ -4,23 +4,6 @@
 
 The project is in the **initial setup and planning phase**. We are currently establishing the foundation for development by setting up the project structure, collecting data, and creating documentation.
 
-### Project Timeline
-
-```mermaid
-gantt
-    title Project Timeline
-    dateFormat  YYYY-MM-DD
-    section Planning
-    Project Setup           :done, 2025-03-20, 2025-03-26
-    Memory Bank Creation    :active, 2025-03-26, 2025-03-28
-    section Development
-    Agent Prototyping       :2025-03-28, 2025-04-15
-    Integration             :2025-04-15, 2025-04-30
-    section Evaluation
-    Testing                 :2025-05-01, 2025-05-15
-    Refinement              :2025-05-15, 2025-05-30
-```
-
 ## What Works
 
 1.  **Project Structure**: Core directory structure is established.
@@ -40,36 +23,27 @@ gantt
 
 ## What's Left to Build
 
-### Phase 1: Core Logic & Evaluation Enhancement
-
-1.  **PDF Extraction Evaluation**:
-    *   [ ] Test and refine the existing evaluation script (`eval_pdf_extraction.py`).
-    *   [ ] Define clear metrics based on the script's output for accuracy and completeness.
-2.  **Policy Comparison Evaluation**:
-    *   [ ] Design and implement evaluation script/process for `scripts/generate_policy_comparison.py` output.
-    *   [ ] Define metrics for report quality, accuracy of comparison, and justification clarity.
-3.  **Refinement based on Evaluations**:
-    *   [ ] Improve prompts, models, or logic in generation/extraction/comparison scripts based on evaluation results.
-
-### Phase 2: Core Logic Integration & Refinement
-
-1.  **Component Integration**:
-    *   [ ] Define and implement how the different components (scripts, Extractor agent, Recommender script) should interact more broadly (beyond the internal Stage 1/2 integration in the recommender script).
-    *   [ ] Consider orchestration methods for the full end-to-end pipeline (e.g., Extraction -> Comparison -> Recommendation).
-2.  **Recommendation Personalization (Task 9)**:
-    *   [ ] Enhance the final Markdown report (Task 6) with personalization by referencing key points or context from the original customer transcript.
-
-### Phase 3: ML & Testing
-
-1.  **ML Model Development**:
-    *   [ ] Create supervised learning dataset (using extracted requirements, comparison results, etc.).
-    *   [ ] Train initial models for insights.
-    *   [ ] Evaluate feature importance.
-2.  **User Interface (If Applicable)**:
-    *   [ ] Design and develop a UI if direct user interaction (beyond running scripts) becomes a requirement.
-3.  **Testing Framework**:
-    *   [ ] Implement further unit tests for key functions/modules (some exist for recommender parser/scorer/markdown).
-    *   [ ] Implement integration tests for script pipelines.
+1.  **Test & Refine PDF Extraction Evaluation**:
+    *   [ ] Run the new `eval_pdf_extraction.py` script with sample data.
+    *   [ ] Analyze results and refine the script/prompt as needed.
+    *   [ ] Define clear metrics for this evaluation (potentially derived from the script's JSON output).
+2.  **Implement Comparison Report Evaluation**:
+    *   [ ] Design and implement the evaluation script/process for `scripts/generate_policy_comparison.py` output.
+    *   [ ] Define metrics for report quality, accuracy, and justification clarity.
+3.  **Refine Core Logic**:
+    *   [ ] Iteratively improve prompts, models, and processing logic within existing scripts based on evaluation results and testing.
+4.  **Develop Recommendation Logic**:
+    *   [ ] Define the process for generating final recommendations (e.g., selecting top insurers/tiers from comparison reports).
+    *   [ ] Implement this logic, potentially as a new script or a simple agent (`src/agents/recommender.py` is currently empty).
+    *   [ ] Determine the desired output format for recommendations.
+5.  **Plan Integration/Workflow V1**:
+    *   [ ] Design a basic workflow to connect the key steps (e.g., Extraction -> Comparison -> Recommendation).
+    *   [ ] Consider orchestration methods (script chaining, `crewai`, etc.).
+6.  **ML Model Development (Later Phase)**:
+    *   [ ] Prepare dataset using extracted requirements and comparison results.
+    *   [ ] Train initial models to derive insights.
+7.  **Define Future Architecture**:
+    *   [ ] Solidify the plan for integrating components and decide on the final architecture (script-based, agent-based, or hybrid) based on refined goals and the performance of the current approach.
 
 ## Implementation Progress
 
@@ -115,17 +89,3 @@ gantt
 3.  **Extractor Agent**: Implemented using CrewAI/OpenAI for requirement extraction.
 4.  **Recommender Script**: Implemented `scripts/generate_recommendation_report.py` with Stage 1 scoring, Stage 2 LLM re-ranking (with source ref prompt update), and Markdown report generation (intermediate JSON output removed). Added unit tests.
 5.  **Refinements**: Centralized Gemini config, improved policy extraction detail, standardized filenames, refactored comparison script for insurer-level analysis, enhanced evaluation robustness, added file pattern filtering to PDF eval script.
-
-## Next Milestones (Revised Focus)
-
-1.  **Evaluation Implementation & Refinement** (Target: End April 2025)
-    *   Test and refine the existing PDF extraction evaluation script (`eval_pdf_extraction.py`).
-    *   Implement automated evaluation for comparison reports (`scripts/generate_policy_comparison.py`).
-2.  **Core Logic Refinement** (Target: Mid May 2025)
-    *   Refine generation/extraction/comparison based on evaluation results.
-    *   Refine generation/extraction/comparison/recommendation based on evaluation results.
-3.  **Integration & Workflow V1** (Target: End May 2025)
-    *   Develop basic orchestration to connect key script steps (e.g., Extraction -> Comparison -> Recommendation).
-    *   Establish initial testing framework (unit/integration).
-4.  **ML Exploration** (Target: June 2025)
-    *   Prepare dataset and train initial ML models for insights.

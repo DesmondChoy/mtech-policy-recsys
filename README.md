@@ -1,6 +1,6 @@
-# Multi-Agent System for Insurance Policy Recommendations
+# LLM-Powered Workflow for Personalized Travel Insurance Recommendations
 
-A multi-agent system that transforms the complex process of buying travel insurance into a simple, personalized, and transparent experience.
+An LLM-powered workflow that transforms the complex process of buying travel insurance into a simple, personalized, and transparent experience.
 
 ## Project Overview
 
@@ -8,15 +8,21 @@ This system addresses common pain points in insurance purchasing by providing pe
 
 ### Key Features
 
-- **Automated Policy Extraction**: Uses LLMs to parse policy PDFs, extracting tier-specific coverage into structured JSON, including base/conditional limits and source-linked details.
+**1. Data Generation & Processing:**
 - **Synthetic Transcript Generation**: Creates realistic, scenario-driven customer conversations using LLMs, incorporating personalities and specific coverage requirements.
-- **LLM-Based Transcript Evaluation**: Assesses generated transcripts for requirement coverage completeness (standard and scenario-specific) using LLMs, providing JSON results with quote-based justifications.
+- **Automated Policy Extraction**: Uses LLMs to parse policy PDFs, extracting tier-specific coverage into structured JSON, including base/conditional limits and source-linked details.
 - **Structured Requirement Extraction**: Employs an AI agent (using the CrewAI framework) to analyze transcripts and convert customer needs into validated, structured JSON based on a predefined schema.
+
+**2. Analysis & Recommendation:**
 - **Insurer-Level Policy Comparison**: Generates Markdown reports via LLMs comparing customer requirements against all policy tiers for an insurer, recommending the best-fit tier with justification and detailed coverage analysis.
 - **Final Recommendation Report Generation**: Processes comparison reports, applies scoring, uses an LLM for re-ranking, and generates a final customer-friendly Markdown recommendation report.
+
+**3. Evaluation & Quality Assurance:**
+- **LLM-Based Transcript Evaluation**: Assesses generated transcripts for requirement coverage completeness (standard and scenario-specific) using LLMs, providing JSON results with quote-based justifications.
 - **PDF Extraction Evaluation**: Compares processed policy JSON against the source PDF using a multi-modal LLM to verify extraction accuracy and completeness.
+
+**4. Future Goals:**
 - **(Planned) Conversational Interface**: Future goal for natural language interaction.
-- **(Planned) Multi-Agent Voting & Recommendation**: Future goal for consensus-based recommendations.
 - **(Planned) Iterative Refinement**: Future goal for users to update needs and receive refined recommendations.
 
 ## How To Use
@@ -143,87 +149,6 @@ The outputs from the current pipeline (Structured Policy JSON, Structured Requir
 - Exploring the use of ML models for deeper insights based on the generated data.
 - Potentially developing a conversational interface for end-users.
 
-## Project Structure
-
-```
-/
-├── data/                       # Data storage
-│   ├── coverage_requirements/  # Standardized coverage requirements
-│   ├── extracted_customer_requirements/ # Extracted requirements from transcripts
-│   ├── policies/               # Insurance policy documents
-│   │   ├── raw/                # Original PDF policy documents
-│   │   └── processed/          # Processed policy JSON files
-│   ├── scenarios/              # Scenario definitions for transcript generation
-│   ├── transcripts/            # Conversation transcripts
-│   │   ├── raw/                # Original conversation transcripts (synthetic/, real/)
-│   │   └── processed/          # Processed JSON transcripts
-│   └── evaluation/             # Evaluation data & results
-│       └── transcript_evaluations/ # Transcript evaluation results
-├── memory-bank/                # Cline's memory bank (documentation)
-├── notebooks/                  # Jupyter notebooks for experimentation & prototyping
-├── results/                    # Output comparison reports
-├── scripts/                    # Utility & automation scripts (data generation, evaluation, etc.)
-├── src/                        # Core application source code (agents, models, utils)
-├── tests/                      # Test cases
-├── tutorials/                  # Guides and example scripts
-├── .gitignore                  # Git ignore file
-├── README.md                   # This file
-└── requirements.txt            # Project dependencies
-```
-
-## Key Workflow Components
-
-The project structure supports the workflow illustrated in the diagram above:
-
-1. **Data Inputs**
-   - **Policy Documents**: Located in `data/policies/raw/` (PDF format)
-   - **Call Transcripts**: Located in `data/transcripts/raw/` (text format)
-   - **Coverage Requirements**: Defined in `data/coverage_requirements/coverage_requirements.py`
-
-2. **Transcript Processing**
-   - **Component**: `src/utils/transcript_processing.py`
-   - **Purpose**: Parses raw transcripts into structured JSON format
-   - **Output**: JSON files in `data/transcripts/processed/`
-
-4. **Requirement Extraction**
-   - **Component**: `src/agents/extractor.py`
-   - **Purpose**: Extracts structured customer requirements from parsed transcript JSON files using a CrewAI agent (configured with OpenAI). Run via CLI for batch processing.
-   - **Input**: Directory containing processed transcript JSON files (default: `data/transcripts/processed/`).
-   - **Output**: Saves structured requirements JSON to `data/extracted_customer_requirements/` (default). Filenames follow the format `requirements_{original_name_part}.json` (e.g., `requirements_the_confused_novice_20250403_175921.json`), conforming to the `TravelInsuranceRequirement` model.
-
-5. **Policy Processing**
-   - **Component**: `scripts/extract_policy_tier.py`
-   - **Purpose**: Extracts structured coverage details from policy PDFs using Gemini API for a specific policy tier.
-   - **Input**: PDFs from `data/policies/raw/` named `insurer_{policy_tier}.pdf`.
-   - **Output**: Structured JSON policy data in `data/policies/processed/` named `insurer_{policy_tier}.json`.
-
-6. **Data Generation Scripts**
-   - **Component**: `scripts/data_generation/generate_personalities.py`
-   - **Purpose**: Generates a list of common customer service personality types using the Gemini API (`gemini-2.5-pro-preview-03-25`).
-   - **Output**: Saves a validated JSON file to `data/transcripts/personalities.json`. See the script's docstring for usage details.
-   - **Component**: `scripts/data_generation/generate_transcripts.py`
-   - **Purpose**: Generates synthetic conversation transcripts using the Gemini API (`gemini-2.5-pro-exp-03-25`), combining personalities from `personalities.json` and requirements from `coverage_requirements.py`. Can optionally use scenario files (`data/scenarios/`).
-   - **Output**: Saves structured JSON transcripts to `data/transcripts/raw/synthetic/`. Filenames follow the format `transcript_{scenario_name_or_no_scenario}_{uuid}.json`. Accepts `-n` and `-s` arguments. See the script's docstring for details.
-
-7. **Policy Comparison Report Generation (Insurer-Level)**
-   - **Component**: `scripts/generate_policy_comparison.py`
-   - **Purpose**: Generates detailed Markdown reports comparing extracted customer requirements against all tiers for each available insurer, recommending the best tier per insurer.
-   - **Input**: Customer UUID (`--customer_id`), requirements JSON (`data/extracted_customer_requirements/requirements_*_{uuid}.json`), processed policy JSONs (`data/policies/processed/`), and tier rankings (`data/policies/pricing_tiers/tier_rankings.py`).
-   - **Output**: Saves Markdown reports to `results/{uuid}/policy_comparison_report_{insurer}_{uuid}.md`. Each report includes the recommendation, justification, detailed requirement analysis, and summary. See the script's docstring for more details.
-
-8. **Final Recommendation Report Generation**
-   - **Component**: `scripts/generate_recommendation_report.py`
-   - **Purpose**: Generates the final customer-facing recommendation report by parsing comparison reports, applying scoring, and using an LLM for re-ranking and justification.
-   - **Input**: Customer UUID (`--customer_id`), which determines the directory (`results/{uuid}/`) containing the comparison reports (`policy_comparison_report_*.md`).
-   - **Output**: Saves the final Markdown report to `results/{uuid}/recommendation_report_{uuid}.md`. See the script's docstring for more details.
-
-9. **Evaluation Scripts**
-   - **Transcript Evaluation**: See Section 4.1 above.
-   - **PDF Extraction Evaluation**:
-     - **Component**: `scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py`
-     - **Purpose**: Compares processed policy JSON against the source PDF for accuracy using a multi-modal LLM.
-     - **Input**: Processed policy JSONs (`data/policies/processed/`) and raw PDFs (`data/policies/raw/`). Use `--file_pattern` to filter inputs.
-     - **Output**: Evaluation JSON results in `data/evaluation/pdf_extraction_evaluations/`. See Section 4.2 above for usage examples.
 
 ## Technical Stack
 
@@ -283,4 +208,4 @@ The project includes a reusable LLM service that provides a unified interface to
 
 ## Academic Project
 
-This is an academic project focused on applying multi-agent AI systems to solve real-world problems in the insurance domain.
+This is an academic project focused on applying AI and LLM techniques to solve real-world problems in the insurance domain.
