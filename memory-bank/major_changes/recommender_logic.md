@@ -9,35 +9,50 @@
 ## 2. Proposed Approach: Hybrid (Ranking + LLM Re-ranking)
 
 -   **Overview**: This approach involves two stages:
-    1.  **Initial Ranking**: A rule-based scoring system analyzes the comparison reports to identify the top 2-3 candidate policies based on explicit coverage gaps and weaknesses.
-    2.  **LLM Re-ranking**: The comparison reports for only the top candidates are fed into a final LLM call, which performs a nuanced comparison and selects the ultimate winner with justification.
--   **Rationale**: Balances objective filtering based on report data with the nuanced understanding capabilities of an LLM for the final decision, improving efficiency and potentially accuracy compared to a pure LLM or pure rule-based approach.
+    1.  **Initial Ranking**: A rule-based scoring system analyzes the comparison reports based on the explicit "Fully Met", "Partially Met", or "Not Met" assessment for each requirement to generate a quantitative score.
+    2.  **LLM Re-ranking**: The comparison reports for only the top candidates (based on the Stage 1 score) are fed into a final LLM call, which performs a nuanced comparison and selects the ultimate winner with justification.
+-   **Rationale**: Balances objective filtering based on explicit requirement assessments with the nuanced understanding capabilities of an LLM for the final decision, improving efficiency and potentially accuracy compared to a pure LLM or pure rule-based approach.
 
-## 3. Stage 1: Initial Ranking Logic - Requirement Coverage Check + Weakness Penalty
+### Stage Interaction and Rationale Details
 
--   **Objective**: To quantitatively rank the recommended tiers from each insurer's comparison report based on how well they address the customer's requirements, filtering out policies with significant, explicitly stated shortcomings.
+-   **Stage 1 Role (Quantitative Filter):**
+    -   Provides a fast, objective initial ranking based *solely* on the count and type of requirement assessments ("Fully Met", "Partially Met", "Not Met").
+    -   Acts as an efficient filter to identify a small set of promising candidates.
+    -   **Limitations:** The score ignores requirement importance (all requirements weighted equally), the degree of partial coverage (all "Partially Met" get 0.5 points), and qualitative details found in the report's justification/summary text.
+-   **Stage 2 Role (Qualitative Re-ranking):**
+    -   Analyzes the *full text* of the comparison reports for only the top 2-3 candidates from Stage 1.
+    -   Performs a holistic, nuanced comparison considering factors missed by the Stage 1 score (e.g., importance of specific requirements, severity of partial limitations, trade-offs mentioned in justifications).
+    -   Selects the final recommended policy based on this deeper, qualitative understanding.
+-   **Potential for Different Ranking:** It is *expected* and *by design* that the final recommendation from Stage 2 might differ from the strict #1 policy ranked by the Stage 1 score. This occurs when the qualitative analysis reveals nuances (e.g., the #1 policy has a minor flaw in a critical area, while the #2 policy is a better overall fit despite a slightly lower raw score). This reflects the strength of the hybrid approach – combining objective breadth with qualitative depth.
+-   **Efficiency:** This two-stage process avoids the need for the LLM to perform slow, expensive, detailed comparisons across *all* policies, focusing its nuanced reasoning only on the most likely candidates identified by the efficient Stage 1 scoring.
+
+## 3. Stage 1: Initial Ranking Logic - Additive Score based on Coverage Assessment
+
+-   **Objective**: To quantitatively rank the recommended tiers from each insurer's comparison report based *solely* on how well they meet each customer requirement, according to the explicit assessment provided in the report.
 
 -   **How it Works**:
-    1.  **Identify Key Requirements**: Programmatically determine the list of requirements analyzed in the reports (e.g., by parsing `### Requirement: {Requirement Name}` headers from one of the reports for that `uuid`). Let the total number of requirements be `N`.
-    2.  **Parse Reports**: For each insurer's comparison report (`.md` file) associated with the customer `uuid`:
-        *   Examine the detailed analysis section under each of the `N` `### Requirement:` headers. Look for explicit statements indicating non-coverage or critical limitations (e.g., "not covered", "N.A.", "excludes", specific limiting notes that negate the core need).
-        *   Extract the bullet points listed under the `*   **Weaknesses/Gaps:**` section in the final summary.
-    3.  **Calculate Score**:
-        *   Each policy starts with a potential maximum score of `N` points.
-        *   **Deduction 1 (Detailed Analysis)**: For each of the `N` requirements, if its corresponding detailed section contains an explicit statement of non-coverage or a critical limitation, subtract **1 point** from the policy's score.
-        *   **Deduction 2 (Summary Weakness)**: For each *unique* key requirement mentioned in the summary's `Weaknesses/Gaps` list, subtract **0.5 points** from the policy's score.
-    4.  **Rank**: Sort the policies based on their final scores (highest first).
-    5.  **Select Top Candidates**: Choose the top 2 or 3 policies from this ranking.
+    1.  **Parse Reports**: For each insurer's comparison report (`.md` file) associated with the customer `uuid`:
+        *   Extract the exact assessment text (expected to be "Fully Met", "Partially Met", or "Not Met") from the `*   **Coverage Assessment:**` line under each `### Requirement:` header.
+    2.  **Calculate Score**:
+        *   Initialize the score for the policy to 0.0.
+        *   For each requirement analyzed in the report:
+            *   If the extracted assessment text is exactly "Fully Met", add **1.0 point** to the score.
+            *   If the extracted assessment text is exactly "Partially Met", add **0.5 points** to the score.
+            *   If the extracted assessment text is exactly "Not Met", add **0.0 points** to the score.
+        *   The final score is the sum of points across all requirements.
+    3.  **Rank**: Sort the policies based on their final scores (highest first).
+    4.  **Select Top Candidates**: Choose the top 2 or 3 policies from this ranking.
 
 -   **Consistency of Requirements**:
     *   **Why it's Consistent**: The `scripts/generate_policy_comparison.py` script uses the *single* customer requirements JSON file (`requirements_{scenario_name}_{uuid}.json`) as the basis for comparison against *all* insurers for that specific customer (`uuid`).
-    *   **Implication**: All comparison reports generated for the same `uuid` are prompted to evaluate the exact same set of `N` requirements. Therefore, the starting maximum score (`N`) should be identical for all policies being ranked for that customer. Differences arise only from the *deductions* based on how well each policy meets those requirements according to its report.
+    *   **Implication**: All comparison reports generated for the same `uuid` are prompted to evaluate the exact same set of requirements. The maximum possible score will be equal to the total number of requirements analyzed (`N`). Differences in scores arise solely from the explicit assessments ("Fully Met", "Partially Met", "Not Met") provided for each requirement in the report.
 
 -   **Scoring Rationale**:
-    *   The system rewards policies that appear to cover requirements based on the detailed analysis (fewer -1 deductions).
-    *   It penalizes policies where the comparison LLM explicitly identified non-coverage or critical limitations in the details.
-    *   It further penalizes policies where weaknesses related to key requirements were significant enough to be highlighted in the final summary (the -0.5 deduction).
-    *   This prioritizes policies with fewer identified major flaws.
+    *   This system directly quantifies how well a policy meets the stated requirements based on the explicit assessment generated by the comparison LLM (following strict prompt instructions).
+    *   It rewards policies that fully meet more requirements and partially penalizes those that only partially meet them.
+    *   Policies that fail to meet requirements receive no points for those specific requirements.
+    *   The `Weaknesses/Gaps` summary section is *not* used in this scoring calculation, ensuring the score is based purely on the per-requirement assessment.
+    *   This prioritizes policies with the highest degree of explicit requirement fulfillment.
 
 ## 4. Stage 2: LLM Re-ranking (High-Level Plan)
 
@@ -53,10 +68,10 @@
 
 ## 5. Implementation Tasks
 
--   [ ] **Task 0 (Prerequisite)**: Refine the `PROMPT_TEMPLATE_INSURER` in `scripts/generate_policy_comparison.py`:
+-   [x] **Task 0 (Prerequisite)**: Refine the `PROMPT_TEMPLATE_INSURER` in `scripts/generate_policy_comparison.py`:
     -   Define a strict, consistent Markdown structure for the report output (exact headers, section order, formatting).
     -   Incorporate few-shot examples (positive/negative) and explicit instructions for the structure, including the comparative analysis within the `Justification` section.
-    -   **Note:** The `Coverage Assessment:` instruction must be updated to require *only* the exact phrases "Fully Met", "Partially Met", or "Not Met". Examples must be updated to reflect this.
+    -   **Note:** The `Coverage Assessment:` instruction must be updated to require *only* the exact phrases "Fully Met", "Partially Met", or "Not Met". Examples must be updated to clearly demonstrate this exact usage.
     -   **Proposed Prompt Draft:**
         ```python
         # Placeholder for the actual prompt variable in generate_policy_comparison.py
@@ -216,12 +231,11 @@
         """
         ```
     -   Test the updated prompt by regenerating sample reports and verifying the improved consistency.
--   [ ] **Task 1**: Develop a robust Markdown parser function based on the *refined* report structure from Task 0 to extract:
-    -   List of requirement names (from `### Requirement:` headers).
-    -   Content of each requirement's detailed analysis section.
-    -   The exact text following the `Coverage Assessment:` line for each requirement.
-    -   List of structured bullet points under the `Weaknesses/Gaps` summary (format: `[Req Name]: Description`).
--   [ ] **Task 2**: Implement the Stage 1 scoring logic (Additive Score based on Assessment) using the parser output from Task 1.
+-   [x] **Task 1**: Develop a robust Markdown parser function (`parse_comparison_report` in `scripts/generate_recommendation_report.py`) based on the *refined* report structure from Task 0 to extract:
+    -   Recommended Tier name.
+    -   For each requirement: Name and the exact text following the `Coverage Assessment:` line.
+    -   *(Optional but recommended for context/debugging: Full analysis text block for each requirement, Strengths/Weaknesses summary text)*.
+-   [x] **Task 2**: Implement the Stage 1 scoring logic (`calculate_stage1_score` in `scripts/generate_recommendation_report.py`) using the parser output from Task 1.
     -   **Scoring Logic:**
         -   Initialize score = 0.0.
         -   Iterate through the parsed requirements.
@@ -230,17 +244,28 @@
             -   If assessment is exactly "Partially Met", add 0.5 points.
             -   If assessment is exactly "Not Met", add 0.0 points.
         -   Sum the points to get the final score.
-    -   **Note:** This scoring method ignores the `Weaknesses/Gaps` summary section entirely.
--   [ ] **Task 3**: Create a new script or function (in `scripts/generate_recommendation_report.py`) that orchestrates the process:
+    -   **Note:** This scoring method relies *only* on the exact assessment strings ("Fully Met", "Partially Met", "Not Met") and ignores the summary section.
+-   [x] **Task 3**: Create a new script or function (in `scripts/generate_recommendation_report.py`) that orchestrates the process:
     -   Takes `customer_id` (`uuid`) as input.
     -   Finds relevant comparison reports (assuming they are generated using the refined prompt from Task 0).
     -   Runs the Stage 1 ranking (Task 2).
     -   Selects top candidates.
--   [ ] **Task 4**: Implement the Stage 2 LLM Re-ranking call:
+-   [x] **Task 4**: Implement the Stage 2 LLM Re-ranking call:
     -   Develop the final comparison prompt (input will be the refined reports for top candidates).
+    -   **Update Prompt:** Instruct the LLM to weave key source references (page/section) into the justification where relevant.
     -   Integrate with `LLMService`.
-    -   Define the output structure (e.g., Pydantic model).
--   [ ] **Task 5**: Integrate Stage 1 and Stage 2 within the orchestrating script/function (Task 3).
--   [ ] **Task 6**: Define the final recommendation output mechanism and format. The specific format (e.g., JSON, Markdown, HTML) and how it's presented/saved (e.g., file in `results/{uuid}/`, console output, API response) will be decided at a later stage.
--   [ ] **Task 7**: Add tests for the parser (Task 1) and scoring logic (Task 2).
--   [ ] **Task 8**: Update relevant Memory Bank documents (`activeContext.md`, `systemPatterns.md`, `progress.md`) upon completion of the recommender implementation.
+    -   Define the *intermediate* output structure (e.g., Pydantic model `FinalRecommendation` containing insurer, tier, justification).
+-   [x] **Task 5**: Integrate Stage 1 and Stage 2 within the orchestrating script/function (Task 3).
+    -   Pass necessary data (Stage 1 results, Stage 2 justification) to the new report generation step (Task 6).
+-   [x] **Task 6**: Implement the final recommendation output mechanism and format.
+    -   **Format:** Customer-friendly Markdown (`.md`).
+    -   **Content:**
+        -   Clear statement of the final recommended policy (Insurer + Tier).
+        -   The detailed justification from the Stage 2 LLM (which should include source references).
+        -   A section showing the Top 3 policies from Stage 1 ranking, including their scores.
+        -   A brief explanation of the Stage 1 scoring method (Fully Met=1.0, Partially Met=0.5, Not Met=0.0).
+        -   A list of other policies analyzed in Stage 1 but not in the Top 3 (Insurer - Tier: Score), or a note if none.
+    -   **Mechanism:** Save the generated Markdown report to `results/{uuid}/recommendation_report_{uuid}.md`.
+-   [x] **Task 7**: Add/Update tests for the parser (Task 1), scoring logic (Task 2), and the *new* Markdown report generation (Task 6).
+-   [x] **Task 8**: Update relevant Memory Bank documents (`activeContext.md`, `systemPatterns.md`, `progress.md`) upon completion of the recommender implementation.
+-   [ ] **Task 9 (Future)**: Enhance the final Markdown report (Task 6) with personalization by referencing key points or context from the original customer transcript (`data/transcripts/processed/parsed_transcript_{scenario_name}_{uuid}.json`).

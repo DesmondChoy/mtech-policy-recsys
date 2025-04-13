@@ -69,6 +69,7 @@ RESULTS_DIR = project_root / "results"
 # LLM_MODEL can be handled by LLMService default config
 
 # --- New Prompt Template for Insurer-Level Analysis ---
+# Placeholder for the actual prompt variable in generate_policy_comparison.py
 PROMPT_TEMPLATE_INSURER = """
 # Role: Travel Insurance Policy Advisor
 
@@ -121,13 +122,13 @@ You MUST generate the report using the following Markdown structure. Use the exa
     *   **Conditional Limits:** [Extract Conditional Limits details (condition, type, value, basis, source) or 'null']
     *   **Source Specific Details:** [Extract ALL Source Specific Details (snippet, source, page, section). Do not summarize or omit.]
 *   [Add more Policy Coverage sections if multiple benefits relate to this requirement]
-*   **Coverage Assessment:** [Explicitly state if this requirement is Fully Met, Partially Met (explain why), or Not Met/Critically Limited based on the policy details above. Be specific about gaps.]
+*   **Coverage Assessment:** [MUST state *only* one of the following exact phrases: Fully Met, Partially Met, or Not Met. If Partially Met, provide a brief explanation immediately after the phrase, e.g., 'Partially Met: Limit is lower than requested'.]
 
 ### Requirement: [Insert Requirement Name 2 from Customer Requirements]
 
 *   **Policy Coverage:** [Extract relevant Policy Benefit Name]
     *   ... [Extract ALL Details as above] ...
-*   **Coverage Assessment:** [Explicit statement: Fully Met, Partially Met (explain), or Not Met/Critically Limited]
+*   **Coverage Assessment:** [MUST state *only* one of the following exact phrases: Fully Met, Partially Met, or Not Met. If Partially Met, provide a brief explanation immediately after the phrase.]
 
 [... Repeat the '### Requirement:' section for ALL requirements listed in the customer requirements JSON ...]
 
@@ -136,7 +137,7 @@ You MUST generate the report using the following Markdown structure. Use the exa
 *   **Strengths:**
     *   [List key advantages of this tier in meeting the customer's requirements.]
 *   **Weaknesses/Gaps:**
-    *   [List *only* the key shortcomings or requirements explicitly identified as Not Met or Partially Met/Critically Limited in the Coverage Assessment sections above. Use the format: `*   [Requirement Name]: [Brief explanation of the gap/limitation]`. Do NOT include general weaknesses like cost here.]
+    *   [List key shortcomings or requirements explicitly identified as Not Met or Partially Met in the Coverage Assessment sections above.]
 
 ```
 
@@ -164,7 +165,7 @@ Therefore, the Elite tier is recommended as it is the only tier providing the sp
 *   **Policy Coverage:** Emergency Medical Evacuation & Repatriation...
     *   **Base Limits:** Type: Per Insured Person - up to 70 years, Limit: Unlimited, Basis: null ...
     *   ...
-*   **Coverage Assessment:** Fully Met. Provides high limits ($1M) and unlimited evacuation, meeting the need for comprehensive medical protection.
+*   **Coverage Assessment:** Fully Met
 
 ### Requirement: Reimbursement for unused green fees if unable to play due to injury
 
@@ -172,7 +173,23 @@ Therefore, the Elite tier is recommended as it is the only tier providing the sp
     *   **Base Limits:** Type: Unused green fees, Limit: 250, Basis: null
     *   **Conditional Limits:** null
     *   **Source Specific Details:** Detail: Covers reimbursement of unused green fees due to covered reasons. Source: Policy Wording, Page: 6, Section: 36
-*   **Coverage Assessment:** Fully Met. Section 36 explicitly covers unused green fees up to $250.
+*   **Coverage Assessment:** Fully Met
+
+### Requirement: Golf Equipment Coverage
+
+*   **Policy Coverage:** Golf Cover
+    *   **Base Limits:** Type: Golf Equipment, Limit: 1000, Basis: null
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** Detail: Covers loss or damage to golf equipment. Source: Policy Wording, Page: 6, Section: 36
+*   **Coverage Assessment:** Partially Met: Limit ($1000) might be lower than the value of high-end equipment.
+
+### Requirement: Defined benefit for a hole-in-one
+
+*   **Policy Coverage:** Golf Cover
+    *   **Base Limits:** Type: Hole-in-one, Limit: 500, Basis: null
+    *   **Conditional Limits:** Condition: During competition, Type: Benefit, Limit: 500, Basis: null, Source: Policy Wording, Page: 6, Section: 36
+    *   **Source Specific Details:** Detail: Pays a benefit for achieving a hole-in-one during a competition. Source: Policy Wording, Page: 6, Section: 36
+*   **Coverage Assessment:** Partially Met: Benefit only applies during a competition, not casual play.
 
 [... Other requirements ...]
 
@@ -183,8 +200,8 @@ Therefore, the Elite tier is recommended as it is the only tier providing the sp
     *   Highest limits for core medical, cancellation, and baggage needs.
     *   Unlimited medical evacuation for under 70s.
 *   **Weaknesses/Gaps:**
-    *   [Golf Equipment Coverage]: Specific limits ($1000 equipment, $250 green fees, $500 buggy damage) might be lower than potential costs, despite being covered.
-    *   [Defined benefit for a hole-in-one]: Benefit only applies during a competition.
+    *   Golf Equipment Coverage: Limit ($1000) might be lower than the value of high-end equipment.
+    *   Defined benefit for a hole-in-one: Benefit only applies during a competition.
 ```
 
 **Negative Example (Illustrative - Lacks Tier Comparison & Assessment):**
@@ -221,7 +238,7 @@ The Elite tier is recommended because it meets the customer's needs for their go
 ```
 *(Note how the negative example lacks the initial comparison in the Justification, omits the crucial 'Coverage Assessment' line in the detailed analysis, and provides overly summarized details.)*
 
-**Final Instruction:** Generate ONLY the Markdown report based on the analysis, strictly following the specified structure, incorporating the tier comparison in the Justification, including the Coverage Assessment for each requirement, and ensuring all granular details are extracted. Do not add any introductory or concluding remarks outside of the defined report structure.
+**Final Instruction:** Generate ONLY the Markdown report based on the analysis, strictly following the specified structure, incorporating the tier comparison in the Justification, including the Coverage Assessment for each requirement (using *only* "Fully Met", "Partially Met", or "Not Met"), and ensuring all granular details are extracted. Do not add any introductory or concluding remarks outside of the defined report structure.
 """
 
 
