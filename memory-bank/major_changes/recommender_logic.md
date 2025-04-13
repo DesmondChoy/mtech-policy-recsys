@@ -231,6 +231,6 @@
     -   Integrate with `LLMService`.
     -   Define the output structure (e.g., Pydantic model).
 -   [ ] **Task 5**: Integrate Stage 1 and Stage 2 within the orchestrating script/function (Task 3).
--   [ ] **Task 6**: Define the final recommendation output format (e.g., save to a JSON or Markdown file in `results/{uuid}/`).
+-   [ ] **Task 6**: Define the final recommendation output mechanism and format. The specific format (e.g., JSON, Markdown, HTML) and how it's presented/saved (e.g., file in `results/{uuid}/`, console output, API response) will be decided at a later stage.
 -   [ ] **Task 7**: Add tests for the parser (Task 1) and scoring logic (Task 2).
 -   [ ] **Task 8**: Update relevant Memory Bank documents (`activeContext.md`, `systemPatterns.md`, `progress.md`) upon completion of the recommender implementation.
