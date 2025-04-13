@@ -1,5 +1,9 @@
 # Policy Comparison Workflow Changes: Insurer-Level Analysis
 
+**Status:** Completed
+
+---
+
 This document outlines planned major changes to the policy comparison workflow, shifting from tier-level analysis to insurer-level analysis.
 
 ## Current Implementation & Pain Points
