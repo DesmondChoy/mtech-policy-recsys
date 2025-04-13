@@ -216,7 +216,7 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Includes:
         - Task 4: Updated Stage 2 prompt (`PROMPT_TEMPLATE_STAGE2`) to request source references in justification.
         - Task 5: Ensured `main` function returns Stage 1 & Stage 2 results.
-        - Task 6: Implemented Markdown report generation (`generate_markdown_report`) including justification, Stage 1 ranking, scoring explanation, and saving to `recommendation_report_{uuid}.md`.
+        - Task 6: Implemented Markdown report generation (`generate_markdown_report`) including justification, Stage 1 ranking, scoring explanation, and saving to `recommendation_report_{uuid}.md`. (Note: Intermediate JSON output was removed).
         - Task 7: Added unit tests for Markdown report generation to `tests/test_generate_recommendation_report.py`.
     - Updated associated plan document (`memory-bank/major_changes/recommender_logic.md`) marking tasks 4, 5, 6, 7 complete.
 29. **PDF Extraction Evaluation Script Enhancement**:

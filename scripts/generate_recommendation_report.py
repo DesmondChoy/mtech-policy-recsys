@@ -736,32 +736,6 @@ async def main(
             f"Justification (Snippet):\n{final_recommendation.justification[:500]}..."
         )  # Log snippet
 
-        # --- Task 6: Save Final Recommendation ---
-        output_filename = f"final_recommendation_{customer_uuid}.json"
-        # Ensure customer_results_dir is defined or recalculate it
-        customer_results_dir = RESULTS_DIR / customer_uuid
-        customer_results_dir.mkdir(parents=True, exist_ok=True)  # Ensure dir exists
-        output_path = customer_results_dir / output_filename
-
-        try:
-            # Use model_dump_json for Pydantic v2+ for pretty printing
-            json_output = final_recommendation.model_dump_json(indent=2)
-            with open(output_path, "w", encoding="utf-8") as f:
-                f.write(json_output)
-            logger.info(f"Final recommendation saved to: {output_path}")
-        except AttributeError:  # Fallback for older Pydantic versions if needed
-            try:
-                json_output = final_recommendation.json(indent=2)
-                with open(output_path, "w", encoding="utf-8") as f:
-                    f.write(json_output)
-                logger.info(f"Final recommendation saved to: {output_path}")
-            except Exception as e:
-                logger.error(
-                    f"Failed to save final recommendation to {output_path}: {e}"
-                )
-        except Exception as e:
-            logger.error(f"Failed to save final recommendation to {output_path}: {e}")
-        # --- End Task 6 ---
         # Return results from both stages
         return ranked_results, final_recommendation
     else:
@@ -809,9 +783,6 @@ if __name__ == "__main__":
         print(f"  Recommended Tier: {stage2_recommendation.recommended_tier}")
         print(
             f"  Markdown report saved in: results/{args.customer_id}/recommendation_report_{args.customer_id}.md"
-        )
-        print(
-            f"  JSON details saved in: results/{args.customer_id}/final_recommendation_{args.customer_id}.json"
         )
 
     else:

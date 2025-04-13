@@ -94,7 +94,6 @@ This step takes the insurer-level comparison reports generated in the previous s
     The script parses the comparison reports, performs Stage 1 scoring based on requirement matching, selects top candidates, and then uses the Gemini API via `LLMService` for Stage 2 re-ranking and justification generation.
 3.  **Output**:
     *   A final Markdown recommendation report saved to `results/{uuid}/recommendation_report_{uuid}.md`. This report includes the final ranked list of recommended policies, detailed justifications with source references, and an explanation of the scoring.
-    *   An intermediate JSON file (`results/{uuid}/final_recommendation_{uuid}.json`) containing the structured data from the recommendation process.
 
 ## 4. Evaluation Scripts
 
@@ -216,7 +215,7 @@ The project structure supports the workflow illustrated in the diagram above:
    - **Component**: `scripts/generate_recommendation_report.py`
    - **Purpose**: Generates the final customer-facing recommendation report by parsing comparison reports, applying scoring, and using an LLM for re-ranking and justification.
    - **Input**: Customer UUID (`--customer_id`), which determines the directory (`results/{uuid}/`) containing the comparison reports (`policy_comparison_report_*.md`).
-   - **Output**: Saves the final Markdown report to `results/{uuid}/recommendation_report_{uuid}.md` and an intermediate JSON (`final_recommendation_{uuid}.json`). See the script's docstring for more details.
+   - **Output**: Saves the final Markdown report to `results/{uuid}/recommendation_report_{uuid}.md`. See the script's docstring for more details.
 
 9. **Evaluation Scripts**
    - **Transcript Evaluation**: See Section 4.1 above.

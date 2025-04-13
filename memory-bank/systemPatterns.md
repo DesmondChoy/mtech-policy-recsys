@@ -164,7 +164,7 @@ flowchart TD
 ### Recommendation Report Script (`scripts/generate_recommendation_report.py`)
 - **Purpose**: Parses comparison reports, performs Stage 1 scoring, calls LLM for Stage 2 re-ranking, generates a final Markdown report, and saves it.
 - **Inputs**: Markdown comparison reports (`results/{uuid}/*.md`).
-- **Outputs**: Final recommendation Markdown report (`results/{uuid}/recommendation_report_{uuid}.md`). Also saves intermediate JSON (`results/{uuid}/final_recommendation_{uuid}.json`).
+- **Outputs**: Final recommendation Markdown report (`results/{uuid}/recommendation_report_{uuid}.md`).
 - **Dependencies**: `LLMService`, Comparison Report Script output, Pydantic (`FinalRecommendation` model).
 
 ### ML Models (Future)
@@ -228,7 +228,6 @@ sequenceDiagram
     Note right of RecommendR: Reads reports from results/{uuid}/
     RecommendR->>LLM_Gemini: Stage 2 Re-rank Top Candidates
     LLM_Gemini-->>RecommendR: Final Recommendation (Structured JSON)
-    Note right of RecommendR: Saves intermediate JSON to results/{uuid}/final_recommendation_*.json
     RecommendR->>RecommendR: Generate Final Markdown Report
     Note right of RecommendR: Saves final MD report to results/{uuid}/recommendation_report_*.md
     RecommendR->>UserDev: Provide Final Recommendation Report
