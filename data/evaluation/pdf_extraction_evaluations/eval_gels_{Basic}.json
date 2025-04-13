@@ -1,0 +1,69 @@
+{
+  "policy_tier_evaluated": "Basic",
+  "json_source": "data/policies/processed/gels_{Basic}.json",
+  "pdf_source": "data/policies/raw/gels_{Basic}.pdf",
+  "evaluation_results": [
+    {
+      "result": "match",
+      "coverage_name": "Public transport double indemnity",
+      "json_detail": "Limit: Not covered. Source: Page 3, Section 2. Detail: 'This benefit is not covered under the Basic plan.'",
+      "pdf_detail": "PDF Page 3, Section 2, Basic column explicitly states 'Not covered'."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Traditional Chinese medicine",
+      "json_detail": "Limit: Not covered. Source: Page 3, Section 7. Detail: 'This benefit is not covered under the Basic plan.'",
+      "pdf_detail": "PDF Page 3, Section 7, Basic column explicitly states 'Not covered'."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Child companion",
+      "json_detail": "Limits: Per Person SGD 1000, Max Family SGD 2000. Source: Page 3, Section 12. Covers expenses for relative/friend to accompany child home if parent hospitalized.",
+      "pdf_detail": "PDF Page 3, Section 12, Basic column shows S$1,000 limit (per person implied by context) and S$2,000 max limit for family cover."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Trip cancellation",
+      "json_detail": "Limits: Per Person SGD 2000, Max Family SGD 5000. Source: Page 4, Section 16. Covers non-refundable costs for cancellation due to specified reasons.",
+      "pdf_detail": "PDF Page 4, Section 16, Basic column shows S$2,000 limit (per person implied) and S$5,000 max limit for family cover."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Travel delay",
+      "json_detail": "Limits: Overseas Max SGD 500 (SGD 100 per 6 hrs), Singapore Max SGD 100 (SGD 100 per 6 hrs). Source: Page 4, Section 21 & Page 2. Payout starts from 6 hours delay.",
+      "pdf_detail": "PDF Page 4, Section 21, Basic column: a) Overseas: S$100 for every 6 hours, Max S$500. b) Singapore: S$100 for every 6 hours, Max S$100. (Note: Page 2 mentions 4 hours generally, but table specifies 6 hours for Basic)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Baggage delay",
+      "json_detail": "Limits: Overseas Max SGD 400 (SGD 100/6hrs), Arrival SG Max SGD 100 (SGD 100/6hrs). Max Family Overseas Max SGD 800 (SGD 100/6hrs), Max Family Arrival SG Max SGD 200 (SGD 100/6hrs). Source: Page 4, Section 25 & Page 2. Payout starts from 6 hours delay.",
+      "pdf_detail": "PDF Page 4, Section 25, Basic column: a) Overseas: S$100/6hrs, Max S$400 (Per Person), Max S$800 (Family). b) Arrival SG: S$100/6hrs, Max S$100 (Per Person), Max S$200 (Family). (Note: Page 2 mentions 4 hours generally, but table specifies 6 hours for Basic)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Pet care",
+      "json_detail": "Limit: Not covered. Source: Page 5, Section 30. Detail: 'Coverage for additional pet boarding fees due to travel delay is not covered under the Basic plan.'",
+      "pdf_detail": "PDF Page 5, Section 30, Basic column explicitly states 'Not covered'."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Personal liability",
+      "json_detail": "Limit: Per Person SGD 500,000. Source: Page 5, Section 36. Covers legal liability for third-party injury/damage.",
+      "pdf_detail": "PDF Page 5, Section 36, Basic column shows S$500,000 limit."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Emergency medical evacuation (Pre-existing conditions)",
+      "json_detail": "Limit: Not covered. Source: Page 5, Section 38c & Footnote #. Pre-existing condition coverage not available for Basic plan.",
+      "pdf_detail": "PDF Page 5, Section 38, Basic column states 'Not covered'. Footnote # confirms add-on is not for Basic. PDF Page 3, Section 3&4 explicitly states no cover for pre-existing conditions under Basic for standard evacuation/repatriation."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Trip disruption (Pre-existing conditions)",
+      "json_detail": "Limit: Not covered. Source: Page 5, Section 38h & Footnote #. Pre-existing condition coverage not available for Basic plan.",
+      "pdf_detail": "PDF Page 5, Section 38, Basic column states 'Not covered'. Footnote # confirms add-on is not for Basic."
+    }
+  ],
+  "pdf_only_findings": [],
+  "llm_call_status": "SUCCESS"
+}

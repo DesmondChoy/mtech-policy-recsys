@@ -35,6 +35,8 @@ flowchart TD
         ExtractedReqs --> ComparisonScript[scripts/generate_policy_comparison.py (LLMService/Gemini)]
         ProcessedPolicies --> ComparisonScript
         ComparisonScript --> ComparisonReports[results/{uuid}/*.md]
+        ComparisonReports --> RecommendScript[scripts/generate_recommendation_report.py (LLMService/Gemini)]
+        RecommendScript --> FinalRecommendationMD[results/{uuid}/recommendation_report_{uuid}.md]
     end
 
     subgraph Evaluation Focus
@@ -56,7 +58,7 @@ flowchart TD
 
     EvalPdfExtraction --> Evaluation Focus # Connect new eval script
 
-    ComparisonReports --> User[User/Developer]
+    FinalRecommendationMD --> User[User/Developer] # Update final output user sees
     ExtractedReqs --> FutureML{Future: ML Models}
 ```
 
@@ -159,6 +161,12 @@ flowchart TD
 - **Outputs**: Markdown comparison reports (`results/{uuid}/*.md`).
 - **Dependencies**: `LLMService`, Extractor Agent output, Policy Extraction Script output.
 
+### Recommendation Report Script (`scripts/generate_recommendation_report.py`)
+- **Purpose**: Parses comparison reports, performs Stage 1 scoring, calls LLM for Stage 2 re-ranking, generates a final Markdown report, and saves it.
+- **Inputs**: Markdown comparison reports (`results/{uuid}/*.md`).
+- **Outputs**: Final recommendation Markdown report (`results/{uuid}/recommendation_report_{uuid}.md`). Also saves intermediate JSON (`results/{uuid}/final_recommendation_{uuid}.json`).
+- **Dependencies**: `LLMService`, Comparison Report Script output, Pydantic (`FinalRecommendation` model).
+
 ### ML Models (Future)
 - **Purpose**: Uncover insights from data.
 - **Inputs**: Extracted requirements JSON, potentially comparison results or final recommendations.
@@ -176,6 +184,7 @@ sequenceDiagram
     participant ExtractP as Policy Extraction Script (LLMService)
     participant EvalPDF as PDF Extraction Eval Script (LLMService)
     participant CompareP as Policy Comparison Script (LLMService)
+    participant RecommendR as Recommendation Report Script (LLMService) # Added
     participant LLM_Gemini as LLM Service (Gemini)
     participant LLM_OpenAI as OpenAI API
     participant UserDev as User/Developer
@@ -204,15 +213,25 @@ sequenceDiagram
     LLM_Gemini-->>ExtractP: Structured Policy JSON
     Note right of ExtractP: Saves to data/policies/processed/
 
-    EvalPDF->>LLM_Gemini: Evaluate Policy JSON vs PDF (Multi-modal)
+    EvalPDF->>LLM_Gemini: Evaluate Policy JSON vs PDF (Multi-modal, uses --file_pattern)
     LLM_Gemini-->>EvalPDF: Evaluation Result JSON
     Note right of EvalPDF: Saves to data/evaluation/pdf_extraction_evaluations/
 
     %% Comparison Path (Requires both transcript and policy paths completed)
     CompareP->>LLM_Gemini: Compare Requirements vs Policies
-    LLM_Gemini-->>CompareP: Comparison Report Content
-    Note right of CompareP: Saves report to results/{uuid}/
-    CompareP->>UserDev: Provide Report
+    LLM_Gemini-->>CompareP: Comparison Report Content (Markdown)
+    Note right of CompareP: Saves report to results/{uuid}/policy_comparison_report_*.md
+    CompareP->>UserDev: Provide Comparison Report (Implicitly, via file system)
+
+    %% Recommendation Path (Requires Comparison Reports)
+    RecommendR->>RecommendR: Parse Reports & Stage 1 Score/Rank
+    Note right of RecommendR: Reads reports from results/{uuid}/
+    RecommendR->>LLM_Gemini: Stage 2 Re-rank Top Candidates
+    LLM_Gemini-->>RecommendR: Final Recommendation (Structured JSON)
+    Note right of RecommendR: Saves intermediate JSON to results/{uuid}/final_recommendation_*.json
+    RecommendR->>RecommendR: Generate Final Markdown Report
+    Note right of RecommendR: Saves final MD report to results/{uuid}/recommendation_report_*.md
+    RecommendR->>UserDev: Provide Final Recommendation Report
 
     %% Planned Evaluations
     Note over EvalPDF: PDF Extraction Evaluation Implemented

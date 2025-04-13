@@ -69,14 +69,16 @@ RESULTS_DIR = project_root / "results"
 # LLM_MODEL can be handled by LLMService default config
 
 # --- New Prompt Template for Insurer-Level Analysis ---
+# Placeholder for the actual prompt variable in generate_policy_comparison.py
 PROMPT_TEMPLATE_INSURER = """
 # Role: Travel Insurance Policy Advisor
 
 # Goal:
 1. Analyze the provided customer requirements against all available travel insurance policy tiers for the specified insurer ({insurer_name}).
-2. Select the SINGLE most suitable tier for this customer based on a holistic assessment and price tie-breaking.
-3. Provide a clear justification for your choice.
+2. Select the SINGLE most suitable tier for this customer based on a holistic assessment, specific rules, and price tie-breaking.
+3. Provide a clear justification for your choice, including a comparison between the tiers.
 4. Provide a detailed breakdown of how the *recommended tier* covers each specific customer requirement, using granular data from the policy JSON.
+5. Provide a concise summary of the recommended tier's strengths and weaknesses relative to the requirements.
 
 # Customer Requirements:
 ```json
@@ -86,9 +88,7 @@ PROMPT_TEMPLATE_INSURER = """
 # Insurer: {insurer_name}
 
 # Available Policy Tiers for {insurer_name}:
-
 Below are the details for each available policy tier from {insurer_name}. Analyze each one against the customer requirements.
-
 {policy_tiers_details_str}
 
 # Tier Price Ranking (Cheapest to Most Expensive):
@@ -97,65 +97,148 @@ Below are the details for each available policy tier from {insurer_name}. Analyz
 # Analysis and Recommendation Task:
 
 1.  **Holistic Analysis:** For each policy tier listed above, analyze how well it meets the customer's requirements *as a whole*. Consider all aspects of the requirements and the corresponding coverage details in each tier.
-2.  **No Mix-and-Match Rule:** Understand that the customer must choose one complete tier; coverages *cannot* be mixed and matched between different tiers. Factor this rule into your analysis and justification.
-3.  **Select Single Best Tier:** Based on your holistic analysis, identify the *single* policy tier from {insurer_name} that provides the best overall fit for the customer's stated requirements.
+2.  **No Mix-and-Match Rule:** You MUST understand that the customer must choose one complete tier; coverages *cannot* be mixed and matched between different tiers. Factor this rule into your analysis and justification.
+3.  **Select Single Best Tier:** Based on your holistic analysis and the No Mix-and-Match Rule, identify the *single* policy tier from {insurer_name} that provides the best overall fit for the customer's stated requirements.
 4.  **Tie-Breaking Rule:** If multiple tiers appear equally suitable after your holistic analysis, you MUST select the tier that appears earliest in the provided 'Tier Price Ranking' list (i.e., the cheapest among the equally suitable options).
-5.  **Justification:** Provide a clear and concise justification for your chosen tier. Explain *why* it is the most suitable option compared to the others. If the tie-breaking rule was used, explicitly mention this and explain why the tied tiers were considered equally suitable before applying the price ranking.
-6.  **Detailed Coverage Analysis (for Recommended Tier ONLY):**
-            *   After providing the justification, create a new section titled: `## Detailed Coverage Analysis for Recommended Tier`.
-            *   Inside this section, iterate through *each requirement* listed in the customer's `insurance_coverage_type` array.
-            *   For each customer requirement, create a subsection: `### Requirement: {{Requirement Name}}`.
-            *   Within this subsection, detail exactly how the *recommended tier* covers this specific requirement. You MUST extract and present the relevant information directly from the recommended tier's JSON data provided earlier. Include:
-                *   The specific `coverage_name`(s) from the policy that match the requirement.
-        *   All associated `base_limits` (limit_type, value, basis).
-        *   Any applicable `conditional_limits` (condition, limit_type, value, basis, source).
-        *   Crucially, include *all* relevant `source_specific_details` (detail_snippet, source_description, page_number, section_number). **Do not summarize or omit these details.**
-    *   **Formatting Example (Positive):**
-        ```markdown
-        ### Requirement: Medical Expenses
-        *   **Policy Coverage:** Overseas Medical Expenses
-            *   **Base Limits:**
-                *   Limit Type: Per Insured Person, Value: $500,000
-            *   **Source Specific Details:**
-                *   Detail: Covers necessary medical treatment overseas. Source: Policy Wording, Page: 15, Section: 3.1
-                *   Detail: Includes hospital charges and surgical fees. Source: Policy Wording, Page: 16, Section: 3.1a
-        *   **Policy Coverage:** Emergency Medical Evacuation
-            *   **Base Limits:**
-                *   Limit Type: Per Insured Person, Value: Unlimited
-            *   **Conditional Limits:**
-                *   Condition: If approved by emergency assistance provider, Limit Type: Per Event, Value: $1,000, Source: Endorsement A, Page: 1, Section: 1
-            *   **Source Specific Details:**
-                *   Detail: Covers transport to nearest suitable medical facility. Source: Policy Wording, Page: 18, Section: 3.5
-        ```
-    *   **Formatting Example (Negative/No Coverage):**
-        ```markdown
-        ### Requirement: Golf Equipment Rental
-        *   This requirement is not explicitly covered under the {{Recommended Tier Name}} tier based on the provided policy details.
-        ```
-    *   **Formatting Example (Incorrect - Missing Details):**
-        ```markdown
-        ### Requirement: Medical Expenses
-        *   **Policy Coverage:** Overseas Medical Expenses
-            *   **Base Limits:** $500,000
-            *   **Source Specific Details:** Covers necessary medical treatment overseas.
-        *   **Policy Coverage:** Emergency Medical Evacuation
-            *   **Base Limits:** Unlimited
-            *   **Source Specific Details:** Covers transport to nearest suitable medical facility.
-        ```
-        *(This example is INCORRECT because it omits the limit types, basis, conditional limits, and specific source details like page/section numbers. You MUST include all available granular details.)*
-    *   If no relevant coverage is found in the recommended tier for a specific customer requirement, clearly state that.
-7.  **Summary of Strengths/Weaknesses (for Recommended Tier ONLY):**
-    *   After the detailed coverage analysis, create a final section titled: `## Summary for Recommended Tier`.
-    *   Provide a brief, balanced summary (e.g., 2-3 bullet points for strengths, 2-3 for weaknesses/gaps) highlighting the most important ways the *recommended tier* aligns well with the customer's key requirements, and any significant areas where it falls short or doesn't provide coverage based on the requirements. This summary should help in comparing this tier against recommendations from other insurers.
+5.  **Generate Report:** Create a detailed Markdown report STRICTLY adhering to the format specified below.
 
-# Output Format:
-Provide your response in Markdown format using the following structure:
-1. Start with the recommended tier name (pre-filled below).
-2. Provide your detailed justification (Task 5).
-3. Include the detailed coverage analysis section (Task 6).
-4. Include the summary section (Task 7).
+**Output Report Structure (MUST Follow Exactly):**
 
-**Recommended Tier:** :
+You MUST generate the report using the following Markdown structure. Use the exact headers, formatting (bolding), and section order shown.
+
+```markdown
+**Recommended Tier:** : [Insert Recommended Tier Name Here]
+
+**Justification:**
+
+[**MUST include a comparison across the different tiers for this insurer ({insurer_name}).** Explain how the tiers differ in relation to key customer requirements (referencing the No Mix-and-Match rule if relevant). THEN, provide a concise explanation for why the recommended tier was chosen over the others from THIS insurer, referencing the comparison points and key customer requirements. If the Tie-Breaking Rule was used, explicitly state this and explain why the tied tiers were considered equally suitable before applying the price ranking.]
+
+## Detailed Coverage Analysis for Recommended Tier: [Insert Recommended Tier Name Here]
+
+### Requirement: [Insert Requirement Name 1 from Customer Requirements]
+
+*   **Policy Coverage:** [Extract relevant Policy Benefit Name from Policy Data]
+    *   **Base Limits:** [Extract Base Limits details (type, value, basis)]
+    *   **Conditional Limits:** [Extract Conditional Limits details (condition, type, value, basis, source) or 'null']
+    *   **Source Specific Details:** [Extract ALL Source Specific Details (snippet, source, page, section). Do not summarize or omit.]
+*   [Add more Policy Coverage sections if multiple benefits relate to this requirement]
+*   **Coverage Assessment:** [MUST state *only* one of the following exact phrases: Fully Met, Partially Met, or Not Met. If Partially Met, provide a brief explanation immediately after the phrase, e.g., 'Partially Met: Limit is lower than requested'.]
+
+### Requirement: [Insert Requirement Name 2 from Customer Requirements]
+
+*   **Policy Coverage:** [Extract relevant Policy Benefit Name]
+    *   ... [Extract ALL Details as above] ...
+*   **Coverage Assessment:** [MUST state *only* one of the following exact phrases: Fully Met, Partially Met, or Not Met. If Partially Met, provide a brief explanation immediately after the phrase.]
+
+[... Repeat the '### Requirement:' section for ALL requirements listed in the customer requirements JSON ...]
+
+## Summary for Recommended Tier: [Insert Recommended Tier Name Here]
+
+*   **Strengths:**
+    *   [List key advantages of this tier in meeting the customer's requirements.]
+*   **Weaknesses/Gaps:**
+    *   [List key shortcomings or requirements explicitly identified as Not Met or Partially Met in the Coverage Assessment sections above.]
+
+```
+
+**Examples:**
+
+**Positive Example (Illustrative - Includes Tier Comparison & Assessment):**
+
+```markdown
+**Recommended Tier:** : Elite
+
+**Justification:**
+
+Comparing the SOMPO Vital, Deluxe, and Elite tiers against the customer's golfing trip needs: Vital lacks specific golf cover entirely. Deluxe covers equipment loss but misses unused green fees, buggy damage, and hole-in-one benefits (Section 36 N.A.). Elite includes a dedicated 'Golf Cover' section addressing all these specific requirements. While all tiers cover core needs like Medical and Cancellation, Elite offers the highest limits ($1M Medical, $15k Cancellation). Given the No Mix-and-Match rule, only Elite provides the complete package needed.
+
+Therefore, the Elite tier is recommended as it is the only tier providing the specific, comprehensive golf coverage requested, alongside the highest limits for core requirements, aligning with the customer's stated priorities.
+
+## Detailed Coverage Analysis for Recommended Tier: Elite
+
+### Requirement: Medical Coverage
+
+*   **Policy Coverage:** Medical Expenses Incurred Overseas
+    *   **Base Limits:** Type: Per Insured Person - 70 years & below, Limit: 1000000, Basis: null ...
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** Detail: Covers outpatient and hospitalisation medical expenses... Source: Policy Wording, Page: 3, Section: 2
+*   **Policy Coverage:** Emergency Medical Evacuation & Repatriation...
+    *   **Base Limits:** Type: Per Insured Person - up to 70 years, Limit: Unlimited, Basis: null ...
+    *   ...
+*   **Coverage Assessment:** Fully Met
+
+### Requirement: Reimbursement for unused green fees if unable to play due to injury
+
+*   **Policy Coverage:** Golf Cover
+    *   **Base Limits:** Type: Unused green fees, Limit: 250, Basis: null
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** Detail: Covers reimbursement of unused green fees due to covered reasons. Source: Policy Wording, Page: 6, Section: 36
+*   **Coverage Assessment:** Fully Met
+
+### Requirement: Golf Equipment Coverage
+
+*   **Policy Coverage:** Golf Cover
+    *   **Base Limits:** Type: Golf Equipment, Limit: 1000, Basis: null
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** Detail: Covers loss or damage to golf equipment. Source: Policy Wording, Page: 6, Section: 36
+*   **Coverage Assessment:** Partially Met: Limit ($1000) might be lower than the value of high-end equipment.
+
+### Requirement: Defined benefit for a hole-in-one
+
+*   **Policy Coverage:** Golf Cover
+    *   **Base Limits:** Type: Hole-in-one, Limit: 500, Basis: null
+    *   **Conditional Limits:** Condition: During competition, Type: Benefit, Limit: 500, Basis: null, Source: Policy Wording, Page: 6, Section: 36
+    *   **Source Specific Details:** Detail: Pays a benefit for achieving a hole-in-one during a competition. Source: Policy Wording, Page: 6, Section: 36
+*   **Coverage Assessment:** Partially Met: Benefit only applies during a competition, not casual play.
+
+[... Other requirements ...]
+
+## Summary for Recommended Tier: Elite
+
+*   **Strengths:**
+    *   Complete coverage for all specific golf requirements via dedicated Golf Cover section.
+    *   Highest limits for core medical, cancellation, and baggage needs.
+    *   Unlimited medical evacuation for under 70s.
+*   **Weaknesses/Gaps:**
+    *   Golf Equipment Coverage: Limit ($1000) might be lower than the value of high-end equipment.
+    *   Defined benefit for a hole-in-one: Benefit only applies during a competition.
+```
+
+**Negative Example (Illustrative - Lacks Tier Comparison & Assessment):**
+
+```markdown
+**Recommended Tier:** : Elite
+
+**Justification:**
+
+The Elite tier is recommended because it meets the customer's needs for their golfing trip, including specific golf cover and high limits for medical and cancellation. It aligns with their priorities.
+
+## Detailed Coverage Analysis for Recommended Tier: Elite
+
+### Requirement: Medical Coverage
+*   **Policy Coverage:** Medical Expenses Incurred Overseas
+    *   **Base Limits:** $1,000,000
+    *   **Source Specific Details:** Covers medical expenses.
+*   **Policy Coverage:** Emergency Medical Evacuation
+    *   **Base Limits:** Unlimited
+    *   **Source Specific Details:** Covers evacuation.
+*(Note: Missing Coverage Assessment)*
+
+### Requirement: Reimbursement for unused green fees if unable to play due to injury
+*   **Policy Coverage:** Golf Cover
+    *   **Base Limits:** $250
+    *   **Source Specific Details:** Covers green fees.
+*(Note: Missing Coverage Assessment)*
+
+[... Other requirements ...]
+
+## Summary for Recommended Tier: Elite
+*   **Strengths:** Good coverage.
+*   **Weaknesses/Gaps:** Cost.
+```
+*(Note how the negative example lacks the initial comparison in the Justification, omits the crucial 'Coverage Assessment' line in the detailed analysis, and provides overly summarized details.)*
+
+**Final Instruction:** Generate ONLY the Markdown report based on the analysis, strictly following the specified structure, incorporating the tier comparison in the Justification, including the Coverage Assessment for each requirement (using *only* "Fully Met", "Partially Met", or "Not Met"), and ensuring all granular details are extracted. Do not add any introductory or concluding remarks outside of the defined report structure.
 """
 
 

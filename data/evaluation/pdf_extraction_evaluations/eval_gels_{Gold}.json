@@ -1,0 +1,69 @@
+{
+  "policy_tier_evaluated": "Gold",
+  "json_source": "data/policies/processed/gels_{Gold}.json",
+  "pdf_source": "data/policies/raw/gels_{Gold}.pdf",
+  "evaluation_results": [
+    {
+      "result": "match",
+      "coverage_name": "Emergency medical evacuation / Repatriation",
+      "json_detail": "Base limit S$1,000,000 per person. Conditional limit S$150,000 per person for pre-existing conditions add-on. Covers emergency evacuation/repatriation. Add-on details specified (Gold/Plat, single/annual up to 45 days). Source: Page 3, Item 3/4; Page 5, Item 38c/d & Footnotes +, #.",
+      "pdf_detail": "PDF Page 3, Item 3/4 (Gold): S$1,000,000 limit, with note 'Limits for pre-existing conditions: S$150,000'. PDF Page 5, Item 38c/d (Gold): S$150,000 limit for pre-existing add-on. Footnote # (Page 5) confirms add-on details (Gold/Plat, single/annual up to 45 days). Footnote + (Page 2) refers to pre-existing conditions."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Hospital cash",
+      "json_detail": "Base Limits: Overseas: S$200/day (max S$30k pp / S$60k family). Singapore: S$100/day (max S$1k pp / S$2k family). Provides daily cash benefit for hospital confinement. Source: Page 3, Item 10a/b.",
+      "pdf_detail": "PDF Page 3, Item 10a/b (Gold): Matches JSON limits exactly for overseas (S$200 per day, Max S$30,000 pp / Max S$60,000 family) and Singapore stays (S$100 per day, Max S$1,000 pp / Max S$2,000 family)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Trip cancellation",
+      "json_detail": "Base limit S$10,000 pp / S$25,000 family. Conditional limit S$10,000 pp (50% co-payment) for pre-existing conditions add-on. Covers irrecoverable costs for cancellation due to specified reasons. Add-on details specified. Source: Page 4, Item 16; Page 5, Item 38f & Footnotes +, #.",
+      "pdf_detail": "PDF Page 4, Item 16 (Gold): S$10,000 pp / S$25,000 family limits match. PDF Page 5, Item 38f (Gold): S$10,000 limit with 'Co-payment: 50%' for pre-existing add-on matches. Footnote # (Page 5) confirms add-on details."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Travel inconvenience for any reason",
+      "json_detail": "Limits: Cancellation S$3k pp / S$6k family; Postponement S$1k pp / S$2k family; Curtailment S$4k pp / S$8k family. Covers these for any reason. Applicable for Gold. Requires purchase within 30 days of booking. Example suggests 50% payout. Source: Page 4, Item 19a/b/c & Page 2/5 Footnote * & Page 6.",
+      "pdf_detail": "PDF Page 4, Item 19a/b/c (Gold): Matches all limits for cancellation (S$3,000 pp / S$6,000 family), postponement (S$1,000 pp / S$2,000 family), curtailment (S$4,000 pp / S$8,000 family). Footnote * (Page 2/5): Confirms applicability to Gold and 30-day purchase window. Page 6 example confirms 50% payout for cancellation scenario."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Baggage loss",
+      "json_detail": "Base limit S$5,000 pp / S$10,000 family. Covers accidental loss/damage to baggage. Notes sub-limits apply. Source: Page 4, Item 22.",
+      "pdf_detail": "PDF Page 4, Item 22 (Gold): Matches limits S$5,000 pp / S$10,000 family. (Brochure does not detail sub-limits)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Kidnap and hostage",
+      "json_detail": "Limit S$5,000 pp / S$12,500 family, paid at S$250 per 6 hours of unlawful detention. Source: Page 4, Item 26.",
+      "pdf_detail": "PDF Page 4, Item 26 (Gold): Matches limits (Max S$5,000 pp / Max S$12,500 family) and basis (S$250 for every 6 hours)."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Fraudulent use of a card",
+      "json_detail": "Base limit S$1,000 per person. Covers financial loss from fraudulent use of lost/stolen cards during trip. Source: Page 5, Item 29.",
+      "pdf_detail": "PDF Page 5, Item 29 (Gold): Matches limit S$1,000."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Sports equipment cover",
+      "json_detail": "Coverage status 'Not covered' for Gold plan. Source: Page 5, Item 33 & Page 2 Footnote $.",
+      "pdf_detail": "PDF Page 5, Item 33 (Gold): Shows 'Not covered'. PDF Page 2, Footnote $: Confirms sports equipment cover is for Platinum plan only."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Personal liability",
+      "json_detail": "Base limit S$1,000,000 per incident. Covers legal liability for accidental third-party injury or property damage. Source: Page 5, Item 36.",
+      "pdf_detail": "PDF Page 5, Item 36 (Gold): Matches limit S$1,000,000."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Trip cancellation (Pre-existing condition)",
+      "json_detail": "Conditional limit S$10,000 per person with 50% co-payment, requires pre-existing conditions add-on purchase. Covers cancellation due to specified pre-existing conditions. Add-on details specified (Gold/Plat, single/annual up to 45 days). Source: Page 5, Item 38f & Footnotes +, #.",
+      "pdf_detail": "PDF Page 5, Item 38f (Gold): Matches limit S$10,000 and 'Co-payment: 50%'. Footnote # (Page 5) confirms add-on details (Gold/Plat, single/annual up to 45 days). Footnote + (Page 2) refers to pre-existing conditions."
+    }
+  ],
+  "pdf_only_findings": [],
+  "llm_call_status": "SUCCESS"
+}

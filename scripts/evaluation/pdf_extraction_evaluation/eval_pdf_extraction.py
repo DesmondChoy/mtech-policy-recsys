@@ -41,6 +41,8 @@ Args:
                            Defaults to data/policies/raw/.
     --output_dir (str): Optional. Directory to save the evaluation results.
                         Defaults to data/evaluation/pdf_extraction_evaluations/.
+    --file_pattern (str): Optional. Glob pattern to match input JSON files.
+                          Defaults to "*.json". Example: "gels_*.json".
 
 Example Usage:
     # Run evaluation on all JSON files in default directories, matching with PDFs in default raw dir:
@@ -349,6 +351,11 @@ def main():
         default=str(DEFAULT_OUTPUT_DIR),
         help="Directory to save the evaluation results.",
     )
+    parser.add_argument(
+        "--file_pattern",
+        default="*.json",
+        help="Glob pattern to match input JSON files (e.g., 'gels_*.json'). Defaults to '*.json'.",
+    )
 
     args = parser.parse_args()
 
@@ -367,11 +374,15 @@ def main():
         logger.error(f"Failed to initialize LLM Service: {e}. Cannot proceed.")
         sys.exit(1)
 
-    # Find all JSON files in the input directory
-    json_files = glob.glob(os.path.join(args.input_json_dir, "*.json"))
+    # Find JSON files matching the pattern in the input directory
+    file_search_pattern = os.path.join(args.input_json_dir, args.file_pattern)
+    logging.info(f"Searching for files matching pattern: {file_search_pattern}")
+    json_files = glob.glob(file_search_pattern)
 
     if not json_files:
-        logging.warning(f"No JSON files found in {args.input_json_dir}. Exiting.")
+        logging.warning(
+            f"No JSON files found matching pattern '{args.file_pattern}' in {args.input_json_dir}. Exiting."
+        )
         sys.exit(0)
 
     total_files = len(json_files)

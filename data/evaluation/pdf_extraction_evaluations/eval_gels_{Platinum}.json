@@ -1,0 +1,69 @@
+{
+  "policy_tier_evaluated": "Platinum",
+  "json_source": "data/policies/processed/gels_{Platinum}.json",
+  "pdf_source": "data/policies/raw/gels_{Platinum}.pdf",
+  "evaluation_results": [
+    {
+      "result": "match",
+      "coverage_name": "Accidental death and permanent disability",
+      "json_detail": "Coverage Name: Accidental death and permanent disability. Limits: Adult under 70 years: SGD 500000, Adult age 70 years or above: SGD 150000, Child: SGD 100000, Maximum limit for family cover: SGD 1200000. Details: Provides lump sum payment for accidental death or permanent disability during the trip. Source: Page 3, Section 1.",
+      "pdf_detail": "Coverage Name: Accidental death and permanent disability (Section 1). Limits (Platinum): Adult under 70 years: S$500,000, Adult age 70 years or above: S$150,000, Child: S$100,000, Maximum limit for family cover: S$1,200,000. Source: Page 3, Section 1."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Emergency medical evacuation and Repatriation",
+      "json_detail": "Coverage Name: Emergency medical evacuation and Repatriation. Base Limits: Per Person: SGD 1000000. Conditional Limits (Pre-existing add-on): Per Person: SGD 200000 (Source: Page 5, Sec 38 c, d). Details: Covers expenses for emergency medical evacuation or repatriation. Limit applies for pre-existing conditions if add-on purchased. Sources: Page 3, Sec 3 & 4; Page 5, Sec 38 c, d & Footnote #.",
+      "pdf_detail": "Coverage Name: Emergency medical evacuation / Repatriation (Section 3 & 4). Base Limit (Platinum): S$1,000,000. Conditional Limit (Pre-existing add-on, Section 38 c, d): S$200,000 for Evacuation, S$200,000 for Repatriation. Sources: Page 3, Sections 3 & 4; Page 5, Section 38 c, d; Footnote #."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Medical expenses while overseas",
+      "json_detail": "Coverage Name: Medical expenses while overseas. Base Limits: Adult<70: SGD 1000000, Adult>=70: SGD 200000, Child: SGD 300000, Family Max: SGD 2000000. Conditional Limits (Pre-existing add-on): Adult<70: SGD 200000, Child/Adult>=70: SGD 150000 (Source: Page 5, Sec 38 a). Details: Covers necessary overseas medical expenses. Limit applies for pre-existing conditions if add-on purchased, S$100 co-payment per outpatient visit. Sources: Page 3, Sec 5; Page 5, Sec 38 a & Footnote #.",
+      "pdf_detail": "Coverage Name: Medical expenses while overseas (Section 5). Base Limits (Platinum): Adult<70: S$1,000,000, Adult>=70: S$200,000, Child: S$300,000, Family Max: S$2,000,000. Conditional Limits (Pre-existing add-on, Section 38 a): Adult<70: S$200,000, Child/Adult>=70: S$150,000. Co-payment: S$100 per outpatient visit for pre-existing conditions. Sources: Page 3, Section 5; Page 5, Section 38 a; Footnote #."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Traditional Chinese medicine",
+      "json_detail": "Coverage Name: Traditional Chinese medicine. Base Limits: Per Person: SGD 600, Limit per visit: SGD 80. Conditional Limits (Pre-existing add-on, Overseas): Per Person: SGD 600, Limit per visit: SGD 80 (Source: Page 5, Sec 38 b). Details: Covers TCM follow-up in SG (base) or overseas TCM for pre-existing condition with add-on. Sources: Page 3, Sec 7; Page 5, Sec 38 b & Footnote #.",
+      "pdf_detail": "Coverage Name: Traditional Chinese medicine (Section 7). Base Limits (Platinum): S$600, Limit per visit: S$80. Conditional Limits (Pre-existing add-on, Overseas TCM, Section 38 b): S$600, Limit per visit: S$80. Sources: Page 3, Section 7; Page 5, Section 38 b; Footnote #."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Trip cancellation",
+      "json_detail": "Coverage Name: Trip cancellation. Base Limits: Per Person: SGD 15000, Family Max: SGD 40000. Conditional Limits (Pre-existing add-on): Per Person: SGD 15000 (Source: Page 5, Sec 38 f). Details: Reimburses non-refundable expenses for cancellation due to specified events. Benefit applies for pre-existing condition with add-on, 50% co-payment applies. Sources: Page 4, Sec 16; Page 5, Sec 38 f & Footnote #.",
+      "pdf_detail": "Coverage Name: Trip cancellation (Section 16). Base Limits (Platinum): S$15,000, Family Max: S$40,000. Conditional Limits (Pre-existing add-on, Section 38 f): S$15,000, Co-payment: 50%. Sources: Page 4, Section 16; Page 5, Section 38 f; Footnote #."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Travel inconvenience for any reason",
+      "json_detail": "Coverage Name: Travel inconvenience for any reason. Base Limits: Cancellation(PP): SGD 6000, Cancellation(Family): SGD 12000, Postponement(PP): SGD 2000, Postponement(Family): SGD 4000, Curtailment(PP): SGD 8000, Curtailment(Family): SGD 16000. Details: Provides coverage (e.g., 50% payout) for cancellation/postponement/curtailment for any reason. Applicable only when purchased within 30 days of initial booking/deposit. Sources: Page 4, Sec 19; Page 2 Footnote *; Page 6.",
+      "pdf_detail": "Coverage Name: Travel inconvenience for any reason (Section 19). Limits (Platinum): a) Trip cancellation: S$6,000 (Family Max S$12,000), b) Trip postponement: S$2,000 (Family Max S$4,000), c) Trip curtailment: S$8,000 (Family Max S$16,000). Condition: Applicable when purchased within 30 days of initial payment/deposit (Footnote *). Example on Page 6 suggests 50% payout. Sources: Page 4, Section 19; Page 2/5 Footnote *; Page 6."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Baggage delay",
+      "json_detail": "Coverage Name: Baggage delay. Base Limits: Overseas(PP): Max SGD 1200 (SGD 200/4hrs), Overseas(Family): Max SGD 2500 (SGD 200/4hrs), Singapore(PP): Max SGD 200 (SGD 200/4hrs), Singapore(Family): Max SGD 400 (SGD 200/4hrs). Details: Cash payout for checked-in baggage delay starting from 4 consecutive hours. Sources: Page 4, Sec 25 & Page 2.",
+      "pdf_detail": "Coverage Name: Baggage delay (Section 25). Limits (Platinum): a) Overseas: S$200 for every 4 hours, Max S$1,200 (Family Max S$2,500). b) Upon arrival in Singapore: S$200 for every 4 hours, Max S$200 (Family Max S$400). Condition: Delay starts from 4 hours (Page 2). Sources: Page 4, Section 25; Page 2."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Home contents",
+      "json_detail": "Coverage Name: Home contents. Base Limits: Maximum limit: SGD 10000. Details: Covers loss or damage to home contents due to burglary or fire while overseas. Source: Page 5, Sec 28.",
+      "pdf_detail": "Coverage Name: Home contents (Section 28). Limit (Platinum): S$10,000. Source: Page 5, Section 28."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Rental vehicle excess and return",
+      "json_detail": "Coverage Name: Rental vehicle excess and return. Base Limits: Maximum limit: SGD 1500. Details: Covers insurance excess for loss/damage to rental vehicle and costs to return if insured cannot. Source: Page 5, Sec 31.",
+      "pdf_detail": "Coverage Name: Rental vehicle excess and return (Section 31). Limit (Platinum): S$1,500. Source: Page 5, Section 31."
+    },
+    {
+      "result": "match",
+      "coverage_name": "Pre-existing conditions coverage (Add-on)",
+      "json_detail": "Coverage Name: Pre-existing conditions coverage (Add-on). Base Limits: None. Conditional Limits: None (Specific limits are under relevant coverages). Details: Optional add-on for Gold/Platinum plans. Covers specified benefits (Medical Expenses Overseas, TCM Overseas, Evacuation/Repatriation, Hospital Visit, Trip Cancellation/Postponement/Disruption, Condolence Cash) arising from pre-existing conditions. Subject to specific limits, co-payments (S$100 outpatient medical; 50% trip changes), and conditions (single/annual up to 45 days each trip). Sources: Page 2 Footnote +, Page 5 Section 38 & Footnote #.",
+      "pdf_detail": "Coverage Name: Pre-existing conditions add-on benefit (Section 38). Details: Optional add-on (Footnote #) for Gold/Platinum plans (Footnote +). Covers benefits listed in Section 38 (a-i) subject to specified limits and co-payments (e.g., S$100 outpatient medical, 50% trip cancellation/postponement/disruption). Available for single trip and annual worldwide plans up to 45 days each trip (Footnote #). Sources: Page 5, Section 38; Page 2 Footnote +; Page 5 Footnote #."
+    }
+  ],
+  "pdf_only_findings": [],
+  "llm_call_status": "SUCCESS"
+}

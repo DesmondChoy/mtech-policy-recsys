@@ -35,15 +35,16 @@ gantt
 8.  **Extractor Agent (CrewAI/OpenAI)**: Functional agent (`src/agents/extractor.py`) extracts structured requirements from processed transcripts using OpenAI via `crewai`. Includes batch processing.
 9.  **Policy Extraction Script**: Script (`scripts/extract_policy_tier.py`) extracts structured policy details from PDFs using `LLMService`. Includes detailed extraction logic (base/conditional limits, source details).
 10. **Policy Comparison Script**: Script (`scripts/generate_policy_comparison.py`) generates insurer-level Markdown comparison reports using `LLMService`, extracted requirements, and processed policies.
-11. **PDF Extraction Evaluation Script**: Script (`scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py`) compares processed policy JSON against source PDF using multi-modal LLM (`LLMService`) for accuracy/completeness checks.
+11. **PDF Extraction Evaluation Script**: Script (`scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py`) compares processed policy JSON against source PDF using multi-modal LLM (`LLMService`) for accuracy/completeness checks. Enhanced with `--file_pattern` argument for flexible input filtering.
+12. **Recommendation Report Script**: Script (`scripts/generate_recommendation_report.py`) orchestrates the two-stage recommendation process: parses comparison reports, applies Stage 1 scoring, calls `LLMService` for Stage 2 re-ranking (prompt updated to request source references), generates a final customer-friendly Markdown report, and saves it. Includes unit tests for parser, scoring, and Markdown generation.
 
 ## What's Left to Build
 
 ### Phase 1: Core Logic & Evaluation Enhancement
 
-1.  **Policy Extraction Evaluation**:
-    *   [ ] Design and implement evaluation script/process for `scripts/extract_policy_tier.py` output.
-    *   [ ] Define metrics for accuracy and completeness of extracted policy data.
+1.  **PDF Extraction Evaluation**:
+    *   [ ] Test and refine the existing evaluation script (`eval_pdf_extraction.py`).
+    *   [ ] Define clear metrics based on the script's output for accuracy and completeness.
 2.  **Policy Comparison Evaluation**:
     *   [ ] Design and implement evaluation script/process for `scripts/generate_policy_comparison.py` output.
     *   [ ] Define metrics for report quality, accuracy of comparison, and justification clarity.
@@ -52,13 +53,11 @@ gantt
 
 ### Phase 2: Core Logic Integration & Refinement
 
-1.  **Recommender Logic**:
-    *   [ ] Define how final recommendations should be generated (e.g., based on comparison reports, further LLM reasoning).
-    *   [ ] Implement logic (potentially as a script or a simple agent) to produce final recommendations.
-    *   [ ] Consider output format (e.g., JSON, email content). `src/agents/recommender.py` exists but is empty.
-2.  **Component Integration**:
-    *   [ ] Define and implement how the different components (scripts, Extractor agent, Recommender logic) should interact.
-    *   [ ] Consider orchestration (e.g., using `crewai` for more components, a workflow engine, or simple script chaining).
+1.  **Component Integration**:
+    *   [ ] Define and implement how the different components (scripts, Extractor agent, Recommender script) should interact more broadly (beyond the internal Stage 1/2 integration in the recommender script).
+    *   [ ] Consider orchestration methods for the full end-to-end pipeline (e.g., Extraction -> Comparison -> Recommendation).
+2.  **Recommendation Personalization (Task 9)**:
+    *   [ ] Enhance the final Markdown report (Task 6) with personalization by referencing key points or context from the original customer transcript.
 
 ### Phase 3: ML & Testing
 
@@ -69,7 +68,7 @@ gantt
 2.  **User Interface (If Applicable)**:
     *   [ ] Design and develop a UI if direct user interaction (beyond running scripts) becomes a requirement.
 3.  **Testing Framework**:
-    *   [ ] Implement unit tests for key functions/modules.
+    *   [ ] Implement further unit tests for key functions/modules (some exist for recommender parser/scorer/markdown).
     *   [ ] Implement integration tests for script pipelines.
 
 ## Implementation Progress
@@ -85,13 +84,13 @@ gantt
 | Extractor Agent (CrewAI/OpenAI)    | 100%        | High     | `src/agents/extractor.py` - Extracts requirements. Uses OpenAI.                                      |
 | Policy Extraction Script           | 100%        | High     | `scripts/extract_policy_tier.py` - Extracts structured policy data. Uses Gemini.                     |
 | Policy Comparison Script           | 100%        | High     | `scripts/generate_policy_comparison.py` - Generates insurer-level reports. Uses Gemini.              |
-| **PDF Extraction Evaluation**      | **95%**     | **High** | **Script implemented (`eval_pdf_extraction.py`). Testing pending.**                                  |
+| **PDF Extraction Evaluation**      | **100%**    | **High** | **Script implemented (`eval_pdf_extraction.py`) with `--file_pattern` enhancement. Testing/Refinement pending.** |
 | Policy Comparison Evaluation       | Planned     | High     | Design and implement evaluation for `generate_policy_comparison.py`.                                 |
-| **Recommender Logic**              | **0%**      | **High** | **Definition and implementation pending. `recommender.py` is empty.**                                |
-| **Component Integration**          | **0%**      | **Medium** | **Orchestration between components not implemented.**                                                |
-| Testing Framework                  | 0%          | Medium   | Unit/Integration tests needed.                                                                       |
+| **Recommender Logic Script**       | **100%**    | **High** | **`scripts/generate_recommendation_report.py` implemented (parser, score, re-rank, MD report).**     |
+| **Component Integration**          | **20%**     | **Medium** | **Internal Stage 1/2 integration done. Full pipeline orchestration pending.**                        |
+| Testing Framework                  | 20%         | Medium   | Unit tests added for recommender parser/scorer/MD report. More needed.                               |
 | ML Models                          | 0%          | Low      | Later phase.                                                                                         |
-| Documentation (Memory Bank)        | 95%         | High     | Core files updated. Script/Agent documentation (docstrings) mostly present.                          |
+| Documentation (Memory Bank)        | 98%         | High     | Core files updated for recommender script. Script/Agent docstrings mostly present.                   |
 
 ## Known Issues
 
@@ -114,16 +113,17 @@ gantt
 1.  **Core Infrastructure**: Project setup, Memory Bank init, LLM Service (Gemini).
 2.  **Data Pipelines**: Scripts for generating personalities, transcripts (with scenarios), evaluating transcripts, parsing transcripts, extracting policy details (PDF to structured JSON), and generating comparison reports.
 3.  **Extractor Agent**: Implemented using CrewAI/OpenAI for requirement extraction.
-4.  **Refinements**: Centralized Gemini config, improved policy extraction detail, standardized filenames, refactored comparison script for insurer-level analysis, enhanced evaluation robustness.
+4.  **Recommender Script**: Implemented `scripts/generate_recommendation_report.py` with Stage 1 scoring, Stage 2 LLM re-ranking (with source ref prompt update), and Markdown report generation. Added unit tests.
+5.  **Refinements**: Centralized Gemini config, improved policy extraction detail, standardized filenames, refactored comparison script for insurer-level analysis, enhanced evaluation robustness, added file pattern filtering to PDF eval script.
 
 ## Next Milestones (Revised Focus)
 
-1.  **Evaluation Implementation** (Target: End April 2025)
-    *   Implement automated evaluation for policy extraction (`scripts/extract_policy_tier.py`).
+1.  **Evaluation Implementation & Refinement** (Target: End April 2025)
+    *   Test and refine the existing PDF extraction evaluation script (`eval_pdf_extraction.py`).
     *   Implement automated evaluation for comparison reports (`scripts/generate_policy_comparison.py`).
 2.  **Core Logic Refinement** (Target: Mid May 2025)
     *   Refine generation/extraction/comparison based on evaluation results.
-    *   Define and implement initial Recommender logic (agent or script).
+    *   Refine generation/extraction/comparison/recommendation based on evaluation results.
 3.  **Integration & Workflow V1** (Target: End May 2025)
     *   Develop basic orchestration to connect key script steps (e.g., Extraction -> Comparison -> Recommendation).
     *   Establish initial testing framework (unit/integration).

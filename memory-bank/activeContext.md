@@ -211,6 +211,18 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Implements two-way verification (JSON vs. PDF, PDF vs. JSON).
     - Renamed directory and script from `policy_extraction_evaluation` to `pdf_extraction_evaluation`.
     - Updated associated plan document (`memory-bank/major_changes/pdf_to_json_eval.md`).
+28. **Recommendation Report Script Revision (Hybrid Approach)**:
+    - Updated `scripts/generate_recommendation_report.py` based on revised plan (`memory-bank/major_changes/recommender_logic.md`).
+    - Includes:
+        - Task 4: Updated Stage 2 prompt (`PROMPT_TEMPLATE_STAGE2`) to request source references in justification.
+        - Task 5: Ensured `main` function returns Stage 1 & Stage 2 results.
+        - Task 6: Implemented Markdown report generation (`generate_markdown_report`) including justification, Stage 1 ranking, scoring explanation, and saving to `recommendation_report_{uuid}.md`.
+        - Task 7: Added unit tests for Markdown report generation to `tests/test_generate_recommendation_report.py`.
+    - Updated associated plan document (`memory-bank/major_changes/recommender_logic.md`) marking tasks 4, 5, 6, 7 complete.
+29. **PDF Extraction Evaluation Script Enhancement**:
+    - Modified `scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py` to include a `--file_pattern` command-line argument.
+    - This allows specifying a glob pattern (e.g., `"gels_*.json"`) to filter the input JSON files processed by the script, defaulting to `*.json` if not provided.
+    - Successfully tested the script by running it with `--file_pattern "gels_*.json"`.
 
 ## Next Steps (Revised Focus)
 
