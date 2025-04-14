@@ -268,4 +268,16 @@
     -   **Mechanism:** Save the generated Markdown report to `results/{uuid}/recommendation_report_{uuid}.md`.
 -   [x] **Task 7**: Add/Update tests for the parser (Task 1), scoring logic (Task 2), and the *new* Markdown report generation (Task 6).
 -   [x] **Task 8**: Update relevant Memory Bank documents (`activeContext.md`, `systemPatterns.md`, `progress.md`) upon completion of the recommender implementation.
--   [ ] **Task 9 (Future)**: Enhance the final Markdown report (Task 6) with personalization by referencing key points or context from the original customer transcript (`data/transcripts/processed/parsed_transcript_{scenario_name}_{uuid}.json`).
+-   [ ] **Task 10 (Evaluation): Define Scenario Ground Truth:** Manually determine the expected best policy (Insurer + Tier) for each defined scenario (`golf_coverage`, `pet_care_coverage`, `public_transport_double_cover`, `uncovered_cancellation_reason`) based on their specific requirements and available policy data. Store this mapping (e.g., in `data/evaluation/scenario_ground_truth.json`). Rationale: Provides the benchmark for evaluating pipeline performance on critical test cases.
+-   [ ] **Task 11 (Evaluation): Implement Scenario Recommendation Evaluation Script:** Create a new script (e.g., `scripts/evaluation/evaluate_scenario_recommendations.py`) that:
+    *   Loads the ground truth mapping (from Task 10).
+    *   Takes a directory of recommendation reports (`results/`) as input.
+    *   For each report, identifies the associated scenario via the UUID and transcript filename.
+    *   Parses the recommended policy (Insurer + Tier) from the report.
+    *   Compares the recommendation against the ground truth for that scenario.
+    *   Outputs evaluation results (e.g., overall accuracy, list of mismatches).
+    *   Rationale: Automates the process of checking if the end-to-end pipeline produces the expected outcome for targeted scenarios. This evaluation serves multiple purposes:
+        *   **Regression Detection:** Quickly identify if changes negatively impact performance on critical scenarios.
+        *   **Faithfulness/Correctness:** Verify the pipeline adheres to expected behavior for these key use cases.
+        *   **Objective Comparison:** Provide a benchmark to compare different models, prompts, or logic variations based on performance against the ground truth.
+-   [ ] **Task 12 (Future Enhancement):** Enhance the final Markdown report (Task 6) with personalization by referencing key points or context from the original customer transcript (`data/transcripts/processed/parsed_transcript_{scenario_name}_{uuid}.json`).
