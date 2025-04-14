@@ -1,0 +1,72 @@
+{
+  "golf_coverage": {
+    "status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "Provides comprehensive golf cover (equipment, green fees, hole-in-one) and potentially superior buggy cover via higher Rental Vehicle Excess (S$1500). Also has better travel delay trigger (4hrs)."
+      },
+      {
+        "insurer": "sompo",
+        "tier": "Elite",
+        "justification": "Only policy with dedicated 'Golf Cover' section in JSON explicitly mentioning equipment, hole-in-one, unused green fees, and buggy damage (S$500 limit)."
+      }
+    ]
+  },
+  "pet_care_coverage": {
+    "status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+      }
+    ]
+  },
+  "public_transport_double_cover": {
+    "status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ]
+  },
+  "uncovered_cancellation_reason": {
+    "status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover for specific family event cancellation. Best partial solution via optional CFAR add-on (50% payout). Assumes add-on purchased."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover for specific family event cancellation. Alternative partial solution via included TIAR benefit (likely 50% payout, requires purchase within 30 days of booking)."
+      }
+    ]
+  }
+}
