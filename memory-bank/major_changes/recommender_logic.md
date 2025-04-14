@@ -272,20 +272,25 @@
     *   **Structure:** The JSON should map each `scenario_name` to an object containing:
         *   `status`: Either `"full_cover_available"` (if standard policies fully meet the core need) or `"partial_cover_only"` (if only partial solutions or specific add-ons address the need).
         *   `expected_policies`: A list of objects, where each object contains `insurer`, `tier`, and a brief `justification`. This list can contain multiple entries if several policies are considered equally valid ground truths.
-    *   **Rationale:** Provides a structured benchmark, including justifications and status, for evaluating pipeline performance on critical test cases, acknowledging scenarios where full coverage might not be standard.
--   [x] **Task 11 (Evaluation): Implement Scenario Recommendation Evaluation Script:** Create a new script (e.g., `scripts/evaluation/evaluate_scenario_recommendations.py`) that:
-    *   Loads the structured ground truth mapping (from Task 10).
-    *   Takes a directory of recommendation reports (`results/`) as input.
-    *   For each report:
-        *   Identifies the associated `scenario_name` via the UUID and transcript filename.
-        *   Parses the recommended policy (`insurer`, `tier`) from the report's final recommendation section (e.g., `**INSURER - Tier**`).
-        *   Retrieves the `status` and `expected_policies` list from the ground truth for that scenario.
-        *   Checks if the recommended policy matches any entry in the `expected_policies` list.
-    *   Outputs evaluation results (e.g., overall accuracy, list of mismatches), interpreting the results based on the ground truth `status`:
-        *   If `status` is `"full_cover_available"`: Match = PASS, Mismatch = FAIL.
-        *   If `status` is `"partial_cover_only"`: Match = PASS (Partial Cover), Mismatch = FAIL (Couldn't find best partial).
-    *   **Rationale:** Automates the process of checking if the end-to-end pipeline produces the expected outcome for targeted scenarios, providing nuanced feedback based on whether full coverage was possible. This evaluation serves multiple purposes:
-        *   **Regression Detection:** Quickly identify if changes negatively impact performance on critical scenarios.
-        *   **Faithfulness/Correctness:** Verify the pipeline adheres to expected behavior for these key use cases, including identifying the best partial solutions when necessary.
-        *   **Objective Comparison:** Provide a benchmark to compare different models, prompts, or logic variations based on performance against the ground truth.
+        *   **Rationale:** Provides a structured benchmark, including justifications and status, for evaluating pipeline performance on critical test cases, acknowledging scenarios where full coverage might not be standard.
+-   [x] **Task 11 (Evaluation): Implement Scenario Recommendation Evaluation Script:** Create/Update the script `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`.
+    *   **Update Rationale (2025-04-14):** The initial implementation evaluated all reports and filtered internally. A simpler, more efficient approach is preferred: filter upfront based on scenario if specified.
+    *   **Implemented Logic (as of 2025-04-14):**
+        *   Added an optional command-line argument `--scenario` (or `-s`) to specify a single scenario name.
+        *   If `--scenario` is provided:
+            *   Identify all relevant UUIDs by finding transcript files matching `data/transcripts/raw/synthetic/transcript_{scenario_name}_*.json`.
+            *   Iterate through subdirectories in `results/`. If a subdirectory name (UUID) matches one of the relevant UUIDs, process the recommendation report within it. Skip non-matching UUIDs.
+        *   If `--scenario` is *not* provided:
+            *   Iterate through all subdirectories in `results/`.
+            *   For each report, find the corresponding transcript, extract the scenario name. If it's a specific scenario (not 'no_scenario') and exists in the ground truth, evaluate it.
+        *   **Evaluation Core (Remains the same):**
+            *   Load the structured ground truth mapping (from Task 10).
+            *   Parse the recommended policy (`insurer`, `tier`) from the report.
+            *   Retrieve the `status` and `expected_policies` list from the ground truth.
+            *   Check if the recommended policy matches any entry in the `expected_policies` list.
+            *   Output evaluation results (summary to console, optional detailed JSON to file), interpreting the results based on the ground truth `status` (PASS, FAIL, PASS (Partial Cover)).
+    *   **Original Rationale (Benefits of Evaluation):** Automates checking if the pipeline produces expected outcomes for targeted scenarios. Useful for:
+        *   **Regression Detection:** Identify if changes negatively impact performance.
+        *   **Faithfulness/Correctness:** Verify adherence to expected behavior.
+        *   **Objective Comparison:** Benchmark different models/prompts/logic.
 -   [ ] **Task 12 (Future Enhancement):** Enhance the final Markdown report (Task 6) with personalization by referencing key points or context from the original customer transcript (`data/transcripts/processed/parsed_transcript_{scenario_name}_{uuid}.json`).

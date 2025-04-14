@@ -1,3 +1,48 @@
+"""
+Evaluates generated recommendation reports against a predefined ground truth
+for specific scenarios.
+
+This script compares recommendation reports against a ground truth JSON file.
+It can operate in two modes:
+
+1.  **Evaluate All Scenarios (Default):** Iterates through all UUID subdirectories
+    in the results folder. For each UUID, it finds the corresponding transcript,
+    determines the scenario, and if the scenario is in the ground truth,
+    evaluates the recommendation report found in the UUID's directory.
+
+2.  **Evaluate Specific Scenario (using --scenario argument):** Finds all
+    transcripts matching the specified scenario, extracts their UUIDs, and then
+    only processes the recommendation reports found in the results subdirectories
+    corresponding to those specific UUIDs.
+
+Results are summarized in the console, and detailed results can optionally be
+saved to a JSON file.
+
+Usage:
+  # Evaluate all scenarios
+  python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py [-d RESULTS_DIR] [-o OUTPUT_FILE]
+
+  # Evaluate only a specific scenario (e.g., 'golf_coverage')
+  python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py --scenario golf_coverage [-d RESULTS_DIR] [-o OUTPUT_FILE]
+
+Arguments:
+  -d, --results_dir  Directory containing recommendation reports (default: 'results').
+                     Expected structure: results/{uuid}/recommendation_report_*.md
+  -o, --output_file  Optional path to save detailed evaluation results as JSON.
+  -s, --scenario     Optional specific scenario name to evaluate. If omitted,
+                     evaluates all scenarios found in the results directory that
+                     are also present in the ground truth.
+
+Input Files:
+  - Ground Truth: data/evaluation/scenario_evaluation/scenario_ground_truth.json
+  - Recommendation Reports: results/{uuid}/recommendation_report_*.md
+  - Transcripts (for scenario mapping): data/transcripts/raw/synthetic/transcript_{scenario}_{uuid}.json
+
+Output:
+  - Console summary of evaluation results (PASS, FAIL, PASS (Partial Cover)).
+  - Optional detailed JSON output file.
+"""
+
 import json
 import os
 import glob
@@ -103,7 +148,17 @@ def evaluate_recommendation(
     return result, match_justification
 
 
-def main(results_dir: str, output_file: str | None):
+def extract_uuid_from_filename(filename: Path) -> str | None:
+    """Extracts the UUID from the transcript filename."""
+    # Expected format: transcript_{scenario_name}_{uuid}.json
+    parts = filename.stem.split("_")
+    if len(parts) >= 3 and parts[0] == "transcript":
+        return parts[-1]  # UUID is the last part
+    logging.warning(f"Could not extract UUID from filename: {filename.name}")
+    return None
+
+
+def main(results_dir: str, output_file: str | None, target_scenario: str | None):
     """Main function to run the evaluation."""
     results_path = Path(results_dir)
     if not results_path.is_dir():
@@ -125,55 +180,106 @@ def main(results_dir: str, output_file: str | None):
         logging.error(f"Error loading ground truth file: {e}")
         return
 
-    evaluation_results = []
-    report_files = list(results_path.rglob(RECOMMENDATION_REPORT_PATTERN))
-    logging.info(f"Found {len(report_files)} recommendation reports in {results_dir}")
+    target_uuids = None
+    if target_scenario:
+        logging.info(f"Filtering evaluation for scenario: {target_scenario}")
+        target_uuids = set()
+        transcript_pattern = TRANSCRIPT_DIR / f"transcript_{target_scenario}_*.json"
+        matching_transcripts = list(
+            TRANSCRIPT_DIR.glob(f"transcript_{target_scenario}_*.json")
+        )
+        if not matching_transcripts:
+            logging.warning(
+                f"No transcript files found for scenario '{target_scenario}' in {TRANSCRIPT_DIR}"
+            )
+        else:
+            for transcript_file in matching_transcripts:
+                uuid = extract_uuid_from_filename(transcript_file)
+                if uuid:
+                    target_uuids.add(uuid)
+            logging.info(
+                f"Found {len(target_uuids)} UUIDs for scenario '{target_scenario}'"
+            )
+        if not target_uuids:
+            logging.warning(
+                f"Could not find any UUIDs for target scenario '{target_scenario}'. No reports will be processed."
+            )
+            # Still print summary table headers etc.
+            pass  # Allow loop to run but it will skip everything
 
-    processed_count = 0
+    evaluation_results = []
+    # Instead of finding all reports first, iterate through result directories
+    # report_files = list(results_path.rglob(RECOMMENDATION_REPORT_PATTERN))
+    # logging.info(f"Found {len(report_files)} recommendation reports in {results_dir}")
+    total_reports_found_count = 0  # Count all potential reports
+
+    processed_count = 0  # Count reports actually evaluated
     pass_count = 0
     fail_count = 0
     partial_pass_count = 0
-    skipped_count = 0
+    skipped_count = 0  # Count reports skipped for various reasons
 
-    for report_path in report_files:
-        logging.info(f"Processing report: {report_path.name}")
-        processed_count += 1
-
-        # Extract UUID from directory name (assuming results/{uuid}/report...)
-        uuid_str = report_path.parent.name
-        if not uuid_str:
-            logging.warning(
-                f"Could not determine UUID for report: {report_path}. Skipping."
-            )
-            skipped_count += 1
+    # Iterate through UUID directories in the results path
+    for uuid_dir in results_path.iterdir():
+        if not uuid_dir.is_dir():
             continue
 
-        # Find transcript and scenario
-        transcript_file = find_transcript_filename(uuid_str)
-        if not transcript_file:
-            logging.warning(
-                f"Skipping evaluation for {report_path.name} due to missing transcript file."
-            )
+        uuid_str = uuid_dir.name
+
+        # --- Filtering Logic ---
+        scenario_name_for_eval = None
+        if target_scenario:
+            # If filtering by scenario, check if this UUID is relevant
+            if target_uuids is None or uuid_str not in target_uuids:
+                # logging.debug(f"Skipping UUID {uuid_str} as it doesn't match target scenario '{target_scenario}'.")
+                skipped_count += 1  # Count as skipped due to scenario filter
+                continue
+            scenario_name_for_eval = target_scenario  # We know the scenario
+        else:
+            # If not filtering, find the scenario for this UUID
+            transcript_file = find_transcript_filename(uuid_str)
+            if not transcript_file:
+                logging.warning(
+                    f"Skipping UUID {uuid_str} due to missing transcript file."
+                )
+                skipped_count += 1
+                continue
+            extracted_scenario = extract_scenario_from_filename(transcript_file)
+            if not extracted_scenario or extracted_scenario == "no_scenario":
+                logging.info(
+                    f"Skipping UUID {uuid_str} as it has no specific scenario ('{extracted_scenario}')."
+                )
+                skipped_count += 1
+                continue
+            if extracted_scenario not in ground_truth_data:
+                logging.warning(
+                    f"Scenario '{extracted_scenario}' for UUID {uuid_str} not found in ground truth data. Skipping."
+                )
+                skipped_count += 1
+                continue
+            scenario_name_for_eval = extracted_scenario
+        # --- End Filtering Logic ---
+
+        # Find the recommendation report file within the UUID directory
+        report_search_pattern = uuid_dir / RECOMMENDATION_REPORT_PATTERN
+        report_files_in_dir = list(uuid_dir.glob(RECOMMENDATION_REPORT_PATTERN))
+
+        if not report_files_in_dir:
+            logging.warning(f"No recommendation report found in directory: {uuid_dir}")
             skipped_count += 1
             continue
-
-        scenario_name = extract_scenario_from_filename(transcript_file)
-        if not scenario_name or scenario_name == "no_scenario":
-            logging.info(
-                f"Skipping evaluation for {report_path.name} as it has no specific scenario ('{scenario_name}')."
-            )
-            skipped_count += 1
-            continue  # Only evaluate reports linked to specific scenarios in ground truth
-
-        # Check if scenario exists in ground truth
-        if scenario_name not in ground_truth_data:
+        if len(report_files_in_dir) > 1:
             logging.warning(
-                f"Scenario '{scenario_name}' not found in ground truth data. Skipping {report_path.name}."
+                f"Multiple recommendation reports found in {uuid_dir}, using the first one: {report_files_in_dir[0].name}"
             )
-            skipped_count += 1
-            continue
 
-        ground_truth_entry = ground_truth_data[scenario_name]
+        report_path = report_files_in_dir[0]
+        total_reports_found_count += 1  # Count reports found within relevant UUID dirs
+        logging.info(
+            f"Processing report: {report_path.name} for scenario: {scenario_name_for_eval}"
+        )
+
+        ground_truth_entry = ground_truth_data[scenario_name_for_eval]
 
         # Parse recommendation
         recommended_insurer, recommended_tier = parse_recommendation_report(report_path)
@@ -188,13 +294,16 @@ def main(results_dir: str, output_file: str | None):
         result, match_justification = evaluate_recommendation(
             recommended_insurer, recommended_tier, ground_truth_entry
         )
+        processed_count += 1  # Increment only if evaluation happens
 
         # Store result
         evaluation_results.append(
             {
-                "report_file": str(report_path.relative_to(results_path)),
+                "report_file": str(
+                    report_path.relative_to(results_path)
+                ),  # Keep relative path for readability
                 "uuid": uuid_str,
-                "scenario": scenario_name,
+                "scenario": scenario_name_for_eval,  # Use the determined scenario
                 "recommended_policy": f"{recommended_insurer} - {recommended_tier}",
                 "ground_truth_status": ground_truth_entry.get("status"),
                 "expected_policies": ground_truth_entry.get("expected_policies"),
@@ -215,12 +324,12 @@ def main(results_dir: str, output_file: str | None):
 
     # Print Summary
     logging.info("\n--- Evaluation Summary ---")
-    logging.info(f"Total Reports Found: {len(report_files)}")
+    if target_scenario:
+        logging.info(f"Scenario Filter Applied: '{target_scenario}'")
+    # logging.info(f"Total Reports Found: {total_reports_found_count}") # Less relevant now
+    logging.info(f"Reports Evaluated: {processed_count}")
     logging.info(
-        f"Reports Processed (with scenario): {processed_count - skipped_count}"
-    )
-    logging.info(
-        f"Reports Skipped (no scenario/transcript/parse error): {skipped_count}"
+        f"Reports Skipped (filter/no scenario/transcript/parse error): {skipped_count}"
     )
     logging.info(f"PASS: {pass_count}")
     logging.info(f"PASS (Partial Cover): {partial_pass_count}")
@@ -254,8 +363,14 @@ if __name__ == "__main__":
         "-o",
         "--output_file",
         default=None,
-        # Updated help text to reflect new default location idea
         help="Optional path to save detailed evaluation results in JSON format (e.g., data/evaluation/scenario_evaluation/scenario_evaluation_results.json).",
     )
+    # Add scenario argument
+    parser.add_argument(
+        "-s",
+        "--scenario",
+        default=None,
+        help="Optional specific scenario name to evaluate. If not provided, evaluates all scenarios found.",
+    )
     args = parser.parse_args()
-    main(args.results_dir, args.output_file)
+    main(args.results_dir, args.output_file, args.scenario)
