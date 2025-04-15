@@ -13,6 +13,7 @@ import {
 } from '@mui/material';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import { fetchCustomerIds } from '../utils/fetchCustomerIds';
+import '../global.css';
 
 const tagline = 'Your journey, your coverage. Compare, understand, and choose with confidence.';
 
@@ -24,43 +25,47 @@ const LandingPage: React.FC = () => {
 
   useEffect(() => {
     fetchCustomerIds()
-      .then(ids => setCustomerIds(ids))
-      .catch(() => setCustomerIds([]))
+      .then(ids => {
+        console.log('Loaded customer IDs:', ids);
+        setCustomerIds(ids);
+      })
+      .catch((err) => {
+        console.error('Error loading customer IDs:', err);
+        setCustomerIds([]);
+      })
       .finally(() => setLoading(false));
   }, []);
 
   return (
     <Box
       sx={{
-        minHeight: '100vh',
-        minWidth: '100vw',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        height: '100vh',
+        width: '100vw',
         position: 'fixed',
         top: 0,
         left: 0,
-        zIndex: -1,
+        zIndex: 0,
         overflow: 'hidden',
-        background: `radial-gradient(circle at 70% 20%, ${theme.palette.primary.light} 0%, transparent 60%),
-                     radial-gradient(circle at 20% 80%, #b2ebf2 0%, transparent 70%),
-                     linear-gradient(135deg, #e3f2fd 0%, #b3c6f7 100%)`
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: `radial-gradient(circle at 70% 20%, ${theme.palette.primary.light} 0%, transparent 60%),\n                     radial-gradient(circle at 20% 80%, #b2ebf2 0%, transparent 70%),\n                     linear-gradient(135deg, #e3f2fd 0%, #b3c6f7 100%)`
       }}
     >
-      {/* Decorative SVG background pattern */}
+      {/* Decorative SVG background pattern (pointerEvents: none!) */}
       <svg
         width="900"
         height="900"
         viewBox="0 0 900 900"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        style={{ position: 'absolute', top: -120, left: -120, opacity: 0.09, zIndex: 0 }}
+        style={{ position: 'absolute', top: -120, left: -120, opacity: 0.09, zIndex: 0, pointerEvents: 'none' }}
       >
         <circle cx="450" cy="450" r="400" fill="#90caf9" />
         <rect x="200" y="650" width="500" height="60" rx="30" fill="#b2ebf2" />
         <rect x="650" y="200" width="60" height="500" rx="30" fill="#b2ebf2" />
       </svg>
-      <Card sx={{ p: 4, width: '100%', maxWidth: 420, boxShadow: 3, zIndex: 1 }}>
+      <Card sx={{ p: 4, width: '100%', maxWidth: 420, boxShadow: 3, zIndex: 2 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 2 }}>
           <FlightTakeoffIcon color="primary" sx={{ fontSize: 48, mb: 1 }} />
           <Typography variant="h5" fontWeight={700} gutterBottom>
@@ -71,7 +76,7 @@ const LandingPage: React.FC = () => {
           </Typography>
         </Box>
         <CardContent>
-          <FormControl fullWidth sx={{ mb: 2 }} disabled={loading}>
+          <FormControl fullWidth sx={{ mb: 2 }}>
             <InputLabel id="customer-select-label">Customer ID</InputLabel>
             <Select
               labelId="customer-select-label"
@@ -79,9 +84,15 @@ const LandingPage: React.FC = () => {
               label="Customer ID"
               onChange={e => setSelectedCustomer(e.target.value)}
             >
-              {customerIds.map(id => (
-                <MenuItem key={id} value={id}>{id}</MenuItem>
-              ))}
+              {customerIds.length === 0 && !loading ? (
+                <MenuItem value="" disabled>
+                  No customer IDs found
+                </MenuItem>
+              ) : (
+                customerIds.map(id => (
+                  <MenuItem key={id} value={id}>{id}</MenuItem>
+                ))
+              )}
             </Select>
           </FormControl>
           <Button
