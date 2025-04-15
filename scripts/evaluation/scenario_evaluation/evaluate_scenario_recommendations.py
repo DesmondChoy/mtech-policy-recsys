@@ -23,12 +23,18 @@ Usage:
   python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py [-d RESULTS_DIR] [-o OUTPUT_FILE]
 
   # Evaluate only a specific scenario (e.g., 'golf_coverage')
-  python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py --scenario golf_coverage [-d RESULTS_DIR] [-o OUTPUT_FILE]
+  python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py --scenario golf_coverage
+  python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py --scenario pet_care_coverage
+  python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py --scenario public_transport_double_cover
+  python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py --scenario uncovered_cancellation_reason
 
 Arguments:
   -d, --results_dir  Directory containing recommendation reports (default: 'results').
                      Expected structure: results/{uuid}/recommendation_report_*.md
   -o, --output_file  Optional path to save detailed evaluation results as JSON.
+                     If omitted, defaults to data/evaluation/scenario_evaluation/
+                     results_{scenario}_{timestamp}.json where {scenario} is the target
+                     scenario or 'all_scenarios'.
   -s, --scenario     Optional specific scenario name to evaluate. If omitted,
                      evaluates all scenarios found in the results directory that
                      are also present in the ground truth.
@@ -50,6 +56,7 @@ import re
 import argparse
 import logging
 from pathlib import Path
+from datetime import datetime
 
 # Setup logging
 logging.basicConfig(
@@ -62,6 +69,7 @@ TRANSCRIPT_DIR = Path("data/transcripts/raw/synthetic")
 GROUND_TRUTH_PATH = Path(
     "data/evaluation/scenario_evaluation/scenario_ground_truth.json"
 )
+DEFAULT_OUTPUT_DIR = Path("data/evaluation/scenario_evaluation")
 RECOMMENDATION_REPORT_PATTERN = "recommendation_report_*.md"
 RECOMMENDED_POLICY_REGEX = (
     r"\*\*([a-zA-Z\s]+)\s*-\s*([a-zA-Z\s!]+)\*\*"  # Matches **INSURER - Tier**
@@ -336,17 +344,28 @@ def main(results_dir: str, output_file: str | None, target_scenario: str | None)
     logging.info(f"FAIL: {fail_count}")
     logging.info("------------------------\n")
 
-    # Output detailed results if requested
+    # Determine final output path
+    final_output_path = None
     if output_file:
-        output_path = Path(output_file)
+        # User provided a specific path
+        final_output_path = Path(output_file)
+    else:
+        # Generate default path
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        scenario_part = target_scenario if target_scenario else "all_scenarios"
+        default_filename = f"results_{scenario_part}_{timestamp}.json"
+        final_output_path = DEFAULT_OUTPUT_DIR / default_filename
+
+    # Output detailed results if a path was determined
+    if final_output_path:
         # Ensure parent directory exists
-        output_path.parent.mkdir(parents=True, exist_ok=True)
+        final_output_path.parent.mkdir(parents=True, exist_ok=True)
         try:
-            with open(output_path, "w", encoding="utf-8") as f:
+            with open(final_output_path, "w", encoding="utf-8") as f:
                 json.dump(evaluation_results, f, indent=2)
-            logging.info(f"Detailed evaluation results saved to: {output_path}")
+            logging.info(f"Detailed evaluation results saved to: {final_output_path}")
         except Exception as e:
-            logging.error(f"Error writing results to {output_path}: {e}")
+            logging.error(f"Error writing results to {final_output_path}: {e}")
 
 
 if __name__ == "__main__":
@@ -363,7 +382,12 @@ if __name__ == "__main__":
         "-o",
         "--output_file",
         default=None,
-        help="Optional path to save detailed evaluation results in JSON format (e.g., data/evaluation/scenario_evaluation/scenario_evaluation_results.json).",
+        help=(
+            "Optional path to save detailed evaluation results in JSON format. "
+            "If omitted, defaults to data/evaluation/scenario_evaluation/"
+            "results_{scenario}_{timestamp}.json where {scenario} is the target "
+            "scenario or 'all_scenarios'."
+        ),
     )
     # Add scenario argument
     parser.add_argument(

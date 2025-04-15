@@ -82,7 +82,7 @@ flowchart TD
 4.  **Emphasis on Evaluation**:
     *   Decision: Integrate evaluation steps at key points in the workflow.
     *   Rationale: Ensures data quality and component performance before proceeding to downstream tasks. Provides metrics for improvement.
-    *   Implementation: `scripts/evaluation/transcript_evaluation/` for transcript quality. Planned evaluations for policy extraction and comparison report accuracy.
+    *   Implementation: Dedicated evaluation scripts for transcripts, PDF extraction, and scenario recommendations. Planned evaluation for comparison reports.
 
 5.  **Structured Knowledge Representation**:
     *   Decision: Transform unstructured policy documents and conversations into structured data using Pydantic models.
@@ -123,18 +123,12 @@ flowchart TD
 - **Inputs**: Prompts, parameters (model, tokens, etc.), content (text/multi-modal).
 - **Outputs**: Generated content (text, structured JSON).
 - **Dependencies**: Google Gemini API, `src/models/gemini_config.py`.
-- **Consumers**: `scripts/extract_policy_tier.py`, `scripts/generate_policy_comparison.py`, `scripts/data_generation/*`, `scripts/evaluation/transcript_evaluation/eval_transcript_gemini.py`.
+- **Consumers**: `scripts/extract_policy_tier.py`, `scripts/generate_policy_comparison.py`, `scripts/data_generation/*`, `scripts/evaluation/*`.
 
 ### Transcript Generation (`scripts/data_generation/generate_transcripts.py`)
 - **Purpose**: Generates synthetic transcripts based on scenarios, requirements, and personalities.
 - **Inputs**: `data/scenarios/*.json`, `data/coverage_requirements/coverage_requirements.py`, `data/transcripts/personalities.json`.
 - **Outputs**: Raw transcript JSON files (`data/transcripts/raw/synthetic/*.json`).
-- **Dependencies**: `LLMService`.
-
-### Transcript Evaluation (`scripts/evaluation/transcript_evaluation/`)
-- **Purpose**: Evaluates the quality and coverage of generated raw transcripts.
-- **Inputs**: Raw transcript JSON (`data/transcripts/raw/synthetic/*.json`), `data/coverage_requirements/`, `data/scenarios/`.
-- **Outputs**: Evaluation results JSON (`data/evaluation/transcript_evaluations/*.json`).
 - **Dependencies**: `LLMService`.
 
 ### Transcript Parsing (`src/utils/transcript_processing.py`)
@@ -172,6 +166,73 @@ flowchart TD
 - **Inputs**: Extracted requirements JSON, potentially comparison results or final recommendations.
 - **Outputs**: Insights on feature importance, product positioning.
 - **Dependencies**: Extractor Agent output, potentially other data sources.
+
+### Evaluation Components
+
+#### Transcript Evaluation
+-   **Purpose**: To evaluate the quality, relevance, and coverage of synthetically generated raw transcripts (`data/transcripts/raw/synthetic/*.json`) against the intended scenario and coverage requirements before they are used for requirement extraction. Acts as a quality gate.
+-   **Scripts**: Primarily `scripts/evaluation/transcript_evaluation/eval_transcript_main.py`, which orchestrates helpers in the same directory (`eval_transcript_parser.py`, `eval_transcript_prompts.py`, `eval_transcript_gemini.py`, `eval_transcript_results.py`, `eval_transcript_utils.py`).
+-   **Inputs**:
+    -   Raw Transcript JSON: `data/transcripts/raw/synthetic/transcript_{scenario}_{uuid}.json`.
+    -   Coverage Requirements: `data/coverage_requirements/coverage_requirements.py`.
+    -   Scenario Definitions: `data/scenarios/{scenario}.json` (used to provide context).
+-   **Workflow**:
+    1.  Parses the raw transcript JSON.
+    2.  Extracts the scenario name from the transcript filename or content.
+    3.  Loads the corresponding scenario definition and coverage requirements.
+    4.  Constructs a detailed prompt (`eval_transcript_prompts.py`) instructing the LLM to assess the transcript based on criteria like requirement coverage, scenario relevance, realism, and conversational flow.
+    5.  Calls the LLM (`eval_transcript_gemini.py` via `LLMService`) to perform the evaluation.
+    6.  The LLM is expected to return a structured JSON response (defined by Pydantic models like `TranscriptEvaluation`, `EvaluationSummary`, `CoverageEvaluation`).
+    7.  Saves the structured evaluation results to `data/evaluation/transcript_evaluations/transcript_eval_{scenario}_{uuid}.json`.
+-   **Evaluation Logic**: Relies on the LLM's assessment based on the provided prompt and criteria. The structured output includes scores and justifications for different aspects of the transcript quality. A simple "PASS"/"FAIL" might be inferred based on thresholds (though this threshold logic isn't explicitly in the script currently, the detailed JSON output allows for it).
+-   **Dependencies**: `LLMService`, Scenario Definitions, Coverage Requirements.
+
+#### PDF Extraction Evaluation
+-   **Purpose**: To evaluate the accuracy and completeness of the structured policy data extracted by `scripts/extract_policy_tier.py` by comparing the processed JSON (`data/policies/processed/*.json`) against the original source PDF (`data/policies/raw/*.pdf`).
+-   **Script**: `scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py`
+-   **Inputs**:
+    -   Processed Policy JSON: `data/policies/processed/{insurer}_{tier}.json`. Can be filtered using `--file_pattern`.
+    -   Raw Policy PDF: `data/policies/raw/{insurer}_{tier}.pdf` (path inferred from JSON filename).
+-   **Workflow**:
+    1.  Iterates through specified processed policy JSON files.
+    2.  For each JSON, finds the corresponding raw PDF.
+    3.  Constructs multi-modal prompts for the LLM, asking it to perform two-way verification:
+        *   Verify JSON content against the PDF.
+        *   Verify PDF content against the JSON.
+    4.  Calls the LLM (`LLMService`, using a multi-modal model like Gemini Pro Vision) with both the text prompt and the PDF image/content.
+    5.  The LLM returns a structured JSON evaluation result assessing consistency, accuracy, and completeness.
+    6.  Saves the evaluation results to `data/evaluation/pdf_extraction_evaluations/eval_{insurer}_{tier}.json`.
+-   **Evaluation Logic**: Relies on the multi-modal LLM's ability to compare the structured text data (JSON) with the visual and textual content of the PDF document based on the verification prompts.
+-   **Dependencies**: `LLMService` (multi-modal model), Processed Policy JSON, Raw Policy PDF.
+
+#### Scenario Recommendation Evaluation
+-   **Purpose**: To evaluate the final recommendation generated by `scripts/generate_recommendation_report.py` against a predefined ground truth for specific test scenarios. This verifies if the system recommends an appropriate policy given the scenario's constraints and expected outcomes.
+-   **Script**: `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`
+-   **Inputs**:
+    -   Ground Truth: `data/evaluation/scenario_evaluation/scenario_ground_truth.json` (defines `status` like `"full_cover_available"` or `"partial_cover_only"` and a list of `expected_policies` with `insurer`, `tier`, `justification` for each scenario key).
+    -   Recommendation Reports: `results/{uuid}/recommendation_report_*.md` (output from `generate_recommendation_report.py`).
+    -   Transcripts: `data/transcripts/raw/synthetic/transcript_{scenario}_{uuid}.json` (used only when evaluating all scenarios to link UUIDs back to scenario names).
+-   **Workflow**:
+    1.  Identifies target UUIDs either via the `--scenario` argument (filtering transcripts) or by iterating through all `results/{uuid}` directories and finding the corresponding scenario from transcript filenames.
+    2.  Loads the ground truth entry for the relevant scenario(s).
+    3.  For each targeted UUID, finds the corresponding recommendation report (`recommendation_report_*.md`).
+    4.  Parses the recommended policy from the report.
+    5.  Compares the parsed policy against the ground truth.
+    6.  Outputs results to console and optionally to a JSON file (defaulting to `data/evaluation/scenario_evaluation/results_{scenario}_{timestamp}.json`).
+-   **Parsing Logic & Pattern Enforcement**:
+    -   The script uses a specific regular expression (`r"\*\*([a-zA-Z\s]+)\s*-\s*([a-zA-Z\s!]+)\*\*"`) within the `parse_recommendation_report` function to extract the recommended policy.
+    -   This regex strictly expects the format `**INSURER - Tier**`. It captures the insurer name *before* the hyphen and the tier name *after* it.
+    -   This parsing is reliable because the report generation script (`scripts/generate_recommendation_report.py`) explicitly creates this exact pattern in the final report using the line: `f"\n**{stage2_recommendation.recommended_insurer.upper()} - {stage2_recommendation.recommended_tier}**\n"`.
+-   **Evaluation Logic (`evaluate_recommendation` function)**:
+    1.  Takes the parsed recommended insurer/tier (converted to lowercase) and the ground truth entry for the scenario.
+    2.  Checks the ground truth `status` (`"full_cover_available"` or `"partial_cover_only"`).
+    3.  Compares the recommended policy against each entry in the ground truth's `expected_policies` list.
+    4.  Assigns a result based on the match and the status:
+        -   `status="full_cover_available"` & Match -> `"PASS"`
+        -   `status="full_cover_available"` & No Match -> `"FAIL"`
+        -   `status="partial_cover_only"` & Match -> `"PASS (Partial Cover)"` (Recommended an acceptable partial solution)
+        -   `status="partial_cover_only"` & No Match -> `"FAIL (Partial)"` (Failed to recommend even an acceptable partial solution)
+-   **Dependencies**: Ground Truth JSON, Recommendation Reports, Raw Transcripts (for scenario mapping).
 
 ## Data Flow
 
