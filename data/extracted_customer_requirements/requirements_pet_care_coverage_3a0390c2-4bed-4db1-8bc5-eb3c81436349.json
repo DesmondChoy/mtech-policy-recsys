@@ -1,0 +1,89 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two adults.\",\n  \"detailed_description\": \"Customer is inquiring about travel insurance for two adults, aged 26-40, travelling from Singapore to Japan for 10 days. Coverage required includes trip cancellation, lost or damaged luggage, medical expenses incurred overseas, additional expenses due to travel delays, and specific coverage for extra pet accommodation fees due to delayed return travel. The customer also plans to partake in hiking activities during the trip.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"medical expenses\",\n    \"travel delays coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cover for extra pet hotel fees if return flight to Singapore is delayed.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"10 days\",\n    \"two adults\",\n    \"hiking\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"medical expenses\",\n    \"travel delays\",\n    \"pet accommodation\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ123456",
+        "requirement_summary": "Travel insurance for a trip to Japan for two adults.",
+        "detailed_description": "Customer is inquiring about travel insurance for two adults, aged 26-40, travelling from Singapore to Japan for 10 days. Coverage required includes trip cancellation, lost or damaged luggage, medical expenses incurred overseas, additional expenses due to travel delays, and specific coverage for extra pet accommodation fees due to delayed return travel. The customer also plans to partake in hiking activities during the trip.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "10 days",
+        "insurance_coverage_type": [
+            "trip cancellation",
+            "lost or damaged luggage",
+            "medical expenses",
+            "travel delays coverage"
+        ],
+        "pre_existing_conditions": [],
+        "medical_needs": [],
+        "activities_to_cover": [
+            "hiking"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Cover for extra pet hotel fees if return flight to Singapore is delayed.",
+        "keywords": [
+            "travel insurance",
+            "Japan",
+            "10 days",
+            "two adults",
+            "hiking",
+            "trip cancellation",
+            "lost luggage",
+            "medical expenses",
+            "travel delays",
+            "pet accommodation"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd. My name is Siti. How can I help you today?\nCustomer: Inquiring about travel insurance.\nCustomer Service Agent: Certainly. To understand your needs, could you please share some details about your trip? Where will you be travelling to?\nCustomer: Japan.\nCustomer Service Agent: And how long will you be travelling for?\nCustomer: 10 days.\nCustomer Service Agent: Okay, Japan for 10 days. And how many people will be travelling?\nCustomer: Two. Both 26-40.\nCustomer Service Agent: Got it. Are there any specific activities you plan to do during the trip?\nCustomer: Hiking.\nCustomer Service Agent: Noted, hiking. Are there any particular concerns you have regarding the trip that you'd want insurance to cover?\nCustomer: Yes. Need cover if the trip has to be cancelled. Also, if luggage is lost or damaged.\nCustomer Service Agent: Okay, so coverage for trip cancellation and for lost or damaged luggage. Anything else?\nCustomer: Medical expenses if we fall sick or get injured there.\nCustomer Service Agent: Understood, medical coverage during the trip.\nCustomer: And flight delays. What if the return flight is delayed? Need cover for extra costs.\nCustomer Service Agent: Alright, cover for travel delays causing additional expenses. Any specific expenses related to delays you're thinking of?\nCustomer: Yes. If the return to Singapore is delayed, I need cover for extra pet hotel fees for my cat.\nCustomer Service Agent: Okay, I've noted that specific requirement: coverage for additional pet accommodation costs due to a covered return travel delay. Will anyone travelling require special medical equipment, like a wheelchair?\nCustomer: No.\nCustomer Service Agent: And does anyone travelling have any pre-existing medical conditions like asthma or diabetes that we should be aware of?\nCustomer: No pre-existing conditions.\nCustomer Service Agent: Okay. Do you have a budget in mind for the insurance premium?\nCustomer: Around $200-$300.\nCustomer Service Agent: Thank you. Let me quickly summarize the requirements I've gathered. You're looking for travel insurance for two adults, aged 26-40, travelling from Singapore to Japan for 10 days. You require coverage for: trip cancellation, lost or damaged luggage, medical expenses incurred overseas, additional expenses due to travel delays, specific coverage for extra pet accommodation fees if your return is delayed, and coverage that includes hiking activities. There are no pre-existing conditions or special medical equipment needs. The budget is around $200-$300. Is that correct?\nCustomer: Yes, correct.\nCustomer Service Agent: Thank you for providing those details. I have noted all your requirements. Someone from our policy team will follow up with suitable options based on this information.\nCustomer: Okay. Thanks.\nCustomer Service Agent: You're welcome. Thank you for calling ISS Insurance. Goodbye.\nCustomer: Bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two adults.\",\n  \"detailed_description\": \"Customer is inquiring about travel insurance for two adults, aged 26-40, travelling from Singapore to Japan for 10 days. Coverage required includes trip cancellation, lost or damaged luggage, medical expenses incurred overseas, additional expenses due to travel delays, and specific coverage for extra pet accommodation fees due to delayed return travel. The customer also plans to partake in hiking activities during the trip.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"medical expenses\",\n    \"travel delays coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cover for extra pet hotel fees if return flight to Singapore is delayed.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"10 days\",\n    \"two adults\",\n    \"hiking\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"medical expenses\",\n    \"travel delays\",\n    \"pet accommodation\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ123456",
+                "requirement_summary": "Travel insurance for a trip to Japan for two adults.",
+                "detailed_description": "Customer is inquiring about travel insurance for two adults, aged 26-40, travelling from Singapore to Japan for 10 days. Coverage required includes trip cancellation, lost or damaged luggage, medical expenses incurred overseas, additional expenses due to travel delays, and specific coverage for extra pet accommodation fees due to delayed return travel. The customer also plans to partake in hiking activities during the trip.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "10 days",
+                "insurance_coverage_type": [
+                    "trip cancellation",
+                    "lost or damaged luggage",
+                    "medical expenses",
+                    "travel delays coverage"
+                ],
+                "pre_existing_conditions": [],
+                "medical_needs": [],
+                "activities_to_cover": [
+                    "hiking"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Cover for extra pet hotel fees if return flight to Singapore is delayed.",
+                "keywords": [
+                    "travel insurance",
+                    "Japan",
+                    "10 days",
+                    "two adults",
+                    "hiking",
+                    "trip cancellation",
+                    "lost luggage",
+                    "medical expenses",
+                    "travel delays",
+                    "pet accommodation"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 13360,
+        "prompt_tokens": 11117,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 2243,
+        "successful_requests": 8
+    }
+}

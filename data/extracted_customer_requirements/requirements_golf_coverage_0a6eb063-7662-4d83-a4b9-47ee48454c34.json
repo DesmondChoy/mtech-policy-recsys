@@ -1,0 +1,91 @@
+{
+    "raw": "{\n  \"requirement_id\": \"TRAVEL_INSURANCE_001\",\n  \"requirement_summary\": \"Travel insurance for two adults covering medical emergencies, trip cancellations, luggage protection, and recreational activities.\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance coverage for a two-week trip to Australia from Singapore for two adults aged 41-55. Key coverage areas include medical emergencies, trip cancellation, travel delays, lost or damaged luggage, and specific coverage for golf and hiking activities.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"damaged luggage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"emergency treatment\",\n    \"hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\",\n    \"hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": [\n    \"coverage for lost, damaged or delayed golf equipment\",\n    \"reimbursement for unused green fees due to illness\",\n    \"liability coverage for rented golf buggy damage\",\n    \"potential hole-in-one benefit\"\n  ],\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"baggage protection\",\n    \"golf coverage\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "TRAVEL_INSURANCE_001",
+        "requirement_summary": "Travel insurance for two adults covering medical emergencies, trip cancellations, luggage protection, and recreational activities.",
+        "detailed_description": "The customer requires comprehensive travel insurance coverage for a two-week trip to Australia from Singapore for two adults aged 41-55. Key coverage areas include medical emergencies, trip cancellation, travel delays, lost or damaged luggage, and specific coverage for golf and hiking activities.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Australia",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "medical emergencies",
+            "trip cancellation",
+            "travel delays",
+            "lost luggage",
+            "damaged luggage"
+        ],
+        "pre_existing_conditions": [],
+        "medical_needs": [
+            "emergency treatment",
+            "hospital stays"
+        ],
+        "activities_to_cover": [
+            "golf",
+            "hiking"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "coverage for lost, damaged or delayed golf equipment, reimbursement for unused green fees due to illness, liability coverage for rented golf buggy damage, potential hole-in-one benefit",
+        "keywords": [
+            "travel insurance",
+            "medical coverage",
+            "trip cancellation",
+            "travel delays",
+            "baggage protection",
+            "golf coverage"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd Singapore. My name is Sarah. How may I help you today?\nCustomer: Oh, hello Sarah. Yes, I... I need to inquire about travel insurance. We're planning a trip, and I'm just... well, I'm quite concerned about making sure everything is covered properly. It's all a bit stressful thinking about what could go wrong.\nCustomer Service Agent: I understand it can feel that way, but getting the right information is the first step. I can certainly help note down your requirements. Could you tell me where you'll be travelling to?\nCustomer: Yes, we're planning a trip to Australia. From Singapore, of course. We're based in Singapore.\nCustomer Service Agent: Okay, Australia. And how long will you be away for?\nCustomer: It's going to be a two-week trip. Just my husband and I, so two of us travelling. We're roughly in the 41-55 age group.\nCustomer Service Agent: Got it, two travellers for two weeks to Australia, departing from Singapore, age group 41-55. And are there any particular medical concerns, like pre-existing conditions we should be aware of, or any special equipment you need to bring?\nCustomer: Oh, no, thankfully no pre-existing conditions for either of us. And no special equipment. But... what if something *happens* while we're there? What if one of us gets suddenly ill, or has an accident? We need to be sure we can get treatment, see a doctor, maybe even stay in hospital if needed, without it costing a fortune. That's a major worry.\nCustomer Service Agent: Okay, so you're looking for coverage for potential medical situations overseas, including emergency treatment and hospital stays. Understood.\nCustomer: Yes, exactly. And what about the journey itself? Flights can be so unpredictable. What if... what if our flight gets cancelled right before we go because of some airline issue or... or a natural disaster even? We'd lose all the money booked for the hotel and tours! We need cover for that possibility, needing to cancel the entire trip for reasons outside our control.\nCustomer Service Agent: Alright, so cover for trip cancellation due to unforeseen covered events is important.\nCustomer: Yes! And delays too! What if the flight is delayed for hours and hours, and we miss a connecting flight or need to stay overnight somewhere unexpected? Does the insurance help with extra hotel costs or meals in that kind of situation? It would be awful to be stranded.\nCustomer Service Agent: Understood. So, cover for significant travel delays causing additional expenses like accommodation or meals is another requirement.\nCustomer: Definitely. And our luggage... I always worry about our bags. What happens if the airline loses our suitcases entirely? Or if they arrive damaged? We'd need to buy essentials if they're delayed for a long time too. Is that covered?\nCustomer Service Agent: Okay, so coverage for lost, damaged, or delayed baggage is also a requirement.\nCustomer: Yes. Phew. Okay... Now, the main reason for this trip is actually golf. We plan to play quite a bit. Maybe a little light hiking too, but mostly golf. So, obviously, we need standard cover for injuries if something happens during those activities...\nCustomer Service Agent: Alright, so cover for participation in recreational golf and hiking.\nCustomer: Yes, but specifically for the golf... I'm really worried about my clubs. They're expensive. What if they get damaged or lost in transit or even while playing? We need specific coverage for golf equipment. And what if, say, I fall ill halfway through the trip and can't play the rounds we've already booked and paid for? Can we get reimbursement for those unused green fees? That would be a significant loss.\nCustomer Service Agent: Okay, noted. Specific cover for golf equipment damage or loss, and reimbursement for unused green fees due to unforeseen covered circumstances like illness.\nCustomer: Yes. And... this sounds silly maybe, but what if I accidentally damage the golf buggy? You hear stories! Is there cover if I'm liable for damage to a rented golf cart?\nCustomer Service Agent: Noted, cover for liability regarding damage to a rented golf buggy.\nCustomer: Okay, good. And one last thing, a bit more fun perhaps, but some policies mention it... Is there any kind of special benefit if one of us manages to get a hole-in-one during the trip? It's unlikely, I know, but it would be nice!\nCustomer Service Agent: Alright, noted. A potential benefit related to achieving a hole-in-one during the trip.\nCustomer: Phew, okay. I think... I think that covers all my main worries. Are you sure all these things can be included?\nCustomer Service Agent: I've carefully noted down all the requirements you've mentioned. Just to confirm, you're looking for travel insurance for two adults (age group 41-55) travelling from Singapore to Australia for two weeks. The key requirements are: comprehensive medical coverage for emergencies overseas, trip cancellation protection, cover for significant travel delays, protection for lost, damaged, or delayed luggage, and coverage for participating in recreational golf and hiking. Specifically related to golf, you require cover for golf equipment, reimbursement for unused green fees due to covered reasons, cover for potential damage liability for a rented golf buggy, and you're interested in a hole-in-one benefit. Does that summarise everything correctly?\nCustomer: Yes, I... I think that's everything. You've got the medical, the cancellation, the delays, the luggage... and all the specific golf things – the equipment, green fees, the buggy, and the hole-in-one bit. Yes, that sounds right. It makes me feel a bit better having listed it all out.\nCustomer Service Agent: Excellent. Thank you for providing those details. I have recorded all your requirements clearly. We will use this information to identify the most suitable options for you. Someone from our sales team will be in touch shortly to discuss the specific plans and quotes based on these needs.\nCustomer: Okay. Thank you, Sarah. I appreciate you listening to all my concerns.\nCustomer Service Agent: You're most welcome. Thank you for calling ISS Insurance Ltd. Have a good day.\nCustomer: You too. Bye bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"TRAVEL_INSURANCE_001\",\n  \"requirement_summary\": \"Travel insurance for two adults covering medical emergencies, trip cancellations, luggage protection, and recreational activities.\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance coverage for a two-week trip to Australia from Singapore for two adults aged 41-55. Key coverage areas include medical emergencies, trip cancellation, travel delays, lost or damaged luggage, and specific coverage for golf and hiking activities.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"damaged luggage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"emergency treatment\",\n    \"hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\",\n    \"hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": [\n    \"coverage for lost, damaged or delayed golf equipment\",\n    \"reimbursement for unused green fees due to illness\",\n    \"liability coverage for rented golf buggy damage\",\n    \"potential hole-in-one benefit\"\n  ],\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"baggage protection\",\n    \"golf coverage\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "TRAVEL_INSURANCE_001",
+                "requirement_summary": "Travel insurance for two adults covering medical emergencies, trip cancellations, luggage protection, and recreational activities.",
+                "detailed_description": "The customer requires comprehensive travel insurance coverage for a two-week trip to Australia from Singapore for two adults aged 41-55. Key coverage areas include medical emergencies, trip cancellation, travel delays, lost or damaged luggage, and specific coverage for golf and hiking activities.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Australia",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "medical emergencies",
+                    "trip cancellation",
+                    "travel delays",
+                    "lost luggage",
+                    "damaged luggage"
+                ],
+                "pre_existing_conditions": [],
+                "medical_needs": [
+                    "emergency treatment",
+                    "hospital stays"
+                ],
+                "activities_to_cover": [
+                    "golf",
+                    "hiking"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "coverage for lost, damaged or delayed golf equipment, reimbursement for unused green fees due to illness, liability coverage for rented golf buggy damage, potential hole-in-one benefit",
+                "keywords": [
+                    "travel insurance",
+                    "medical coverage",
+                    "trip cancellation",
+                    "travel delays",
+                    "baggage protection",
+                    "golf coverage"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 3160,
+        "prompt_tokens": 2614,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 546,
+        "successful_requests": 2
+    }
+}

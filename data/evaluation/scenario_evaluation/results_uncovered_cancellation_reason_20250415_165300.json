@@ -1,0 +1,107 @@
+[
+  {
+    "report_file": "16c3c750-6085-42ae-a1c4-ef656e716732\\recommendation_report_16c3c750-6085-42ae-a1c4-ef656e716732.md",
+    "uuid": "16c3c750-6085-42ae-a1c4-ef656e716732",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover for specific family event cancellation. Best partial solution via optional CFAR add-on (50% payout). Assumes add-on purchased."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover for specific family event cancellation. Alternative partial solution via included TIAR benefit (likely 50% payout, requires purchase within 30 days of booking)."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover for specific family event cancellation. Alternative partial solution via included TIAR benefit (likely 50% payout, requires purchase within 30 days of booking)."
+  },
+  {
+    "report_file": "4cf8d8ab-bb79-4c24-9724-15efd54457f7\\recommendation_report_4cf8d8ab-bb79-4c24-9724-15efd54457f7.md",
+    "uuid": "4cf8d8ab-bb79-4c24-9724-15efd54457f7",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover for specific family event cancellation. Best partial solution via optional CFAR add-on (50% payout). Assumes add-on purchased."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover for specific family event cancellation. Alternative partial solution via included TIAR benefit (likely 50% payout, requires purchase within 30 days of booking)."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover for specific family event cancellation. Alternative partial solution via included TIAR benefit (likely 50% payout, requires purchase within 30 days of booking)."
+  },
+  {
+    "report_file": "9cf0fb0d-7a4c-4d08-b6e6-94889ba7cbbe\\recommendation_report_9cf0fb0d-7a4c-4d08-b6e6-94889ba7cbbe.md",
+    "uuid": "9cf0fb0d-7a4c-4d08-b6e6-94889ba7cbbe",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover for specific family event cancellation. Best partial solution via optional CFAR add-on (50% payout). Assumes add-on purchased."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover for specific family event cancellation. Alternative partial solution via included TIAR benefit (likely 50% payout, requires purchase within 30 days of booking)."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover for specific family event cancellation. Alternative partial solution via included TIAR benefit (likely 50% payout, requires purchase within 30 days of booking)."
+  },
+  {
+    "report_file": "a4d60f08-2de2-44ab-957a-de0ccab10e30\\recommendation_report_a4d60f08-2de2-44ab-957a-de0ccab10e30.md",
+    "uuid": "a4d60f08-2de2-44ab-957a-de0ccab10e30",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover for specific family event cancellation. Best partial solution via optional CFAR add-on (50% payout). Assumes add-on purchased."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover for specific family event cancellation. Alternative partial solution via included TIAR benefit (likely 50% payout, requires purchase within 30 days of booking)."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover for specific family event cancellation. Alternative partial solution via included TIAR benefit (likely 50% payout, requires purchase within 30 days of booking)."
+  },
+  {
+    "report_file": "fbe77fb5-589b-4786-b5d7-abe18fe54573\\recommendation_report_fbe77fb5-589b-4786-b5d7-abe18fe54573.md",
+    "uuid": "fbe77fb5-589b-4786-b5d7-abe18fe54573",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover for specific family event cancellation. Best partial solution via optional CFAR add-on (50% payout). Assumes add-on purchased."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover for specific family event cancellation. Alternative partial solution via included TIAR benefit (likely 50% payout, requires purchase within 30 days of booking)."
+      }
+    ],
+    "evaluation_result": "FAIL (Partial)",
+    "match_justification": null
+  }
+]

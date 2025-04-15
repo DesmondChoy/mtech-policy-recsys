@@ -1,0 +1,81 @@
+{
+    "raw": "{\n  \"requirement_id\": \"RQ12345\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip from Singapore to Japan for two adults aged 26-40.\",\n  \"detailed_description\": \"The customer is looking for comprehensive travel insurance details focusing on medical coverage limits, lost/damaged luggage protection specifics, sports and adventure activities coverage, travel delay benefits, and trip cancellation terms. Key concerns include hiking activity coverage and specific conditions for cancellation due to a family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Lost/Damaged Luggage\",\n    \"Sports and Adventure Coverage\",\n    \"Travel Delay Benefits\",\n    \"Trip Cancellation Coverage\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Budget of around $400 for the insurance premium.\",\n  \"keywords\": [\n    \"TravelSecure\",\n    \"medical treatment\",\n    \"baggage protection\",\n    \"travel delays\",\n    \"trip cancellation\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "RQ12345",
+        "requirement_summary": "Travel insurance requirements for a trip from Singapore to Japan for two adults aged 26-40.",
+        "detailed_description": "The customer is looking for comprehensive travel insurance details focusing on medical coverage limits, lost/damaged luggage protection specifics, sports and adventure activities coverage, travel delay benefits, and trip cancellation terms. Key concerns include hiking activity coverage and specific conditions for cancellation due to a family wedding.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "Medical Coverage",
+            "Lost/Damaged Luggage",
+            "Sports and Adventure Coverage",
+            "Travel Delay Benefits",
+            "Trip Cancellation Coverage"
+        ],
+        "pre_existing_conditions": null,
+        "medical_needs": null,
+        "activities_to_cover": [
+            "Hiking"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Budget of around $400 for the insurance premium.",
+        "keywords": [
+            "TravelSecure",
+            "medical treatment",
+            "baggage protection",
+            "travel delays",
+            "trip cancellation"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd. My name is Sarah. How may I assist you today?\nCustomer: Good morning, Sarah. I'm calling to gather information regarding travel insurance options for an upcoming trip. I'm looking at your policies online, specifically related to the 'TravelSecure' range, but I need some clarification on the specific benefits and limitations before proceeding.\nCustomer Service Agent: Certainly, I can help you with that. To start, could you please provide me with some details about your trip? Where will you be traveling from?\nCustomer: We'll be traveling from Singapore.\nCustomer Service Agent: And where is your destination?\nCustomer: The destination is Japan.\nCustomer Service Agent: Understood. And how long will you be away for?\nCustomer: It will be a 2 weeks trip.\nCustomer Service Agent: Thank you. And how many people will be traveling?\nCustomer: There will be 2 of us traveling. We're mostly around 26-40 years old.\nCustomer Service Agent: Okay, two travelers, aged 26-40, flying from Singapore to Japan for two weeks. And are there any specific activities planned during your trip that might require particular attention in the policy?\nCustomer: Yes, we plan to do some Hiking during our trip. I'd like to understand how your policies cover sports and adventure activities – specifically, what are the conditions and limitations for medical expenses or evacuation related to activities like hiking?\nCustomer Service Agent: Noted. You're inquiring about the specifics of the Sports and Adventure Activities coverage, particularly for hiking. What other aspects of the travel insurance are you most concerned about?\nCustomer: Primarily, I need comprehensive details on the medical coverage. What are the limits for emergency medical treatment, hospital stays, and are prescription medications covered if prescribed during the trip? Also, I assume pre-existing conditions are generally excluded unless declared and approved? We have no pre-existing conditions to declare, just confirming the general stance.\nCustomer Service Agent: Understood, you require details on the Medical Coverage benefits, including limits and general exclusions like pre-existing conditions, which you confirmed are not applicable to your party. What else is important for your trip?\nCustomer: Baggage protection is another key area. I need to know the coverage specifics for lost, damaged, or delayed baggage. What are the typical sub-limits per item, and what's the claims process? Also, what constitutes 'essential purchases' during a baggage delay, and what's the minimum delay period before that benefit activates?\nCustomer Service Agent: Okay, so you need detailed information on Lost/Damaged Luggage coverage, including item limits, claims process, essential purchase definitions, and delay thresholds. Are there any other potential disruptions you're considering?\nCustomer: Yes, travel delays. Could you outline the benefits provided if our flight is significantly delayed? Specifically concerning reimbursement for accommodation, meals, and potentially alternative transport if we miss a connection due to the initial delay. What's the standard qualifying delay time for this?\nCustomer Service Agent: Right, noted. You're looking for specifics on the Travel Delays section, covering expenses like accommodation and meals, missed connections, and the minimum qualifying delay duration. Is there anything else regarding the policy coverage?\nCustomer: The final major point is trip cancellation. I understand standard covered reasons usually include illness, injury, or bereavement. However, I have a specific scenario. I need to know if I'm covered if I have to cancel my trip for my sister's wedding, should the date unexpectedly clash significantly due to a postponement on her end after I've booked. Is that considered a covered reason under any circumstances, or is it typically excluded like 'change of mind'?\nCustomer Service Agent: Thank you for raising that specific scenario. So, you need clarification on the Trip Cancellation coverage, specifically whether cancellation due to a family event like a wedding rescheduling would be covered. I will note this requirement. Generally, cancellation due to personal events like weddings often falls outside standard covered perils, but I've noted your specific query. Do you have any budget in mind for the insurance premium?\nCustomer: Our budget for insurance is about around $400 for the two of us. And just to confirm, no special medical equipment needed for this trip.\nCustomer Service Agent: Understood. Thank you for providing all those details. Just to summarise, you're inquiring about travel insurance for two adults, aged 26-40, traveling from Singapore to Japan for two weeks. Your key requirements are detailed information on: Medical Coverage (limits, inclusions, exclusions), Lost/Damaged Luggage (item limits, delay benefits), Sports and Adventure coverage specifically for Hiking, Travel Delay benefits (qualifying time, covered expenses), and Trip Cancellation coverage, including a specific query about cancellation due to a family event like a sister's wedding potentially rescheduling. Your budget is around $400, and there are no pre-existing conditions or medical equipment needs. Does that accurately cover everything?\nCustomer: Yes, that captures all my points accurately. Thank you.\nCustomer Service Agent: Excellent. Thank you for outlining your requirements so clearly. I have documented all these points. Our relevant team will use this information to identify suitable options and details for you. We will follow up accordingly. Is there anything else I can document for you today?\nCustomer: No, that's everything for now. Thank you for your help, Sarah.\nCustomer Service Agent: You're most welcome. Thank you for calling ISS Insurance Ltd. Have a great day.\nCustomer: You too. Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"RQ12345\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip from Singapore to Japan for two adults aged 26-40.\",\n  \"detailed_description\": \"The customer is looking for comprehensive travel insurance details focusing on medical coverage limits, lost/damaged luggage protection specifics, sports and adventure activities coverage, travel delay benefits, and trip cancellation terms. Key concerns include hiking activity coverage and specific conditions for cancellation due to a family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Lost/Damaged Luggage\",\n    \"Sports and Adventure Coverage\",\n    \"Travel Delay Benefits\",\n    \"Trip Cancellation Coverage\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Budget of around $400 for the insurance premium.\",\n  \"keywords\": [\n    \"TravelSecure\",\n    \"medical treatment\",\n    \"baggage protection\",\n    \"travel delays\",\n    \"trip cancellation\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "RQ12345",
+                "requirement_summary": "Travel insurance requirements for a trip from Singapore to Japan for two adults aged 26-40.",
+                "detailed_description": "The customer is looking for comprehensive travel insurance details focusing on medical coverage limits, lost/damaged luggage protection specifics, sports and adventure activities coverage, travel delay benefits, and trip cancellation terms. Key concerns include hiking activity coverage and specific conditions for cancellation due to a family wedding.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "Medical Coverage",
+                    "Lost/Damaged Luggage",
+                    "Sports and Adventure Coverage",
+                    "Travel Delay Benefits",
+                    "Trip Cancellation Coverage"
+                ],
+                "pre_existing_conditions": null,
+                "medical_needs": null,
+                "activities_to_cover": [
+                    "Hiking"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Budget of around $400 for the insurance premium.",
+                "keywords": [
+                    "TravelSecure",
+                    "medical treatment",
+                    "baggage protection",
+                    "travel delays",
+                    "trip cancellation"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 36731,
+        "prompt_tokens": 30742,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 5989,
+        "successful_requests": 21
+    }
+}

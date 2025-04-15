@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "FAIL",
+      "justification": "The customer mentioned needing trip cancellation coverage, but provided no specific details about concerns (e.g., reasons for cancellation like illness, specific events). The agent did not probe for these details.",
+      "customer_quote": "[16] Standard things. Trip cancellation, travel delays, lost luggage.",
+      "agent_performance": "FAIL",
+      "agent_performance_justification": "The agent acknowledged the requirement but did not probe for any specific details, concerns, or scenarios related to trip cancellation. The agent only listed it in the summary.",
+      "agent_quote": "[19] ...Coverage requirements include: General Medical Coverage, Trip Cancellation, Travel Delays, Lost/Damaged Luggage..."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer requested standard medical cover. Crucially, the agent proactively asked about pre-existing conditions, and the customer provided this key detail.",
+      "customer_quote": "[14] ...Also need standard medical cover. [10] One has high blood pressure. No special equipment needed.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent appropriately probed for pre-existing medical conditions, which is a critical detail for medical coverage.",
+      "agent_quote": "[9] Alright. Do any of the travellers have any pre-existing medical conditions we should be aware of when looking at coverage options?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "FAIL",
+      "justification": "The customer mentioned needing lost luggage coverage generically. No specific details about valuable items, electronics, or specific concerns were provided or elicited.",
+      "customer_quote": "[16] Standard things. Trip cancellation, travel delays, lost luggage.",
+      "agent_performance": "FAIL",
+      "agent_performance_justification": "The agent acknowledged the requirement but failed to probe for specific details, such as whether the customer was travelling with high-value items excluded from standard coverage.",
+      "agent_quote": "[19] ...Coverage requirements include: General Medical Coverage, Trip Cancellation, Travel Delays, Lost/Damaged Luggage..."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "FAIL",
+      "justification": "The customer mentioned needing travel delay coverage generically. No specific details regarding concerns about accommodation, meals, or connection issues were provided or elicited.",
+      "customer_quote": "[16] Standard things. Trip cancellation, travel delays, lost luggage.",
+      "agent_performance": "FAIL",
+      "agent_performance_justification": "The agent acknowledged the requirement but did not probe for any specific concerns or details related to potential travel delays.",
+      "agent_quote": "[19] ...Coverage requirements include: General Medical Coverage, Trip Cancellation, Travel Delays, Lost/Damaged Luggage..."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The agent identified the main purpose was a golf trip and specifically probed for related coverage needs. The customer then provided detailed requirements for golf equipment, green fees, buggy liability, and a hole-in-one benefit.",
+      "customer_quote": "[12] Golf trip. Main activity is golf. [14] Yes. Need cover for golf equipment, reimbursement for unused green fees if unable to play, cover for golf buggy damage liability, and a benefit for a hole-in-one achievement.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly identified the need to ask about specific activities and probed effectively regarding the golf aspect of the trip, capturing all the customer's stated requirements.",
+      "agent_quote": "[11] ...what is the main purpose of this trip? Are there any specific activities planned? [13] Understood, a golf trip. Are there any specific concerns related to the golf activities you'd like coverage noted for?"
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 2,
+    "overall_assessment": "The agent successfully gathered basic trip information, pre-existing condition details, and the specific requirements related to the golf activities by probing effectively. However, the agent failed to gather specific details for the standard coverage types (Trip Cancellation, Lost Luggage, Travel Delays) mentioned generically by the customer, simply acknowledging them without further probing. This resulted in incomplete information gathering for several key coverage areas."
+  },
+  "transcript_name": "transcript_golf_coverage_a461e74f-29f8-4864-852e-b4f48e80fdb1",
+  "scenario": "golf_coverage"
+}

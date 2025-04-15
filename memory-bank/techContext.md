@@ -82,12 +82,17 @@
 │   └── web/                    # Basic CLI runner (app.py)
 ├── tests/                      # Test cases
 ├── scripts/                    # Utility scripts
-│   ├── extract_policy_tier.py  # Extracts structured policy details (base/conditional limits, source-specific details) from PDFs into JSON.
-│   ├── generate_policy_comparison.py # Generates Markdown comparison reports
+│   ├── extract_policy_tier.py
+│   ├── generate_policy_comparison.py
+│   ├── generate_recommendation_report.py
 │   ├── data_generation/        # Scripts specifically for data generation
-│   │   ├── generate_personalities.py # Generates personality types
-│   │   └── generate_transcripts.py   # Generates synthetic transcripts using LLM
+│   │   ├── generate_personalities.py
+│   │   └── generate_transcripts.py
 │   └── evaluation/             # Evaluation-related scripts and data
+│       ├── pdf_extraction_evaluation/
+│       │   └── eval_pdf_extraction.py
+│       ├── scenario_evaluation/
+│       │   └── evaluate_scenario_recommendations.py
 │       └── transcript_evaluation/ # Transcript evaluation scripts (flat structure)
 │           ├── eval_transcript_main.py
 │           ├── eval_transcript_gemini.py

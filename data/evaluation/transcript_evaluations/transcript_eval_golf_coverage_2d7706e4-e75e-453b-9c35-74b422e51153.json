@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the need for trip cancellation coverage and provided specific reasons like family emergency or serious illness before departure.",
+      "customer_quote": "[24] Right. And the big one \u2013 what if we have to cancel the whole trip beforehand? Say, if there's a family emergency or one of us gets seriously ill before we leave? We stand to lose thousands on flights and hotels! Trip cancellation coverage is essential.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and confirmed the requirement for trip cancellation coverage due to unforeseen covered events.",
+      "agent_quote": "[25] Understood. You need coverage for trip cancellation due to unforeseen covered events like illness or emergencies. ... [26] ...Trip Cancellation cover..."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about coverage for sudden illness or injury during the trip, mentioning concerns about hospital bills in Australia.",
+      "customer_quote": "[10] No, no pre-existing conditions. But what happens if one of us suddenly gets sick or injured over there? Hospital bills in Australia aren't cheap, you know. I expect proper medical coverage, not some token amount.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about pre-existing conditions and confirmed the customer's requirement for emergency medical treatment coverage during the trip.",
+      "agent_quote": "[9] And are there any pre-existing medical conditions I should be aware of for either traveller? Things like asthma or high blood pressure? ... [11] Okay, so cover for emergency medical treatment during the trip is a requirement. Thank you."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer specifically asked about coverage for lost or damaged regular luggage, distinguishing it from the golf equipment.",
+      "customer_quote": "[22] And what if the airline loses our *regular* luggage, not just the golf clubs? It happens all the time! I need coverage for lost or damaged baggage generally.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and confirmed the requirement for general lost, damaged, or delayed baggage coverage.",
+      "agent_quote": "[23] Okay, cover for lost, damaged, or delayed baggage is required. ... [26] ...cover for Lost or Damaged Luggage."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about coverage for significant travel delays, mentioning a past experience and asking about accommodation/meal expenses.",
+      "customer_quote": "[20] Yes, but the usual risks are still there, aren't they? What about delays? Last time we flew, we were stuck for 8 hours! Does your insurance cover accommodation or meals if the flight gets significantly delayed? It's outrageous when that happens.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and confirmed the customer's requirement for information on coverage related to significant travel delays.",
+      "agent_quote": "[21] Understood. You require information on coverage for expenses due to significant travel delays. ... [26] ...cover for significant Travel Delays..."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the main purpose of the trip is golf and provided multiple specific coverage requirements related to this activity: golf equipment loss/damage, unused green fees reimbursement, rented golf buggy damage, and a hole-in-one benefit. These fall under specialized sports coverage.",
+      "customer_quote": "[12] Look, the main reason we're going is for golf. A proper golf trip. So I need to be very clear: I need coverage specifically for my golf equipment... [14] And what if I get sick... and can't play? I've paid for green fees upfront... I expect reimbursement for unused green fees... [16] And these golf buggies... What if I damage one?... [18] And one more thing for the golf... if I score a hole-in-one, some policies give a small benefit...",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent first probed about specific activities, then diligently acknowledged and noted each specific golf-related requirement mentioned by the customer.",
+      "agent_quote": "[11] Now, regarding your plans in Australia, are there any specific activities you intend to participate in? ... [13] Alright, cover for loss or damage to golf equipment. Understood. ... [15] Okay, reimbursement for unused green fees due to covered reasons. Noted. ... [17] Damage cover for a rented golf buggy. I've noted that down as well, sir. ... [19] Acknowledged. A specific benefit related to achieving a hole-in-one during the trip. Noted."
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered information covering all standard travel insurance requirements mentioned by the customer (Trip Cancellation, Medical, Luggage, Delays). Furthermore, the agent effectively identified the need for specialized Sports/Activity coverage by probing about activities and then meticulously documented the customer's specific, detailed requirements related to golf, including equipment, green fees, buggy damage, and the hole-in-one benefit. The agent confirmed understanding throughout and provided an accurate summary. Excellent performance in capturing both standard and scenario-specific needs."
+  },
+  "transcript_name": "transcript_golf_coverage_2d7706e4-e75e-453b-9c35-74b422e51153",
+  "scenario": "golf_coverage"
+}

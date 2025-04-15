@@ -1,0 +1,93 @@
+{
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance for trip from Singapore to Australia for two adults, including comprehensive medical coverage, trip cancellation, and coverage for specific activities.\",\n  \"detailed_description\": \"Customer requires travel insurance for two travelers aged 26-40, flying from Singapore to Australia for three weeks, with a budget of around $400. They want coverage for major medical emergencies, trip cancellation due to unforeseen events, expenses due to significant travel delays, loss or damage of luggage, and specific coverage for Bungee Jumping and Hot Air Ballooning. They additionally request a provision for a double payout for accidental death occurring while using public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"three weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"significant travel delays\",\n    \"lost or damaged luggage\",\n    \"Bungee Jumping\",\n    \"Hot Air Ballooning\",\n    \"double payout for accidental death on public transport\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Bungee Jumping\",\n    \"Hot Air Ballooning\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Confirmation of coverage specific to accidental death while using public transport.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"emergency medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"Bungee Jumping\",\n    \"Hot Air Ballooning\",\n    \"double payout\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "1",
+        "requirement_summary": "Travel insurance for trip from Singapore to Australia for two adults, including comprehensive medical coverage, trip cancellation, and coverage for specific activities.",
+        "detailed_description": "Customer requires travel insurance for two travelers aged 26-40, flying from Singapore to Australia for three weeks, with a budget of around $400. They want coverage for major medical emergencies, trip cancellation due to unforeseen events, expenses due to significant travel delays, loss or damage of luggage, and specific coverage for Bungee Jumping and Hot Air Ballooning. They additionally request a provision for a double payout for accidental death occurring while using public transport.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Australia",
+        "travel_duration": "three weeks",
+        "insurance_coverage_type": [
+            "medical emergencies",
+            "trip cancellation",
+            "significant travel delays",
+            "lost or damaged luggage",
+            "Bungee Jumping",
+            "Hot Air Ballooning",
+            "double payout for accidental death on public transport"
+        ],
+        "pre_existing_conditions": null,
+        "medical_needs": null,
+        "activities_to_cover": [
+            "Bungee Jumping",
+            "Hot Air Ballooning"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Confirmation of coverage specific to accidental death while using public transport.",
+        "keywords": [
+            "travel insurance",
+            "emergency medical coverage",
+            "trip cancellation",
+            "travel delays",
+            "lost luggage",
+            "Bungee Jumping",
+            "Hot Air Ballooning",
+            "double payout"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd. My name is Sarah. How may I help you today?\nCustomer: Finally! I’ve been on hold forever. Look, I need travel insurance, and I don't want any nonsense or hidden clauses like I suspect happened with my cousin's claim last year with some *other* company. It's frankly ridiculous what companies try to get away with.\nCustomer Service Agent: I understand your frustration with past experiences, sir/madam. I'm here to help gather the details for the type of coverage you need today. Can you tell me where you'll be travelling to?\nCustomer: We're planning a trip to Australia. Flying out from Singapore, obviously.\nCustomer Service Agent: Alright, Australia. And how long will your trip be?\nCustomer: Three weeks. It better be worth the expense.\nCustomer Service Agent: Okay, noted. And how many people will be travelling on this policy?\nCustomer: Just two of us.\nCustomer Service Agent: Two travelers, noted. And could you let me know the age group for both travelers?\nCustomer: We're both in the 26-40 bracket. Why? Does that make it more expensive?\nCustomer Service Agent: It's just one of the factors we use to determine the appropriate options later, sir/madam. Are you planning any specific activities during your trip to Australia?\nCustomer: Yes, we are. We're planning to do Bungee Jumping, and maybe some Hot Air Ballooning. I expect if we pay for insurance, it actually covers these things if something goes wrong, not just basic tourist stuff. No point paying otherwise!\nCustomer Service Agent: Okay, I've noted down Bungee Jumping and Hot Air Ballooning. Are there any specific medical considerations, such as pre-existing conditions or the need to bring medical equipment like a wheelchair?\nCustomer: No, no pre-existing conditions. And no special medical equipment needed. But that doesn't mean we don't need proper medical coverage! What happens if one of us has an accident or gets seriously ill over there? Medical costs are daylight robbery. I need assurance we're covered for emergencies, hospital stays, doctors, the works.\nCustomer Service Agent: Understood. So, comprehensive medical cover for emergencies is important.\nCustomer: Of course it is! And what about getting there? Last time I flew, the airline delayed us for nearly a whole day! Stranded, extra hotel night, meals – cost a fortune! I need to know I won't be out of pocket if there are significant travel delays this time because the airline messes up again. It's utterly unfair to passengers.\nCustomer Service Agent: Okay, cover for expenses due to significant travel delays. Noted.\nCustomer: And luggage! Don't get me started. What if they lose our bags, or they arrive smashed up? Happens all the time. I expect proper reimbursement if our luggage is lost or damaged, not some pathetic token amount.\nCustomer Service Agent: Right, coverage for lost or damaged luggage is a requirement.\nCustomer: Absolutely. And what if, before we even leave, something happens? Like a serious illness or a family emergency that means we have to cancel the whole trip? I've already paid for flights and accommodation – I'm not throwing that money down the drain because of some unforeseen disaster. Trip cancellation cover is non-negotiable.\nCustomer Service Agent: Okay, cover for trip cancellation due to unforeseen covered reasons. Is there anything else you feel is essential for your coverage?\nCustomer: Yes, one more thing I need specific confirmation on. I read somewhere that some policies offer extra if the absolute worst happens... like, if there's a fatal accident while travelling on public transport – you know, a bus, a train over there. I want to know if the policy provides extra coverage, specifically a double payout for accidental death if it occurs while I'm on public transport. That specific scenario needs to be clear.\nCustomer Service Agent: Understood. You're specifically asking about a provision for a doubled payout for accidental death if it occurs while using public transport overseas. I have noted that requirement. And roughly, what budget did you have in mind for this insurance policy?\nCustomer: Look, I want proper coverage, but I'm not paying a ridiculous premium. We're hoping to spend around $400, maybe a bit more if absolutely necessary, but it better be comprehensive for that price.\nCustomer Service Agent: Okay, noted, a budget around $400. Let me just quickly summarize the requirements I've noted down for you. You're looking for travel insurance for two adults, aged 26-40, travelling from Singapore to Australia for three weeks. The required coverage includes medical emergencies, trip cancellation, significant travel delays, lost or damaged luggage, and specific cover for participating in Bungee Jumping and Hot Air Ballooning. Additionally, you specifically require confirmation about a double payout benefit for accidental death occurring on public transport. You mentioned no pre-existing conditions or special medical equipment, and your budget is around $400. Does that accurately capture everything you need?\nCustomer: Yes, that sounds about right. Make sure all those points are properly considered. I don't want any surprises later.\nCustomer Service Agent: Thank you for confirming. I have recorded all these requirements. We will use this information to identify suitable policy options for your consideration. Someone will be in touch regarding the next steps. Thank you for calling ISS Insurance.\nCustomer: Right. Okay then. Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance for trip from Singapore to Australia for two adults, including comprehensive medical coverage, trip cancellation, and coverage for specific activities.\",\n  \"detailed_description\": \"Customer requires travel insurance for two travelers aged 26-40, flying from Singapore to Australia for three weeks, with a budget of around $400. They want coverage for major medical emergencies, trip cancellation due to unforeseen events, expenses due to significant travel delays, loss or damage of luggage, and specific coverage for Bungee Jumping and Hot Air Ballooning. They additionally request a provision for a double payout for accidental death occurring while using public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"three weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"significant travel delays\",\n    \"lost or damaged luggage\",\n    \"Bungee Jumping\",\n    \"Hot Air Ballooning\",\n    \"double payout for accidental death on public transport\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Bungee Jumping\",\n    \"Hot Air Ballooning\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Confirmation of coverage specific to accidental death while using public transport.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"emergency medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"Bungee Jumping\",\n    \"Hot Air Ballooning\",\n    \"double payout\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "1",
+                "requirement_summary": "Travel insurance for trip from Singapore to Australia for two adults, including comprehensive medical coverage, trip cancellation, and coverage for specific activities.",
+                "detailed_description": "Customer requires travel insurance for two travelers aged 26-40, flying from Singapore to Australia for three weeks, with a budget of around $400. They want coverage for major medical emergencies, trip cancellation due to unforeseen events, expenses due to significant travel delays, loss or damage of luggage, and specific coverage for Bungee Jumping and Hot Air Ballooning. They additionally request a provision for a double payout for accidental death occurring while using public transport.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Australia",
+                "travel_duration": "three weeks",
+                "insurance_coverage_type": [
+                    "medical emergencies",
+                    "trip cancellation",
+                    "significant travel delays",
+                    "lost or damaged luggage",
+                    "Bungee Jumping",
+                    "Hot Air Ballooning",
+                    "double payout for accidental death on public transport"
+                ],
+                "pre_existing_conditions": null,
+                "medical_needs": null,
+                "activities_to_cover": [
+                    "Bungee Jumping",
+                    "Hot Air Ballooning"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Confirmation of coverage specific to accidental death while using public transport.",
+                "keywords": [
+                    "travel insurance",
+                    "emergency medical coverage",
+                    "trip cancellation",
+                    "travel delays",
+                    "lost luggage",
+                    "Bungee Jumping",
+                    "Hot Air Ballooning",
+                    "double payout"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 22104,
+        "prompt_tokens": 18379,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 3725,
+        "successful_requests": 13
+    }
+}

@@ -30,7 +30,8 @@ The project is in the **initial setup and planning phase**. We are currently est
 2.  **Implement Comparison Report Evaluation**:
     *   [ ] Design and implement the evaluation script/process for `scripts/generate_policy_comparison.py` output.
     *   [ ] Define metrics for report quality, accuracy, and justification clarity.
-3.  **Refine Core Logic**:
+3.  **Orchestration Script**: Script (`scripts/orchestrate_scenario_evaluation.py`) automates the end-to-end workflow (generation, evaluation, parsing, extraction, comparison, recommendation, final evaluation). Includes parallel transcript evaluation and sequential report generation.
+4.  **Refine Core Logic**:
     *   [ ] Iteratively improve prompts, models, and processing logic within existing scripts based on evaluation results and testing.
 4.  **Develop Recommendation Logic**:
     *   [ ] Define the process for generating final recommendations (e.g., selecting top insurers/tiers from comparison reports).
@@ -61,6 +62,7 @@ The project is in the **initial setup and planning phase**. We are currently est
 | **PDF Extraction Evaluation**      | **100%**    | **High** | **Script implemented (`eval_pdf_extraction.py`) with `--file_pattern` enhancement. Testing/Refinement pending.** |
 | Policy Comparison Evaluation       | Planned     | High     | Design and implement evaluation for `generate_policy_comparison.py`.                                 |
 | **Recommender Logic Script**       | **100%**    | **High** | **`scripts/generate_recommendation_report.py` implemented (parser, score, re-rank, MD report). Intermediate JSON output removed.** |
+| **Orchestration Script**           | **95%**     | **High** | **`scripts/orchestrate_scenario_evaluation.py` implemented and debugged. Parallel eval, sequential reports. Testing pending.** |
 | **Component Integration**          | **20%**     | **Medium** | **Internal Stage 1/2 integration done. Full pipeline orchestration pending.**                        |
 | Testing Framework                  | 20%         | Medium   | Unit tests added for recommender parser/scorer/MD report. More needed.                               |
 | ML Models                          | 0%          | Low      | Later phase.                                                                                         |
@@ -89,3 +91,4 @@ The project is in the **initial setup and planning phase**. We are currently est
 3.  **Extractor Agent**: Implemented using CrewAI/OpenAI for requirement extraction.
 4.  **Recommender Script**: Implemented `scripts/generate_recommendation_report.py` with Stage 1 scoring, Stage 2 LLM re-ranking (with source ref prompt update), and Markdown report generation (intermediate JSON output removed). Added unit tests.
 5.  **Refinements**: Centralized Gemini config, improved policy extraction detail, standardized filenames, refactored comparison script for insurer-level analysis, enhanced evaluation robustness, added file pattern filtering to PDF eval script.
+6.  **Orchestration Script**: Implemented and debugged `scripts/orchestrate_scenario_evaluation.py` to automate the end-to-end workflow. Refactored transcript evaluation for parallel processing and report generation for sequential processing (per UUID) to improve reliability.

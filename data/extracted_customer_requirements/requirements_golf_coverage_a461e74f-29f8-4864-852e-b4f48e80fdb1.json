@@ -1,0 +1,95 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a golf trip to Thailand.\",\n  \"detailed_description\": \"Customer requires travel insurance for two travellers, with specific coverage for golf-related activities and general travel risks.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"General Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Reimbursement for Unused Green Fees\",\n    \"Golf Buggy Damage Liability\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"standard medical cover\"],\n  \"activities_to_cover\": [\"golf\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget range around $200-$300.\",\n  \"keywords\": [\"golf trip\", \"travel insurance\", \"Singapore\", \"Thailand\", \"high blood pressure\"]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ123456",
+        "requirement_summary": "Travel insurance for a golf trip to Thailand.",
+        "detailed_description": "Customer requires travel insurance for two travellers, with specific coverage for golf-related activities and general travel risks.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Thailand",
+        "travel_duration": "10 days",
+        "insurance_coverage_type": [
+            "General Medical Coverage",
+            "Trip Cancellation",
+            "Travel Delays",
+            "Lost/Damaged Luggage",
+            "Golf Equipment Coverage",
+            "Reimbursement for Unused Green Fees",
+            "Golf Buggy Damage Liability",
+            "Hole-in-One Benefit"
+        ],
+        "pre_existing_conditions": [
+            "high blood pressure"
+        ],
+        "medical_needs": [
+            "standard medical cover"
+        ],
+        "activities_to_cover": [
+            "golf"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Budget range around $200-$300.",
+        "keywords": [
+            "golf trip",
+            "travel insurance",
+            "Singapore",
+            "Thailand",
+            "high blood pressure"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd. My name is Sarah. How can I assist you today?\nCustomer: Need travel insurance quote details.\nCustomer Service Agent: Certainly. To start, could you please provide your travel destination and dates?\nCustomer: Thailand. 10 days. Departing from Singapore.\nCustomer Service Agent: Okay, Thailand for 10 days from Singapore. And how many people will be travelling?\nCustomer: Two.\nCustomer Service Agent: Got it, two travellers. And could you let me know the approximate age group for the travellers?\nCustomer: 41-55.\nCustomer Service Agent: Alright. Do any of the travellers have any pre-existing medical conditions we should be aware of when looking at coverage options?\nCustomer: One has high blood pressure. No special equipment needed.\nCustomer Service Agent: Noted, high blood pressure declared for one traveller. And what is the main purpose of this trip? Are there any specific activities planned?\nCustomer: Golf trip. Main activity is golf.\nCustomer Service Agent: Understood, a golf trip. Are there any specific concerns related to the golf activities you'd like coverage noted for?\nCustomer: Yes. Need cover for golf equipment, reimbursement for unused green fees if unable to play, cover for golf buggy damage liability, and a benefit for a hole-in-one achievement. Also need standard medical cover.\nCustomer Service Agent: Okay, so specific golf coverage including equipment, unused green fees, golf buggy liability, and a hole-in-one benefit. And general medical coverage noted. Are there any other general travel risks you need cover noted for?\nCustomer: Standard things. Trip cancellation, travel delays, lost luggage.\nCustomer Service Agent: Right. And do you have a budget range in mind for the policy?\nCustomer: Around $200-$300.\nCustomer Service Agent: Okay, noted. So, just to summarize the requirements you've mentioned: travel insurance for two travellers, age group 41-55, travelling from Singapore to Thailand for 10 days. One traveller has declared high blood pressure. Coverage requirements include: General Medical Coverage, Trip Cancellation, Travel Delays, Lost/Damaged Luggage. Specifically for golf, you require cover for Golf Equipment, reimbursement for Unused Green Fees, liability for Golf Buggy Damage, and a Hole-in-One benefit. The budget is around $200-$300. Is that all correct?\nCustomer: Yes. Correct.\nCustomer Service Agent: Thank you. I have recorded all these requirements. We will use this information to identify suitable policy options for you. Someone will be in touch shortly with the relevant quotes. Is there anything else for today?\nCustomer: No. Thank you.\nCustomer Service Agent: You're welcome. Thank you for calling ISS Insurance. Goodbye.\nCustomer: Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a golf trip to Thailand.\",\n  \"detailed_description\": \"Customer requires travel insurance for two travellers, with specific coverage for golf-related activities and general travel risks.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"General Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Reimbursement for Unused Green Fees\",\n    \"Golf Buggy Damage Liability\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"standard medical cover\"],\n  \"activities_to_cover\": [\"golf\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget range around $200-$300.\",\n  \"keywords\": [\"golf trip\", \"travel insurance\", \"Singapore\", \"Thailand\", \"high blood pressure\"]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ123456",
+                "requirement_summary": "Travel insurance for a golf trip to Thailand.",
+                "detailed_description": "Customer requires travel insurance for two travellers, with specific coverage for golf-related activities and general travel risks.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Thailand",
+                "travel_duration": "10 days",
+                "insurance_coverage_type": [
+                    "General Medical Coverage",
+                    "Trip Cancellation",
+                    "Travel Delays",
+                    "Lost/Damaged Luggage",
+                    "Golf Equipment Coverage",
+                    "Reimbursement for Unused Green Fees",
+                    "Golf Buggy Damage Liability",
+                    "Hole-in-One Benefit"
+                ],
+                "pre_existing_conditions": [
+                    "high blood pressure"
+                ],
+                "medical_needs": [
+                    "standard medical cover"
+                ],
+                "activities_to_cover": [
+                    "golf"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Budget range around $200-$300.",
+                "keywords": [
+                    "golf trip",
+                    "travel insurance",
+                    "Singapore",
+                    "Thailand",
+                    "high blood pressure"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 10293,
+        "prompt_tokens": 8638,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 1655,
+        "successful_requests": 6
+    }
+}

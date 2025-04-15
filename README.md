@@ -70,7 +70,38 @@ This section describes the end-to-end workflow for preparing policy data and gen
 
 This sequence takes you from raw data to structured policy information and customer requirements, ready for downstream analysis and comparison.
 
-## 2. Policy Comparison Report Generation (Insurer-Level)
+## 2. Automated Scenario Evaluation Workflow (Orchestrator)
+
+For end-to-end testing and evaluation of specific scenarios, the `scripts/orchestrate_scenario_evaluation.py` script automates the entire pipeline.
+
+1.  **Purpose**: Runs the full workflow for a specified number of transcripts per target scenario (`golf_coverage`, `pet_care_coverage`, `public_transport_double_cover`, `uncovered_cancellation_reason`). It handles transcript generation, evaluation (optional), parsing, extraction, comparison report generation, recommendation report generation, and final scenario evaluation against ground truth.
+2.  **Workflow Steps**:
+    *   Generate Transcripts (Parallel Scenarios)
+    *   Evaluate Transcripts (Parallel Transcripts, Optional)
+    *   Parse Transcripts (Sequential Batch)
+    *   Extract Requirements (Sequential Batch)
+    *   Generate Comparison & Recommendation Reports (Sequential UUIDs)
+    *   Run Final Scenario Evaluation & Aggregate Results
+3.  **Usage**:
+    ```bash
+    # Run the full workflow, generating 5 transcripts per scenario
+    python scripts/orchestrate_scenario_evaluation.py -n 5
+
+    # Run the workflow, generating 10 transcripts per scenario, skipping initial transcript evaluation
+    python scripts/orchestrate_scenario_evaluation.py -n 10 --skip_transcript_eval
+    ```
+4.  **Arguments**:
+    *   `-n`, `--num_transcripts`: Number of transcripts to generate per scenario (default: 5).
+    *   `--skip_transcript_eval`: If set, skips the initial transcript evaluation step.
+5.  **Output**: Creates intermediate files in `data/` subdirectories and final reports in `results/`. Aggregated scenario evaluation results (filtered for the current run) are saved in `data/evaluation/scenario_evaluation/results_{scenario}_aggregated_{timestamp}.json`.
+
+---
+
+*The following sections describe the individual scripts that are called by the orchestrator or can be run manually for specific tasks.*
+
+---
+
+## 3. Policy Comparison Report Generation (Insurer-Level)
 
 This step uses the structured requirements and policy data to generate detailed Markdown comparison reports **for each insurer** against a specific customer's needs. This script implements the insurer-level analysis approach, comparing all tiers of an insurer in a single LLM call.
 
@@ -101,7 +132,7 @@ This step takes the insurer-level comparison reports generated in the previous s
 3.  **Output**:
     *   A final Markdown recommendation report saved to `results/{uuid}/recommendation_report_{uuid}.md`. This report includes the final ranked list of recommended policies, detailed justifications with source references, and an explanation of the scoring.
 
-## 4. Evaluation Scripts
+## 5. Evaluation Scripts
 
 This section describes the available scripts for evaluating the quality and accuracy of different pipeline stages.
 
@@ -123,7 +154,26 @@ This section describes the available scripts for evaluating the quality and accu
   python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/ --output-dir custom/eval_results --format json,csv
   ```
 
-### 4.2 PDF Extraction Evaluation
+### 5.2 Scenario Recommendation Evaluation
+
+- **Component**: `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`
+- **Purpose**: Evaluates the final recommendation report against a predefined ground truth for specific test scenarios. This verifies if the system recommends an appropriate policy given the scenario's constraints and expected outcomes.
+- **Input**: Ground truth JSON (`data/evaluation/scenario_evaluation/scenario_ground_truth.json`), recommendation reports (`results/{uuid}/recommendation_report_*.md`), and optionally raw transcripts for scenario mapping. Can evaluate a specific scenario using `--scenario`.
+- **Output**: Evaluation results printed to console and optionally saved to a timestamped JSON file in `data/evaluation/scenario_evaluation/`.
+- **Rationale**: Automates checking if the pipeline produces expected outcomes for targeted scenarios. Useful for:
+    *   **Regression Detection:** Identify if changes negatively impact performance.
+    *   **Faithfulness/Correctness:** Verify adherence to expected behavior.
+    *   **Objective Comparison:** Benchmark different models/prompts/logic.
+- **Usage Examples**:
+  ```bash
+  # Evaluate recommendations for the 'golf_coverage' scenario
+  python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py --scenario golf_coverage
+
+  # Evaluate recommendations for all scenarios found in results/
+  python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py
+  ```
+
+### 5.3 PDF Extraction Evaluation
 
 - **Component**: `scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py`
 - **Purpose**: Compares the structured JSON extracted from a policy PDF (`data/policies/processed/`) against the original source PDF (`data/policies/raw/`) using a multi-modal Gemini model to assess extraction accuracy and completeness. Performs two-way verification.
@@ -141,7 +191,7 @@ This section describes the available scripts for evaluating the quality and accu
   python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py --file_pattern "gels_{Gold}.json"
   ```
 
-## 5. Future Enhancements
+## 6. Future Enhancements
 
 The outputs from the current pipeline (Structured Policy JSON, Structured Requirements JSON, Comparison Reports, Final Recommendation) provide a solid foundation. Future work may focus on:
 - Implementing automated evaluation for comparison report quality.
@@ -206,6 +256,6 @@ The project includes a reusable LLM service that provides a unified interface to
    python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py --file_pattern "fwd_{Premium}.json"
    ```
 
-## Academic Project
+## 8. Academic Project
 
 This is an academic project focused on applying AI and LLM techniques to solve real-world problems in the insurance domain.

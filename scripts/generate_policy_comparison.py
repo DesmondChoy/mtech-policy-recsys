@@ -323,7 +323,11 @@ async def generate_insurer_report(
             tier_ranking_list=tier_ranking_str,
         )
 
-        logger.debug(f"Attempting LLM call for insurer {insurer_name}")
+        # --- Enhanced Logging ---
+        logger.info(f"[{insurer_name.upper()}] Preparing to call LLM...")
+        logger.debug(f"[{insurer_name.upper()}] Prompt length: {len(prompt)} chars")
+        # logger.debug(f"[{insurer_name.upper()}] Prompt Snippet:\n{prompt[:500]}...") # Uncomment for detailed prompt debugging
+
         # Use asyncio.to_thread if LLMService call is blocking
         response = await asyncio.to_thread(
             llm_service.generate_content,
@@ -331,6 +335,9 @@ async def generate_insurer_report(
             # model=LLM_MODEL, # Use default from LLMService config
             # Add other parameters if needed, e.g., max_output_tokens
         )
+
+        # --- Enhanced Logging ---
+        logger.info(f"[{insurer_name.upper()}] LLM call successful.")
 
         report_content = response.text
 

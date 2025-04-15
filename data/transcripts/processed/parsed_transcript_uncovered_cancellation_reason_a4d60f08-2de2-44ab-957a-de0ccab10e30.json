@@ -1,0 +1,122 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for calling ISS Insurance Ltd Singapore. My name is Sarah, how may I help you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Oh, hi, yes... hello? Sarah? Yes. I need... I need to ask about travel insurance. It's all just... so much. I'm planning a trip and I'm getting really stressed about everything that could go wrong. It’s overwhelming."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "I understand, planning a trip can certainly feel that way sometimes. Don't worry, I'm here to help note down what you need. Could you tell me a bit about your trip? For example, where will you be travelling from?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "From here, from Singapore. We're based in Singapore."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, travelling from Singapore. And where are you planning to go?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Japan. We're planning a trip to Japan. It's supposed to be relaxing but I'm already not relaxed!"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, Japan is a popular destination! And how long will you be away for?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "About... uh... 10 days, I think. Yes, 10 days."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Got it, 10 days in Japan. And how many people will be travelling?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Just two of us. Me and my partner."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Two travellers. And may I ask roughly the age group for the travellers?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Oh, we're… let’s see… we're mostly around 26-40 years old. Both of us."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted. Now, regarding the trip itself, are you planning any specific activities while you're in Japan?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes! That's another thing worrying me. We want to try skiing. We've never done it before properly and what if someone gets hurt? What happens then? Does insurance even cover things like that? I saw some policies don't cover 'risky' things..."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so you need coverage that includes participating in skiing. I'll note that down as a requirement for sports and adventure activities. And related to your concern about getting hurt, are you looking for coverage for potential medical expenses during the trip?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, absolutely! What if there's an accident, not just from skiing, but anything? Hospital bills overseas are terrifyingly expensive, aren't they? We definitely need good medical coverage. Oh, and also... I have asthma. It's managed, but do I need to declare asthma? Does that affect the medical part?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so comprehensive medical coverage is a requirement. And thank you for mentioning the asthma – I'll note that down as a pre-existing condition that needs to be considered for the policy. Are there any other medical conditions or special equipment like a wheelchair that need to be factored in?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No, no special medical equipment needed, just the asthma to mention. Phew. Okay, what else... Oh! My bags! I have nightmares about the airline losing my luggage, or it arriving smashed. What happens then? I need cover for lost or damaged luggage, definitely."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, I've noted down cover for lost or damaged luggage as a requirement. What about delays? Sometimes flights get delayed for hours... it messes everything up, hotels, connections... it's happened before, it's so stressful. Is there something for that?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes! Travel delays too. If we get stuck somewhere, needing extra hotel nights or food... that adds up so fast. Please include that."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood, coverage for travel delays. So far, I have: Travel from Singapore to Japan for 10 days for two travellers, age 26-40. Requirements noted are: Coverage for skiing under sports/adventure, medical coverage including consideration for pre-existing asthma, cover for lost or damaged luggage, and cover for travel delays. Is there anything else you need the insurance to cover?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes! The biggest worry, actually. My sister... she might suddenly decide to have her wedding during that period. It's complicated, but if she confirms the date and it clashes, I *have* to cancel the trip. It's her wedding! Will insurance cover me if I have to cancel my trip for my sister's wedding? That's really important. I can't lose all the money..."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so you require trip cancellation coverage. I've noted specifically that you need to know if cancellation due to a family event like your sister's wedding would be covered. I should mention that cancellation for personal events like a wedding is often not a standard reason covered under typical trip cancellation clauses, which usually cover things like illness or bereavement, but I have noted it as a specific requirement you need information on."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Oh. Okay. Well, yes, please note it down clearly. I need to know. This is all... okay. I think that's it? I'm trying to keep the cost down, maybe around $400 for the insurance if possible? Is that realistic?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, I've noted your budget preference of around $400. So, just to quickly recap the requirements: Travel insurance for 2 adults (26-40) travelling from Singapore to Japan for 10 days. Specific coverage requirements are: Medical coverage (noting pre-existing asthma), coverage for lost/damaged luggage, coverage for travel delays, coverage for skiing under sports/adventure activities, and trip cancellation coverage, with a specific query about cancellation due to your sister's wedding. Budget indication is around $400. Does that sound correct?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, yes that sounds right. You got it all down. Thank you. It feels a bit better having listed it all out, even though I'm still worried about the wedding part."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "You're welcome. I'm glad I could help capture your requirements today. I have all the details needed now. Someone from our policy team will review these requirements and get back to you with suitable options and information, including clarification on the trip cancellation reasons."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Okay. Thank you, Sarah. I appreciate your patience."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "You're most welcome. Thank you for calling ISS Insurance Ltd. Have a good day."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "You too. Bye."
+    }
+]

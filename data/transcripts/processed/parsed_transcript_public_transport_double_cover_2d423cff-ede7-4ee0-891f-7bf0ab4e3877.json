@@ -1,0 +1,86 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Good morning, thank you for calling ISS Insurance Ltd. My name is Sarah. How may I assist you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Good morning, Sarah. I'm calling to get the details needed for a travel insurance quotation. I've looked at some of your general product disclosure sheets online, but I need to ensure specific requirements are logged for the quote. We'll be traveling from Singapore."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Certainly. I can help you gather those requirements. Could you please provide me with some details about your trip? For instance, where will you be traveling to and for how long?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're planning a trip to Japan. It will be a 2 weeks trip for two adults. We're both in the 26-40 age group."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted. Two adults, aged 26-40, traveling from Singapore to Japan for two weeks. And are there any specific activities you plan to participate in during your trip?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, We plan to do some Skiing in Hokkaido. I need confirmation that the policy covers medical expenses specifically arising from recreational skiing. I understand there's usually a 'Sports and Adventure Activities' section detailing covered pursuits and potential exclusions like professional participation."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. So you require coverage confirmation for recreational Skiing under the sports and adventure benefit. I've noted that down. Are there any other specific activities?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No, just the skiing. Now, regarding general medical coverage, could you note the requirement for comprehensive emergency medical treatment, including hospitalisation and doctor visits? We have no pre-existing conditions that require declaration, by the way."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, noted. Requirement for comprehensive medical coverage for emergencies, hospital stays, and doctor visits, with no pre-existing conditions declared for either traveler."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Correct. Next, trip cancellation. I need to ensure the policy covers non-refundable costs if we have to cancel due to specified unforeseen circumstances, such as serious illness or injury before departure, or perhaps a natural disaster impacting the destination."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted requirement for trip cancellation coverage due to covered reasons like illness, injury, or natural disasters affecting travel."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "And concerning travel delays, what are the provisions? I need coverage logged for significant delays – say, over 6 hours – covering reasonable additional accommodation and meal expenses incurred."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. Requirement logged for coverage for additional meal and accommodation expenses resulting from travel delays exceeding a certain threshold."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Regarding baggage, I require coverage for loss or damage to checked-in luggage. Could you also note the need to understand the per-item limits and specific exclusions, particularly concerning electronics, as mentioned in typical policies?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Noted. Requirement for coverage related to lost or damaged checked-in luggage, including details on limits and exclusions for items like electronics."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Finally, and this is quite specific, I've seen some policies offer enhanced benefits under Personal Accident. I want to confirm if the policy provides a double payout for accidental death if it occurs while traveling as a fare-paying passenger on public transport, like a bus or train within Japan. Please log this specific requirement for double indemnity on public conveyance."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, I have specifically noted your requirement to check for a double payout provision for accidental death occurring while travelling on public transport as a fare-paying passenger."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, let me just summarize the key requirements you've highlighted for the travel insurance quote: Coverage for 2 adults (26-40) traveling from Singapore to Japan for 2 weeks. Specific requirements include: Sports and Adventure cover for recreational Skiing, comprehensive emergency Medical Coverage (no pre-existing conditions), Trip Cancellation for specified reasons, Travel Delay benefits for meals and accommodation after a set duration, Lost/Damaged Luggage coverage with clarity on limits/exclusions, and importantly, confirmation of a double payout for accidental death on public transport. Is that all correct?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, that accurately summarises the core requirements I need addressed in the quotation details. Thank you, Sarah."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "You're welcome. Thank you for clearly outlining your needs. We will use these requirements to prepare the relevant information for you. Have a good day."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Thank you for your help. Goodbye."
+    }
+]

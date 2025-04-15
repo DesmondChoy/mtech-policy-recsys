@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the need for trip cancellation cover and mentioned specific reasons like serious illness or family emergency, aligning with standard covered reasons.",
+      "customer_quote": "[20] And what if, before we even leave, something happens? Like a serious illness or a family emergency that means we have to cancel the whole trip? ... Trip cancellation cover is non-negotiable.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement clearly and included it in the summary.",
+      "agent_quote": "[21] Okay, cover for trip cancellation due to unforeseen covered reasons. ... [25] The required coverage includes... trip cancellation..."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer emphasized the need for medical coverage, specifying concerns about accidents, serious illness, emergencies, hospital stays, and doctor visits. The customer also confirmed no pre-existing conditions when asked.",
+      "customer_quote": "[14] But that doesn't mean we don't need proper medical coverage! What happens if one of us has an accident or gets seriously ill over there? ... I need assurance we're covered for emergencies, hospital stays, doctors, the works.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively probed for pre-existing conditions and acknowledged the customer's requirement for comprehensive emergency medical cover.",
+      "agent_quote": "[13] Are there any specific medical considerations, such as pre-existing conditions...? [15] Understood. So, comprehensive medical cover for emergencies is important."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for lost or damaged luggage and expressed the need for proper reimbursement.",
+      "customer_quote": "[18] And luggage! Don't get me started. What if they lose our bags, or they arrive smashed up? ... I expect proper reimbursement if our luggage is lost or damaged...",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement and included it in the summary.",
+      "agent_quote": "[19] Right, coverage for lost or damaged luggage is a requirement. ... [25] The required coverage includes... lost or damaged luggage..."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer described a past negative experience with travel delays and explicitly requested coverage for expenses like accommodation and meals due to significant delays.",
+      "customer_quote": "[16] Last time I flew, the airline delayed us for nearly a whole day! Stranded, extra hotel night, meals \u2013 cost a fortune! I need to know I won't be out of pocket if there are significant travel delays this time...",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement for coverage related to significant travel delays and included it in the summary.",
+      "agent_quote": "[17] Okay, cover for expenses due to significant travel delays. Noted. ... [25] The required coverage includes... significant travel delays..."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer specified participation in Bungee Jumping and Hot Air Ballooning and expected coverage for these activities.",
+      "customer_quote": "[12] Yes, we are. We're planning to do Bungee Jumping, and maybe some Hot Air Ballooning. I expect if we pay for insurance, it actually covers these things if something goes wrong...",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about planned activities and specifically noted the ones mentioned by the customer.",
+      "agent_quote": "[11] Are you planning any specific activities during your trip to Australia? [13] Okay, I've noted down Bungee Jumping and Hot Air Ballooning."
+    },
+    {
+      "coverage_type": "scenario_specific_double_payout",
+      "name": "Double Payout on Public Transport",
+      "result": "PASS",
+      "justification": "The customer explicitly asked for confirmation regarding a specific feature: a double payout for accidental death occurring while travelling on public transport. This was a scenario-specific requirement.",
+      "customer_quote": "[22] Yes, one more thing I need specific confirmation on. ... I want to know if the policy provides extra coverage, specifically a double payout for accidental death if it occurs while I'm on public transport. That specific scenario needs to be clear.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent accurately understood and restated this specific requirement, confirming it was noted.",
+      "agent_quote": "[23] Understood. You're specifically asking about a provision for a doubled payout for accidental death if it occurs while using public transport overseas. I have noted that requirement. ... [25] Additionally, you specifically require confirmation about a double payout benefit for accidental death occurring on public transport."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent performed excellently, successfully gathering information on all five standard coverage types mentioned or relevant, plus the specific scenario requirement. The agent effectively used probing questions (activities, medical conditions), acknowledged customer needs clearly, and accurately summarized all requirements at the end. The agent remained professional despite the customer's initial frustration."
+  },
+  "transcript_name": "transcript_public_transport_double_cover_401e4271-0308-47fb-a870-68200b052a9d",
+  "scenario": "public_transport_double_cover"
+}

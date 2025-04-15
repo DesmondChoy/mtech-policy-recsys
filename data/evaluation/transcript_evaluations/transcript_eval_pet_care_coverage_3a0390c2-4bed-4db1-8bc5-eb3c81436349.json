@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "FAIL",
+      "justification": "The customer mentioned needing trip cancellation coverage, but did not provide specific reasons (e.g., illness, death, natural disaster) they were concerned about. The agent confirmed the general need but did not probe for these specific details, which are key features of this coverage type.",
+      "customer_quote": "[12] Yes. Need cover if the trip has to be cancelled.",
+      "agent_performance": "FAIL",
+      "agent_performance_justification": "The agent acknowledged the request ([13] 'Okay, so coverage for trip cancellation...') but did not ask follow-up questions to understand the specific scenarios (illness, death, etc.) the customer wanted coverage for, which are listed as key features.",
+      "agent_quote": "[13] Okay, so coverage for trip cancellation and for lost or damaged luggage. Anything else?"
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for medical expenses due to sickness or injury. The agent confirmed this and appropriately probed for related details like pre-existing conditions and special medical equipment needs.",
+      "customer_quote": "[14] Medical expenses if we fall sick or get injured there.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement ([15]) and asked relevant clarifying questions about potential exclusions or needs ([19] 'Will anyone travelling require special medical equipment...?', [21] 'And does anyone travelling have any pre-existing medical conditions...?').",
+      "agent_quote": "[15] Understood, medical coverage during the trip. ... [21] And does anyone travelling have any pre-existing medical conditions like asthma or diabetes that we should be aware of?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer clearly stated the need for coverage if luggage is lost or damaged.",
+      "customer_quote": "[12] Also, if luggage is lost or damaged.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and confirmed the requirement for lost or damaged luggage coverage.",
+      "agent_quote": "[13] Okay, so coverage for trip cancellation and for lost or damaged luggage."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer mentioned needing cover for extra costs due to flight delays, specifically on the return. The agent probed for specific expenses related to delays.",
+      "customer_quote": "[16] And flight delays. What if the return flight is delayed? Need cover for extra costs.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement ([17]) and effectively probed for more details about the types of expenses the customer was concerned about ([17] 'Any specific expenses related to delays you're thinking of?'), which led to uncovering the pet accommodation requirement.",
+      "agent_quote": "[17] Alright, cover for travel delays causing additional expenses. Any specific expenses related to delays you're thinking of?"
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The agent asked about planned activities, and the customer specified 'Hiking'. The agent noted this and included it in the summary as a coverage requirement.",
+      "customer_quote": "[10] Hiking.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about activities ([9]) and correctly noted and summarized the need for coverage including hiking ([11], [25]).",
+      "agent_quote": "[9] Are there any specific activities you plan to do during the trip? ... [11] Noted, hiking. ... [25] ...coverage that includes hiking activities."
+    },
+    {
+      "coverage_type": "pet_accommodation_costs",
+      "name": "Pet Accommodation Costs (Scenario-Specific)",
+      "result": "PASS",
+      "justification": "Following the agent's probe about specific delay expenses, the customer explicitly stated the need for coverage for extra pet hotel fees if their return to Singapore is delayed.",
+      "customer_quote": "[18] Yes. If the return to Singapore is delayed, I need cover for extra pet hotel fees for my cat.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent successfully elicited this specific requirement by probing about delay-related expenses ([17]) and then explicitly confirmed understanding and notation of this unique need ([19]).",
+      "agent_quote": "[19] Okay, I've noted that specific requirement: coverage for additional pet accommodation costs due to a covered return travel delay."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 5,
+    "overall_assessment": "The agent performed well overall, successfully identifying and confirming most standard coverage needs (Medical, Luggage, Delay, Sports/Activities) and the crucial scenario-specific requirement for pet accommodation costs. The agent used effective probing for medical details and delay expenses. However, the agent failed to probe for specific reasons regarding the Trip Cancellation request, missing an opportunity to gather more detailed information relevant to that coverage type's key features and potential exclusions."
+  },
+  "transcript_name": "transcript_pet_care_coverage_3a0390c2-4bed-4db1-8bc5-eb3c81436349",
+  "scenario": "pet_care_coverage"
+}

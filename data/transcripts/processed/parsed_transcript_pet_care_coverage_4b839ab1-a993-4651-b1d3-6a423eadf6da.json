@@ -1,0 +1,138 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Sarah. How may I help you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Need travel insurance quote."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Certainly. I can help gather the details needed for that. Could you tell me where you'll be traveling to?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Japan."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, Japan. And how long will your trip be?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "2 weeks."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, 2 weeks. And how many people will be traveling?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Just myself."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Got it, one traveler. Are there any particular activities planned for the trip that we should be aware of?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes. Skiing."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Noted, skiing. And are there any specific concerns or types of coverage you definitely want included in your plan?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Medical coverage is essential."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood, medical coverage. Anything else?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "What happens if I need to cancel the trip beforehand? Need cover for that."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so coverage for trip cancellation. Noted."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Also concerned about flight delays. Need cover for that too."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Right, coverage for travel delays."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "And what about your belongings? Any specific concerns there?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, luggage. Lost or damaged."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, coverage for lost or damaged luggage. Is there anything else you need cover for?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes. I have a cat. If my return flight is delayed, I need cover for extra pet hotel fees."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood, coverage specifically for additional pet accommodation costs due to travel delays on your return."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Just a couple more details to ensure we get the right information. May I know which age group you fall into? For example, 18-25, 26-40, 41-55?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "41-55."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you. And are there any pre-existing medical conditions we should note?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay. So, just to confirm the requirements you've mentioned: You're traveling solo to Japan for 2 weeks. You require standard medical coverage, trip cancellation cover, cover for travel delays, and lost or damaged luggage cover. You also specifically need coverage for skiing activities, and coverage for additional pet accommodation costs should your return to Singapore be delayed. Is that all correct?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Correct."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Great. Thank you for providing those details. I have recorded your requirements. A colleague from our sales team will prepare a quote based on this information and get back to you shortly. Can I confirm your contact number?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It's 9123 4567."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you, 9123 4567. You should hear from us within one business day. Is there anything else I can assist you with today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No. Thank you."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "You're welcome. Thank you for calling ISS Insurance. Have a good day."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Okay. Bye."
+    }
+]

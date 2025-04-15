@@ -1,0 +1,116 @@
+{
+  "customer_id": "5adcce2e-f3f3-4778-97df-ce6c929a3c80",
+  "personality": {
+    "name": "The Overwhelmed & Stressed",
+    "characteristics": [
+      "Sounds flustered, panicked, or highly emotional (beyond simple anger)",
+      "Overwhelmed by the situation (e.g., accident aftermath, complex claim)",
+      "May have difficulty articulating needs clearly",
+      "Expresses feeling stressed by the process itself",
+      "Needs patience, calming, and clear guidance"
+    ]
+  },
+  "transcript": [
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Thank you for calling ISS Insurance Ltd. My name is Sarah. How may I help you today?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Oh, hello? Yes, hi. I... I need to sort out travel insurance. It’s all becoming a bit much, honestly. I just feel so overwhelmed with everything."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "I understand, planning a trip can certainly feel that way sometimes. Take a deep breath, I'm here to help you figure out what you need. Could you tell me a bit about the trip you're planning? Perhaps where you'll be travelling to?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Right, yes. Sorry. We're planning a trip to Australia. It's supposed to be relaxing, but the planning is just... stressful. We're based in Singapore, so flying from here."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, Australia. And how long will you be away for?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Uh, about 10 days. Yes, 10 days. There will be 2 of us traveling."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Alright, 10 days to Australia for two travellers from Singapore. And may I ask, roughly what age group are the travellers in?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "We're mostly around 41-55 years old. Look, one thing... my husband has high blood pressure. Do we need to declare that? Is it going to be a problem? It’s just another thing to worry about..."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Thank you for letting me know. We'll certainly make a note regarding the high blood pressure. For now, let's focus on understanding all your needs for the trip. Are there any specific activities you plan on doing while in Australia?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Activities... oh goodness, yes. It's... it's mainly a golf trip. That's the main reason we're going. But thinking about it makes me anxious... what if the airline loses my golf clubs? They cost a fortune! That’s definitely something... if they get lost or damaged..."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, so coverage for your luggage, including potential loss or damage, paying particular attention to your golf clubs. I've noted that down. Is there anything else specific to the golf aspect you're concerned about?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Yes! The clubs, definitely. And... what if one of us gets sick? I mean properly sick, needing a doctor or hospital in Australia? Especially with the high blood pressure thing... It's terrifying thinking about getting ill so far from home."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Understood. So you need comprehensive medical coverage for emergencies that might happen during the trip. And we've noted the pre-existing condition. Please continue, you mentioned other concerns related to the golf?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Right, the golf... yes. Okay, what if... what if I've paid for all the green fees in advance, but then, say, I twist my ankle, or the weather is just impossible, and I can't actually play? Can I get reimbursed for the unused rounds? And those golf buggies... they look easy to drive but what if I have an accident and damage one? That could be expensive! It's all these 'what ifs'... And this might sound ridiculous, but a friend told me some policies have a little payout or something if you score a hole-in-one? Is that even a real thing?"
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, let me capture those golf specifics. You're looking for: cover for the golf equipment itself, potential reimbursement for pre-paid green fees if you're unable to play due to covered reasons, cover for accidental damage caused to a golf buggy, and you're asking about a benefit related to achieving a hole-in-one. Noted."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Yes, exactly, all of that. Phew. Okay. Then there’s the travel itself. Last time we flew, we got stuck for hours, delayed. It was a nightmare. Eating horrible airport food, trying to sleep on chairs... If the flight is delayed significantly, is there cover for things like getting a hotel room or meals?"
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "I see. So, you're looking for cover for significant travel delays that could result in extra expenses for accommodation or meals. Is that right?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Yes! That’s it. Honestly, the whole thing is stressful. What if something major happens *before* we even leave? Like, if one of us gets seriously ill just before the trip, or there's a family emergency? We'd have paid for flights, the hotel... we could lose thousands! We need something to cover cancellation, right?"
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, so you're also concerned about the possibility of having to cancel the trip beforehand due to unexpected events like a serious illness or injury, and you want cover for those non-refundable prepaid expenses. I understand."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Let me just quickly summarize the requirements you've mentioned to make sure I haven't missed anything. You're travelling from Singapore to Australia for 10 days. There are two travellers, aged between 41-55, and one has high blood pressure. You're looking for insurance that includes:"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "(Takes a breath) Yes... I think so. That sounds like all the main worries. It’s just... so much to think about. But yes, that list is right."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Thank you for clarifying and sharing all those details. It's helpful to understand exactly what you need. I have noted all these requirements down carefully. The next step is for our team to identify the specific policy options that best meet these needs. Someone will be in contact with you shortly to discuss those options."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Okay. Okay, thank you. Sorry, I know I sound a bit frantic."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Not at all, please don't worry. It's completely understandable. We're here to help make this part easier. Thank you for calling ISS Insurance Ltd. Have a good rest of your day."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "You too. Thanks. Bye."
+    }
+  ],
+  "scenario": "golf_coverage"
+}

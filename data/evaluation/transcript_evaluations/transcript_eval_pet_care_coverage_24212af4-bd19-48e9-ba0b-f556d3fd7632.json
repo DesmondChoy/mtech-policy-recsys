@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for trip cancellation and provided a specific reason (sickness).",
+      "customer_quote": "[12] What happens if *I* have to cancel the trip beforehand? Someone gets sick, or something comes up. I expect a full refund for my travel costs, no questions asked.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement for trip cancellation coverage.",
+      "agent_quote": "[13] Okay, so cover for trip cancellation is a requirement for you. Duly noted."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer requested 'top-tier' medical coverage, mentioning specific needs like emergencies and hospital stays, and also brought up a pre-existing condition.",
+      "customer_quote": "[14] And medical stuff... Just make sure we have top-tier medical coverage overseas for emergencies, hospital stays, the works. [14] One traveler has high blood pressure. Do I *really* need to declare that?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the need for comprehensive medical coverage and appropriately addressed the customer's query about the pre-existing condition, noting its importance.",
+      "agent_quote": "[15] I understand the requirement for comprehensive medical coverage during the trip, including emergencies and hospitalisation. Regarding pre-existing conditions like high blood pressure, it's important information for determining the right policy later. I've noted your need for medical coverage."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about coverage for lost or damaged luggage, providing specific scenarios.",
+      "customer_quote": "[16] And luggage! My bags better be covered properly. What happens if the airline loses them, or if my suitcase gets damaged?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement and proactively probed to confirm if coverage for delayed luggage was also needed.",
+      "agent_quote": "[17] Okay, so you require coverage for potential loss or damage to your luggage, and also cover if it's delayed. Is that correct?"
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer specifically requested coverage for expenses incurred due to travel delays, mentioning hotel nights and meals.",
+      "customer_quote": "[18] And delays! Flights are always delayed these days. If we get stuck in Japan because of some airline muck-up, I expect ISS to cover the extra hotel nights and meals.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement for coverage related to significant travel delays.",
+      "agent_quote": "[19] Understood. So, coverage for expenses incurred due to significant travel delays is another requirement."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer explicitly stated they would be skiing and required full coverage for any incidents related to this activity.",
+      "customer_quote": "[10] Yes, we want to try Skiing. So I need full coverage for that, understand? If anything happens on the slopes, ISS needs to cover it completely.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about specific activities and then specifically acknowledged the requirement for skiing coverage.",
+      "agent_quote": "[9] Are you planning any specific activities during your trip? Sometimes certain activities require specific mention. [11] Okay, I've noted down that you require cover related to skiing activities."
+    },
+    {
+      "coverage_type": "pet_accommodation_costs",
+      "name": "Pet Accommodation Costs (Scenario-Specific)",
+      "result": "PASS",
+      "justification": "The customer clearly stated the scenario-specific requirement for coverage of additional pet hotel costs due to a delayed return flight.",
+      "customer_quote": "[20] If my flight back gets significantly delayed, meaning I can't pick her up from the pet hotel on time, ISS *needs* to cover the extra days she has to stay there. That's non-negotiable.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent specifically acknowledged and confirmed understanding of this unique requirement.",
+      "agent_quote": "[21] Okay, I understand. You're specifically requesting cover for additional pet accommodation costs resulting from a delayed return flight to Singapore. I have noted that requirement down as well."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully identified and confirmed all standard and scenario-specific coverage requirements mentioned by the customer. The agent effectively acknowledged each point, clarified details when necessary (luggage delay), and handled specific concerns like pre-existing conditions and the unique pet accommodation requirement appropriately. The agent's final summary accurately captured all discussed needs."
+  },
+  "transcript_name": "transcript_pet_care_coverage_24212af4-bd19-48e9-ba0b-f556d3fd7632",
+  "scenario": "pet_care_coverage"
+}
