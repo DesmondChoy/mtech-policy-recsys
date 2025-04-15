@@ -101,7 +101,11 @@ const LandingPage: React.FC = () => {
             fullWidth
             disabled={!selectedCustomer || loading}
             sx={{ mt: 1 }}
-            // onClick: navigation logic will be added after data integration
+            onClick={() => {
+              if (selectedCustomer) {
+                window.location.href = `/report/${selectedCustomer}`;
+              }
+            }}
           >
             Continue
           </Button>

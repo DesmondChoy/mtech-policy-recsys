@@ -22,15 +22,13 @@
 - **Landing Page with Login Simulation:**
   - Customer logs in by selecting their ID from a drop-down menu (MVP simplification).
   - After login, user is presented with their personalized dashboard.
-- **Report Dashboard:**
-  - List of all received recommendation reports (with titles, dates, and status).
-  - Quick actions: open, download, share.
-- **Interactive Report Viewer:**
-  - Tabbed or swipeable navigation for:
-    - Policy comparison (side-by-side or card view)
-    - Initial transcript (reasoning and context)
-    - Raw PDFs (embedded viewer)
-  - Actionable insights: highlights, best-fit indicators, detailed breakdowns.
+- **Chrome-Style Tabbed Report Interface:**
+  - Immediately present the user's most recent (or only) recommendation report in a main content area
+  - Provide a browser-like tab bar at the top (inspired by Chrome), with tabs for:
+    - Recommendation (streaming content)
+    - Policy Comparison
+    - Chat Transcript
+    - Raw PDFs
 - **Feedback & Next Steps:**
   - Simple feedback widget (thumbs up/down, comments).
   - Contact advisor button for further queries.
@@ -45,7 +43,7 @@
 ---
 
 ## Summary
-This major change introduces a customer-focused, mobile-friendly web app to address the pain points of limited interactivity, fragmented experience, and lack of transparency. The solution leverages a simple login simulation, a personalized dashboard, and an interactive report viewer, all built on a modern, responsive tech stack. This will significantly improve customer engagement, trust, and usability for the policy recommendation system.
+This major change introduces a customer-focused, mobile-friendly web app to address the pain points of limited interactivity, fragmented experience, and lack of transparency. The solution leverages a simple login simulation, a Chrome-style tabbed report interface, and an interactive report viewer, all built on a modern, responsive tech stack. This will significantly improve customer engagement, trust, and usability for the policy recommendation system.
 
 ---
 
@@ -86,35 +84,41 @@ This major change introduces a customer-focused, mobile-friendly web app to addr
 ### Implementation Plan: Step-by-Step Checklist
 
 #### 1. Project Setup
-- [ ] Create a new feature branch for the UX web app (e.g., `ux-webapp`)
-- [ ] Set up the React project with Vite or Create React App
-- [ ] Install dependencies (Material UI/Chakra UI, React Router, etc.)
-- [ ] Configure project structure (components, pages, assets, utils)
+- [x] Create a new feature branch for the UX web app (e.g., `ux-webapp`)
+- [x] Set up the React project with Vite or Create React App
+- [x] Install dependencies (Material UI/Chakra UI, React Router, etc.)
+- [x] Configure project structure (components, pages, assets, utils)
 
 #### 2. Data Integration Preparation
-- [ ] Identify and document the data sources (customer IDs, requirements, policies, reports)
-- [ ] Implement utility functions to load real data from the backend/scripts/output folders
-- [ ] Define interfaces/types for structured data (TypeScript or PropTypes)
+- [x] Implement utility functions to load real data from the backend/scripts/output folders
+- [x] Define interfaces/types for structured data (TypeScript)
+- [x] Update customer ID drop-down to use real customer IDs from results folder (each folder name is a customer UUID)
+- [x] Utility: Add function to extract customer IDs from results folder (and optionally from data/transcripts/raw/synthetic JSON filenames)
+- [ ] Identify and document the data sources (customer IDs, requirements, policies, reports) in the codebase for maintainability
 
 #### 3. Landing & Login Simulation
 - [x] Design landing page layout (mobile-first)
 - [x] Implement initial customer ID drop-down login component (placeholder data)
-- [ ] Update customer ID drop-down to use real customer IDs from results folder (each folder name is a customer UUID)
-- [ ] Utility: Add function to extract customer IDs from results folder (and optionally from data/transcripts/raw/synthetic JSON filenames)
-- [ ] Create logic to load dashboard upon selection
+- [ ] Create logic to load the Chrome-style tabbed report interface upon selection
 
-#### 4. Dashboard: Report Listing
-- [ ] Fetch and display list of reports for selected customer
-- [ ] Show report metadata (title, date, status)
-- [ ] Add quick actions (open, download, share)
-- [ ] Ensure responsive, touch-friendly UI
+#### 4. Chrome-Style Tabbed Report Interface (Post-Login)
+- [ ] After selecting a customer ID (UUID) and clicking Continue, immediately present the user's most recent (or only) recommendation report in a main content area
+- [ ] Provide a browser-like tab bar at the top (inspired by Chrome), with tabs for:
+    - Recommendation (streaming content from `results/{uuid}/recommendation_report_{uuid}.md`)
+    - Policy Comparison (dropdown to select insurer, renders `results/{uuid}/policy_comparison_report_{insurer}.md`)
+    - Customer Requirements (renders `data/extracted_customer_requirements/requirements_{scenario}_{uuid}.json` as pretty JSON)
+    - Transcript (renders `data/transcripts/raw/synthetic/transcript_{scenario}_{uuid}.json` as pretty JSON or formatted chat)
+    - Policy PDFs (shows all four insurer PDFs from `data/policies/raw/`, one per insurer, with viewer or download option)
+- [ ] All tabs pertain to the selected customer context (UUID) except Policy PDFs, which are global
+- [ ] Animate or stream recommendation content for a dynamic feel (typewriter effect or similar)
+- [ ] Prominently display a 'Switch Customer' button in the AppBar
 
-#### 5. Report Viewer: Tabbed Experience
-- [ ] Implement tabbed/swipeable navigation (Comparison, Transcript, PDFs)
-- [ ] Render policy comparison view (cards, highlights, best-fit indicators)
-- [ ] Display transcript (chat/timeline or readable format)
-- [ ] Embed PDF viewer for raw documents
-- [ ] Add actionable insights and breakdowns
+#### 5. Tab Content Details
+- [ ] **Recommendation Tab:** Render Markdown as rich text from the appropriate file
+- [ ] **Policy Comparison Tab:** Dropdown menu for insurer selection; render selected Markdown file as rich text
+- [ ] **Customer Requirements Tab:** Render JSON as pretty-printed, rich text
+- [ ] **Transcript Tab:** Render JSON as pretty-printed, rich text or chat timeline
+- [ ] **Policy PDFs Tab:** Display all four insurer PDFs (one per insurer) using an embedded PDF viewer or download link; deduplicate if multiple files per insurer
 
 #### 6. Feedback & Contact
 - [ ] Add feedback widget (thumbs up/down, comments)
@@ -132,3 +136,17 @@ This major change introduces a customer-focused, mobile-friendly web app to addr
 #### 9. Documentation & Handover
 - [ ] Document setup, usage, and key design decisions in README
 - [ ] Update Memory Bank with implementation notes and lessons learned
+
+---
+
+**Data Mapping Summary:**
+- **Customer ID (UUID):** Used for all file lookups per customer
+- **Recommendation:** `results/{uuid}/recommendation_report_{uuid}.md`
+- **Policy Comparison:** `results/{uuid}/policy_comparison_report_{insurer}.md` (dropdown for insurer)
+- **Customer Requirements:** `data/extracted_customer_requirements/requirements_{scenario}_{uuid}.json`
+- **Transcript:** `data/transcripts/raw/synthetic/transcript_{scenario}_{uuid}.json`
+- **Policy PDFs:** All four PDFs from `data/policies/raw/` (one per insurer, shown for any customer)
+
+**Rendering:**
+- Markdown and JSON files are rendered as rich text (Markdown viewer, pretty JSON)
+- PDFs are displayed using an embedded PDF viewer

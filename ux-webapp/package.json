@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predev": "python ../src/utils/extract_customer_ids.py",
+    "sync-public-assets": "node ./scripts/sync-public-assets.cjs",
+    "predev": "npm run sync-public-assets && python ../src/utils/extract_customer_ids.py",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
@@ -17,7 +18,9 @@
     "@mui/material": "^7.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.5.0"
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.5.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
