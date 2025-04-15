@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The agent prompted for cancellation concerns, and the customer explicitly stated a critical, non-negotiable requirement: needing coverage if they have to cancel the trip to attend their sister's wedding. The agent acknowledged and noted this specific scenario.",
+      "customer_quote": "[18] Yes, actually. This is very important. There's a small chance my sister might schedule her wedding during our travel dates. If she does, I *have* to cancel this trip and attend. I need absolute certainty that I will be fully reimbursed if I cancel for her wedding. This is non-negotiable.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent appropriately asked about potential trip interruptions ([17]) and then specifically confirmed and noted the customer's critical requirement regarding cancellation for the sister's wedding ([19], [21]).",
+      "agent_quote": "[19] Okay, I understand. So, you specifically require information on trip cancellation coverage, and critically, you want to know if cancelling to attend your sister's wedding would be a covered reason under the policy. I have noted this specific scenario as a key requirement."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The agent asked about health aspects, and the customer confirmed a pre-existing condition (high blood pressure) and demanded full medical coverage regardless.",
+      "customer_quote": "[12] Look, one traveler has high blood pressure, but it's managed. That shouldn't exclude anything. I expect full medical coverage regardless. We pay enough for insurance.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively probed for health conditions ([11]) and acknowledged the customer's statement about the pre-existing condition and need for medical coverage information ([13], [21]).",
+      "agent_quote": "[11] Are there any particular health aspects I should note, for instance, any pre-existing medical conditions for either traveler?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The agent asked about belongings, and the customer detailed their requirements for coverage of expensive luggage, including immediate reimbursement for loss/damage and funds for essentials during delays.",
+      "customer_quote": "[14] Absolutely! My luggage is expensive. If it gets lost or damaged, I expect immediate reimbursement, not some runaround. And if it's delayed, I need money for essentials right away, not after waiting 12 hours.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent prompted the customer about concerns regarding belongings ([13]) and accurately noted the requirements for lost, damaged, and delayed luggage coverage ([15], [21]).",
+      "agent_quote": "[13] What about concerns regarding your belongings during the trip?"
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The agent asked about potential disruptions like flight delays, and the customer confirmed they require coverage for additional accommodation and meals due to significant delays.",
+      "customer_quote": "[16] You bet! Flights are always delayed these days. If our flight gets significantly delayed and we need extra accommodation or meals, ISS needs to cover that. No excuses.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about potential disruptions like flight delays ([15]) and correctly noted the requirement for coverage related to significant travel delays ([17], [21]).",
+      "agent_quote": "[15] Are there any other potential disruptions you're concerned about, such as flight delays?"
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The agent specifically asked about sports/adventure activities, and the customer confirmed they plan to do White Water Rafting and require full coverage for it.",
+      "customer_quote": "[10] Yes, we plan to do White Water Rafting. Make sure that's fully covered. I don't want any issues if something happens. It needs to be covered, period.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about participation in sports or adventure activities ([9]) and noted the specific requirement for white water rafting coverage ([11], [21]).",
+      "agent_quote": "[9] Will you be participating in any specific sports or adventure activities during your trip?"
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered information on all standard coverage types relevant to the customer's stated needs and travel plans. The agent used appropriate probing questions to elicit details about medical conditions, luggage concerns, delay concerns, and adventure activities. Crucially, the agent identified and confirmed the customer's specific, non-negotiable requirement regarding trip cancellation for a family wedding, which was the key element of the 'uncovered_cancellation_reason' scenario. The agent maintained professionalism despite the customer's demanding tone and accurately summarized all requirements at the end."
+  },
+  "transcript_name": "transcript_uncovered_cancellation_reason_4cf8d8ab-bb79-4c24-9724-15efd54457f7",
+  "scenario": "uncovered_cancellation_reason"
+}

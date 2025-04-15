@@ -1,0 +1,89 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ001\",\n  \"requirement_summary\": \"Travel insurance coverage for a solo traveler to Japan for 2 weeks with specific coverage needs.\",\n  \"detailed_description\": \"The customer requires travel insurance for a 2-week trip to Japan. Key coverage requirements include medical coverage, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs for delays.\",\n  \"travel_origin\": null,\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost or damaged luggage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs due to travel delays.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"skiing\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"pet accommodation\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ001",
+        "requirement_summary": "Travel insurance coverage for a solo traveler to Japan for 2 weeks with specific coverage needs.",
+        "detailed_description": "The customer requires travel insurance for a 2-week trip to Japan. Key coverage requirements include medical coverage, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs for delays.",
+        "travel_origin": null,
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "medical coverage",
+            "trip cancellation",
+            "travel delays",
+            "lost or damaged luggage"
+        ],
+        "pre_existing_conditions": [],
+        "medical_needs": [
+            "medical coverage"
+        ],
+        "activities_to_cover": [
+            "skiing"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Coverage for additional pet accommodation costs due to travel delays.",
+        "keywords": [
+            "travel insurance",
+            "Japan",
+            "skiing",
+            "medical coverage",
+            "trip cancellation",
+            "travel delays",
+            "lost luggage",
+            "pet accommodation"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Sarah. How may I help you today?\nCustomer: Need travel insurance quote.\nCustomer Service Agent: Certainly. I can help gather the details needed for that. Could you tell me where you'll be traveling to?\nCustomer: Japan.\nCustomer Service Agent: Alright, Japan. And how long will your trip be?\nCustomer: 2 weeks.\nCustomer Service Agent: Okay, 2 weeks. And how many people will be traveling?\nCustomer: Just myself.\nCustomer Service Agent: Got it, one traveler. Are there any particular activities planned for the trip that we should be aware of?\nCustomer: Yes. Skiing.\nCustomer Service Agent: Noted, skiing. And are there any specific concerns or types of coverage you definitely want included in your plan?\nCustomer: Medical coverage is essential.\nCustomer Service Agent: Understood, medical coverage. Anything else?\nCustomer: What happens if I need to cancel the trip beforehand? Need cover for that.\nCustomer Service Agent: Okay, so coverage for trip cancellation. Noted.\nCustomer: Also concerned about flight delays. Need cover for that too.\nCustomer Service Agent: Right, coverage for travel delays.\nCustomer Service Agent: And what about your belongings? Any specific concerns there?\nCustomer: Yes, luggage. Lost or damaged.\nCustomer Service Agent: Okay, coverage for lost or damaged luggage. Is there anything else you need cover for?\nCustomer: Yes. I have a cat. If my return flight is delayed, I need cover for extra pet hotel fees.\nCustomer Service Agent: Understood, coverage specifically for additional pet accommodation costs due to travel delays on your return.\nCustomer Service Agent: Just a couple more details to ensure we get the right information. May I know which age group you fall into? For example, 18-25, 26-40, 41-55?\nCustomer: 41-55.\nCustomer Service Agent: Thank you. And are there any pre-existing medical conditions we should note?\nCustomer: No.\nCustomer Service Agent: Okay. So, just to confirm the requirements you've mentioned: You're traveling solo to Japan for 2 weeks. You require standard medical coverage, trip cancellation cover, cover for travel delays, and lost or damaged luggage cover. You also specifically need coverage for skiing activities, and coverage for additional pet accommodation costs should your return to Singapore be delayed. Is that all correct?\nCustomer: Correct.\nCustomer Service Agent: Great. Thank you for providing those details. I have recorded your requirements. A colleague from our sales team will prepare a quote based on this information and get back to you shortly. Can I confirm your contact number?\nCustomer: It's 9123 4567.\nCustomer Service Agent: Thank you, 9123 4567. You should hear from us within one business day. Is there anything else I can assist you with today?\nCustomer: No. Thank you.\nCustomer Service Agent: You're welcome. Thank you for calling ISS Insurance. Have a good day.\nCustomer: Okay. Bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ001\",\n  \"requirement_summary\": \"Travel insurance coverage for a solo traveler to Japan for 2 weeks with specific coverage needs.\",\n  \"detailed_description\": \"The customer requires travel insurance for a 2-week trip to Japan. Key coverage requirements include medical coverage, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs for delays.\",\n  \"travel_origin\": null,\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost or damaged luggage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs due to travel delays.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"skiing\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"pet accommodation\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ001",
+                "requirement_summary": "Travel insurance coverage for a solo traveler to Japan for 2 weeks with specific coverage needs.",
+                "detailed_description": "The customer requires travel insurance for a 2-week trip to Japan. Key coverage requirements include medical coverage, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs for delays.",
+                "travel_origin": null,
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "medical coverage",
+                    "trip cancellation",
+                    "travel delays",
+                    "lost or damaged luggage"
+                ],
+                "pre_existing_conditions": [],
+                "medical_needs": [
+                    "medical coverage"
+                ],
+                "activities_to_cover": [
+                    "skiing"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Coverage for additional pet accommodation costs due to travel delays.",
+                "keywords": [
+                    "travel insurance",
+                    "Japan",
+                    "skiing",
+                    "medical coverage",
+                    "trip cancellation",
+                    "travel delays",
+                    "lost luggage",
+                    "pet accommodation"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 14731,
+        "prompt_tokens": 12225,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 2506,
+        "successful_requests": 9
+    }
+}

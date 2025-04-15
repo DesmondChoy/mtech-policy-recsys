@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Trip Cancellation coverage and provided specific reasons like illness or natural disasters.",
+      "customer_quote": "[12] And what if one of us gets sick before we go? Or some natural disaster happens? The whole trip cost goes down the drain! I need Trip Cancellation cover that actually pays out for genuine reasons like illness or emergencies. No excuses.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement and confirmed the specific reasons mentioned by the customer.",
+      "agent_quote": "[13] Okay, so Trip Cancellation coverage for unforeseen events like illness or natural disasters."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Medical Coverage and specified needs like doctor visits, hospital stays, and emergency treatment.",
+      "customer_quote": "[14] Yes, that's crucial! If we need a doctor or end up in hospital over there, I expect Medical Coverage. Proper cover, understand? Emergency treatment, hospital stays, the lot.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement and appropriately probed for relevant details like pre-existing conditions, which is crucial for medical coverage.",
+      "agent_quote": "[15] Comprehensive medical coverage during the trip. Got it. Are there any pre-existing medical conditions I should note for either traveller? Or any specific medical equipment you'll be bringing?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Lost/Damaged Luggage coverage and provided specific details about wanting full compensation and cover for essential purchases during delays.",
+      "customer_quote": "[10] First off, airlines are useless. If they lose our bags or damage them, I expect full compensation. This isn't negotiable. So, Lost/Damaged Luggage cover is essential, including for delays where we have to buy essentials.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed understanding of the requirement, including the aspect of delays.",
+      "agent_quote": "[11] Understood, coverage for lost, damaged, or delayed luggage."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Travel Delays coverage and specified the need for coverage for extra hotel nights and meals due to significant delays.",
+      "customer_quote": "[20] Yes! Travel Delays. Last time we flew, we got stuck for nearly a whole day! ... If our flight or train is significantly delayed, I expect the insurance to cover extra hotel nights and meals.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed understanding of the requirement and the specific expenses the customer wants covered.",
+      "agent_quote": "[21] Understood. Coverage for significant travel delays, including accommodation and meal expenses."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Sports and Adventure Activities coverage and specified the activity (Hiking) and the concern (accident/injury).",
+      "customer_quote": "[8] Yes, we plan to do some Hiking. Nothing extreme, but knowing our luck, something could go wrong. I need to know we're covered if there's an accident or injury during the hike. We need proper Sports and Adventure Activities coverage for that, specifically for hiking.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the specific activity requirement.",
+      "agent_quote": "[9] Alright, cover for hiking activities is noted."
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered all standard coverage requirements mentioned by the customer. The customer clearly stated their needs for Trip Cancellation, Medical Coverage, Lost/Damaged Luggage, Travel Delays, and Sports/Adventure Activities (Hiking), providing specific details for each. The agent confirmed understanding for each point and probed appropriately where necessary (e.g., pre-existing conditions for medical). The agent also correctly acknowledged and noted the customer's specific request regarding the double payout feature for accidental death on public transport, confirming it would be checked. The final summary provided by the agent accurately reflected all discussed requirements."
+  },
+  "transcript_name": "transcript_public_transport_double_cover_54acb620-926b-4c0a-956f-be9f6e2d9e52",
+  "scenario": "public_transport_double_cover"
+}

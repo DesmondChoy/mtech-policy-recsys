@@ -1,0 +1,75 @@
+**Recommended Tier:** : Preferred
+
+**Justification:**
+
+Comparing the INCOME Classic, Deluxe, and Preferred tiers: All three tiers cover the basic requirements for Travel Delay, standard Trip Cancellation (for unforeseen events like illness/injury), Luggage Loss/Damage/Delay (after 6 hours), and Adventure Activities including White Water Rafting, albeit with varying monetary limits. Classic offers the lowest limits (e.g., $250k Medical Overseas, $5k Cancellation, $3k Baggage), Deluxe offers mid-range limits (e.g., $500k Medical Overseas, $10k Cancellation, $5k Baggage, Unlimited Evacuation), and Preferred offers the highest limits (e.g., $1M Medical Overseas, $15k Cancellation, $8k Baggage, Unlimited Evacuation).
+
+However, a critical analysis reveals significant gaps across **all** tiers based on the provided policy data:
+1.  **Pre-existing Conditions:** The Classic and Deluxe tier details explicitly state standard plans do not cover pre-existing medical conditions. While not explicitly stated in the provided Preferred data snippet, it's standard for this policy line. Therefore, none of the tiers meet the requirement for "Full medical coverage including pre-existing conditions" for high blood pressure based on the standard policy terms provided.
+2.  **Trip Cancellation for Sister's Wedding:** Standard trip cancellation clauses cover unforeseen events (like serious illness/death, major disasters). Cancelling *specifically* to attend a sister's wedding, especially when the possibility was known ("small chance"), is highly unlikely to be a covered reason under the "unforeseen circumstances" or "specified reasons" definitions in any of the tiers. This non-negotiable requirement is not met.
+
+Given the No Mix-and-Match rule, the customer must choose one tier. Since none fully meet the critical requirements, the decision rests on which tier best covers the *remaining* needs and aligns with the desire for "comprehensive" coverage and a flexible budget. The Preferred tier provides the highest benefit limits for Medical Expenses Overseas (albeit excluding the pre-existing condition), Trip Cancellation (for standard reasons), Baggage Loss/Damage, Baggage Delay, and Travel Delay, along with Unlimited Emergency Medical Evacuation (for under 70s).
+
+Therefore, the **Preferred** tier is recommended as it offers the most comprehensive coverage and highest limits for the requirements that *can* be met by these standard policies, despite failing to cover the specific pre-existing condition and the non-standard cancellation reason (sister's wedding). The significant gaps regarding pre-existing conditions and the specific cancellation reason must be communicated clearly to the customer.
+
+## Detailed Coverage Analysis for Recommended Tier: Preferred
+
+### Requirement: Medical Coverage (including pre-existing condition)
+
+*   **Policy Coverage:** Medical expenses overseas
+    *   **Base Limits:** [{'type': 'Adult 70 years old or over (combined for sections 14, 18 and 19)', 'limit': 350000, 'basis': None}, {'type': 'Adult under 70 years old', 'limit': 1000000, 'basis': None}, {'type': 'Child', 'limit': 300000, 'basis': None}, {'type': 'Family total', 'limit': 3000000, 'basis': None}, {'type': 'Limit for medical aids and equipment - Per insured person', 'limit': 1500, 'basis': None}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Covers necessary medical expenses incurred overseas due to injury or sickness, including treatment by a Chinese medicine practitioner or chiropractor (subject to Section 16 limits).', 'source_location': "Page 2, Item 5 & Page 3, 'Coverage for medical expenses' & Page 7, Section 14"}, {'detail_snippet': 'Includes coverage up to $1,000,000 for treatment relating to COVID-19 while overseas (based on Preferred plan for adult under 70).', 'source_location': "Page 3, 'Coverage for medical expenses'"}, {'detail_snippet': 'Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.', 'source_location': 'Page 9, Section 26'}, {'detail_snippet': 'COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.', 'source_location': 'Page 9, Section 27 & Page 11, Note 10'}, {'detail_snippet': 'Post-departure purchase extension applies to this benefit.', 'source_location': 'Page 4 & Page 9, Section 28'}]
+*   **Policy Coverage:** Emergency medical evacuation
+    *   **Base Limits:** [{'type': 'Adult 70 years old or over', 'limit': 'See limit under section 14', 'basis': None}, {'type': 'Adult under 70 years old', 'limit': 'Unlimited', 'basis': None}, {'type': 'Child', 'limit': 'Unlimited', 'basis': None}, {'type': 'Family total', 'limit': 2000000, 'basis': None}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Covers expenses for emergency medical evacuation to Singapore or the nearest appropriate medical facility if necessary due to serious injury or sickness overseas. Limit for Adult 70+ is combined with Sections 14 and 19 (S$350,000 total).', 'source_location': 'Page 4 & Page 8, Section 18'}, {'detail_snippet': 'Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.', 'source_location': 'Page 9, Section 26'}, {'detail_snippet': 'COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.', 'source_location': 'Page 9, Section 27 & Page 11, Note 10'}, {'detail_snippet': 'Post-departure purchase extension applies to this benefit.', 'source_location': 'Page 4 & Page 9, Section 28'}]
+*   **Coverage Assessment:** Partially Met: Provides high limits for general medical expenses and unlimited evacuation (for under 70s), but standard policy terms (as indicated in Classic/Deluxe tiers and typically applicable across the product line) exclude pre-existing conditions like high blood pressure.
+
+### Requirement: Lost, Damaged, or Delayed Luggage Coverage
+
+*   **Policy Coverage:** Loss or damage of baggage and personal belongings
+    *   **Base Limits:** [{'type': 'Overall section limit - Per insured person', 'limit': 8000, 'basis': None}, {'type': 'Overall section limit - Family total', 'limit': 20000, 'basis': None}, {'type': 'Limit for laptop - Per insured person', 'limit': 1000, 'basis': None}, {'type': 'Limit for watches, jewellery or valuables in total - Per insured person', 'limit': 750, 'basis': None}, {'type': 'Limit for other items (for each item, set or pair) - Per insured person', 'limit': 500, 'basis': None}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Covers accidental loss or damage to baggage, clothing, personal belongings, and portable electronic/electrical equipment during the trip.', 'source_location': 'Page 6, Section 10'}, {'detail_snippet': 'Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.', 'source_location': 'Page 9, Section 26'}, {'detail_snippet': 'COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.', 'source_location': 'Page 9, Section 27 & Page 11, Note 10'}, {'detail_snippet': 'Post-departure purchase extension applies to this benefit.', 'source_location': 'Page 9, Section 28'}]
+*   **Policy Coverage:** Baggage delay
+    *   **Base Limits:** [{'type': 'Overall section limit - Per insured person', 'limit': 2000, 'basis': None}, {'type': 'Family total (Overseas delay)', 'limit': 4000, 'basis': None}, {'type': 'Adult - Overseas delay', 'limit': 200, 'basis': 'every six hours of delay'}, {'type': 'Child - Overseas delay', 'limit': 50, 'basis': 'every six hours of delay'}, {'type': 'Adult - Delay arriving in Singapore', 'limit': 200, 'basis': 'after six hours of delay'}, {'type': 'Child - Delay arriving in Singapore', 'limit': 50, 'basis': 'after six hours of delay'}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Payable for delay of checked-in baggage for more than six consecutive hours upon arrival at destination overseas or back in Singapore.', 'source_location': 'Page 6, Section 9'}, {'detail_snippet': 'Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.', 'source_location': 'Page 9, Section 26'}, {'detail_snippet': 'COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.', 'source_location': 'Page 9, Section 27 & Page 11, Note 10'}, {'detail_snippet': 'Post-departure purchase extension applies to this benefit.', 'source_location': 'Page 9, Section 28'}]
+*   **Coverage Assessment:** Partially Met: Provides high limits for loss/damage and delay (triggering after 6 hours, meeting customer's timeframe preference over 12 hours). However, the customer's expectation of "immediate reimbursement" for loss/damage is related to claims processing speed, which cannot be guaranteed by any policy.
+
+### Requirement: Adventure Activities Coverage (White Water Rafting)
+
+*   **Policy Coverage:** Adventurous activities
+    *   **Base Limits:** [{'type': 'Covered under relevant sections', 'limit': 'Subject to section limits', 'basis': None}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Covers participation in recreational activities commonly available to the public for leisure, provided safety procedures are followed, under guidance/supervision if available, and not excluded. Examples: scuba diving (PADI certified or with instructor, max depth per certification/30m), paddleboarding, white water rafting, skiing, snowboarding, snowmobiling, bungee jumping, skydiving, paragliding, abseiling, hiking, trekking (below 4,000m, public access or organised tour/guide), motorcycling, hot air ballooning.', 'source_location': "Page 2, Item 3 & Page 3, 'Coverage for adventurous activities'"}, {'detail_snippet': 'Scuba diving requires PADI (or similar) certification diving with a similarly certified buddy, or diving with a qualified instructor. Max depth as per certification or 30m, whichever is shallower.', 'source_location': 'Page 10, Note 6'}, {'detail_snippet': 'Trekking covered below 4,000m if in a public area without restriction, organised by a recognised commercial operator, or under licensed guide/instructor supervision with safety compliance.', 'source_location': 'Page 10, Note 7'}, {'detail_snippet': 'Excludes extreme sports involving speed, height, danger, high physical exertion, specialized gear, or stunts.', 'source_location': 'Page 10, Note 2'}]
+*   **Coverage Assessment:** Fully Met: White Water Rafting is listed as a covered leisure activity, subject to standard safety conditions and exclusions for extreme sports.
+
+### Requirement: Travel Delay Coverage
+
+*   **Policy Coverage:** Travel delay
+    *   **Base Limits:** [{'type': 'Overall section limit - Per insured person', 'limit': 2000, 'basis': None}, {'type': 'Family total (Overseas delay)', 'limit': 4000, 'basis': None}, {'type': 'Adult - Overseas delay', 'limit': 100, 'basis': 'every six hours of delay'}, {'type': 'Child - Overseas delay', 'limit': 50, 'basis': 'every six hours of delay'}, {'type': 'Adult - Delay while in Singapore', 'limit': 150, 'basis': 'after six hours of delay'}, {'type': 'Child - Delay while in Singapore', 'limit': 50, 'basis': 'after six hours of delay'}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Payable if the scheduled public transport is delayed for more than six consecutive hours and the delay is not caused by you.', 'source_location': "Page 2, Item 4 & Page 3, 'Coverage for unexpected travel delays' & Page 5, Section 5 & Page 10, Note 3"}, {'detail_snippet': 'Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.', 'source_location': 'Page 9, Section 26'}, {'detail_snippet': 'COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.', 'source_location': 'Page 9, Section 27 & Page 11, Note 10'}, {'detail_snippet': 'Post-departure purchase extension applies to this benefit.', 'source_location': 'Page 9, Section 28'}]
+*   **Coverage Assessment:** Fully Met: Provides coverage after a 6-hour delay with the highest overall limit ($2000 per person) among the tiers.
+
+### Requirement: Trip Cancellation Coverage (specifically for sister's wedding)
+
+*   **Policy Coverage:** Cancelling your trip
+    *   **Base Limits:** [{'type': 'Per insured person', 'limit': 15000, 'basis': None}, {'type': 'Family total', 'limit': 45000, 'basis': None}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Covers non-refundable overseas transport and accommodation expenses paid in advance if the trip is cancelled due to specified reasons.', 'source_location': 'Page 2, Item 1 & Page 5, Section 1'}, {'detail_snippet': 'COVID-19 related cancellation is covered up to $15,000 if it results in serious sickness. The event must occur after policy purchase and within 30 days before leaving Singapore. Policy must be bought three days (or earlier) before departure unless the event is accidental.', 'source_location': "Page 3, 'Up to $15,000...' & Page 10, Note 5 & Page 11, Note 10"}, {'detail_snippet': 'Full terrorism cover applies up to the benefit limit or terrorism limit, whichever is lower.', 'source_location': 'Page 9, Section 26'}, {'detail_snippet': 'COVID-19 cover applies subject to fulfilling vaccination/testing requirements and policy conditions.', 'source_location': 'Page 9, Section 27 & Page 11, Note 10'}]
+*   **Coverage Assessment:** Not Met: While offering a high cancellation limit ($15,000), the coverage applies only for "specified reasons". Attending a family wedding is not typically listed as a standard specified/unforeseen reason for cancellation in travel insurance policies. The customer's non-negotiable demand for guaranteed reimbursement for this specific reason is not met.
+
+## Summary for Recommended Tier: Preferred
+
+*   **Strengths:**
+    *   Provides the highest benefit limits among the INCOME tiers for Medical Expenses Overseas ($1M for under 70s), Trip Cancellation ($15k), Baggage Loss/Damage ($8k), Baggage Delay ($2k), and Travel Delay ($2k).
+    *   Offers Unlimited Emergency Medical Evacuation for travelers under 70.
+    *   Covers the specified Adventure Activity (White Water Rafting).
+    *   Meets the customer's requirement for Baggage/Travel delay coverage trigger (after 6 hours).
+*   **Weaknesses/Gaps:**
+    *   Medical Coverage (including pre-existing condition): Not Met - Standard policy terms likely exclude pre-existing conditions like high blood pressure.
+    *   Trip Cancellation Coverage (specifically for sister's wedding): Not Met - This specific reason for cancellation is highly unlikely to be covered under the policy's "specified reasons".
+    *   Lost, Damaged, or Delayed Luggage Coverage: Partially Met - Cannot guarantee the customer's expectation of "immediate reimbursement" due to necessary claims processing time.

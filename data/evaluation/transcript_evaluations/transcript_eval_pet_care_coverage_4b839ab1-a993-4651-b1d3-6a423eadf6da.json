@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "FAIL",
+      "justification": "The customer mentioned needing coverage for trip cancellation, but provided no specific details about covered reasons (e.g., illness, death, natural disaster). The agent did not probe for these details.",
+      "customer_quote": "[14] Customer: What happens if I need to cancel the trip beforehand? Need cover for that.",
+      "agent_performance": "FAIL",
+      "agent_performance_justification": "The agent acknowledged the request but did not probe for any specific scenarios or reasons for cancellation the customer might be concerned about, which are key features of this coverage.",
+      "agent_quote": "[15] Customer Service Agent: Okay, so coverage for trip cancellation. Noted."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "FAIL",
+      "justification": "The customer stated medical coverage was essential, but provided no specific details about the type of medical events they were concerned about (e.g., emergency treatment, hospital stays). The agent only asked about pre-existing conditions, not the specifics of the desired coverage.",
+      "customer_quote": "[12] Customer: Medical coverage is essential.",
+      "agent_performance": "FAIL",
+      "agent_performance_justification": "The agent acknowledged the need for medical coverage and asked about pre-existing conditions, but failed to probe for specific details regarding the type or extent of medical coverage required (e.g., emergency treatment, hospital stays, doctor visits).",
+      "agent_quote": "[13] Customer Service Agent: Understood, medical coverage. Anything else? ... [25] Customer Service Agent: And are there any pre-existing medical conditions we should note?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "FAIL",
+      "justification": "The customer mentioned needing coverage for lost or damaged luggage, but provided no specific details (e.g., concerns about specific items, value). The agent did not probe for further information.",
+      "customer_quote": "[19] Customer: Yes, luggage. Lost or damaged.",
+      "agent_performance": "FAIL",
+      "agent_performance_justification": "The agent confirmed the requirement but did not ask any follow-up questions to understand the specifics, such as the value of belongings or concerns about particular items.",
+      "agent_quote": "[20] Customer Service Agent: Okay, coverage for lost or damaged luggage."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "FAIL",
+      "justification": "The customer expressed concern about flight delays and requested coverage, but provided no specific details (e.g., minimum delay duration, types of expenses like accommodation/meals). The agent did not probe for these specifics.",
+      "customer_quote": "[16] Customer: Also concerned about flight delays. Need cover for that too.",
+      "agent_performance": "FAIL",
+      "agent_performance_justification": "The agent acknowledged the need for travel delay coverage but did not ask clarifying questions about the customer's specific concerns or needs related to delays (e.g., minimum delay threshold, coverage for accommodation/meals).",
+      "agent_quote": "[17] Customer Service Agent: Right, coverage for travel delays."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The agent proactively asked about planned activities, and the customer specified 'Skiing'. This provides the necessary detail for this coverage type.",
+      "customer_quote": "[10] Customer: Yes. Skiing.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent appropriately probed for planned activities and noted the specific activity (skiing) mentioned by the customer.",
+      "agent_quote": "[9] Customer Service Agent: Are there any particular activities planned for the trip that we should be aware of? ... [11] Customer Service Agent: Noted, skiing."
+    },
+    {
+      "coverage_type": "pet_care_coverage",
+      "name": "Pet Accommodation Costs",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned the scenario-specific requirement for coverage of extra pet hotel fees for their cat if their return flight is delayed, providing clear details.",
+      "customer_quote": "[21] Customer: Yes. I have a cat. If my return flight is delayed, I need cover for extra pet hotel fees.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly understood and confirmed the specific, non-standard requirement regarding pet accommodation costs due to return travel delays.",
+      "agent_quote": "[22] Customer Service Agent: Understood, coverage specifically for additional pet accommodation costs due to travel delays on your return."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 2,
+    "overall_assessment": "The agent successfully identified and confirmed the standard coverage types explicitly requested by the customer, as well as the specific requirements for skiing and pet accommodation costs. However, the agent failed to probe for necessary details for the standard coverage types (Trip Cancellation, Medical, Luggage, Travel Delays). While the *need* for these coverages was captured, the lack of specific details means the gathered information is incomplete according to the evaluation criteria, potentially leading to a quote that doesn't fully align with the customer's specific concerns or needs within those broad categories. Agent performance was adequate in confirming stated needs but poor in eliciting crucial details for standard coverages."
+  },
+  "transcript_name": "transcript_pet_care_coverage_4b839ab1-a993-4651-b1d3-6a423eadf6da",
+  "scenario": "pet_care_coverage"
+}

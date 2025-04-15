@@ -1,0 +1,95 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for trip to Australia for two travelers.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance coverage including medical coverage with a pre-existing condition, luggage coverage, adventure activities coverage, travel delay coverage, and trip cancellation coverage specifically due to a family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"Three weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage Coverage\",\n    \"Adventure Activities Coverage\",\n    \"Travel Delay Coverage\",\n    \"Trip Cancellation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Full medical coverage including pre-existing conditions.\"\n  ],\n  \"activities_to_cover\": [\n    \"White Water Rafting\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Customer demands guaranteed reimbursement for trip cancellation due to attending sister's wedding, and expects immediate reimbursement for lost or damaged luggage.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Australia\",\n    \"medical coverage\",\n    \"luggage coverage\",\n    \"white water rafting\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"high blood pressure\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ-001",
+        "requirement_summary": "Travel insurance requirements for trip to Australia for two travelers.",
+        "detailed_description": "Customer requires comprehensive travel insurance coverage including medical coverage with a pre-existing condition, luggage coverage, adventure activities coverage, travel delay coverage, and trip cancellation coverage specifically due to a family wedding.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Australia",
+        "travel_duration": "Three weeks",
+        "insurance_coverage_type": [
+            "Medical Coverage",
+            "Lost, Damaged, or Delayed Luggage Coverage",
+            "Adventure Activities Coverage",
+            "Travel Delay Coverage",
+            "Trip Cancellation Coverage"
+        ],
+        "pre_existing_conditions": [
+            "High blood pressure"
+        ],
+        "medical_needs": [
+            "Full medical coverage including pre-existing conditions."
+        ],
+        "activities_to_cover": [
+            "White Water Rafting"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Customer demands guaranteed reimbursement for trip cancellation due to attending sister's wedding, and expects immediate reimbursement for lost or damaged luggage.",
+        "keywords": [
+            "travel insurance",
+            "Australia",
+            "medical coverage",
+            "luggage coverage",
+            "white water rafting",
+            "travel delays",
+            "trip cancellation",
+            "high blood pressure"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd. My name is Sarah. How may I help you gather your travel insurance requirements today?\nCustomer: Finally! Took long enough to get through. Yes, I need travel insurance. And I need it sorted quickly, I don't have all day.\nCustomer Service Agent: Certainly, I can help with gathering the details needed. To start, could you let me know where you'll be travelling to from Singapore?\nCustomer: Australia. We're based in Singapore, obviously.\nCustomer Service Agent: Okay, Australia. And how long will your trip be?\nCustomer: Three weeks. It's a trip for 2 of us.\nCustomer Service Agent: Three weeks for two travelers to Australia. Thank you. And may I know the approximate age group of the travelers?\nCustomer: We're mostly around 41-55 years old. Why does that matter? Just get me the best plan.\nCustomer Service Agent: It helps understand the general profile for insurance needs. Thank you. Will you be participating in any specific sports or adventure activities during your trip?\nCustomer: Yes, we plan to do White Water Rafting. Make sure that's fully covered. I don't want any issues if something happens. It needs to be covered, period.\nCustomer Service Agent: Okay, I've noted down the requirement to consider coverage related to participation in white water rafting. Are there any particular health aspects I should note, for instance, any pre-existing medical conditions for either traveler?\nCustomer: Look, one traveler has high blood pressure, but it's managed. That shouldn't exclude anything. I expect full medical coverage regardless. We pay enough for insurance.\nCustomer Service Agent: Thank you for sharing that. I'll note down the need for medical coverage information, taking into account declared pre-existing conditions like high blood pressure. What about concerns regarding your belongings during the trip?\nCustomer: Absolutely! My luggage is expensive. If it gets lost or damaged, I expect immediate reimbursement, not some runaround. And if it's delayed, I need money for essentials right away, not after waiting 12 hours.\nCustomer Service Agent: Understood. So, a requirement for coverage related to lost, damaged, or delayed baggage, including reimbursement for essential purchases during delays. Are there any other potential disruptions you're concerned about, such as flight delays?\nCustomer: You bet! Flights are always delayed these days. If our flight gets significantly delayed and we need extra accommodation or meals, ISS needs to cover that. No excuses.\nCustomer Service Agent: Noted. So, coverage requirements related to significant travel delays causing additional expenses like accommodation and meals. Is there anything else regarding potential interruptions, perhaps needing to cancel the trip before it starts?\nCustomer: Yes, actually. This is very important. There's a small chance my sister might schedule her wedding during our travel dates. If she does, I *have* to cancel this trip and attend. I need absolute certainty that I will be fully reimbursed if I cancel for her wedding. This is non-negotiable. I've been a loyal customer for years, so I expect this flexibility.\nCustomer Service Agent: Okay, I understand. So, you specifically require information on trip cancellation coverage, and critically, you want to know if cancelling to attend your sister's wedding would be a covered reason under the policy. I have noted this specific scenario as a key requirement.\nCustomer: Good. Make sure it *is* covered. Don't come back to me with fine print saying it's not. I want a supervisor if needed. Our budget is flexible, just make sure all this is included.\nCustomer Service Agent: Thank you. Let me quickly summarize the requirements I've noted down for your trip to Australia for two travelers, age group 41-55, for three weeks. You require information on: Medical Coverage, considering a pre-existing condition of high blood pressure; coverage for Lost, Damaged, or Delayed Luggage; coverage related to participating in White Water Rafting; coverage for expenses due to significant Travel Delays; and Trip Cancellation coverage, with a specific query about cancellation due to needing to attend your sister's wedding. Have I captured all your main requirements correctly?\nCustomer: Yes, that sounds about right. Especially the cancellation for the wedding – that's the main thing besides the usual coverage. Don't mess it up.\nCustomer Service Agent: Thank you for confirming. I have logged all these requirements. We will use these details to identify potential options. Thank you for calling ISS Insurance.\nCustomer: Alright. Fine. Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for trip to Australia for two travelers.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance coverage including medical coverage with a pre-existing condition, luggage coverage, adventure activities coverage, travel delay coverage, and trip cancellation coverage specifically due to a family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"Three weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage Coverage\",\n    \"Adventure Activities Coverage\",\n    \"Travel Delay Coverage\",\n    \"Trip Cancellation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Full medical coverage including pre-existing conditions.\"\n  ],\n  \"activities_to_cover\": [\n    \"White Water Rafting\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Customer demands guaranteed reimbursement for trip cancellation due to attending sister's wedding, and expects immediate reimbursement for lost or damaged luggage.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Australia\",\n    \"medical coverage\",\n    \"luggage coverage\",\n    \"white water rafting\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"high blood pressure\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ-001",
+                "requirement_summary": "Travel insurance requirements for trip to Australia for two travelers.",
+                "detailed_description": "Customer requires comprehensive travel insurance coverage including medical coverage with a pre-existing condition, luggage coverage, adventure activities coverage, travel delay coverage, and trip cancellation coverage specifically due to a family wedding.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Australia",
+                "travel_duration": "Three weeks",
+                "insurance_coverage_type": [
+                    "Medical Coverage",
+                    "Lost, Damaged, or Delayed Luggage Coverage",
+                    "Adventure Activities Coverage",
+                    "Travel Delay Coverage",
+                    "Trip Cancellation Coverage"
+                ],
+                "pre_existing_conditions": [
+                    "High blood pressure"
+                ],
+                "medical_needs": [
+                    "Full medical coverage including pre-existing conditions."
+                ],
+                "activities_to_cover": [
+                    "White Water Rafting"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Customer demands guaranteed reimbursement for trip cancellation due to attending sister's wedding, and expects immediate reimbursement for lost or damaged luggage.",
+                "keywords": [
+                    "travel insurance",
+                    "Australia",
+                    "medical coverage",
+                    "luggage coverage",
+                    "white water rafting",
+                    "travel delays",
+                    "trip cancellation",
+                    "high blood pressure"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 31009,
+        "prompt_tokens": 25806,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 5203,
+        "successful_requests": 18
+    }
+}

@@ -285,18 +285,34 @@ def main():
 
     # Process transcript(s)
     if args.transcript:
-        # Process single transcript
-        process_single_transcript(
+        # Process single transcript - designed for orchestrator use
+        # Exit with non-zero status on failure for the orchestrator to detect
+        logger.info(f"Processing single transcript: {args.transcript}")
+        evaluation_result = process_single_transcript(
             args.transcript, args.output_dir, formats, args.api_key
         )
+        if evaluation_result is None:
+            logger.error(f"Failed to process transcript: {args.transcript}")
+            sys.exit(1)  # Exit with error code 1 on failure
+        else:
+            logger.info(f"Successfully processed transcript: {args.transcript}")
+            sys.exit(0)  # Exit with success code 0
+
     elif args.directory:
-        # Process directory of transcripts
+        # Process directory of transcripts - for standalone use
+        logger.info(f"Processing directory: {args.directory}")
         results = process_directory(
             args.directory, args.output_dir, formats, args.api_key
         )
-        logger.info(f"Processed {len(results)} transcripts")
+        logger.info(f"Processed {len(results)} transcripts from directory.")
+        # For directory processing, don't exit based on individual failures,
+        # as it's intended to process as many as possible.
+        sys.exit(0)  # Exit successfully after processing directory
+
     else:
+        # No transcript or directory specified
         parser.print_help()
+        sys.exit(1)  # Exit with error code if no valid arguments
 
 
 if __name__ == "__main__":

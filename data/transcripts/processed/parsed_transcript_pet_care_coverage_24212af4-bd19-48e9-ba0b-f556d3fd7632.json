@@ -1,0 +1,102 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Priya, how may I assist you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, finally. Look, I need travel insurance. I'm travelling soon and I expect the best coverage, alright? No funny business with exclusions."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "I understand you're looking for travel insurance. I can certainly help gather your requirements. Could you please tell me where you'll be travelling to?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're planning a trip to Japan. A proper holiday."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, Japan. And how long will you be away for?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It will be a 2 weeks trip. Flying from Singapore, obviously."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted. Travelling from Singapore to Japan for two weeks. And how many people will be travelling?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "There will be 2 of us traveling. Both adults, in the 41-55 age group, if that matters."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you. That helps determine the plan options later. Are you planning any specific activities during your trip? Sometimes certain activities require specific mention."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, we want to try Skiing. So I need full coverage for that, understand? If anything happens on the slopes, ISS needs to cover it completely. No excuses."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, I've noted down that you require cover related to skiing activities. Besides skiing, are there any other specific concerns you have for this trip?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Of course, there are! What happens if *I* have to cancel the trip beforehand? Someone gets sick, or something comes up. I expect a full refund for my travel costs, no questions asked."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so cover for trip cancellation is a requirement for you. Duly noted."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "And medical stuff. One traveler has high blood pressure. Do I *really* need to declare that? It seems like a hassle. Just make sure we have top-tier medical coverage overseas for emergencies, hospital stays, the works."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "I understand the requirement for comprehensive medical coverage during the trip, including emergencies and hospitalisation. Regarding pre-existing conditions like high blood pressure, it's important information for determining the right policy later. I've noted your need for medical coverage."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Fine, fine. And luggage! My bags better be covered properly. What happens if the airline loses them, or if my suitcase gets damaged? I travel with good quality items."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so you require coverage for potential loss or damage to your luggage, and also cover if it's delayed. Is that correct?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, exactly. And delays! Flights are always delayed these days. If we get stuck in Japan because of some airline muck-up, I expect ISS to cover the extra hotel nights and meals. I'm not paying out of pocket for their incompetence."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. So, coverage for expenses incurred due to significant travel delays is another requirement."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Absolutely. And one more *very* important thing. I have a cat here in Singapore. If my flight back gets significantly delayed, meaning I can't pick her up from the pet hotel on time, ISS *needs* to cover the extra days she has to stay there. That's non-negotiable. I've been a loyal customer for years, you know."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, I understand. You're specifically requesting cover for additional pet accommodation costs resulting from a delayed return flight to Singapore. I have noted that requirement down as well. Are you sure you're noting all this? I don't want to repeat myself to someone else."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Yes, I assure you I've captured everything. Just to summarize quickly, you are travelling from Singapore to Japan for two weeks, for two adults aged 41-55. You require information on policies that include: Medical Coverage, consideration for high blood pressure, Trip Cancellation cover, Lost, Damaged or Delayed Luggage cover, Travel Delay expense cover, specific cover related to Skiing activities, and cover for potential additional pet accommodation costs if your return is delayed. Is that all correct?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Hmph. Yes, that sounds about right. Make sure those requirements are passed on properly. I don't want any standard package, I need something that covers *all* of this, properly."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. I have logged all these requirements. The next step would be for our sales team to review these and get back to you with suitable options and quotes. Thank you for calling ISS Insurance Ltd."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Alright. Make sure they call back quickly. Goodbye."
+    }
+]

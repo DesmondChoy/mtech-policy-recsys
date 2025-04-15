@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly asked for details on the Trip Cancellation benefit and provided specific concerns regarding covered perils like serious illness or injury.",
+      "customer_quote": "[18] Customer: Yes. Firstly, regarding potential disruptions before departure, I need details on the 'Trip Cancellation' benefit \u2013 specifically the covered perils, for instance, cancellation due to serious illness or injury of a traveller or a close family member.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's specific request regarding Trip Cancellation triggers.",
+      "agent_quote": "[19] Customer Service Agent: Okay, noted the requirement for details on 'Trip Cancellation' coverage triggers."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer mentioned a pre-existing condition (high blood pressure) and specifically asked for clarity on how Medical Coverage applies to it, particularly regarding emergency stabilization versus exclusions.",
+      "customer_quote": "[14] Customer: Yes, one traveler has high blood pressure. We need clarity on how the 'Medical Coverage' benefit applies, especially concerning stabilisation of pre-existing conditions during an emergency overseas versus general exclusions.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the pre-existing condition and the need for clarity, and also probed appropriately about related needs like medical equipment.",
+      "agent_quote": "[15] Customer Service Agent: Okay, noted the pre-existing condition of high blood pressure and the need for clarity on emergency medical coverage related to it. Do you require cover for any specific medical equipment being taken on the trip?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer specifically requested information on the Lost/Damaged Luggage section, asking for details on per-item limits, overall limits, and exclusions, particularly for cameras and hiking equipment.",
+      "customer_quote": "[22] Customer: Thirdly, concerning personal effects, I require information on the 'Lost/Damaged Luggage' section. Specifically, I need to understand the per-item limits, overall limits, and typical exclusions, particularly for items like cameras or specific sporting equipment related to hiking.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed understanding and noted the requirement for specific details regarding limits and exclusions for luggage coverage.",
+      "agent_quote": "[23] Customer Service Agent: Noted, specifics required for 'Lost/Damaged Luggage', including limits and exclusions."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer inquired about the scope of the Travel Delays benefit, specifically asking about provisions for meals/accommodation and the minimum delay duration required to trigger the benefit.",
+      "customer_quote": "[20] Customer: Secondly, relating to disruptions during the journey, I'm interested in the scope of the 'Travel Delays' benefit. What are the typical provisions for meals and accommodation, and what minimum delay duration usually activates this benefit?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's need for clarification on Travel Delay benefits, including duration and specific coverage details.",
+      "agent_quote": "[21] Customer Service Agent: Understood, clarification required on 'Travel Delays' benefits, including minimum duration and coverage specifics."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer stated they plan to go hiking and require adequate coverage under 'Sports and Adventure Activities', specifically asking about coverage for medical expenses/evacuation and details on exclusions like guide requirements.",
+      "customer_quote": "[12] Customer: Yes, we plan to do some Hiking. It's important that the policy provides adequate coverage under the 'Sports and Adventure Activities' benefit for potential medical expenses or evacuation arising from this. I'd need to know the specifics of what's covered and any exclusions, like requirements for guides or marked trails.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the specific activity (hiking) and the need for related coverage details.",
+      "agent_quote": "[13] Customer Service Agent: Understood, cover for hiking-related incidents. Duly noted."
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered specific information for all five standard coverage types outlined. The customer proactively provided detailed requirements for each area they were concerned about, and the agent effectively acknowledged these points, confirmed understanding, and summarized them accurately. Additionally, the agent successfully captured the critical scenario-specific requirement regarding the double payout for accidental death on public transport, demonstrating thoroughness in information gathering."
+  },
+  "transcript_name": "transcript_public_transport_double_cover_8d447b59-6d4d-4a32-9335-fbfb8934ac63",
+  "scenario": "public_transport_double_cover"
+}

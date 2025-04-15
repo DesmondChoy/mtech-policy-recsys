@@ -1,0 +1,106 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for calling ISS Insurance Ltd Singapore. My name is Priya, how may I assist you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, hello. I need to sort out travel insurance. We're planning a trip and I expect proper coverage. I've been a customer for years, you know."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Certainly, I can help gather the details for your travel insurance inquiry. Could you please tell me where you'll be traveling from?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're based in Singapore, obviously. That's where your company is, right?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Yes, that's correct. And where will you be traveling to?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're planning a trip to Thailand."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, Thailand. And how long will the trip be?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It will be a 2 weeks trip. Just two of us traveling."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Noted, two travelers for two weeks to Thailand. And may I know the age group of the travelers?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're mostly around 41-55 years old. One of us does have high blood pressure, but it's managed. You need to make sure that's covered if anything happens. Don't try and exclude things later."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, thank you for letting me know about the high blood pressure. I've noted the requirement for medical coverage. Will you be participating in any specific activities during your trip?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, we plan to do Scuba Diving. It better be covered, I don't want any issues if something minor happens during the dive."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, I've noted the need for coverage related to scuba diving. Are there any other specific concerns you have regarding the trip?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Look, what happens if the airline messes up? Last time they damaged my suitcase. I need cover if my luggage gets lost or damaged. And these airlines are terrible with timing. If we get delayed for hours and miss a connection or need a hotel, ISS needs to pay for it."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. So, you require information on coverage for lost or damaged luggage, and also for expenses related to significant travel delays. Is that correct?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, obviously. That's basic. But the main thing, the *most* important thing, is cancellation. What if something comes up? I need to know if I'm covered if I have to cancel my trip for my sister's wedding. It's not planned yet, but if she suddenly decides to get married during that time, I absolutely *must* cancel and attend. No excuses. This policy has to cover that, understand?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, I understand you're asking about trip cancellation coverage, specifically mentioning the scenario of needing to cancel for your sister's wedding. I've noted this requirement. Standard trip cancellation usually covers unforeseen events like illness or emergencies, family events like weddings might fall outside typical covered reasons, but I have noted it as your specific requirement."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Don't tell me it 'might fall outside'. I expect it to be covered. I'm a loyal customer. If you can't provide cover for something simple like that, maybe I should look elsewhere. Is this the best you can do? Who's your supervisor?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "I understand your concern, sir. My role today is to accurately gather all your requirements so we can identify the right information for you. I have clearly noted your specific request regarding cancellation for a family wedding."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Fine. Just make sure it's noted properly. I don't have time for mistakes."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Absolutely. So, just to confirm, you're looking for travel insurance for two travelers, aged 41-55, traveling from Singapore to Thailand for two weeks. You require information on: medical coverage, including for pre-existing high blood pressure; coverage for participating in scuba diving; cover for lost, damaged, or delayed luggage; cover for significant travel delays; and trip cancellation cover, with a specific query about cancelling for a family wedding like your sister's. Is that all correct?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, that’s what I said. Make sure it’s all included."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for confirming those details. I have recorded your requirements. Is there anything else I can note for you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No, that's it for now. Just get it sorted."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for calling ISS Insurance. Have a good day."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Right. Goodbye."
+    }
+]

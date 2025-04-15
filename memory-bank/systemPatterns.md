@@ -2,11 +2,22 @@
 
 ## System Architecture
 
-The project currently follows a script-driven workflow focused on data generation, processing, extraction, and evaluation, with a single implemented agent (Extractor). The original multi-agent concept (CS, Analyzer, Voting, Recommender) is not yet implemented.
+The project follows a workflow orchestrated by `scripts/orchestrate_scenario_evaluation.py`. This script manages data generation (parallel scenarios), processing (parallel transcript evaluation, sequential parsing/extraction), sequential report generation (per UUID), and final evaluation aggregation. A single agent (Extractor) is used within this workflow. The original multi-agent concept is not implemented.
 
 ```mermaid
-flowchart TD
-    subgraph Data Generation
+graph TD
+    subgraph "Orchestration (scripts/orchestrate_scenario_evaluation.py)"
+        direction TB
+        OrchStart[Start Orchestration] --> OrchGenT[1. Generate Transcripts <br>(Parallel Scenarios)]
+        OrchGenT --> OrchEvalT[2a. Evaluate Transcripts <br>(Parallel Transcripts)]
+        OrchEvalT --> OrchParseT[2b. Parse Transcripts <br>(Sequential Batch)]
+        OrchParseT --> OrchExtractR[2c. Extract Requirements <br>(Sequential Batch)]
+        OrchExtractR --> OrchGenReports[3. Generate Reports <br>(Sequential UUIDs)]
+        OrchGenReports --> OrchFinalEval[4. Final Evaluation & Aggregation]
+        OrchFinalEval --> OrchEnd[End Orchestration]
+    end
+
+    subgraph "Data Generation (Called by Orchestrator)"
         direction LR
         GenPersonalities[scripts/data_generation/generate_personalities.py] --> PersonalitiesJson[data/transcripts/personalities.json]
         CoverageReqs[data/coverage_requirements/coverage_requirements.py] --> GenTranscripts
@@ -15,51 +26,76 @@ flowchart TD
         GenTranscripts[scripts/data_generation/generate_transcripts.py] --> RawTranscripts[data/transcripts/raw/synthetic/*.json]
     end
 
-    subgraph Transcript Processing & Extraction
+    subgraph "Transcript Processing & Extraction (Called by Orchestrator)"
         direction LR
         RawTranscripts --> EvalTranscripts[scripts/evaluation/transcript_evaluation/eval_transcript_main.py]
-        EvalTranscripts -- Pass --> ParseTranscripts[src/utils/transcript_processing.py]
+        EvalTranscripts -- Pass --> PassedUUIDs((Passed UUIDs))
+        RawTranscripts --> ParseTranscripts[src/utils/transcript_processing.py]
         ParseTranscripts --> ProcessedTranscripts[data/transcripts/processed/*.json]
         ProcessedTranscripts --> ExtractorAgent[src/agents/extractor.py (CrewAI/OpenAI)]
         ExtractorAgent --> ExtractedReqs[data/extracted_customer_requirements/*.json]
     end
 
-    subgraph Policy Processing
+    subgraph "Policy Processing (Standalone)"
         direction LR
         RawPolicies[data/policies/raw/*.pdf] --> ExtractPolicyScript[scripts/extract_policy_tier.py (LLMService/Gemini)]
         ExtractPolicyScript --> ProcessedPolicies[data/policies/processed/*.json]
     end
 
-    subgraph Reporting & Analysis (Standalone)
+    subgraph "Reporting & Analysis (Called by Orchestrator)"
         direction LR
-        ExtractedReqs --> ComparisonScript[scripts/generate_policy_comparison.py (LLMService/Gemini)]
+        PassedUUIDs --> FilterLogicReport{Filter by Passed UUIDs}
+        ExtractedReqs --> FilterLogicReport
+        FilterLogicReport --> ComparisonScript[scripts/generate_policy_comparison.py (LLMService/Gemini)]
         ProcessedPolicies --> ComparisonScript
         ComparisonScript --> ComparisonReports[results/{uuid}/*.md]
         ComparisonReports --> RecommendScript[scripts/generate_recommendation_report.py (LLMService/Gemini)]
         RecommendScript --> FinalRecommendationMD[results/{uuid}/recommendation_report_{uuid}.md]
     end
 
-    subgraph Evaluation Focus
+    subgraph "Evaluation Focus"
         direction TB
         EvalTranscripts --> EvalTranscriptResults[data/evaluation/transcript_evaluations/*.json]
         ExtractPolicyScript --> EvalPdfExtraction[scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py]
         RawPolicies --> EvalPdfExtraction
         EvalPdfExtraction --> EvalPdfResults[data/evaluation/pdf_extraction_evaluations/*.json]
+        OrchFinalEval --> ScenarioEvalScript[scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py]
+        ScenarioEvalScript --> ScenarioEvalResults[data/evaluation/scenario_evaluation/results_*.json]
+        OrchFinalEval --> AggregatedResults[data/evaluation/scenario_evaluation/results_*_aggregated_*.json]
         ComparisonScript --> PlannedComparisonEval{Planned: Comparison Report Evaluation}
     end
 
-    Data Generation --> Transcript Processing & Extraction
-    Policy Processing --> Reporting & Analysis (Standalone)
-    Transcript Processing & Extraction --> Reporting & Analysis (Standalone)
+    %% Orchestrator Flow Connections
+    OrchGenT --> GenTranscripts
+    GenTranscripts --> RawTranscripts
+    RawTranscripts --> OrchEvalT
+    OrchEvalT --> EvalTranscripts
+    EvalTranscripts --> PassedUUIDs
+    RawTranscripts --> OrchParseT
+    OrchParseT --> ParseTranscripts
+    ParseTranscripts --> ProcessedTranscripts
+    ProcessedTranscripts --> OrchExtractR
+    OrchExtractR --> ExtractorAgent
+    ExtractorAgent --> ExtractedReqs
+    PassedUUIDs --> OrchGenReports
+    ExtractedReqs --> OrchGenReports
+    ProcessedPolicies --> OrchGenReports
+    OrchGenReports --> ComparisonScript
+    ComparisonScript --> ComparisonReports
+    ComparisonReports --> RecommendScript
+    RecommendScript --> FinalRecommendationMD
+    FinalRecommendationMD --> OrchFinalEval
+    OrchFinalEval --> ScenarioEvalScript
+    ScenarioEvalScript --> ScenarioEvalResults
+    ScenarioEvalResults --> OrchFinalEval # Implies reading latest result
+    OrchEnd --> User[User/Developer]
 
-    Transcript Processing & Extraction --> Evaluation Focus
-    Policy Processing --> Evaluation Focus
-    Reporting & Analysis (Standalone) --> Evaluation Focus
-
-    EvalPdfExtraction --> Evaluation Focus # Connect new eval script
-
-    FinalRecommendationMD --> User[User/Developer] # Update final output user sees
+    %% Other Connections
+    Policy Processing --> ProcessedPolicies
+    RawPolicies --> EvalPdfExtraction
+    ExtractPolicyScript --> EvalPdfExtraction
     ExtractedReqs --> FutureML{Future: ML Models}
+
 ```
 
 ## Key Technical Decisions

@@ -1,0 +1,107 @@
+[
+  {
+    "report_file": "0a6eb063-7662-4d83-a4b9-47ee48454c34\\recommendation_report_0a6eb063-7662-4d83-a4b9-47ee48454c34.md",
+    "uuid": "0a6eb063-7662-4d83-a4b9-47ee48454c34",
+    "scenario": "golf_coverage",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "Provides comprehensive golf cover (equipment, green fees, hole-in-one) and potentially superior buggy cover via higher Rental Vehicle Excess (S$1500). Also has better travel delay trigger (4hrs)."
+      },
+      {
+        "insurer": "sompo",
+        "tier": "Elite",
+        "justification": "Only policy with dedicated 'Golf Cover' section in JSON explicitly mentioning equipment, hole-in-one, unused green fees, and buggy damage (S$500 limit)."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "Provides comprehensive golf cover (equipment, green fees, hole-in-one) and potentially superior buggy cover via higher Rental Vehicle Excess (S$1500). Also has better travel delay trigger (4hrs)."
+  },
+  {
+    "report_file": "1cd04b1c-3dbd-458b-857e-ae193381ab81\\recommendation_report_1cd04b1c-3dbd-458b-857e-ae193381ab81.md",
+    "uuid": "1cd04b1c-3dbd-458b-857e-ae193381ab81",
+    "scenario": "golf_coverage",
+    "recommended_policy": "sompo - elite",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "Provides comprehensive golf cover (equipment, green fees, hole-in-one) and potentially superior buggy cover via higher Rental Vehicle Excess (S$1500). Also has better travel delay trigger (4hrs)."
+      },
+      {
+        "insurer": "sompo",
+        "tier": "Elite",
+        "justification": "Only policy with dedicated 'Golf Cover' section in JSON explicitly mentioning equipment, hole-in-one, unused green fees, and buggy damage (S$500 limit)."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "Only policy with dedicated 'Golf Cover' section in JSON explicitly mentioning equipment, hole-in-one, unused green fees, and buggy damage (S$500 limit)."
+  },
+  {
+    "report_file": "2d7706e4-e75e-453b-9c35-74b422e51153\\recommendation_report_2d7706e4-e75e-453b-9c35-74b422e51153.md",
+    "uuid": "2d7706e4-e75e-453b-9c35-74b422e51153",
+    "scenario": "golf_coverage",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "Provides comprehensive golf cover (equipment, green fees, hole-in-one) and potentially superior buggy cover via higher Rental Vehicle Excess (S$1500). Also has better travel delay trigger (4hrs)."
+      },
+      {
+        "insurer": "sompo",
+        "tier": "Elite",
+        "justification": "Only policy with dedicated 'Golf Cover' section in JSON explicitly mentioning equipment, hole-in-one, unused green fees, and buggy damage (S$500 limit)."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "Provides comprehensive golf cover (equipment, green fees, hole-in-one) and potentially superior buggy cover via higher Rental Vehicle Excess (S$1500). Also has better travel delay trigger (4hrs)."
+  },
+  {
+    "report_file": "5adcce2e-f3f3-4778-97df-ce6c929a3c80\\recommendation_report_5adcce2e-f3f3-4778-97df-ce6c929a3c80.md",
+    "uuid": "5adcce2e-f3f3-4778-97df-ce6c929a3c80",
+    "scenario": "golf_coverage",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "Provides comprehensive golf cover (equipment, green fees, hole-in-one) and potentially superior buggy cover via higher Rental Vehicle Excess (S$1500). Also has better travel delay trigger (4hrs)."
+      },
+      {
+        "insurer": "sompo",
+        "tier": "Elite",
+        "justification": "Only policy with dedicated 'Golf Cover' section in JSON explicitly mentioning equipment, hole-in-one, unused green fees, and buggy damage (S$500 limit)."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "Provides comprehensive golf cover (equipment, green fees, hole-in-one) and potentially superior buggy cover via higher Rental Vehicle Excess (S$1500). Also has better travel delay trigger (4hrs)."
+  },
+  {
+    "report_file": "a461e74f-29f8-4864-852e-b4f48e80fdb1\\recommendation_report_a461e74f-29f8-4864-852e-b4f48e80fdb1.md",
+    "uuid": "a461e74f-29f8-4864-852e-b4f48e80fdb1",
+    "scenario": "golf_coverage",
+    "recommended_policy": "sompo - elite",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "Provides comprehensive golf cover (equipment, green fees, hole-in-one) and potentially superior buggy cover via higher Rental Vehicle Excess (S$1500). Also has better travel delay trigger (4hrs)."
+      },
+      {
+        "insurer": "sompo",
+        "tier": "Elite",
+        "justification": "Only policy with dedicated 'Golf Cover' section in JSON explicitly mentioning equipment, hole-in-one, unused green fees, and buggy damage (S$500 limit)."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "Only policy with dedicated 'Golf Cover' section in JSON explicitly mentioning equipment, hole-in-one, unused green fees, and buggy damage (S$500 limit)."
+  }
+]

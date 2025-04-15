@@ -223,6 +223,18 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Modified `scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py` to include a `--file_pattern` command-line argument.
     - This allows specifying a glob pattern (e.g., `"gels_*.json"`) to filter the input JSON files processed by the script, defaulting to `*.json` if not provided.
     - Successfully tested the script by running it with `--file_pattern "gels_*.json"`.
+30. **Orchestration Script Debugging & Refinement**:
+    - Investigated inconsistent results (missing evaluations, missing/incomplete comparison reports) when running `scripts/orchestrate_scenario_evaluation.py`.
+    - Identified root causes:
+        - Sequential transcript evaluation causing single failures to halt evaluation for that transcript.
+        - High concurrency (orchestrator parallel UUIDs + comparison script parallel insurers) likely exceeding LLM API rate limits, causing intermittent comparison report failures.
+    - Implemented fixes:
+        - Refactored `scripts/evaluation/transcript_evaluation/eval_transcript_main.py` to support single-file processing with exit codes.
+        - Modified `scripts/orchestrate_scenario_evaluation.py` to run transcript evaluations in parallel per file.
+        - Modified `scripts/orchestrate_scenario_evaluation.py` to run report generation (comparison + recommendation) sequentially per UUID, reducing peak API load.
+        - Added detailed logging around LLM calls in `scripts/generate_policy_comparison.py`.
+    - Updated the orchestration implementation plan (`memory-bank/major_changes/orchestration_script_implementation_plan.md`) to reflect changes and mark steps complete.
+    - Confirmed successful run of the updated orchestrator script.
 
 ## Next Steps (Revised Focus)
 

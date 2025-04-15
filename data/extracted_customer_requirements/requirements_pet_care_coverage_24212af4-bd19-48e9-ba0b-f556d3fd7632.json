@@ -1,0 +1,99 @@
+{
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Japan\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for a 2-week trip from Singapore to Japan, covering medical expenses, trip cancellation, lost/damaged luggage, travel delay expenses, skiing activities, and additional pet accommodation costs due to flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Luggage Coverage\",\n    \"Travel Delay Expense Coverage\",\n    \"Skiing Coverage\",\n    \"Pet Accommodation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Emergency medical coverage\",\n    \"Hospitalisation coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"Skiing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Ensure no exclusions and that all specific requirements are noted accurately.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"luggage coverage\",\n    \"travel delay\",\n    \"skiing\",\n    \"pet accommodation\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "1",
+        "requirement_summary": "Travel insurance coverage for a trip to Japan",
+        "detailed_description": "The customer requires comprehensive travel insurance for a 2-week trip from Singapore to Japan, covering medical expenses, trip cancellation, lost/damaged luggage, travel delay expenses, skiing activities, and additional pet accommodation costs due to flight delays.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "Medical Coverage",
+            "Trip Cancellation",
+            "Luggage Coverage",
+            "Travel Delay Expense Coverage",
+            "Skiing Coverage",
+            "Pet Accommodation Coverage"
+        ],
+        "pre_existing_conditions": [
+            "High blood pressure"
+        ],
+        "medical_needs": [
+            "Emergency medical coverage",
+            "Hospitalisation coverage"
+        ],
+        "activities_to_cover": [
+            "Skiing"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Ensure no exclusions and that all specific requirements are noted accurately.",
+        "keywords": [
+            "travel insurance",
+            "Japan",
+            "trip cancellation",
+            "medical coverage",
+            "luggage coverage",
+            "travel delay",
+            "skiing",
+            "pet accommodation"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Priya, how may I assist you today?\nCustomer: Yes, finally. Look, I need travel insurance. I'm travelling soon and I expect the best coverage, alright? No funny business with exclusions.\nCustomer Service Agent: I understand you're looking for travel insurance. I can certainly help gather your requirements. Could you please tell me where you'll be travelling to?\nCustomer: We're planning a trip to Japan. A proper holiday.\nCustomer Service Agent: Alright, Japan. And how long will you be away for?\nCustomer: It will be a 2 weeks trip. Flying from Singapore, obviously.\nCustomer Service Agent: Okay, noted. Travelling from Singapore to Japan for two weeks. And how many people will be travelling?\nCustomer: There will be 2 of us traveling. Both adults, in the 41-55 age group, if that matters.\nCustomer Service Agent: Thank you. That helps determine the plan options later. Are you planning any specific activities during your trip? Sometimes certain activities require specific mention.\nCustomer: Yes, we want to try Skiing. So I need full coverage for that, understand? If anything happens on the slopes, ISS needs to cover it completely. No excuses.\nCustomer Service Agent: Okay, I've noted down that you require cover related to skiing activities. Besides skiing, are there any other specific concerns you have for this trip?\nCustomer: Of course, there are! What happens if *I* have to cancel the trip beforehand? Someone gets sick, or something comes up. I expect a full refund for my travel costs, no questions asked.\nCustomer Service Agent: Okay, so cover for trip cancellation is a requirement for you. Duly noted.\nCustomer: And medical stuff. One traveler has high blood pressure. Do I *really* need to declare that? It seems like a hassle. Just make sure we have top-tier medical coverage overseas for emergencies, hospital stays, the works.\nCustomer Service Agent: I understand the requirement for comprehensive medical coverage during the trip, including emergencies and hospitalisation. Regarding pre-existing conditions like high blood pressure, it's important information for determining the right policy later. I've noted your need for medical coverage.\nCustomer: Fine, fine. And luggage! My bags better be covered properly. What happens if the airline loses them, or if my suitcase gets damaged? I travel with good quality items.\nCustomer Service Agent: Okay, so you require coverage for potential loss or damage to your luggage, and also cover if it's delayed. Is that correct?\nCustomer: Yes, exactly. And delays! Flights are always delayed these days. If we get stuck in Japan because of some airline muck-up, I expect ISS to cover the extra hotel nights and meals. I'm not paying out of pocket for their incompetence.\nCustomer Service Agent: Understood. So, coverage for expenses incurred due to significant travel delays is another requirement.\nCustomer: Absolutely. And one more *very* important thing. I have a cat here in Singapore. If my flight back gets significantly delayed, meaning I can't pick her up from the pet hotel on time, ISS *needs* to cover the extra days she has to stay there. That's non-negotiable. I've been a loyal customer for years, you know.\nCustomer Service Agent: Okay, I understand. You're specifically requesting cover for additional pet accommodation costs resulting from a delayed return flight to Singapore. I have noted that requirement down as well. Are you sure you're noting all this? I don't want to repeat myself to someone else.\nCustomer Service Agent: Yes, I assure you I've captured everything. Just to summarize quickly, you are travelling from Singapore to Japan for two weeks, for two adults aged 41-55. You require information on policies that include: Medical Coverage, consideration for high blood pressure, Trip Cancellation cover, Lost, Damaged or Delayed Luggage cover, Travel Delay expense cover, specific cover related to Skiing activities, and cover for potential additional pet accommodation costs if your return is delayed. Is that all correct?\nCustomer: Hmph. Yes, that sounds about right. Make sure those requirements are passed on properly. I don't want any standard package, I need something that covers *all* of this, properly.\nCustomer Service Agent: Understood. I have logged all these requirements. The next step would be for our sales team to review these and get back to you with suitable options and quotes. Thank you for calling ISS Insurance Ltd.\nCustomer: Alright. Make sure they call back quickly. Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Japan\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for a 2-week trip from Singapore to Japan, covering medical expenses, trip cancellation, lost/damaged luggage, travel delay expenses, skiing activities, and additional pet accommodation costs due to flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Luggage Coverage\",\n    \"Travel Delay Expense Coverage\",\n    \"Skiing Coverage\",\n    \"Pet Accommodation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Emergency medical coverage\",\n    \"Hospitalisation coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"Skiing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Ensure no exclusions and that all specific requirements are noted accurately.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"luggage coverage\",\n    \"travel delay\",\n    \"skiing\",\n    \"pet accommodation\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "1",
+                "requirement_summary": "Travel insurance coverage for a trip to Japan",
+                "detailed_description": "The customer requires comprehensive travel insurance for a 2-week trip from Singapore to Japan, covering medical expenses, trip cancellation, lost/damaged luggage, travel delay expenses, skiing activities, and additional pet accommodation costs due to flight delays.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "Medical Coverage",
+                    "Trip Cancellation",
+                    "Luggage Coverage",
+                    "Travel Delay Expense Coverage",
+                    "Skiing Coverage",
+                    "Pet Accommodation Coverage"
+                ],
+                "pre_existing_conditions": [
+                    "High blood pressure"
+                ],
+                "medical_needs": [
+                    "Emergency medical coverage",
+                    "Hospitalisation coverage"
+                ],
+                "activities_to_cover": [
+                    "Skiing"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Ensure no exclusions and that all specific requirements are noted accurately.",
+                "keywords": [
+                    "travel insurance",
+                    "Japan",
+                    "trip cancellation",
+                    "medical coverage",
+                    "luggage coverage",
+                    "travel delay",
+                    "skiing",
+                    "pet accommodation"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 11996,
+        "prompt_tokens": 10052,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 1944,
+        "successful_requests": 7
+    }
+}

@@ -62,6 +62,7 @@ Develop a new Python script (`scripts/orchestrate_scenario_evaluation.py`) that 
         *   Read the JSON content of the latest result file.
         *   Filter the results, keeping only entries whose UUIDs are present in the `scenario_uuids` list for that scenario (i.e., only results from the current orchestration run).
         *   Save the filtered list to a new aggregated JSON file (e.g., `results_{scenario}_aggregated_{run_timestamp}.json`).
+        *   **Note:** This step intentionally creates two files per scenario in the output directory (`data/evaluation/scenario_evaluation/`). The first (`results_{scenario}_{timestamp}.json`) is the raw output from `evaluate_scenario_recommendations.py` (which might include results from previous runs if not cleaned). The second (`results_{scenario}_aggregated_{run_timestamp}.json`) is created by this orchestrator step and contains *only* the filtered results relevant to the transcripts generated in the current orchestration run. The `_aggregated_` file is the primary output to consider for the results of a specific orchestration execution.
 
 6.  **Main Orchestration Logic**:
     *   Implement the `main` function to call the steps sequentially: `generate_transcripts_async`, `run_pipeline`, `generate_reports_async`, `aggregate_and_filter_evaluations`. Log progress and errors.
@@ -71,13 +72,26 @@ Develop a new Python script (`scripts/orchestrate_scenario_evaluation.py`) that 
 1.  **[X] Create Script File**: `scripts/orchestrate_scenario_evaluation.py`.
 2.  **[X] Basic Structure**: Imports, constants, args, logging, main block.
 3.  **[X] Implement `generate_transcripts_async`**: Parallel generation using `multiprocessing.Pool`.
-4.  **[X] Implement `run_pipeline` - Parse Results Logic**: Implemented the defined pass/fail logic within `_parse_transcript_evaluation_results`, replacing the placeholder. (Script calls were already implemented).
-5.  **[X] Implement `generate_reports_async`**: Parallel report generation per UUID using `multiprocessing.Pool`.
+4.  **[X] Implement `run_pipeline` - Refactor Evaluation Call**: Modified the execution of the transcript evaluation step (Step 2.1) within this function to call `eval_transcript_main.py` in parallel for each transcript using `multiprocessing.Pool`.
+5.  **[X] Implement `generate_reports_async`**: **Modified** to process report generation (comparison + recommendation) **sequentially** per UUID to mitigate potential API rate limits. Removed `multiprocessing.Pool`.
 6.  **[X] Implement `aggregate_and_filter_evaluations`**: Implemented the final evaluation execution and result aggregation logic. (Replaced the previous `run_final_evaluation_async`).
 7.  **[X] Add Error Handling**: Basic `subprocess.run` and `multiprocessing` error handling and logging added.
-8.  **[ ] Refine & Test**: Test with small numbers, test aggregation, test parallelism, add detailed logging.
-9.  **[X] Documentation**: Comprehensive docstring added.
-10. **[ ] Update Memory Bank**: Update `activeContext.md` and `progress.md`.
+8.  **[X] Refactor `eval_transcript_main.py` for Single File Input**: Modified `scripts/evaluation/transcript_evaluation/eval_transcript_main.py` to accept `--transcript` argument, process only that file, and return appropriate exit codes for parallel execution by the orchestrator. Retained `--directory` functionality for standalone use.
+9.  **[ ] Refine & Test**:
+    *   Test the complete workflow with larger numbers.
+    *   Verify transcript evaluation pass/fail logic (if implementing strict criteria beyond script success/fail).
+    *   Test aggregation logic thoroughly.
+    *   Test robustness of sequential report generation.
+    *   **[X]** Add detailed logging before/after the `llm_service.generate_content` call in `scripts/generate_policy_comparison.py` (within `generate_insurer_report`) to pinpoint failures for specific insurers. **(Completed)**
+    *   Consider adding exponential backoff/retry logic specifically around the LLM call in `generate_policy_comparison.py` if intermittent failures persist despite sequential processing.
+10. **[X] Documentation**: Comprehensive docstring added to orchestrator.
+11. **[ ] Update Memory Bank**: Update `activeContext.md` and `progress.md`. Check if other files need to be updated too in memory-bank.
+
+## 4.1 Debugging Findings & Revised Plan (2025-04-15)
+
+*   **Pain Point:** Inconsistent number of policy comparison reports generated per UUID (sometimes 2, 3, or 4 instead of the expected 4). This leads to incomplete data for recommendation generation and inaccurate final evaluations.
+*   **Diagnosis:** The high level of concurrency during report generation is the likely cause. The orchestrator's `generate_reports_async` uses `multiprocessing.Pool` to process multiple UUIDs in parallel. Simultaneously, the called `generate_policy_comparison.py` script uses `asyncio.gather` to process all insurers for a single UUID concurrently. This combined parallelism likely leads to exceeding LLM API rate limits, causing intermittent failures in generating reports for specific insurers.
+*   **Proposed Solution (Revised Step 4):** Modify the orchestrator's `generate_reports_async` function to remove the `multiprocessing.Pool`. Instead, iterate through the valid UUIDs sequentially and call the helper function `_generate_reports_for_uuid` for one UUID at a time. This will significantly reduce the peak number of concurrent LLM API calls (down to the number of insurers, likely 4), mitigating rate limit issues at the cost of longer overall execution time for the report generation step. The internal `asyncio` concurrency within `generate_policy_comparison.py` for insurers will remain.
 
 ## 5. Dependencies
 

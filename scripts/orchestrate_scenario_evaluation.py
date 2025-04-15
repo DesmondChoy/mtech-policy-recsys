@@ -237,163 +237,145 @@ def generate_transcripts_async(
     return scenario_uuids, all_generated_uuids
 
 
-def _parse_transcript_evaluation_results(all_uuids: List[str]) -> Set[str]:
+# Helper function for parallel transcript evaluation
+def _evaluate_transcript_task(transcript_path: Path) -> Optional[str]:
     """
-    Parses transcript evaluation JSON files to determine which transcripts passed based on defined criteria.
+    Runs the evaluation script for a single transcript file.
+
+    Args:
+        transcript_path: Path to the raw transcript JSON file.
+
+    Returns:
+        The UUID of the transcript if evaluation was successful, otherwise None.
     """
-    passed_uuids = set()
-    logging.info("Parsing transcript evaluation results...")
-    eval_files = glob.glob(str(TRANSCRIPT_EVAL_DIR / "transcript_eval_*.json"))
-    evaluated_uuids_found = set()  # Keep track of UUIDs for which eval files were found
-
-    for f_path_str in eval_files:
-        f_path = Path(f_path_str)
-        # Extract UUID from filename like transcript_eval_{scenario}_{uuid}.json
-        parts = f_path.stem.split("_")
-        if len(parts) >= 4 and parts[0] == "transcript" and parts[1] == "eval":
-            uuid = parts[-1]
-            evaluated_uuids_found.add(uuid)
-
-            # Only process files corresponding to UUIDs generated in this run
-            if uuid not in all_uuids:
-                logging.debug(f"Skipping evaluation file for old UUID: {f_path.name}")
-                continue
-
-            try:
-                with open(f_path, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-
-                # --- Define Pass Criteria ---
-                evaluations = data.get("evaluations", [])
-                summary = data.get("summary", {})
-                total_requirements = summary.get("total_requirements")
-                all_pass = True
-                count_match = False
-
-                if (
-                    not isinstance(evaluations, list)
-                    or not isinstance(summary, dict)
-                    or total_requirements is None
-                ):
-                    logging.warning(
-                        f"Invalid structure in evaluation file {f_path.name}. Skipping."
-                    )
-                    continue
-
-                # 1. Check if count matches total requirements
-                if len(evaluations) == total_requirements:
-                    count_match = True
-                else:
-                    logging.warning(
-                        f"Evaluation count mismatch for {uuid}: Found {len(evaluations)}, expected {total_requirements}."
-                    )
-
-                # 2. Check if all individual results are "PASS"
-                if not evaluations:  # Handle case where evaluations list is empty but total_requirements > 0
-                    all_pass = False
-
-                for item in evaluations:
-                    if (
-                        not isinstance(item, dict)
-                        or item.get("result", "").upper() != "PASS"
-                    ):
-                        all_pass = False
-                        logging.debug(
-                            f"Non-PASS result found for {uuid} in item: {item.get('coverage_type')}"
-                        )
-                        break  # No need to check further items for this UUID
-
-                # --- Determine Overall Pass/Fail ---
-                if count_match and all_pass:
-                    logging.info(f"Transcript evaluation PASSED for UUID: {uuid}")
-                    passed_uuids.add(uuid)
-                else:
-                    logging.info(
-                        f"Transcript evaluation FAILED for UUID: {uuid} (Count Match: {count_match}, All Pass: {all_pass})"
-                    )
-
-            except FileNotFoundError:
-                # Should not happen if glob found it, but handle defensively
-                logging.warning(
-                    f"Evaluation file not found during parsing: {f_path.name}"
-                )
-            except json.JSONDecodeError:
-                logging.warning(
-                    f"Could not decode JSON from evaluation file: {f_path.name}"
-                )
-            except (KeyError, TypeError) as e:
-                logging.warning(
-                    f"Error accessing expected keys in evaluation file {f_path.name}: {e}"
-                )
-            except Exception as e:
-                logging.error(
-                    f"Unexpected error parsing evaluation file {f_path.name}: {e}"
-                )
-
-    # Log summary of parsing
-    missing_eval_files = set(all_uuids) - evaluated_uuids_found
-    if missing_eval_files:
-        logging.warning(
-            f"Evaluation files were missing for {len(missing_eval_files)} generated UUIDs: {missing_eval_files}"
+    uuid = _extract_uuid_from_filename(transcript_path)
+    if not uuid:
+        logging.error(
+            f"Could not extract UUID from {transcript_path.name} for evaluation."
         )
+        return None
 
-    logging.info(
-        f"Found {len(evaluated_uuids_found)} evaluation files corresponding to this run. Determined {len(passed_uuids)} passing UUIDs."
-    )
-    return passed_uuids
+    logging.debug(f"Starting evaluation task for: {transcript_path.name}")
+    # Use the modified eval script that accepts --transcript and exits with status code
+    eval_args = ["--transcript", str(transcript_path)]
+    # We don't need to specify output dir/format, use defaults from eval script
+
+    if run_script(EVAL_TRANSCRIPTS_SCRIPT, eval_args):
+        logging.info(f"Evaluation successful for UUID: {uuid}")
+        return uuid
+    else:
+        logging.error(
+            f"Evaluation failed for UUID: {uuid} (Transcript: {transcript_path.name})"
+        )
+        # The failure is already logged by run_script
 
 
 def run_pipeline(
-    all_uuids: List[str], skip_transcript_eval: bool
+    scenario_uuids: Dict[str, List[str]], skip_transcript_eval: bool
 ) -> Optional[Set[str]]:
-    """Runs the sequential batch processing pipeline: Evaluation, Parsing, Extraction."""
-    logging.info("--- Starting Pipeline Processing ---")
-    passed_uuids: Optional[Set[str]] = None
+    """
+    Runs the processing pipeline: Parallel Evaluation (optional), Sequential Parsing, Sequential Extraction.
 
-    # Step 2.1: Transcript Evaluation (Conditional)
-    # --------------------------------------------
+    Args:
+        scenario_uuids: Dictionary mapping scenario names to lists of generated UUIDs.
+        skip_transcript_eval: Boolean indicating whether to skip evaluation.
+
+    Returns:
+        A set of UUIDs that passed evaluation (or all generated UUIDs if skipped),
+        or None if a critical error occurred.
+    """
+    logging.info("--- Starting Pipeline Processing ---")
+    passed_uuids_set: Set[str] = set()
+    all_generated_uuids_list: List[str] = [
+        uuid for uuids in scenario_uuids.values() for uuid in uuids
+    ]
+
+    # Step 2.1: Transcript Evaluation (Conditional & Parallel)
+    # -------------------------------------------------------
     if not skip_transcript_eval:
-        logging.info("Step 2.1: Running Transcript Evaluation...")
-        # Pass the directory containing the raw transcripts to the evaluation script
-        eval_args = ["--directory", str(RAW_TRANSCRIPT_DIR)]
-        if run_script(EVAL_TRANSCRIPTS_SCRIPT, eval_args):
-            logging.info("Transcript Evaluation script finished. Parsing results...")
-            passed_uuids = _parse_transcript_evaluation_results(all_uuids)
-        else:
+        logging.info("Step 2.1: Running Parallel Transcript Evaluation...")
+
+        # Find all generated raw transcript files based on scenario_uuids
+        transcript_files_to_evaluate: List[Path] = []
+        for scenario, uuids in scenario_uuids.items():
+            for uuid in uuids:
+                # Construct expected filename
+                file_path = RAW_TRANSCRIPT_DIR / f"transcript_{scenario}_{uuid}.json"
+                if file_path.is_file():
+                    transcript_files_to_evaluate.append(file_path)
+                else:
+                    logging.warning(
+                        f"Raw transcript file not found for evaluation: {file_path.name}"
+                    )
+
+        if not transcript_files_to_evaluate:
             logging.error(
-                "Transcript Evaluation script failed. Cannot determine passing transcripts."
+                "No raw transcript files found to evaluate. Stopping pipeline."
             )
-            # Treat as if none passed if the script fails
-            passed_uuids = set()
+            return None
+
+        logging.info(
+            f"Found {len(transcript_files_to_evaluate)} transcripts to evaluate in parallel."
+        )
+        successful_eval_uuids: List[str] = []
+        try:
+            # Use context manager for the pool
+            # Adjust process count as needed
+            with multiprocessing.Pool(
+                processes=min(
+                    len(transcript_files_to_evaluate), (os.cpu_count() or 1) * 2
+                )
+            ) as pool:
+                # map returns results in order, filter out None results (failures)
+                results = pool.map(
+                    _evaluate_transcript_task, transcript_files_to_evaluate
+                )
+                successful_eval_uuids = [uuid for uuid in results if uuid is not None]
+
+            passed_uuids_set = set(successful_eval_uuids)
+            logging.info(
+                f"Parallel transcript evaluation complete. {len(passed_uuids_set)} transcripts passed."
+            )
+            failed_count = len(transcript_files_to_evaluate) - len(passed_uuids_set)
+            if failed_count > 0:
+                logging.warning(f"{failed_count} transcripts failed evaluation.")
+
+        except Exception as e:
+            logging.error(
+                f"An error occurred during multiprocessing transcript evaluation: {e}"
+            )
+            # Treat as if none passed if the pool fails catastrophically
+            passed_uuids_set = set()
+
     else:
         logging.info("Step 2.1: Skipping Transcript Evaluation.")
         # If skipped, all generated UUIDs are considered "passed" for subsequent steps
-        passed_uuids = set(all_uuids)
+        passed_uuids_set = set(all_generated_uuids_list)
 
-    # Step 2.2: Transcript Parsing
-    # ----------------------------
-    # This script processes all raw transcripts found, including potentially failed ones.
-    # Downstream steps will filter based on passed_uuids if evaluation ran.
-    logging.info("Step 2.2: Running Transcript Parsing...")
+    # Step 2.2: Transcript Parsing (Sequential)
+    # -----------------------------------------
+    # This script processes all raw transcripts found in its input dir.
+    # It needs to run regardless of evaluation pass/fail, as downstream
+    # report generation filters based on passed_uuids_set.
+    logging.info("Step 2.2: Running Transcript Parsing (Sequential)...")
     if not run_script(PARSE_TRANSCRIPTS_SCRIPT, []):
         logging.error("Transcript Parsing script failed. Critical step. Exiting.")
-        sys.exit(1)
+        return None  # Indicate critical failure
     logging.info("Transcript Parsing finished.")
 
-    # Step 2.3: Requirement Extraction
-    # --------------------------------
-    # This script processes all *processed* transcripts found.
-    # Downstream steps will filter based on passed_uuids if evaluation ran.
-    logging.info("Step 2.3: Running Requirement Extraction...")
+    # Step 2.3: Requirement Extraction (Sequential)
+    # ---------------------------------------------
+    # This script processes all *processed* transcripts found in its input dir.
+    # Report generation step will filter based on passed_uuids_set later.
+    logging.info("Step 2.3: Running Requirement Extraction (Sequential)...")
     if not run_script(EXTRACT_REQ_SCRIPT, []):
         logging.error("Requirement Extraction script failed. Critical step. Exiting.")
-        sys.exit(1)
+        return None  # Indicate critical failure
     logging.info("Requirement Extraction finished.")
 
     logging.info("--- Pipeline Processing Finished ---")
-    # Return the set of UUIDs that passed evaluation, or all UUIDs if eval was skipped
-    # Note: If eval failed, passed_uuids will be an empty set.
-    return passed_uuids if not skip_transcript_eval else set(all_uuids)
+    # Return the set of UUIDs that passed evaluation (or all if skipped)
+    return passed_uuids_set
 
 
 def _generate_reports_for_uuid(uuid: str, scenario: str):
@@ -478,18 +460,34 @@ def generate_reports_async(
             f"Skipped {skipped_uuids_count} UUIDs that did not pass evaluation."
         )
 
-    try:
-        # Use context manager for the pool
-        # Adjust process count as needed, report generation might be I/O bound or CPU bound depending on scripts
-        with multiprocessing.Pool(
-            processes=min(len(tasks), (os.cpu_count() or 1) * 2)
-        ) as pool:
-            pool.starmap(_generate_reports_for_uuid, tasks)
-        logging.info(f"Asynchronous report generation complete for {len(tasks)} UUIDs.")
-    except Exception as e:
-        logging.error(
-            f"An error occurred during multiprocessing report generation: {e}"
+    # --- Sequential Processing ---
+    logging.info(
+        f"Starting sequential report generation for {len(tasks)} valid UUIDs..."
+    )
+    processed_count = 0
+    failed_count = 0
+    for i, (uuid, scenario) in enumerate(tasks):
+        logging.info(
+            f"Processing task {i + 1}/{len(tasks)}: UUID {uuid} (Scenario: {scenario})"
         )
+        try:
+            # Directly call the helper function for each task sequentially
+            _generate_reports_for_uuid(uuid, scenario)
+            # Note: _generate_reports_for_uuid handles its own internal errors and logging
+            # We could add a return value to _generate_reports_for_uuid if we need to track success/failure here
+            processed_count += 1  # Assume processed if no exception bubbles up
+        except Exception as e:
+            # Catch unexpected errors during the call itself, though _generate_reports_for_uuid should handle most
+            logging.error(f"Unexpected error processing task for UUID {uuid}: {e}")
+            failed_count += 1
+
+    logging.info(f"Sequential report generation complete.")
+    logging.info(f"Attempted processing for {processed_count} UUIDs.")
+    if failed_count > 0:
+        logging.warning(
+            f"Encountered unexpected errors during {failed_count} task executions."
+        )
+    # --- End Sequential Processing ---
 
     logging.info("--- Report Generation Finished ---")
 
@@ -632,7 +630,11 @@ def main():
     )
 
     # Step 2: Run Pipeline (Eval, Parse, Extract)
-    passed_uuids = run_pipeline(all_uuids, args.skip_transcript_eval)
+    # Pass scenario_uuids dict instead of flat list all_uuids
+    passed_uuids = run_pipeline(scenario_uuids, args.skip_transcript_eval)
+    if passed_uuids is None:  # Handle potential critical failure in pipeline
+        logging.error("Pipeline execution failed. Exiting.")
+        sys.exit(1)
 
     # Step 3: Generate Reports (Async)
     # Pass the dictionary mapping scenarios to lists of UUIDs

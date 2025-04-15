@@ -1,0 +1,107 @@
+[
+  {
+    "report_file": "24212af4-bd19-48e9-ba0b-f556d3fd7632\\recommendation_report_24212af4-bd19-48e9-ba0b-f556d3fd7632.md",
+    "uuid": "24212af4-bd19-48e9-ba0b-f556d3fd7632",
+    "scenario": "pet_care_coverage",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+  },
+  {
+    "report_file": "3a0390c2-4bed-4db1-8bc5-eb3c81436349\\recommendation_report_3a0390c2-4bed-4db1-8bc5-eb3c81436349.md",
+    "uuid": "3a0390c2-4bed-4db1-8bc5-eb3c81436349",
+    "scenario": "pet_care_coverage",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+  },
+  {
+    "report_file": "4b839ab1-a993-4651-b1d3-6a423eadf6da\\recommendation_report_4b839ab1-a993-4651-b1d3-6a423eadf6da.md",
+    "uuid": "4b839ab1-a993-4651-b1d3-6a423eadf6da",
+    "scenario": "pet_care_coverage",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+  },
+  {
+    "report_file": "a62c32d2-66eb-4397-975f-7d488ffac243\\recommendation_report_a62c32d2-66eb-4397-975f-7d488ffac243.md",
+    "uuid": "a62c32d2-66eb-4397-975f-7d488ffac243",
+    "scenario": "pet_care_coverage",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+  },
+  {
+    "report_file": "ef0e5e2d-a940-4a0c-a075-2cb04df4f93e\\recommendation_report_ef0e5e2d-a940-4a0c-a075-2cb04df4f93e.md",
+    "uuid": "ef0e5e2d-a940-4a0c-a075-2cb04df4f93e",
+    "scenario": "pet_care_coverage",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "Includes 'Pet care' benefit (covering kennel/cattery fees due to delay) directly in the plan according to JSON."
+  }
+]

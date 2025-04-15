@@ -1,0 +1,97 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Comprehensive travel insurance for a trip to Europe including medical coverage, trip cancellation, and additional benefits.\",\n  \"detailed_description\": \"Customer requires travel insurance for a 3-week trip to Europe for 2 travelers, with comprehensive medical coverage including pre-existing high blood pressure, coverage for trip cancellation, lost or damaged luggage, travel delay benefits including accommodation and meals, coverage for hiking activities, and a specific benefit for double payout for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Travel Delay Benefits\",\n    \"Accidental Death Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Doctor visits\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Double payout for accidental death occurring while using public transport.\",\n  \"keywords\": [\n    \"Comprehensive\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Hiking\",\n    \"Accidental Death\",\n    \"Public Transport\",\n    \"Pre-existing Condition\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ123456",
+        "requirement_summary": "Comprehensive travel insurance for a trip to Europe including medical coverage, trip cancellation, and additional benefits.",
+        "detailed_description": "Customer requires travel insurance for a 3-week trip to Europe for 2 travelers, with comprehensive medical coverage including pre-existing high blood pressure, coverage for trip cancellation, lost or damaged luggage, travel delay benefits including accommodation and meals, coverage for hiking activities, and a specific benefit for double payout for accidental death on public transport.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Europe",
+        "travel_duration": "3 weeks",
+        "insurance_coverage_type": [
+            "Comprehensive Medical Coverage",
+            "Trip Cancellation",
+            "Lost, Damaged, or Delayed Luggage",
+            "Travel Delay Benefits",
+            "Accidental Death Coverage"
+        ],
+        "pre_existing_conditions": [
+            "High blood pressure"
+        ],
+        "medical_needs": [
+            "Doctor visits",
+            "Hospital stays"
+        ],
+        "activities_to_cover": [
+            "Hiking"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Double payout for accidental death occurring while using public transport.",
+        "keywords": [
+            "Comprehensive",
+            "Medical Coverage",
+            "Trip Cancellation",
+            "Travel Delay",
+            "Hiking",
+            "Accidental Death",
+            "Public Transport",
+            "Pre-existing Condition"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance. My name is Sarah, how may I assist you today?\nCustomer: Yes, I need travel insurance. And make it quick, I don't have all day.\nCustomer Service Agent: Certainly. To help find the right information for you, could I start with a few details about your trip? Where will you be travelling from?\nCustomer: We're based in Singapore, obviously. That's why I'm calling ISS, isn't it?\nCustomer Service Agent: Of course. And where is your travel destination?\nCustomer: We're planning a trip to Europe. A proper tour.\nCustomer Service Agent: Europe, noted. And how long will you be away for?\nCustomer: It will be a 3 weeks trip.\nCustomer Service Agent: Thank you. And how many people will be travelling under this policy?\nCustomer: There will be 2 of us traveling. Both experienced travelers, I might add. I've been an ISS customer for years, you know. Home, car, the lot. So I expect good service.\nCustomer Service Agent: We appreciate your loyalty. Could I also ask the general age group of the travelers?\nCustomer: We're mostly around 41-55 years old. Fit and active.\nCustomer Service Agent: Okay, 41-55 age group. And regarding your trip to Europe, are there any specific activities you plan to participate in that might require specific mention, like adventure sports?\nCustomer: Look, we're not bungee jumping, but we plan to do some hiking. Nothing extreme, but if someone slips and needs medical attention for it, that absolutely has to be covered. No excuses.\nCustomer Service Agent: Alright, noted. Coverage for hiking activities. Are there any other specific activities?\nCustomer: No, just the hiking mainly. Sightseeing, relaxing. But things go wrong, don't they? What if our luggage gets lost or damaged? My suitcases are expensive, I expect proper reimbursement, not just a few dollars. And if it's delayed, I need to buy clothes immediately, that needs paying for.\nCustomer Service Agent: Understood. So, you require coverage for lost, damaged, or delayed baggage. Noted.\nCustomer: Yes, comprehensive cover. And medical is absolutely vital. One of us has high blood pressure – it's managed, but hospitals overseas are expensive. I expect any necessary doctor visits or hospital stays to be fully covered, no ifs or buts about pre-existing conditions. That's standard, right?\nCustomer Service Agent: Okay, I'm noting your requirement for comprehensive medical coverage, including considerations for doctor visits, hospital stays, and you've mentioned a pre-existing condition of high blood pressure.\nCustomer: Good. And what about delays? Flights get cancelled or delayed all the time. If we're stuck somewhere, I expect ISS to cover a decent hotel and meals until we can get moving again. Don't tell me I have to wait 12 hours or something ridiculous.\nCustomer Service Agent: Noted. You require cover for additional expenses like accommodation and meals due to significant travel delays.\nCustomer: Exactly. And trip cancellation too. If something serious happens – like illness, or a family emergency back home – and we have to cancel the whole thing, I need to know we'll get our money back for flights and hotels. No rubbish excuses.\nCustomer Service Agent: Okay, requirement for trip cancellation cover due to unforeseen covered reasons like illness or emergencies. Noted.\nCustomer: Right. Now, one very specific thing I saw mentioned with other insurers. I want to know if your policy offers double the payout for accidental death if, God forbid, it happens while travelling on public transport – like a train or a bus over there. That's a key requirement for me.\nCustomer Service Agent: Understood. You are specifically requesting confirmation on a benefit providing a double payout for accidental death occurring specifically while using public transport overseas. I have noted that requirement.\nCustomer: You better have. Look, my budget is flexible, but I expect top-tier coverage for everything I've mentioned. I don't want the basic package. Given my history with ISS, I expect this to be handled properly. If these requirements are a problem, I need to speak to someone senior right now.\nCustomer Service Agent: I understand your requirements clearly. Allow me to quickly summarize the key areas of coverage you need noted for your quote preparation. You require: Comprehensive Medical Coverage, with specific attention to pre-existing high blood pressure; coverage for Trip Cancellation; Lost, Damaged, or Delayed Luggage cover; Travel Delay benefits covering accommodation and meals; cover for injuries sustained during hiking activities; and crucially, the specific benefit of a double payout for accidental death occurring on public transport. Have I captured all your main requirements correctly?\nCustomer: Yes, that sounds about right. Make sure all of that is included when someone prepares the options. I don't want any nasty surprises in the fine print.\nCustomer Service Agent: Thank you for confirming. I have documented all these requirements. The next step is for our team to prepare travel insurance options based specifically on these needs for your 3-week trip to Europe for two travelers. Someone will be in touch with those details. Is there anything else I can note for you today?\nCustomer: No, that's it. Just get it done properly.\nCustomer Service Agent: Thank you for calling ISS Insurance. Have a good day.\nCustomer: Right. Bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Comprehensive travel insurance for a trip to Europe including medical coverage, trip cancellation, and additional benefits.\",\n  \"detailed_description\": \"Customer requires travel insurance for a 3-week trip to Europe for 2 travelers, with comprehensive medical coverage including pre-existing high blood pressure, coverage for trip cancellation, lost or damaged luggage, travel delay benefits including accommodation and meals, coverage for hiking activities, and a specific benefit for double payout for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Travel Delay Benefits\",\n    \"Accidental Death Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Doctor visits\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Double payout for accidental death occurring while using public transport.\",\n  \"keywords\": [\n    \"Comprehensive\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Hiking\",\n    \"Accidental Death\",\n    \"Public Transport\",\n    \"Pre-existing Condition\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ123456",
+                "requirement_summary": "Comprehensive travel insurance for a trip to Europe including medical coverage, trip cancellation, and additional benefits.",
+                "detailed_description": "Customer requires travel insurance for a 3-week trip to Europe for 2 travelers, with comprehensive medical coverage including pre-existing high blood pressure, coverage for trip cancellation, lost or damaged luggage, travel delay benefits including accommodation and meals, coverage for hiking activities, and a specific benefit for double payout for accidental death on public transport.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Europe",
+                "travel_duration": "3 weeks",
+                "insurance_coverage_type": [
+                    "Comprehensive Medical Coverage",
+                    "Trip Cancellation",
+                    "Lost, Damaged, or Delayed Luggage",
+                    "Travel Delay Benefits",
+                    "Accidental Death Coverage"
+                ],
+                "pre_existing_conditions": [
+                    "High blood pressure"
+                ],
+                "medical_needs": [
+                    "Doctor visits",
+                    "Hospital stays"
+                ],
+                "activities_to_cover": [
+                    "Hiking"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Double payout for accidental death occurring while using public transport.",
+                "keywords": [
+                    "Comprehensive",
+                    "Medical Coverage",
+                    "Trip Cancellation",
+                    "Travel Delay",
+                    "Hiking",
+                    "Accidental Death",
+                    "Public Transport",
+                    "Pre-existing Condition"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 25866,
+        "prompt_tokens": 21529,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 4337,
+        "successful_requests": 15
+    }
+}
