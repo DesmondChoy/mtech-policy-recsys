@@ -36,8 +36,11 @@ Develop a new Python script (`scripts/orchestrate_scenario_evaluation.py`) that 
 3.  **Pipeline Execution (Sequential Batch)**:
     *   Implement a function `run_pipeline(all_uuids, skip_transcript_eval)`:
         *   **Transcript Evaluation (Conditional)**:
-            *   If not `skip_transcript_eval`: Call `scripts/evaluation/transcript_evaluation/eval_transcript_main.py`. Parse results to determine passed UUIDs. **(Note: Pass/fail criteria TBD).**
-            *   Return set of passed UUIDs or `None`.
+            *   If not `skip_transcript_eval`: Call `scripts/evaluation/transcript_evaluation/eval_transcript_main.py`.
+            *   Parse the generated evaluation JSON results (`data/evaluation/transcript_evaluations/`) to determine passed UUIDs based on defined criteria:
+                *   All individual evaluations in the `evaluations` list must have `"result": "PASS"`.
+                *   The count of evaluations must match `summary.total_requirements`.
+            *   Return the set of passed UUIDs.
         *   **Transcript Parsing**: Call `src/utils/transcript_processing.py`. Check errors.
         *   **Requirement Extraction**: Call `src/agents/extractor.py`. Check errors.
 
@@ -51,24 +54,28 @@ Develop a new Python script (`scripts/orchestrate_scenario_evaluation.py`) that 
         *   Filter `all_uuids` based on `passed_uuids` if evaluation was run.
         *   Use `multiprocessing.Pool` to run `_generate_reports_for_uuid` for each valid UUID in parallel.
 
-5.  **Final Evaluation (Asynchronous per Scenario)**:
-    *   Implement a function `run_final_evaluation_async(scenarios)`:
-        *   Define a helper function `_evaluate_scenario(scenario)` that calls `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py --scenario {scenario}` and captures/logs the summary.
-        *   Use `multiprocessing.Pool` to run `_evaluate_scenario` for each scenario in parallel.
+5.  **Final Evaluation & Aggregation**:
+    *   Implement a function `aggregate_and_filter_evaluations(scenario_uuids)`:
+        *   Loop through each scenario and its associated list of generated UUIDs (`scenario_uuids`).
+        *   For each scenario, call `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py --scenario {scenario}` using `subprocess.run`. This script saves its own timestamped output file.
+        *   Find the latest evaluation result file generated for that scenario.
+        *   Read the JSON content of the latest result file.
+        *   Filter the results, keeping only entries whose UUIDs are present in the `scenario_uuids` list for that scenario (i.e., only results from the current orchestration run).
+        *   Save the filtered list to a new aggregated JSON file (e.g., `results_{scenario}_aggregated_{run_timestamp}.json`).
 
 6.  **Main Orchestration Logic**:
-    *   Implement the `main` function to call the steps sequentially: `generate_transcripts_async`, `run_pipeline`, `generate_reports_async`, `run_final_evaluation_async`. Log progress and errors.
+    *   Implement the `main` function to call the steps sequentially: `generate_transcripts_async`, `run_pipeline`, `generate_reports_async`, `aggregate_and_filter_evaluations`. Log progress and errors.
 
 ## 4. Implementation Steps
 
 1.  **[X] Create Script File**: `scripts/orchestrate_scenario_evaluation.py`.
 2.  **[X] Basic Structure**: Imports, constants, args, logging, main block.
 3.  **[X] Implement `generate_transcripts_async`**: Parallel generation using `multiprocessing.Pool`.
-4.  **[X] Implement `run_pipeline`**: Sequential calls to batch scripts (eval, parse, extract). Placeholder for eval pass/fail logic.
+4.  **[X] Implement `run_pipeline` - Parse Results Logic**: Implemented the defined pass/fail logic within `_parse_transcript_evaluation_results`, replacing the placeholder. (Script calls were already implemented).
 5.  **[X] Implement `generate_reports_async`**: Parallel report generation per UUID using `multiprocessing.Pool`.
-6.  **[X] Implement `run_final_evaluation_async`**: Parallel final evaluation per scenario using `multiprocessing.Pool`.
+6.  **[X] Implement `aggregate_and_filter_evaluations`**: Implemented the final evaluation execution and result aggregation logic. (Replaced the previous `run_final_evaluation_async`).
 7.  **[X] Add Error Handling**: Basic `subprocess.run` and `multiprocessing` error handling and logging added.
-8.  **[ ] Refine & Test**: Test with small numbers, refine eval pass/fail logic, test parallelism, add detailed logging.
+8.  **[ ] Refine & Test**: Test with small numbers, test aggregation, test parallelism, add detailed logging.
 9.  **[X] Documentation**: Comprehensive docstring added.
 10. **[ ] Update Memory Bank**: Update `activeContext.md` and `progress.md`.
 
@@ -79,7 +86,7 @@ Develop a new Python script (`scripts/orchestrate_scenario_evaluation.py`) that 
 
 ## 6. Open Questions / Decisions
 
-*   **Transcript Evaluation Pass/Fail Criteria**: How to determine? (Deferring detailed implementation).
+*   **Transcript Evaluation Pass/Fail Criteria**: Defined as: All individual evaluations have `"result": "PASS"` AND `len(evaluations) == summary.total_requirements`. Implementation pending in `_parse_transcript_evaluation_results`.
 *   **Error Handling Strategy**: Confirm continue-on-error is acceptable. (Assuming continue).
 
 ## 7. Rollback Plan

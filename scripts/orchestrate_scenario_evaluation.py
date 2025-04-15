@@ -27,9 +27,10 @@ Workflow Steps:
     recommendation reports in parallel using
     `scripts/generate_policy_comparison.py` and
     `scripts/generate_recommendation_report.py`.
-4.  **Final Evaluation (Async)**: Runs the final scenario-based evaluation in
-    parallel for each target scenario using
-    `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`.
+4.  **Final Evaluation & Aggregation**: Runs the standard scenario evaluation script
+    for each scenario, then filters the latest results file to include only
+    UUIDs generated in the current run, saving the filtered data to a new
+    aggregated file.
 
 Usage:
     python scripts/orchestrate_scenario_evaluation.py [-n NUM_TRANSCRIPTS] [--skip_transcript_eval]
@@ -54,6 +55,7 @@ import multiprocessing
 import os
 import subprocess
 import sys
+from datetime import datetime  # Import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
@@ -237,41 +239,106 @@ def generate_transcripts_async(
 
 def _parse_transcript_evaluation_results(all_uuids: List[str]) -> Set[str]:
     """
-    Parses transcript evaluation JSON files to determine which transcripts passed.
-    Placeholder implementation: Assumes a simple pass/fail structure.
+    Parses transcript evaluation JSON files to determine which transcripts passed based on defined criteria.
     """
     passed_uuids = set()
-    # TODO: Define actual pass criteria based on the structure of evaluation JSONs
-    # Example placeholder logic: Check if a summary score exists and is above a threshold
-    # For now, just log that we need to implement this and assume all generated transcripts
-    # for which an eval file exists are potentially passable if the script ran.
-    # A more robust check would be needed in reality.
-    logging.warning("Parsing transcript evaluation results - Using placeholder logic.")
+    logging.info("Parsing transcript evaluation results...")
     eval_files = glob.glob(str(TRANSCRIPT_EVAL_DIR / "transcript_eval_*.json"))
-    evaluated_uuids = set()
+    evaluated_uuids_found = set()  # Keep track of UUIDs for which eval files were found
+
     for f_path_str in eval_files:
         f_path = Path(f_path_str)
         # Extract UUID from filename like transcript_eval_{scenario}_{uuid}.json
         parts = f_path.stem.split("_")
         if len(parts) >= 4 and parts[0] == "transcript" and parts[1] == "eval":
             uuid = parts[-1]
-            evaluated_uuids.add(uuid)
-            # Placeholder: Assume pass if file exists and belongs to this run's UUIDs
-            if uuid in all_uuids:
-                # Add actual check here based on JSON content, e.g.:
-                # try:
-                #     with open(f_path, 'r') as f:
-                #         data = json.load(f)
-                #     if data.get("evaluation_summary", {}).get("overall_rating", "").lower() == "pass":
-                #         passed_uuids.add(uuid)
-                # except Exception as e:
-                #     logging.warning(f"Could not parse or evaluate {f_path.name}: {e}")
-                passed_uuids.add(
-                    uuid
-                )  # Placeholder: Add if file exists for a generated UUID
+            evaluated_uuids_found.add(uuid)
+
+            # Only process files corresponding to UUIDs generated in this run
+            if uuid not in all_uuids:
+                logging.debug(f"Skipping evaluation file for old UUID: {f_path.name}")
+                continue
+
+            try:
+                with open(f_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+
+                # --- Define Pass Criteria ---
+                evaluations = data.get("evaluations", [])
+                summary = data.get("summary", {})
+                total_requirements = summary.get("total_requirements")
+                all_pass = True
+                count_match = False
+
+                if (
+                    not isinstance(evaluations, list)
+                    or not isinstance(summary, dict)
+                    or total_requirements is None
+                ):
+                    logging.warning(
+                        f"Invalid structure in evaluation file {f_path.name}. Skipping."
+                    )
+                    continue
+
+                # 1. Check if count matches total requirements
+                if len(evaluations) == total_requirements:
+                    count_match = True
+                else:
+                    logging.warning(
+                        f"Evaluation count mismatch for {uuid}: Found {len(evaluations)}, expected {total_requirements}."
+                    )
+
+                # 2. Check if all individual results are "PASS"
+                if not evaluations:  # Handle case where evaluations list is empty but total_requirements > 0
+                    all_pass = False
+
+                for item in evaluations:
+                    if (
+                        not isinstance(item, dict)
+                        or item.get("result", "").upper() != "PASS"
+                    ):
+                        all_pass = False
+                        logging.debug(
+                            f"Non-PASS result found for {uuid} in item: {item.get('coverage_type')}"
+                        )
+                        break  # No need to check further items for this UUID
+
+                # --- Determine Overall Pass/Fail ---
+                if count_match and all_pass:
+                    logging.info(f"Transcript evaluation PASSED for UUID: {uuid}")
+                    passed_uuids.add(uuid)
+                else:
+                    logging.info(
+                        f"Transcript evaluation FAILED for UUID: {uuid} (Count Match: {count_match}, All Pass: {all_pass})"
+                    )
+
+            except FileNotFoundError:
+                # Should not happen if glob found it, but handle defensively
+                logging.warning(
+                    f"Evaluation file not found during parsing: {f_path.name}"
+                )
+            except json.JSONDecodeError:
+                logging.warning(
+                    f"Could not decode JSON from evaluation file: {f_path.name}"
+                )
+            except (KeyError, TypeError) as e:
+                logging.warning(
+                    f"Error accessing expected keys in evaluation file {f_path.name}: {e}"
+                )
+            except Exception as e:
+                logging.error(
+                    f"Unexpected error parsing evaluation file {f_path.name}: {e}"
+                )
+
+    # Log summary of parsing
+    missing_eval_files = set(all_uuids) - evaluated_uuids_found
+    if missing_eval_files:
+        logging.warning(
+            f"Evaluation files were missing for {len(missing_eval_files)} generated UUIDs: {missing_eval_files}"
+        )
 
     logging.info(
-        f"Found {len(evaluated_uuids)} evaluation files. Determined {len(passed_uuids)} passing UUIDs (placeholder)."
+        f"Found {len(evaluated_uuids_found)} evaluation files corresponding to this run. Determined {len(passed_uuids)} passing UUIDs."
     )
     return passed_uuids
 
@@ -287,7 +354,9 @@ def run_pipeline(
     # --------------------------------------------
     if not skip_transcript_eval:
         logging.info("Step 2.1: Running Transcript Evaluation...")
-        if run_script(EVAL_TRANSCRIPTS_SCRIPT, []):
+        # Pass the directory containing the raw transcripts to the evaluation script
+        eval_args = ["--directory", str(RAW_TRANSCRIPT_DIR)]
+        if run_script(EVAL_TRANSCRIPTS_SCRIPT, eval_args):
             logging.info("Transcript Evaluation script finished. Parsing results...")
             passed_uuids = _parse_transcript_evaluation_results(all_uuids)
         else:
@@ -425,45 +494,103 @@ def generate_reports_async(
     logging.info("--- Report Generation Finished ---")
 
 
-def _evaluate_scenario(scenario: str):
-    """Helper function to run final evaluation for a single scenario."""
-    logging.info(f"Running final evaluation for scenario: {scenario}...")
-    args = ["--scenario", scenario]
-    # The evaluation script prints summary to stdout/log, run_script captures it on failure
-    # We might want to enhance run_script to always capture/return stdout for logging summaries
-    success = run_script(EVAL_SCENARIO_SCRIPT, args)
-    if success:
-        logging.info(f"Final evaluation completed for scenario: {scenario}")
-    else:
-        logging.error(f"Final evaluation failed for scenario: {scenario}")
+def aggregate_and_filter_evaluations(scenario_uuids: Dict[str, List[str]]):
+    """
+    Runs final scenario evaluation and aggregates results for the current run.
 
+    For each scenario:
+    1. Runs the standard scenario evaluation script.
+    2. Finds the latest result file generated by that script.
+    3. Filters the results to include only UUIDs from the current orchestration run.
+    4. Saves the filtered results to a new aggregated file.
+    """
+    logging.info("--- Starting Final Evaluation & Aggregation ---")
+    run_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    scenarios_to_evaluate = list(scenario_uuids.keys())
 
-def run_final_evaluation_async(scenarios: List[str]):
-    """Runs the final scenario evaluation asynchronously per scenario."""
-    logging.info("--- Starting Final Scenario Evaluation ---")
-    if not scenarios:
-        logging.warning("No scenarios provided for final evaluation.")
-        logging.info("--- Final Scenario Evaluation Finished ---")
+    if not scenarios_to_evaluate:
+        logging.warning("No scenarios with generated UUIDs to evaluate.")
+        logging.info("--- Final Evaluation & Aggregation Finished ---")
         return
 
-    logging.info(
-        f"Starting asynchronous final evaluation for {len(scenarios)} scenarios..."
-    )
+    for scenario in scenarios_to_evaluate:
+        logging.info(f"Running final evaluation for scenario: {scenario}...")
+        args = ["--scenario", scenario]
+        # Run the evaluation script - it saves its own timestamped file
+        success = run_script(EVAL_SCENARIO_SCRIPT, args)
 
-    try:
-        # Use context manager for the pool
-        with multiprocessing.Pool(
-            processes=min(len(scenarios), os.cpu_count() or 1)
-        ) as pool:
-            # Use map as the helper function only takes one argument (scenario)
-            pool.map(_evaluate_scenario, scenarios)
+        if not success:
+            logging.error(
+                f"Final evaluation script failed for scenario: {scenario}. Skipping aggregation."
+            )
+            continue
+
+        # Find the latest result file for this scenario
+        try:
+            list_of_files = SCENARIO_EVAL_DIR.glob(f"results_{scenario}_*.json")
+            # Filter out potential aggregated files from previous runs
+            non_aggregated_files = [
+                f for f in list_of_files if "_aggregated_" not in f.name
+            ]
+            if not non_aggregated_files:
+                logging.warning(
+                    f"No standard evaluation result files found for scenario {scenario} after running the script."
+                )
+                continue
+            latest_file = max(non_aggregated_files, key=os.path.getctime)
+            logging.info(
+                f"Found latest evaluation file for {scenario}: {latest_file.name}"
+            )
+        except Exception as e:
+            logging.error(
+                f"Error finding latest evaluation file for scenario {scenario}: {e}"
+            )
+            continue
+
+        # Read the latest results
+        try:
+            with open(latest_file, "r", encoding="utf-8") as f:
+                all_results = json.load(f)
+            if not isinstance(all_results, list):
+                logging.warning(
+                    f"Evaluation file {latest_file.name} does not contain a list. Skipping aggregation."
+                )
+                continue
+        except Exception as e:
+            logging.error(
+                f"Error reading or parsing evaluation file {latest_file.name}: {e}"
+            )
+            continue
+
+        # Filter results based on UUIDs from this run
+        uuids_for_this_scenario = set(scenario_uuids.get(scenario, []))
+        filtered_results = [
+            result
+            for result in all_results
+            if isinstance(result, dict)
+            and result.get("uuid") in uuids_for_this_scenario
+        ]
         logging.info(
-            f"Asynchronous final evaluation complete for {len(scenarios)} scenarios."
+            f"Filtered {len(all_results)} results down to {len(filtered_results)} for scenario {scenario} based on current run UUIDs."
         )
-    except Exception as e:
-        logging.error(f"An error occurred during multiprocessing final evaluation: {e}")
 
-    logging.info("--- Final Scenario Evaluation Finished ---")
+        # Save the filtered results to a new aggregated file
+        try:
+            aggregated_filename = (
+                SCENARIO_EVAL_DIR
+                / f"results_{scenario}_aggregated_{run_timestamp}.json"
+            )
+            with open(aggregated_filename, "w", encoding="utf-8") as f:
+                json.dump(filtered_results, f, indent=2)
+            logging.info(
+                f"Saved aggregated results for {scenario} to: {aggregated_filename.name}"
+            )
+        except Exception as e:
+            logging.error(
+                f"Error saving aggregated results for scenario {scenario}: {e}"
+            )
+
+    logging.info("--- Final Evaluation & Aggregation Finished ---")
 
 
 # --- Main Execution ---
@@ -511,8 +638,8 @@ def main():
     # Pass the dictionary mapping scenarios to lists of UUIDs
     generate_reports_async(scenario_uuids, passed_uuids)
 
-    # Step 4: Run Final Evaluation (Async)
-    run_final_evaluation_async(TARGET_SCENARIOS)
+    # Step 4: Run Final Evaluation and Aggregate Results
+    aggregate_and_filter_evaluations(scenario_uuids)
 
     logging.info("--- Scenario Evaluation Orchestration Finished ---")
 
