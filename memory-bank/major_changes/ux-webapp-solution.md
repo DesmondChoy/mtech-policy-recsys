@@ -94,56 +94,62 @@ This major change introduces a customer-focused, mobile-friendly web app to addr
 - [x] Define interfaces/types for structured data (TypeScript)
 - [x] Update customer ID drop-down to use real customer IDs from results folder (each folder name is a customer UUID)
 - [x] Utility: Add function to extract customer IDs from results folder (and optionally from data/transcripts/raw/synthetic JSON filenames)
-- [ ] Identify and document the data sources (customer IDs, requirements, policies, reports) in the codebase for maintainability
+- [x] Identify and document the data sources (customer IDs, requirements, policies, reports) in the codebase for maintainability
 
 #### 3. Landing & Login Simulation
 - [x] Design landing page layout (mobile-first)
 - [x] Implement initial customer ID drop-down login component (placeholder data)
-- [ ] Refactor layout so the customer ID dropdown is right-aligned and visually subtle (for demo/MVP only).
-- [ ] Ensure the dropdown is removed (or hidden) in production builds.
-- [ ] Make the central input field accept either dropdown selection or manual entry.
-- [ ] Implement validation: only allow valid customer IDs in the input.
-- [ ] Display a visible but non-jarring error message ("User not found") if an invalid ID is entered.
-- [ ] Hide the dropdown after the Continue button is clicked.
-- [ ] Remove any previous logic or UI that assumed the dropdown was always visible or on the left.
-- [ ] Document the MVP/demo vs. production distinction in the code and documentation.
-- [ ] Add a "Random" button to the right dropdown menu that selects a random customer ID from the list and updates both the dropdown and the central input field. The button should be subtle, compact, and demo-friendly (e.g., use a shuffle icon with a tooltip, placed below the dropdown).
+- [x] Refactor layout so the customer ID dropdown is right-aligned and visually subtle (for demo/MVP only).
+- [x] Ensure the dropdown is removed (or hidden) in production builds.
+- [x] Make the central input field accept either dropdown selection or manual entry.
+- [x] Implement validation: only allow valid customer IDs in the input.
+- [x] Display a visible but non-jarring error message ("User not found") if an invalid ID is entered.
+- [x] Hide the dropdown after the Continue button is clicked.
+- [x] Remove any previous logic or UI that assumed the dropdown was always visible or on the left.
+- [x] Document the MVP/demo vs. production distinction in the code and documentation.
+- [x] Add a "Random" button to the right dropdown menu that selects a random customer ID from the list and updates both the dropdown and the central input field. The button should be subtle, compact, and demo-friendly (e.g., use a shuffle icon with a tooltip, placed below the dropdown).
 
-#### 4. Chrome-Style Tabbed Report Interface (Post-Login)
-- [ ] After selecting a customer ID (UUID) and clicking Continue, immediately present the user's most recent (or only) recommendation report in a main content area
-- [ ] Provide a browser-like tab bar at the top (inspired by Chrome), with tabs for:
-    - Recommendation (streaming content from `results/{uuid}/recommendation_report_{uuid}.md`)
-    - Policy Comparison (dropdown to select insurer, renders `results/{uuid}/policy_comparison_report_{insurer}.md`)
-    - Customer Requirements (renders `data/extracted_customer_requirements/requirements_{scenario}_{uuid}.json` as pretty JSON)
-    - Transcript (renders `data/transcripts/raw/synthetic/transcript_{scenario}_{uuid}.json` as pretty JSON or formatted chat)
-    - Policy PDFs (shows all four insurer PDFs from `data/policies/raw/`, one per insurer, with viewer or download option)
-- [ ] All tabs pertain to the selected customer context (UUID) except Policy PDFs, which are global
-- [ ] Animate or stream recommendation content for a dynamic feel (typewriter effect or similar)
-- [ ] Prominently display a 'Switch Customer' button in the AppBar
+#### 4. Transcript Confirmation Flow (Post-Landing)
+- [ ] After entering a valid customer ID and clicking Continue, show only the customer's transcript (from `data/transcripts/processed/parsed_transcript_{scenario}_{uuid}.json`).
+- [ ] Render the transcript as chat bubbles with speaker labels (messaging app style).
+- [ ] Display a visually distinct confirmation prompt ("Is this your transcript?") at the top of the page, with clear Yes/No buttons.
+- [ ] On Yes: Navigate to an animation/transition page (placeholder for now).
+- [ ] On No: Return to the landing page.
+- [ ] Only after the animation, proceed to the Chrome-style tabbed report interface. The transcript tab here also references the processed transcript.
+- [ ] Ensure transcript confirmation state does not persist across reloads. Chrome-style interface is only accessible after confirmation/animation.
 
-#### 5. Tab Content Details
+#### 5. Chrome-Style Tabbed Report Interface (Post-Confirmation)
+- [ ] After transcript confirmation and animation, present the user's main report interface as previously designed (with tabs for Recommendation, Policy Comparison, Customer Requirements, Transcript, Policy PDFs, etc.).
+
+#### 6. Tab Content Details
 - [ ] **Recommendation Tab:** Render Markdown as rich text from the appropriate file
 - [ ] **Policy Comparison Tab:** Dropdown menu for insurer selection; render selected Markdown file as rich text
 - [ ] **Customer Requirements Tab:** Render JSON as pretty-printed, rich text
 - [ ] **Transcript Tab:** Render JSON as pretty-printed, rich text or chat timeline
 - [ ] **Policy PDFs Tab:** Display all four insurer PDFs (one per insurer) using an embedded PDF viewer or download link; deduplicate if multiple files per insurer
 
-#### 6. Feedback & Contact
+#### 7. Feedback & Contact
 - [ ] Add feedback widget (thumbs up/down, comments)
 - [ ] Implement contact advisor button/modal
 
-#### 7. Mobile & Accessibility
+#### 8. Mobile & Accessibility
 - [ ] Test and refine mobile responsiveness (all screens)
 - [ ] Add accessibility features (keyboard navigation, ARIA labels, screen reader support)
 
-#### 8. Quality & Testing
+#### 9. Quality & Testing
 - [ ] Write unit and integration tests for key components
 - [ ] Conduct end-to-end walkthroughs (customer journey)
 - [ ] Fix bugs and polish UI/UX
 
-#### 9. Documentation & Handover
+#### 10. Documentation & Handover
 - [ ] Document setup, usage, and key design decisions in README
 - [ ] Update Memory Bank with implementation notes and lessons learned
+
+#### 11. Automate Transcript Index Generation
+- [x] Automate transcript index generation: Updated the sync-public-assets.cjs Node.js script to scan all processed transcript files, extract customer UUIDs, and write an up-to-date transcripts_index.json to the public folder. This ensures the frontend always finds the correct transcript file for any customer ID, with no manual editing required.
+
+#### 12. Keep Customer IDs in Sync with Processed Transcripts
+- [x] Automated the generation of `customer_ids.json` in the sync-public-assets.cjs script. This file is now always built from the UUIDs of available processed transcripts, ensuring the landing page dropdown only shows valid, available customers. No manual editing required; always in sync with transcript data.
 
 ---
 
@@ -175,14 +181,14 @@ This major change introduces a customer-focused, mobile-friendly web app to addr
 
 ### To-Do Tasks
 
-- [ ] Refactor layout so the customer ID dropdown is right-aligned and visually subtle (for demo/MVP only).
-- [ ] Ensure the dropdown is removed (or hidden) in production builds.
-- [ ] Make the central input field accept either dropdown selection or manual entry.
-- [ ] Implement validation: only allow valid customer IDs in the input.
-- [ ] Display a visible but non-jarring error message ("User not found") if an invalid ID is entered.
-- [ ] Hide the dropdown after the Continue button is clicked.
-- [ ] Remove any previous logic or UI that assumed the dropdown was always visible or on the left.
-- [ ] Document the MVP/demo vs. production distinction in the code and documentation.
+- [x] Refactor layout so the customer ID dropdown is right-aligned and visually subtle (for demo/MVP only).
+- [x] Ensure the dropdown is removed (or hidden) in production builds.
+- [x] Make the central input field accept either dropdown selection or manual entry.
+- [x] Implement validation: only allow valid customer IDs in the input.
+- [x] Display a visible but non-jarring error message ("User not found") if an invalid ID is entered.
+- [x] Hide the dropdown after the Continue button is clicked.
+- [x] Remove any previous logic or UI that assumed the dropdown was always visible or on the left.
+- [x] Document the MVP/demo vs. production distinction in the code and documentation.
 
 ---
 

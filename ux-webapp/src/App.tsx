@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import DashboardPage from './pages/DashboardPage';
 import ReportViewerPage from './pages/ReportViewerPage';
+import TranscriptPage from './pages/TranscriptPage';
+import TransitionPage from './pages/TransitionPage';
 import Container from '@mui/material/Container';
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/report/:reportId" element={<ReportViewerPage />} />
+          <Route path="/transcript/:uuid" element={<TranscriptPage />} />
+          <Route path="/transition/:uuid" element={<TransitionPage />} />
         </Routes>
       </Container>
     </Router>

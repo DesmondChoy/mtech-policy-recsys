@@ -17,6 +17,7 @@ import {
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 import { fetchCustomerIds } from '../utils/fetchCustomerIds';
+import { useNavigate } from 'react-router-dom';
 import '../global.css';
 
 const tagline = 'Your journey, your coverage. Compare, understand, and choose with confidence.';
@@ -34,6 +35,7 @@ const LandingPage: React.FC = () => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [dropdownTop, setDropdownTop] = useState<number | undefined>(undefined);
   const [dropdownLeft, setDropdownLeft] = useState<number | undefined>(undefined);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchCustomerIds()
@@ -89,7 +91,7 @@ const LandingPage: React.FC = () => {
       return;
     }
     setShowDropdown(false); // Hide dropdown after continue
-    window.location.href = `/report/${inputValue}`;
+    navigate(`/transcript/${inputValue}`);
   };
 
   const handleRandomPick = () => {

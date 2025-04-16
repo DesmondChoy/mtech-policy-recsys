@@ -31,8 +31,8 @@ const mappings = [
     dest: path.join(publicBase, 'data', 'extracted_customer_requirements')
   },
   {
-    src: path.join(backendBase, 'data', 'transcripts', 'raw', 'synthetic'),
-    dest: path.join(publicBase, 'data', 'transcripts', 'raw', 'synthetic')
+    src: path.join(backendBase, 'data', 'transcripts', 'processed'),
+    dest: path.join(publicBase, 'data', 'transcripts', 'processed')
   },
   {
     src: path.join(backendBase, 'data', 'policies', 'raw'),
@@ -46,3 +46,30 @@ for (const { src, dest } of mappings) {
 }
 
 console.log('Public asset sync complete.');
+
+// === Transcript Index Generation ===
+const transcriptsProcessedDir = path.join(backendBase, 'data', 'transcripts', 'processed');
+const transcriptsIndexPath = path.join(publicBase, 'transcripts_index.json');
+let transcriptIndex = {};
+
+if (fs.existsSync(transcriptsProcessedDir)) {
+  for (const fname of fs.readdirSync(transcriptsProcessedDir)) {
+    if (fname.endsWith('.json')) {
+      // UUID is the last section before .json, after the last underscore
+      const uuid = fname.replace(/^.*_([^_]+-[^_]+-[^_]+-[^_]+-[^_]+)\.json$/, '$1');
+      if (uuid && uuid.length > 10) {
+        transcriptIndex[uuid] = fname;
+      }
+    }
+  }
+  fs.writeFileSync(transcriptsIndexPath, JSON.stringify(transcriptIndex, null, 2));
+  console.log(`Transcript index generated at: ${transcriptsIndexPath}`);
+
+  // Also write customer_ids.json for dropdown
+  const customerIdsPath = path.join(publicBase, 'customer_ids.json');
+  const customerIds = Object.keys(transcriptIndex);
+  fs.writeFileSync(customerIdsPath, JSON.stringify(customerIds, null, 2));
+  console.log(`Customer IDs written to: ${customerIdsPath}`);
+} else {
+  console.warn(`Transcript processed directory not found: ${transcriptsProcessedDir}`);
+}
