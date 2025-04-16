@@ -99,7 +99,15 @@ This major change introduces a customer-focused, mobile-friendly web app to addr
 #### 3. Landing & Login Simulation
 - [x] Design landing page layout (mobile-first)
 - [x] Implement initial customer ID drop-down login component (placeholder data)
-- [ ] Create logic to load the Chrome-style tabbed report interface upon selection
+- [ ] Refactor layout so the customer ID dropdown is right-aligned and visually subtle (for demo/MVP only).
+- [ ] Ensure the dropdown is removed (or hidden) in production builds.
+- [ ] Make the central input field accept either dropdown selection or manual entry.
+- [ ] Implement validation: only allow valid customer IDs in the input.
+- [ ] Display a visible but non-jarring error message ("User not found") if an invalid ID is entered.
+- [ ] Hide the dropdown after the Continue button is clicked.
+- [ ] Remove any previous logic or UI that assumed the dropdown was always visible or on the left.
+- [ ] Document the MVP/demo vs. production distinction in the code and documentation.
+- [ ] Add a "Random" button to the right dropdown menu that selects a random customer ID from the list and updates both the dropdown and the central input field. The button should be subtle, compact, and demo-friendly (e.g., use a shuffle icon with a tooltip, placed below the dropdown).
 
 #### 4. Chrome-Style Tabbed Report Interface (Post-Login)
 - [ ] After selecting a customer ID (UUID) and clicking Continue, immediately present the user's most recent (or only) recommendation report in a main content area
@@ -150,3 +158,35 @@ This major change introduces a customer-focused, mobile-friendly web app to addr
 **Rendering:**
 - Markdown and JSON files are rendered as rich text (Markdown viewer, pretty JSON)
 - PDFs are displayed using an embedded PDF viewer
+
+---
+
+### Customer ID Selection & Input – Updated Solution & To-Do Plan
+
+### Overview
+
+- The customer ID dropdown will be positioned on the right side of the screen, styled subtly for MVP/demo purposes only.
+- In production, this dropdown will be removed entirely.
+- The central input field allows users to either select a customer ID from the dropdown or type it manually.
+- Only valid customer IDs are accepted. If the input does not match a valid ID, a visible but non-jarring error message ("User not found") will appear.
+- After clicking the Continue button, the dropdown disappears.
+
+---
+
+### To-Do Tasks
+
+- [ ] Refactor layout so the customer ID dropdown is right-aligned and visually subtle (for demo/MVP only).
+- [ ] Ensure the dropdown is removed (or hidden) in production builds.
+- [ ] Make the central input field accept either dropdown selection or manual entry.
+- [ ] Implement validation: only allow valid customer IDs in the input.
+- [ ] Display a visible but non-jarring error message ("User not found") if an invalid ID is entered.
+- [ ] Hide the dropdown after the Continue button is clicked.
+- [ ] Remove any previous logic or UI that assumed the dropdown was always visible or on the left.
+- [ ] Document the MVP/demo vs. production distinction in the code and documentation.
+
+---
+
+### Notes
+
+- The dropdown is present only for demonstration purposes in the MVP. In production, customer ID selection will rely solely on the central input field.
+- The error message should be styled as a helper text or a subtle alert below the input field, not as a modal or toast.

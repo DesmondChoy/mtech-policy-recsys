@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Box,
   Card,
@@ -9,32 +9,96 @@ import {
   FormControl,
   InputLabel,
   Select,
-  useTheme
+  TextField,
+  useTheme,
+  IconButton,
+  Tooltip
 } from '@mui/material';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
+import ShuffleIcon from '@mui/icons-material/Shuffle';
 import { fetchCustomerIds } from '../utils/fetchCustomerIds';
 import '../global.css';
 
 const tagline = 'Your journey, your coverage. Compare, understand, and choose with confidence.';
 
+const isDemo = import.meta.env.MODE !== 'production'; // Only show dropdown in demo/MVP
+
 const LandingPage: React.FC = () => {
   const [selectedCustomer, setSelectedCustomer] = useState('');
   const [customerIds, setCustomerIds] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
+  const [inputValue, setInputValue] = useState('');
+  const [showDropdown, setShowDropdown] = useState(true); // Controls dropdown visibility
+  const [error, setError] = useState('');
   const theme = useTheme();
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [dropdownTop, setDropdownTop] = useState<number | undefined>(undefined);
+  const [dropdownLeft, setDropdownLeft] = useState<number | undefined>(undefined);
 
   useEffect(() => {
     fetchCustomerIds()
       .then(ids => {
-        console.log('Loaded customer IDs:', ids);
         setCustomerIds(ids);
       })
-      .catch((err) => {
-        console.error('Error loading customer IDs:', err);
+      .catch(() => {
         setCustomerIds([]);
       })
       .finally(() => setLoading(false));
   }, []);
+
+  // Helper to update dropdown position
+  const updateDropdownPosition = () => {
+    if (cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
+      setDropdownTop(rect.top);
+      setDropdownLeft(rect.right + 16); // 16px gap from card
+    }
+  };
+
+  useEffect(() => {
+    updateDropdownPosition();
+    window.addEventListener('resize', updateDropdownPosition);
+    return () => window.removeEventListener('resize', updateDropdownPosition);
+  }, [loading]);
+
+  // Validate input on change
+  useEffect(() => {
+    if (!inputValue) {
+      setError('');
+    } else if (!customerIds.includes(inputValue)) {
+      setError('User not found');
+    } else {
+      setError('');
+    }
+  }, [inputValue, customerIds]);
+
+  const handleDropdownChange = (e: any) => {
+    setSelectedCustomer(e.target.value);
+    setInputValue(e.target.value);
+    setError('');
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+    setSelectedCustomer(e.target.value);
+  };
+
+  const handleContinue = () => {
+    if (!inputValue || !customerIds.includes(inputValue)) {
+      setError('User not found');
+      return;
+    }
+    setShowDropdown(false); // Hide dropdown after continue
+    window.location.href = `/report/${inputValue}`;
+  };
+
+  const handleRandomPick = () => {
+    if (customerIds.length === 0) return;
+    const randomId = customerIds[Math.floor(Math.random() * customerIds.length)];
+    setSelectedCustomer(randomId);
+    setInputValue(randomId);
+    setError('');
+  };
 
   return (
     <Box
@@ -65,7 +129,80 @@ const LandingPage: React.FC = () => {
         <rect x="200" y="650" width="500" height="60" rx="30" fill="#b2ebf2" />
         <rect x="650" y="200" width="60" height="500" rx="30" fill="#b2ebf2" />
       </svg>
-      <Card sx={{ p: 4, width: '100%', maxWidth: 420, boxShadow: 3, zIndex: 2 }}>
+      {/* Subtle right-aligned dropdown for MVP/demo only */}
+      {isDemo && showDropdown && (
+        <Box
+          sx={{
+            position: 'fixed',
+            top: dropdownTop !== undefined ? dropdownTop : 28,
+            left: dropdownLeft !== undefined ? dropdownLeft : 'auto',
+            minWidth: 140,
+            maxWidth: 180,
+            bgcolor: 'rgba(255,255,255,0.75)',
+            borderRadius: 2,
+            boxShadow: 1,
+            opacity: 0.72,
+            zIndex: 10,
+            p: 1.2,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-end',
+            border: '1px solid #e3e3e3',
+            fontSize: 13,
+          }}
+        >
+          <FormControl fullWidth size="small" sx={{ m: 0 }}>
+            <InputLabel
+              id="customer-select-label-demo"
+              sx={{ fontSize: 13, top: '-6px', left: '-2px', bgcolor: 'rgba(255,255,255,0.75)', px: 0.5 }}
+              shrink
+            >
+              Customer ID (Demo)
+            </InputLabel>
+            <Select
+              labelId="customer-select-label-demo"
+              value={selectedCustomer}
+              label="Customer ID (Demo)"
+              onChange={handleDropdownChange}
+              sx={{ fontSize: 13, minHeight: 36, background: 'rgba(255,255,255,0.9)' }}
+              MenuProps={{
+                PaperProps: {
+                  sx: { fontSize: 13, maxHeight: 200 }
+                }
+              }}
+            >
+              {customerIds.length === 0 && !loading ? (
+                <MenuItem value="" disabled>
+                  No customer IDs found
+                </MenuItem>
+              ) : (
+                customerIds.map(id => (
+                  <MenuItem key={id} value={id} sx={{ fontSize: 13 }}>
+                    {id}
+                  </MenuItem>
+                ))
+              )}
+            </Select>
+          </FormControl>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, width: '100%', mt: 1, mb: 0.5 }}>
+            <Tooltip title="Pick Random Customer">
+              <IconButton
+                size="small"
+                aria-label="random-customer"
+                onClick={handleRandomPick}
+                sx={{ color: 'primary.main', bgcolor: 'rgba(144,202,249,0.08)', '&:hover': { bgcolor: 'rgba(144,202,249,0.18)' }, mr: 0.5 }}
+                disabled={customerIds.length === 0}
+              >
+                <ShuffleIcon fontSize="small" />
+              </IconButton>
+            </Tooltip>
+            <Typography variant="caption" color="text.secondary" sx={{ fontSize: 12, lineHeight: 1.2 }}>
+              This dropdown is for MVP/demo only; will not appear in production.
+            </Typography>
+          </Box>
+        </Box>
+      )}
+      <Card ref={cardRef} sx={{ p: 4, width: '100%', maxWidth: 420, boxShadow: 3, zIndex: 2 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 2 }}>
           <FlightTakeoffIcon color="primary" sx={{ fontSize: 48, mb: 1 }} />
           <Typography variant="h5" fontWeight={700} gutterBottom>
@@ -76,41 +213,28 @@ const LandingPage: React.FC = () => {
           </Typography>
         </Box>
         <CardContent>
-          <FormControl fullWidth sx={{ mb: 2 }}>
-            <InputLabel id="customer-select-label">Customer ID</InputLabel>
-            <Select
-              labelId="customer-select-label"
-              value={selectedCustomer}
-              label="Customer ID"
-              onChange={e => setSelectedCustomer(e.target.value)}
-            >
-              {customerIds.length === 0 && !loading ? (
-                <MenuItem value="" disabled>
-                  No customer IDs found
-                </MenuItem>
-              ) : (
-                customerIds.map(id => (
-                  <MenuItem key={id} value={id}>{id}</MenuItem>
-                ))
-              )}
-            </Select>
-          </FormControl>
+          <TextField
+            label="Customer ID"
+            value={inputValue}
+            onChange={handleInputChange}
+            fullWidth
+            error={!!error}
+            helperText={error || 'Enter or select your customer ID'}
+            sx={{ mb: 2 }}
+            autoFocus
+          />
           <Button
             variant="contained"
             color="primary"
             fullWidth
-            disabled={!selectedCustomer || loading}
+            disabled={!inputValue || !!error || loading}
             sx={{ mt: 1 }}
-            onClick={() => {
-              if (selectedCustomer) {
-                window.location.href = `/report/${selectedCustomer}`;
-              }
-            }}
+            onClick={handleContinue}
           >
             Continue
           </Button>
           <Typography variant="caption" color="text.secondary" display="block" align="center" sx={{ mt: 2 }}>
-            Select your customer profile to view your personalized recommendations.
+            Select or enter your customer profile to view your personalized recommendations.
           </Typography>
         </CardContent>
       </Card>
