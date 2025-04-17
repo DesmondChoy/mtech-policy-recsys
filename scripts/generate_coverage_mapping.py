@@ -6,7 +6,7 @@ from pathlib import Path
 def main():
     # Define paths
     processed_dir = Path("data/policies/processed")
-    output_file = Path("data/ground_truth/coverages.json")
+    output_file = Path("data/ground_truth/ground_truth.json")
     
     # Ensure output directory exists
     output_file.parent.mkdir(parents=True, exist_ok=True)
@@ -53,7 +53,23 @@ def main():
             for category in policy_data.get("coverage_categories", []):
                 for coverage in category.get("coverages", []):
                     coverage_name = coverage.get("coverage_name")
+                    
+                    # Skip coverages that are not covered or NA
                     if coverage_name:
+                        # Check base_limits to see if it's covered
+                        base_limits = coverage.get("base_limits", [])
+                        is_covered = True
+                        
+                        # If any limit is "Not covered", "NA", or "N.A." (case insensitive), skip this coverage
+                        for limit_obj in base_limits:
+                            limit_value = limit_obj.get("limit", "")
+                            if isinstance(limit_value, str) and limit_value.lower() in ["not covered", "na", "n.a."]:
+                                is_covered = False
+                                break
+                        
+                        if not is_covered:
+                            continue  # Skip this coverage
+                            
                         # Convert to lowercase for case-insensitive comparison
                         lowercase_name = coverage_name.lower()
                         
