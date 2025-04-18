@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "sync-public-assets": "node ./scripts/sync-public-assets.cjs",
-    "predev": "npm run sync-public-assets && python ../src/utils/extract_customer_ids.py",
+    "predev": "npm run sync-public-assets",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",

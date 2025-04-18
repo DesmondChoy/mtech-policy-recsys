@@ -154,6 +154,19 @@ This major change introduces a customer-focused, mobile-friendly web app to addr
 
 ---
 
+**Update: Customer ID Sync Workflow Simplified (2025-04-18)**
+
+- The Python script `extract_customer_ids.py` has been **deleted**. It is no longer needed for generating `customer_ids.json`.
+- The Node.js script `ux-webapp/scripts/sync-public-assets.cjs` is now the **sole source of truth** for generating both `transcripts_index.json` and `customer_ids.json` in the public directory.
+- The `predev` script in `package.json` has been updated to only run the Node.js sync script, ensuring customer IDs always match the current set of processed transcript files.
+- This change guarantees there are no stale or extra IDs in `customer_ids.json`.
+
+**Impact:**
+- Running `npm run dev` now always results in an accurate, up-to-date `customer_ids.json` reflecting only the files in `data/transcripts/processed`.
+- The workflow is simpler and less error-prone.
+
+---
+
 **Data Mapping Summary:**
 - **Customer ID (UUID):** Used for all file lookups per customer
 - **Recommendation:** `results/{uuid}/recommendation_report_{uuid}.md`

@@ -20,7 +20,7 @@ const projectRoot = path.resolve(__dirname, '../..');
 const backendBase = projectRoot;
 const publicBase = path.join(projectRoot, 'ux-webapp', 'public');
 
-// Folder mappings
+// Folder mappings (corrected: use processed transcripts only)
 const mappings = [
   {
     src: path.join(backendBase, 'results'),
@@ -50,6 +50,7 @@ console.log('Public asset sync complete.');
 // === Transcript Index Generation ===
 const transcriptsProcessedDir = path.join(backendBase, 'data', 'transcripts', 'processed');
 const transcriptsIndexPath = path.join(publicBase, 'transcripts_index.json');
+const customerIdsPath = path.join(publicBase, 'customer_ids.json');
 let transcriptIndex = {};
 
 if (fs.existsSync(transcriptsProcessedDir)) {
@@ -63,13 +64,12 @@ if (fs.existsSync(transcriptsProcessedDir)) {
     }
   }
   fs.writeFileSync(transcriptsIndexPath, JSON.stringify(transcriptIndex, null, 2));
-  console.log(`Transcript index generated at: ${transcriptsIndexPath}`);
+  console.log(`Transcript index generated at ${transcriptsIndexPath}`);
 
-  // Also write customer_ids.json for dropdown
-  const customerIdsPath = path.join(publicBase, 'customer_ids.json');
+  // Write customer_ids.json for dropdown (always overwrite)
   const customerIds = Object.keys(transcriptIndex);
   fs.writeFileSync(customerIdsPath, JSON.stringify(customerIds, null, 2));
-  console.log(`Customer IDs written to: ${customerIdsPath}`);
+  console.log(`Customer IDs written to ${customerIdsPath}`);
 } else {
-  console.warn(`Transcript processed directory not found: ${transcriptsProcessedDir}`);
+  console.warn(`Processed transcripts directory does not exist: ${transcriptsProcessedDir}`);
 }

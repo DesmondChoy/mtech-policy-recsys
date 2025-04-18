@@ -20,7 +20,7 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ speaker, dialogue }) => {
         mb: 2,
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(20px)',
-        transition: 'opacity 0.4s ease-out, transform 0.4s ease-out',
+        transition: 'opacity 0.7s ease-out, transform 0.7s ease-out',
       }}
     >
       <Paper
