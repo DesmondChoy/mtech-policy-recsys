@@ -223,6 +223,16 @@
           "lost luggage": {
             "matched_key": "Baggage loss",
             "matched_values": [
+              "FWD - Business",
+              "FWD - First",
+              "FWD - Premium",
+              "INCOME - Classic",
+              "INCOME - Deluxe",
+              "INCOME - Preferred",
+              "SOMPO - Deluxe",
+              "SOMPO - Elite",
+              "SOMPO - GO Japan!",
+              "SOMPO - Vital",
               "GELS - Basic",
               "GELS - Gold",
               "GELS - Platinum"
