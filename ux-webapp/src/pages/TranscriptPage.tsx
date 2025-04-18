@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Box, Button, Typography, Paper, CircularProgress } from '@mui/material';
+import ChatBubble from '../components/ChatBubble';
 
 interface TranscriptEntry {
   speaker: string;
@@ -52,12 +53,7 @@ const TranscriptPage: React.FC = () => {
       ) : (
         <Box>
           {transcript.map((entry, idx) => (
-            <Box key={idx} sx={{ display: 'flex', flexDirection: entry.speaker === 'Customer' ? 'row-reverse' : 'row', alignItems: 'flex-end', mb: 2 }}>
-              <Paper sx={{ p: 1.5, bgcolor: entry.speaker === 'Customer' ? 'primary.light' : 'grey.200', color: entry.speaker === 'Customer' ? 'white' : 'text.primary', borderRadius: 3, minWidth: 100, maxWidth: 400 }}>
-                <Typography variant="body2" fontWeight={600}>{entry.speaker}</Typography>
-                <Typography variant="body1">{entry.dialogue}</Typography>
-              </Paper>
-            </Box>
+            <ChatBubble key={idx} speaker={entry.speaker} dialogue={entry.dialogue} />
           ))}
         </Box>
       )}

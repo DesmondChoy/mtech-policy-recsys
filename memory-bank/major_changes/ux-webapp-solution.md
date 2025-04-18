@@ -110,13 +110,14 @@ This major change introduces a customer-focused, mobile-friendly web app to addr
 - [x] Add a "Random" button to the right dropdown menu that selects a random customer ID from the list and updates both the dropdown and the central input field. The button should be subtle, compact, and demo-friendly (e.g., use a shuffle icon with a tooltip, placed below the dropdown).
 
 #### 4. Transcript Confirmation Flow (Post-Landing)
-- [ ] After entering a valid customer ID and clicking Continue, show only the customer's transcript (from `data/transcripts/processed/parsed_transcript_{scenario}_{uuid}.json`).
-- [ ] Render the transcript as chat bubbles with speaker labels (messaging app style).
-- [ ] Display a visually distinct confirmation prompt ("Is this your transcript?") at the top of the page, with clear Yes/No buttons.
-- [ ] On Yes: Navigate to an animation/transition page (placeholder for now).
-- [ ] On No: Return to the landing page.
-- [ ] Only after the animation, proceed to the Chrome-style tabbed report interface. The transcript tab here also references the processed transcript.
-- [ ] Ensure transcript confirmation state does not persist across reloads. Chrome-style interface is only accessible after confirmation/animation.
+- [x] After entering a valid customer ID and clicking Continue, show only the customer's transcript (from `data/transcripts/processed/parsed_transcript_{scenario}_{uuid}.json`).
+- [x] Render the transcript as chat bubbles with speaker labels (messaging app style).
+- [x] Display a visually distinct confirmation prompt ("Is this your transcript?") at the top of the page, with clear Yes/No buttons.
+- [x] On Yes: Navigate to an animation/transition page (placeholder for now).
+- [x] On No: Return to the landing page.
+- [x] Only after the animation, proceed to the Chrome-style tabbed report interface. The transcript tab here also references the processed transcript.
+- [x] Ensure transcript confirmation state does not persist across reloads. Chrome-style interface is only accessible after confirmation/animation.
+- [x] **Implementation:** Added `useScrollReveal` hook and `ChatBubble` component, and updated `TranscriptPage.tsx` to animate chat bubbles on scroll.
 
 #### 5. Chrome-Style Tabbed Report Interface (Post-Confirmation)
 - [ ] After transcript confirmation and animation, present the user's main report interface as previously designed (with tabs for Recommendation, Policy Comparison, Customer Requirements, Transcript, Policy PDFs, etc.).
