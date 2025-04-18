@@ -9,7 +9,7 @@ import Container from '@mui/material/Container';
 function App() {
   return (
     <Router>
-      <Container maxWidth="md" sx={{ py: 4 }}>
+      <Container maxWidth="md" sx={{ py: 4, background: 'transparent', minHeight: '100vh' }}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />

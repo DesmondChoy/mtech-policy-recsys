@@ -181,6 +181,29 @@ This major change introduces a customer-focused, mobile-friendly web app to addr
 
 ---
 
+### UX Enhancements: Loading Screen & Background (Complete)
+
+**Objective:** Improve the user experience during processing and provide a modern, consistent visual style across the app.
+
+**Key Changes Implemented:**
+
+1.  **Transition Page (`TransitionPage.tsx`):**
+    *   Implemented a sequenced loading screen displaying witty, context-aware messages in phases.
+    *   Added a Material UI palette shimmer animation to the loading messages (`primary.main`, `secondary.main`, `primary.light`).
+    *   Included pulsing dots (`...`) to indicate ongoing processing.
+    *   Increased message display duration to 2000ms (2 seconds) per phase for better readability.
+
+2.  **Global Background Styling (`index.css`):**
+    *   Initially set a global blue-gray background (`#e7ebf0`) in `App.css`.
+    *   Troubleshooting revealed conflicts with `index.css` default styles.
+    *   Implemented a layered blue-white gradient background (radial and linear) inspired by the Landing Page for a modern, premium feel.
+    *   Resolved scrolling distortion issues (visible lines/banding) by applying the gradient to a fixed `body::before` pseudo-element. This ensures a seamless, static background effect across all pages and scroll positions.
+    *   Removed conflicting background styles from `index.css` and empty rulesets.
+
+**Status:** Complete. The app now features an engaging loading sequence and a consistent, modern, static gradient background.
+
+---
+
 ### Customer ID Selection & Input – Updated Solution & To-Do Plan
 
 ### Overview
