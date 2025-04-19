@@ -1,30 +1,31 @@
 {
   "customer_id": "2d423cff-ede7-4ee0-891f-7bf0ab4e3877",
   "recommended_policy": "GELS - Gold",
-  "total_coverage_ratio": "5/6",
-  "total_coverage_percentage": 83.33,
-  "valid_coverage_ratio": "5/5",
-  "valid_coverage_percentage": 100.0,
-  "has_invalid_requirements": true,
+  "total_coverage_ratio": "6/7",
+  "total_coverage_percentage": 85.71,
+  "valid_coverage_ratio": "6/7",
+  "valid_coverage_percentage": 85.71,
+  "has_invalid_requirements": false,
   "requirements_breakdown": {
-    "total": 6,
-    "valid": 5,
-    "covered": 5,
-    "not_covered": 0,
-    "not_exist": 1
+    "total": 7,
+    "valid": 7,
+    "covered": 6,
+    "not_covered": 1,
+    "not_exist": 0
   },
   "status_summary": {
     "covered_requirements": [
       "Comprehensive emergency medical coverage",
       "Trip cancellation coverage",
       "Travel delay coverage",
+      "Lost luggage",
       "Personal accident coverage",
       "Adventurous activities or Amateur sports"
     ],
-    "not_covered_requirements": [],
-    "not_exist_requirements": [
-      "Lost or damaged luggage coverage"
-    ]
+    "not_covered_requirements": [
+      "Damaged luggage"
+    ],
+    "not_exist_requirements": []
   },
   "requirements_coverage": {
     "Comprehensive emergency medical coverage": {
@@ -87,11 +88,42 @@
       "recommended_policy": "GELS - Gold",
       "coverage_status": "COVERED"
     },
-    "Lost or damaged luggage coverage": {
-      "matched_key": null,
-      "matched_values": [],
+    "Lost luggage": {
+      "matched_key": "Baggage loss",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
       "recommended_policy": "GELS - Gold",
-      "coverage_status": "NOT_EXIST"
+      "coverage_status": "COVERED"
+    },
+    "Damaged luggage": {
+      "matched_key": "Damage of baggage and personal belongings",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital"
+      ],
+      "recommended_policy": "GELS - Gold",
+      "coverage_status": "NOT_COVERED"
     },
     "Personal accident coverage": {
       "matched_key": "Personal accident (Accidental death and permanent disability)",

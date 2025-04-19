@@ -1,27 +1,29 @@
 {
   "customer_id": "16c3c750-6085-42ae-a1c4-ef656e716732",
   "recommended_policy": "GELS - Platinum",
-  "total_coverage_ratio": "5/5",
-  "total_coverage_percentage": 100.0,
-  "valid_coverage_ratio": "5/5",
-  "valid_coverage_percentage": 100.0,
+  "total_coverage_ratio": "5/6",
+  "total_coverage_percentage": 83.33,
+  "valid_coverage_ratio": "5/6",
+  "valid_coverage_percentage": 83.33,
   "has_invalid_requirements": false,
   "requirements_breakdown": {
-    "total": 5,
-    "valid": 5,
+    "total": 6,
+    "valid": 6,
     "covered": 5,
-    "not_covered": 0,
+    "not_covered": 1,
     "not_exist": 0
   },
   "status_summary": {
     "covered_requirements": [
       "medical coverage",
       "trip cancellation",
-      "lost or damaged luggage",
+      "Lost luggage",
       "travel delays",
       "Adventurous activities or Amateur sports"
     ],
-    "not_covered_requirements": [],
+    "not_covered_requirements": [
+      "Damaged luggage"
+    ],
     "not_exist_requirements": []
   },
   "requirements_coverage": {
@@ -65,8 +67,8 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "lost or damaged luggage": {
-      "matched_key": "Loss of baggage and personal belongings",
+    "Lost luggage": {
+      "matched_key": "Baggage loss",
       "matched_values": [
         "FWD - Business",
         "FWD - First",
@@ -84,6 +86,23 @@
       ],
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
+    },
+    "Damaged luggage": {
+      "matched_key": "Damage of baggage and personal belongings",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital"
+      ],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "NOT_COVERED"
     },
     "travel delays": {
       "matched_key": "Travel delay",

@@ -1,15 +1,15 @@
 {
   "customer_id": "2d7706e4-e75e-453b-9c35-74b422e51153",
   "recommended_policy": "GELS - Platinum",
-  "total_coverage_ratio": "4/8",
-  "total_coverage_percentage": 50.0,
-  "valid_coverage_ratio": "4/5",
-  "valid_coverage_percentage": 80.0,
+  "total_coverage_ratio": "5/9",
+  "total_coverage_percentage": 55.56,
+  "valid_coverage_ratio": "5/6",
+  "valid_coverage_percentage": 83.33,
   "has_invalid_requirements": true,
   "requirements_breakdown": {
-    "total": 8,
-    "valid": 5,
-    "covered": 4,
+    "total": 9,
+    "valid": 6,
+    "covered": 5,
     "not_covered": 1,
     "not_exist": 3
   },
@@ -18,10 +18,11 @@
       "Emergency Medical Coverage",
       "Trip Cancellation",
       "Travel Delays",
+      "Lost Luggage",
       "Golf Equipment Coverage"
     ],
     "not_covered_requirements": [
-      "Lost or Damaged Luggage"
+      "Damaged Luggage"
     ],
     "not_exist_requirements": [
       "Reimbursement for Unused Green Fees",
@@ -90,7 +91,27 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "Lost or Damaged Luggage": {
+    "Lost Luggage": {
+      "matched_key": "Baggage loss",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "COVERED"
+    },
+    "Damaged Luggage": {
       "matched_key": "Damage of baggage and personal belongings",
       "matched_values": [
         "FWD - Business",

@@ -1,16 +1,16 @@
 {
   "customer_id": "ef0e5e2d-a940-4a0c-a075-2cb04df4f93e",
   "recommended_policy": "GELS - Platinum",
-  "total_coverage_ratio": "5/6",
-  "total_coverage_percentage": 83.33,
-  "valid_coverage_ratio": "5/6",
-  "valid_coverage_percentage": 83.33,
+  "total_coverage_ratio": "5/7",
+  "total_coverage_percentage": 71.43,
+  "valid_coverage_ratio": "5/7",
+  "valid_coverage_percentage": 71.43,
   "has_invalid_requirements": false,
   "requirements_breakdown": {
-    "total": 6,
-    "valid": 6,
+    "total": 7,
+    "valid": 7,
     "covered": 5,
-    "not_covered": 1,
+    "not_covered": 2,
     "not_exist": 0
   },
   "status_summary": {
@@ -18,11 +18,12 @@
       "medical",
       "trip cancellation",
       "travel delays",
-      "lost or damaged luggage",
+      "Lost luggage",
       "Adventurous activities or Amateur sports"
     ],
     "not_covered_requirements": [
-      "pet accommodation"
+      "pet accommodation",
+      "Damaged luggage"
     ],
     "not_exist_requirements": []
   },
@@ -97,8 +98,8 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "NOT_COVERED"
     },
-    "lost or damaged luggage": {
-      "matched_key": "Loss of baggage and personal belongings",
+    "Lost luggage": {
+      "matched_key": "Baggage loss",
       "matched_values": [
         "FWD - Business",
         "FWD - First",
@@ -116,6 +117,23 @@
       ],
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
+    },
+    "Damaged luggage": {
+      "matched_key": "Damage of baggage and personal belongings",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital"
+      ],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "NOT_COVERED"
     },
     "Adventurous activities or Amateur sports": {
       "matched_key": "Adventurous activities or Amateur sports",

@@ -1,30 +1,31 @@
 {
   "customer_id": "a62c32d2-66eb-4397-975f-7d488ffac243",
   "recommended_policy": "GELS - Platinum",
-  "total_coverage_ratio": "3/7",
-  "total_coverage_percentage": 42.86,
-  "valid_coverage_ratio": "3/4",
-  "valid_coverage_percentage": 75.0,
+  "total_coverage_ratio": "4/8",
+  "total_coverage_percentage": 50.0,
+  "valid_coverage_ratio": "4/6",
+  "valid_coverage_percentage": 66.67,
   "has_invalid_requirements": true,
   "requirements_breakdown": {
-    "total": 7,
-    "valid": 4,
-    "covered": 3,
-    "not_covered": 1,
-    "not_exist": 3
+    "total": 8,
+    "valid": 6,
+    "covered": 4,
+    "not_covered": 2,
+    "not_exist": 2
   },
   "status_summary": {
     "covered_requirements": [
       "Trip Cancellation Protection",
       "Travel Delay Coverage",
+      "Lost Luggage",
       "Adventurous activities or Amateur sports"
     ],
     "not_covered_requirements": [
+      "Damaged Luggage",
       "Pet Accommodation Coverage"
     ],
     "not_exist_requirements": [
       "Comprehensive Medical Coverage",
-      "Lost or Damaged Luggage Protection",
       "Activity Coverage for Hiking"
     ]
   },
@@ -75,11 +76,42 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "Lost or Damaged Luggage Protection": {
-      "matched_key": null,
-      "matched_values": [],
+    "Lost Luggage": {
+      "matched_key": "Baggage loss",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
       "recommended_policy": "GELS - Platinum",
-      "coverage_status": "NOT_EXIST"
+      "coverage_status": "COVERED"
+    },
+    "Damaged Luggage": {
+      "matched_key": "Damage of baggage and personal belongings",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital"
+      ],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "NOT_COVERED"
     },
     "Activity Coverage for Hiking": {
       "matched_key": null,
