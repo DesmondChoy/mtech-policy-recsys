@@ -131,6 +131,64 @@ def get_customer_requirements(requirement_file):
         print(f"Error reading requirements file {requirement_file}: {e}")
         return []
 
+def atomize_requirements(requirements):
+    """
+    Split compound requirements into atomic requirements.
+    
+    This function looks for conjunctions like 'or', 'and' in requirements
+    and splits them into separate requirements when appropriate.
+    
+    Examples:
+    - "Lost or Damaged Luggage" -> ["Lost Luggage", "Damaged Luggage"]
+    - "Baggage Delay and Loss" -> ["Baggage Delay", "Baggage Loss"]
+    
+    Args:
+        requirements (list): List of requirement strings
+        
+    Returns:
+        list: Expanded list with compound requirements split into atomic ones
+    """
+    atomized_requirements = []
+    compound_patterns = [
+        # Pattern for "Lost or Damaged Luggage" type compounds
+        (r"(Lost|loss)\s+or\s+(Damaged|damage)(\s+Luggage|\s+Baggage)?", 
+         lambda match, req: [
+             f"Lost{match.group(3) or ' Luggage'}" if match.group(3) else "Lost Luggage", 
+             f"Damaged{match.group(3) or ' Luggage'}" if match.group(3) else "Damaged Luggage"
+         ]),
+        
+        # Pattern for "Baggage Delay and Loss" type compounds
+        (r"(Baggage|Luggage)\s+(Delay|Loss|Damage|Theft)\s+and\s+(Delay|Loss|Damage|Theft)", 
+         lambda match, req: [f"{match.group(1)} {match.group(2)}", 
+                           f"{match.group(1)} {match.group(3)}"]),
+                           
+        # Pattern for "Lost and Delayed Baggage"
+        (r"(Lost|Delayed|Damaged|Stolen)\s+and\s+(Lost|Delayed|Damaged|Stolen)(\s+Luggage|\s+Baggage)", 
+         lambda match, req: [f"{match.group(1)}{match.group(3)}", 
+                           f"{match.group(2)}{match.group(3)}"]),
+                           
+        # Pattern for "Loss or Damage of Baggage"
+        (r"(Loss|Damage|Delay|Theft)\s+or\s+(Loss|Damage|Delay|Theft)\s+of\s+(Luggage|Baggage)", 
+         lambda match, req: [f"{match.group(1)} of {match.group(3)}", 
+                           f"{match.group(2)} of {match.group(3)}"])
+    ]
+    
+    for requirement in requirements:
+        compound_found = False
+        for pattern, replacement_func in compound_patterns:
+            match = re.search(pattern, requirement, re.IGNORECASE)
+            if match:
+                compound_found = True
+                # Create atomic requirements from the compound requirement
+                atomic_reqs = replacement_func(match, requirement)
+                atomized_requirements.extend(atomic_reqs)
+                break
+                
+        if not compound_found:
+            atomized_requirements.append(requirement)
+    
+    return atomized_requirements
+
 def evaluate_coverage(customer_id, requirements, recommended_policy, matcher):
     """
     Evaluate if the recommended policy covers the customer requirements.
@@ -234,8 +292,9 @@ def main():
     3. For each customer:
        a. Find their requirement and recommendation files
        b. Extract requirements and recommended policy
-       c. Evaluate coverage
-       d. Save individual evaluation file
+       c. Atomize compound requirements into separate requirements
+       d. Evaluate coverage
+       e. Save individual evaluation file
     4. Calculate overall statistics
     5. Save summary file with all evaluations
     """
@@ -298,8 +357,13 @@ def main():
             print(f"  Could not extract recommended policy for customer {customer_id}")
             continue
         
+        # Atomize compound requirements into separate requirements
+        atomized_requirements = atomize_requirements(requirements)
+        if len(atomized_requirements) > len(requirements):
+            print(f"  Atomized {len(requirements)} requirements into {len(atomized_requirements)} atomic requirements")
+        
         # Evaluate coverage
-        evaluation = evaluate_coverage(customer_id, requirements, recommended_policy, matcher)
+        evaluation = evaluate_coverage(customer_id, atomized_requirements, recommended_policy, matcher)
         all_evaluations[customer_id] = evaluation
         
         # Update overall stats
