@@ -171,3 +171,10 @@ cython_debug/
 .pypirc
 
 .DS_Store
+
+# Ignore generated assets
+ux-webapp/public/results/
+ux-webapp/public/data/
+
+# Local Netlify folder
+.netlify
