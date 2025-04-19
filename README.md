@@ -6,6 +6,16 @@ An LLM-powered workflow that transforms the complex process of buying travel ins
 
 This system addresses common pain points in insurance purchasing by providing personalized, transparent, and objective recommendations through a conversational interface.
 
+## Getting Started
+
+If you are setting up this project for the first time (or after cloning), you must install the required Node.js dependencies:
+
+```bash
+npm install
+```
+
+This will install all necessary packages listed in `package.json`.
+
 ### Key Features
 
 **1. Data Generation & Processing:**

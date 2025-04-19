@@ -236,6 +236,9 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Updated the orchestration implementation plan (`memory-bank/major_changes/orchestration_script_implementation_plan.md`) to reflect changes and mark steps complete.
     - Confirmed successful run of the updated orchestrator script.
 
+31. **Onboarding Instructions Update**:
+    - Onboarding/setup instructions updated: README and Memory Bank now specify that new users must run `npm install` after cloning to install Node.js dependencies.
+
 ## Next Steps (Revised Focus)
 
 1.  **Test & Refine PDF Extraction Evaluation**:

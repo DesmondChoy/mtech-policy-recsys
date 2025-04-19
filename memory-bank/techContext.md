@@ -109,6 +109,7 @@
    - Clone repository
    - Create virtual environment
    - Install dependencies from requirements.txt
+   - Run `npm install` to install Node.js dependencies
 
 2. **Development Cycle**:
    - Prototype in notebooks
@@ -125,6 +126,16 @@
    - Code comments and docstrings
    - README and documentation files
    - Jupyter notebooks for demonstrations
+
+## Node.js/Frontend Dependencies
+
+If you are setting up the project for the first time (or after cloning), you must install Node.js dependencies:
+
+```bash
+npm install
+```
+
+This installs all necessary packages listed in `package.json` for any web or supporting scripts. Run this before using any Node.js-based features or scripts.
 
 ## Technical Constraints
 
