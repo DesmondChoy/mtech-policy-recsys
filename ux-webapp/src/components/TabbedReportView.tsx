@@ -53,7 +53,7 @@ export const TabbedReportView: React.FC<TabbedReportViewProps> = ({ uuid, insure
           variant="scrollable"
           scrollButtons="auto"
         >
-          {tabLabels.map((tab, i) => (
+          {tabLabels.map((tab) => (
             <Tab key={tab.label} label={tab.label} icon={tab.icon} iconPosition="start" />
           ))}
         </Tabs>

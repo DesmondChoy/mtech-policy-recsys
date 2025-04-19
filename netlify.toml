@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "ux-webapp/dist"
+
+[dev]
+  command = "npm run dev"
+  port = 8888

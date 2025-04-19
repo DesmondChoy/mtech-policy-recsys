@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { TabbedReportView } from '../components/TabbedReportView';
-import Typography from '@mui/material/Typography';
 
 // Example insurers and PDF mapping (replace with dynamic loading if needed)
 const insurers = ['FWD', 'AIG', 'Allianz', 'Sompo'];
