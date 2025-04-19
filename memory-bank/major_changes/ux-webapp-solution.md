@@ -120,14 +120,18 @@ This major change introduces a customer-focused, mobile-friendly web app to addr
 - [x] **Implementation:** Added `useScrollReveal` hook and `ChatBubble` component, and updated `TranscriptPage.tsx` to animate chat bubbles on scroll.
 
 #### 5. Chrome-Style Tabbed Report Interface (Post-Confirmation)
-- [ ] After transcript confirmation and animation, present the user's main report interface as previously designed (with tabs for Recommendation, Policy Comparison, Customer Requirements, Transcript, Policy PDFs, etc.).
+- [x] Implemented `TabbedReportView` React component in `src/components/TabbedReportView.tsx` with Material UI Tabs.
+- [x] Integrated into the app via `ReportViewerPage.tsx` (`src/pages/ReportViewerPage.tsx`), which loads the tabbed interface after transcript confirmation/animation.
+- [x] Tabs for Recommendation, Policy Comparison, Customer Requirements, Transcript, and Policy PDFs are present and UI structure matches the UX plan.
+- [x] Each tab is wired to display the correct file/content for the selected customer UUID (Markdown, JSON, PDF, etc.).
+- [x] Routing ensures the Chrome-style tabbed interface is only accessible after transcript confirmation/animation.
 
 #### 6. Tab Content Details
-- [ ] **Recommendation Tab:** Render Markdown as rich text from the appropriate file
-- [ ] **Policy Comparison Tab:** Dropdown menu for insurer selection; render selected Markdown file as rich text
-- [ ] **Customer Requirements Tab:** Render JSON as pretty-printed, rich text
-- [ ] **Transcript Tab:** Render JSON as pretty-printed, rich text or chat timeline
-- [ ] **Policy PDFs Tab:** Display all four insurer PDFs (one per insurer) using an embedded PDF viewer or download link; deduplicate if multiple files per insurer
+- [x] **Recommendation Tab:** Render Markdown as rich text from the appropriate file
+- [x] **Policy Comparison Tab:** Dropdown menu for insurer selection; render selected Markdown file as rich text
+- [x] **Customer Requirements Tab:** Render JSON as pretty-printed, rich text
+- [x] **Transcript Tab:** Render JSON as pretty-printed, rich text or chat timeline
+- [x] **Policy PDFs Tab:** Display all four insurer PDFs (one per insurer) using an embedded PDF viewer or download link; deduplicate if multiple files per insurer
 
 #### 7. Feedback & Contact
 - [ ] Add feedback widget (thumbs up/down, comments)
