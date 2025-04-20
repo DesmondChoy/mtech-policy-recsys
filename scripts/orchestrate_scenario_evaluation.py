@@ -560,28 +560,33 @@ def aggregate_and_filter_evaluations(scenario_uuids: Dict[str, List[str]]):
             )
             continue
 
-        # Filter results based on UUIDs from this run
-        uuids_for_this_scenario = set(scenario_uuids.get(scenario, []))
-        filtered_results = [
-            result
-            for result in all_results
-            if isinstance(result, dict)
-            and result.get("uuid") in uuids_for_this_scenario
-        ]
+        # --- Filtering step removed ---
+        # uuids_for_this_scenario = set(scenario_uuids.get(scenario, []))
+        # filtered_results = [
+        #     result
+        #     for result in all_results
+        #     if isinstance(result, dict)
+        #     and result.get("uuid") in uuids_for_this_scenario
+        # ]
+        # logging.info(
+        #     f"Filtered {len(all_results)} results down to {len(filtered_results)} for scenario {scenario} based on current run UUIDs."
+        # )
         logging.info(
-            f"Filtered {len(all_results)} results down to {len(filtered_results)} for scenario {scenario} based on current run UUIDs."
+            f"Loaded {len(all_results)} results for scenario {scenario} from latest evaluation file."
         )
 
-        # Save the filtered results to a new aggregated file
+        # Save the complete (unfiltered) results to a new file with the specified name
         try:
-            aggregated_filename = (
+            output_filename = (
                 SCENARIO_EVAL_DIR
-                / f"results_{scenario}_aggregated_{run_timestamp}.json"
+                / f"results_{scenario}_all_transcripts_{run_timestamp}.json"  # New filename format
             )
-            with open(aggregated_filename, "w", encoding="utf-8") as f:
-                json.dump(filtered_results, f, indent=2)
+            with open(output_filename, "w", encoding="utf-8") as f:
+                json.dump(
+                    all_results, f, indent=2
+                )  # Save all_results, not filtered_results
             logging.info(
-                f"Saved aggregated results for {scenario} to: {aggregated_filename.name}"
+                f"Saved complete evaluation results for {scenario} to: {output_filename.name}"
             )
         except Exception as e:
             logging.error(

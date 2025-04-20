@@ -62,7 +62,7 @@ graph TD
         EvalPdfExtraction --> EvalPdfResults[data/evaluation/pdf_extraction_evaluations/*.json]
         OrchFinalEval --> ScenarioEvalScript[scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py]
         ScenarioEvalScript --> ScenarioEvalResults[data/evaluation/scenario_evaluation/results_*.json]
-        OrchFinalEval --> AggregatedResults[data/evaluation/scenario_evaluation/results_*_aggregated_*.json]
+        OrchFinalEval --> FinalEvalOutput[data/evaluation/scenario_evaluation/results_*_all_transcripts_*.json] # Updated Output
         ComparisonScript --> PlannedComparisonEval{Planned: Comparison Report Evaluation}
     end
 
@@ -89,6 +89,7 @@ graph TD
     OrchFinalEval --> ScenarioEvalScript
     ScenarioEvalScript --> ScenarioEvalResults
     ScenarioEvalResults --> OrchFinalEval # Implies reading latest result
+    OrchFinalEval --> FinalEvalOutput # Save final output
     OrchEnd --> User[User/Developer]
 
     %% Other Connections
@@ -193,11 +194,12 @@ graph TD
 - **Dependencies**: `LLMService`, Extractor Agent output, Policy Extraction Script output.
 
 ### Recommendation Report Script (`scripts/generate_recommendation_report.py`)
-- **Purpose**: Parses comparison reports, performs Stage 1 scoring, calls LLM for Stage 2 re-ranking (using transcript context), generates a final Markdown report, and saves it.
+- **Purpose**: Parses comparison reports, performs Stage 1 scoring, calls LLM for Stage 2 re-ranking (using transcript context), generates a final Markdown report, and saves it. Checks for existing report and `--overwrite` flag before processing to avoid redundant work.
 - **Inputs**:
     - Markdown comparison reports (`results/{uuid}/*.md`).
     - Processed transcript JSON (`data/transcripts/processed/parsed_transcript_*_{uuid}.json`).
-- **Outputs**: Final recommendation Markdown report (`results/{uuid}/recommendation_report_{uuid}.md`).
+    - Command-line arguments (`--customer_id`, `--top_n`, `--overwrite`).
+- **Outputs**: Final recommendation Markdown report (`results/{uuid}/recommendation_report_{uuid}.md`), potentially skipped if exists and `overwrite=False`.
 - **Dependencies**: `LLMService`, Comparison Report Script output, Processed Transcript data, Pydantic (`FinalRecommendation` model).
 
 ### ML Models (Future)

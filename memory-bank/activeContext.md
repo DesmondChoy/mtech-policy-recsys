@@ -244,6 +244,16 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Updated the `run_stage2_reranking` function to load, format, and pass the transcript data.
     - Updated the prompt instructions to guide the LLM on using transcript cues for prioritization.
     - **Revision:** Subsequently removed the loading and usage of the extracted requirements summary (`json_dict`) from the Stage 2 prompt and logic, simplifying the context to focus solely on the transcript and comparison reports.
+33. **Recommendation Report Script Efficiency & Logging (`scripts/generate_recommendation_report.py`)**:
+    - Added `--overwrite` flag handling logic.
+    - Moved the check for existing report files *before* Stage 1/Stage 2 processing to prevent unnecessary LLM calls when `overwrite=False` (default).
+    - Corrected the return value logic in `run_single_customer` to accurately reflect skipped processing in the batch summary.
+    - Updated batch summary logging messages for clarity (`Failed or Skipped`).
+    - Updated script docstrings (`argparse` help text and main docstring) to clearly state default argument behaviors.
+34. **Orchestration Script Evaluation Scope (`scripts/orchestrate_scenario_evaluation.py`)**:
+    - Modified the final evaluation step (`aggregate_and_filter_evaluations`) to remove filtering based on current run UUIDs.
+    - The script now saves the complete evaluation results for *all* recommendation reports found for a given scenario at the time of execution.
+    - Updated the output filename format for this final evaluation step to `results_{scenario}_all_transcripts_{run_timestamp}.json`.
 
 ## Next Steps (Revised Focus)
 
@@ -316,9 +326,11 @@ The project has moved beyond initial setup and is focused on refining the existi
     *   Evaluating the effectiveness of the current two-stage recommendation logic and refining prompts/scoring based on results.
 5.  **Extractor Agent Dependency**:
     *   The Extractor Agent's reliance on OpenAI/CrewAI introduces a separate dependency and configuration path compared to the Gemini/LLMService used elsewhere.
-6.  **Synthetic Data Limitations**:
+6.  **Orchestrator Evaluation Scope**:
+    *   The final evaluation step in the orchestrator now includes results for *all* reports found, not just the current run. Need to be mindful of this when interpreting the `*_all_transcripts_*.json` files.
+7.  **Synthetic Data Limitations**:
     *   Generated transcripts might not fully capture real-world complexities, potentially limiting the robustness of downstream components.
 7.  **Performance Optimization**:
-    *   Latency of multiple LLM calls (generation, evaluation, extraction, comparison) needs monitoring. Batch processing helps but overall workflow time can be significant.
-8.  **LLM Constraints**:
+    *   Latency of multiple LLM calls (generation, evaluation, extraction, comparison) needs monitoring. Batch processing and the optimized recommendation script (skipping existing reports) help, but overall workflow time can still be significant.
+9.  **LLM Constraints**:
     *   Managing API rate limits, costs, and potential output token limits across both Gemini and OpenAI.

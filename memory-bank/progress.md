@@ -62,12 +62,12 @@ The project is in the **initial setup and planning phase**. We are currently est
 | Policy Comparison Script           | 100%        | High     | `scripts/generate_policy_comparison.py` - Generates insurer-level reports. Uses Gemini.              |
 | **PDF Extraction Evaluation**      | **100%**    | **High** | **Script implemented (`eval_pdf_extraction.py`) with `--file_pattern` enhancement. Testing/Refinement pending.** |
 | Policy Comparison Evaluation       | Planned     | High     | Design and implement evaluation for `generate_policy_comparison.py`.                                 |
-| **Recommender Logic Script**       | **100%**    | **High** | **`scripts/generate_recommendation_report.py` implemented (parser, score, re-rank with transcript context, MD report).** |
-| **Orchestration Script**           | **95%**     | **High** | **`scripts/orchestrate_scenario_evaluation.py` implemented and debugged. Parallel eval, sequential reports. Testing pending.** |
+| **Recommender Logic Script**       | **100%**    | **High** | **`scripts/generate_recommendation_report.py` implemented (parser, score, re-rank with transcript context, MD report, efficient overwrite check, improved logging).** |
+| **Orchestration Script**           | **100%**    | **High** | **`scripts/orchestrate_scenario_evaluation.py` implemented and debugged. Parallel eval, sequential reports. Final evaluation now includes all reports (not just current run).** |
 | **Component Integration**          | **20%**     | **Medium** | **Internal Stage 1/2 integration done. Full pipeline orchestration pending.**                        |
 | Testing Framework                  | 20%         | Medium   | Unit tests added for recommender parser/scorer/MD report. More needed.                               |
 | ML Models                          | 0%          | Low      | Later phase.                                                                                         |
-| Documentation (Memory Bank)        | 98%         | High     | Core files updated for recommender script. Script/Agent docstrings mostly present.                   |
+| Documentation (Memory Bank)        | **100%**    | High     | **Core files updated for latest script changes. Script/Agent docstrings mostly present.**            |
 
 ## Known Issues
 
@@ -84,6 +84,8 @@ The project is in the **initial setup and planning phase**. We are currently est
     *   Current components are largely standalone scripts. No automated workflow connects them end-to-end. Manual execution is required for each step.
 6.  **Extractor Agent Dependency**:
     *   The Extractor Agent relies on OpenAI/CrewAI, separate from the Gemini-based `LLMService` used elsewhere. This adds complexity to configuration and potential cost management.
+6.  **Orchestrator Evaluation Scope**:
+    *   The final evaluation step in the orchestrator now includes results for *all* reports found, not just the current run. Need to be mindful of this when interpreting the `*_all_transcripts_*.json` files.
 
 ## Recent Achievements (Summary - See `activeContext.md` for full detail)
 
@@ -92,4 +94,5 @@ The project is in the **initial setup and planning phase**. We are currently est
 3.  **Extractor Agent**: Implemented using CrewAI/OpenAI for requirement extraction.
 4.  **Recommender Script**: Implemented `scripts/generate_recommendation_report.py` with Stage 1 scoring, Stage 2 LLM re-ranking (updated to use transcript context), and Markdown report generation. Added unit tests.
 5.  **Refinements**: Centralized Gemini config, improved policy extraction detail, standardized filenames, refactored comparison script for insurer-level analysis, enhanced evaluation robustness, added file pattern filtering to PDF eval script.
-6.  **Orchestration Script**: Implemented and debugged `scripts/orchestrate_scenario_evaluation.py` to automate the end-to-end workflow. Refactored transcript evaluation for parallel processing and report generation for sequential processing (per UUID) to improve reliability.
+6.  **Orchestration Script**: Implemented and debugged `scripts/orchestrate_scenario_evaluation.py` to automate the end-to-end workflow. Refactored transcript evaluation for parallel processing and report generation for sequential processing (per UUID) to improve reliability. Final evaluation step modified to include all reports found for a scenario.
+7.  **Recommendation Script Efficiency/Logging**: Improved `scripts/generate_recommendation_report.py` to check for existing files before LLM calls and corrected summary logging. Added default values to docstrings.
