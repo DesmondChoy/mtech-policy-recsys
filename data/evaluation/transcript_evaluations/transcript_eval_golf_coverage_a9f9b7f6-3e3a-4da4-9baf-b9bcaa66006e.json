@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about trip cancellation coverage, specifying concerns about illness or family emergencies as covered reasons and questioning exclusions like 'changing your mind' or work-related issues.",
+      "customer_quote": "[32] What about trip cancellation? Let's say one of us gets properly sick before we go, or maybe a parent back home falls seriously ill. What are the *exact* covered reasons? I bet 'changing your mind' or 'work called me back' isn't covered, right? But serious illness should be.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement for trip cancellation cover and the need for clarity on covered reasons versus exclusions.",
+      "agent_quote": "[33] Understood. You require coverage for trip cancellation due to specific unforeseen events like illness, injury, or family emergencies, and need clarity on the covered reasons versus exclusions."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer inquired about the comprehensiveness of medical coverage for serious incidents needing a doctor or hospital in Australia, including potential limits. They also specifically asked about declaring a pre-existing condition (high blood pressure) and its impact on claims.",
+      "customer_quote": "[26] Now, the usual stuff people worry about. What about medical emergencies? If something serious happens, not just a graze, I mean needing a doctor or hospital in Australia? How comprehensive is that *really*? Are there hidden limits? \n[28] And one of us has high blood pressure. Stable, managed, but it's there. Do we *have* to declare that? Is that just an excuse for you to deny a claim later, even if it's completely unrelated, like a fall?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the need for details on medical coverage extent and specifically noted the query about pre-existing conditions. The agent also proactively probed for related needs by asking about medical equipment.",
+      "agent_quote": "[27] Understood. You require details on the extent of medical coverage, including emergencies, hospital stays, doctor visits, and prescription costs while overseas. \n[29] Noted. You have a query regarding the declaration of pre-existing conditions, specifically high blood pressure, and require understanding of how it impacts coverage. \n[30] Are there any specific medical equipment needs for the trip, like a CPAP machine or wheelchair?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer asked about coverage for lost, delayed, or damaged luggage (distinct from the golf equipment mentioned earlier), including reimbursement for essentials during delays and wanting clarity on the 'real terms'.",
+      "customer_quote": "[34] And luggage, besides the golf clubs. What if the airline loses our suitcase? Or it arrives days late? Do you cover buying essentials? And what about damage? I need to know the real terms, not just vague promises.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement for coverage related to lost, damaged, or delayed baggage, including reimbursement aspects.",
+      "agent_quote": "[35] Noted. You require coverage for lost, damaged, or delayed baggage, including reimbursement for lost items and necessary purchases during a delay."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer specifically inquired about coverage for expenses (hotel, meals) resulting from significant flight delays or missed connections and asked about the minimum delay duration required for coverage to activate.",
+      "customer_quote": "[36] Okay, one last thing. Travel delays. Flights get delayed all the time. If we're stuck at an airport for hours, or miss a connecting flight because the first leg was late, does the insurance actually help cover extra hotel nights or meals? Or is the minimum delay like 12 hours before anything kicks in?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement for travel delay coverage, including associated expenses and the need for clarity on trigger conditions like minimum delay duration.",
+      "agent_quote": "[37] Got it. Requirement for coverage related to significant travel delays, including expenses for accommodation, meals, and potentially missed connections, with clarity needed on the trigger conditions like minimum delay duration."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer stated the trip's main purpose was golf and provided very specific requirements: coverage for golf equipment loss/damage (replacement value), reimbursement for unused green fees, coverage for golf buggy damage, and a hole-in-one benefit. They also explicitly asked for clarification on whether golf falls under standard 'Sports and Adventure' coverage.",
+      "customer_quote": "[14] It's primarily a golf trip. That's the main thing. And regarding that, I have very specific requirements... \n[16] First, my golf equipment... I need proper coverage if it gets lost or damaged... actual replacement value. \n[18] Second, green fees... I expect reimbursement for those unused fees. \n[20] Third, golf buggies. If I accidentally damage one... does your insurance cover that liability...? \n[22] And one more thing for golf... a benefit... if you score a hole-in-one. \n[24] So, this standard 'Sports and Adventure' cover people talk about, does golf fall under that, or is it separate? I need clarity.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent meticulously acknowledged each specific golf-related requirement. The agent also probed appropriately by asking about other potential adventure activities and acknowledged the customer's need for clarity on how golf is categorized within the policy structure.",
+      "agent_quote": "[17] Noted. Coverage for golf equipment against loss or damage. \n[19] Understood. Reimbursement for unused green fees due to inability to play. \n[21] Okay, coverage for accidental damage to a rented golf buggy. \n[23] Acknowledged. Requirement for a hole-in-one benefit during the trip... Are there any other activities planned besides golf? Like scuba diving or anything adventurous? \n[25] Okay, noted... you need clarity on how it's covered, potentially outside a standard adventure rider unless specifically needed for the golf aspects. I've noted your requirement for sports coverage clarification specifically for golf."
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered information on all standard coverage types and the specific, detailed requirements related to the customer's golf trip. The customer was very clear and demanding, and the agent effectively listened, acknowledged each point, confirmed understanding, and asked relevant clarifying questions (e.g., pre-existing conditions, other activities). All required coverage areas were discussed with sufficient detail provided or requested."
+  },
+  "transcript_name": "transcript_golf_coverage_a9f9b7f6-3e3a-4da4-9baf-b9bcaa66006e",
+  "scenario": "golf_coverage"
+}

@@ -1,19 +1,18 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Australia including medical, luggage, activity coverage, and trip cancellation.\",\n  \"detailed_description\": \"Two travelers from Singapore, age group 41-55, traveling to Australia for three weeks. Requirements include full medical coverage, coverage for lost or damaged luggage, coverage for white water rafting, coverage for expenses due to significant travel delays, and specific trip cancellation coverage for attending a family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Baggage Coverage\",\n    \"Adventure Activity Coverage\",\n    \"Travel Delay Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High Blood Pressure\"\n  ],\n  \"medical_needs\": [\n    \"Full medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"White Water Rafting\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"I need confirmation that cancellation for my sister's wedding is covered. All coverage must be included without fine print exclusions.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"cancellation coverage\",\n    \"medical coverage\",\n    \"baggage coverage\",\n    \"travel delays\",\n    \"white water rafting\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance for a three-week trip to Australia for two travelers with specific coverage needs.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance coverage that includes medical needs related to a pre-existing condition, coverage for white water rafting, lost baggage, delayed baggage reimbursement, travel delay expenses, and trip cancellation for attending a sister's wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"Three weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Travel Delay Coverage\",\n    \"Trip Cancellation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High Blood Pressure\"\n  ],\n  \"medical_needs\": [\n    \"Full medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"White Water Rafting\"\n  ],\n  \"age_group\": \"41-55 years\",\n  \"additional_requests\": \"Flexible budget; specific reassurance for cancellation due to sister's wedding; no fine print exclusions.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical coverage\",\n    \"baggage coverage\",\n    \"travel delay\",\n    \"trip cancellation\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ-001",
-        "requirement_summary": "Travel insurance requirements for a trip to Australia including medical, luggage, activity coverage, and trip cancellation.",
-        "detailed_description": "Two travelers from Singapore, age group 41-55, traveling to Australia for three weeks. Requirements include full medical coverage, coverage for lost or damaged luggage, coverage for white water rafting, coverage for expenses due to significant travel delays, and specific trip cancellation coverage for attending a family wedding.",
+        "requirement_id": "001",
+        "requirement_summary": "Travel insurance for a three-week trip to Australia for two travelers with specific coverage needs.",
+        "detailed_description": "Customer requires comprehensive travel insurance coverage that includes medical needs related to a pre-existing condition, coverage for white water rafting, lost baggage, delayed baggage reimbursement, travel delay expenses, and trip cancellation for attending a sister's wedding.",
         "travel_origin": "Singapore",
         "travel_destination": "Australia",
-        "travel_duration": "3 weeks",
+        "travel_duration": "Three weeks",
         "insurance_coverage_type": [
             "Medical Coverage",
-            "Trip Cancellation",
-            "Baggage Coverage",
-            "Adventure Activity Coverage",
-            "Travel Delay Coverage"
+            "Lost, Damaged, or Delayed Luggage",
+            "Travel Delay Coverage",
+            "Trip Cancellation Coverage"
         ],
         "pre_existing_conditions": [
             "High Blood Pressure"
@@ -24,15 +23,14 @@
         "activities_to_cover": [
             "White Water Rafting"
         ],
-        "age_group": "41-55",
-        "additional_requests": "I need confirmation that cancellation for my sister's wedding is covered. All coverage must be included without fine print exclusions.",
+        "age_group": "41-55 years",
+        "additional_requests": "Flexible budget; specific reassurance for cancellation due to sister's wedding; no fine print exclusions.",
         "keywords": [
             "travel insurance",
-            "cancellation coverage",
             "medical coverage",
             "baggage coverage",
-            "travel delays",
-            "white water rafting"
+            "travel delay",
+            "trip cancellation"
         ]
     },
     "tasks_output": [
@@ -41,21 +39,20 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Australia including medical, luggage, activity coverage, and trip cancellation.\",\n  \"detailed_description\": \"Two travelers from Singapore, age group 41-55, traveling to Australia for three weeks. Requirements include full medical coverage, coverage for lost or damaged luggage, coverage for white water rafting, coverage for expenses due to significant travel delays, and specific trip cancellation coverage for attending a family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Baggage Coverage\",\n    \"Adventure Activity Coverage\",\n    \"Travel Delay Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High Blood Pressure\"\n  ],\n  \"medical_needs\": [\n    \"Full medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"White Water Rafting\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"I need confirmation that cancellation for my sister's wedding is covered. All coverage must be included without fine print exclusions.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"cancellation coverage\",\n    \"medical coverage\",\n    \"baggage coverage\",\n    \"travel delays\",\n    \"white water rafting\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance for a three-week trip to Australia for two travelers with specific coverage needs.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance coverage that includes medical needs related to a pre-existing condition, coverage for white water rafting, lost baggage, delayed baggage reimbursement, travel delay expenses, and trip cancellation for attending a sister's wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"Three weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Travel Delay Coverage\",\n    \"Trip Cancellation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High Blood Pressure\"\n  ],\n  \"medical_needs\": [\n    \"Full medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"White Water Rafting\"\n  ],\n  \"age_group\": \"41-55 years\",\n  \"additional_requests\": \"Flexible budget; specific reassurance for cancellation due to sister's wedding; no fine print exclusions.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical coverage\",\n    \"baggage coverage\",\n    \"travel delay\",\n    \"trip cancellation\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ-001",
-                "requirement_summary": "Travel insurance requirements for a trip to Australia including medical, luggage, activity coverage, and trip cancellation.",
-                "detailed_description": "Two travelers from Singapore, age group 41-55, traveling to Australia for three weeks. Requirements include full medical coverage, coverage for lost or damaged luggage, coverage for white water rafting, coverage for expenses due to significant travel delays, and specific trip cancellation coverage for attending a family wedding.",
+                "requirement_id": "001",
+                "requirement_summary": "Travel insurance for a three-week trip to Australia for two travelers with specific coverage needs.",
+                "detailed_description": "Customer requires comprehensive travel insurance coverage that includes medical needs related to a pre-existing condition, coverage for white water rafting, lost baggage, delayed baggage reimbursement, travel delay expenses, and trip cancellation for attending a sister's wedding.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Australia",
-                "travel_duration": "3 weeks",
+                "travel_duration": "Three weeks",
                 "insurance_coverage_type": [
                     "Medical Coverage",
-                    "Trip Cancellation",
-                    "Baggage Coverage",
-                    "Adventure Activity Coverage",
-                    "Travel Delay Coverage"
+                    "Lost, Damaged, or Delayed Luggage",
+                    "Travel Delay Coverage",
+                    "Trip Cancellation Coverage"
                 ],
                 "pre_existing_conditions": [
                     "High Blood Pressure"
@@ -66,15 +63,14 @@
                 "activities_to_cover": [
                     "White Water Rafting"
                 ],
-                "age_group": "41-55",
-                "additional_requests": "I need confirmation that cancellation for my sister's wedding is covered. All coverage must be included without fine print exclusions.",
+                "age_group": "41-55 years",
+                "additional_requests": "Flexible budget; specific reassurance for cancellation due to sister's wedding; no fine print exclusions.",
                 "keywords": [
                     "travel insurance",
-                    "cancellation coverage",
                     "medical coverage",
                     "baggage coverage",
-                    "travel delays",
-                    "white water rafting"
+                    "travel delay",
+                    "trip cancellation"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -82,10 +78,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 57450,
-        "prompt_tokens": 47934,
+        "total_tokens": 130688,
+        "prompt_tokens": 110334,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 9516,
-        "successful_requests": 32
+        "completion_tokens": 20354,
+        "successful_requests": 70
     }
 }

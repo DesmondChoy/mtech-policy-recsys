@@ -1,36 +1,33 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan.\",\n  \"detailed_description\": \"Customer is traveling to Japan for 10 days with one traveler having asthma. They need coverage for medical treatment, lost or damaged luggage, significant travel delays, hiking activities, and cancellation due to a wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical Treatment\",\n    \"Lost or Damaged Luggage\",\n    \"Travel Delay\",\n    \"Trip Cancellation\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Medical treatment during trip\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cancellation coverage due to a family event like sister's wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"medical treatment\",\n    \"lost luggage\",\n    \"travel delay\",\n    \"trip cancellation\",\n    \"hiking\",\n    \"asthma\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan for two travelers aged 26-40.\",\n  \"detailed_description\": \"The customer is planning a 10-day trip to Japan from Singapore with another traveler. They are seeking information on coverage for medical treatment during the trip, specifically noting that one traveler has asthma. They also require coverage for lost or damaged luggage, assistance during significant travel delays, hiking activities, and trip cancellation specifically related to a potential family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical treatment\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"trip cancellation\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for trip cancellation due to a family event.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical treatment\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"hiking\",\n    \"asthma\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ123456",
-        "requirement_summary": "Travel insurance requirements for a trip to Japan.",
-        "detailed_description": "Customer is traveling to Japan for 10 days with one traveler having asthma. They need coverage for medical treatment, lost or damaged luggage, significant travel delays, hiking activities, and cancellation due to a wedding.",
+        "requirement_id": "1",
+        "requirement_summary": "Travel insurance requirements for a trip to Japan for two travelers aged 26-40.",
+        "detailed_description": "The customer is planning a 10-day trip to Japan from Singapore with another traveler. They are seeking information on coverage for medical treatment during the trip, specifically noting that one traveler has asthma. They also require coverage for lost or damaged luggage, assistance during significant travel delays, hiking activities, and trip cancellation specifically related to a potential family wedding.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "10 days",
         "insurance_coverage_type": [
-            "Medical Treatment",
-            "Lost or Damaged Luggage",
-            "Travel Delay",
-            "Trip Cancellation"
+            "medical treatment",
+            "lost or damaged luggage",
+            "travel delays",
+            "trip cancellation"
         ],
         "pre_existing_conditions": [
-            "Asthma"
+            "asthma"
         ],
-        "medical_needs": [
-            "Medical treatment during trip"
-        ],
+        "medical_needs": [],
         "activities_to_cover": [
-            "Hiking"
+            "hiking"
         ],
         "age_group": "26-40",
-        "additional_requests": "Cancellation coverage due to a family event like sister's wedding.",
+        "additional_requests": "Coverage for trip cancellation due to a family event.",
         "keywords": [
             "travel insurance",
-            "Japan",
             "medical treatment",
             "lost luggage",
-            "travel delay",
+            "travel delays",
             "trip cancellation",
             "hiking",
             "asthma"
@@ -42,38 +39,35 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan.\",\n  \"detailed_description\": \"Customer is traveling to Japan for 10 days with one traveler having asthma. They need coverage for medical treatment, lost or damaged luggage, significant travel delays, hiking activities, and cancellation due to a wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical Treatment\",\n    \"Lost or Damaged Luggage\",\n    \"Travel Delay\",\n    \"Trip Cancellation\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Medical treatment during trip\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cancellation coverage due to a family event like sister's wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"medical treatment\",\n    \"lost luggage\",\n    \"travel delay\",\n    \"trip cancellation\",\n    \"hiking\",\n    \"asthma\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan for two travelers aged 26-40.\",\n  \"detailed_description\": \"The customer is planning a 10-day trip to Japan from Singapore with another traveler. They are seeking information on coverage for medical treatment during the trip, specifically noting that one traveler has asthma. They also require coverage for lost or damaged luggage, assistance during significant travel delays, hiking activities, and trip cancellation specifically related to a potential family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical treatment\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"trip cancellation\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for trip cancellation due to a family event.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical treatment\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"hiking\",\n    \"asthma\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ123456",
-                "requirement_summary": "Travel insurance requirements for a trip to Japan.",
-                "detailed_description": "Customer is traveling to Japan for 10 days with one traveler having asthma. They need coverage for medical treatment, lost or damaged luggage, significant travel delays, hiking activities, and cancellation due to a wedding.",
+                "requirement_id": "1",
+                "requirement_summary": "Travel insurance requirements for a trip to Japan for two travelers aged 26-40.",
+                "detailed_description": "The customer is planning a 10-day trip to Japan from Singapore with another traveler. They are seeking information on coverage for medical treatment during the trip, specifically noting that one traveler has asthma. They also require coverage for lost or damaged luggage, assistance during significant travel delays, hiking activities, and trip cancellation specifically related to a potential family wedding.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "10 days",
                 "insurance_coverage_type": [
-                    "Medical Treatment",
-                    "Lost or Damaged Luggage",
-                    "Travel Delay",
-                    "Trip Cancellation"
+                    "medical treatment",
+                    "lost or damaged luggage",
+                    "travel delays",
+                    "trip cancellation"
                 ],
                 "pre_existing_conditions": [
-                    "Asthma"
+                    "asthma"
                 ],
-                "medical_needs": [
-                    "Medical treatment during trip"
-                ],
+                "medical_needs": [],
                 "activities_to_cover": [
-                    "Hiking"
+                    "hiking"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Cancellation coverage due to a family event like sister's wedding.",
+                "additional_requests": "Coverage for trip cancellation due to a family event.",
                 "keywords": [
                     "travel insurance",
-                    "Japan",
                     "medical treatment",
                     "lost luggage",
-                    "travel delay",
+                    "travel delays",
                     "trip cancellation",
                     "hiking",
                     "asthma"
@@ -84,10 +78,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 66010,
-        "prompt_tokens": 55205,
+        "total_tokens": 142983,
+        "prompt_tokens": 120711,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 10805,
-        "successful_requests": 37
+        "completion_tokens": 22272,
+        "successful_requests": 77
     }
 }

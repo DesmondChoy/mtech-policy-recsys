@@ -1,42 +1,36 @@
 {
-    "raw": "{\n  \"requirement_id\": \"req123456\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Australia.\",\n  \"detailed_description\": \"The customer requires travel insurance that covers multiple aspects including trip cancellation due to illness before departure, medical coverage for sickness or accidents during the trip, coverage for loss or damage of luggage, additional expenses due to travel delays, along with specific golfing-related coverages.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Lost/Damaged/Delayed Luggage\",\n    \"Travel Delays\",\n    \"Sports and Adventure\",\n    \"Golf Equipment Coverage\",\n    \"Reimbursement for Unused Green Fees\",\n    \"Accidental Damage to Golf Buggy\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Hiking\",\n    \"Golfing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget for the insurance premium.\",\n  \"keywords\": [\n    \"trip\",\n    \"Australia\",\n    \"insurance\",\n    \"travel\",\n    \"cancellation\",\n    \"medical\",\n    \"luggage\",\n    \"delays\",\n    \"golf\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"AU-SG-20231016\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Australia.\",\n  \"detailed_description\": \"Customer requires travel insurance for a trip to Australia, including cover for trip cancellation, medical expenses, baggage loss or damage, travel delays, and specific golf-related insurance.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Travel Delays\",\n    \"Sports and Adventure Activities\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"Golfing\",\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for golf equipment, reimbursement for unused green fees due to injury, accidental damage to rented golf buggy, benefit for achieving a hole-in-one.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"baggage insurance\",\n    \"travel delays\",\n    \"golf\",\n    \"hiking\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "req123456",
+        "requirement_id": "AU-SG-20231016",
         "requirement_summary": "Travel insurance requirements for a trip to Australia.",
-        "detailed_description": "The customer requires travel insurance that covers multiple aspects including trip cancellation due to illness before departure, medical coverage for sickness or accidents during the trip, coverage for loss or damage of luggage, additional expenses due to travel delays, along with specific golfing-related coverages.",
+        "detailed_description": "Customer requires travel insurance for a trip to Australia, including cover for trip cancellation, medical expenses, baggage loss or damage, travel delays, and specific golf-related insurance.",
         "travel_origin": "Singapore",
         "travel_destination": "Australia",
         "travel_duration": "2 weeks",
         "insurance_coverage_type": [
             "Trip Cancellation",
             "Medical Coverage",
-            "Lost/Damaged/Delayed Luggage",
+            "Lost, Damaged, or Delayed Luggage",
             "Travel Delays",
-            "Sports and Adventure",
-            "Golf Equipment Coverage",
-            "Reimbursement for Unused Green Fees",
-            "Accidental Damage to Golf Buggy",
-            "Hole-in-One Benefit"
+            "Sports and Adventure Activities"
         ],
-        "pre_existing_conditions": null,
-        "medical_needs": null,
+        "pre_existing_conditions": [],
+        "medical_needs": [],
         "activities_to_cover": [
-            "Hiking",
-            "Golfing"
+            "Golfing",
+            "Hiking"
         ],
         "age_group": "41-55",
-        "additional_requests": "Flexible budget for the insurance premium.",
+        "additional_requests": "Coverage for golf equipment, reimbursement for unused green fees due to injury, accidental damage to rented golf buggy, benefit for achieving a hole-in-one.",
         "keywords": [
-            "trip",
-            "Australia",
-            "insurance",
-            "travel",
-            "cancellation",
-            "medical",
-            "luggage",
-            "delays",
-            "golf"
+            "travel insurance",
+            "trip cancellation",
+            "medical coverage",
+            "baggage insurance",
+            "travel delays",
+            "golf",
+            "hiking"
         ]
     },
     "tasks_output": [
@@ -45,44 +39,38 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"req123456\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Australia.\",\n  \"detailed_description\": \"The customer requires travel insurance that covers multiple aspects including trip cancellation due to illness before departure, medical coverage for sickness or accidents during the trip, coverage for loss or damage of luggage, additional expenses due to travel delays, along with specific golfing-related coverages.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Lost/Damaged/Delayed Luggage\",\n    \"Travel Delays\",\n    \"Sports and Adventure\",\n    \"Golf Equipment Coverage\",\n    \"Reimbursement for Unused Green Fees\",\n    \"Accidental Damage to Golf Buggy\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Hiking\",\n    \"Golfing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget for the insurance premium.\",\n  \"keywords\": [\n    \"trip\",\n    \"Australia\",\n    \"insurance\",\n    \"travel\",\n    \"cancellation\",\n    \"medical\",\n    \"luggage\",\n    \"delays\",\n    \"golf\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"AU-SG-20231016\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Australia.\",\n  \"detailed_description\": \"Customer requires travel insurance for a trip to Australia, including cover for trip cancellation, medical expenses, baggage loss or damage, travel delays, and specific golf-related insurance.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Travel Delays\",\n    \"Sports and Adventure Activities\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"Golfing\",\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for golf equipment, reimbursement for unused green fees due to injury, accidental damage to rented golf buggy, benefit for achieving a hole-in-one.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"baggage insurance\",\n    \"travel delays\",\n    \"golf\",\n    \"hiking\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "req123456",
+                "requirement_id": "AU-SG-20231016",
                 "requirement_summary": "Travel insurance requirements for a trip to Australia.",
-                "detailed_description": "The customer requires travel insurance that covers multiple aspects including trip cancellation due to illness before departure, medical coverage for sickness or accidents during the trip, coverage for loss or damage of luggage, additional expenses due to travel delays, along with specific golfing-related coverages.",
+                "detailed_description": "Customer requires travel insurance for a trip to Australia, including cover for trip cancellation, medical expenses, baggage loss or damage, travel delays, and specific golf-related insurance.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Australia",
                 "travel_duration": "2 weeks",
                 "insurance_coverage_type": [
                     "Trip Cancellation",
                     "Medical Coverage",
-                    "Lost/Damaged/Delayed Luggage",
+                    "Lost, Damaged, or Delayed Luggage",
                     "Travel Delays",
-                    "Sports and Adventure",
-                    "Golf Equipment Coverage",
-                    "Reimbursement for Unused Green Fees",
-                    "Accidental Damage to Golf Buggy",
-                    "Hole-in-One Benefit"
+                    "Sports and Adventure Activities"
                 ],
-                "pre_existing_conditions": null,
-                "medical_needs": null,
+                "pre_existing_conditions": [],
+                "medical_needs": [],
                 "activities_to_cover": [
-                    "Hiking",
-                    "Golfing"
+                    "Golfing",
+                    "Hiking"
                 ],
                 "age_group": "41-55",
-                "additional_requests": "Flexible budget for the insurance premium.",
+                "additional_requests": "Coverage for golf equipment, reimbursement for unused green fees due to injury, accidental damage to rented golf buggy, benefit for achieving a hole-in-one.",
                 "keywords": [
-                    "trip",
-                    "Australia",
-                    "insurance",
-                    "travel",
-                    "cancellation",
-                    "medical",
-                    "luggage",
-                    "delays",
-                    "golf"
+                    "travel insurance",
+                    "trip cancellation",
+                    "medical coverage",
+                    "baggage insurance",
+                    "travel delays",
+                    "golf",
+                    "hiking"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -90,10 +78,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 9910,
-        "prompt_tokens": 8480,
+        "total_tokens": 12798,
+        "prompt_tokens": 10921,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 1430,
-        "successful_requests": 5
+        "completion_tokens": 1877,
+        "successful_requests": 7
     }
 }

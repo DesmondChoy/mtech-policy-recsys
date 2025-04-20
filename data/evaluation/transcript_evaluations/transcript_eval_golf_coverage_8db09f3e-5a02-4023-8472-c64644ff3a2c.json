@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about coverage if they had to cancel the trip due to illness and mentioned the financial loss for flights and hotels. The agent prompted this discussion.",
+      "customer_quote": "[24] Oh yes, definitely. What happens if we have to cancel the whole thing last minute because one of us is unwell, especially with the high blood pressure thing? We'd lose all the money for the flights and hotel. So, yes, trip cancellation cover is important.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about potential trip disruptions like cancellation due to illness and confirmed the customer's requirement.",
+      "agent_quote": "[23] Now, thinking about potential disruptions, are you concerned about situations like your trip needing to be cancelled before you leave? For example, if one of you became seriously ill?"
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer asked about coverage for general illness (like flu) requiring a doctor visit during the trip and disclosed a pre-existing condition (high blood pressure) after the agent's prompt.",
+      "customer_quote": "[20] Ah, yes. My wife has high blood pressure. It's managed with medication. [...] And just generally, what if one of us just gets sick over there, like a bad flu, needs to see a doctor? Is that covered?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent specifically asked about pre-existing conditions and confirmed the customer's need for general medical coverage for unexpected illness/injury.",
+      "agent_quote": "[19] Now, regarding medical aspects, do either of the travellers have any pre-existing medical conditions we should be aware of...? [21] And you're inquiring about general medical coverage for unexpected illness or injury during the trip, like doctor visits or hospital stays?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly expressed concern about luggage, particularly their golf clubs, getting lost or broken during travel.",
+      "customer_quote": "[26] Ah yes! The luggage. Especially with my golf clubs, I worry they might get lost or broken. So, cover for lost or damaged luggage would be good.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent prompted the customer to consider issues during the journey, including checked luggage, and confirmed the requirement.",
+      "agent_quote": "[25] And what about issues during the actual travel journey? For instance, concerns about your flight being significantly delayed, or about your checked luggage? [27] Okay, so you're also interested in... loss or damage to your baggage during the trip."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer mentioned a colleague's bad experience with delays and asked if insurance covers expenses like hotel or food if they get stuck.",
+      "customer_quote": "[26] And delays too! My colleague had a terrible experience once, stuck at the airport for hours and hours. Does insurance help with that, like for hotel or food if we get stuck?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent prompted the customer to consider issues like significant flight delays and confirmed the requirement for delay-related expenses.",
+      "agent_quote": "[25] And what about issues during the actual travel journey? For instance, concerns about your flight being significantly delayed...? [27] Okay, so you're also interested in coverage for potential travel delays, like for accommodation or meals due to the delay..."
+    },
+    {
+      "coverage_type": "sports_and_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer mentioned light hiking and specifically detailed multiple golf-related coverage needs: equipment cover, unused green fee reimbursement, golf buggy damage, and a hole-in-one benefit, meeting the standard and scenario-specific requirements.",
+      "customer_quote": "[14] Well, we might do some light hiking... But the main reason we're going is for golf. Lots of golf. [16] Yes! That's the main thing, actually. I really need to make sure my golf equipment, my clubs, are covered... what if I get sick or something and can't play?... If I accidentally damage one [golf buggy], is that covered? Oh, and my friend told me some policies give you something special if you score a hole-in-one?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent asked about planned activities, specifically probed about golf coverage needs when golf was mentioned, and accurately summarised all the specific golf-related requirements.",
+      "agent_quote": "[13] And are there any specific activities you have planned during your trip? Anything adventurous perhaps? [15] Golf, noted. And regarding the golf activities, are there any specific concerns or types of coverage you have in mind related to that? [17] So I've noted down: coverage specifically for your golf equipment, reimbursement for unused green fees... coverage for accidental damage to a rented golf buggy, and a benefit related to achieving a hole-in-one."
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent performed excellently, successfully gathering information for all standard coverage types and thoroughly exploring the customer's specific needs related to the golf trip scenario. The agent used effective probing questions (e.g., about activities, pre-existing conditions, potential disruptions) and confirmed understanding by accurately summarising the customer's requirements. All required coverage areas were discussed with sufficient detail."
+  },
+  "transcript_name": "transcript_golf_coverage_8db09f3e-5a02-4023-8472-c64644ff3a2c",
+  "scenario": "golf_coverage"
+}

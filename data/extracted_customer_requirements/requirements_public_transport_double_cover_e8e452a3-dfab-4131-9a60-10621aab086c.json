@@ -1,10 +1,10 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Comprehensive travel insurance for a trip to Europe from Singapore.\",\n  \"detailed_description\": \"The customer requires travel insurance that includes comprehensive medical coverage accounting for pre-existing high blood pressure, coverage for lost, damaged, or delayed luggage, trip cancellation protection, travel delay benefits, sports coverage for scuba diving, and double indemnity for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Scuba Diving Coverage\",\n    \"Accidental Death Coverage on Public Transport\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High Blood Pressure\"\n  ],\n  \"medical_needs\": [\n    \"Solid medical coverage for emergencies\",\n    \"Doctor visits\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Double payout for accidental death while traveling on public transport.\",\n  \"keywords\": [\n    \"comprehensive coverage\",\n    \"trip cancellation\",\n    \"travel delay\",\n    \"accidental death\",\n    \"high blood pressure\",\n    \"travel insurance\",\n    \"Europe\",\n    \"Singapore\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Europe\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for a three-week trip to Europe, specifically covering various aspects of potential travel issues.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Sports and Adventure Coverage (Scuba Diving)\",\n    \"Double Payout for Accidental Death on Public Transport\"\n  ],\n  \"pre_existing_conditions\": [\"High blood pressure\"],\n  \"medical_needs\": [\"Solid medical coverage for emergencies\"],\n  \"activities_to_cover\": [\"Scuba Diving\"],\n  \"age_group\": \"41-55 years\",\n  \"additional_requests\": \"Customer expects solid coverage for emergencies, particularly in case of serious illness or flight cancellations. Interested in ensuring comprehensive coverage options without missing key points.\",\n  \"keywords\": [\"comprehensive coverage\", \"trip cancellation\", \"travel delay\", \"scuba diving\", \"accidental death\", \"public transport\", \"lost luggage\"]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ123456",
-        "requirement_summary": "Comprehensive travel insurance for a trip to Europe from Singapore.",
-        "detailed_description": "The customer requires travel insurance that includes comprehensive medical coverage accounting for pre-existing high blood pressure, coverage for lost, damaged, or delayed luggage, trip cancellation protection, travel delay benefits, sports coverage for scuba diving, and double indemnity for accidental death on public transport.",
+        "requirement_id": "001",
+        "requirement_summary": "Travel insurance requirements for a trip to Europe",
+        "detailed_description": "The customer requires comprehensive travel insurance for a three-week trip to Europe, specifically covering various aspects of potential travel issues.",
         "travel_origin": "Singapore",
         "travel_destination": "Europe",
         "travel_duration": "3 weeks",
@@ -13,31 +13,28 @@
             "Lost, Damaged, or Delayed Luggage",
             "Trip Cancellation",
             "Travel Delay",
-            "Scuba Diving Coverage",
-            "Accidental Death Coverage on Public Transport"
+            "Sports and Adventure Coverage (Scuba Diving)",
+            "Double Payout for Accidental Death on Public Transport"
         ],
         "pre_existing_conditions": [
-            "High Blood Pressure"
+            "High blood pressure"
         ],
         "medical_needs": [
-            "Solid medical coverage for emergencies",
-            "Doctor visits",
-            "Hospital stays"
+            "Solid medical coverage for emergencies"
         ],
         "activities_to_cover": [
             "Scuba Diving"
         ],
-        "age_group": "41-55",
-        "additional_requests": "Double payout for accidental death while traveling on public transport.",
+        "age_group": "41-55 years",
+        "additional_requests": "Customer expects solid coverage for emergencies, particularly in case of serious illness or flight cancellations. Interested in ensuring comprehensive coverage options without missing key points.",
         "keywords": [
             "comprehensive coverage",
             "trip cancellation",
             "travel delay",
+            "scuba diving",
             "accidental death",
-            "high blood pressure",
-            "travel insurance",
-            "Europe",
-            "Singapore"
+            "public transport",
+            "lost luggage"
         ]
     },
     "tasks_output": [
@@ -46,12 +43,12 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Comprehensive travel insurance for a trip to Europe from Singapore.\",\n  \"detailed_description\": \"The customer requires travel insurance that includes comprehensive medical coverage accounting for pre-existing high blood pressure, coverage for lost, damaged, or delayed luggage, trip cancellation protection, travel delay benefits, sports coverage for scuba diving, and double indemnity for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Scuba Diving Coverage\",\n    \"Accidental Death Coverage on Public Transport\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High Blood Pressure\"\n  ],\n  \"medical_needs\": [\n    \"Solid medical coverage for emergencies\",\n    \"Doctor visits\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Double payout for accidental death while traveling on public transport.\",\n  \"keywords\": [\n    \"comprehensive coverage\",\n    \"trip cancellation\",\n    \"travel delay\",\n    \"accidental death\",\n    \"high blood pressure\",\n    \"travel insurance\",\n    \"Europe\",\n    \"Singapore\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Europe\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for a three-week trip to Europe, specifically covering various aspects of potential travel issues.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Sports and Adventure Coverage (Scuba Diving)\",\n    \"Double Payout for Accidental Death on Public Transport\"\n  ],\n  \"pre_existing_conditions\": [\"High blood pressure\"],\n  \"medical_needs\": [\"Solid medical coverage for emergencies\"],\n  \"activities_to_cover\": [\"Scuba Diving\"],\n  \"age_group\": \"41-55 years\",\n  \"additional_requests\": \"Customer expects solid coverage for emergencies, particularly in case of serious illness or flight cancellations. Interested in ensuring comprehensive coverage options without missing key points.\",\n  \"keywords\": [\"comprehensive coverage\", \"trip cancellation\", \"travel delay\", \"scuba diving\", \"accidental death\", \"public transport\", \"lost luggage\"]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ123456",
-                "requirement_summary": "Comprehensive travel insurance for a trip to Europe from Singapore.",
-                "detailed_description": "The customer requires travel insurance that includes comprehensive medical coverage accounting for pre-existing high blood pressure, coverage for lost, damaged, or delayed luggage, trip cancellation protection, travel delay benefits, sports coverage for scuba diving, and double indemnity for accidental death on public transport.",
+                "requirement_id": "001",
+                "requirement_summary": "Travel insurance requirements for a trip to Europe",
+                "detailed_description": "The customer requires comprehensive travel insurance for a three-week trip to Europe, specifically covering various aspects of potential travel issues.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Europe",
                 "travel_duration": "3 weeks",
@@ -60,31 +57,28 @@
                     "Lost, Damaged, or Delayed Luggage",
                     "Trip Cancellation",
                     "Travel Delay",
-                    "Scuba Diving Coverage",
-                    "Accidental Death Coverage on Public Transport"
+                    "Sports and Adventure Coverage (Scuba Diving)",
+                    "Double Payout for Accidental Death on Public Transport"
                 ],
                 "pre_existing_conditions": [
-                    "High Blood Pressure"
+                    "High blood pressure"
                 ],
                 "medical_needs": [
-                    "Solid medical coverage for emergencies",
-                    "Doctor visits",
-                    "Hospital stays"
+                    "Solid medical coverage for emergencies"
                 ],
                 "activities_to_cover": [
                     "Scuba Diving"
                 ],
-                "age_group": "41-55",
-                "additional_requests": "Double payout for accidental death while traveling on public transport.",
+                "age_group": "41-55 years",
+                "additional_requests": "Customer expects solid coverage for emergencies, particularly in case of serious illness or flight cancellations. Interested in ensuring comprehensive coverage options without missing key points.",
                 "keywords": [
                     "comprehensive coverage",
                     "trip cancellation",
                     "travel delay",
+                    "scuba diving",
                     "accidental death",
-                    "high blood pressure",
-                    "travel insurance",
-                    "Europe",
-                    "Singapore"
+                    "public transport",
+                    "lost luggage"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -92,10 +86,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 52165,
-        "prompt_tokens": 43494,
+        "total_tokens": 111748,
+        "prompt_tokens": 94240,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 8671,
-        "successful_requests": 29
+        "completion_tokens": 17508,
+        "successful_requests": 60
     }
 }

@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly stated their requirement for comprehensive trip cancellation coverage, specifying it should cover 'any reason', including illness and work, and demanding a full refund without restrictive 'covered reasons'.",
+      "customer_quote": "[20] ...if the trip gets cancelled for *any* reason \u2013 illness, work, anything \u2013 I expect a full refund of my costs. Don't give me a list of 'covered reasons', I want *all* reasons covered.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement for 'comprehensive trip cancellation protection' and accurately summarized the need for 'broad coverage terms' at the end.",
+      "agent_quote": "[27] You also require comprehensive cover for trip cancellation... with an expectation for broad coverage terms."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer specified a need for medical coverage that includes a pre-existing condition (high blood pressure).",
+      "customer_quote": "[16] Well, my partner has high blood pressure. It's managed, but it absolutely needs to be covered. I won't accept any policy that tries to exclude that.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the pre-existing condition and probed appropriately for related needs (special medical equipment), then correctly summarized the requirement.",
+      "agent_quote": "[17] I understand you require coverage that considers high blood pressure. I've made a note of that. Do you need to bring any special medical equipment like a wheelchair or CPAP machine?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer clearly stated their requirement for coverage of lost or damaged luggage, specifying 'full replacement value' and objecting to common exclusions like electronics.",
+      "customer_quote": "[20] If my luggage gets lost or damaged, I expect full replacement value, period. I don't want excuses about electronics or whatever you people usually try to exclude.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement for lost/damaged luggage coverage and accurately included it in the final summary.",
+      "agent_quote": "[23] Alright, I've noted your requirement for coverage related to... lost/damaged baggage..."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for significant travel delays, specifying the need for coverage of hotels and meals without long waiting periods.",
+      "customer_quote": "[22] Absolutely. If there are significant travel delays, I expect ISS to cover hotels, meals, everything needed without a fuss. Don't tell me I have to wait six or eight hours either. Any serious delay needs compensation.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement for travel delay coverage and included it in the summary.",
+      "agent_quote": "[23] Alright, I've noted your requirement for coverage related to travel delays..."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer specified participation in White Water Rafting and demanded full coverage for it, in response to the agent's probe.",
+      "customer_quote": "[14] Yes, we plan to do White Water Rafting during our trip. And I expect that to be fully covered, no excuses if something happens.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively probed for specific activities and correctly noted the requirement for white water rafting coverage.",
+      "agent_quote": "[13] Now, regarding your trip, are there any particular activities you plan on participating in that might require specific coverage?"
+    },
+    {
+      "coverage_type": "accidental_death_public_transport",
+      "name": "Accidental Death (Public Transport Double Payout)",
+      "result": "PASS",
+      "justification": "The customer explicitly asked for a specific policy feature: a double payout for accidental death occurring on public transport. This aligns with the scenario-specific requirement.",
+      "customer_quote": "[24] I want to know if the policy provides extra coverage if an accident happens while I'm on a bus or train \u2013 like a double payout for accidental death specifically on public transport. That needs to be included.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly identified this as a specific requirement ('double indemnity coverage'), noted it, and included it accurately in the final summary.",
+      "agent_quote": "[25] Okay, I have noted your specific requirement for double indemnity coverage for accidental death occurring while traveling on public transport."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered information related to all five standard coverage types and the specific scenario requirement (double payout on public transport). The customer provided specific, albeit demanding, details for most areas (e.g., 'any reason' cancellation, pre-existing condition, specific activity, luggage value, delay compensation, double payout). The agent performed well, probing appropriately (activities, medical equipment), acknowledging all stated requirements, and providing an accurate summary despite the customer's challenging demeanor. All necessary information was captured."
+  },
+  "transcript_name": "transcript_public_transport_double_cover_0bac8006-2ed9-4bff-b6d9-b9dd49c80ab5",
+  "scenario": "public_transport_double_cover"
+}

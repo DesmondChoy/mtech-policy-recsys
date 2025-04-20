@@ -1,39 +1,39 @@
 {
-    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance needed for a 10-day trip to Australia from Singapore for two travellers aged 41-55.\",\n  \"detailed_description\": \"The customer is seeking travel insurance for a trip to Australia for two people, covering various aspects including medical expenses, trip cancellation, lost or damaged luggage, travel delays, and specific golf-related coverage.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical coverage overseas\",\n    \"trip cancellation protection\",\n    \"coverage for lost, damaged, or delayed luggage\",\n    \"coverage for travel delays\",\n    \"golf equipment coverage\",\n    \"reimbursement for unused green fees\",\n    \"liability for golf buggy damage\",\n    \"hole-in-one benefits\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"golf\",\n    \"sightseeing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget around $200-$300 for insurance.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Australia\",\n    \"golf\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"luggage coverage\",\n    \"travel delays\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance requirements for a 10-day trip to Australia from Singapore.\",\n  \"detailed_description\": \"The customer requires travel insurance for a 10-day trip to Australia for two travellers aged 41-55. They are looking for various coverage options including medical expenses, trip cancellation, luggage coverage, and specific golf-related insurances.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\"medical expenses\", \"trip cancellation\", \"lost luggage\", \"delayed luggage\", \"travel delay expenses\", \"golf equipment\", \"unused green fees reimbursement\", \"liability for golf buggy damage\", \"hole-in-one benefit\"],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\"golf\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": null,\n  \"keywords\": [\"travel insurance\", \"Australia\", \"lost luggage\", \"golf\", \"medical expenses\", \"trip cancellation\", \"travel delay\"]\n}",
     "pydantic": null,
     "json_dict": {
         "requirement_id": "1",
-        "requirement_summary": "Travel insurance needed for a 10-day trip to Australia from Singapore for two travellers aged 41-55.",
-        "detailed_description": "The customer is seeking travel insurance for a trip to Australia for two people, covering various aspects including medical expenses, trip cancellation, lost or damaged luggage, travel delays, and specific golf-related coverage.",
+        "requirement_summary": "Travel insurance requirements for a 10-day trip to Australia from Singapore.",
+        "detailed_description": "The customer requires travel insurance for a 10-day trip to Australia for two travellers aged 41-55. They are looking for various coverage options including medical expenses, trip cancellation, luggage coverage, and specific golf-related insurances.",
         "travel_origin": "Singapore",
         "travel_destination": "Australia",
         "travel_duration": "10 days",
         "insurance_coverage_type": [
-            "medical coverage overseas",
-            "trip cancellation protection",
-            "coverage for lost, damaged, or delayed luggage",
-            "coverage for travel delays",
-            "golf equipment coverage",
-            "reimbursement for unused green fees",
+            "medical expenses",
+            "trip cancellation",
+            "lost luggage",
+            "delayed luggage",
+            "travel delay expenses",
+            "golf equipment",
+            "unused green fees reimbursement",
             "liability for golf buggy damage",
-            "hole-in-one benefits"
+            "hole-in-one benefit"
         ],
         "pre_existing_conditions": [],
         "medical_needs": [],
         "activities_to_cover": [
-            "golf",
-            "sightseeing"
+            "golf"
         ],
         "age_group": "41-55",
-        "additional_requests": "Budget around $200-$300 for insurance.",
+        "additional_requests": null,
         "keywords": [
             "travel insurance",
             "Australia",
+            "lost luggage",
             "golf",
-            "medical coverage",
+            "medical expenses",
             "trip cancellation",
-            "luggage coverage",
-            "travel delays"
+            "travel delay"
         ]
     },
     "tasks_output": [
@@ -42,41 +42,41 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance needed for a 10-day trip to Australia from Singapore for two travellers aged 41-55.\",\n  \"detailed_description\": \"The customer is seeking travel insurance for a trip to Australia for two people, covering various aspects including medical expenses, trip cancellation, lost or damaged luggage, travel delays, and specific golf-related coverage.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical coverage overseas\",\n    \"trip cancellation protection\",\n    \"coverage for lost, damaged, or delayed luggage\",\n    \"coverage for travel delays\",\n    \"golf equipment coverage\",\n    \"reimbursement for unused green fees\",\n    \"liability for golf buggy damage\",\n    \"hole-in-one benefits\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"golf\",\n    \"sightseeing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget around $200-$300 for insurance.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Australia\",\n    \"golf\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"luggage coverage\",\n    \"travel delays\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance requirements for a 10-day trip to Australia from Singapore.\",\n  \"detailed_description\": \"The customer requires travel insurance for a 10-day trip to Australia for two travellers aged 41-55. They are looking for various coverage options including medical expenses, trip cancellation, luggage coverage, and specific golf-related insurances.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\"medical expenses\", \"trip cancellation\", \"lost luggage\", \"delayed luggage\", \"travel delay expenses\", \"golf equipment\", \"unused green fees reimbursement\", \"liability for golf buggy damage\", \"hole-in-one benefit\"],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\"golf\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": null,\n  \"keywords\": [\"travel insurance\", \"Australia\", \"lost luggage\", \"golf\", \"medical expenses\", \"trip cancellation\", \"travel delay\"]\n}",
             "pydantic": null,
             "json_dict": {
                 "requirement_id": "1",
-                "requirement_summary": "Travel insurance needed for a 10-day trip to Australia from Singapore for two travellers aged 41-55.",
-                "detailed_description": "The customer is seeking travel insurance for a trip to Australia for two people, covering various aspects including medical expenses, trip cancellation, lost or damaged luggage, travel delays, and specific golf-related coverage.",
+                "requirement_summary": "Travel insurance requirements for a 10-day trip to Australia from Singapore.",
+                "detailed_description": "The customer requires travel insurance for a 10-day trip to Australia for two travellers aged 41-55. They are looking for various coverage options including medical expenses, trip cancellation, luggage coverage, and specific golf-related insurances.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Australia",
                 "travel_duration": "10 days",
                 "insurance_coverage_type": [
-                    "medical coverage overseas",
-                    "trip cancellation protection",
-                    "coverage for lost, damaged, or delayed luggage",
-                    "coverage for travel delays",
-                    "golf equipment coverage",
-                    "reimbursement for unused green fees",
+                    "medical expenses",
+                    "trip cancellation",
+                    "lost luggage",
+                    "delayed luggage",
+                    "travel delay expenses",
+                    "golf equipment",
+                    "unused green fees reimbursement",
                     "liability for golf buggy damage",
-                    "hole-in-one benefits"
+                    "hole-in-one benefit"
                 ],
                 "pre_existing_conditions": [],
                 "medical_needs": [],
                 "activities_to_cover": [
-                    "golf",
-                    "sightseeing"
+                    "golf"
                 ],
                 "age_group": "41-55",
-                "additional_requests": "Budget around $200-$300 for insurance.",
+                "additional_requests": null,
                 "keywords": [
                     "travel insurance",
                     "Australia",
+                    "lost luggage",
                     "golf",
-                    "medical coverage",
+                    "medical expenses",
                     "trip cancellation",
-                    "luggage coverage",
-                    "travel delays"
+                    "travel delay"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -84,10 +84,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 4093,
-        "prompt_tokens": 3516,
+        "total_tokens": 6991,
+        "prompt_tokens": 5957,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 577,
-        "successful_requests": 2
+        "completion_tokens": 1034,
+        "successful_requests": 4
     }
 }

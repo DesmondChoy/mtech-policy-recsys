@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned needing trip cancellation coverage and provided specific covered reasons they were concerned about (illness before trip, family emergency, natural disaster).",
+      "customer_quote": "[14] Good. And what about trip cancellation? If, say, one of us gets seriously ill before we go, or there's some family emergency back here, or even a natural disaster that stops the trip, I expect to get my money back for the non-refundable bookings.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement and confirmed the specific reasons mentioned.",
+      "agent_quote": "[15] Noted, you require coverage for trip cancellation due to reasons like illness, family emergencies, or natural disasters."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the need for medical coverage and provided specific details like coverage for accidents, sudden sickness, emergency treatment, and hospital stays.",
+      "customer_quote": "[10] No, no pre-existing conditions. But if something *does* happen medically over there \u2013 an accident, sudden sickness, anything \u2013 I expect ISS to cover it fully. Emergency treatment, hospital stays, the lot.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about pre-existing conditions and then confirmed the customer's requirement for emergency medical treatment and hospitalisation.",
+      "agent_quote": "[9] Do any of the travelers have any pre-existing medical conditions we should be aware of? \n[11] Understood. So, you require coverage for emergency medical treatment and hospitalisation during the trip."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer clearly stated the need for coverage related to luggage issues and specified concerns about lost, damaged, or delayed luggage, including reimbursement for lost items and essentials during delay.",
+      "customer_quote": "[16] Yes. And luggage! Airlines are completely useless these days. What happens if our luggage gets lost or damaged? Or delayed for days? I expect compensation, not just apologies. Reimbursement for lost items, payment for essentials if it's delayed \u2013 proper coverage.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement and confirmed the specific details mentioned regarding lost, damaged, and delayed baggage.",
+      "agent_quote": "[17] Understood. You need coverage for lost, damaged, or delayed baggage, including reimbursement for essential purchases during a delay."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned needing coverage for travel delays and specified the need for coverage of extra hotel nights and meals due to significant delays. The customer also added the scenario-specific requirement for pet accommodation costs.",
+      "customer_quote": "[18] Exactly. And travel delays themselves! If the flight gets messed up and we're stuck somewhere, ISS needs to cover the extra hotel nights and meals. \n[20] ...If our return flight is delayed for a covered reason... I expect ISS to cover the extra nights at the pet hotel.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the standard travel delay requirements (accommodation, meals) and specifically confirmed the additional requirement for pet accommodation costs due to delay.",
+      "agent_quote": "[19] Right, coverage for additional accommodation and meal expenses due to significant travel delays. \n[21] Okay, I understand. So, specifically for travel delay coverage, you also require cover for additional pet accommodation costs incurred if your return to Singapore is delayed due to a covered event."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer mentioned planning to hike and explicitly requested confirmation that medical costs related to potential hiking injuries would be covered.",
+      "customer_quote": "[12] Yes, we plan to do some Hiking. And I want to be absolutely sure that if one of us gets injured while hiking, the medical costs are covered.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively probed about planned activities, which elicited the information about hiking, and then confirmed the specific requirement for medical coverage related to hiking.",
+      "agent_quote": "[11] Are there any specific activities you plan to participate in during your trip to Japan? \n[13] Okay, I've noted the requirement for medical coverage to include hiking activities."
+    },
+    {
+      "coverage_type": "pet_accommodation_costs",
+      "name": "Pet Accommodation Costs (Scenario Specific)",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the need for coverage for additional pet accommodation costs if their return was delayed due to a covered reason. This specific requirement was clearly articulated.",
+      "customer_quote": "[20] ...If our return flight is delayed for a covered reason, meaning we can't pick her up on schedule, I expect ISS to cover the extra nights at the pet hotel.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged this specific requirement, correctly linking it to the travel delay coverage, and confirmed it clearly.",
+      "agent_quote": "[21] Okay, I understand. So, specifically for travel delay coverage, you also require cover for additional pet accommodation costs incurred if your return to Singapore is delayed due to a covered event."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered information on all standard coverage types mentioned by the customer, as well as the scenario-specific requirement for pet accommodation costs. The customer provided specific details for most requirements. The agent performed well, acknowledging requirements, probing appropriately (e.g., for activities, pre-existing conditions), and accurately summarizing the gathered information. All required coverage areas were discussed with sufficient detail."
+  },
+  "transcript_name": "transcript_pet_care_coverage_af891168-1e84-4d09-abd3-6ac7a65307a8",
+  "scenario": "pet_care_coverage"
+}

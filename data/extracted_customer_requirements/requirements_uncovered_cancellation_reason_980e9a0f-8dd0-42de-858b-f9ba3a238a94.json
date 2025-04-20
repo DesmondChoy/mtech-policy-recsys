@@ -1,0 +1,89 @@
+{
+    "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Thailand.\",\n  \"detailed_description\": \"Customer requires travel insurance covering emergency medical expenses, lost or damaged luggage, significant travel delays, trip cancellation due to illness and a specific need to clarify cancellation in case of a family event like a wedding date change.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\"emergency medical expenses\", \"lost or damaged luggage\", \"travel delays\", \"trip cancellation\"],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\"emergency medical coverage\"],\n  \"activities_to_cover\": [\"scuba diving\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Need clarification on cancellation cover due to family events.\",\n  \"keywords\": [\"travel insurance\", \"Thailand\", \"emergency medical\", \"luggage\", \"travel delays\", \"trip cancellation\", \"scuba diving\", \"family event\"]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "001",
+        "requirement_summary": "Travel insurance requirements for a trip to Thailand.",
+        "detailed_description": "Customer requires travel insurance covering emergency medical expenses, lost or damaged luggage, significant travel delays, trip cancellation due to illness and a specific need to clarify cancellation in case of a family event like a wedding date change.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Thailand",
+        "travel_duration": "10 days",
+        "insurance_coverage_type": [
+            "emergency medical expenses",
+            "lost or damaged luggage",
+            "travel delays",
+            "trip cancellation"
+        ],
+        "pre_existing_conditions": [],
+        "medical_needs": [
+            "emergency medical coverage"
+        ],
+        "activities_to_cover": [
+            "scuba diving"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Need clarification on cancellation cover due to family events.",
+        "keywords": [
+            "travel insurance",
+            "Thailand",
+            "emergency medical",
+            "luggage",
+            "travel delays",
+            "trip cancellation",
+            "scuba diving",
+            "family event"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd. My name is Priya. How may I assist you today?\nCustomer: Hi Priya, yes, quickly please. I need to sort out travel insurance. Very busy today.\nCustomer Service Agent: Understood. I can certainly help gather your requirements. Could you tell me where you'll be travelling to?\nCustomer: Thailand. Leaving from Singapore, obviously.\nCustomer Service Agent: Noted, Thailand. And how long will your trip be?\nCustomer: 10 days. Look, can we speed this up? I just need the standard stuff.\nCustomer Service Agent: I understand you're short on time. To ensure we note everything correctly, I just need a few more details. How many people will be travelling?\nCustomer: Two of us. Both around 30, so maybe the 26-40 age group, whatever that is.\nCustomer Service Agent: Alright, two travellers, age group 26-40, travelling from Singapore to Thailand for 10 days. Are there any particular activities you plan on doing there? Sometimes specific activities require noting.\nCustomer: Yes, yes, we plan to do some scuba diving. So make sure that's covered.\nCustomer Service Agent: Okay, noted potential coverage needed for scuba diving. And regarding health, are there any pre-existing medical conditions I should note for any traveller?\nCustomer: No, nothing like that. But obviously, we need medical coverage, right? If something happens, hospital bills, doctors, that kind of thing. Standard.\nCustomer Service Agent: Understood, so coverage for emergency medical needs during the trip is a requirement.\nCustomer: Yes, obviously. And what about if the flight gets massively delayed? Stuck in Bangkok or something. We'll need cover for hotels, food, right?\nCustomer Service Agent: Okay, so you require cover related to significant travel delays.\nCustomer: Yes. And luggage! Always worried the airline will lose it or break it. Need cover for lost or damaged bags.\nCustomer Service Agent: Got it, requirement noted for lost, damaged, or delayed baggage.\nCustomer: Right. Now, the main thing – cancellation. If something unexpected comes up, like, we get sick or there's a family emergency, we need to be able to cancel and get our money back for the flights and hotel.\nCustomer Service Agent: Okay, so coverage for trip cancellation due to specific unforeseen events like illness is a requirement.\nCustomer: Yes, but specifically – what if I have to cancel because of a family event? Say, my sister suddenly moves her wedding date right into our trip dates? It's important, I'd have to cancel the trip. Is that covered? Need to know.\nCustomer Service Agent: Thank you for specifying that. So, you have a requirement to understand if cancellation due to a significant family event, like your sister's wedding date changing, would be covered. I've noted this specific cancellation scenario as a requirement you need addressed. Standard cancellation policies often have specific covered reasons, so this is an important point to clarify.\nCustomer: Okay, good. Just make sure that's listed as something I need info on. So, is that everything you need? I really have to go.\nCustomer Service Agent: Almost done. Just to quickly summarize the requirements you've mentioned: Coverage for emergency medical expenses, lost or damaged luggage, significant travel delays, trip cancellation for standard reasons like illness, cover for scuba diving activities, and specifically, clarification on cancellation cover if you need to cancel due to a family event like your sister's wedding. Is that all correct?\nCustomer: Yes, yes, that's it. Medical, luggage, delays, diving, cancellation, and the wedding thing. Got it.\nCustomer Service Agent: Perfect. Thank you for providing those details. I have noted all your requirements. We will use this information to identify suitable options. Someone will be in touch shortly. Thank you for calling ISS Insurance.\nCustomer: Okay, thanks. Bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Thailand.\",\n  \"detailed_description\": \"Customer requires travel insurance covering emergency medical expenses, lost or damaged luggage, significant travel delays, trip cancellation due to illness and a specific need to clarify cancellation in case of a family event like a wedding date change.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\"emergency medical expenses\", \"lost or damaged luggage\", \"travel delays\", \"trip cancellation\"],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\"emergency medical coverage\"],\n  \"activities_to_cover\": [\"scuba diving\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Need clarification on cancellation cover due to family events.\",\n  \"keywords\": [\"travel insurance\", \"Thailand\", \"emergency medical\", \"luggage\", \"travel delays\", \"trip cancellation\", \"scuba diving\", \"family event\"]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "001",
+                "requirement_summary": "Travel insurance requirements for a trip to Thailand.",
+                "detailed_description": "Customer requires travel insurance covering emergency medical expenses, lost or damaged luggage, significant travel delays, trip cancellation due to illness and a specific need to clarify cancellation in case of a family event like a wedding date change.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Thailand",
+                "travel_duration": "10 days",
+                "insurance_coverage_type": [
+                    "emergency medical expenses",
+                    "lost or damaged luggage",
+                    "travel delays",
+                    "trip cancellation"
+                ],
+                "pre_existing_conditions": [],
+                "medical_needs": [
+                    "emergency medical coverage"
+                ],
+                "activities_to_cover": [
+                    "scuba diving"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Need clarification on cancellation cover due to family events.",
+                "keywords": [
+                    "travel insurance",
+                    "Thailand",
+                    "emergency medical",
+                    "luggage",
+                    "travel delays",
+                    "trip cancellation",
+                    "scuba diving",
+                    "family event"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 141088,
+        "prompt_tokens": 119100,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 21988,
+        "successful_requests": 76
+    }
+}

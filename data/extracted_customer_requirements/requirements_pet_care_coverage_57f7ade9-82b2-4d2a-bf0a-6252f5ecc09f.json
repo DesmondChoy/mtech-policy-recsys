@@ -1,0 +1,93 @@
+{
+    "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance for a 2-week trip to Japan for 2 people.\",\n  \"detailed_description\": \"The customer is looking for travel insurance for a 2-week trip to Japan for two travelers aged 26-40. They require standard medical coverage, trip cancellation cover, coverage for travel delays, and cover for lost or damaged luggage. They will also engage in hiking activities and need coverage for additional pet accommodation costs due to potential travel delays. The budget is around $400, and there are no pre-existing medical conditions.\",\n  \"travel_origin\": null,\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"standard medical coverage\",\n    \"trip cancellation cover\",\n    \"travel delays cover\",\n    \"lost or damaged luggage cover\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"standard medical\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs if return to Singapore is delayed.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"2 weeks\",\n    \"2 travelers\",\n    \"hiking\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"pet accommodation\",\n    \"budget $400\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "req-001",
+        "requirement_summary": "Travel insurance for a 2-week trip to Japan for 2 people.",
+        "detailed_description": "The customer is looking for travel insurance for a 2-week trip to Japan for two travelers aged 26-40. They require standard medical coverage, trip cancellation cover, coverage for travel delays, and cover for lost or damaged luggage. They will also engage in hiking activities and need coverage for additional pet accommodation costs due to potential travel delays. The budget is around $400, and there are no pre-existing medical conditions.",
+        "travel_origin": null,
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "standard medical coverage",
+            "trip cancellation cover",
+            "travel delays cover",
+            "lost or damaged luggage cover"
+        ],
+        "pre_existing_conditions": [],
+        "medical_needs": [
+            "standard medical"
+        ],
+        "activities_to_cover": [
+            "hiking"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Coverage for additional pet accommodation costs if return to Singapore is delayed.",
+        "keywords": [
+            "travel insurance",
+            "Japan",
+            "2 weeks",
+            "2 travelers",
+            "hiking",
+            "trip cancellation",
+            "travel delays",
+            "lost luggage",
+            "pet accommodation",
+            "budget $400"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Sarah. How may I assist you today?\nCustomer: I need travel insurance information.\nCustomer Service Agent: Certainly. I can help gather your requirements. Could you please tell me your travel destination?\nCustomer: Japan.\nCustomer Service Agent: And how long will you be travelling for?\nCustomer: 2 weeks.\nCustomer Service Agent: Okay, thank you. How many people will be travelling?\nCustomer: 2.\nCustomer Service Agent: Got it. And could you let me know the age group of the travellers?\nCustomer: The travelers are in the 26-40 age group.\nCustomer Service Agent: Noted. Are there any specific activities you plan to participate in during your trip to Japan?\nCustomer: We plan to do hiking. Does that need special cover?\nCustomer Service Agent: Okay, hiking. I've noted that down to ensure any necessary sports or activity coverage is considered. Do any of the travellers have pre-existing medical conditions we should be aware of?\nCustomer: No, no pre-existing conditions. Standard medical is needed.\nCustomer Service Agent: Understood, standard medical coverage. Are there any specific concerns regarding potential disruptions before or during your trip?\nCustomer: Yes, cover if the trip gets cancelled beforehand. And cover if flights are delayed.\nCustomer Service Agent: Alright, so coverage for trip cancellation and for travel delays. What about your luggage?\nCustomer: Need cover for lost or damaged luggage.\nCustomer Service Agent: Okay, lost or damaged luggage cover noted. Are there any other particular situations or costs you're concerned about and want to ensure are covered?\nCustomer: Yes. If my return to Singapore is delayed, I need cover for additional pet accommodation costs. My cat would need to stay longer in the pet hotel.\nCustomer Service Agent: Understood, coverage for additional pet accommodation costs due to return travel delays. Thank you for specifying that. Lastly, do you have a budget range in mind for the policy?\nCustomer: Our budget for insurance is around $400.\nCustomer Service Agent: Thank you. So, just to confirm, I have noted the following requirements: A 2-week trip to Japan for 2 travellers, aged 26-40. You require standard medical coverage, trip cancellation cover, cover for travel delays, and cover for lost or damaged luggage. You also need cover considered for hiking activities, and specifically require coverage for additional pet accommodation costs if your return to Singapore is delayed. Your budget is around $400, and there are no pre-existing medical conditions. Is that all correct?\nCustomer: Yes, that's correct.\nCustomer Service Agent: Great. Thank you for providing all the details. I have recorded your requirements, and a specialist will review them to identify suitable policy options. Someone will be in touch with you shortly regarding quotes.\nCustomer: Okay, thank you.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance for a 2-week trip to Japan for 2 people.\",\n  \"detailed_description\": \"The customer is looking for travel insurance for a 2-week trip to Japan for two travelers aged 26-40. They require standard medical coverage, trip cancellation cover, coverage for travel delays, and cover for lost or damaged luggage. They will also engage in hiking activities and need coverage for additional pet accommodation costs due to potential travel delays. The budget is around $400, and there are no pre-existing medical conditions.\",\n  \"travel_origin\": null,\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"standard medical coverage\",\n    \"trip cancellation cover\",\n    \"travel delays cover\",\n    \"lost or damaged luggage cover\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"standard medical\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs if return to Singapore is delayed.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"2 weeks\",\n    \"2 travelers\",\n    \"hiking\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"pet accommodation\",\n    \"budget $400\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "req-001",
+                "requirement_summary": "Travel insurance for a 2-week trip to Japan for 2 people.",
+                "detailed_description": "The customer is looking for travel insurance for a 2-week trip to Japan for two travelers aged 26-40. They require standard medical coverage, trip cancellation cover, coverage for travel delays, and cover for lost or damaged luggage. They will also engage in hiking activities and need coverage for additional pet accommodation costs due to potential travel delays. The budget is around $400, and there are no pre-existing medical conditions.",
+                "travel_origin": null,
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "standard medical coverage",
+                    "trip cancellation cover",
+                    "travel delays cover",
+                    "lost or damaged luggage cover"
+                ],
+                "pre_existing_conditions": [],
+                "medical_needs": [
+                    "standard medical"
+                ],
+                "activities_to_cover": [
+                    "hiking"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Coverage for additional pet accommodation costs if return to Singapore is delayed.",
+                "keywords": [
+                    "travel insurance",
+                    "Japan",
+                    "2 weeks",
+                    "2 travelers",
+                    "hiking",
+                    "trip cancellation",
+                    "travel delays",
+                    "lost luggage",
+                    "pet accommodation",
+                    "budget $400"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 51524,
+        "prompt_tokens": 43310,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 8214,
+        "successful_requests": 28
+    }
+}

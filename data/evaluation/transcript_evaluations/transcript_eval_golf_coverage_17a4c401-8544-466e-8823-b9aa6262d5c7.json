@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly requested trip cancellation coverage and provided a specific reason (illness) as a concern.",
+      "customer_quote": "[20] Customer: And trip cancellation. If something happens \u2013 say, I fall sick before going, or some emergency comes up \u2013 I expect a full refund for my travel costs. No arguments.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement and confirmed the specific reason mentioned by the customer.",
+      "agent_quote": "[21] Customer Service Agent: Okay, requirement noted for trip cancellation coverage due to specified unforeseen events like illness."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested medical coverage for potential doctor visits or hospital stays during the trip. They also provided specific details about a pre-existing condition (managed high blood pressure).",
+      "customer_quote": "[22] Customer: Absolutely essential. If we need a doctor or end up in hospital over there, ISS better cover it fully. No messing about with claims. [24] Customer: Well, my wife has high blood pressure, but it's managed... Just make sure it's covered like anything else.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the need for medical coverage and appropriately probed for pre-existing conditions and specific medical equipment needs.",
+      "agent_quote": "[21] Customer Service Agent: What about medical cover during the trip itself? [23] Customer Service Agent: Just related to that, are there any health considerations we should be aware of for the travellers? For example, any pre-existing medical conditions? [25] Customer Service Agent: Okay, I've noted that one traveler has managed high blood pressure and you require this to be considered within the coverage. Are there any specific medical equipment needs, like a wheelchair or CPAP machine?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for lost, damaged, or delayed luggage and specified their expectation for compensation for necessities even for short delays.",
+      "customer_quote": "[16] Customer: Look, airlines lose luggage all the time. I need full coverage if my bags are lost or damaged. And don't tell me there's a delay limit; if my bag is delayed even a few hours, I expect compensation for necessities.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement for lost, damaged, or delayed baggage coverage.",
+      "agent_quote": "[17] Customer Service Agent: Understood. So, coverage for lost, damaged, or delayed baggage is a requirement."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for travel delays, specifying concerns about missed connections and needing coverage for resulting hotel and meal expenses.",
+      "customer_quote": "[18] Customer: And travel delays! Flights get delayed, connections are missed. I won't be out of pocket for hotels or meals because of the airline's incompetence. That needs to be covered.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement for coverage related to significant travel delays.",
+      "agent_quote": "[19] Customer Service Agent: Right, I've noted cover for additional expenses due to significant travel delays."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities (Golf)",
+      "result": "PASS",
+      "justification": "The customer explicitly stated it was a golf trip and provided multiple specific coverage requirements related to golf: equipment cover, unused green fees reimbursement, golf buggy damage cover, and a hole-in-one benefit.",
+      "customer_quote": "[10] Customer: Golf is the main event. And I need absolute assurance my golf equipment is covered against loss or damage... Also, if something happens and I can't play... I expect reimbursement for any unused green fees... [12] Customer: And what about the golf buggy? If I accidentally damage it... ISS needs to cover that. [14] Customer: If I score a hole-in-one, there should be some kind of payout or special benefit.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the golf focus, asked about other activities, and specifically noted down each of the customer's golf-related requirements.",
+      "agent_quote": "[9] Customer Service Agent: Okay, a golf trip. Are there any specific activities planned besides golf that we should be aware of? [11] Customer Service Agent: Okay, I'm noting down coverage for golf equipment and reimbursement for unused green fees... [13] Customer Service Agent: Alright, I've added potential coverage for accidental damage to a rented golf buggy... [15] Customer Service Agent: Okay, I have noted your request for a potential benefit related to achieving a hole-in-one..."
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The customer clearly articulated their needs for standard coverage types (Trip Cancellation, Medical, Luggage, Delay) and specific requirements related to their golf trip (Equipment, Green Fees, Buggy Damage, Hole-in-One). The agent performed well, actively listening, acknowledging each requirement, probing appropriately (especially regarding medical conditions), and accurately summarizing all points, including the scenario-specific golf needs. All required coverage areas were discussed with sufficient detail."
+  },
+  "transcript_name": "transcript_golf_coverage_17a4c401-8544-466e-8823-b9aa6262d5c7",
+  "scenario": "golf_coverage"
+}

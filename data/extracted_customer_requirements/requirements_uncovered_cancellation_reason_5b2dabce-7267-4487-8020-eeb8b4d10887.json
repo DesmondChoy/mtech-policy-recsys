@@ -1,19 +1,18 @@
 {
-    "raw": "{\n  \"requirement_id\": \"req001\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip from Singapore to Japan for two travelers.\",\n  \"detailed_description\": \"The customer is requesting travel insurance that covers medical expenses, luggage issues, travel delays, trip cancellation, and specific activities like hiking. They are particularly concerned about coverage for cancellation due to illness and a wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical expenses\",\n    \"luggage coverage\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"accident coverage during activities\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"doctor visits\",\n    \"hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Specific concern about cancelling for a family wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical expenses\",\n    \"luggage issues\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"hiking\",\n    \"Singapore\",\n    \"Japan\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan from Singapore for two travelers.\",\n  \"detailed_description\": \"Customer needs coverage for medical expenses, lost or damaged luggage, travel delays, hiking injuries, and trip cancellation due to sickness or family events.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical expenses\",\n    \"luggage coverage\",\n    \"travel delay coverage\",\n    \"trip cancellation coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"doctor visits\",\n    \"hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Customer is specifically concerned about trip cancellation due to significant family events such as a wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical expenses\",\n    \"luggage\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"hiking\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "req001",
-        "requirement_summary": "Travel insurance coverage for a trip from Singapore to Japan for two travelers.",
-        "detailed_description": "The customer is requesting travel insurance that covers medical expenses, luggage issues, travel delays, trip cancellation, and specific activities like hiking. They are particularly concerned about coverage for cancellation due to illness and a wedding.",
+        "requirement_id": "req-001",
+        "requirement_summary": "Travel insurance requirements for a trip to Japan from Singapore for two travelers.",
+        "detailed_description": "Customer needs coverage for medical expenses, lost or damaged luggage, travel delays, hiking injuries, and trip cancellation due to sickness or family events.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "10 days",
         "insurance_coverage_type": [
             "medical expenses",
             "luggage coverage",
-            "travel delays",
-            "trip cancellation",
-            "accident coverage during activities"
+            "travel delay coverage",
+            "trip cancellation coverage"
         ],
         "pre_existing_conditions": [],
         "medical_needs": [
@@ -24,16 +23,14 @@
             "hiking"
         ],
         "age_group": "26-40",
-        "additional_requests": "Specific concern about cancelling for a family wedding.",
+        "additional_requests": "Customer is specifically concerned about trip cancellation due to significant family events such as a wedding.",
         "keywords": [
             "travel insurance",
             "medical expenses",
-            "luggage issues",
+            "luggage",
             "travel delays",
             "trip cancellation",
-            "hiking",
-            "Singapore",
-            "Japan"
+            "hiking"
         ]
     },
     "tasks_output": [
@@ -42,21 +39,20 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"req001\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip from Singapore to Japan for two travelers.\",\n  \"detailed_description\": \"The customer is requesting travel insurance that covers medical expenses, luggage issues, travel delays, trip cancellation, and specific activities like hiking. They are particularly concerned about coverage for cancellation due to illness and a wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical expenses\",\n    \"luggage coverage\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"accident coverage during activities\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"doctor visits\",\n    \"hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Specific concern about cancelling for a family wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical expenses\",\n    \"luggage issues\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"hiking\",\n    \"Singapore\",\n    \"Japan\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan from Singapore for two travelers.\",\n  \"detailed_description\": \"Customer needs coverage for medical expenses, lost or damaged luggage, travel delays, hiking injuries, and trip cancellation due to sickness or family events.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical expenses\",\n    \"luggage coverage\",\n    \"travel delay coverage\",\n    \"trip cancellation coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"doctor visits\",\n    \"hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Customer is specifically concerned about trip cancellation due to significant family events such as a wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical expenses\",\n    \"luggage\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"hiking\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "req001",
-                "requirement_summary": "Travel insurance coverage for a trip from Singapore to Japan for two travelers.",
-                "detailed_description": "The customer is requesting travel insurance that covers medical expenses, luggage issues, travel delays, trip cancellation, and specific activities like hiking. They are particularly concerned about coverage for cancellation due to illness and a wedding.",
+                "requirement_id": "req-001",
+                "requirement_summary": "Travel insurance requirements for a trip to Japan from Singapore for two travelers.",
+                "detailed_description": "Customer needs coverage for medical expenses, lost or damaged luggage, travel delays, hiking injuries, and trip cancellation due to sickness or family events.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "10 days",
                 "insurance_coverage_type": [
                     "medical expenses",
                     "luggage coverage",
-                    "travel delays",
-                    "trip cancellation",
-                    "accident coverage during activities"
+                    "travel delay coverage",
+                    "trip cancellation coverage"
                 ],
                 "pre_existing_conditions": [],
                 "medical_needs": [
@@ -67,16 +63,14 @@
                     "hiking"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Specific concern about cancelling for a family wedding.",
+                "additional_requests": "Customer is specifically concerned about trip cancellation due to significant family events such as a wedding.",
                 "keywords": [
                     "travel insurance",
                     "medical expenses",
-                    "luggage issues",
+                    "luggage",
                     "travel delays",
                     "trip cancellation",
-                    "hiking",
-                    "Singapore",
-                    "Japan"
+                    "hiking"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -84,10 +78,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 61335,
-        "prompt_tokens": 51299,
+        "total_tokens": 134589,
+        "prompt_tokens": 113699,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 10036,
-        "successful_requests": 34
+        "completion_tokens": 20890,
+        "successful_requests": 72
     }
 }

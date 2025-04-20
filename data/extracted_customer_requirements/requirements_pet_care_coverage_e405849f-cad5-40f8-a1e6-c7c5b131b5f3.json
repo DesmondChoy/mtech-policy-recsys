@@ -1,41 +1,38 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Thailand from Singapore.\",\n  \"detailed_description\": \"Customer is planning a trip to Phuket, Thailand for 10 days with their partner. Concerns include medical needs due to one traveler having asthma, coverage for Scuba Diving, lost or damaged luggage, trip cancellation, travel delays, and potential extra costs for their pet hotel.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Sports and Adventure\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Lost or Damaged Luggage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": [\n    \"asthma inhalers\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clarification on coverage for additional Pet Accommodation costs due to travel delays.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Thailand\",\n    \"medical coverage\",\n    \"Scuba Diving\",\n    \"lost luggage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"pet accommodation\",\n    \"asthma\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Thailand for two travelers, including medical, cancellation, and activity-related coverage.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance for a 10-day trip to Thailand from Singapore, covering medical needs due to asthma, activities like scuba diving, lost luggage, trip cancellation, travel delays, and potentially additional pet accommodation costs.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost or Damaged Luggage\",\n    \"Travel Delay\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Asthma inhalers\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs in case of travel delays.\",\n  \"keywords\": [\n    \"Travel Insurance\",\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Travel Delay\",\n    \"Scuba Diving\",\n    \"Lost Luggage\",\n    \"Asthma\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ-001",
-        "requirement_summary": "Travel insurance requirements for a trip to Thailand from Singapore.",
-        "detailed_description": "Customer is planning a trip to Phuket, Thailand for 10 days with their partner. Concerns include medical needs due to one traveler having asthma, coverage for Scuba Diving, lost or damaged luggage, trip cancellation, travel delays, and potential extra costs for their pet hotel.",
+        "requirement_id": "1",
+        "requirement_summary": "Travel insurance coverage for a trip to Thailand for two travelers, including medical, cancellation, and activity-related coverage.",
+        "detailed_description": "Customer requires comprehensive travel insurance for a 10-day trip to Thailand from Singapore, covering medical needs due to asthma, activities like scuba diving, lost luggage, trip cancellation, travel delays, and potentially additional pet accommodation costs.",
         "travel_origin": "Singapore",
         "travel_destination": "Thailand",
         "travel_duration": "10 days",
         "insurance_coverage_type": [
             "Medical Coverage",
-            "Sports and Adventure",
             "Trip Cancellation",
-            "Travel Delay",
-            "Lost or Damaged Luggage"
+            "Lost or Damaged Luggage",
+            "Travel Delay"
         ],
         "pre_existing_conditions": [
-            "asthma"
+            "Asthma"
         ],
         "medical_needs": [
-            "asthma inhalers"
+            "Asthma inhalers"
         ],
         "activities_to_cover": [
             "Scuba Diving"
         ],
         "age_group": "26-40",
-        "additional_requests": "Clarification on coverage for additional Pet Accommodation costs due to travel delays.",
+        "additional_requests": "Coverage for additional pet accommodation costs in case of travel delays.",
         "keywords": [
-            "travel insurance",
-            "Thailand",
-            "medical coverage",
+            "Travel Insurance",
+            "Trip Cancellation",
+            "Medical Coverage",
+            "Travel Delay",
             "Scuba Diving",
-            "lost luggage",
-            "trip cancellation",
-            "travel delays",
-            "pet accommodation",
-            "asthma"
+            "Lost Luggage",
+            "Asthma"
         ]
     },
     "tasks_output": [
@@ -44,43 +41,40 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Thailand from Singapore.\",\n  \"detailed_description\": \"Customer is planning a trip to Phuket, Thailand for 10 days with their partner. Concerns include medical needs due to one traveler having asthma, coverage for Scuba Diving, lost or damaged luggage, trip cancellation, travel delays, and potential extra costs for their pet hotel.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Sports and Adventure\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Lost or Damaged Luggage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": [\n    \"asthma inhalers\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clarification on coverage for additional Pet Accommodation costs due to travel delays.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Thailand\",\n    \"medical coverage\",\n    \"Scuba Diving\",\n    \"lost luggage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"pet accommodation\",\n    \"asthma\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Thailand for two travelers, including medical, cancellation, and activity-related coverage.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance for a 10-day trip to Thailand from Singapore, covering medical needs due to asthma, activities like scuba diving, lost luggage, trip cancellation, travel delays, and potentially additional pet accommodation costs.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost or Damaged Luggage\",\n    \"Travel Delay\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Asthma inhalers\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs in case of travel delays.\",\n  \"keywords\": [\n    \"Travel Insurance\",\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Travel Delay\",\n    \"Scuba Diving\",\n    \"Lost Luggage\",\n    \"Asthma\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ-001",
-                "requirement_summary": "Travel insurance requirements for a trip to Thailand from Singapore.",
-                "detailed_description": "Customer is planning a trip to Phuket, Thailand for 10 days with their partner. Concerns include medical needs due to one traveler having asthma, coverage for Scuba Diving, lost or damaged luggage, trip cancellation, travel delays, and potential extra costs for their pet hotel.",
+                "requirement_id": "1",
+                "requirement_summary": "Travel insurance coverage for a trip to Thailand for two travelers, including medical, cancellation, and activity-related coverage.",
+                "detailed_description": "Customer requires comprehensive travel insurance for a 10-day trip to Thailand from Singapore, covering medical needs due to asthma, activities like scuba diving, lost luggage, trip cancellation, travel delays, and potentially additional pet accommodation costs.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Thailand",
                 "travel_duration": "10 days",
                 "insurance_coverage_type": [
                     "Medical Coverage",
-                    "Sports and Adventure",
                     "Trip Cancellation",
-                    "Travel Delay",
-                    "Lost or Damaged Luggage"
+                    "Lost or Damaged Luggage",
+                    "Travel Delay"
                 ],
                 "pre_existing_conditions": [
-                    "asthma"
+                    "Asthma"
                 ],
                 "medical_needs": [
-                    "asthma inhalers"
+                    "Asthma inhalers"
                 ],
                 "activities_to_cover": [
                     "Scuba Diving"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Clarification on coverage for additional Pet Accommodation costs due to travel delays.",
+                "additional_requests": "Coverage for additional pet accommodation costs in case of travel delays.",
                 "keywords": [
-                    "travel insurance",
-                    "Thailand",
-                    "medical coverage",
+                    "Travel Insurance",
+                    "Trip Cancellation",
+                    "Medical Coverage",
+                    "Travel Delay",
                     "Scuba Diving",
-                    "lost luggage",
-                    "trip cancellation",
-                    "travel delays",
-                    "pet accommodation",
-                    "asthma"
+                    "Lost Luggage",
+                    "Asthma"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -88,10 +82,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 34069,
-        "prompt_tokens": 28420,
+        "total_tokens": 70766,
+        "prompt_tokens": 59665,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 5649,
-        "successful_requests": 19
+        "completion_tokens": 11101,
+        "successful_requests": 38
     }
 }

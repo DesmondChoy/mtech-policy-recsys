@@ -1,0 +1,101 @@
+{
+    "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance for a 10-day trip to Australia with specific coverage for golf-related activities.\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for a 10-day trip to Australia, focusing on coverage for trip cancellation, medical emergencies, travel delays, lost or damaged luggage, and specific protections related to golf activities. The customer has expressed particular concerns about the coverage for golf equipment, reimbursement for unused green fees due to course closures, accidental damage to a rented golf buggy, and potential benefits related to scoring a hole-in-one.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Comprehensive Medical Coverage\",\n    \"Travel Delay\",\n    \"Lost or Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Reimbursement for Unused Green Fees\",\n    \"Accidental Damage to Golf Buggy\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Comprehensive medical coverage during travel\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\",\n    \"Light walking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Potential benefits for scoring a hole-in-one\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Australia\",\n    \"golf\",\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"travel delay\",\n    \"luggage coverage\",\n    \"hole-in-one benefit\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "req-001",
+        "requirement_summary": "Travel insurance for a 10-day trip to Australia with specific coverage for golf-related activities.",
+        "detailed_description": "The customer requires comprehensive travel insurance for a 10-day trip to Australia, focusing on coverage for trip cancellation, medical emergencies, travel delays, lost or damaged luggage, and specific protections related to golf activities. The customer has expressed particular concerns about the coverage for golf equipment, reimbursement for unused green fees due to course closures, accidental damage to a rented golf buggy, and potential benefits related to scoring a hole-in-one.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Australia",
+        "travel_duration": "10 days",
+        "insurance_coverage_type": [
+            "Trip Cancellation",
+            "Comprehensive Medical Coverage",
+            "Travel Delay",
+            "Lost or Damaged Luggage",
+            "Golf Equipment Coverage",
+            "Reimbursement for Unused Green Fees",
+            "Accidental Damage to Golf Buggy"
+        ],
+        "pre_existing_conditions": [
+            "High blood pressure"
+        ],
+        "medical_needs": [
+            "Comprehensive medical coverage during travel"
+        ],
+        "activities_to_cover": [
+            "Golf",
+            "Light walking"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Potential benefits for scoring a hole-in-one",
+        "keywords": [
+            "travel insurance",
+            "Australia",
+            "golf",
+            "trip cancellation",
+            "medical coverage",
+            "travel delay",
+            "luggage coverage",
+            "hole-in-one benefit"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd. My name is Sarah, how may I help you today?\nCustomer: Morning Sarah! Jonathan here. Wow, the weather is quite something today, isn't it? Bit unpredictable, like my golf swing sometimes, haha! Anyway, calling about travel insurance. Planning a trip!\nCustomer Service Agent: Good morning, Jonathan! Yes, the weather has been quite changeable. It's good you're thinking about travel insurance. Where are you planning to travel to?\nCustomer: We're heading to Australia! Melbourne, specifically. Going for about 10 days. Haven't been back in ages, not since... oh, must be nearly fifteen years! Went with my wife then, just the two of us again this time. We're based here in Singapore, of course.\nCustomer Service Agent: Australia for 10 days sounds lovely! Just the two of you traveling from Singapore. Okay, I can help gather some details. Could I ask which age group you and your wife fall into? Just helps us find the right information later.\nCustomer: Ah, the age question! Let's just say we're comfortably in the 41-55 bracket, though sometimes I feel older after walking 18 holes, haha! Speaking of which, the main reason is golf! Found this amazing course, supposed to be spectacular.\nCustomer Service Agent: Okay, noted, the 41-55 age group for two travellers. And golf is the main activity? Are there any other specific activities planned, like hiking or anything adventurous?\nCustomer: Mostly golf, really. That's the focus. Might do some light walking, perhaps, but nothing strenuous. My knees aren't what they used to be! But the golf bit is really important, insurance-wise. My clubs, you see, they're my pride and joy! Need to make sure they're covered if the airline decides to send them to Fiji instead of Melbourne, or if they get damaged. Happened to my buddy once, nightmare!\nCustomer Service Agent: Alright, so coverage for your golf equipment is a key requirement. Noted. Anything else related to the golf activities?\nCustomer: Yes, definitely! What happens if, say, there's a huge storm and the course is closed for a day we've already paid green fees for? Can we get reimbursed for that? Wasted money is no fun. Also, bit embarrassing, but I'm slightly worried about the golf buggies... you know, navigating those paths. If I were to accidentally damage one, scratch it or something minor, is that something that can be covered? Don't want a huge bill!\nCustomer Service Agent: Okay, so just to confirm for the golf part: coverage for loss or damage to your golf equipment, reimbursement for unused green fees due to unforeseen circumstances like weather, and cover for accidental damage caused to a rented golf buggy. Is that correct?\nCustomer: Spot on, Sarah! You get it. Oh, and one more thing, probably a long shot, but it would be amazing... some policies I heard about overseas have a little perk if you score a hole-in-one. Any chance ISS offers something like that? Imagine the bragging rights! Would have to buy everyone drinks at the clubhouse, you know! It would be the cherry on top!\nCustomer Service Agent: Understood, you're also interested in knowing about any available benefits for achieving a hole-in-one during your trip. I've noted that down as well. Are there any other general concerns you have for the trip?\nCustomer: Well, yes, the usual things I suppose. My wife worries quite a bit, you know? Touch wood, but what if one of us gets sick or injured just before we go and we have to cancel the whole thing? All those bookings... it's important we can get our money back for that.\nCustomer Service Agent: Okay, so cover for trip cancellation due to unforeseen events like illness or injury before departure is needed.\nCustomer: Exactly! And while we're away, too. Medical stuff can be scary expensive overseas. My neighbour went to the US once, fell down some stairs... the hospital bill was astronomical! So definitely need good medical cover, just in case. We don't have any major pre-existing conditions, thankfully, though my husband takes medication for high blood pressure - is that something we need to declare?\nCustomer Service Agent: Noted, comprehensive medical coverage for emergencies during the trip is essential. And I've made a note regarding the query about high blood pressure declaration – we'll ensure that's addressed when providing options. What about travel hiccups?\nCustomer: Oh yes! Flights getting delayed, or maybe missing a connection if we had one. Last time we flew long haul, we were stuck for ages, ended up having to buy pricey airport food. Need cover if we get significantly delayed, for things like meals or maybe even a hotel if it's overnight.\nCustomer Service Agent: Alright, so cover for significant travel delays, including expenses for meals and accommodation. Got it.\nCustomer: And luggage! Almost forgot. Besides my precious golf clubs, just general luggage cover. You hear stories all the time about bags going missing or arriving damaged. Need peace of mind for that too.\nCustomer Service Agent: Understood. Coverage for lost, damaged, or delayed luggage as well. And regarding the budget for the insurance?\nCustomer: We're pretty flexible on the budget, Sarah. Good coverage is more important than saving a few dollars, especially with the golf gear and all. Just want peace of mind, you know? Make the trip relaxing! It’s our first big trip since before the pandemic, really looking forward to it. Met my wife on a driving range, actually, many years ago... funny story that...\nCustomer Service Agent: That's a lovely story, Jonathan! It sounds like a wonderful trip planned. Okay, let me quickly summarize the requirements I've noted down for you and your wife's 10-day trip to Australia. You're looking for: Trip Cancellation cover, comprehensive Medical Coverage (with a note about the high blood pressure query), cover for significant Travel Delays, protection for Lost or Damaged Luggage. And specifically for your golf activities, you require coverage for your golf equipment, potential reimbursement for unused green fees, cover for accidental damage to a golf buggy, and you're interested in any available Hole-in-One benefits. Does that sound complete?\nCustomer: Yes, Sarah, that's perfect! You've captured it all brilliantly. Much better than that automated thing I tried last time with another company, couldn't understand a word I said! Talking to a real person makes all the difference, you know?\nCustomer Service Agent: I understand completely, Jonathan. I'm glad I could help list down everything you need. I have all the details recorded now. The next step is for our relevant team to look into policies that match these requirements, and someone will get back to you with suitable options and information regarding the high blood pressure query.\nCustomer: Fantastic! Thanks so much for your help, Sarah. Really appreciate you taking the time and listening to my rambling, haha! Have a great day!\nCustomer Service Agent: You're very welcome, Jonathan! It was my pleasure talking to you. Thank you for calling ISS Insurance, and I hope you have a wonderful trip to Australia and maybe even score that hole-in-one! Have a great day too. Goodbye.\nCustomer: Haha, fingers crossed! Thanks again, Sarah. Bye now!\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance for a 10-day trip to Australia with specific coverage for golf-related activities.\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for a 10-day trip to Australia, focusing on coverage for trip cancellation, medical emergencies, travel delays, lost or damaged luggage, and specific protections related to golf activities. The customer has expressed particular concerns about the coverage for golf equipment, reimbursement for unused green fees due to course closures, accidental damage to a rented golf buggy, and potential benefits related to scoring a hole-in-one.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Comprehensive Medical Coverage\",\n    \"Travel Delay\",\n    \"Lost or Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Reimbursement for Unused Green Fees\",\n    \"Accidental Damage to Golf Buggy\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Comprehensive medical coverage during travel\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\",\n    \"Light walking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Potential benefits for scoring a hole-in-one\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Australia\",\n    \"golf\",\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"travel delay\",\n    \"luggage coverage\",\n    \"hole-in-one benefit\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "req-001",
+                "requirement_summary": "Travel insurance for a 10-day trip to Australia with specific coverage for golf-related activities.",
+                "detailed_description": "The customer requires comprehensive travel insurance for a 10-day trip to Australia, focusing on coverage for trip cancellation, medical emergencies, travel delays, lost or damaged luggage, and specific protections related to golf activities. The customer has expressed particular concerns about the coverage for golf equipment, reimbursement for unused green fees due to course closures, accidental damage to a rented golf buggy, and potential benefits related to scoring a hole-in-one.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Australia",
+                "travel_duration": "10 days",
+                "insurance_coverage_type": [
+                    "Trip Cancellation",
+                    "Comprehensive Medical Coverage",
+                    "Travel Delay",
+                    "Lost or Damaged Luggage",
+                    "Golf Equipment Coverage",
+                    "Reimbursement for Unused Green Fees",
+                    "Accidental Damage to Golf Buggy"
+                ],
+                "pre_existing_conditions": [
+                    "High blood pressure"
+                ],
+                "medical_needs": [
+                    "Comprehensive medical coverage during travel"
+                ],
+                "activities_to_cover": [
+                    "Golf",
+                    "Light walking"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Potential benefits for scoring a hole-in-one",
+                "keywords": [
+                    "travel insurance",
+                    "Australia",
+                    "golf",
+                    "trip cancellation",
+                    "medical coverage",
+                    "travel delay",
+                    "luggage coverage",
+                    "hole-in-one benefit"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 26860,
+        "prompt_tokens": 22797,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 4063,
+        "successful_requests": 14
+    }
+}

@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about coverage for cancelling the trip before departure due to specific reasons like illness or family emergency.",
+      "customer_quote": "[24] What if we have to cancel the whole trip *before* we even leave? Say, a sudden serious illness, or a family emergency back here. We\u2019d lose thousands on flights and hotels. Is there protection for that, or is it just 'tough luck'? What reasons for cancellation are actually accepted?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's need and the specific examples provided, confirming it as a requirement.",
+      "agent_quote": "[25] Noted. So you also need coverage for trip cancellation due to unforeseen events like illness or family emergencies."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer asked about coverage for illness/injury during the trip and specifically inquired about how a pre-existing condition (high blood pressure) would be handled.",
+      "customer_quote": "[16] Well, one traveler has high blood pressure. Managed with medication. How does that affect things? Will you just use it as an excuse to deny any claim? I need to know how that's handled. And generally, what kind of medical situations *are* covered if we fall sick or get injured over there?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about pre-existing conditions and then accurately noted the customer's specific concerns regarding both the pre-existing condition and general medical coverage.",
+      "agent_quote": "[15] Regarding medical aspects, are there any pre-existing medical conditions we should be aware of, like asthma or high blood pressure? \n[17] Okay, I've noted the requirement for clarity on coverage related to pre-existing high blood pressure and the need for general medical coverage for illness or injury during the trip."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly raised concerns about airlines losing or damaging luggage and asked what the insurance covers in such scenarios.",
+      "customer_quote": "[18] But what about other problems? I read horror stories about airlines losing luggage. If our bags disappear, or get damaged, what exactly does the insurance do? Or is it just a token amount?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent clearly acknowledged the customer's requirement for information on lost or damaged luggage coverage.",
+      "agent_quote": "[19] Understood, so you require information on coverage for lost or damaged luggage."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer asked about coverage for significant flight delays or cancellations, specifically mentioning costs like extra hotel nights and meals.",
+      "customer_quote": "[20] And delays too. Flights seem unreliable these days. What happens if our flight gets significantly delayed or cancelled? Does the insurance actually cover extra hotel nights or meals, or is that another fine print exclusion?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly identified and noted the requirement for coverage related to expenses arising from significant travel delays.",
+      "agent_quote": "[21] Okay, so coverage for expenses incurred due to significant travel delays is another requirement."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer mentioned planning to do Hiking and asked about coverage for potential injuries like twisting an ankle during this activity.",
+      "customer_quote": "[14] We plan to do some Hiking. Nothing extreme, just standard trails. But I bet you have exclusions even for simple things like that, right? What if someone twists an ankle? Is that *really* covered?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about planned activities and then specifically noted the requirement for Hiking coverage based on the customer's response.",
+      "agent_quote": "[13] Are there any specific activities you plan to participate in during your trip to Japan? \n[15] So you need coverage that includes Hiking. Noted."
+    },
+    {
+      "coverage_type": "pet_accommodation_costs",
+      "name": "Pet Accommodation Costs (Scenario Specific)",
+      "result": "PASS",
+      "justification": "The customer explicitly stated a scenario-specific requirement: coverage for additional pet hotel costs if their return to Singapore is delayed.",
+      "customer_quote": "[22] Right. And speaking of delays... this is important. If our return flight to Singapore gets delayed, I have a cat staying in a pet hotel here. Extra days mean extra costs. I need to know if the insurance will cover those additional kennel fees. Don't just give me a vague answer, is that specific cost covered?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent accurately captured and confirmed this specific, non-standard requirement.",
+      "agent_quote": "[23] Understood, you require coverage for additional pet accommodation costs specifically due to a delayed return to Singapore. I have noted that down."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered information on all standard coverage types mentioned by the customer (Trip Cancellation, Medical, Luggage, Delays, Activities) and also captured the unique scenario-specific requirement regarding pet accommodation costs. The agent asked relevant probing questions (activities, pre-existing conditions) and confirmed understanding effectively throughout the call and in the final summary. Despite the customer's skeptical tone, the agent remained professional and focused on identifying the necessary coverage requirements."
+  },
+  "transcript_name": "transcript_pet_care_coverage_1670f2fa-784c-46ac-a00c-20a1001034ee",
+  "scenario": "pet_care_coverage"
+}

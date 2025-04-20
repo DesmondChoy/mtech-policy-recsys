@@ -1,10 +1,10 @@
 {
-    "raw": "{\n  \"requirement_id\": \"RQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Thailand.\",\n  \"detailed_description\": \"Coverage needed for a 2-week trip to Thailand for two travelers, including medical coverage for pre-existing conditions, activities such as scuba diving, and protection against travel-related issues.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delay\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"coverage for pre-existing high blood pressure\"\n  ],\n  \"activities_to_cover\": [\n    \"scuba diving\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Cancellation cover specifically for sister's wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"cancellation\",\n    \"scuba diving\",\n    \"medical coverage\",\n    \"luggage\",\n    \"travel delay\",\n    \"pre-existing condition\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"12345\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Thailand with special considerations for pre-existing conditions and specific activities.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance for a 2-week trip to Thailand, covering both travelers aged 41-55, with specific attention to pre-existing high blood pressure, scuba diving activities, loss or damage of luggage, travel delay, and trip cancellation for a family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delay\",\n    \"scuba diving\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"scuba diving\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Ensure cancellation coverage for family wedding is included.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Thailand\",\n    \"high blood pressure\",\n    \"scuba diving\",\n    \"luggage cover\",\n    \"travel delay\",\n    \"trip cancellation\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "RQ-001",
-        "requirement_summary": "Travel insurance requirements for a trip to Thailand.",
-        "detailed_description": "Coverage needed for a 2-week trip to Thailand for two travelers, including medical coverage for pre-existing conditions, activities such as scuba diving, and protection against travel-related issues.",
+        "requirement_id": "12345",
+        "requirement_summary": "Travel insurance coverage for a trip to Thailand with special considerations for pre-existing conditions and specific activities.",
+        "detailed_description": "Customer requires comprehensive travel insurance for a 2-week trip to Thailand, covering both travelers aged 41-55, with specific attention to pre-existing high blood pressure, scuba diving activities, loss or damage of luggage, travel delay, and trip cancellation for a family wedding.",
         "travel_origin": "Singapore",
         "travel_destination": "Thailand",
         "travel_duration": "2 weeks",
@@ -12,27 +12,26 @@
             "medical coverage",
             "trip cancellation",
             "lost or damaged luggage",
-            "travel delay"
+            "travel delay",
+            "scuba diving"
         ],
         "pre_existing_conditions": [
             "high blood pressure"
         ],
-        "medical_needs": [
-            "coverage for pre-existing high blood pressure"
-        ],
+        "medical_needs": [],
         "activities_to_cover": [
             "scuba diving"
         ],
         "age_group": "41-55",
-        "additional_requests": "Cancellation cover specifically for sister's wedding.",
+        "additional_requests": "Ensure cancellation coverage for family wedding is included.",
         "keywords": [
             "travel insurance",
-            "cancellation",
+            "Thailand",
+            "high blood pressure",
             "scuba diving",
-            "medical coverage",
-            "luggage",
+            "luggage cover",
             "travel delay",
-            "pre-existing condition"
+            "trip cancellation"
         ]
     },
     "tasks_output": [
@@ -41,12 +40,12 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"RQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Thailand.\",\n  \"detailed_description\": \"Coverage needed for a 2-week trip to Thailand for two travelers, including medical coverage for pre-existing conditions, activities such as scuba diving, and protection against travel-related issues.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delay\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"coverage for pre-existing high blood pressure\"\n  ],\n  \"activities_to_cover\": [\n    \"scuba diving\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Cancellation cover specifically for sister's wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"cancellation\",\n    \"scuba diving\",\n    \"medical coverage\",\n    \"luggage\",\n    \"travel delay\",\n    \"pre-existing condition\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"12345\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Thailand with special considerations for pre-existing conditions and specific activities.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance for a 2-week trip to Thailand, covering both travelers aged 41-55, with specific attention to pre-existing high blood pressure, scuba diving activities, loss or damage of luggage, travel delay, and trip cancellation for a family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delay\",\n    \"scuba diving\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"scuba diving\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Ensure cancellation coverage for family wedding is included.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Thailand\",\n    \"high blood pressure\",\n    \"scuba diving\",\n    \"luggage cover\",\n    \"travel delay\",\n    \"trip cancellation\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "RQ-001",
-                "requirement_summary": "Travel insurance requirements for a trip to Thailand.",
-                "detailed_description": "Coverage needed for a 2-week trip to Thailand for two travelers, including medical coverage for pre-existing conditions, activities such as scuba diving, and protection against travel-related issues.",
+                "requirement_id": "12345",
+                "requirement_summary": "Travel insurance coverage for a trip to Thailand with special considerations for pre-existing conditions and specific activities.",
+                "detailed_description": "Customer requires comprehensive travel insurance for a 2-week trip to Thailand, covering both travelers aged 41-55, with specific attention to pre-existing high blood pressure, scuba diving activities, loss or damage of luggage, travel delay, and trip cancellation for a family wedding.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Thailand",
                 "travel_duration": "2 weeks",
@@ -54,27 +53,26 @@
                     "medical coverage",
                     "trip cancellation",
                     "lost or damaged luggage",
-                    "travel delay"
+                    "travel delay",
+                    "scuba diving"
                 ],
                 "pre_existing_conditions": [
                     "high blood pressure"
                 ],
-                "medical_needs": [
-                    "coverage for pre-existing high blood pressure"
-                ],
+                "medical_needs": [],
                 "activities_to_cover": [
                     "scuba diving"
                 ],
                 "age_group": "41-55",
-                "additional_requests": "Cancellation cover specifically for sister's wedding.",
+                "additional_requests": "Ensure cancellation coverage for family wedding is included.",
                 "keywords": [
                     "travel insurance",
-                    "cancellation",
+                    "Thailand",
+                    "high blood pressure",
                     "scuba diving",
-                    "medical coverage",
-                    "luggage",
+                    "luggage cover",
                     "travel delay",
-                    "pre-existing condition"
+                    "trip cancellation"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -82,10 +80,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 55745,
-        "prompt_tokens": 46537,
+        "total_tokens": 119550,
+        "prompt_tokens": 100877,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 9208,
-        "successful_requests": 31
+        "completion_tokens": 18673,
+        "successful_requests": 64
     }
 }

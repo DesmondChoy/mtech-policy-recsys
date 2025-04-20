@@ -1,0 +1,103 @@
+{
+    "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan from Singapore for two adults for two weeks\",\n  \"detailed_description\": \"Customer is inquiring about travel insurance coverage for a trip to Japan, including medical emergencies, trip cancellation due to potential family emergencies, coverage for significant travel delays, lost or damaged luggage, and participation in activities such as hiking and hot air ballooning.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"medical emergencies\", \"trip cancellation\", \"travel delay\", \"luggage coverage\", \"activity coverage\"],\n  \"pre_existing_conditions\": [\"asthma\"],\n  \"medical_needs\": [\"emergency medical treatment\", \"hospital stays\", \"doctor visits\"],\n  \"activities_to_cover\": [\"hiking\", \"hot air ballooning\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Specific concern about trip cancellation related to sister's wedding and a budget preference of $200-$300 for insurance.\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"Singapore\", \"medical coverage\", \"cancellation coverage\", \"trip delays\", \"luggage insurance\", \"hiking\", \"hot air ballooning\"]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "001",
+        "requirement_summary": "Travel insurance for a trip to Japan from Singapore for two adults for two weeks",
+        "detailed_description": "Customer is inquiring about travel insurance coverage for a trip to Japan, including medical emergencies, trip cancellation due to potential family emergencies, coverage for significant travel delays, lost or damaged luggage, and participation in activities such as hiking and hot air ballooning.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "medical emergencies",
+            "trip cancellation",
+            "travel delay",
+            "luggage coverage",
+            "activity coverage"
+        ],
+        "pre_existing_conditions": [
+            "asthma"
+        ],
+        "medical_needs": [
+            "emergency medical treatment",
+            "hospital stays",
+            "doctor visits"
+        ],
+        "activities_to_cover": [
+            "hiking",
+            "hot air ballooning"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Specific concern about trip cancellation related to sister's wedding and a budget preference of $200-$300 for insurance.",
+        "keywords": [
+            "travel insurance",
+            "Japan",
+            "Singapore",
+            "medical coverage",
+            "cancellation coverage",
+            "trip delays",
+            "luggage insurance",
+            "hiking",
+            "hot air ballooning"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd. My name is Sarah. How can I help you today?\nCustomer: Oh, hello Sarah. Yes, I… I need to inquire about travel insurance. We're planning a trip and I’m just… well, quite worried about things going wrong, you see.\nCustomer Service Agent: Okay, I understand. Planning a trip can sometimes feel that way. I can certainly help gather the details of the coverage you're looking for. Could you tell me where you'll be traveling to?\nCustomer: Yes, we're planning a trip to Japan. We'll be traveling from Singapore, of course.\nCustomer Service Agent: Alright, Japan. And how long will the trip be?\nCustomer: It will be a 2 weeks trip. Just seems like a long time for something to potentially go wrong.\nCustomer Service Agent: Understood, two weeks to Japan. And how many people will be traveling?\nCustomer: There will be 2 of us traveling. We're mostly around 26-40 years old.\nCustomer Service Agent: Okay, two travelers, aged 26-40. Noted. Are there any specific activities planned during your trip to Japan?\nCustomer: Well, yes, we were hoping… We plan to do some Hiking during our trip. And maybe, just maybe, Hot Air Ballooning, if we're brave enough. But what if one of us gets hurt doing that? Is that covered? I mean, hiking sounds safe, but accidents happen, don't they? And hot air balloons... oh dear.\nCustomer Service Agent: Okay, so you're looking for cover related to participating in activities like hiking and potentially hot air ballooning. Let me make a note of that requirement.\nCustomer: Yes, exactly. And... what happens if one of us gets sick over there? Really sick, I mean. Like needing a doctor or ending up in hospital? The medical costs could be huge, couldn't they? It really keeps me up at night thinking about it. One of us does have asthma, does that complicate things?\nCustomer Service Agent: I understand your concern about medical situations. So, you require coverage for potential emergency medical treatment, hospital stays, and doctor visits during the trip. And you mentioned one traveler has asthma?\nCustomer: Yes, asthma. It's usually well-controlled, but you never know with different environments. We don't need any special medical equipment like wheelchairs or anything, thankfully. Just the usual inhalers. But yes, medical cover is crucial.\nCustomer Service Agent: Okay, noted: medical coverage requirement, including consideration for asthma as a pre-existing condition. And you mentioned no special medical equipment needed. Now, regarding the trip itself, what if something happens *before* we even go?\nCustomer: Like what?\nCustomer Service Agent: Well, sometimes unforeseen things can force people to cancel.\nCustomer: Oh goodness, yes! That's a huge worry. What if... what if there's a family emergency? For example, and this is quite specific, but my sister is getting married a few months after our planned trip. What if, heaven forbid, something happens and the wedding date has to be moved forward urgently right when we're supposed to be away? We'd absolutely have to cancel the trip. Would we get our money back then? It's non-refundable flights and accommodation, you see.\nCustomer Service Agent: Okay, so you have a specific concern about needing to cancel your trip due to a significant family event, like your sister's wedding date changing unexpectedly and clashing with your travel dates. Let me note that specific cancellation reason as a requirement you need clarification on. Standard cancellation coverage usually has specific triggers, so it's good you've highlighted this specific scenario.\nCustomer: Yes, please. It’s very important. And talking about flights… what if the flight is massively delayed? Say we get stuck at the airport for hours and hours, or miss a connection? We'd need food, maybe even a hotel. Does the insurance help with that? It would be so stressful.\nCustomer Service Agent: Alright, so you're also concerned about significant travel delays and require coverage for potential extra expenses like accommodation and meals if that happens. Noted.\nCustomer: Yes. And... luggage! I always worry about luggage. What if the airline loses our bags completely? Or what if they arrive but the suitcase is smashed and things inside are broken? It would be a nightmare start to the holiday.\nCustomer Service Agent: Understood. So coverage for lost, damaged, or significantly delayed luggage is another requirement for you.\nCustomer: Definitely. It all just feels like so much can go wrong. Are you sure this is all standard stuff you cover?\nCustomer Service Agent: I'm noting down all these specific requirements you've mentioned. Just to confirm, the key areas you need coverage information for are: medical emergencies including consideration for pre-existing asthma, trip cancellation specifically including the scenario about your sister's wedding, lost or damaged luggage, significant travel delays, and cover for injuries while participating in hiking and hot air ballooning. Is that correct?\nCustomer: Yes, I… I think that covers the main worries. Medical, cancellation, delays, luggage, and those activities. Especially the cancellation for the wedding, please make sure that's looked into. Oh, and we were hoping to spend around $200-$300 for the insurance, if possible.\nCustomer Service Agent: Okay, I have noted your budget preference of $200-$300 as well. Thank you for providing all those details. I have recorded all these requirements for your travel insurance inquiry for two adults traveling to Japan for two weeks, departing from Singapore. Someone from our policy team will follow up with you regarding plans that may meet these needs.\nCustomer: Okay. Thank you, Sarah. I appreciate you noting everything down.\nCustomer Service Agent: You're welcome. Thank you for calling ISS Insurance Ltd. Have a good day.\nCustomer: You too. Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan from Singapore for two adults for two weeks\",\n  \"detailed_description\": \"Customer is inquiring about travel insurance coverage for a trip to Japan, including medical emergencies, trip cancellation due to potential family emergencies, coverage for significant travel delays, lost or damaged luggage, and participation in activities such as hiking and hot air ballooning.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"medical emergencies\", \"trip cancellation\", \"travel delay\", \"luggage coverage\", \"activity coverage\"],\n  \"pre_existing_conditions\": [\"asthma\"],\n  \"medical_needs\": [\"emergency medical treatment\", \"hospital stays\", \"doctor visits\"],\n  \"activities_to_cover\": [\"hiking\", \"hot air ballooning\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Specific concern about trip cancellation related to sister's wedding and a budget preference of $200-$300 for insurance.\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"Singapore\", \"medical coverage\", \"cancellation coverage\", \"trip delays\", \"luggage insurance\", \"hiking\", \"hot air ballooning\"]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "001",
+                "requirement_summary": "Travel insurance for a trip to Japan from Singapore for two adults for two weeks",
+                "detailed_description": "Customer is inquiring about travel insurance coverage for a trip to Japan, including medical emergencies, trip cancellation due to potential family emergencies, coverage for significant travel delays, lost or damaged luggage, and participation in activities such as hiking and hot air ballooning.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "medical emergencies",
+                    "trip cancellation",
+                    "travel delay",
+                    "luggage coverage",
+                    "activity coverage"
+                ],
+                "pre_existing_conditions": [
+                    "asthma"
+                ],
+                "medical_needs": [
+                    "emergency medical treatment",
+                    "hospital stays",
+                    "doctor visits"
+                ],
+                "activities_to_cover": [
+                    "hiking",
+                    "hot air ballooning"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Specific concern about trip cancellation related to sister's wedding and a budget preference of $200-$300 for insurance.",
+                "keywords": [
+                    "travel insurance",
+                    "Japan",
+                    "Singapore",
+                    "medical coverage",
+                    "cancellation coverage",
+                    "trip delays",
+                    "luggage insurance",
+                    "hiking",
+                    "hot air ballooning"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 125711,
+        "prompt_tokens": 106216,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 19495,
+        "successful_requests": 67
+    }
+}

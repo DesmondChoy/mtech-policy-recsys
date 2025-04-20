@@ -1,0 +1,99 @@
+{
+    "raw": "{\n  \"requirement_id\": \"TRAVEL_INSURANCE_001\",\n  \"requirement_summary\": \"Travel insurance requirements for a two-week trip to Japan\",\n  \"detailed_description\": \"Customer David Tan needs comprehensive travel insurance for a two-week trip to Japan covering medical needs, lost luggage, travel delays, trip cancellations, and accidental death benefits.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delays\",\n    \"Trip Cancellation\",\n    \"Accidental Death on Public Transport\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"comprehensive medical coverage including emergency treatment and hospital stays\",\n    \"coverage for regular medications\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Double payout for accidental death on public transport and rigorous avoidance of loopholes in the policy.\",\n  \"keywords\": [\n    \"Hiking\",\n    \"Travel Delays\",\n    \"Trip Cancellation\",\n    \"Accidental Death\",\n    \"Lost Luggage\",\n    \"Medical Coverage\",\n    \"High Blood Pressure\",\n    \"Japan\",\n    \"2 weeks\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "TRAVEL_INSURANCE_001",
+        "requirement_summary": "Travel insurance requirements for a two-week trip to Japan",
+        "detailed_description": "Customer David Tan needs comprehensive travel insurance for a two-week trip to Japan covering medical needs, lost luggage, travel delays, trip cancellations, and accidental death benefits.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "Medical Coverage",
+            "Lost/Damaged Luggage",
+            "Travel Delays",
+            "Trip Cancellation",
+            "Accidental Death on Public Transport"
+        ],
+        "pre_existing_conditions": [
+            "high blood pressure"
+        ],
+        "medical_needs": [
+            "comprehensive medical coverage including emergency treatment and hospital stays",
+            "coverage for regular medications"
+        ],
+        "activities_to_cover": [
+            "Hiking"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Double payout for accidental death on public transport and rigorous avoidance of loopholes in the policy.",
+        "keywords": [
+            "Hiking",
+            "Travel Delays",
+            "Trip Cancellation",
+            "Accidental Death",
+            "Lost Luggage",
+            "Medical Coverage",
+            "High Blood Pressure",
+            "Japan",
+            "2 weeks"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd, Singapore. My name is Sarah. How may I assist you today?\nCustomer: Finally! Took long enough to get through. Look, I need travel insurance, but I swear if it's another policy full of loopholes like the last time I dealt with an insurance company, I'm going to lose it.\nCustomer Service Agent: I understand your frustration, sir. I'm here to help gather your requirements accurately today. Can I start with your name, please?\nCustomer: David Tan. And let's get this straight, I need proper coverage, not some flimsy policy that doesn't pay out when you actually need it.\nCustomer Service Agent: Noted, Mr. Tan. I will ensure I capture all your requirements clearly. To start, could you let me know where you'll be traveling to?\nCustomer: We're planning a trip to Japan. The whole system there is probably efficient, unlike some companies I could mention, but things still go wrong.\nCustomer Service Agent: Alright, Japan. And how long will you be away for?\nCustomer: It'll be a 2 weeks trip. Feels like you need insurance even for stepping out the door these days.\nCustomer Service Agent: Okay, a two-week trip to Japan, starting from Singapore, I assume?\nCustomer: Yes, from Singapore. Obviously. Where else?\nCustomer Service Agent: Understood. And how many people will be traveling on this policy?\nCustomer: There will be 2 of us traveling. Both adults.\nCustomer Service Agent: Two adults. And roughly which age group do the travelers fall into?\nCustomer: We're mostly around 41-55 years old. Old enough to know things go wrong, eh?\nCustomer Service Agent: Okay, noted. Are there any specific activities you plan to participate in during your trip?\nCustomer: We plan to do some Hiking during our trip. Nothing extreme, but knowing our luck, someone twists an ankle on a pebble. Is that usually covered, or is it some special add-on you try to charge extra for? I need coverage for Hiking.\nCustomer Service Agent: Alright, I've noted down the requirement for coverage related to hiking. Does anyone traveling have any pre-existing medical conditions we should be aware of?\nCustomer: Yes, one traveler has high blood pressure. And don't tell me it's excluded! It's managed, but you people always find ways to get out of paying for anything related to medical stuff overseas. I need proper Medical Coverage for emergencies, doctor visits, the works, even with this condition considered.\nCustomer Service Agent: Okay, I've noted the pre-existing condition and the need for comprehensive medical coverage, including emergency treatment and hospital stays. Are you bringing any specific medical equipment?\nCustomer: No, no special medical equipment needed. Just the usual medications, which better be covered if needed.\nCustomer Service Agent: Understood. Now, thinking about the journey itself, what are your main concerns regarding potential issues?\nCustomer: Issues? Where do I start? Last time I flew, the airline lost my bag for three days! It was a complete disaster. Getting compensated was like pulling teeth. So, I absolutely need solid Lost/Damaged Luggage coverage. Reimbursement for lost items, essentials if it's delayed, fixing a damaged bag – the whole lot. No excuses!\nCustomer Service Agent: Okay, coverage for lost, damaged, or delayed baggage is noted as a requirement.\nCustomer: And delays! Don't forget Travel Delays. Stuck in an airport overnight because of the airline? Happened before. Cost a fortune for a hotel and food. I expect the insurance to cover reasonable accommodation and meals if there's a significant delay. Not peanuts!\nCustomer Service Agent: Alright, requirement for cover due to significant travel delays, including accommodation and meals, is noted.\nCustomer: And what if we can't even go? If one of us gets seriously ill beforehand, or a family emergency? I'm not throwing away thousands on flights and hotels because the insurance company decides it's not a 'covered reason'. Trip Cancellation cover is non-negotiable. For proper reasons, like illness or family emergencies.\nCustomer Service Agent: Understood. The need for trip cancellation coverage for specified reasons like illness or family emergencies is noted.\nCustomer: Good. Now, one more thing. My friend had a policy – not with you, mind you – and he said it paid out double the accidental death benefit if the accident happened on public transport, like a bus or train over there. Is that something ISS offers? Because I want that. Specifically, double payout for accidental death on public transport. Make sure you write that down clearly.\nCustomer Service Agent: Okay, I've specifically noted your requirement for a policy feature that includes a double indemnity or higher payout for accidental death occurring while traveling on public transportation.\nCustomer Service Agent: Do you have a particular budget in mind for this policy, Mr. Tan?\nCustomer: Look, I'm not made of money, but I'm not skimping after past experiences. We're hoping to spend maybe $200-$300, somewhere around there. But the coverage has to be iron-clad this time. Understood? No funny business in the fine print.\nCustomer Service Agent: Understood, Mr. Tan. So, just to confirm the key requirements I've gathered for your two-week trip to Japan for two travelers aged 41-55: You require Medical Coverage, considering a pre-existing condition of high blood pressure; coverage for Lost, Damaged, or Delayed Luggage; cover for significant Travel Delays including accommodation and meals; Trip Cancellation protection for reasons like illness; specific coverage for participating in Hiking; and a feature providing double payout for accidental death if it occurs on public transport. Your budget is around $200-$300. Is that all correct?\nCustomer: Yes, that sounds about right. Make sure those points, especially the public transport death benefit and the luggage nonsense, are properly addressed. I don't want any surprises later.\nCustomer Service Agent: I have clearly documented all these requirements, Mr. Tan. Thank you for providing the details. The next step is for our team to identify the policy options that best match these needs. We will get back to you with the relevant information.\nCustomer: Fine. Just make it quick and make sure it covers what I actually asked for this time.\nCustomer Service Agent: We will, Mr. Tan. Thank you for calling ISS Insurance. Have a good day.\nCustomer: Yeah, yeah. Bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"TRAVEL_INSURANCE_001\",\n  \"requirement_summary\": \"Travel insurance requirements for a two-week trip to Japan\",\n  \"detailed_description\": \"Customer David Tan needs comprehensive travel insurance for a two-week trip to Japan covering medical needs, lost luggage, travel delays, trip cancellations, and accidental death benefits.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delays\",\n    \"Trip Cancellation\",\n    \"Accidental Death on Public Transport\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"comprehensive medical coverage including emergency treatment and hospital stays\",\n    \"coverage for regular medications\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Double payout for accidental death on public transport and rigorous avoidance of loopholes in the policy.\",\n  \"keywords\": [\n    \"Hiking\",\n    \"Travel Delays\",\n    \"Trip Cancellation\",\n    \"Accidental Death\",\n    \"Lost Luggage\",\n    \"Medical Coverage\",\n    \"High Blood Pressure\",\n    \"Japan\",\n    \"2 weeks\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "TRAVEL_INSURANCE_001",
+                "requirement_summary": "Travel insurance requirements for a two-week trip to Japan",
+                "detailed_description": "Customer David Tan needs comprehensive travel insurance for a two-week trip to Japan covering medical needs, lost luggage, travel delays, trip cancellations, and accidental death benefits.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "Medical Coverage",
+                    "Lost/Damaged Luggage",
+                    "Travel Delays",
+                    "Trip Cancellation",
+                    "Accidental Death on Public Transport"
+                ],
+                "pre_existing_conditions": [
+                    "high blood pressure"
+                ],
+                "medical_needs": [
+                    "comprehensive medical coverage including emergency treatment and hospital stays",
+                    "coverage for regular medications"
+                ],
+                "activities_to_cover": [
+                    "Hiking"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Double payout for accidental death on public transport and rigorous avoidance of loopholes in the policy.",
+                "keywords": [
+                    "Hiking",
+                    "Travel Delays",
+                    "Trip Cancellation",
+                    "Accidental Death",
+                    "Lost Luggage",
+                    "Medical Coverage",
+                    "High Blood Pressure",
+                    "Japan",
+                    "2 weeks"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 108084,
+        "prompt_tokens": 91135,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 16949,
+        "successful_requests": 58
+    }
+}

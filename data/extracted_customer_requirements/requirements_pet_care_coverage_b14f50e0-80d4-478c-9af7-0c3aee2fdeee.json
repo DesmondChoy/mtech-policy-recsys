@@ -1,0 +1,85 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ12345\",\n  \"requirement_summary\": \"Travel insurance coverage needed for a trip to Europe for two adults including medical, cancellation, luggage, delays, and pet accommodation.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance for a 3-week trip to Europe from Singapore for two adults aged 41-55. Key coverage includes medical emergencies, trip cancellation, lost/damaged luggage, travel delays, and specific coverage for additional pet accommodation costs due to potential delays on the return journey.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost or Damaged Luggage\",\n    \"Travel Delays\",\n    \"Hiking Activities Coverage\",\n    \"Pet Accommodation Costs\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget for comprehensive coverage.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"pet accommodation\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ12345",
+        "requirement_summary": "Travel insurance coverage needed for a trip to Europe for two adults including medical, cancellation, luggage, delays, and pet accommodation.",
+        "detailed_description": "Customer requires comprehensive travel insurance for a 3-week trip to Europe from Singapore for two adults aged 41-55. Key coverage includes medical emergencies, trip cancellation, lost/damaged luggage, travel delays, and specific coverage for additional pet accommodation costs due to potential delays on the return journey.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Europe",
+        "travel_duration": "3 weeks",
+        "insurance_coverage_type": [
+            "Medical Coverage",
+            "Trip Cancellation",
+            "Lost or Damaged Luggage",
+            "Travel Delays",
+            "Hiking Activities Coverage",
+            "Pet Accommodation Costs"
+        ],
+        "pre_existing_conditions": null,
+        "medical_needs": null,
+        "activities_to_cover": [
+            "Hiking"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Flexible budget for comprehensive coverage.",
+        "keywords": [
+            "travel insurance",
+            "medical coverage",
+            "trip cancellation",
+            "lost luggage",
+            "travel delays",
+            "pet accommodation"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd. My name is Sarah, how may I help you today?\nCustomer: Oh, hello! Yes, uhm, I need... I need to ask about travel insurance. It's... it's all a bit much, honestly. I'm feeling quite overwhelmed with all the planning.\nCustomer Service Agent: I understand planning a trip can be stressful. I can certainly help you with information about travel insurance requirements. Don't worry, we can take this step by step. Could you tell me where you'll be travelling to and for how long?\nCustomer: Right, yes. We're planning a trip to Europe... it's meant to be for 3 weeks. It’s just... so many details. We'll be traveling from Singapore, obviously.\nCustomer Service Agent: Okay, Europe for 3 weeks, departing from Singapore. And how many people will be travelling?\nCustomer: Just the two of us. My husband and I.\nCustomer Service Agent: Got it, two travellers. And could you let me know the general age group for both travellers?\nCustomer: Oh, uhm, we're both... well, we're in the 41-55 age group. Both of us. It feels like there's more to worry about travelling now, you know?\nCustomer Service Agent: Understood, 41-55 age group for two travellers. Are you planning any specific activities during your trip that might involve a bit more risk, like sports or adventure activities?\nCustomer: Activities... yes! We wanted to do some hiking. Nothing extreme, just day hikes, but you know, slips and falls can happen anywhere, can't they? It’s just another worry on the pile! We need coverage for hiking, definitely. This whole process is just stressing me out.\nCustomer Service Agent: Okay, I've noted down hiking. Thank you for letting me know. It helps to understand what activities you have planned. Besides potential injuries during activities, what are some of the other main concerns you have about this trip? What sort of situations are worrying you the most?\nCustomer: Oh goodness, where do I start? Everything! What if one of us gets really sick over there? We absolutely need solid medical coverage – you know, for emergencies, hospital stays, doctor visits, prescriptions maybe? That's crucial. And... and what if something terrible happens *before* we even leave? Like, if one of us gets sick or there's a family emergency and we have to cancel the entire trip? It cost a fortune! That thought is just... terrifying. And luggage! Don't get me started on luggage. Last time one of our bags went missing for days, it was awful. So coverage for lost or damaged luggage is a must. And delays! What if the flights are delayed for hours, or even days? It throws everything off! It's just... so much could go wrong!\nCustomer Service Agent: I hear your concerns. It sounds like you're thinking about potential medical issues, trip cancellation, luggage problems, and travel delays. You mentioned delays – is there anything specific about a delay, particularly on the return journey, that concerns you?\nCustomer: Yes! Exactly! Our cat! We have a cat, Patches, and he'll be staying at a pet hotel here in Singapore while we're away. If our flight back gets significantly delayed... what happens then? We'd have to pay extra for him to stay longer at the hotel, wouldn't we? Is that... is that even something insurance could possibly cover? The thought of being stuck overseas *and* worrying about extra kennel fees is just... unbearable.\nCustomer Service Agent: Okay, thank you for explaining that. I've made a specific note about your concern regarding potential additional pet accommodation costs due to a significant return travel delay. To ensure we cover the medical aspects correctly, are there any pre-existing medical conditions, like asthma or high blood pressure, for either traveller that we should note? Or any special medical equipment you need to bring, like a CPAP machine?\nCustomer: Oh, uh, no. No pre-existing conditions for either of us, thankfully. And no special equipment needed. Just... the usual worries about getting sick unexpectedly overseas.\nCustomer Service Agent: Understood, no pre-existing conditions or special medical equipment. And finally, do you have a particular budget range in mind for the insurance policy?\nCustomer: A budget... honestly, with all these worries swirling in my head, the budget is flexible at this point. I just want to make sure we're properly covered for these things. Peace of mind is the main goal, really.\nCustomer Service Agent: Okay, thank you for sharing all that, I know it's a lot to think about. Let me just quickly summarize the requirements I've noted down to make sure I haven't missed anything. You're looking for travel insurance for two adults, age group 41-55, travelling from Singapore to Europe for 3 weeks. The key coverages you need are: Medical Coverage for emergencies and treatment overseas, Trip Cancellation cover in case you can't travel, protection for Lost or Damaged Luggage, cover for expenses arising from significant Travel Delays, and specific cover for medical expenses related to Hiking activities. You also have a specific requirement for coverage of potential additional Pet Accommodation costs if your return to Singapore is delayed. You've confirmed no pre-existing conditions or special medical equipment needs, and the budget is flexible. Does that sound correct?\nCustomer: Yes... yes, that’s it. Hiking, medical, cancellation, luggage, delays... and the pet hotel costs. Yes. It still feels like a lot, but... yes, that covers the main worries.\nCustomer Service Agent: Excellent. Thank you for confirming. I understand it feels like a lot, but clearly outlining your needs is the first step. I have documented all these requirements carefully. Our travel insurance specialists will review this information and will contact you shortly with plan options tailored to these specific needs. Thank you for calling ISS Insurance today.\nCustomer: Okay... thank you. Thank you for being patient. I'll wait for the call then. Bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ12345\",\n  \"requirement_summary\": \"Travel insurance coverage needed for a trip to Europe for two adults including medical, cancellation, luggage, delays, and pet accommodation.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance for a 3-week trip to Europe from Singapore for two adults aged 41-55. Key coverage includes medical emergencies, trip cancellation, lost/damaged luggage, travel delays, and specific coverage for additional pet accommodation costs due to potential delays on the return journey.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost or Damaged Luggage\",\n    \"Travel Delays\",\n    \"Hiking Activities Coverage\",\n    \"Pet Accommodation Costs\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget for comprehensive coverage.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"pet accommodation\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ12345",
+                "requirement_summary": "Travel insurance coverage needed for a trip to Europe for two adults including medical, cancellation, luggage, delays, and pet accommodation.",
+                "detailed_description": "Customer requires comprehensive travel insurance for a 3-week trip to Europe from Singapore for two adults aged 41-55. Key coverage includes medical emergencies, trip cancellation, lost/damaged luggage, travel delays, and specific coverage for additional pet accommodation costs due to potential delays on the return journey.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Europe",
+                "travel_duration": "3 weeks",
+                "insurance_coverage_type": [
+                    "Medical Coverage",
+                    "Trip Cancellation",
+                    "Lost or Damaged Luggage",
+                    "Travel Delays",
+                    "Hiking Activities Coverage",
+                    "Pet Accommodation Costs"
+                ],
+                "pre_existing_conditions": null,
+                "medical_needs": null,
+                "activities_to_cover": [
+                    "Hiking"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Flexible budget for comprehensive coverage.",
+                "keywords": [
+                    "travel insurance",
+                    "medical coverage",
+                    "trip cancellation",
+                    "lost luggage",
+                    "travel delays",
+                    "pet accommodation"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 68936,
+        "prompt_tokens": 58114,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 10822,
+        "successful_requests": 37
+    }
+}

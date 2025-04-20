@@ -1,13 +1,13 @@
 {
-    "raw": "{\n  \"requirement_id\": \"12345\",\n  \"requirement_summary\": \"Comprehensive travel insurance coverage for trip to Japan from Singapore.\",\n  \"detailed_description\": \"Insurance required for a trip from Singapore to Japan lasting two weeks, covering multiple specific needs including trip cancellation, medical emergencies, luggage loss/delay, travel delays, and specific coverage for public transport accidental death.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Lost and Damaged Luggage\",\n    \"Travel Delays\",\n    \"Sports and Adventure\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Emergency treatment\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death on public transport, clarity on pre-existing conditions and hidden exclusions.\",\n  \"keywords\": [\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Lost Luggage\",\n    \"Delayed Luggage\",\n    \"Travel Delays\",\n    \"Hiking\",\n    \"Accidental Death\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Comprehensive travel insurance coverage for a trip from Singapore to Japan.\",\n  \"detailed_description\": \"Customer requires coverage for trip cancellation due to valid reasons like illness, comprehensive medical coverage for emergencies and hospital stays, insurance for lost, damaged, or delayed luggage including essentials, coverage for travel delays including accommodation and meals, and coverage for hiking under sports and adventure. Additionally, they need confirmation on the inclusion of double payout for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"Two weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Lost and Damaged Luggage\",\n    \"Travel Delays\",\n    \"Sports and Adventure\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Emergency treatment\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clear policy on pre-existing conditions and a double payout for accidental death on public transport.\",\n  \"keywords\": [\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Lost and Damaged Luggage\",\n    \"Travel Delays\",\n    \"Hiking\",\n    \"double payout\",\n    \"accidental death\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "12345",
-        "requirement_summary": "Comprehensive travel insurance coverage for trip to Japan from Singapore.",
-        "detailed_description": "Insurance required for a trip from Singapore to Japan lasting two weeks, covering multiple specific needs including trip cancellation, medical emergencies, luggage loss/delay, travel delays, and specific coverage for public transport accidental death.",
+        "requirement_id": "001",
+        "requirement_summary": "Comprehensive travel insurance coverage for a trip from Singapore to Japan.",
+        "detailed_description": "Customer requires coverage for trip cancellation due to valid reasons like illness, comprehensive medical coverage for emergencies and hospital stays, insurance for lost, damaged, or delayed luggage including essentials, coverage for travel delays including accommodation and meals, and coverage for hiking under sports and adventure. Additionally, they need confirmation on the inclusion of double payout for accidental death on public transport.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
-        "travel_duration": "2 weeks",
+        "travel_duration": "Two weeks",
         "insurance_coverage_type": [
             "Trip Cancellation",
             "Medical Coverage",
@@ -24,15 +24,15 @@
             "Hiking"
         ],
         "age_group": "26-40",
-        "additional_requests": "Double payout for accidental death on public transport, clarity on pre-existing conditions and hidden exclusions.",
+        "additional_requests": "Clear policy on pre-existing conditions and a double payout for accidental death on public transport.",
         "keywords": [
             "Trip Cancellation",
             "Medical Coverage",
-            "Lost Luggage",
-            "Delayed Luggage",
+            "Lost and Damaged Luggage",
             "Travel Delays",
             "Hiking",
-            "Accidental Death"
+            "double payout",
+            "accidental death"
         ]
     },
     "tasks_output": [
@@ -41,15 +41,15 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"12345\",\n  \"requirement_summary\": \"Comprehensive travel insurance coverage for trip to Japan from Singapore.\",\n  \"detailed_description\": \"Insurance required for a trip from Singapore to Japan lasting two weeks, covering multiple specific needs including trip cancellation, medical emergencies, luggage loss/delay, travel delays, and specific coverage for public transport accidental death.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Lost and Damaged Luggage\",\n    \"Travel Delays\",\n    \"Sports and Adventure\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Emergency treatment\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death on public transport, clarity on pre-existing conditions and hidden exclusions.\",\n  \"keywords\": [\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Lost Luggage\",\n    \"Delayed Luggage\",\n    \"Travel Delays\",\n    \"Hiking\",\n    \"Accidental Death\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Comprehensive travel insurance coverage for a trip from Singapore to Japan.\",\n  \"detailed_description\": \"Customer requires coverage for trip cancellation due to valid reasons like illness, comprehensive medical coverage for emergencies and hospital stays, insurance for lost, damaged, or delayed luggage including essentials, coverage for travel delays including accommodation and meals, and coverage for hiking under sports and adventure. Additionally, they need confirmation on the inclusion of double payout for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"Two weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Lost and Damaged Luggage\",\n    \"Travel Delays\",\n    \"Sports and Adventure\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Emergency treatment\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clear policy on pre-existing conditions and a double payout for accidental death on public transport.\",\n  \"keywords\": [\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Lost and Damaged Luggage\",\n    \"Travel Delays\",\n    \"Hiking\",\n    \"double payout\",\n    \"accidental death\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "12345",
-                "requirement_summary": "Comprehensive travel insurance coverage for trip to Japan from Singapore.",
-                "detailed_description": "Insurance required for a trip from Singapore to Japan lasting two weeks, covering multiple specific needs including trip cancellation, medical emergencies, luggage loss/delay, travel delays, and specific coverage for public transport accidental death.",
+                "requirement_id": "001",
+                "requirement_summary": "Comprehensive travel insurance coverage for a trip from Singapore to Japan.",
+                "detailed_description": "Customer requires coverage for trip cancellation due to valid reasons like illness, comprehensive medical coverage for emergencies and hospital stays, insurance for lost, damaged, or delayed luggage including essentials, coverage for travel delays including accommodation and meals, and coverage for hiking under sports and adventure. Additionally, they need confirmation on the inclusion of double payout for accidental death on public transport.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
-                "travel_duration": "2 weeks",
+                "travel_duration": "Two weeks",
                 "insurance_coverage_type": [
                     "Trip Cancellation",
                     "Medical Coverage",
@@ -66,15 +66,15 @@
                     "Hiking"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Double payout for accidental death on public transport, clarity on pre-existing conditions and hidden exclusions.",
+                "additional_requests": "Clear policy on pre-existing conditions and a double payout for accidental death on public transport.",
                 "keywords": [
                     "Trip Cancellation",
                     "Medical Coverage",
-                    "Lost Luggage",
-                    "Delayed Luggage",
+                    "Lost and Damaged Luggage",
                     "Travel Delays",
                     "Hiking",
-                    "Accidental Death"
+                    "double payout",
+                    "accidental death"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -82,10 +82,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 44947,
-        "prompt_tokens": 37526,
+        "total_tokens": 98649,
+        "prompt_tokens": 83198,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 7421,
-        "successful_requests": 25
+        "completion_tokens": 15451,
+        "successful_requests": 53
     }
 }

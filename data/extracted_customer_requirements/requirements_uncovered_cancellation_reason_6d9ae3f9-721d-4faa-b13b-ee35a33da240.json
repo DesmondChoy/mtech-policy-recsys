@@ -1,34 +1,37 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ-2023-001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Europe for two travellers aged 26-40.\",\n  \"detailed_description\": \"Travel insurance coverage needed for a 2-week trip to Europe for 2 travellers. Key coverage requirements include medical expenses, lost or damaged luggage, travel delays, and trip cancellation with a special note regarding cancellation related to a sister's wedding. No pre-existing conditions or special medical equipment.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"medical expenses\", \"lost/damaged luggage\", \"travel delays\", \"trip cancellation\"],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\"hiking\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Inquiry about coverage for trip cancellation due to sister's wedding.\",\n  \"keywords\": [\"travel insurance\", \"Europe\", \"medical cover\", \"lost luggage\", \"travel delays\", \"trip cancellation\", \"hiking\"]\n}",
+    "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Europe.\",\n  \"detailed_description\": \"The customer is planning a 2-week trip to Europe for 2 travellers aged 26-40 from Singapore. Key insurance coverage required includes medical expenses, lost or damaged luggage, coverage for significant travel delays, and trip cancellation (with a specific emphasis on cancelling due to a sister's wedding). The budget for the insurance premium is between $200-$300. There are no pre-existing medical conditions or special medical equipment needed.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"medical expenses\", \"lost or damaged luggage\", \"travel delays\", \"trip cancellation\"],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\"hiking\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cancellation coverage specifically in case of sister's wedding.\",\n  \"keywords\": [\"travel insurance\", \"Europe\", \"2 weeks\", \"2 travellers\", \"medical cover\", \"lost luggage\", \"travel delays\", \"trip cancellation\", \"hiking\", \"budget $200-$300\"]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ-2023-001",
-        "requirement_summary": "Travel insurance for a trip to Europe for two travellers aged 26-40.",
-        "detailed_description": "Travel insurance coverage needed for a 2-week trip to Europe for 2 travellers. Key coverage requirements include medical expenses, lost or damaged luggage, travel delays, and trip cancellation with a special note regarding cancellation related to a sister's wedding. No pre-existing conditions or special medical equipment.",
+        "requirement_id": "req-001",
+        "requirement_summary": "Travel insurance requirements for a trip to Europe.",
+        "detailed_description": "The customer is planning a 2-week trip to Europe for 2 travellers aged 26-40 from Singapore. Key insurance coverage required includes medical expenses, lost or damaged luggage, coverage for significant travel delays, and trip cancellation (with a specific emphasis on cancelling due to a sister's wedding). The budget for the insurance premium is between $200-$300. There are no pre-existing medical conditions or special medical equipment needed.",
         "travel_origin": "Singapore",
         "travel_destination": "Europe",
         "travel_duration": "2 weeks",
         "insurance_coverage_type": [
             "medical expenses",
-            "lost/damaged luggage",
+            "lost or damaged luggage",
             "travel delays",
             "trip cancellation"
         ],
-        "pre_existing_conditions": [],
-        "medical_needs": [],
+        "pre_existing_conditions": null,
+        "medical_needs": null,
         "activities_to_cover": [
             "hiking"
         ],
         "age_group": "26-40",
-        "additional_requests": "Inquiry about coverage for trip cancellation due to sister's wedding.",
+        "additional_requests": "Cancellation coverage specifically in case of sister's wedding.",
         "keywords": [
             "travel insurance",
             "Europe",
+            "2 weeks",
+            "2 travellers",
             "medical cover",
             "lost luggage",
             "travel delays",
             "trip cancellation",
-            "hiking"
+            "hiking",
+            "budget $200-$300"
         ]
     },
     "tasks_output": [
@@ -37,36 +40,39 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ-2023-001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Europe for two travellers aged 26-40.\",\n  \"detailed_description\": \"Travel insurance coverage needed for a 2-week trip to Europe for 2 travellers. Key coverage requirements include medical expenses, lost or damaged luggage, travel delays, and trip cancellation with a special note regarding cancellation related to a sister's wedding. No pre-existing conditions or special medical equipment.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"medical expenses\", \"lost/damaged luggage\", \"travel delays\", \"trip cancellation\"],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\"hiking\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Inquiry about coverage for trip cancellation due to sister's wedding.\",\n  \"keywords\": [\"travel insurance\", \"Europe\", \"medical cover\", \"lost luggage\", \"travel delays\", \"trip cancellation\", \"hiking\"]\n}",
+            "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Europe.\",\n  \"detailed_description\": \"The customer is planning a 2-week trip to Europe for 2 travellers aged 26-40 from Singapore. Key insurance coverage required includes medical expenses, lost or damaged luggage, coverage for significant travel delays, and trip cancellation (with a specific emphasis on cancelling due to a sister's wedding). The budget for the insurance premium is between $200-$300. There are no pre-existing medical conditions or special medical equipment needed.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"medical expenses\", \"lost or damaged luggage\", \"travel delays\", \"trip cancellation\"],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\"hiking\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cancellation coverage specifically in case of sister's wedding.\",\n  \"keywords\": [\"travel insurance\", \"Europe\", \"2 weeks\", \"2 travellers\", \"medical cover\", \"lost luggage\", \"travel delays\", \"trip cancellation\", \"hiking\", \"budget $200-$300\"]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ-2023-001",
-                "requirement_summary": "Travel insurance for a trip to Europe for two travellers aged 26-40.",
-                "detailed_description": "Travel insurance coverage needed for a 2-week trip to Europe for 2 travellers. Key coverage requirements include medical expenses, lost or damaged luggage, travel delays, and trip cancellation with a special note regarding cancellation related to a sister's wedding. No pre-existing conditions or special medical equipment.",
+                "requirement_id": "req-001",
+                "requirement_summary": "Travel insurance requirements for a trip to Europe.",
+                "detailed_description": "The customer is planning a 2-week trip to Europe for 2 travellers aged 26-40 from Singapore. Key insurance coverage required includes medical expenses, lost or damaged luggage, coverage for significant travel delays, and trip cancellation (with a specific emphasis on cancelling due to a sister's wedding). The budget for the insurance premium is between $200-$300. There are no pre-existing medical conditions or special medical equipment needed.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Europe",
                 "travel_duration": "2 weeks",
                 "insurance_coverage_type": [
                     "medical expenses",
-                    "lost/damaged luggage",
+                    "lost or damaged luggage",
                     "travel delays",
                     "trip cancellation"
                 ],
-                "pre_existing_conditions": [],
-                "medical_needs": [],
+                "pre_existing_conditions": null,
+                "medical_needs": null,
                 "activities_to_cover": [
                     "hiking"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Inquiry about coverage for trip cancellation due to sister's wedding.",
+                "additional_requests": "Cancellation coverage specifically in case of sister's wedding.",
                 "keywords": [
                     "travel insurance",
                     "Europe",
+                    "2 weeks",
+                    "2 travellers",
                     "medical cover",
                     "lost luggage",
                     "travel delays",
                     "trip cancellation",
-                    "hiking"
+                    "hiking",
+                    "budget $200-$300"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -74,10 +80,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 62627,
-        "prompt_tokens": 52343,
+        "total_tokens": 138023,
+        "prompt_tokens": 116567,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 10284,
-        "successful_requests": 35
+        "completion_tokens": 21456,
+        "successful_requests": 74
     }
 }

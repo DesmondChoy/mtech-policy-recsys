@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about trip cancellation coverage in [24] and provided specific scenarios of concern (serious illness, family member death).",
+      "customer_quote": "[24] And what if the trip doesn't happen at all? Say one of us gets seriously ill beforehand \u2013 not the blood pressure thing, something unexpected \u2013 or maybe a close family member passes away? We'd lose flights, accommodation... does the insurance cover trip cancellation for reasons like that?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly identified and acknowledged the customer's need for trip cancellation coverage based on the specific reasons mentioned.",
+      "agent_quote": "[25] Noted. You are looking for coverage for trip cancellation due to specified unforeseen events like illness or family emergencies."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer asked about medical coverage in [18], specifically mentioning a pre-existing condition (high blood pressure) and the need for reliable coverage.",
+      "customer_quote": "[18] Well, one traveler has high blood pressure. It's managed, but what if something happens related to that while we're overseas? ... We need proper medical coverage that doesn't just disappear when you actually need it.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the need for comprehensive medical coverage and specifically noted the pre-existing condition mentioned by the customer.",
+      "agent_quote": "[19] Alright, I've noted the requirement for comprehensive medical coverage, and I've also noted the mention of high blood pressure as a pre-existing condition that needs consideration within the policy information."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer inquired about coverage for lost or damaged luggage in [26], providing specific examples and asking about exclusions like electronics.",
+      "customer_quote": "[26] Right. And baggage. You hear horror stories about airlines losing luggage or bags getting damaged. What's the deal with that? Is there coverage if our bags go missing or arrive smashed up? I assume there are tons of exclusions, like for electronics?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed they noted the requirement for coverage related to lost, damaged, or delayed baggage.",
+      "agent_quote": "[27] Okay, I've noted down the requirement for coverage related to lost, damaged, or delayed baggage."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer asked about coverage for travel delays in [20], mentioning extra hotel/meal costs. Crucially, in [22], the customer provided the scenario-specific detail about needing coverage for extra pet hotel costs due to a return delay.",
+      "customer_quote": "[20] Flights get delayed all the time. If we get stuck somewhere, who pays for the extra hotel nights or meals? I want to know what kind of coverage there is for travel delays. [22] If our flight back to Singapore is delayed, significantly delayed I mean, we have a cat in a pet hotel here. That's going to cost extra for every day we're late. Is that specific cost \u2013 the extra kennel fees because of a travel delay \u2013 something that can be covered?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the general requirement for travel delay coverage in [21] and specifically acknowledged and noted the unique requirement regarding pet accommodation costs in [23].",
+      "agent_quote": "[21] Okay, so coverage for additional expenses due to significant travel delays is a requirement. [23] Understood. So, in addition to general travel delay expenses, you have a specific requirement for coverage consideration regarding additional pet accommodation costs resulting from a covered return travel delay. I have noted that specifically."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer mentioned planning to do hiking in [14] and asked if potential injuries during this activity would be covered.",
+      "customer_quote": "[14] We plan to do some hiking during our trip. Nothing too strenuous, but it's still outdoors. If someone twists an ankle out there, is that something insurance actually covers...?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly identified hiking as a sports/adventure activity requiring coverage, noted it, and appropriately probed if there were any other activities planned.",
+      "agent_quote": "[15] Okay, so you require coverage that includes participation in hiking. I've noted that down as a requirement for sports and adventure activities. Are there any other specific activities planned?"
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered information on all five standard coverage types, as prompted by the customer's specific concerns. The customer provided details for each area (illness/family emergency for cancellation, pre-existing condition for medical, lost/damaged scenarios for luggage, hotel/meals and specific pet hotel costs for delays, hiking for activities). The agent performed well, acknowledging each requirement, noting specific details including the crucial scenario-specific pet hotel cost, and probing appropriately (e.g., asking about other activities). The agent correctly summarized the gathered requirements at the end [31]."
+  },
+  "transcript_name": "transcript_pet_care_coverage_600afd1c-b9a5-4b82-8892-451b389ad868",
+  "scenario": "pet_care_coverage"
+}

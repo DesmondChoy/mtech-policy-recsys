@@ -1,42 +1,41 @@
 {
-    "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance for a trip from Singapore to Thailand\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance coverage for a two-week trip, including emergency medical coverage, scuba diving activities, trip cancellation, and protection for lost/damaged luggage.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive medical coverage\",\n    \"Emergency medical treatment\",\n    \"Trip Cancellation\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delay Coverage\",\n    \"Accidental Death cover with double payout on public transport\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Emergency medical treatment\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Flexible budget for good coverage\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Trip Cancellation\",\n    \"Emergency medical coverage\",\n    \"Scuba Diving\",\n    \"Lost luggage\",\n    \"Travel delays\",\n    \"Accidental death\",\n    \"public transport\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a trip to Thailand covering medical, cancellations, and adventure activities.\",\n  \"detailed_description\": \"Customer requires travel insurance for a 2-week trip to Thailand from Singapore, covering comprehensive medical needs due to a pre-existing condition (asthma), adventure activities (specifically scuba diving), lost or damaged luggage, travel delays, trip cancellation, and accidental death benefits on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation Coverage\",\n    \"Coverage for Lost/Damaged Luggage\",\n    \"Coverage for Travel Delays\",\n    \"Accidental Death Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Emergency medical coverage\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death while using public transport, flexible budget for good coverage.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Thailand\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"scuba diving\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"accidental death\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "001",
-        "requirement_summary": "Travel insurance for a trip from Singapore to Thailand",
-        "detailed_description": "Customer requires comprehensive travel insurance coverage for a two-week trip, including emergency medical coverage, scuba diving activities, trip cancellation, and protection for lost/damaged luggage.",
+        "requirement_id": "REQ123456",
+        "requirement_summary": "Travel insurance for a trip to Thailand covering medical, cancellations, and adventure activities.",
+        "detailed_description": "Customer requires travel insurance for a 2-week trip to Thailand from Singapore, covering comprehensive medical needs due to a pre-existing condition (asthma), adventure activities (specifically scuba diving), lost or damaged luggage, travel delays, trip cancellation, and accidental death benefits on public transport.",
         "travel_origin": "Singapore",
         "travel_destination": "Thailand",
         "travel_duration": "2 weeks",
         "insurance_coverage_type": [
-            "Comprehensive medical coverage",
-            "Emergency medical treatment",
-            "Trip Cancellation",
-            "Lost/Damaged Luggage",
-            "Travel Delay Coverage",
-            "Accidental Death cover with double payout on public transport"
+            "Comprehensive Medical Coverage",
+            "Trip Cancellation Coverage",
+            "Coverage for Lost/Damaged Luggage",
+            "Coverage for Travel Delays",
+            "Accidental Death Coverage"
         ],
         "pre_existing_conditions": [
             "Asthma"
         ],
         "medical_needs": [
-            "Emergency medical treatment",
+            "Emergency medical coverage",
             "Hospital stays"
         ],
         "activities_to_cover": [
             "Scuba Diving"
         ],
         "age_group": "26-40",
-        "additional_requests": "Flexible budget for good coverage",
+        "additional_requests": "Double payout for accidental death while using public transport, flexible budget for good coverage.",
         "keywords": [
             "travel insurance",
-            "Trip Cancellation",
-            "Emergency medical coverage",
-            "Scuba Diving",
-            "Lost luggage",
-            "Travel delays",
-            "Accidental death",
-            "public transport"
+            "Thailand",
+            "medical coverage",
+            "trip cancellation",
+            "scuba diving",
+            "lost luggage",
+            "travel delays",
+            "accidental death"
         ]
     },
     "tasks_output": [
@@ -45,44 +44,43 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance for a trip from Singapore to Thailand\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance coverage for a two-week trip, including emergency medical coverage, scuba diving activities, trip cancellation, and protection for lost/damaged luggage.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive medical coverage\",\n    \"Emergency medical treatment\",\n    \"Trip Cancellation\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delay Coverage\",\n    \"Accidental Death cover with double payout on public transport\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Emergency medical treatment\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Flexible budget for good coverage\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Trip Cancellation\",\n    \"Emergency medical coverage\",\n    \"Scuba Diving\",\n    \"Lost luggage\",\n    \"Travel delays\",\n    \"Accidental death\",\n    \"public transport\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a trip to Thailand covering medical, cancellations, and adventure activities.\",\n  \"detailed_description\": \"Customer requires travel insurance for a 2-week trip to Thailand from Singapore, covering comprehensive medical needs due to a pre-existing condition (asthma), adventure activities (specifically scuba diving), lost or damaged luggage, travel delays, trip cancellation, and accidental death benefits on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation Coverage\",\n    \"Coverage for Lost/Damaged Luggage\",\n    \"Coverage for Travel Delays\",\n    \"Accidental Death Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Emergency medical coverage\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death while using public transport, flexible budget for good coverage.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Thailand\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"scuba diving\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"accidental death\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "001",
-                "requirement_summary": "Travel insurance for a trip from Singapore to Thailand",
-                "detailed_description": "Customer requires comprehensive travel insurance coverage for a two-week trip, including emergency medical coverage, scuba diving activities, trip cancellation, and protection for lost/damaged luggage.",
+                "requirement_id": "REQ123456",
+                "requirement_summary": "Travel insurance for a trip to Thailand covering medical, cancellations, and adventure activities.",
+                "detailed_description": "Customer requires travel insurance for a 2-week trip to Thailand from Singapore, covering comprehensive medical needs due to a pre-existing condition (asthma), adventure activities (specifically scuba diving), lost or damaged luggage, travel delays, trip cancellation, and accidental death benefits on public transport.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Thailand",
                 "travel_duration": "2 weeks",
                 "insurance_coverage_type": [
-                    "Comprehensive medical coverage",
-                    "Emergency medical treatment",
-                    "Trip Cancellation",
-                    "Lost/Damaged Luggage",
-                    "Travel Delay Coverage",
-                    "Accidental Death cover with double payout on public transport"
+                    "Comprehensive Medical Coverage",
+                    "Trip Cancellation Coverage",
+                    "Coverage for Lost/Damaged Luggage",
+                    "Coverage for Travel Delays",
+                    "Accidental Death Coverage"
                 ],
                 "pre_existing_conditions": [
                     "Asthma"
                 ],
                 "medical_needs": [
-                    "Emergency medical treatment",
+                    "Emergency medical coverage",
                     "Hospital stays"
                 ],
                 "activities_to_cover": [
                     "Scuba Diving"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Flexible budget for good coverage",
+                "additional_requests": "Double payout for accidental death while using public transport, flexible budget for good coverage.",
                 "keywords": [
                     "travel insurance",
-                    "Trip Cancellation",
-                    "Emergency medical coverage",
-                    "Scuba Diving",
-                    "Lost luggage",
-                    "Travel delays",
-                    "Accidental death",
-                    "public transport"
+                    "Thailand",
+                    "medical coverage",
+                    "trip cancellation",
+                    "scuba diving",
+                    "lost luggage",
+                    "travel delays",
+                    "accidental death"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -90,10 +88,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 54124,
-        "prompt_tokens": 45173,
+        "total_tokens": 113741,
+        "prompt_tokens": 95919,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 8951,
-        "successful_requests": 30
+        "completion_tokens": 17822,
+        "successful_requests": 61
     }
 }

@@ -1,32 +1,33 @@
 {
-    "raw": "{\n  \"requirement_id\": \"req001\",\n  \"requirement_summary\": \"Travel insurance required for trip to Japan from Singapore.\",\n  \"detailed_description\": \"Travel insurance needed for two adults aged 26-40 travelling from Singapore to Japan for a duration of 10 days. Coverage required for emergency medical expenses, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs in Singapore due to delayed return flight.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"trip cancellation\",\n    \"emergency medical expenses\",\n    \"travel delays\",\n    \"lost or damaged luggage\",\n    \"skiing activities\",\n    \"pet accommodation costs\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"emergency medical treatment\"\n  ],\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for extra days for pet accommodation if return flight is delayed and a budget of around $400.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"trip cancellation\",\n    \"emergency medical\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"skiing\",\n    \"pet accommodation\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"REQ001\",\n  \"requirement_summary\": \"Travel insurance required for a trip from Singapore to Japan.\",\n  \"detailed_description\": \"Customer requires travel insurance for two adults aged 26-40 travelling from Singapore to Japan for 10 days. Coverage needed includes trip cancellation, emergency medical expenses, travel delays including compensation for delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"trip cancellation\",\n    \"emergency medical expenses\",\n    \"travel delay coverage\",\n    \"lost or damaged luggage\",\n    \"skiing activity coverage\",\n    \"additional pet accommodation coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs in case of flight delay.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Singapore\",\n    \"Japan\",\n    \"10 days\",\n    \"trip cancellation\",\n    \"emergency medical\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"skiing\",\n    \"pet accommodation\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "req001",
-        "requirement_summary": "Travel insurance required for trip to Japan from Singapore.",
-        "detailed_description": "Travel insurance needed for two adults aged 26-40 travelling from Singapore to Japan for a duration of 10 days. Coverage required for emergency medical expenses, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs in Singapore due to delayed return flight.",
+        "requirement_id": "REQ001",
+        "requirement_summary": "Travel insurance required for a trip from Singapore to Japan.",
+        "detailed_description": "Customer requires travel insurance for two adults aged 26-40 travelling from Singapore to Japan for 10 days. Coverage needed includes trip cancellation, emergency medical expenses, travel delays including compensation for delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "10 days",
         "insurance_coverage_type": [
             "trip cancellation",
             "emergency medical expenses",
-            "travel delays",
+            "travel delay coverage",
             "lost or damaged luggage",
-            "skiing activities",
-            "pet accommodation costs"
+            "skiing activity coverage",
+            "additional pet accommodation coverage"
         ],
         "pre_existing_conditions": [],
-        "medical_needs": [
-            "emergency medical treatment"
-        ],
+        "medical_needs": [],
         "activities_to_cover": [
             "skiing"
         ],
         "age_group": "26-40",
-        "additional_requests": "Coverage for extra days for pet accommodation if return flight is delayed and a budget of around $400.",
+        "additional_requests": "Coverage for additional pet accommodation costs in case of flight delay.",
         "keywords": [
             "travel insurance",
+            "Singapore",
+            "Japan",
+            "10 days",
             "trip cancellation",
             "emergency medical",
             "travel delays",
@@ -41,34 +42,35 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"req001\",\n  \"requirement_summary\": \"Travel insurance required for trip to Japan from Singapore.\",\n  \"detailed_description\": \"Travel insurance needed for two adults aged 26-40 travelling from Singapore to Japan for a duration of 10 days. Coverage required for emergency medical expenses, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs in Singapore due to delayed return flight.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"trip cancellation\",\n    \"emergency medical expenses\",\n    \"travel delays\",\n    \"lost or damaged luggage\",\n    \"skiing activities\",\n    \"pet accommodation costs\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"emergency medical treatment\"\n  ],\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for extra days for pet accommodation if return flight is delayed and a budget of around $400.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"trip cancellation\",\n    \"emergency medical\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"skiing\",\n    \"pet accommodation\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"REQ001\",\n  \"requirement_summary\": \"Travel insurance required for a trip from Singapore to Japan.\",\n  \"detailed_description\": \"Customer requires travel insurance for two adults aged 26-40 travelling from Singapore to Japan for 10 days. Coverage needed includes trip cancellation, emergency medical expenses, travel delays including compensation for delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"trip cancellation\",\n    \"emergency medical expenses\",\n    \"travel delay coverage\",\n    \"lost or damaged luggage\",\n    \"skiing activity coverage\",\n    \"additional pet accommodation coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs in case of flight delay.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Singapore\",\n    \"Japan\",\n    \"10 days\",\n    \"trip cancellation\",\n    \"emergency medical\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"skiing\",\n    \"pet accommodation\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "req001",
-                "requirement_summary": "Travel insurance required for trip to Japan from Singapore.",
-                "detailed_description": "Travel insurance needed for two adults aged 26-40 travelling from Singapore to Japan for a duration of 10 days. Coverage required for emergency medical expenses, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs in Singapore due to delayed return flight.",
+                "requirement_id": "REQ001",
+                "requirement_summary": "Travel insurance required for a trip from Singapore to Japan.",
+                "detailed_description": "Customer requires travel insurance for two adults aged 26-40 travelling from Singapore to Japan for 10 days. Coverage needed includes trip cancellation, emergency medical expenses, travel delays including compensation for delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "10 days",
                 "insurance_coverage_type": [
                     "trip cancellation",
                     "emergency medical expenses",
-                    "travel delays",
+                    "travel delay coverage",
                     "lost or damaged luggage",
-                    "skiing activities",
-                    "pet accommodation costs"
+                    "skiing activity coverage",
+                    "additional pet accommodation coverage"
                 ],
                 "pre_existing_conditions": [],
-                "medical_needs": [
-                    "emergency medical treatment"
-                ],
+                "medical_needs": [],
                 "activities_to_cover": [
                     "skiing"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Coverage for extra days for pet accommodation if return flight is delayed and a budget of around $400.",
+                "additional_requests": "Coverage for additional pet accommodation costs in case of flight delay.",
                 "keywords": [
                     "travel insurance",
+                    "Singapore",
+                    "Japan",
+                    "10 days",
                     "trip cancellation",
                     "emergency medical",
                     "travel delays",
@@ -82,10 +84,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 28317,
-        "prompt_tokens": 23606,
+        "total_tokens": 57056,
+        "prompt_tokens": 47969,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 4711,
-        "successful_requests": 16
+        "completion_tokens": 9087,
+        "successful_requests": 31
     }
 }

@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the need for trip cancellation coverage, mentioning specific concerns like illness or family emergencies preventing travel.",
+      "customer_quote": "[12] And... and what if something terrible happens *before* we even leave? Like, if one of us gets sick or there's a family emergency and we have to cancel the entire trip? It cost a fortune!",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent used open-ended questions to understand the customer's main worries, which included trip cancellation, and later confirmed this requirement in the summary.",
+      "agent_quote": "[11] Besides potential injuries during activities, what are some of the other main concerns you have about this trip? What sort of situations are worrying you the most?"
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer clearly requested medical coverage, specifying the need for coverage related to emergencies, hospital stays, doctor visits, and prescriptions.",
+      "customer_quote": "[12] What if one of us gets really sick over there? We absolutely need solid medical coverage \u2013 you know, for emergencies, hospital stays, doctor visits, prescriptions maybe? That's crucial.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the need and appropriately probed for relevant details like pre-existing conditions and medical equipment, which are key factors for medical coverage.",
+      "agent_quote": "[15] To ensure we cover the medical aspects correctly, are there any pre-existing medical conditions, like asthma or high blood pressure, for either traveller that we should note? Or any special medical equipment you need to bring, like a CPAP machine?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned needing coverage for lost or damaged luggage, citing a past negative experience.",
+      "customer_quote": "[12] And luggage! Don't get me started on luggage. Last time one of our bags went missing for days, it was awful. So coverage for lost or damaged luggage is a must.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent identified this as a key concern through general probing and confirmed the requirement in the final summary.",
+      "agent_quote": "[19] ...protection for Lost or Damaged Luggage..."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer expressed concern about significant flight delays and the associated disruption, explicitly stating the need for coverage.",
+      "customer_quote": "[12] And delays! What if the flights are delayed for hours, or even days? It throws everything off! It's just... so much could go wrong!",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the general concern about delays and then specifically probed about return journey delays, which uncovered a critical scenario-specific need.",
+      "agent_quote": "[13] You mentioned delays \u2013 is there anything specific about a delay, particularly on the return journey, that concerns you?"
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer confirmed they would be hiking (day hikes) and explicitly requested coverage for potential injuries related to this activity.",
+      "customer_quote": "[10] Activities... yes! We wanted to do some hiking... We need coverage for hiking, definitely.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about specific activities involving risk, correctly identifying the need to explore this coverage area.",
+      "agent_quote": "[9] Are you planning any specific activities during your trip that might involve a bit more risk, like sports or adventure activities?"
+    },
+    {
+      "coverage_type": "pet_accommodation_delay",
+      "name": "Pet Accommodation Costs (Delay)",
+      "result": "PASS",
+      "justification": "The customer explicitly raised the scenario-specific concern about needing coverage for additional pet hotel costs if their return flight to Singapore was significantly delayed.",
+      "customer_quote": "[14] If our flight back gets significantly delayed... what happens then? We'd have to pay extra for him to stay longer at the hotel, wouldn't we? Is that... is that even something insurance could possibly cover?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent's targeted probing about return delays elicited this specific requirement, and the agent confirmed it was noted.",
+      "agent_quote": "[15] Okay, thank you for explaining that. I've made a specific note about your concern regarding potential additional pet accommodation costs due to a significant return travel delay."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered information on all standard coverage types mentioned by the customer and proactively identified the need for sports/adventure coverage. The agent also effectively elicited the scenario-specific requirement regarding pet accommodation costs by probing further into the customer's concerns about travel delays. The agent demonstrated good listening skills, asked relevant clarifying and probing questions (including regarding exclusions like pre-existing conditions), and confirmed all requirements in a final summary. Overall, the agent performed excellently in gathering the necessary coverage information."
+  },
+  "transcript_name": "transcript_pet_care_coverage_b14f50e0-80d4-478c-9af7-0c3aee2fdeee",
+  "scenario": "pet_care_coverage"
+}

@@ -1,35 +1,39 @@
 {
-    "raw": "{\n  \"requirement_id\": \"TRV-001\",\n  \"requirement_summary\": \"Travel insurance quote for a trip to Japan covering multiple aspects.\",\n  \"detailed_description\": \"Comprehensive travel insurance requirements for a two-week trip to Japan for two adults aged 26-40 from Singapore, including medical coverage, trip cancellation, travel delays, baggage loss, and personal accident benefits.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive emergency medical treatment\",\n    \"Trip cancellation for unforeseen circumstances\",\n    \"Travel delay coverage\",\n    \"Baggage loss or damage coverage\",\n    \"Personal accident double payout\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": [\n    \"Comprehensive emergency medical treatment including hospitalization and doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"Recreational skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death on public transport\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delay\",\n    \"baggage\",\n    \"personal accident\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan\",\n  \"detailed_description\": \"Coverage for 2 adults aged 26-40 traveling from Singapore to Japan for 2 weeks, including various insurance needs such as adventure activities and medical coverage.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Sports and Adventure\",\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Lost/Damaged Luggage\",\n    \"Personal Accident\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Comprehensive emergency medical treatment\",\n    \"Hospitalization\",\n    \"Doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"Recreational Skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death on public transport\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"Skiing\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"baggage\",\n    \"personal accident\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "TRV-001",
-        "requirement_summary": "Travel insurance quote for a trip to Japan covering multiple aspects.",
-        "detailed_description": "Comprehensive travel insurance requirements for a two-week trip to Japan for two adults aged 26-40 from Singapore, including medical coverage, trip cancellation, travel delays, baggage loss, and personal accident benefits.",
+        "requirement_id": "001",
+        "requirement_summary": "Travel insurance requirements for a trip to Japan",
+        "detailed_description": "Coverage for 2 adults aged 26-40 traveling from Singapore to Japan for 2 weeks, including various insurance needs such as adventure activities and medical coverage.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "2 weeks",
         "insurance_coverage_type": [
-            "Comprehensive emergency medical treatment",
-            "Trip cancellation for unforeseen circumstances",
-            "Travel delay coverage",
-            "Baggage loss or damage coverage",
-            "Personal accident double payout"
+            "Sports and Adventure",
+            "Comprehensive Medical Coverage",
+            "Trip Cancellation",
+            "Travel Delay",
+            "Lost/Damaged Luggage",
+            "Personal Accident"
         ],
-        "pre_existing_conditions": null,
+        "pre_existing_conditions": [],
         "medical_needs": [
-            "Comprehensive emergency medical treatment including hospitalization and doctor visits"
+            "Comprehensive emergency medical treatment",
+            "Hospitalization",
+            "Doctor visits"
         ],
         "activities_to_cover": [
-            "Recreational skiing"
+            "Recreational Skiing"
         ],
         "age_group": "26-40",
         "additional_requests": "Double payout for accidental death on public transport",
         "keywords": [
             "travel insurance",
             "Japan",
+            "Skiing",
             "medical coverage",
             "trip cancellation",
-            "travel delay",
+            "travel delays",
             "baggage",
             "personal accident"
         ]
@@ -40,37 +44,41 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"TRV-001\",\n  \"requirement_summary\": \"Travel insurance quote for a trip to Japan covering multiple aspects.\",\n  \"detailed_description\": \"Comprehensive travel insurance requirements for a two-week trip to Japan for two adults aged 26-40 from Singapore, including medical coverage, trip cancellation, travel delays, baggage loss, and personal accident benefits.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive emergency medical treatment\",\n    \"Trip cancellation for unforeseen circumstances\",\n    \"Travel delay coverage\",\n    \"Baggage loss or damage coverage\",\n    \"Personal accident double payout\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": [\n    \"Comprehensive emergency medical treatment including hospitalization and doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"Recreational skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death on public transport\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delay\",\n    \"baggage\",\n    \"personal accident\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan\",\n  \"detailed_description\": \"Coverage for 2 adults aged 26-40 traveling from Singapore to Japan for 2 weeks, including various insurance needs such as adventure activities and medical coverage.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Sports and Adventure\",\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Lost/Damaged Luggage\",\n    \"Personal Accident\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Comprehensive emergency medical treatment\",\n    \"Hospitalization\",\n    \"Doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"Recreational Skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death on public transport\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"Skiing\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"baggage\",\n    \"personal accident\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "TRV-001",
-                "requirement_summary": "Travel insurance quote for a trip to Japan covering multiple aspects.",
-                "detailed_description": "Comprehensive travel insurance requirements for a two-week trip to Japan for two adults aged 26-40 from Singapore, including medical coverage, trip cancellation, travel delays, baggage loss, and personal accident benefits.",
+                "requirement_id": "001",
+                "requirement_summary": "Travel insurance requirements for a trip to Japan",
+                "detailed_description": "Coverage for 2 adults aged 26-40 traveling from Singapore to Japan for 2 weeks, including various insurance needs such as adventure activities and medical coverage.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "2 weeks",
                 "insurance_coverage_type": [
-                    "Comprehensive emergency medical treatment",
-                    "Trip cancellation for unforeseen circumstances",
-                    "Travel delay coverage",
-                    "Baggage loss or damage coverage",
-                    "Personal accident double payout"
+                    "Sports and Adventure",
+                    "Comprehensive Medical Coverage",
+                    "Trip Cancellation",
+                    "Travel Delay",
+                    "Lost/Damaged Luggage",
+                    "Personal Accident"
                 ],
-                "pre_existing_conditions": null,
+                "pre_existing_conditions": [],
                 "medical_needs": [
-                    "Comprehensive emergency medical treatment including hospitalization and doctor visits"
+                    "Comprehensive emergency medical treatment",
+                    "Hospitalization",
+                    "Doctor visits"
                 ],
                 "activities_to_cover": [
-                    "Recreational skiing"
+                    "Recreational Skiing"
                 ],
                 "age_group": "26-40",
                 "additional_requests": "Double payout for accidental death on public transport",
                 "keywords": [
                     "travel insurance",
                     "Japan",
+                    "Skiing",
                     "medical coverage",
                     "trip cancellation",
-                    "travel delay",
+                    "travel delays",
                     "baggage",
                     "personal accident"
                 ]
@@ -80,10 +88,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 37647,
-        "prompt_tokens": 31451,
+        "total_tokens": 83563,
+        "prompt_tokens": 70444,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 6196,
-        "successful_requests": 21
+        "completion_tokens": 13119,
+        "successful_requests": 45
     }
 }

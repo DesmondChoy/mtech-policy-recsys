@@ -1,25 +1,26 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan.\",\n  \"detailed_description\": \"The customer is looking for travel insurance for a 10-day trip to Japan from Singapore, covering medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and specific coverage for accidents on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical treatment\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"accidental death on public transport\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": [\n    \"medical expenses\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for double payout in case of accidental death while using public transport.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"luggage\",\n    \"delays\",\n    \"accident coverage\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for 2 travelers from Singapore.\",\n  \"detailed_description\": \"Coverage needed for medical treatment, trip cancellation, lost or damaged luggage, significant travel delays, and additional accidental coverage for public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delay coverage\",\n    \"accidental death coverage on public transport\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": [\n    \"coverage for doctor visits\",\n    \"coverage for hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for double payout in case of accidental death while using public transport.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"trip length\",\n    \"coverage\",\n    \"medical treatment\",\n    \"trip cancellation\",\n    \"luggage cover\",\n    \"travel delays\",\n    \"accidental coverage\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ001",
-        "requirement_summary": "Travel insurance requirements for a trip to Japan.",
-        "detailed_description": "The customer is looking for travel insurance for a 10-day trip to Japan from Singapore, covering medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and specific coverage for accidents on public transport.",
+        "requirement_id": "1",
+        "requirement_summary": "Travel insurance for a trip to Japan for 2 travelers from Singapore.",
+        "detailed_description": "Coverage needed for medical treatment, trip cancellation, lost or damaged luggage, significant travel delays, and additional accidental coverage for public transport.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "10 days",
         "insurance_coverage_type": [
-            "medical treatment",
+            "medical coverage",
             "trip cancellation",
             "lost or damaged luggage",
-            "travel delays",
-            "accidental death on public transport"
+            "travel delay coverage",
+            "accidental death coverage on public transport"
         ],
         "pre_existing_conditions": [
             "asthma"
         ],
         "medical_needs": [
-            "medical expenses"
+            "coverage for doctor visits",
+            "coverage for hospital stays"
         ],
         "activities_to_cover": [
             "hiking"
@@ -28,11 +29,14 @@
         "additional_requests": "Coverage for double payout in case of accidental death while using public transport.",
         "keywords": [
             "travel insurance",
-            "medical coverage",
+            "Japan",
+            "trip length",
+            "coverage",
+            "medical treatment",
             "trip cancellation",
-            "luggage",
-            "delays",
-            "accident coverage"
+            "luggage cover",
+            "travel delays",
+            "accidental coverage"
         ]
     },
     "tasks_output": [
@@ -41,27 +45,28 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan.\",\n  \"detailed_description\": \"The customer is looking for travel insurance for a 10-day trip to Japan from Singapore, covering medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and specific coverage for accidents on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical treatment\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"accidental death on public transport\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": [\n    \"medical expenses\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for double payout in case of accidental death while using public transport.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"luggage\",\n    \"delays\",\n    \"accident coverage\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for 2 travelers from Singapore.\",\n  \"detailed_description\": \"Coverage needed for medical treatment, trip cancellation, lost or damaged luggage, significant travel delays, and additional accidental coverage for public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delay coverage\",\n    \"accidental death coverage on public transport\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": [\n    \"coverage for doctor visits\",\n    \"coverage for hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for double payout in case of accidental death while using public transport.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"trip length\",\n    \"coverage\",\n    \"medical treatment\",\n    \"trip cancellation\",\n    \"luggage cover\",\n    \"travel delays\",\n    \"accidental coverage\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ001",
-                "requirement_summary": "Travel insurance requirements for a trip to Japan.",
-                "detailed_description": "The customer is looking for travel insurance for a 10-day trip to Japan from Singapore, covering medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and specific coverage for accidents on public transport.",
+                "requirement_id": "1",
+                "requirement_summary": "Travel insurance for a trip to Japan for 2 travelers from Singapore.",
+                "detailed_description": "Coverage needed for medical treatment, trip cancellation, lost or damaged luggage, significant travel delays, and additional accidental coverage for public transport.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "10 days",
                 "insurance_coverage_type": [
-                    "medical treatment",
+                    "medical coverage",
                     "trip cancellation",
                     "lost or damaged luggage",
-                    "travel delays",
-                    "accidental death on public transport"
+                    "travel delay coverage",
+                    "accidental death coverage on public transport"
                 ],
                 "pre_existing_conditions": [
                     "asthma"
                 ],
                 "medical_needs": [
-                    "medical expenses"
+                    "coverage for doctor visits",
+                    "coverage for hospital stays"
                 ],
                 "activities_to_cover": [
                     "hiking"
@@ -70,11 +75,14 @@
                 "additional_requests": "Coverage for double payout in case of accidental death while using public transport.",
                 "keywords": [
                     "travel insurance",
-                    "medical coverage",
+                    "Japan",
+                    "trip length",
+                    "coverage",
+                    "medical treatment",
                     "trip cancellation",
-                    "luggage",
-                    "delays",
-                    "accident coverage"
+                    "luggage cover",
+                    "travel delays",
+                    "accidental coverage"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -82,10 +90,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 50468,
-        "prompt_tokens": 42115,
+        "total_tokens": 105993,
+        "prompt_tokens": 89344,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 8353,
-        "successful_requests": 28
+        "completion_tokens": 16649,
+        "successful_requests": 57
     }
 }

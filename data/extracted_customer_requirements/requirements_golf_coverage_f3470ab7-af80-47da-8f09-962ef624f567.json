@@ -1,0 +1,89 @@
+{
+    "raw": "{\n  \"requirement_id\": \"req_001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Thailand for two travelers aged 41-55 with specific golf coverage needs.\",\n  \"detailed_description\": \"Travel insurance required for a 10-day trip from Singapore to Thailand. The coverage needed includes standard medical coverage, trip cancellation protection, cover for travel delays, and protection for lost or damaged luggage. The travelers require comprehensive golf coverage, including protection for golf equipment, reimbursement for unused green fees if unable to play due to covered reasons, liability coverage for golf buggy damage, and a specific benefit for achieving a hole-in-one. No pre-existing conditions or special medical equipment needed.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\"medical coverage\", \"trip cancellation protection\", \"travel delay coverage\", \"lost or damaged luggage protection\", \"golf equipment coverage\", \"unused green fees reimbursement\", \"liability coverage for golf buggy\", \"hole-in-one benefit\"],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\"golf\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget, need the right coverage quickly.\",\n  \"keywords\": [\"travel insurance\", \"Thailand\", \"golf\", \"medical emergencies\", \"trip cancellation\", \"lost luggage\"]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "req_001",
+        "requirement_summary": "Travel insurance for a trip to Thailand for two travelers aged 41-55 with specific golf coverage needs.",
+        "detailed_description": "Travel insurance required for a 10-day trip from Singapore to Thailand. The coverage needed includes standard medical coverage, trip cancellation protection, cover for travel delays, and protection for lost or damaged luggage. The travelers require comprehensive golf coverage, including protection for golf equipment, reimbursement for unused green fees if unable to play due to covered reasons, liability coverage for golf buggy damage, and a specific benefit for achieving a hole-in-one. No pre-existing conditions or special medical equipment needed.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Thailand",
+        "travel_duration": "10 days",
+        "insurance_coverage_type": [
+            "medical coverage",
+            "trip cancellation protection",
+            "travel delay coverage",
+            "lost or damaged luggage protection",
+            "golf equipment coverage",
+            "unused green fees reimbursement",
+            "liability coverage for golf buggy",
+            "hole-in-one benefit"
+        ],
+        "pre_existing_conditions": null,
+        "medical_needs": null,
+        "activities_to_cover": [
+            "golf"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Flexible budget, need the right coverage quickly.",
+        "keywords": [
+            "travel insurance",
+            "Thailand",
+            "golf",
+            "medical emergencies",
+            "trip cancellation",
+            "lost luggage"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd Singapore. My name is Sarah. How can I help you today?\nCustomer: Hi Sarah, look, I'm really short on time. I need travel insurance for an upcoming trip. Can we do this quickly?\nCustomer Service Agent: Certainly, I can help you with that. I just need to gather some details about your trip and what you need coverage for. Could you tell me where you'll be traveling to?\nCustomer: Yes, Thailand. We're traveling from Singapore, of course.\nCustomer Service Agent: Okay, Thailand. And how long will you be away for?\nCustomer: 10 days. Just 10 days. And there will be 2 of us traveling. We're in the 41-55 age group, if that matters.\nCustomer Service Agent: Noted, 10 days to Thailand for two travelers, aged 41-55, departing from Singapore. Are there any specific activities planned, or particular concerns you have for this trip?\nCustomer: Yes, yes, the main thing is golf. That's why I'm calling. I need proper golf coverage. Forget the other stuff for a minute, what about the golf?\nCustomer Service Agent: Okay, golf specifically. Could you tell me a bit more about what kind of coverage you're looking for related to golf?\nCustomer: Right, quickly now. My clubs – need them covered against loss or damage, naturally. Also, what if I pre-book green fees and then can't play because I get sick or something? Need reimbursement for that. And, crucially, what if I accidentally damage a golf buggy? Does the insurance cover that liability?\nCustomer Service Agent: Okay, so coverage for your golf equipment, reimbursement for unused green fees due to unforeseen circumstances, and coverage related to potential damage to a golf buggy. Anything else golf-related?\nCustomer: Yes! Almost forgot. Is there any kind of special payout or benefit if I manage to score a hole-in-one? It's unlikely, I know, but still.\nCustomer Service Agent: Alright, noted. A specific benefit related to achieving a hole-in-one. Are there any other sports or adventure activities planned besides golf? Like scuba diving or anything like that?\nCustomer: No, no, just golf. That's the focus. But obviously, we need the standard stuff too. You know... medical emergencies, hospital stays, that sort of thing. And cover if the airline loses our bags, or if they get damaged. The usual baggage headaches.\nCustomer Service Agent: Understood. So, coverage for emergency medical expenses and for lost or damaged luggage. What about situations like trip cancellation or significant travel delays?\nCustomer: Yes, yes, include that. If we have to cancel because someone gets seriously ill beforehand, or if there are massive delays causing extra hotel nights or meal costs. Standard things. Just need it sorted. Budget isn't the main issue, flexible on that, just need the right cover quickly. No pre-existing conditions, no special medical equipment needed either.\nCustomer Service Agent: Okay, thank you. Just to confirm I have everything noted down correctly. You're looking for travel insurance for two adults, aged 41-55, traveling from Singapore to Thailand for 10 days. The required coverage includes: standard medical coverage, trip cancellation protection, cover for travel delays, and protection for lost or damaged luggage. Additionally, you have specific requirements for comprehensive golf coverage, including protection for your golf equipment, reimbursement for unused green fees if unable to play due to covered reasons, liability coverage for potential golf buggy damage, and a specific benefit for achieving a hole-in-one. You confirmed no other specific sports or adventure activities are planned, no pre-existing medical conditions to declare, and no special medical equipment being taken. Is that all correct?\nCustomer: Yes, that’s it. Exactly. That covers everything. Can we move on now?\nCustomer Service Agent: Perfect, thank you for confirming those details. I have recorded all your requirements. The next step is for our team to put together the relevant options for you. We will get back to you shortly with the quotes based on these needs.\nCustomer: Okay, fine. Expecting that soon then. Thanks. Bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"req_001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Thailand for two travelers aged 41-55 with specific golf coverage needs.\",\n  \"detailed_description\": \"Travel insurance required for a 10-day trip from Singapore to Thailand. The coverage needed includes standard medical coverage, trip cancellation protection, cover for travel delays, and protection for lost or damaged luggage. The travelers require comprehensive golf coverage, including protection for golf equipment, reimbursement for unused green fees if unable to play due to covered reasons, liability coverage for golf buggy damage, and a specific benefit for achieving a hole-in-one. No pre-existing conditions or special medical equipment needed.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\"medical coverage\", \"trip cancellation protection\", \"travel delay coverage\", \"lost or damaged luggage protection\", \"golf equipment coverage\", \"unused green fees reimbursement\", \"liability coverage for golf buggy\", \"hole-in-one benefit\"],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\"golf\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget, need the right coverage quickly.\",\n  \"keywords\": [\"travel insurance\", \"Thailand\", \"golf\", \"medical emergencies\", \"trip cancellation\", \"lost luggage\"]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "req_001",
+                "requirement_summary": "Travel insurance for a trip to Thailand for two travelers aged 41-55 with specific golf coverage needs.",
+                "detailed_description": "Travel insurance required for a 10-day trip from Singapore to Thailand. The coverage needed includes standard medical coverage, trip cancellation protection, cover for travel delays, and protection for lost or damaged luggage. The travelers require comprehensive golf coverage, including protection for golf equipment, reimbursement for unused green fees if unable to play due to covered reasons, liability coverage for golf buggy damage, and a specific benefit for achieving a hole-in-one. No pre-existing conditions or special medical equipment needed.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Thailand",
+                "travel_duration": "10 days",
+                "insurance_coverage_type": [
+                    "medical coverage",
+                    "trip cancellation protection",
+                    "travel delay coverage",
+                    "lost or damaged luggage protection",
+                    "golf equipment coverage",
+                    "unused green fees reimbursement",
+                    "liability coverage for golf buggy",
+                    "hole-in-one benefit"
+                ],
+                "pre_existing_conditions": null,
+                "medical_needs": null,
+                "activities_to_cover": [
+                    "golf"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Flexible budget, need the right coverage quickly.",
+                "keywords": [
+                    "travel insurance",
+                    "Thailand",
+                    "golf",
+                    "medical emergencies",
+                    "trip cancellation",
+                    "lost luggage"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 36665,
+        "prompt_tokens": 31086,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 5579,
+        "successful_requests": 19
+    }
+}

@@ -1,38 +1,38 @@
 {
-    "raw": "{\n  \"requirement_id\": \"req001\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Japan including medical, luggage, hiking, trip cancellation, travel delays, and additional pet accommodation.\",\n  \"detailed_description\": \"Customer requires travel insurance for a 3-week trip to Japan from Singapore for two adults. Key areas of coverage include medical needs, particularly considering the husband's pre-existing condition of high blood pressure; coverage for lost or damaged luggage; hiking activities; trip cancellation protection due to potential illness or emergencies; coverage for travel delays; and additional costs for pet accommodation in case of significant trip delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\"Medical Coverage\", \"Lost or Damaged Luggage\", \"Hiking Coverage\", \"Trip Cancellation\", \"Travel Delays\", \"Additional Pet Accommodation\"],\n  \"pre_existing_conditions\": [\"High Blood Pressure\"],\n  \"medical_needs\": [\"Coverage for potential medical needs due to pre-existing condition\"],\n  \"activities_to_cover\": [\"Hiking\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget for the insurance premium, with emphasis on comprehensive coverage for peace of mind.\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"medical coverage\", \"luggage\", \"hiking\", \"trip cancellation\", \"travel delays\", \"pet accommodation\"]\n}",
+    "raw": "{\n  \"requirement_id\": \"req001\",\n  \"requirement_summary\": \"Travel insurance for trip to Japan with specific coverage needs.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance coverage for a 3-week trip to Japan from Singapore. They have highlighted a need for medical coverage due to a pre-existing condition (high blood pressure), coverage for hiking activities, protection against lost or damaged luggage, trip cancellation protection, coverage for significant travel delays, and additional pet accommodation costs in case of flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\"Medical Coverage\", \"Travel Cancellation\", \"Travel Delay\", \"Lost or Damaged Luggage\", \"Hiking Coverage\", \"Pet Accommodation\"],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"coverage for potential medical needs during travel\"],\n  \"activities_to_cover\": [\"hiking\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget, prioritizing peace of mind over cost.\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"high blood pressure\", \"hiking\", \"lost luggage\", \"trip cancellation\", \"travel delays\", \"pet accommodation\"]\n}",
     "pydantic": null,
     "json_dict": {
         "requirement_id": "req001",
-        "requirement_summary": "Travel insurance coverage for a trip to Japan including medical, luggage, hiking, trip cancellation, travel delays, and additional pet accommodation.",
-        "detailed_description": "Customer requires travel insurance for a 3-week trip to Japan from Singapore for two adults. Key areas of coverage include medical needs, particularly considering the husband's pre-existing condition of high blood pressure; coverage for lost or damaged luggage; hiking activities; trip cancellation protection due to potential illness or emergencies; coverage for travel delays; and additional costs for pet accommodation in case of significant trip delays.",
+        "requirement_summary": "Travel insurance for trip to Japan with specific coverage needs.",
+        "detailed_description": "Customer requires comprehensive travel insurance coverage for a 3-week trip to Japan from Singapore. They have highlighted a need for medical coverage due to a pre-existing condition (high blood pressure), coverage for hiking activities, protection against lost or damaged luggage, trip cancellation protection, coverage for significant travel delays, and additional pet accommodation costs in case of flight delays.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "3 weeks",
         "insurance_coverage_type": [
             "Medical Coverage",
+            "Travel Cancellation",
+            "Travel Delay",
             "Lost or Damaged Luggage",
             "Hiking Coverage",
-            "Trip Cancellation",
-            "Travel Delays",
-            "Additional Pet Accommodation"
+            "Pet Accommodation"
         ],
         "pre_existing_conditions": [
-            "High Blood Pressure"
+            "high blood pressure"
         ],
         "medical_needs": [
-            "Coverage for potential medical needs due to pre-existing condition"
+            "coverage for potential medical needs during travel"
         ],
         "activities_to_cover": [
-            "Hiking"
+            "hiking"
         ],
         "age_group": "41-55",
-        "additional_requests": "Flexible budget for the insurance premium, with emphasis on comprehensive coverage for peace of mind.",
+        "additional_requests": "Flexible budget, prioritizing peace of mind over cost.",
         "keywords": [
             "travel insurance",
             "Japan",
-            "medical coverage",
-            "luggage",
+            "high blood pressure",
             "hiking",
+            "lost luggage",
             "trip cancellation",
             "travel delays",
             "pet accommodation"
@@ -44,40 +44,40 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"req001\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Japan including medical, luggage, hiking, trip cancellation, travel delays, and additional pet accommodation.\",\n  \"detailed_description\": \"Customer requires travel insurance for a 3-week trip to Japan from Singapore for two adults. Key areas of coverage include medical needs, particularly considering the husband's pre-existing condition of high blood pressure; coverage for lost or damaged luggage; hiking activities; trip cancellation protection due to potential illness or emergencies; coverage for travel delays; and additional costs for pet accommodation in case of significant trip delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\"Medical Coverage\", \"Lost or Damaged Luggage\", \"Hiking Coverage\", \"Trip Cancellation\", \"Travel Delays\", \"Additional Pet Accommodation\"],\n  \"pre_existing_conditions\": [\"High Blood Pressure\"],\n  \"medical_needs\": [\"Coverage for potential medical needs due to pre-existing condition\"],\n  \"activities_to_cover\": [\"Hiking\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget for the insurance premium, with emphasis on comprehensive coverage for peace of mind.\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"medical coverage\", \"luggage\", \"hiking\", \"trip cancellation\", \"travel delays\", \"pet accommodation\"]\n}",
+            "raw": "{\n  \"requirement_id\": \"req001\",\n  \"requirement_summary\": \"Travel insurance for trip to Japan with specific coverage needs.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance coverage for a 3-week trip to Japan from Singapore. They have highlighted a need for medical coverage due to a pre-existing condition (high blood pressure), coverage for hiking activities, protection against lost or damaged luggage, trip cancellation protection, coverage for significant travel delays, and additional pet accommodation costs in case of flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\"Medical Coverage\", \"Travel Cancellation\", \"Travel Delay\", \"Lost or Damaged Luggage\", \"Hiking Coverage\", \"Pet Accommodation\"],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"coverage for potential medical needs during travel\"],\n  \"activities_to_cover\": [\"hiking\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget, prioritizing peace of mind over cost.\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"high blood pressure\", \"hiking\", \"lost luggage\", \"trip cancellation\", \"travel delays\", \"pet accommodation\"]\n}",
             "pydantic": null,
             "json_dict": {
                 "requirement_id": "req001",
-                "requirement_summary": "Travel insurance coverage for a trip to Japan including medical, luggage, hiking, trip cancellation, travel delays, and additional pet accommodation.",
-                "detailed_description": "Customer requires travel insurance for a 3-week trip to Japan from Singapore for two adults. Key areas of coverage include medical needs, particularly considering the husband's pre-existing condition of high blood pressure; coverage for lost or damaged luggage; hiking activities; trip cancellation protection due to potential illness or emergencies; coverage for travel delays; and additional costs for pet accommodation in case of significant trip delays.",
+                "requirement_summary": "Travel insurance for trip to Japan with specific coverage needs.",
+                "detailed_description": "Customer requires comprehensive travel insurance coverage for a 3-week trip to Japan from Singapore. They have highlighted a need for medical coverage due to a pre-existing condition (high blood pressure), coverage for hiking activities, protection against lost or damaged luggage, trip cancellation protection, coverage for significant travel delays, and additional pet accommodation costs in case of flight delays.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "3 weeks",
                 "insurance_coverage_type": [
                     "Medical Coverage",
+                    "Travel Cancellation",
+                    "Travel Delay",
                     "Lost or Damaged Luggage",
                     "Hiking Coverage",
-                    "Trip Cancellation",
-                    "Travel Delays",
-                    "Additional Pet Accommodation"
+                    "Pet Accommodation"
                 ],
                 "pre_existing_conditions": [
-                    "High Blood Pressure"
+                    "high blood pressure"
                 ],
                 "medical_needs": [
-                    "Coverage for potential medical needs due to pre-existing condition"
+                    "coverage for potential medical needs during travel"
                 ],
                 "activities_to_cover": [
-                    "Hiking"
+                    "hiking"
                 ],
                 "age_group": "41-55",
-                "additional_requests": "Flexible budget for the insurance premium, with emphasis on comprehensive coverage for peace of mind.",
+                "additional_requests": "Flexible budget, prioritizing peace of mind over cost.",
                 "keywords": [
                     "travel insurance",
                     "Japan",
-                    "medical coverage",
-                    "luggage",
+                    "high blood pressure",
                     "hiking",
+                    "lost luggage",
                     "trip cancellation",
                     "travel delays",
                     "pet accommodation"
@@ -88,10 +88,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 30337,
-        "prompt_tokens": 25316,
+        "total_tokens": 61348,
+        "prompt_tokens": 51701,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 5021,
-        "successful_requests": 17
+        "completion_tokens": 9647,
+        "successful_requests": 33
     }
 }

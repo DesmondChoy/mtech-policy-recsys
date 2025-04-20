@@ -1,10 +1,10 @@
 {
-    "raw": "{\n  \"requirement_id\": \"req_001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two adults with specific coverage needs.\",\n  \"detailed_description\": \"Coverage required for medical expenses, lost or damaged luggage, travel delays, and trip cancellation due to potential conflict with a family wedding. Special attention to coverage for hiking activities and a pre-existing condition (asthma). Estimated budget is $200-$300.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"Medical Coverage\", \"Lost, Damaged, or Delayed Luggage\", \"Travel Delay\", \"Trip Cancellation\"],\n  \"pre_existing_conditions\": [\"asthma\"],\n  \"medical_needs\": [\"usual medications for asthma\"],\n  \"activities_to_cover\": [\"hiking\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clarification needed on trip cancellation coverage for family wedding.\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"two adults\", \"medical coverage\", \"hiking\", \"luggage\", \"cancellation\"]\n}",
+    "raw": "{\n  \"requirement_id\": \"unique_requirement_id_001\",\n  \"requirement_summary\": \"Travel insurance for two adults traveling to Japan for two weeks from Singapore.\",\n  \"detailed_description\": \"Insurance coverage required for two adults, aged 26-40, traveling from Singapore to Japan for two weeks. Coverage includes medical expenses, lost or damaged luggage, travel delay, and trip cancellation, especially concerning possible cancellation due to a wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Travel Delay\",\n    \"Trip Cancellation\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Usual medications for asthma\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clarification needed on trip cancellation due to a family wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"hiking\",\n    \"medical coverage\",\n    \"luggage\",\n    \"travel delay\",\n    \"trip cancellation\",\n    \"asthma\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "req_001",
-        "requirement_summary": "Travel insurance for a trip to Japan for two adults with specific coverage needs.",
-        "detailed_description": "Coverage required for medical expenses, lost or damaged luggage, travel delays, and trip cancellation due to potential conflict with a family wedding. Special attention to coverage for hiking activities and a pre-existing condition (asthma). Estimated budget is $200-$300.",
+        "requirement_id": "unique_requirement_id_001",
+        "requirement_summary": "Travel insurance for two adults traveling to Japan for two weeks from Singapore.",
+        "detailed_description": "Insurance coverage required for two adults, aged 26-40, traveling from Singapore to Japan for two weeks. Coverage includes medical expenses, lost or damaged luggage, travel delay, and trip cancellation, especially concerning possible cancellation due to a wedding.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "2 weeks",
@@ -15,24 +15,25 @@
             "Trip Cancellation"
         ],
         "pre_existing_conditions": [
-            "asthma"
+            "Asthma"
         ],
         "medical_needs": [
-            "usual medications for asthma"
+            "Usual medications for asthma"
         ],
         "activities_to_cover": [
-            "hiking"
+            "Hiking"
         ],
         "age_group": "26-40",
-        "additional_requests": "Clarification needed on trip cancellation coverage for family wedding.",
+        "additional_requests": "Clarification needed on trip cancellation due to a family wedding.",
         "keywords": [
             "travel insurance",
             "Japan",
-            "two adults",
-            "medical coverage",
             "hiking",
+            "medical coverage",
             "luggage",
-            "cancellation"
+            "travel delay",
+            "trip cancellation",
+            "asthma"
         ]
     },
     "tasks_output": [
@@ -41,12 +42,12 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"req_001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two adults with specific coverage needs.\",\n  \"detailed_description\": \"Coverage required for medical expenses, lost or damaged luggage, travel delays, and trip cancellation due to potential conflict with a family wedding. Special attention to coverage for hiking activities and a pre-existing condition (asthma). Estimated budget is $200-$300.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"Medical Coverage\", \"Lost, Damaged, or Delayed Luggage\", \"Travel Delay\", \"Trip Cancellation\"],\n  \"pre_existing_conditions\": [\"asthma\"],\n  \"medical_needs\": [\"usual medications for asthma\"],\n  \"activities_to_cover\": [\"hiking\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clarification needed on trip cancellation coverage for family wedding.\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"two adults\", \"medical coverage\", \"hiking\", \"luggage\", \"cancellation\"]\n}",
+            "raw": "{\n  \"requirement_id\": \"unique_requirement_id_001\",\n  \"requirement_summary\": \"Travel insurance for two adults traveling to Japan for two weeks from Singapore.\",\n  \"detailed_description\": \"Insurance coverage required for two adults, aged 26-40, traveling from Singapore to Japan for two weeks. Coverage includes medical expenses, lost or damaged luggage, travel delay, and trip cancellation, especially concerning possible cancellation due to a wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Travel Delay\",\n    \"Trip Cancellation\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Usual medications for asthma\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clarification needed on trip cancellation due to a family wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"hiking\",\n    \"medical coverage\",\n    \"luggage\",\n    \"travel delay\",\n    \"trip cancellation\",\n    \"asthma\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "req_001",
-                "requirement_summary": "Travel insurance for a trip to Japan for two adults with specific coverage needs.",
-                "detailed_description": "Coverage required for medical expenses, lost or damaged luggage, travel delays, and trip cancellation due to potential conflict with a family wedding. Special attention to coverage for hiking activities and a pre-existing condition (asthma). Estimated budget is $200-$300.",
+                "requirement_id": "unique_requirement_id_001",
+                "requirement_summary": "Travel insurance for two adults traveling to Japan for two weeks from Singapore.",
+                "detailed_description": "Insurance coverage required for two adults, aged 26-40, traveling from Singapore to Japan for two weeks. Coverage includes medical expenses, lost or damaged luggage, travel delay, and trip cancellation, especially concerning possible cancellation due to a wedding.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "2 weeks",
@@ -57,24 +58,25 @@
                     "Trip Cancellation"
                 ],
                 "pre_existing_conditions": [
-                    "asthma"
+                    "Asthma"
                 ],
                 "medical_needs": [
-                    "usual medications for asthma"
+                    "Usual medications for asthma"
                 ],
                 "activities_to_cover": [
-                    "hiking"
+                    "Hiking"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Clarification needed on trip cancellation coverage for family wedding.",
+                "additional_requests": "Clarification needed on trip cancellation due to a family wedding.",
                 "keywords": [
                     "travel insurance",
                     "Japan",
-                    "two adults",
-                    "medical coverage",
                     "hiking",
+                    "medical coverage",
                     "luggage",
-                    "cancellation"
+                    "travel delay",
+                    "trip cancellation",
+                    "asthma"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -82,10 +84,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 59408,
-        "prompt_tokens": 49640,
+        "total_tokens": 132681,
+        "prompt_tokens": 112040,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 9768,
-        "successful_requests": 33
+        "completion_tokens": 20641,
+        "successful_requests": 71
     }
 }

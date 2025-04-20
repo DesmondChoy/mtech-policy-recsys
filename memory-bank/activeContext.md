@@ -254,6 +254,9 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Modified the final evaluation step (`aggregate_and_filter_evaluations`) to remove filtering based on current run UUIDs.
     - The script now saves the complete evaluation results for *all* recommendation reports found for a given scenario at the time of execution.
     - Updated the output filename format for this final evaluation step to `results_{scenario}_all_transcripts_{run_timestamp}.json`.
+35. **Orchestration Script Enhancement (`--only_aggregate`)**:
+    - Added an `--only_aggregate` command-line flag to `scripts/orchestrate_scenario_evaluation.py`.
+    - When this flag is used, the script skips steps 1-3 (transcript generation, pipeline processing, report generation) and proceeds directly to step 4 (final evaluation and aggregation) using the `TARGET_SCENARIOS` list.
 
 ## Next Steps (Revised Focus)
 

@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly raised concerns about needing to cancel the trip, particularly due to a specific family emergency (sister's wedding date changing), which directly addresses the scenario-specific requirement. The agent acknowledged and noted this specific scenario.",
+      "customer_quote": "[18] Oh goodness, yes! That's a huge worry. What if... what if there's a family emergency? For example, and this is quite specific, but my sister is getting married a few months after our planned trip. What if, heaven forbid, something happens and the wedding date has to be moved forward urgently right when we're supposed to be away? We'd absolutely have to cancel the trip. Would we get our money back then?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent first prompted the general topic of cancellation ([17]) and then specifically acknowledged the customer's unique concern about the wedding, confirming it as a requirement to be investigated.",
+      "agent_quote": "[19] Okay, so you have a specific concern about needing to cancel your trip due to a significant family event, like your sister's wedding date changing unexpectedly and clashing with your travel dates. Let me note that specific cancellation reason as a requirement you need clarification on."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer expressed significant worry about medical emergencies, mentioning needing a doctor, potential hospital stays, and high costs. They also proactively mentioned a pre-existing condition (asthma).",
+      "customer_quote": "[12] And... what happens if one of us gets sick over there? Really sick, I mean. Like needing a doctor or ending up in hospital? The medical costs could be huge, couldn't they?... One of us does have asthma, does that complicate things?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the need for emergency medical, hospital, and doctor visit coverage and specifically acknowledged the pre-existing condition (asthma) for consideration.",
+      "agent_quote": "[13] I understand your concern about medical situations. So, you require coverage for potential emergency medical treatment, hospital stays, and doctor visits during the trip. And you mentioned one traveler has asthma? \n[15] Okay, noted: medical coverage requirement, including consideration for asthma as a pre-existing condition."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly stated their worry about luggage, providing specific scenarios like the airline losing bags completely or bags arriving damaged with broken contents.",
+      "customer_quote": "[22] And... luggage! I always worry about luggage. What if the airline loses our bags completely? Or what if they arrive but the suitcase is smashed and things inside are broken?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent accurately summarized the customer's requirement for coverage against lost, damaged, or delayed luggage.",
+      "agent_quote": "[23] Understood. So coverage for lost, damaged, or significantly delayed luggage is another requirement for you."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer asked about coverage for significant flight delays, mentioning getting stuck at the airport, missing connections, and needing expenses like food and hotel covered.",
+      "customer_quote": "[20] And talking about flights\u2026 what if the flight is massively delayed? Say we get stuck at the airport for hours and hours, or miss a connection? We'd need food, maybe even a hotel. Does the insurance help with that?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly identified and confirmed the customer's need for coverage related to significant travel delays and associated expenses.",
+      "agent_quote": "[21] Alright, so you're also concerned about significant travel delays and require coverage for potential extra expenses like accommodation and meals if that happens. Noted."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer mentioned specific activities (Hiking, Hot Air Ballooning) and asked if potential injuries sustained during these activities would be covered.",
+      "customer_quote": "[10] Well, yes, we were hoping\u2026 We plan to do some Hiking during our trip. And maybe, just maybe, Hot Air Ballooning, if we're brave enough. But what if one of us gets hurt doing that? Is that covered?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's planned activities and confirmed the requirement for coverage related to participation in hiking and hot air ballooning.",
+      "agent_quote": "[11] Okay, so you're looking for cover related to participating in activities like hiking and potentially hot air ballooning. Let me make a note of that requirement."
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered information on all five standard coverage types. The customer proactively mentioned their concerns and specific scenarios for each area. The agent performed well by actively listening, confirming understanding, acknowledging specific details (like the pre-existing condition, the specific cancellation reason related to the wedding, and planned activities), and summarizing the requirements accurately. The agent effectively captured all necessary information, including the crucial scenario-specific requirement."
+  },
+  "transcript_name": "transcript_uncovered_cancellation_reason_1ebdf2b1-fbb8-4ff7-9496-32d959872aed",
+  "scenario": "uncovered_cancellation_reason"
+}

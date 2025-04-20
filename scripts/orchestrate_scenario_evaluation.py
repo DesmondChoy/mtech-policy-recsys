@@ -616,37 +616,51 @@ def main():
         action="store_true",
         help="Skip the transcript evaluation step.",
     )
+    parser.add_argument(
+        "--only_aggregate",
+        action="store_true",
+        help="Skip transcript generation, pipeline processing, and report generation, and only run the final aggregation step.",
+    )
     args = parser.parse_args()
 
     logging.info("--- Starting Scenario Evaluation Orchestration ---")
     logging.info(f"Target Scenarios: {', '.join(TARGET_SCENARIOS)}")
     logging.info(f"Transcripts per scenario: {args.num_transcripts}")
     logging.info(f"Skip transcript evaluation: {args.skip_transcript_eval}")
+    logging.info(f"Only aggregate: {args.only_aggregate}")  # Log the new flag
 
-    # Step 1: Generate Transcripts (Async)
-    scenario_uuids, all_uuids = generate_transcripts_async(
-        TARGET_SCENARIOS, args.num_transcripts
-    )
-    if not all_uuids:
-        logging.error("Transcript generation failed or produced no UUIDs. Exiting.")
-        sys.exit(1)
-    logging.info(
-        f"Generated {len(all_uuids)} total transcripts across {len(TARGET_SCENARIOS)} scenarios."
-    )
+    if not args.only_aggregate:
+        # Step 1: Generate Transcripts (Async)
+        scenario_uuids, all_uuids = generate_transcripts_async(
+            TARGET_SCENARIOS, args.num_transcripts
+        )
+        if not all_uuids:
+            logging.error("Transcript generation failed or produced no UUIDs. Exiting.")
+            sys.exit(1)
+        logging.info(
+            f"Generated {len(all_uuids)} total transcripts across {len(TARGET_SCENARIOS)} scenarios."
+        )
 
-    # Step 2: Run Pipeline (Eval, Parse, Extract)
-    # Pass scenario_uuids dict instead of flat list all_uuids
-    passed_uuids = run_pipeline(scenario_uuids, args.skip_transcript_eval)
-    if passed_uuids is None:  # Handle potential critical failure in pipeline
-        logging.error("Pipeline execution failed. Exiting.")
-        sys.exit(1)
+        # Step 2: Run Pipeline (Eval, Parse, Extract)
+        # Pass scenario_uuids dict instead of flat list all_uuids
+        passed_uuids = run_pipeline(scenario_uuids, args.skip_transcript_eval)
+        if passed_uuids is None:  # Handle potential critical failure in pipeline
+            logging.error("Pipeline execution failed. Exiting.")
+            sys.exit(1)
 
-    # Step 3: Generate Reports (Async)
-    # Pass the dictionary mapping scenarios to lists of UUIDs
-    generate_reports_async(scenario_uuids, passed_uuids)
+        # Step 3: Generate Reports (Async)
+        # Pass the dictionary mapping scenarios to lists of UUIDs
+        generate_reports_async(scenario_uuids, passed_uuids)
 
-    # Step 4: Run Final Evaluation and Aggregate Results
-    aggregate_and_filter_evaluations(scenario_uuids)
+        # Step 4: Run Final Evaluation and Aggregate Results (using generated UUIDs)
+        aggregate_and_filter_evaluations(scenario_uuids)
+
+    else:
+        logging.info("Skipping steps 1-3 due to --only_aggregate flag.")
+        # Step 4: Run Final Evaluation and Aggregate Results (using target scenarios directly)
+        # The function only needs the scenario names (keys)
+        scenario_map_for_aggregation = {scenario: [] for scenario in TARGET_SCENARIOS}
+        aggregate_and_filter_evaluations(scenario_map_for_aggregation)
 
     logging.info("--- Scenario Evaluation Orchestration Finished ---")
 

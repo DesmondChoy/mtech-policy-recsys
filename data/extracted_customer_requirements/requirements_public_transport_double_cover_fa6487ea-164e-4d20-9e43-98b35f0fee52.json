@@ -1,0 +1,97 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two adults with coverage needs including cancellation, medical, luggage, and activities.\",\n  \"detailed_description\": \"The customer requires travel insurance for a trip to Japan lasting 2 weeks for two adults. Key requirements include cancellation protection for unforeseen events, comprehensive medical coverage (noting one traveller has asthma), lost or damaged luggage protection, coverage for travel delays, specific coverage for scuba diving, and a double payout feature for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Emergency Medical Coverage\",\n    \"Luggage Protection\",\n    \"Travel Delay Coverage\",\n    \"Adventure Sports Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Emergency Medical Treatment\",\n    \"Doctor Visits\",\n    \"Hospital Stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death on public transport.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"cancellation\",\n    \"emergency medical\",\n    \"luggage\",\n    \"travel delay\",\n    \"scuba diving\",\n    \"public transport\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ-001",
+        "requirement_summary": "Travel insurance for a trip to Japan for two adults with coverage needs including cancellation, medical, luggage, and activities.",
+        "detailed_description": "The customer requires travel insurance for a trip to Japan lasting 2 weeks for two adults. Key requirements include cancellation protection for unforeseen events, comprehensive medical coverage (noting one traveller has asthma), lost or damaged luggage protection, coverage for travel delays, specific coverage for scuba diving, and a double payout feature for accidental death on public transport.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "Trip Cancellation",
+            "Emergency Medical Coverage",
+            "Luggage Protection",
+            "Travel Delay Coverage",
+            "Adventure Sports Coverage"
+        ],
+        "pre_existing_conditions": [
+            "Asthma"
+        ],
+        "medical_needs": [
+            "Emergency Medical Treatment",
+            "Doctor Visits",
+            "Hospital Stays"
+        ],
+        "activities_to_cover": [
+            "Scuba Diving"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Double payout for accidental death on public transport.",
+        "keywords": [
+            "travel insurance",
+            "cancellation",
+            "emergency medical",
+            "luggage",
+            "travel delay",
+            "scuba diving",
+            "public transport"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Siti, how may I help you today?\nCustomer: Oh, h-hello Siti. Yes, I need... I need to ask about travel insurance. We're planning a trip and I'm just... I'm quite worried about things going wrong.\nCustomer Service Agent: I understand travelling can sometimes feel uncertain. I can certainly help note down your requirements for travel insurance today. To start, could you let me know where you'll be travelling to?\nCustomer: Ah, yes. We're planning a trip to Japan.\nCustomer Service Agent: Okay, Japan. And how long will you be away for?\nCustomer: It will be a 2 weeks trip. Just the thought of being away that long... what if something happens right at the start?\nCustomer Service Agent: Alright, a 2-week trip to Japan noted. And how many people will be travelling?\nCustomer: There will be 2 of us traveling. Myself and my husband.\nCustomer Service Agent: Two travellers. And are you both travelling from Singapore?\nCustomer: Yes, yes. We're based in Singapore.\nCustomer Service Agent: Noted. And may I know which age group the travellers fall into?\nCustomer: We're mostly around 26-40 years old.\nCustomer Service Agent: Okay, 26-40 age group. You mentioned being worried about things going wrong. Could you tell me a bit more about what concerns you have regarding the trip itself?\nCustomer: Well... what if one of us gets sick just before we go? Or, you know, something happens to a family member and we have to cancel everything? We'd lose all the money for the flights and hotel... it's making me quite anxious. I really need to know we're covered if we absolutely cannot go.\nCustomer Service Agent: Okay, so you're concerned about needing to cancel the trip due to unforeseen events like illness or family emergencies. You'd require coverage for non-refundable trip costs in such cases. Is that right?\nCustomer: Yes, exactly! That's very important. And... what about *during* the trip? Japan is expensive, right? What if one of us gets injured or sick there? The hospital bills... I can't even imagine. My husband has asthma, you see. Does that complicate things? Do we need to declare asthma?\nCustomer Service Agent: I understand your concern about medical costs overseas. So, coverage for emergency medical treatment, doctor visits, and hospital stays during the trip is a key requirement for you. Regarding the asthma, noting pre-existing conditions is important for understanding policy terms later. So, noted, one traveller has asthma. Are there any specific medical devices like a wheelchair or oxygen tank you need to bring?\nCustomer: Oh, no, no. No special medical equipment needed. Just the regular inhaler for the asthma. But the medical cover is crucial. And what about our things? I'm so worried about the airline losing our luggage, or something getting broken in transit. What happens then? We'd have nothing to wear!\nCustomer Service Agent: Alright, so you also require coverage for your belongings – specifically regarding potential loss, damage, or significant delay of your checked-in luggage by the airline.\nCustomer: Yes, yes. Loss, damage, delay... all of it. And delays... oh goodness. What if the flight is delayed for hours and hours? Or we miss a connecting flight? Where would we stay? Who pays for that? It sounds like a nightmare.\nCustomer Service Agent: Okay, so cover for significant travel delays, including potential expenses for accommodation or meals incurred due to the delay, is another requirement you have.\nCustomer: Definitely. These things happen, don't they? It's just... stressful to think about.\nCustomer Service Agent: I understand. To help me get a complete picture, are there any specific activities you plan to do during your trip to Japan?\nCustomer: Activities? Um, well, we were hoping... We plan to do Scuba Diving during our trip. Just a beginner's course, maybe. B-but that sounds risky too, doesn't it? What if there's an accident during the dive? Are we covered for that?\nCustomer Service Agent: Okay, so you'll be participating in Scuba Diving. This means you'll need to ensure your policy includes coverage for medical expenses or assistance specifically related to injuries sustained during listed sports or adventure activities like scuba diving.\nCustomer: Right, yes, that's important. We need coverage for Scuba Diving specifically. And... one more thing I read somewhere... I'm really worried about serious accidents. I want to know if the policy provides extra coverage if an accident happens while I'm on a bus or train, you know, public transport? Like, a double payout for accidental death? Is that something ISS offers as a requirement?\nCustomer Service Agent: Understood. So, you are specifically looking for a policy feature that provides an additional or doubled payout for accidental death if it occurs while travelling as a fare-paying passenger on public transport like a bus or train. I have noted that specific requirement.\nCustomer: Yes, please. It would make me feel a little less worried.\nCustomer Service Agent: Okay. And lastly, do you have a budget in mind for the travel insurance premium?\nCustomer: Erm, we're hoping to spend maybe around $200-$300 for the both of us, if possible? Is that realistic for all this coverage?\nCustomer Service Agent: Noted, a budget of around $200-$300. Thank you, I believe I have a clear understanding of your needs now. Just to summarise: You're looking for travel insurance for 2 adults, aged 26-40, travelling from Singapore to Japan for 2 weeks. One traveller has asthma, but no special medical equipment is needed. Your key requirements for the coverage include: Trip Cancellation protection, comprehensive Medical Coverage overseas (noting the pre-existing condition), Lost, Damaged or Delayed Luggage cover, Travel Delay benefits, specific coverage for participating in Scuba Diving, and you have a specific interest in confirming if a double payout for accidental death on public transport is available. Your budget indication is around $200-$300. Does that sound correct?\nCustomer: [Sighs] Yes... yes, that covers everything I'm worried about. Hearing it listed out helps a bit. That's all correct. Scuba diving, the asthma, the cancellation, the luggage... and please, that public transport thing is quite important to me.\nCustomer Service Agent: Understood. Thank you for providing all the details clearly. I have noted down all these requirements. This information will be passed on to our sales team who can assist you with suitable policy options that meet these needs. They will contact you within one working day. Is there anything else I can document for you today?\nCustomer: No, no that's... that's everything for now. Thank you, Siti. I appreciate you listening.\nCustomer Service Agent: You're most welcome. Thank you for calling ISS Insurance Ltd. Have a good day.\nCustomer: You too. Bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two adults with coverage needs including cancellation, medical, luggage, and activities.\",\n  \"detailed_description\": \"The customer requires travel insurance for a trip to Japan lasting 2 weeks for two adults. Key requirements include cancellation protection for unforeseen events, comprehensive medical coverage (noting one traveller has asthma), lost or damaged luggage protection, coverage for travel delays, specific coverage for scuba diving, and a double payout feature for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Emergency Medical Coverage\",\n    \"Luggage Protection\",\n    \"Travel Delay Coverage\",\n    \"Adventure Sports Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Emergency Medical Treatment\",\n    \"Doctor Visits\",\n    \"Hospital Stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death on public transport.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"cancellation\",\n    \"emergency medical\",\n    \"luggage\",\n    \"travel delay\",\n    \"scuba diving\",\n    \"public transport\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ-001",
+                "requirement_summary": "Travel insurance for a trip to Japan for two adults with coverage needs including cancellation, medical, luggage, and activities.",
+                "detailed_description": "The customer requires travel insurance for a trip to Japan lasting 2 weeks for two adults. Key requirements include cancellation protection for unforeseen events, comprehensive medical coverage (noting one traveller has asthma), lost or damaged luggage protection, coverage for travel delays, specific coverage for scuba diving, and a double payout feature for accidental death on public transport.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "Trip Cancellation",
+                    "Emergency Medical Coverage",
+                    "Luggage Protection",
+                    "Travel Delay Coverage",
+                    "Adventure Sports Coverage"
+                ],
+                "pre_existing_conditions": [
+                    "Asthma"
+                ],
+                "medical_needs": [
+                    "Emergency Medical Treatment",
+                    "Doctor Visits",
+                    "Hospital Stays"
+                ],
+                "activities_to_cover": [
+                    "Scuba Diving"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Double payout for accidental death on public transport.",
+                "keywords": [
+                    "travel insurance",
+                    "cancellation",
+                    "emergency medical",
+                    "luggage",
+                    "travel delay",
+                    "scuba diving",
+                    "public transport"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 115968,
+        "prompt_tokens": 97829,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 18139,
+        "successful_requests": 62
+    }
+}

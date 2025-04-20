@@ -1,0 +1,95 @@
+{
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Thailand from Singapore.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance for a two-week trip to Phuket, Thailand, including coverage for trip cancellation, comprehensive medical expenses, scuba diving activities, lost or damaged luggage, travel delays, and additional pet accommodation costs in case of travel delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Comprehensive Medical Coverage\",\n    \"Travel Delay\",\n    \"Lost, Damaged or Delayed Luggage\",\n    \"Scuba Diving Coverage\",\n    \"Pet Accommodation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Doctor visits\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget for the policy premium.\",\n  \"keywords\": [\n    \"Thailand\",\n    \"Travel Insurance\",\n    \"Pet Accommodation\",\n    \"Scuba Diving\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "1",
+        "requirement_summary": "Travel insurance requirements for a trip to Thailand from Singapore.",
+        "detailed_description": "Customer requires comprehensive travel insurance for a two-week trip to Phuket, Thailand, including coverage for trip cancellation, comprehensive medical expenses, scuba diving activities, lost or damaged luggage, travel delays, and additional pet accommodation costs in case of travel delays.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Thailand",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "Trip Cancellation",
+            "Comprehensive Medical Coverage",
+            "Travel Delay",
+            "Lost, Damaged or Delayed Luggage",
+            "Scuba Diving Coverage",
+            "Pet Accommodation Coverage"
+        ],
+        "pre_existing_conditions": [
+            "High blood pressure"
+        ],
+        "medical_needs": [
+            "Doctor visits",
+            "Hospital stays"
+        ],
+        "activities_to_cover": [
+            "Scuba Diving"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Flexible budget for the policy premium.",
+        "keywords": [
+            "Thailand",
+            "Travel Insurance",
+            "Pet Accommodation",
+            "Scuba Diving",
+            "Medical Coverage",
+            "Trip Cancellation"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Sarah. How may I help you today?\nCustomer: Morning, Sarah! So lovely to chat. Hope your day is going well? Mine’s a bit hectic, planning this holiday, you see. It's always a bit mad before you go, isn't it? Anyway, I need to sort out some travel insurance. First time using you folks, my neighbour Mrs. Tan recommended you, said you were very thorough!\nCustomer Service Agent: Good morning! Yes, planning can definitely be busy, but exciting too! We're happy to help. Mrs. Tan is very kind. To start, could you let me know where you'll be travelling to?\nCustomer: Oh, absolutely! We're planning a trip to Thailand! Phuket, specifically. My husband, David, and I are going. Just the two of us this time. We haven't been back since our honeymoon, gosh, must be nearly 20 years ago now! Time flies, eh? We're mostly around the 41-55 age group now, can you believe it? Still feel young though!\nCustomer Service Agent: Phuket sounds wonderful, especially for an anniversary trip! And it's just the two of you travelling from Singapore?\nCustomer: That's right, just us, flying out from Changi. We're based in Singapore, born and bred! Love it here, but always nice to get away for a bit, see something different.\nCustomer Service Agent: Definitely. And how long will you be away for this trip?\nCustomer: We'll be away for 2 weeks. A good amount of time to recharge, hopefully! Enough time to unwind but not too long away from home. I have a cat, you see, fluffy Persian named Princess Fluffernutter the Third, haha! She'll be in a cattery, bless her. Actually, that reminds me – what happens if our flight back gets majorly delayed? Say, for a day or two? Does insurance cover the extra cost for her cattery stay? That could get expensive if we're stuck!\nCustomer Service Agent: Okay, thank you for highlighting that. So that's a specific point about potential coverage for additional pet accommodation costs due to travel delays on your return. I've noted that down.\nCustomer: Yes, exactly! Princess is family, you know? Gotta make sure she's sorted. Anyway, yes, two weeks. We're hoping to just relax mostly, but David wants to try something adventurous.\nCustomer Service Agent: Alright, two weeks in Thailand. Regarding activities, do you have anything specific planned that you might need coverage for?\nCustomer: Yes! We want to try Scuba Diving! Neither of us has done it properly before, just snorkelling. Thought it would be fun, make some new memories! So yes, we definitely need coverage for Scuba Diving, just in case anything happens, you know, scrapes or bumps, or worse! Heaven forbid. Need to make sure any medical costs related to that are covered.\nCustomer Service Agent: Understood, coverage needed for participating in Scuba Diving. And regarding medical needs generally during the trip, are there any points you'd like covered?\nCustomer: Oh, definitely medical coverage. That’s super important. You hear stories, right? Need to know we're covered for doctor visits or if, touch wood, one of us needs a hospital stay. Also, my husband, David, he has high blood pressure. It's well-managed with medication, but do we need to declare that? We just want peace of mind that it won't cause issues if he needs treatment for something else, or even related to that.\nCustomer Service Agent: Okay, so comprehensive medical coverage including emergency treatment and hospital stays is a requirement. And you have a question about declaring pre-existing conditions like high blood pressure. I've noted that as well. Are there any specific medical items like equipment you need to bring?\nCustomer: No, no special medical equipment needed, thankfully! Just his usual pills. Which brings me to luggage! Honestly, the worry about bags... My sister flew to Europe last year, and her bag arrived three days late, totally ruined! Nightmare. So, yes, cover for lost or damaged luggage is a must. And what if it's just delayed? Like buying essentials while waiting? That should be included, right?\nCustomer Service Agent: Okay, noted. You require coverage for lost, damaged, or delayed baggage, including reimbursement for essential purchases during a delay.\nCustomer: Perfect. And delays in general, not just baggage. Last time we flew budget, we were stuck waiting for hours for a connecting flight. If our main flight gets significantly delayed, meaning we miss a connection or need an extra night's hotel and food, that needs to be covered too. It all adds up!\nCustomer Service Agent: Right, so cover for additional accommodation and meal expenses due to significant travel delays is another requirement.\nCustomer: Yes. And one last thing, I suppose. It's a bit morbid, but what if something happens *before* we go? Like, if one of us gets seriously ill, or there's a family emergency back here, and we have to cancel the whole trip last minute? All those flights and hotel bookings... we'd lose so much money. So, trip cancellation cover is important too.\nCustomer Service Agent: Understood, trip cancellation coverage for unforeseen events like illness or family emergencies before departure. You mentioned budget earlier - do you have a particular range in mind for the policy premium?\nCustomer: Ah, budget! Well, we're pretty flexible, really. Getting the *right* cover is more important than saving a few dollars, especially with the scuba diving and David's condition, and Princess Fluffernutter of course! So, let's say flexible for now. Just want to see what the options are for everything we've talked about.\nCustomer Service Agent: Okay, flexible budget noted. Thank you, that's very helpful. Let me just quickly summarise the requirements you've mentioned to ensure I've captured everything correctly for finding the right options. You're travelling from Singapore to Thailand for 2 weeks, two travellers in the 41-55 age group. You require coverage for: Trip Cancellation, comprehensive Medical Coverage (including noting a query about declaring high blood pressure), Travel Delays causing extra expenses, Lost, Damaged or Delayed Luggage, specific coverage for Scuba Diving activities, and also specific cover for additional pet accommodation costs if your return travel is significantly delayed. Does that sound complete?\nCustomer: Yes, Sarah, that sounds exactly right! You've got it all down. See, Mrs. Tan was right, very thorough! It's such a relief talking it through, takes a weight off my mind. Planning is the stressful part, the holiday is the reward, right?\nCustomer Service Agent: Absolutely! I'm glad I could capture all your requirements. What I'll do now is pass these details to our policy specialists who can look into the available plans that meet these needs. They will then prepare some options for you. How would you prefer we get back to you with this information – email or another phone call?\nCustomer: Oh, email would be perfect, please! Gives me time to read it over with David. Thank you so much for your help today, Sarah, you've been wonderful! Made it all seem much less daunting.\nCustomer Service Agent: You're very welcome! It was my pleasure assisting you today. Our specialists will compile the information and email it to you shortly. Thank you again for calling ISS Insurance Ltd. Have a great day and exciting holiday planning!\nCustomer: You too, dear! Thanks again, bye now!\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Thailand from Singapore.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance for a two-week trip to Phuket, Thailand, including coverage for trip cancellation, comprehensive medical expenses, scuba diving activities, lost or damaged luggage, travel delays, and additional pet accommodation costs in case of travel delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Comprehensive Medical Coverage\",\n    \"Travel Delay\",\n    \"Lost, Damaged or Delayed Luggage\",\n    \"Scuba Diving Coverage\",\n    \"Pet Accommodation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Doctor visits\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget for the policy premium.\",\n  \"keywords\": [\n    \"Thailand\",\n    \"Travel Insurance\",\n    \"Pet Accommodation\",\n    \"Scuba Diving\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "1",
+                "requirement_summary": "Travel insurance requirements for a trip to Thailand from Singapore.",
+                "detailed_description": "Customer requires comprehensive travel insurance for a two-week trip to Phuket, Thailand, including coverage for trip cancellation, comprehensive medical expenses, scuba diving activities, lost or damaged luggage, travel delays, and additional pet accommodation costs in case of travel delays.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Thailand",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "Trip Cancellation",
+                    "Comprehensive Medical Coverage",
+                    "Travel Delay",
+                    "Lost, Damaged or Delayed Luggage",
+                    "Scuba Diving Coverage",
+                    "Pet Accommodation Coverage"
+                ],
+                "pre_existing_conditions": [
+                    "High blood pressure"
+                ],
+                "medical_needs": [
+                    "Doctor visits",
+                    "Hospital stays"
+                ],
+                "activities_to_cover": [
+                    "Scuba Diving"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Flexible budget for the policy premium.",
+                "keywords": [
+                    "Thailand",
+                    "Travel Insurance",
+                    "Pet Accommodation",
+                    "Scuba Diving",
+                    "Medical Coverage",
+                    "Trip Cancellation"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 59360,
+        "prompt_tokens": 49991,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 9369,
+        "successful_requests": 32
+    }
+}

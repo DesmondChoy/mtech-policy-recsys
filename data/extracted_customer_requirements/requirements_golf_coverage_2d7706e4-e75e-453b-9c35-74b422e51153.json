@@ -1,41 +1,35 @@
 {
-    "raw": "{\n  \"requirement_id\": \"travel-insurance-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a two-week trip to Australia focusing on golf activities.\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for a two-week trip to Australia, including medical coverage, trip cancellation, and specific coverage for golf-related activities.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Emergency Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Lost or Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Unused Green Fee Reimbursement\",\n    \"Rented Golf Buggy Damage Coverage\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Emergency medical treatment\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Clear documentation of golf-related coverage.\",\n  \"keywords\": [\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"golf equipment\",\n    \"unused green fees\",\n    \"golf buggy\",\n    \"hole-in-one\",\n    \"travel delays\",\n    \"lost luggage\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"req12345\",\n  \"requirement_summary\": \"Travel insurance coverage for a golf trip to Australia.\",\n  \"detailed_description\": \"Coverage for emergency medical treatment, trip cancellation, travel delays, lost or damaged luggage, and specific golf-related coverage including golf equipment, green fee reimbursement, rental buggy damage, and hole-in-one benefit.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Emergency Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delay Coverage\",\n    \"Lost or Damaged Luggage\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": [\n    \"Emergency medical treatment\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55 years\",\n  \"additional_requests\": \"Ensure clarity on golf coverage and benefits.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Australia\",\n    \"golf equipment\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"delayed luggage\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "travel-insurance-001",
-        "requirement_summary": "Travel insurance requirements for a two-week trip to Australia focusing on golf activities.",
-        "detailed_description": "The customer requires comprehensive travel insurance for a two-week trip to Australia, including medical coverage, trip cancellation, and specific coverage for golf-related activities.",
+        "requirement_id": "req12345",
+        "requirement_summary": "Travel insurance coverage for a golf trip to Australia.",
+        "detailed_description": "Coverage for emergency medical treatment, trip cancellation, travel delays, lost or damaged luggage, and specific golf-related coverage including golf equipment, green fee reimbursement, rental buggy damage, and hole-in-one benefit.",
         "travel_origin": "Singapore",
         "travel_destination": "Australia",
         "travel_duration": "2 weeks",
         "insurance_coverage_type": [
             "Emergency Medical Coverage",
             "Trip Cancellation",
-            "Travel Delay",
-            "Lost or Damaged Luggage",
-            "Golf Equipment Coverage",
-            "Unused Green Fee Reimbursement",
-            "Rented Golf Buggy Damage Coverage",
-            "Hole-in-One Benefit"
+            "Travel Delay Coverage",
+            "Lost or Damaged Luggage"
         ],
-        "pre_existing_conditions": [],
+        "pre_existing_conditions": null,
         "medical_needs": [
             "Emergency medical treatment"
         ],
         "activities_to_cover": [
             "Golf"
         ],
-        "age_group": "41-55",
-        "additional_requests": "Clear documentation of golf-related coverage.",
+        "age_group": "41-55 years",
+        "additional_requests": "Ensure clarity on golf coverage and benefits.",
         "keywords": [
-            "trip cancellation",
-            "medical coverage",
+            "travel insurance",
+            "Australia",
             "golf equipment",
-            "unused green fees",
-            "golf buggy",
-            "hole-in-one",
-            "travel delays",
-            "lost luggage"
+            "medical coverage",
+            "trip cancellation",
+            "delayed luggage"
         ]
     },
     "tasks_output": [
@@ -44,43 +38,37 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"travel-insurance-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a two-week trip to Australia focusing on golf activities.\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for a two-week trip to Australia, including medical coverage, trip cancellation, and specific coverage for golf-related activities.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Emergency Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Lost or Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Unused Green Fee Reimbursement\",\n    \"Rented Golf Buggy Damage Coverage\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Emergency medical treatment\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Clear documentation of golf-related coverage.\",\n  \"keywords\": [\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"golf equipment\",\n    \"unused green fees\",\n    \"golf buggy\",\n    \"hole-in-one\",\n    \"travel delays\",\n    \"lost luggage\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"req12345\",\n  \"requirement_summary\": \"Travel insurance coverage for a golf trip to Australia.\",\n  \"detailed_description\": \"Coverage for emergency medical treatment, trip cancellation, travel delays, lost or damaged luggage, and specific golf-related coverage including golf equipment, green fee reimbursement, rental buggy damage, and hole-in-one benefit.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Emergency Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delay Coverage\",\n    \"Lost or Damaged Luggage\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": [\n    \"Emergency medical treatment\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55 years\",\n  \"additional_requests\": \"Ensure clarity on golf coverage and benefits.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Australia\",\n    \"golf equipment\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"delayed luggage\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "travel-insurance-001",
-                "requirement_summary": "Travel insurance requirements for a two-week trip to Australia focusing on golf activities.",
-                "detailed_description": "The customer requires comprehensive travel insurance for a two-week trip to Australia, including medical coverage, trip cancellation, and specific coverage for golf-related activities.",
+                "requirement_id": "req12345",
+                "requirement_summary": "Travel insurance coverage for a golf trip to Australia.",
+                "detailed_description": "Coverage for emergency medical treatment, trip cancellation, travel delays, lost or damaged luggage, and specific golf-related coverage including golf equipment, green fee reimbursement, rental buggy damage, and hole-in-one benefit.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Australia",
                 "travel_duration": "2 weeks",
                 "insurance_coverage_type": [
                     "Emergency Medical Coverage",
                     "Trip Cancellation",
-                    "Travel Delay",
-                    "Lost or Damaged Luggage",
-                    "Golf Equipment Coverage",
-                    "Unused Green Fee Reimbursement",
-                    "Rented Golf Buggy Damage Coverage",
-                    "Hole-in-One Benefit"
+                    "Travel Delay Coverage",
+                    "Lost or Damaged Luggage"
                 ],
-                "pre_existing_conditions": [],
+                "pre_existing_conditions": null,
                 "medical_needs": [
                     "Emergency medical treatment"
                 ],
                 "activities_to_cover": [
                     "Golf"
                 ],
-                "age_group": "41-55",
-                "additional_requests": "Clear documentation of golf-related coverage.",
+                "age_group": "41-55 years",
+                "additional_requests": "Ensure clarity on golf coverage and benefits.",
                 "keywords": [
-                    "trip cancellation",
-                    "medical coverage",
+                    "travel insurance",
+                    "Australia",
                     "golf equipment",
-                    "unused green fees",
-                    "golf buggy",
-                    "hole-in-one",
-                    "travel delays",
-                    "lost luggage"
+                    "medical coverage",
+                    "trip cancellation",
+                    "delayed luggage"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -88,10 +76,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 11770,
-        "prompt_tokens": 10055,
+        "total_tokens": 14622,
+        "prompt_tokens": 12496,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 1715,
-        "successful_requests": 6
+        "completion_tokens": 2126,
+        "successful_requests": 8
     }
 }

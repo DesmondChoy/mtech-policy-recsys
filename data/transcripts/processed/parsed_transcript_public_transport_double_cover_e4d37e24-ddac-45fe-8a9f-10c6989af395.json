@@ -1,0 +1,166 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Sarah. How may I assist you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Good morning, Sarah. I'm calling to get a quote for travel insurance. I've reviewed some of your policy wordings online, specifically for the comprehensive plan, but I have some specific requirements I need to ensure are noted before getting a formal quotation."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Certainly. I can help gather those requirements for you. Could I start with your name, please?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, it's Lim Wei Ting."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you, Mr. Lim. To make sure we capture everything accurately, could you tell me a bit about your trip? Where will you be travelling to?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're planning a trip to Japan. We'll be travelling from Singapore, of course."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Noted, Japan from Singapore. And how long will you be away for?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It will be a 2 weeks trip."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, two weeks. And how many people will be travelling under this policy?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "There will be 2 of us travelling."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Two travelers. Could you share the age group for both travelers?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're both in the 26-40 age group."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. Now, regarding the coverage itself, you mentioned having specific requirements. Perhaps you could elaborate on what you're looking for?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes. Firstly, standard medical coverage is essential. I noted the typical exclusions for pre-existing conditions in your policy wording, and just to confirm, neither of us has any declared pre-existing conditions like asthma or diabetes. We also don't require any special medical equipment. So, general emergency medical treatment, hospitalisation, that sort of thing needs to be robust."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so comprehensive medical coverage for emergencies, excluding pre-existing conditions, and no specific medical equipment needs. Got it. What else?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Trip cancellation coverage is important. I want to understand the key triggers – specifically, confirmation that sudden illness, injury, or unforeseen family emergencies leading to cancellation are covered reasons for reimbursement of non-refundable costs."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, noting the requirement for trip cancellation coverage focusing on illness, injury, and family emergencies as covered reasons."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Correct. Next, luggage. Standard coverage for lost, damaged, or delayed baggage is needed. I'm interested in the reimbursement process for essentials if luggage is delayed beyond a certain timeframe – I believe your policy stated a minimum delay period applies? We just need that baseline coverage."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, require standard coverage for lost, damaged, and delayed baggage, including reimbursement for essential purchases during significant delays, subject to the policy's terms on delay duration and limits."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Precisely. We also need cover for travel delays themselves – accommodation, meals if our flight is significantly delayed, say, beyond the typical 6 or 8-hour mark stipulated in most policies."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. Coverage required for necessary expenses like accommodation and meals resulting from significant travel delays, as defined by the policy's specified minimum delay period."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Are there any specific activities planned during your trip to Japan that might require particular attention?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, that's a key point. We plan to do Skiing during our trip. So, we absolutely need confirmation that the policy includes coverage under the Sports and Adventure Activities section for injuries sustained while recreational skiing. I understand professional participation is excluded, which is fine."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Noted. Specific requirement for Sports and Adventure Activities coverage to include recreational skiing, covering potential medical expenses or evacuation related to participating in this activity."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes. And one final, quite specific point. I saw mention in a comparison table – not sure if it was yours – about enhanced payouts. I want to know if the policy provides a double payout for accidental death specifically if it occurs while traveling as a fare-paying passenger on public transport, like a bus or train. This specific benefit is crucial."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, let me note that clearly. You require confirmation if the Accidental Death benefit provides a doubled sum insured if the incident occurs while travelling as a fare-paying passenger on public transport."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Exactly that. Those are all my specific coverage requirements. Our budget for insurance is about $200-$300 for the two of us for the two weeks."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you, Mr. Lim. That's very clear. Let me quickly summarize the requirements I've noted for your travel insurance quote request for two adults, aged 26-40, travelling from Singapore to Japan for two weeks:"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "1. Comprehensive Emergency Medical Coverage (no pre-existing conditions, no special equipment)."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "2. Trip Cancellation coverage for reasons like illness, injury, or family emergency."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "3. Lost, Damaged, or Delayed Luggage coverage, including essentials reimbursement for delays over the policy limit."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "4. Travel Delay coverage for accommodation/meals due to significant delays."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "5. Sports and Adventure Activities cover specifically including recreational Skiing."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "6. A specific requirement for confirmation regarding a double payout feature for Accidental Death if it occurs on public transport as a fare-paying passenger."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "7. Budget indication of $200-$300."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Does that accurately capture everything you need us to consider for the quote?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, that summary is accurate and covers all my points, especially the clarification needed on the public transport accidental death benefit."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Excellent. Thank you for providing those detailed requirements, Mr. Lim. I have recorded all this information. We will now use these details to prepare the appropriate quotations for your consideration. You can expect to receive these via email within the next 24-48 hours."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Thank you, Sarah. I appreciate your efficiency. I'll look out for the email."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "You're welcome, Mr. Lim. Thank you for calling ISS Insurance Ltd. Have a great day."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "You too. Goodbye."
+    }
+]

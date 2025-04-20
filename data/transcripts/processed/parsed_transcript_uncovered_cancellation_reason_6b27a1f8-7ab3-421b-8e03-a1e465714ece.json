@@ -1,0 +1,146 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for calling ISS Insurance Ltd Singapore. My name is Priya. How may I help you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, I'm calling about travel insurance. Need to get some information, but honestly, I'm not sure if it's even worth the money these days."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "I understand your concern, sir. I can certainly help explain what information we need to understand your potential coverage requirements. Could I start with your name, please?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It's Lim. Mr. Lim."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you, Mr. Lim. To start, could you let me know where you'll be travelling from?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We'll be traveling from Singapore, obviously."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Noted, starting in Singapore. And where are you planning to travel to?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're planning a trip to Australia."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, Australia. And how long will your trip be?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It will be a 2 weeks trip."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, two weeks. And how many people will be travelling?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "There will be 2 of us traveling."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Two travellers. And could you share the general age group of the travellers?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're mostly around 26-40 years old. Why do you need to know that? Does the price jump up suspiciously?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "It's just one of the standard factors used to understand the requirements, Mr. Lim, like destination and duration. Thank you. Are there any specific activities you plan to participate in during your trip to Australia?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We plan to do White Water Rafting during our trip. I assume that needs special mention? Or is that something you guys try to exclude later?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for highlighting that. Participation in certain activities like white water rafting is something we need to note down as a potential requirement for cover. So, noted: potential need for sports and adventure coverage, specifically for white water rafting."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Hmmm, 'potential need'. Okay. What about health stuff? Does anyone travelling have any pre-existing medical conditions we need to declare? Like, one traveler has asthma. Do we need to declare asthma? I bet you use that to deny claims later."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for letting me know. It's important to note declared pre-existing conditions like asthma when looking at policies. So, noted: consideration for a pre-existing condition, asthma. Are there any specific medical equipment needs, like a wheelchair or CPAP machine?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No, no special medical equipment needed. But what sort of medical stuff is actually covered? If we get sick or have an accident over there – need a doctor, maybe even end up in hospital – are we genuinely covered for that? Or are there lots of loopholes?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so you're asking about the scope of medical coverage, including emergency treatment, doctor visits, and hospital stays. I've noted that as a key requirement you're looking for."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, a key requirement I expect to be properly fulfilled if needed. And flights? They're always getting delayed. What if our flight out of Sydney gets pushed back a day? Are we expected to sleep at the airport, or does the insurance actually cover a hotel room and meals? I need to know what happens with travel delays."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. You're inquiring about coverage for additional expenses like accommodation and meals arising from significant travel delays. I'll note that down as well."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Right. And our luggage. You hear stories all the time. What if the airline loses our bags, or they arrive damaged? Do you guys actually pay out a reasonable amount, or is it just pennies? I need proper cover for lost or damaged luggage."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted. You require information on coverage for lost, damaged, or delayed baggage, including reimbursement possibilities."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes. Now, the most important thing. My sister lives in Melbourne, and she's planning her wedding. There's a small chance, a small one, mind you, that she might have to reschedule it right when we are supposed to be on this trip. If we have to cancel our trip completely because her wedding date changes to clash with it, will we get our money back for the flights and hotels we've booked? I need to know if I'm covered if I have to cancel my trip for my sister's wedding. Is that something you cover, or is it conveniently excluded?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for explaining that specific situation, Mr. Lim. So, you have a specific concern regarding trip cancellation coverage, particularly if you need to cancel due to a rescheduled family event like your sister's wedding clashing with your travel dates. I have noted this specific circumstance as a requirement you need addressed. Standard policies often have specific covered reasons for cancellation, so it's important this is looked into."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "'Important this is looked into'. Fine. Just make sure it's clear. What sort of budget are we looking at for something that covers all this? Roughly?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "We understand budget is a consideration. Do you have a particular range in mind for the insurance premium?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're hoping to spend around $400, but it depends what we actually get for that."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted, a budget indicator of around $400. Thank you, Mr. Lim. Let me quickly summarize the requirements I've noted down based on our conversation. You're looking for travel insurance for two travellers, age group 26-40, travelling from Singapore to Australia for two weeks. Key coverage points you require information on are: medical coverage, including consideration for pre-existing asthma; coverage for potential travel delays; coverage for lost or damaged luggage; specific coverage for participating in white water rafting. And a crucial point is understanding trip cancellation coverage, specifically in the scenario where you might need to cancel due to your sister's rescheduled wedding. Your indicated budget is around $400. Does that accurately capture your main points?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, that sounds like the list. Make sure that wedding cancellation point is properly addressed, not just brushed over. I want to see exactly what the terms are for something like that."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood, Mr. Lim. I have clearly noted all your requirements, including the specific query about trip cancellation due to the family event. Thank you for providing these details. This information will help ensure we identify the options that might meet your needs."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Alright then. We'll see. Thanks."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "You're welcome, Mr. Lim. Thank you for calling ISS Insurance Ltd. Goodbye."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Bye."
+    }
+]

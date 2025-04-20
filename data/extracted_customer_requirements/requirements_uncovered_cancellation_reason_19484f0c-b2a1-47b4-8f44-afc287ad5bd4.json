@@ -1,0 +1,99 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ12345\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Japan for two adults.\",\n  \"detailed_description\": \"Looking for comprehensive travel insurance coverage including medical expenses for pre-existing conditions, coverage for skiing injuries, luggage protection, travel delay benefits, and trip cancellation policies.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"emergency medical treatment\",\n    \"hospital stays\",\n    \"sports and adventure activities\",\n    \"lost or damaged luggage\",\n    \"travel delay coverage\",\n    \"trip cancellation coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": [\n    \"emergency medical coverage\",\n    \"hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clarification on coverage for family event trip cancellations and details of reimbursement process for delayed luggage.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"Singapore\",\n    \"medical coverage\",\n    \"skiing\",\n    \"luggage\",\n    \"travel delay\",\n    \"trip cancellation\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ12345",
+        "requirement_summary": "Travel insurance coverage for a trip to Japan for two adults.",
+        "detailed_description": "Looking for comprehensive travel insurance coverage including medical expenses for pre-existing conditions, coverage for skiing injuries, luggage protection, travel delay benefits, and trip cancellation policies.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "emergency medical treatment",
+            "hospital stays",
+            "sports and adventure activities",
+            "lost or damaged luggage",
+            "travel delay coverage",
+            "trip cancellation coverage"
+        ],
+        "pre_existing_conditions": [
+            "asthma"
+        ],
+        "medical_needs": [
+            "emergency medical coverage",
+            "hospital stays"
+        ],
+        "activities_to_cover": [
+            "skiing"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Clarification on coverage for family event trip cancellations and details of reimbursement process for delayed luggage.",
+        "keywords": [
+            "travel insurance",
+            "Japan",
+            "Singapore",
+            "medical coverage",
+            "skiing",
+            "luggage",
+            "travel delay",
+            "trip cancellation"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Sarah. How may I assist you today?\nCustomer: Good morning, Sarah. I'm calling to gather information regarding travel insurance options for an upcoming trip. I've reviewed some general information on your website but have some specific requirement clarifications.\nCustomer Service Agent: Certainly, I can help with that. To start, could you please provide some details about your trip? For instance, where will you be travelling to?\nCustomer: We're planning a trip to Japan.\nCustomer Service Agent: Alright, Japan. And how long will you be away for?\nCustomer: It will be a 2 weeks trip. We'll be traveling from Singapore, naturally.\nCustomer Service Agent: Noted, 2 weeks in Japan, departing from Singapore. And how many people will be traveling on this policy?\nCustomer: There will be 2 of us traveling.\nCustomer Service Agent: Two travellers. And could you let me know the general age group of the travellers?\nCustomer: We're mostly around 26-40 years old.\nCustomer Service Agent: Okay, 26-40 age group. Are there any pre-existing medical conditions we should be aware of for either traveller? For example, conditions like asthma or diabetes?\nCustomer: Yes, one traveller has asthma, it's well-controlled, but do we need to declare asthma? I'm interested in the specifics of the medical coverage, particularly concerning emergency medical treatment and hospital stays should something unexpected occur related to that or anything else.\nCustomer Service Agent: Thank you for letting me know. Yes, declaration is usually necessary. I've noted your requirement for details on emergency medical coverage, including hospital stays and treatment, considering the declared pre-existing condition. Are there any specific activities planned during your trip?\nCustomer: Yes, we plan to do Skiing during our trip. We'll need coverage for skiing, specifically for potential injuries sustained while participating. Does your policy cover medical expenses related to adventure sports like this?\nCustomer Service Agent: Understood, you require coverage clarification for injuries sustained during skiing. I've noted that under sports and adventure activities coverage. Moving on, how about luggage? Do you have concerns regarding baggage?\nCustomer: Yes, definitely. I need to understand the coverage limits for lost or damaged luggage. What's the typical process for reimbursement for lost items versus essential purchases if luggage is delayed? I'm looking at your standard policy wording regarding exclusions for electronics or cash.\nCustomer Service Agent: Okay, I have noted your requirement for detailed information on lost, damaged, or delayed baggage coverage, including the reimbursement process, limits, and specific exclusions like electronics and cash. Did you have any other areas of concern? Perhaps regarding potential disruptions to your travel schedule?\nCustomer: That's a good point. What happens in the event of significant travel delays? I'm interested in coverage for additional accommodation and meal expenses if our flight is delayed by, say, more than 6 hours, or if we miss a connection due to the initial delay. Can you confirm the typical exclusion period for delays?\nCustomer Service Agent: Noted. You're inquiring about coverage specifics for travel delays, including expenses for accommodation, meals, missed connections, and the minimum delay duration required for cover to activate. Is that correct?\nCustomer: Yes, precisely. Finally, and this is quite important, I need clarification on trip cancellation. The standard covered reasons like illness or natural disasters are clear, but I have a specific scenario. What happens if I have to cancel my trip for an important family event, like if my sister's wedding date unexpectedly changes and clashes with our travel dates? Is that a covered reason?\nCustomer Service Agent: Understood. So, besides the standard trip cancellation coverage for reasons like illness or injury, you have a specific requirement to understand if cancelling due to a significant family event, specifically your sister's wedding date changing, would be covered. I've noted this specific scenario query.\nCustomer: Yes, exactly. It's crucial to know if that falls under the policy terms. We're hoping to spend around $200-$300 on the insurance premium for the two of us.\nCustomer Service Agent: Alright, I've noted the budget range of $200-$300 as well. Just to confirm, no special medical equipment like wheelchairs or CPAP machines will be needed for the trip?\nCustomer: No, no special medical equipment needed.\nCustomer Service Agent: Okay, thank you. Let me quickly summarize the requirements you've highlighted. You're looking for travel insurance for two adults, aged 26-40, traveling from Singapore to Japan for 2 weeks. Key requirements include: detailed information on medical coverage, particularly regarding emergency treatment and considering one traveller's pre-existing asthma; specific coverage for injuries sustained during skiing; clarification on coverage limits, procedures, and exclusions for lost, damaged, or delayed luggage; details on travel delay benefits, including minimum delay time and covered expenses like accommodation and meals; and specifics on trip cancellation coverage, including standard reasons and a particular query about cancelling due to a family event like a sister's wedding clash. Your preferred budget is around $200-$300. Does that accurately capture everything?\nCustomer: Yes, that covers all my main points perfectly. Thank you.\nCustomer Service Agent: Excellent. Thank you for providing all these details. I have recorded your specific requirements. We will use this information to identify the most suitable options based on your needs. Someone from our team will be in touch shortly with the relevant policy details and quotes.\nCustomer: Okay, thank you very much for your help, Sarah. I'll wait for the follow-up.\nCustomer Service Agent: You're most welcome. Thank you for calling ISS Insurance Ltd. Have a great day!\nCustomer: You too, goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ12345\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Japan for two adults.\",\n  \"detailed_description\": \"Looking for comprehensive travel insurance coverage including medical expenses for pre-existing conditions, coverage for skiing injuries, luggage protection, travel delay benefits, and trip cancellation policies.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"emergency medical treatment\",\n    \"hospital stays\",\n    \"sports and adventure activities\",\n    \"lost or damaged luggage\",\n    \"travel delay coverage\",\n    \"trip cancellation coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": [\n    \"emergency medical coverage\",\n    \"hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clarification on coverage for family event trip cancellations and details of reimbursement process for delayed luggage.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"Singapore\",\n    \"medical coverage\",\n    \"skiing\",\n    \"luggage\",\n    \"travel delay\",\n    \"trip cancellation\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ12345",
+                "requirement_summary": "Travel insurance coverage for a trip to Japan for two adults.",
+                "detailed_description": "Looking for comprehensive travel insurance coverage including medical expenses for pre-existing conditions, coverage for skiing injuries, luggage protection, travel delay benefits, and trip cancellation policies.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "emergency medical treatment",
+                    "hospital stays",
+                    "sports and adventure activities",
+                    "lost or damaged luggage",
+                    "travel delay coverage",
+                    "trip cancellation coverage"
+                ],
+                "pre_existing_conditions": [
+                    "asthma"
+                ],
+                "medical_needs": [
+                    "emergency medical coverage",
+                    "hospital stays"
+                ],
+                "activities_to_cover": [
+                    "skiing"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Clarification on coverage for family event trip cancellations and details of reimbursement process for delayed luggage.",
+                "keywords": [
+                    "travel insurance",
+                    "Japan",
+                    "Singapore",
+                    "medical coverage",
+                    "skiing",
+                    "luggage",
+                    "travel delay",
+                    "trip cancellation"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 123756,
+        "prompt_tokens": 104544,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 19212,
+        "successful_requests": 66
+    }
+}

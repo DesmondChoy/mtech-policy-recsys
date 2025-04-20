@@ -1,44 +1,45 @@
 {
-    "raw": "{\n  \"requirement_id\": \"TAN1234567A\",\n  \"requirement_summary\": \"Comprehensive travel insurance for a golf trip to Australia for two travellers with specific coverage requests.\",\n  \"detailed_description\": \"A 2-week trip to Australia from Singapore for two travellers aged 41-55, requiring comprehensive coverage including trip cancellation, medical emergencies, travel delays, lost or damaged luggage, coverage for golf equipment, reimbursement for unused green fees, coverage for accidental damage to a rented golf buggy, and a potential special payout for a hole-in-one.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive coverage\",\n    \"Medical emergencies\",\n    \"Trip cancellation\",\n    \"Travel delays\",\n    \"Lost or damaged luggage\",\n    \"Golf equipment coverage\",\n    \"Reimbursement for unused green fees\",\n    \"Accidental damage to golf buggy\",\n    \"Hole-in-one benefit\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Full coverage for hospital stays\",\n    \"Doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Expect premium service and competitive rates due to long history with ISS.\",\n  \"keywords\": [\n    \"comprehensive cover\",\n    \"travel insurance\",\n    \"golf trip\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"high blood pressure\",\n    \"competitive rates\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Australia.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance coverage for a trip to Australia from Singapore for two travelers, aged 41-55. Specific coverage is needed for trip cancellation, medical emergencies (noting high blood pressure), travel delays, lost or damaged luggage, golf equipment coverage, reimbursement for unused green fees, accidental damage to a golf buggy, and a special benefit for scoring a hole-in-one.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"comprehensive\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"travel delays\",\n    \"lost or damaged luggage\",\n    \"golf equipment coverage\",\n    \"reimbursement for unused green fees\",\n    \"accidental damage liability for golf buggy\",\n    \"hole-in-one benefit\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"full coverage for hospital stays\",\n    \"doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Expect premium service and competitive rates due to long customer history.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"comprehensive cover\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"golf trip\",\n    \"equipment coverage\",\n    \"accidental damage\",\n    \"hole-in-one\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "TAN1234567A",
-        "requirement_summary": "Comprehensive travel insurance for a golf trip to Australia for two travellers with specific coverage requests.",
-        "detailed_description": "A 2-week trip to Australia from Singapore for two travellers aged 41-55, requiring comprehensive coverage including trip cancellation, medical emergencies, travel delays, lost or damaged luggage, coverage for golf equipment, reimbursement for unused green fees, coverage for accidental damage to a rented golf buggy, and a potential special payout for a hole-in-one.",
+        "requirement_id": "req-001",
+        "requirement_summary": "Travel insurance requirements for a trip to Australia.",
+        "detailed_description": "Customer requires comprehensive travel insurance coverage for a trip to Australia from Singapore for two travelers, aged 41-55. Specific coverage is needed for trip cancellation, medical emergencies (noting high blood pressure), travel delays, lost or damaged luggage, golf equipment coverage, reimbursement for unused green fees, accidental damage to a golf buggy, and a special benefit for scoring a hole-in-one.",
         "travel_origin": "Singapore",
         "travel_destination": "Australia",
         "travel_duration": "2 weeks",
         "insurance_coverage_type": [
-            "Comprehensive coverage",
-            "Medical emergencies",
-            "Trip cancellation",
-            "Travel delays",
-            "Lost or damaged luggage",
-            "Golf equipment coverage",
-            "Reimbursement for unused green fees",
-            "Accidental damage to golf buggy",
-            "Hole-in-one benefit"
-        ],
-        "pre_existing_conditions": [
-            "High blood pressure"
-        ],
-        "medical_needs": [
-            "Full coverage for hospital stays",
-            "Doctor visits"
-        ],
-        "activities_to_cover": [
-            "Golf"
-        ],
-        "age_group": "41-55",
-        "additional_requests": "Expect premium service and competitive rates due to long history with ISS.",
-        "keywords": [
-            "comprehensive cover",
-            "travel insurance",
-            "golf trip",
+            "comprehensive",
             "trip cancellation",
             "medical emergencies",
-            "high blood pressure",
-            "competitive rates"
+            "travel delays",
+            "lost or damaged luggage",
+            "golf equipment coverage",
+            "reimbursement for unused green fees",
+            "accidental damage liability for golf buggy",
+            "hole-in-one benefit"
+        ],
+        "pre_existing_conditions": [
+            "high blood pressure"
+        ],
+        "medical_needs": [
+            "full coverage for hospital stays",
+            "doctor visits"
+        ],
+        "activities_to_cover": [
+            "golf"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Expect premium service and competitive rates due to long customer history.",
+        "keywords": [
+            "travel insurance",
+            "comprehensive cover",
+            "trip cancellation",
+            "medical emergencies",
+            "golf trip",
+            "equipment coverage",
+            "accidental damage",
+            "hole-in-one"
         ]
     },
     "tasks_output": [
@@ -47,46 +48,47 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"TAN1234567A\",\n  \"requirement_summary\": \"Comprehensive travel insurance for a golf trip to Australia for two travellers with specific coverage requests.\",\n  \"detailed_description\": \"A 2-week trip to Australia from Singapore for two travellers aged 41-55, requiring comprehensive coverage including trip cancellation, medical emergencies, travel delays, lost or damaged luggage, coverage for golf equipment, reimbursement for unused green fees, coverage for accidental damage to a rented golf buggy, and a potential special payout for a hole-in-one.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive coverage\",\n    \"Medical emergencies\",\n    \"Trip cancellation\",\n    \"Travel delays\",\n    \"Lost or damaged luggage\",\n    \"Golf equipment coverage\",\n    \"Reimbursement for unused green fees\",\n    \"Accidental damage to golf buggy\",\n    \"Hole-in-one benefit\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Full coverage for hospital stays\",\n    \"Doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Expect premium service and competitive rates due to long history with ISS.\",\n  \"keywords\": [\n    \"comprehensive cover\",\n    \"travel insurance\",\n    \"golf trip\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"high blood pressure\",\n    \"competitive rates\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Australia.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance coverage for a trip to Australia from Singapore for two travelers, aged 41-55. Specific coverage is needed for trip cancellation, medical emergencies (noting high blood pressure), travel delays, lost or damaged luggage, golf equipment coverage, reimbursement for unused green fees, accidental damage to a golf buggy, and a special benefit for scoring a hole-in-one.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"comprehensive\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"travel delays\",\n    \"lost or damaged luggage\",\n    \"golf equipment coverage\",\n    \"reimbursement for unused green fees\",\n    \"accidental damage liability for golf buggy\",\n    \"hole-in-one benefit\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"full coverage for hospital stays\",\n    \"doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Expect premium service and competitive rates due to long customer history.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"comprehensive cover\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"golf trip\",\n    \"equipment coverage\",\n    \"accidental damage\",\n    \"hole-in-one\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "TAN1234567A",
-                "requirement_summary": "Comprehensive travel insurance for a golf trip to Australia for two travellers with specific coverage requests.",
-                "detailed_description": "A 2-week trip to Australia from Singapore for two travellers aged 41-55, requiring comprehensive coverage including trip cancellation, medical emergencies, travel delays, lost or damaged luggage, coverage for golf equipment, reimbursement for unused green fees, coverage for accidental damage to a rented golf buggy, and a potential special payout for a hole-in-one.",
+                "requirement_id": "req-001",
+                "requirement_summary": "Travel insurance requirements for a trip to Australia.",
+                "detailed_description": "Customer requires comprehensive travel insurance coverage for a trip to Australia from Singapore for two travelers, aged 41-55. Specific coverage is needed for trip cancellation, medical emergencies (noting high blood pressure), travel delays, lost or damaged luggage, golf equipment coverage, reimbursement for unused green fees, accidental damage to a golf buggy, and a special benefit for scoring a hole-in-one.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Australia",
                 "travel_duration": "2 weeks",
                 "insurance_coverage_type": [
-                    "Comprehensive coverage",
-                    "Medical emergencies",
-                    "Trip cancellation",
-                    "Travel delays",
-                    "Lost or damaged luggage",
-                    "Golf equipment coverage",
-                    "Reimbursement for unused green fees",
-                    "Accidental damage to golf buggy",
-                    "Hole-in-one benefit"
-                ],
-                "pre_existing_conditions": [
-                    "High blood pressure"
-                ],
-                "medical_needs": [
-                    "Full coverage for hospital stays",
-                    "Doctor visits"
-                ],
-                "activities_to_cover": [
-                    "Golf"
-                ],
-                "age_group": "41-55",
-                "additional_requests": "Expect premium service and competitive rates due to long history with ISS.",
-                "keywords": [
-                    "comprehensive cover",
-                    "travel insurance",
-                    "golf trip",
+                    "comprehensive",
                     "trip cancellation",
                     "medical emergencies",
-                    "high blood pressure",
-                    "competitive rates"
+                    "travel delays",
+                    "lost or damaged luggage",
+                    "golf equipment coverage",
+                    "reimbursement for unused green fees",
+                    "accidental damage liability for golf buggy",
+                    "hole-in-one benefit"
+                ],
+                "pre_existing_conditions": [
+                    "high blood pressure"
+                ],
+                "medical_needs": [
+                    "full coverage for hospital stays",
+                    "doctor visits"
+                ],
+                "activities_to_cover": [
+                    "golf"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Expect premium service and competitive rates due to long customer history.",
+                "keywords": [
+                    "travel insurance",
+                    "comprehensive cover",
+                    "trip cancellation",
+                    "medical emergencies",
+                    "golf trip",
+                    "equipment coverage",
+                    "accidental damage",
+                    "hole-in-one"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -94,10 +96,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 18943,
-        "prompt_tokens": 15973,
+        "total_tokens": 38616,
+        "prompt_tokens": 32688,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 2970,
-        "successful_requests": 10
+        "completion_tokens": 5928,
+        "successful_requests": 20
     }
 }

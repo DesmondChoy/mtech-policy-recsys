@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly requested trip cancellation cover and provided a specific scenario (sister's wedding) they were concerned about, fulfilling the scenario-specific requirement.",
+      "customer_quote": "[20] Customer: Also need trip cancellation cover. [22] Customer: Yes. What if I have to cancel for my sister's wedding? Is that covered?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement, specifically asked about cancellation reasons, acknowledged the customer's specific scenario (wedding), and correctly noted it might be non-standard while recording the requirement.",
+      "agent_quote": "[21] Customer Service Agent: Okay, trip cancellation cover. Are there any specific cancellation reasons you're concerned about? [23] Customer Service Agent: Thank you for specifying. So, a requirement for trip cancellation cover, with a specific query about cancellation due to attending a family event like a wedding. I must note that cancellation for personal events like weddings is often not a standard covered reason, but I will record it as your requirement to check policy details."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned needing coverage for medical emergencies and specified 'Doctor visits, hospital'.",
+      "customer_quote": "[14] Customer: Medical emergencies. Doctor visits, hospital.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed understanding of the medical coverage need and appropriately probed for related details like pre-existing conditions and medical equipment.",
+      "agent_quote": "[15] Customer Service Agent: Okay, coverage for medical treatment needed during the trip. [25] Customer Service Agent: Just to confirm regarding medical aspects, are there any pre-existing medical conditions for either traveller? [27] Customer Service Agent: And will you be travelling with any special medical equipment?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned needing coverage for luggage and specified 'If lost or damaged'.",
+      "customer_quote": "[16] Customer: Luggage. If lost or damaged.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed understanding of the requirement for luggage coverage.",
+      "agent_quote": "[17] Customer Service Agent: Understood, coverage related to baggage issues."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer confirmed needing coverage for significant flight delays and specified the need to 'cover for costs'.",
+      "customer_quote": "[18] Customer: Yes, if flights are delayed significantly. Need cover for costs.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed understanding of the requirement for coverage related to major travel delays and associated expenses.",
+      "agent_quote": "[19] Customer Service Agent: Right, cover for expenses due to major travel delays."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The agent proactively asked about risky activities, and the customer specified 'Hiking'.",
+      "customer_quote": "[12] Customer: Hiking.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent appropriately probed for potential sports or adventure activities and noted the specific activity mentioned by the customer.",
+      "agent_quote": "[11] Customer Service Agent: Alright. And are there any specific activities planned during the trip that might involve some risk, like sports or adventure activities? [13] Customer Service Agent: Noted, hiking."
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered information on all required standard coverage types (Trip Cancellation, Medical, Luggage, Delay, Sports/Adventure). The agent effectively used probing questions to elicit specific details, such as the type of activity (hiking) and specific cancellation concerns (wedding), including the scenario-specific requirement. The agent also gathered relevant related information like pre-existing conditions. The agent's performance in gathering the necessary coverage information was thorough and effective."
+  },
+  "transcript_name": "transcript_uncovered_cancellation_reason_27162eee-bd03-418d-bc34-326a37b428b3",
+  "scenario": "uncovered_cancellation_reason"
+}

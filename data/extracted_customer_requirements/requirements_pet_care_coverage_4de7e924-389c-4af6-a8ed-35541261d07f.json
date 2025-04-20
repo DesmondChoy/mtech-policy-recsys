@@ -1,10 +1,10 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan from Singapore with coverage for various contingencies.\",\n  \"detailed_description\": \"The customer is seeking travel insurance for two adults aged 26-40 traveling from Singapore to Japan for two weeks. Coverage is required for medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and additional pet hotel costs in case of flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"pet accommodation costs\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"sightseeing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Need cover for pet hotel costs if return flight to Singapore is delayed.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"pet accommodation\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan from Singapore\",\n  \"detailed_description\": \"Customer requires travel insurance for two adults aged 26-40 traveling to Japan for 2 weeks. Coverage is needed for medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and additional pet accommodation costs due to return flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"additional pet accommodation costs\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"sightseeing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cover for pet hotel costs if return flight to Singapore is delayed.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"Singapore\",\n    \"2 weeks\",\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"pet accommodation\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
         "requirement_id": "REQ-001",
-        "requirement_summary": "Travel insurance for a trip to Japan from Singapore with coverage for various contingencies.",
-        "detailed_description": "The customer is seeking travel insurance for two adults aged 26-40 traveling from Singapore to Japan for two weeks. Coverage is required for medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and additional pet hotel costs in case of flight delays.",
+        "requirement_summary": "Travel insurance for a trip to Japan from Singapore",
+        "detailed_description": "Customer requires travel insurance for two adults aged 26-40 traveling to Japan for 2 weeks. Coverage is needed for medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and additional pet accommodation costs due to return flight delays.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "2 weeks",
@@ -13,7 +13,7 @@
             "trip cancellation",
             "lost or damaged luggage",
             "travel delays",
-            "pet accommodation costs"
+            "additional pet accommodation costs"
         ],
         "pre_existing_conditions": [],
         "medical_needs": [],
@@ -21,12 +21,16 @@
             "sightseeing"
         ],
         "age_group": "26-40",
-        "additional_requests": "Need cover for pet hotel costs if return flight to Singapore is delayed.",
+        "additional_requests": "Cover for pet hotel costs if return flight to Singapore is delayed.",
         "keywords": [
             "travel insurance",
             "Japan",
-            "trip cancellation",
+            "Singapore",
+            "2 weeks",
             "medical emergencies",
+            "trip cancellation",
+            "lost luggage",
+            "travel delays",
             "pet accommodation"
         ]
     },
@@ -36,12 +40,12 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan from Singapore with coverage for various contingencies.\",\n  \"detailed_description\": \"The customer is seeking travel insurance for two adults aged 26-40 traveling from Singapore to Japan for two weeks. Coverage is required for medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and additional pet hotel costs in case of flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"pet accommodation costs\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"sightseeing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Need cover for pet hotel costs if return flight to Singapore is delayed.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"pet accommodation\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan from Singapore\",\n  \"detailed_description\": \"Customer requires travel insurance for two adults aged 26-40 traveling to Japan for 2 weeks. Coverage is needed for medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and additional pet accommodation costs due to return flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"additional pet accommodation costs\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"sightseeing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cover for pet hotel costs if return flight to Singapore is delayed.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"Singapore\",\n    \"2 weeks\",\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"pet accommodation\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
                 "requirement_id": "REQ-001",
-                "requirement_summary": "Travel insurance for a trip to Japan from Singapore with coverage for various contingencies.",
-                "detailed_description": "The customer is seeking travel insurance for two adults aged 26-40 traveling from Singapore to Japan for two weeks. Coverage is required for medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and additional pet hotel costs in case of flight delays.",
+                "requirement_summary": "Travel insurance for a trip to Japan from Singapore",
+                "detailed_description": "Customer requires travel insurance for two adults aged 26-40 traveling to Japan for 2 weeks. Coverage is needed for medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and additional pet accommodation costs due to return flight delays.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "2 weeks",
@@ -50,7 +54,7 @@
                     "trip cancellation",
                     "lost or damaged luggage",
                     "travel delays",
-                    "pet accommodation costs"
+                    "additional pet accommodation costs"
                 ],
                 "pre_existing_conditions": [],
                 "medical_needs": [],
@@ -58,12 +62,16 @@
                     "sightseeing"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Need cover for pet hotel costs if return flight to Singapore is delayed.",
+                "additional_requests": "Cover for pet hotel costs if return flight to Singapore is delayed.",
                 "keywords": [
                     "travel insurance",
                     "Japan",
-                    "trip cancellation",
+                    "Singapore",
+                    "2 weeks",
                     "medical emergencies",
+                    "trip cancellation",
+                    "lost luggage",
+                    "travel delays",
                     "pet accommodation"
                 ]
             },
@@ -72,10 +80,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 24701,
-        "prompt_tokens": 20657,
+        "total_tokens": 50139,
+        "prompt_tokens": 42244,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 4044,
-        "successful_requests": 14
+        "completion_tokens": 7895,
+        "successful_requests": 27
     }
 }

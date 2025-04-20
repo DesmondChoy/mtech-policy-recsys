@@ -2,7 +2,7 @@
 
 ## System Architecture
 
-The project follows a workflow orchestrated by `scripts/orchestrate_scenario_evaluation.py`. This script manages data generation (parallel scenarios), processing (parallel transcript evaluation, sequential parsing/extraction), sequential report generation (per UUID), and final evaluation aggregation. A single agent (Extractor) is used within this workflow. The original multi-agent concept is not implemented.
+The project follows a workflow orchestrated by `scripts/orchestrate_scenario_evaluation.py`. This script manages data generation (parallel scenarios), processing (parallel transcript evaluation, sequential parsing/extraction), sequential report generation (per UUID), and final evaluation aggregation. It includes flags like `--skip_transcript_eval` and `--only_aggregate` to control execution flow. A single agent (Extractor) is used within this workflow. The original multi-agent concept is not implemented.
 
 ```mermaid
 graph TD

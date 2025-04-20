@@ -1,0 +1,99 @@
+{
+    "raw": "{\n  \"requirement_id\": \"req12345\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip from Singapore to Australia.\",\n  \"detailed_description\": \"The customer requires travel insurance covering two adults, aged 41-55, for a two-week trip to Australia, including several specific coverage needs.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delay\",\n    \"lost or damaged luggage\",\n    \"adventure activities\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"comprehensive medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs due to travel delay, and assurance that hiking activities are included.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Singapore\",\n    \"Australia\",\n    \"2 weeks\",\n    \"two adults\",\n    \"high blood pressure\",\n    \"trip cancellation\",\n    \"travel delay\",\n    \"pet accommodation\",\n    \"hiking\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "req12345",
+        "requirement_summary": "Travel insurance requirements for a trip from Singapore to Australia.",
+        "detailed_description": "The customer requires travel insurance covering two adults, aged 41-55, for a two-week trip to Australia, including several specific coverage needs.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Australia",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "medical coverage",
+            "trip cancellation",
+            "travel delay",
+            "lost or damaged luggage",
+            "adventure activities"
+        ],
+        "pre_existing_conditions": [
+            "high blood pressure"
+        ],
+        "medical_needs": [
+            "comprehensive medical coverage"
+        ],
+        "activities_to_cover": [
+            "hiking"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Coverage for additional pet accommodation costs due to travel delay, and assurance that hiking activities are included.",
+        "keywords": [
+            "travel insurance",
+            "Singapore",
+            "Australia",
+            "2 weeks",
+            "two adults",
+            "high blood pressure",
+            "trip cancellation",
+            "travel delay",
+            "pet accommodation",
+            "hiking"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd. My name is Priya. How may I help you today?\nCustomer: Yes, hello. I'm calling about travel insurance. I'm planning a trip and, frankly, I'm not convinced these policies are worth the paper they're written on, but let's see what you offer.\nCustomer Service Agent: I understand your concerns, sir. I can certainly help gather the details of the coverage you're looking for. To start, could you please tell me where you'll be traveling from?\nCustomer: We're based in Singapore, obviously. That's why I'm calling you lot.\nCustomer Service Agent: Okay, noted, traveling from Singapore. And where is your travel destination?\nCustomer: We're planning a trip to Australia.\nCustomer Service Agent: Australia, alright. And how long will you be away for?\nCustomer: It will be a 2 weeks trip.\nCustomer Service Agent: Two weeks. And how many people will be traveling?\nCustomer: There will be 2 of us traveling. Both adults.\nCustomer Service Agent: Two adults, thank you. And could you share the approximate age group of the travelers?\nCustomer: We're mostly around 41-55 years old. Why, does that change the price drastically?\nCustomer Service Agent: It's just one factor considered for policy details, sir. Thank you. Now, regarding your trip, are there any specific activities you plan on participating in?\nCustomer: We plan to do some hiking during our trip. Nothing too strenuous, but it's still outdoors. If someone twists an ankle out there, is that something insurance actually covers, or is it hidden in the fine print that it's excluded?\nCustomer Service Agent: Okay, so you require coverage that includes participation in hiking. I've noted that down as a requirement for sports and adventure activities. Are there any other specific activities planned?\nCustomer: No, just the hiking.\nCustomer Service Agent: Understood. Now, thinking about potential issues during travel, are there specific concerns you have? For instance, regarding your health or potential medical needs during the trip?\nCustomer: Well, one traveler has high blood pressure. It's managed, but what if something happens related to that while we're overseas? I always hear about pre-existing conditions being used as an excuse not to pay out. We need proper medical coverage that doesn't just disappear when you actually need it. No special medical equipment needed, though.\nCustomer Service Agent: Alright, I've noted the requirement for comprehensive medical coverage, and I've also noted the mention of high blood pressure as a pre-existing condition that needs consideration within the policy information.\nCustomer: And what about getting *to* Australia or getting back? Flights get delayed all the time. If we get stuck somewhere, who pays for the extra hotel nights or meals? I want to know what kind of coverage there is for travel delays.\nCustomer Service Agent: Okay, so coverage for additional expenses due to significant travel delays is a requirement.\nCustomer: Yes, and on that note... If our flight back to Singapore is delayed, significantly delayed I mean, we have a cat in a pet hotel here. That's going to cost extra for every day we're late. Is that specific cost – the extra kennel fees because of a travel delay – something that can be covered? I don't want any surprises.\nCustomer Service Agent: Understood. So, in addition to general travel delay expenses, you have a specific requirement for coverage consideration regarding additional pet accommodation costs resulting from a covered return travel delay. I have noted that specifically.\nCustomer: Good. And what if the trip doesn't happen at all? Say one of us gets seriously ill beforehand – not the blood pressure thing, something unexpected – or maybe a close family member passes away? We'd lose flights, accommodation... does the insurance cover trip cancellation for reasons like that? Or only if the airline cancels?\nCustomer Service Agent: Noted. You are looking for coverage for trip cancellation due to specified unforeseen events like illness or family emergencies.\nCustomer: Right. And baggage. You hear horror stories about airlines losing luggage or bags getting damaged. What's the deal with that? Is there coverage if our bags go missing or arrive smashed up? I assume there are tons of exclusions, like for electronics?\nCustomer Service Agent: Okay, I've noted down the requirement for coverage related to lost, damaged, or delayed baggage.\nCustomer: Fine. So, with all that noted down... what's this likely to cost? We're hoping to spend maybe $200-$300 for the two of us for the two weeks. Is that even possible for what I've asked for, or is that just wishful thinking?\nCustomer Service Agent: I've noted your preferred budget range is $200-$300.\nCustomer: You haven't really answered whether that budget is realistic for all those requirements I listed. Are you just noting it down, or can you actually provide something?\nCustomer Service Agent: My role today is to accurately capture all your requirements, sir, including your budget preference. This information will be used to identify suitable options. So, just to confirm, the requirements I've noted are: coverage for travel from Singapore to Australia for 2 weeks for two travelers aged 41-55, including medical coverage (noting one traveler has high blood pressure), trip cancellation coverage, cover for travel delays including a specific need regarding potential extra pet accommodation costs, cover for lost or damaged luggage, and cover for participating in hiking. Your preferred budget is around $200-$300. Does that correctly summarize what you're looking for?\nCustomer: Yes, I suppose that covers the main points I'm worried about. Just make sure all those things, especially the pet hotel cost and the hiking, are actually addressed in whatever you come back with. I don't want vague promises.\nCustomer Service Agent: Understood, sir. I have recorded all these requirements. Thank you for providing these details. Is there anything else you'd like to add today?\nCustomer: No, that's it for now. Let's just see what you come up with.\nCustomer Service Agent: Thank you very much for calling ISS Insurance Ltd. Have a good day.\nCustomer: Right. Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"req12345\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip from Singapore to Australia.\",\n  \"detailed_description\": \"The customer requires travel insurance covering two adults, aged 41-55, for a two-week trip to Australia, including several specific coverage needs.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delay\",\n    \"lost or damaged luggage\",\n    \"adventure activities\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"comprehensive medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs due to travel delay, and assurance that hiking activities are included.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Singapore\",\n    \"Australia\",\n    \"2 weeks\",\n    \"two adults\",\n    \"high blood pressure\",\n    \"trip cancellation\",\n    \"travel delay\",\n    \"pet accommodation\",\n    \"hiking\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "req12345",
+                "requirement_summary": "Travel insurance requirements for a trip from Singapore to Australia.",
+                "detailed_description": "The customer requires travel insurance covering two adults, aged 41-55, for a two-week trip to Australia, including several specific coverage needs.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Australia",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "medical coverage",
+                    "trip cancellation",
+                    "travel delay",
+                    "lost or damaged luggage",
+                    "adventure activities"
+                ],
+                "pre_existing_conditions": [
+                    "high blood pressure"
+                ],
+                "medical_needs": [
+                    "comprehensive medical coverage"
+                ],
+                "activities_to_cover": [
+                    "hiking"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Coverage for additional pet accommodation costs due to travel delay, and assurance that hiking activities are included.",
+                "keywords": [
+                    "travel insurance",
+                    "Singapore",
+                    "Australia",
+                    "2 weeks",
+                    "two adults",
+                    "high blood pressure",
+                    "trip cancellation",
+                    "travel delay",
+                    "pet accommodation",
+                    "hiking"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 53512,
+        "prompt_tokens": 45020,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 8492,
+        "successful_requests": 29
+    }
+}

@@ -1,19 +1,19 @@
 {
-    "raw": "{\n  \"requirement_id\": \"TI-SG-2024-V3\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Thailand covering medical, luggage, trip cancellation, and pet accommodation costs.\",\n  \"detailed_description\": \"The customer is seeking comprehensive travel insurance for a 10-day trip to Thailand, covering two travellers aged 26-40. They require robust medical coverage for emergencies, including hospitalisation, doctor visits, and prescription medications, without pre-existing conditions. Coverage for scuba diving under the Sports and Adventure Activities rider is necessary, along with lost or damaged luggage protection and essential purchases during delays. Travel delay benefits are sought, particularly concerning accommodation and meals for minimum delays, missed connections, and coverage for unforeseen pet accommodation costs if there is a significant delay on their return to Singapore. Trip Cancellation coverage is necessary for various unforeseen events.\",\n  \"travel_origin\": null,\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delays\",\n    \"Trip Cancellation\",\n    \"Scuba Diving Coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Check if additional pet accommodation fees incurred in Singapore due to a covered return travel delay are claimable.\",\n  \"keywords\": [\n    \"medical emergencies\",\n    \"hospitalisation\",\n    \"doctor visits\",\n    \"prescription medications\",\n    \"scuba diving\",\n    \"lost luggage\",\n    \"travel delay\",\n    \"trip cancellation\",\n    \"pet accommodation\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Thailand for two travellers aged 26-40.\",\n  \"detailed_description\": \"The customer seeks comprehensive travel insurance covering medical emergencies, scuba diving activities, luggage protection, travel delays, and trip cancellation for a planned trip to Thailand. Specific inquiries include coverage limits for medical treatment, coverage for scuba diving under licensed operators, reimbursement processes for lost/damaged luggage, and conditions for trip cancellation and travel delays, including provisions for pet accommodation in case of return flight delays.\",\n  \"travel_origin\": null,\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Sports and Adventure Activities\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delay\",\n    \"Trip Cancellation\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clarification on scuba diving coverage, reimbursement for essential purchases during luggage delay, coverage for pet accommodation costs due to travel delays.\",\n  \"keywords\": [\n    \"medical emergencies\",\n    \"scuba diving\",\n    \"luggage protection\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"pet accommodation\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "TI-SG-2024-V3",
-        "requirement_summary": "Travel insurance requirements for a trip to Thailand covering medical, luggage, trip cancellation, and pet accommodation costs.",
-        "detailed_description": "The customer is seeking comprehensive travel insurance for a 10-day trip to Thailand, covering two travellers aged 26-40. They require robust medical coverage for emergencies, including hospitalisation, doctor visits, and prescription medications, without pre-existing conditions. Coverage for scuba diving under the Sports and Adventure Activities rider is necessary, along with lost or damaged luggage protection and essential purchases during delays. Travel delay benefits are sought, particularly concerning accommodation and meals for minimum delays, missed connections, and coverage for unforeseen pet accommodation costs if there is a significant delay on their return to Singapore. Trip Cancellation coverage is necessary for various unforeseen events.",
+        "requirement_id": "REQ-001",
+        "requirement_summary": "Travel insurance requirements for a trip to Thailand for two travellers aged 26-40.",
+        "detailed_description": "The customer seeks comprehensive travel insurance covering medical emergencies, scuba diving activities, luggage protection, travel delays, and trip cancellation for a planned trip to Thailand. Specific inquiries include coverage limits for medical treatment, coverage for scuba diving under licensed operators, reimbursement processes for lost/damaged luggage, and conditions for trip cancellation and travel delays, including provisions for pet accommodation in case of return flight delays.",
         "travel_origin": null,
         "travel_destination": "Thailand",
         "travel_duration": "10 days",
         "insurance_coverage_type": [
             "Comprehensive Medical Coverage",
+            "Sports and Adventure Activities",
             "Lost/Damaged Luggage",
-            "Travel Delays",
-            "Trip Cancellation",
-            "Scuba Diving Coverage"
+            "Travel Delay",
+            "Trip Cancellation"
         ],
         "pre_existing_conditions": [],
         "medical_needs": [],
@@ -21,15 +21,12 @@
             "Scuba Diving"
         ],
         "age_group": "26-40",
-        "additional_requests": "Check if additional pet accommodation fees incurred in Singapore due to a covered return travel delay are claimable.",
+        "additional_requests": "Clarification on scuba diving coverage, reimbursement for essential purchases during luggage delay, coverage for pet accommodation costs due to travel delays.",
         "keywords": [
             "medical emergencies",
-            "hospitalisation",
-            "doctor visits",
-            "prescription medications",
             "scuba diving",
-            "lost luggage",
-            "travel delay",
+            "luggage protection",
+            "travel delays",
             "trip cancellation",
             "pet accommodation"
         ]
@@ -40,21 +37,21 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"TI-SG-2024-V3\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Thailand covering medical, luggage, trip cancellation, and pet accommodation costs.\",\n  \"detailed_description\": \"The customer is seeking comprehensive travel insurance for a 10-day trip to Thailand, covering two travellers aged 26-40. They require robust medical coverage for emergencies, including hospitalisation, doctor visits, and prescription medications, without pre-existing conditions. Coverage for scuba diving under the Sports and Adventure Activities rider is necessary, along with lost or damaged luggage protection and essential purchases during delays. Travel delay benefits are sought, particularly concerning accommodation and meals for minimum delays, missed connections, and coverage for unforeseen pet accommodation costs if there is a significant delay on their return to Singapore. Trip Cancellation coverage is necessary for various unforeseen events.\",\n  \"travel_origin\": null,\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delays\",\n    \"Trip Cancellation\",\n    \"Scuba Diving Coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Check if additional pet accommodation fees incurred in Singapore due to a covered return travel delay are claimable.\",\n  \"keywords\": [\n    \"medical emergencies\",\n    \"hospitalisation\",\n    \"doctor visits\",\n    \"prescription medications\",\n    \"scuba diving\",\n    \"lost luggage\",\n    \"travel delay\",\n    \"trip cancellation\",\n    \"pet accommodation\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Thailand for two travellers aged 26-40.\",\n  \"detailed_description\": \"The customer seeks comprehensive travel insurance covering medical emergencies, scuba diving activities, luggage protection, travel delays, and trip cancellation for a planned trip to Thailand. Specific inquiries include coverage limits for medical treatment, coverage for scuba diving under licensed operators, reimbursement processes for lost/damaged luggage, and conditions for trip cancellation and travel delays, including provisions for pet accommodation in case of return flight delays.\",\n  \"travel_origin\": null,\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Sports and Adventure Activities\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delay\",\n    \"Trip Cancellation\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clarification on scuba diving coverage, reimbursement for essential purchases during luggage delay, coverage for pet accommodation costs due to travel delays.\",\n  \"keywords\": [\n    \"medical emergencies\",\n    \"scuba diving\",\n    \"luggage protection\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"pet accommodation\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "TI-SG-2024-V3",
-                "requirement_summary": "Travel insurance requirements for a trip to Thailand covering medical, luggage, trip cancellation, and pet accommodation costs.",
-                "detailed_description": "The customer is seeking comprehensive travel insurance for a 10-day trip to Thailand, covering two travellers aged 26-40. They require robust medical coverage for emergencies, including hospitalisation, doctor visits, and prescription medications, without pre-existing conditions. Coverage for scuba diving under the Sports and Adventure Activities rider is necessary, along with lost or damaged luggage protection and essential purchases during delays. Travel delay benefits are sought, particularly concerning accommodation and meals for minimum delays, missed connections, and coverage for unforeseen pet accommodation costs if there is a significant delay on their return to Singapore. Trip Cancellation coverage is necessary for various unforeseen events.",
+                "requirement_id": "REQ-001",
+                "requirement_summary": "Travel insurance requirements for a trip to Thailand for two travellers aged 26-40.",
+                "detailed_description": "The customer seeks comprehensive travel insurance covering medical emergencies, scuba diving activities, luggage protection, travel delays, and trip cancellation for a planned trip to Thailand. Specific inquiries include coverage limits for medical treatment, coverage for scuba diving under licensed operators, reimbursement processes for lost/damaged luggage, and conditions for trip cancellation and travel delays, including provisions for pet accommodation in case of return flight delays.",
                 "travel_origin": null,
                 "travel_destination": "Thailand",
                 "travel_duration": "10 days",
                 "insurance_coverage_type": [
                     "Comprehensive Medical Coverage",
+                    "Sports and Adventure Activities",
                     "Lost/Damaged Luggage",
-                    "Travel Delays",
-                    "Trip Cancellation",
-                    "Scuba Diving Coverage"
+                    "Travel Delay",
+                    "Trip Cancellation"
                 ],
                 "pre_existing_conditions": [],
                 "medical_needs": [],
@@ -62,15 +59,12 @@
                     "Scuba Diving"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Check if additional pet accommodation fees incurred in Singapore due to a covered return travel delay are claimable.",
+                "additional_requests": "Clarification on scuba diving coverage, reimbursement for essential purchases during luggage delay, coverage for pet accommodation costs due to travel delays.",
                 "keywords": [
                     "medical emergencies",
-                    "hospitalisation",
-                    "doctor visits",
-                    "prescription medications",
                     "scuba diving",
-                    "lost luggage",
-                    "travel delay",
+                    "luggage protection",
+                    "travel delays",
                     "trip cancellation",
                     "pet accommodation"
                 ]
@@ -80,10 +74,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 26762,
-        "prompt_tokens": 22344,
+        "total_tokens": 55506,
+        "prompt_tokens": 46707,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 4418,
-        "successful_requests": 15
+        "completion_tokens": 8799,
+        "successful_requests": 30
     }
 }

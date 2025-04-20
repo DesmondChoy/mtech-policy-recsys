@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about trip cancellation coverage, providing a very specific scenario (sister's wedding rescheduling) which is the key requirement for this interaction. The agent acknowledged this specific, crucial requirement.",
+      "customer_quote": "[26] If we have to cancel our trip completely because her wedding date changes to clash with it, will we get our money back for the flights and hotels we've booked? I need to know if I'm covered if I have to cancel my trip for my sister's wedding.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly identified and noted the customer's specific and crucial concern regarding cancellation due to a rescheduled family event, acknowledging its importance and the need to check policy specifics.",
+      "agent_quote": "[27] So, you have a specific concern regarding trip cancellation coverage, particularly if you need to cancel due to a rescheduled family event like your sister's wedding clashing with your travel dates. I have noted this specific circumstance as a requirement you need addressed. Standard policies often have specific covered reasons for cancellation, so it's important this is looked into."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer asked about coverage for sickness/accidents, doctor visits, and hospital stays, and also mentioned a pre-existing condition (asthma).",
+      "customer_quote": "[18] Does anyone travelling have any pre-existing medical conditions we need to declare? Like, one traveler has asthma. Do we need to declare asthma? ... [20] But what sort of medical stuff is actually covered? If we get sick or have an accident over there \u2013 need a doctor, maybe even end up in hospital \u2013 are we genuinely covered for that?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the pre-existing condition and the customer's need for information on the scope of medical coverage (emergency treatment, doctor visits, hospital stays). The agent also probed appropriately about medical equipment.",
+      "agent_quote": "[19] Thank you for letting me know. It's important to note declared pre-existing conditions like asthma when looking at policies. So, noted: consideration for a pre-existing condition, asthma. Are there any specific medical equipment needs...? [21] Okay, so you're asking about the scope of medical coverage, including emergency treatment, doctor visits, and hospital stays. I've noted that as a key requirement you're looking for."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer specifically asked about coverage for lost or damaged luggage and the adequacy of reimbursement.",
+      "customer_quote": "[24] What if the airline loses our bags, or they arrive damaged? Do you guys actually pay out a reasonable amount, or is it just pennies? I need proper cover for lost or damaged luggage.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed understanding of the customer's requirement for information on lost, damaged, or delayed baggage coverage and reimbursement.",
+      "agent_quote": "[25] Okay, noted. You require information on coverage for lost, damaged, or delayed baggage, including reimbursement possibilities."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer asked about coverage for expenses like accommodation and meals resulting from significant flight delays.",
+      "customer_quote": "[22] What if our flight out of Sydney gets pushed back a day? Are we expected to sleep at the airport, or does the insurance actually cover a hotel room and meals? I need to know what happens with travel delays.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent accurately summarized the customer's inquiry regarding coverage for additional expenses (accommodation, meals) due to significant travel delays.",
+      "agent_quote": "[23] Understood. You're inquiring about coverage for additional expenses like accommodation and meals arising from significant travel delays. I'll note that down as well."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The agent proactively asked about activities, and the customer specified participation in White Water Rafting.",
+      "customer_quote": "[16] We plan to do White Water Rafting during our trip. I assume that needs special mention?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent appropriately probed for planned activities and then specifically noted the customer's mention of white water rafting as a potential requirement for sports/adventure coverage.",
+      "agent_quote": "[15] Are there any specific activities you plan to participate in during your trip to Australia? ... [17] Thank you for highlighting that. Participation in certain activities like white water rafting is something we need to note down as a potential requirement for cover. So, noted: potential need for sports and adventure coverage, specifically for white water rafting."
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered information covering all five standard requirement areas. The customer proactively brought up most concerns, providing specific details (asthma, rafting, wedding cancellation, delay expenses, luggage loss). The agent effectively listened, confirmed understanding, noted the requirements, and appropriately acknowledged the critical scenario-specific requirement regarding trip cancellation for a family event. Agent performance in information gathering was excellent."
+  },
+  "transcript_name": "transcript_uncovered_cancellation_reason_6b27a1f8-7ab3-421b-8e03-a1e465714ece",
+  "scenario": "uncovered_cancellation_reason"
+}

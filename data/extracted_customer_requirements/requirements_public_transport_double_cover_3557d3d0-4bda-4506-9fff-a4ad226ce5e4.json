@@ -1,0 +1,95 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ001\",\n  \"requirement_summary\": \"Travel insurance inquiry for a trip from Singapore to Europe for two adults with specific coverage needs.\",\n  \"detailed_description\": \"The customer is looking for travel insurance that covers medical treatment for pre-existing conditions, trip cancellation, travel delays, lost baggage, activity-related injuries, and accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical treatment for pre-existing conditions\",\n    \"trip cancellation\",\n    \"travel delay expenses\",\n    \"lost, damaged, or delayed baggage\",\n    \"activity-related injuries\",\n    \"accidental death on public transport\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget with a focus on comprehensive coverage, especially regarding medical treatment and trip cancellation.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"high blood pressure\",\n    \"hiking\",\n    \"lost baggage\",\n    \"travel delays\",\n    \"accidental death\",\n    \"public transport\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ001",
+        "requirement_summary": "Travel insurance inquiry for a trip from Singapore to Europe for two adults with specific coverage needs.",
+        "detailed_description": "The customer is looking for travel insurance that covers medical treatment for pre-existing conditions, trip cancellation, travel delays, lost baggage, activity-related injuries, and accidental death on public transport.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Europe",
+        "travel_duration": "3 weeks",
+        "insurance_coverage_type": [
+            "medical treatment for pre-existing conditions",
+            "trip cancellation",
+            "travel delay expenses",
+            "lost, damaged, or delayed baggage",
+            "activity-related injuries",
+            "accidental death on public transport"
+        ],
+        "pre_existing_conditions": [
+            "high blood pressure"
+        ],
+        "medical_needs": null,
+        "activities_to_cover": [
+            "hiking"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Flexible budget with a focus on comprehensive coverage, especially regarding medical treatment and trip cancellation.",
+        "keywords": [
+            "travel insurance",
+            "trip cancellation",
+            "medical coverage",
+            "high blood pressure",
+            "hiking",
+            "lost baggage",
+            "travel delays",
+            "accidental death",
+            "public transport"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd. My name is Siti, how can I help you today?\nCustomer: Oh, hello Siti. Yes, I... I need to inquire about travel insurance. We're planning a trip and I'm just... feeling quite stressed about everything that could go wrong.\nCustomer Service Agent: I understand travel planning can sometimes feel overwhelming. I can certainly help gather the details needed to find the right information for you. Could you tell me where you'll be traveling from?\nCustomer: Yes, we'll be traveling from Singapore. Our trip starts in Singapore.\nCustomer Service Agent: Noted, Singapore. And where are you planning to travel to?\nCustomer: We're planning a trip to Europe. Several countries, actually. It feels like a big trip.\nCustomer Service Agent: Europe, okay. And how long will you be away for?\nCustomer: It will be a 3 weeks trip. It feels like a long time for things to... potentially happen, you know?\nCustomer Service Agent: Understood, 3 weeks in Europe. And how many people will be traveling?\nCustomer: There will be 2 of us traveling. Myself and my husband.\nCustomer Service Agent: Alright, two travelers. May I ask which age group the travelers fall into? For example, 18-25, 26-40, 41-55?\nCustomer: We're mostly around, well, we're in the 41-55 age group.\nCustomer Service Agent: Okay, thank you. And regarding your health, are there any pre-existing medical conditions we should be aware of for either traveler?\nCustomer: Well, yes, my husband... he has high blood pressure. It's managed, but... what if something happens over there? What if he needs a doctor or, heaven forbid, a hospital? Does the insurance even cover that kind of thing? I worry it won't be enough.\nCustomer Service Agent: Okay, I've noted down the pre-existing condition, high blood pressure for one traveler, and that you require information on coverage for potential medical treatment needed during the trip, like doctor visits or hospital stays. Are there any specific medical devices, like a wheelchair or CPAP machine, that you need to bring along?\nCustomer: Oh, no, no special medical equipment needed, thankfully. But just the thought of needing medical help so far from home... And what if we have to cancel the whole trip beforehand? Say, if one of us gets sick just before we leave, or if there's a family emergency? We'd lose all that money... that's a huge worry.\nCustomer Service Agent: Understood. So you're also looking for information on coverage in case you need to cancel the trip due to unforeseen reasons like illness before departure?\nCustomer: Yes, exactly! That's very important. I need to know what happens then. And what about while we're actually traveling? You hear stories about awful flight delays... what if our flight is delayed for hours and hours, or we miss a connection? Where would we stay? Who pays for that? It sounds like a nightmare.\nCustomer Service Agent: Okay, I understand that concern. So you need details regarding coverage for expenses incurred due to significant travel delays, such as accommodation or meals?\nCustomer: Yes, please. And the luggage! What if the airline loses our bags? Or they arrive damaged? What are we supposed to do then, especially if it happens at the start of the trip? We'd need to buy things...\nCustomer Service Agent: Right, so you require information on coverage for lost, damaged, or delayed baggage, including reimbursement for essentials if your bags are delayed.\nCustomer: Yes. Absolutely. And... we're planning to do some activities. We plan to do some hiking during our trip. Just day hikes, nothing too extreme, but... what if someone slips and gets injured? Is that covered? Or do we need something special for that?\nCustomer Service Agent: Okay, noted. You'll be participating in hiking, and you need information on coverage for potential injuries related to such activities.\nCustomer: Yes. And... one more thing. It's a bit morbid, I suppose, but I was reading... I need to know if the policy provides extra coverage if an accident... a fatal accident... happens while I'm on a bus or train over there? Like, is there some kind of double payout for accidental death if it occurs specifically on public transport? I just need to know that specific detail.\nCustomer Service Agent: Okay, I've specifically noted your requirement regarding clarification on whether there is a double payout benefit for accidental death occurring while traveling on public transport. Thank you for clarifying that. Just to get a general idea, do you have a particular budget range in mind for the insurance premium?\nCustomer: Honestly, our budget for insurance is flexible. The peace of mind is more important. I just want to make sure we're covered for these... possibilities.\nCustomer Service Agent: Thank you, that's helpful. Okay, just to summarize the requirements you've mentioned: You're two adults aged 41-55, traveling from Singapore to Europe for 3 weeks. One traveler has pre-existing high blood pressure. You require information on policies covering:\nCustomer: Yes... yes, that covers all my main worries, I think. It's just... a lot to think about. But yes, that's what I need information on.\nCustomer Service Agent: Excellent. Thank you for providing all those details. I have recorded all your requirements. We will use this information to identify suitable policy options for your review. Someone from our advisory team will be in touch shortly to discuss these options with you.\nCustomer: Oh, okay. Thank you, Siti. I appreciate you noting it all down.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ001\",\n  \"requirement_summary\": \"Travel insurance inquiry for a trip from Singapore to Europe for two adults with specific coverage needs.\",\n  \"detailed_description\": \"The customer is looking for travel insurance that covers medical treatment for pre-existing conditions, trip cancellation, travel delays, lost baggage, activity-related injuries, and accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical treatment for pre-existing conditions\",\n    \"trip cancellation\",\n    \"travel delay expenses\",\n    \"lost, damaged, or delayed baggage\",\n    \"activity-related injuries\",\n    \"accidental death on public transport\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Flexible budget with a focus on comprehensive coverage, especially regarding medical treatment and trip cancellation.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"high blood pressure\",\n    \"hiking\",\n    \"lost baggage\",\n    \"travel delays\",\n    \"accidental death\",\n    \"public transport\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ001",
+                "requirement_summary": "Travel insurance inquiry for a trip from Singapore to Europe for two adults with specific coverage needs.",
+                "detailed_description": "The customer is looking for travel insurance that covers medical treatment for pre-existing conditions, trip cancellation, travel delays, lost baggage, activity-related injuries, and accidental death on public transport.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Europe",
+                "travel_duration": "3 weeks",
+                "insurance_coverage_type": [
+                    "medical treatment for pre-existing conditions",
+                    "trip cancellation",
+                    "travel delay expenses",
+                    "lost, damaged, or delayed baggage",
+                    "activity-related injuries",
+                    "accidental death on public transport"
+                ],
+                "pre_existing_conditions": [
+                    "high blood pressure"
+                ],
+                "medical_needs": null,
+                "activities_to_cover": [
+                    "hiking"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Flexible budget with a focus on comprehensive coverage, especially regarding medical treatment and trip cancellation.",
+                "keywords": [
+                    "travel insurance",
+                    "trip cancellation",
+                    "medical coverage",
+                    "high blood pressure",
+                    "hiking",
+                    "lost baggage",
+                    "travel delays",
+                    "accidental death",
+                    "public transport"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 87484,
+        "prompt_tokens": 73746,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 13738,
+        "successful_requests": 47
+    }
+}

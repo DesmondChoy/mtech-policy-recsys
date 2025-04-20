@@ -1,41 +1,42 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ12345\",\n  \"requirement_summary\": \"Travel insurance for a trip to Europe with specific coverage needs.\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for 2 adults, aged between 41-55, traveling from Singapore to Europe for a duration of 3 weeks. Key requirements include comprehensive medical coverage considering high blood pressure, trip cancellation protection for significant reasons, coverage for substantial travel delays, lost or damaged baggage protection, coverage for hiking activities, and additional accommodation costs for a pet if the return is delayed.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation Protection\",\n    \"Travel Delay Coverage\",\n    \"Lost or Damaged Luggage Protection\",\n    \"Hiking Activity Coverage\",\n    \"Pet Accommodation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High Blood Pressure\"\n  ],\n  \"medical_needs\": [\n    \"General Medical Cover for Emergencies\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Customer expects a competitive quote and clear coverage details.\",\n  \"keywords\": [\n    \"Travel Insurance\",\n    \"Europe\",\n    \"High Blood Pressure\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Lost Luggage\",\n    \"Hiking\",\n    \"Pet Accommodation\"\n  ]\n}",
+    "raw": "{  \n  \"requirement_id\": \"R001\",  \n  \"requirement_summary\": \"Travel insurance for a trip to Europe for two adults with specific coverage needs.\",  \n  \"detailed_description\": \"Comprehensive travel insurance coverage for two adults traveling from Singapore to Europe for 3 weeks. Coverage includes medical needs due to one traveller's high blood pressure, trip cancellation protection, travel delay coverage with accommodation and meals, lost or damaged luggage protection, hiking activities, and pet accommodation costs in case of travel delays.\",  \n  \"travel_origin\": \"Singapore\",  \n  \"travel_destination\": \"Europe\",  \n  \"travel_duration\": \"3 weeks\",  \n  \"insurance_coverage_type\": [\"Comprehensive Medical Coverage\", \"Trip Cancellation\", \"Travel Delay\", \"Lost or Damaged Luggage\", \"Hiking Activities\", \"Pet Accommodation\"],  \n  \"pre_existing_conditions\": [\"High blood pressure\"],  \n  \"medical_needs\": [\"General medical cover for emergencies\", \"Hospital stays\", \"Doctor visits\"],  \n  \"activities_to_cover\": [\"Hiking\"],  \n  \"age_group\": \"41-55\",  \n  \"additional_requests\": \"Coverage for extra pet accommodation costs if return trip is delayed.\",  \n  \"keywords\": [\"travel insurance\", \"Europe\", \"trip cancellation\", \"travel delays\", \"lost luggage\", \"hiking\", \"pet accommodation\"]  \n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ12345",
-        "requirement_summary": "Travel insurance for a trip to Europe with specific coverage needs.",
-        "detailed_description": "The customer requires comprehensive travel insurance for 2 adults, aged between 41-55, traveling from Singapore to Europe for a duration of 3 weeks. Key requirements include comprehensive medical coverage considering high blood pressure, trip cancellation protection for significant reasons, coverage for substantial travel delays, lost or damaged baggage protection, coverage for hiking activities, and additional accommodation costs for a pet if the return is delayed.",
+        "requirement_id": "R001",
+        "requirement_summary": "Travel insurance for a trip to Europe for two adults with specific coverage needs.",
+        "detailed_description": "Comprehensive travel insurance coverage for two adults traveling from Singapore to Europe for 3 weeks. Coverage includes medical needs due to one traveller's high blood pressure, trip cancellation protection, travel delay coverage with accommodation and meals, lost or damaged luggage protection, hiking activities, and pet accommodation costs in case of travel delays.",
         "travel_origin": "Singapore",
         "travel_destination": "Europe",
         "travel_duration": "3 weeks",
         "insurance_coverage_type": [
             "Comprehensive Medical Coverage",
-            "Trip Cancellation Protection",
-            "Travel Delay Coverage",
-            "Lost or Damaged Luggage Protection",
-            "Hiking Activity Coverage",
-            "Pet Accommodation Coverage"
+            "Trip Cancellation",
+            "Travel Delay",
+            "Lost or Damaged Luggage",
+            "Hiking Activities",
+            "Pet Accommodation"
         ],
         "pre_existing_conditions": [
-            "High Blood Pressure"
+            "High blood pressure"
         ],
         "medical_needs": [
-            "General Medical Cover for Emergencies"
+            "General medical cover for emergencies",
+            "Hospital stays",
+            "Doctor visits"
         ],
         "activities_to_cover": [
             "Hiking"
         ],
         "age_group": "41-55",
-        "additional_requests": "Customer expects a competitive quote and clear coverage details.",
+        "additional_requests": "Coverage for extra pet accommodation costs if return trip is delayed.",
         "keywords": [
-            "Travel Insurance",
+            "travel insurance",
             "Europe",
-            "High Blood Pressure",
-            "Trip Cancellation",
-            "Travel Delay",
-            "Lost Luggage",
-            "Hiking",
-            "Pet Accommodation"
+            "trip cancellation",
+            "travel delays",
+            "lost luggage",
+            "hiking",
+            "pet accommodation"
         ]
     },
     "tasks_output": [
@@ -44,43 +45,44 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ12345\",\n  \"requirement_summary\": \"Travel insurance for a trip to Europe with specific coverage needs.\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for 2 adults, aged between 41-55, traveling from Singapore to Europe for a duration of 3 weeks. Key requirements include comprehensive medical coverage considering high blood pressure, trip cancellation protection for significant reasons, coverage for substantial travel delays, lost or damaged baggage protection, coverage for hiking activities, and additional accommodation costs for a pet if the return is delayed.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation Protection\",\n    \"Travel Delay Coverage\",\n    \"Lost or Damaged Luggage Protection\",\n    \"Hiking Activity Coverage\",\n    \"Pet Accommodation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High Blood Pressure\"\n  ],\n  \"medical_needs\": [\n    \"General Medical Cover for Emergencies\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Customer expects a competitive quote and clear coverage details.\",\n  \"keywords\": [\n    \"Travel Insurance\",\n    \"Europe\",\n    \"High Blood Pressure\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Lost Luggage\",\n    \"Hiking\",\n    \"Pet Accommodation\"\n  ]\n}",
+            "raw": "{  \n  \"requirement_id\": \"R001\",  \n  \"requirement_summary\": \"Travel insurance for a trip to Europe for two adults with specific coverage needs.\",  \n  \"detailed_description\": \"Comprehensive travel insurance coverage for two adults traveling from Singapore to Europe for 3 weeks. Coverage includes medical needs due to one traveller's high blood pressure, trip cancellation protection, travel delay coverage with accommodation and meals, lost or damaged luggage protection, hiking activities, and pet accommodation costs in case of travel delays.\",  \n  \"travel_origin\": \"Singapore\",  \n  \"travel_destination\": \"Europe\",  \n  \"travel_duration\": \"3 weeks\",  \n  \"insurance_coverage_type\": [\"Comprehensive Medical Coverage\", \"Trip Cancellation\", \"Travel Delay\", \"Lost or Damaged Luggage\", \"Hiking Activities\", \"Pet Accommodation\"],  \n  \"pre_existing_conditions\": [\"High blood pressure\"],  \n  \"medical_needs\": [\"General medical cover for emergencies\", \"Hospital stays\", \"Doctor visits\"],  \n  \"activities_to_cover\": [\"Hiking\"],  \n  \"age_group\": \"41-55\",  \n  \"additional_requests\": \"Coverage for extra pet accommodation costs if return trip is delayed.\",  \n  \"keywords\": [\"travel insurance\", \"Europe\", \"trip cancellation\", \"travel delays\", \"lost luggage\", \"hiking\", \"pet accommodation\"]  \n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ12345",
-                "requirement_summary": "Travel insurance for a trip to Europe with specific coverage needs.",
-                "detailed_description": "The customer requires comprehensive travel insurance for 2 adults, aged between 41-55, traveling from Singapore to Europe for a duration of 3 weeks. Key requirements include comprehensive medical coverage considering high blood pressure, trip cancellation protection for significant reasons, coverage for substantial travel delays, lost or damaged baggage protection, coverage for hiking activities, and additional accommodation costs for a pet if the return is delayed.",
+                "requirement_id": "R001",
+                "requirement_summary": "Travel insurance for a trip to Europe for two adults with specific coverage needs.",
+                "detailed_description": "Comprehensive travel insurance coverage for two adults traveling from Singapore to Europe for 3 weeks. Coverage includes medical needs due to one traveller's high blood pressure, trip cancellation protection, travel delay coverage with accommodation and meals, lost or damaged luggage protection, hiking activities, and pet accommodation costs in case of travel delays.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Europe",
                 "travel_duration": "3 weeks",
                 "insurance_coverage_type": [
                     "Comprehensive Medical Coverage",
-                    "Trip Cancellation Protection",
-                    "Travel Delay Coverage",
-                    "Lost or Damaged Luggage Protection",
-                    "Hiking Activity Coverage",
-                    "Pet Accommodation Coverage"
+                    "Trip Cancellation",
+                    "Travel Delay",
+                    "Lost or Damaged Luggage",
+                    "Hiking Activities",
+                    "Pet Accommodation"
                 ],
                 "pre_existing_conditions": [
-                    "High Blood Pressure"
+                    "High blood pressure"
                 ],
                 "medical_needs": [
-                    "General Medical Cover for Emergencies"
+                    "General medical cover for emergencies",
+                    "Hospital stays",
+                    "Doctor visits"
                 ],
                 "activities_to_cover": [
                     "Hiking"
                 ],
                 "age_group": "41-55",
-                "additional_requests": "Customer expects a competitive quote and clear coverage details.",
+                "additional_requests": "Coverage for extra pet accommodation costs if return trip is delayed.",
                 "keywords": [
-                    "Travel Insurance",
+                    "travel insurance",
                     "Europe",
-                    "High Blood Pressure",
-                    "Trip Cancellation",
-                    "Travel Delay",
-                    "Lost Luggage",
-                    "Hiking",
-                    "Pet Accommodation"
+                    "trip cancellation",
+                    "travel delays",
+                    "lost luggage",
+                    "hiking",
+                    "pet accommodation"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -88,10 +90,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 32218,
-        "prompt_tokens": 26869,
+        "total_tokens": 65158,
+        "prompt_tokens": 54917,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 5349,
-        "successful_requests": 18
+        "completion_tokens": 10241,
+        "successful_requests": 35
     }
 }

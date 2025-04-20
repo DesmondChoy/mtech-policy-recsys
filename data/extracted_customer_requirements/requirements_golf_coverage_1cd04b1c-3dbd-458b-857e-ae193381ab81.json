@@ -1,23 +1,23 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance inquiry for a couple traveling to Australia for 10 days\",\n  \"detailed_description\": \"The customer is looking for comprehensive travel insurance to cover medical emergencies, trip cancellation, golf-related activities including equipment protection, and travel delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delays\",\n    \"Golf Equipment Protection\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Emergency treatment\",\n    \"Hospital stays\",\n    \"Prescriptions\",\n    \"Doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for hole-in-one achievement benefit, clarification on policy wording and senior representative review.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"golf equipment\",\n    \"travel delays\",\n    \"hole-in-one benefit\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance required for trip to Australia with specific coverage needs.\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance coverage for a 10-day trip to Australia, including details on medical coverage, trip cancellation, coverage for golf activities, and protection for luggage losses or damages.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Golf Equipment Coverage\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": [\n    \"Emergency medical treatment\",\n    \"Hospital stays\",\n    \"Prescriptions\",\n    \"Doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Hole-in-One achievement benefit, details on reimbursement for unused green fees, and specifics on coverage for delayed flights.\",\n  \"keywords\": [\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"golf equipment\",\n    \"travel delays\",\n    \"luggage coverage\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ-001",
-        "requirement_summary": "Travel insurance inquiry for a couple traveling to Australia for 10 days",
-        "detailed_description": "The customer is looking for comprehensive travel insurance to cover medical emergencies, trip cancellation, golf-related activities including equipment protection, and travel delays.",
+        "requirement_id": "1",
+        "requirement_summary": "Travel insurance required for trip to Australia with specific coverage needs.",
+        "detailed_description": "The customer requires comprehensive travel insurance coverage for a 10-day trip to Australia, including details on medical coverage, trip cancellation, coverage for golf activities, and protection for luggage losses or damages.",
         "travel_origin": "Singapore",
         "travel_destination": "Australia",
         "travel_duration": "10 days",
         "insurance_coverage_type": [
             "Medical Coverage",
             "Trip Cancellation",
-            "Lost/Damaged Luggage",
             "Travel Delays",
-            "Golf Equipment Protection"
+            "Lost/Damaged Luggage",
+            "Golf Equipment Coverage"
         ],
-        "pre_existing_conditions": [],
+        "pre_existing_conditions": null,
         "medical_needs": [
-            "Emergency treatment",
+            "Emergency medical treatment",
             "Hospital stays",
             "Prescriptions",
             "Doctor visits"
@@ -26,15 +26,13 @@
             "Golf"
         ],
         "age_group": "41-55",
-        "additional_requests": "Coverage for hole-in-one achievement benefit, clarification on policy wording and senior representative review.",
+        "additional_requests": "Hole-in-One achievement benefit, details on reimbursement for unused green fees, and specifics on coverage for delayed flights.",
         "keywords": [
-            "travel insurance",
-            "medical coverage",
             "trip cancellation",
-            "lost luggage",
+            "medical coverage",
             "golf equipment",
             "travel delays",
-            "hole-in-one benefit"
+            "luggage coverage"
         ]
     },
     "tasks_output": [
@@ -43,25 +41,25 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance inquiry for a couple traveling to Australia for 10 days\",\n  \"detailed_description\": \"The customer is looking for comprehensive travel insurance to cover medical emergencies, trip cancellation, golf-related activities including equipment protection, and travel delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delays\",\n    \"Golf Equipment Protection\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Emergency treatment\",\n    \"Hospital stays\",\n    \"Prescriptions\",\n    \"Doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for hole-in-one achievement benefit, clarification on policy wording and senior representative review.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"golf equipment\",\n    \"travel delays\",\n    \"hole-in-one benefit\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance required for trip to Australia with specific coverage needs.\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance coverage for a 10-day trip to Australia, including details on medical coverage, trip cancellation, coverage for golf activities, and protection for luggage losses or damages.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Golf Equipment Coverage\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": [\n    \"Emergency medical treatment\",\n    \"Hospital stays\",\n    \"Prescriptions\",\n    \"Doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Hole-in-One achievement benefit, details on reimbursement for unused green fees, and specifics on coverage for delayed flights.\",\n  \"keywords\": [\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"golf equipment\",\n    \"travel delays\",\n    \"luggage coverage\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ-001",
-                "requirement_summary": "Travel insurance inquiry for a couple traveling to Australia for 10 days",
-                "detailed_description": "The customer is looking for comprehensive travel insurance to cover medical emergencies, trip cancellation, golf-related activities including equipment protection, and travel delays.",
+                "requirement_id": "1",
+                "requirement_summary": "Travel insurance required for trip to Australia with specific coverage needs.",
+                "detailed_description": "The customer requires comprehensive travel insurance coverage for a 10-day trip to Australia, including details on medical coverage, trip cancellation, coverage for golf activities, and protection for luggage losses or damages.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Australia",
                 "travel_duration": "10 days",
                 "insurance_coverage_type": [
                     "Medical Coverage",
                     "Trip Cancellation",
-                    "Lost/Damaged Luggage",
                     "Travel Delays",
-                    "Golf Equipment Protection"
+                    "Lost/Damaged Luggage",
+                    "Golf Equipment Coverage"
                 ],
-                "pre_existing_conditions": [],
+                "pre_existing_conditions": null,
                 "medical_needs": [
-                    "Emergency treatment",
+                    "Emergency medical treatment",
                     "Hospital stays",
                     "Prescriptions",
                     "Doctor visits"
@@ -70,15 +68,13 @@
                     "Golf"
                 ],
                 "age_group": "41-55",
-                "additional_requests": "Coverage for hole-in-one achievement benefit, clarification on policy wording and senior representative review.",
+                "additional_requests": "Hole-in-One achievement benefit, details on reimbursement for unused green fees, and specifics on coverage for delayed flights.",
                 "keywords": [
-                    "travel insurance",
-                    "medical coverage",
                     "trip cancellation",
-                    "lost luggage",
+                    "medical coverage",
                     "golf equipment",
                     "travel delays",
-                    "hole-in-one benefit"
+                    "luggage coverage"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -86,10 +82,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 6117,
-        "prompt_tokens": 5268,
+        "total_tokens": 9018,
+        "prompt_tokens": 7709,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 849,
-        "successful_requests": 3
+        "completion_tokens": 1309,
+        "successful_requests": 5
     }
 }

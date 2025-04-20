@@ -225,6 +225,7 @@ This installs all necessary packages listed in `package.json` for any web or sup
     *   **Policy Extraction (`scripts/extract_policy_tier.py`)**: Depends on `LLMService`.
     *   **Transcript Evaluation (`scripts/evaluation/transcript_evaluation/`)**: Depends on `LLMService`.
     *   **Policy Comparison (`scripts/generate_policy_comparison.py`)**: Depends on `LLMService`, Extractor output, and Policy Extraction output.
+    *   **Orchestration Script (`scripts/orchestrate_scenario_evaluation.py`)**: Automates the end-to-end workflow, calling other scripts. Includes flags like `--skip_transcript_eval` and `--only_aggregate` to control execution flow.
 
 4.  **Utility Modules (`src/utils/`)**:
     *   `transcript_processing.py`: Defines `TravelInsuranceRequirement` Pydantic model (used by Extractor) and parsing logic.

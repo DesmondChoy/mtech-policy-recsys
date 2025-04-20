@@ -1,0 +1,93 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for anniversary trip to Thailand\",\n  \"detailed_description\": \"A couple is seeking travel insurance for their anniversary trip to Thailand. They require comprehensive medical coverage, including issues related to high blood pressure. They also need coverage for scuba diving, protection against travel delays causing extra expenses, additional pet accommodation costs in case of trip delay, coverage for lost or damaged luggage, and trip cancellation coverage due to serious health issues or emergencies.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"activity coverage\",\n    \"trip cancellation coverage\",\n    \"lost luggage coverage\",\n    \"travel delay coverage\",\n    \"pet accommodation coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"scuba diving\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget around $400 for insurance coverage\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Thailand\",\n    \"scuba diving\",\n    \"high blood pressure\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"travel delay\",\n    \"pet accommodation\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ-001",
+        "requirement_summary": "Travel insurance for anniversary trip to Thailand",
+        "detailed_description": "A couple is seeking travel insurance for their anniversary trip to Thailand. They require comprehensive medical coverage, including issues related to high blood pressure. They also need coverage for scuba diving, protection against travel delays causing extra expenses, additional pet accommodation costs in case of trip delay, coverage for lost or damaged luggage, and trip cancellation coverage due to serious health issues or emergencies.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Thailand",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "medical coverage",
+            "activity coverage",
+            "trip cancellation coverage",
+            "lost luggage coverage",
+            "travel delay coverage",
+            "pet accommodation coverage"
+        ],
+        "pre_existing_conditions": [
+            "high blood pressure"
+        ],
+        "medical_needs": [],
+        "activities_to_cover": [
+            "scuba diving"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Budget around $400 for insurance coverage",
+        "keywords": [
+            "travel insurance",
+            "Thailand",
+            "scuba diving",
+            "high blood pressure",
+            "trip cancellation",
+            "lost luggage",
+            "travel delay",
+            "pet accommodation"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd. My name is Priya, how may I help you today?\nCustomer: Morning Priya! Oh, finally got through, the line was a bit busy just now, must be popular ah! Yes, I'm calling about travel insurance. My husband and I are planning a trip soon, very exciting!\nCustomer Service Agent: That sounds wonderful! I can certainly help you with information about travel insurance. To start, could you let me know where you'll be travelling to?\nCustomer: Yes, we're planning a trip to Thailand! Phuket, specifically. It's our anniversary trip, celebrating 20 years, can you believe it? Time flies lah! We haven't been back since before the kids were born, feels like a lifetime ago.\nCustomer Service Agent: Congratulations on your anniversary! Thailand is a great choice. And how long will you be away for?\nCustomer: We'll be away for 2 weeks. Leaving from Singapore, of course. Just nice, enough time to relax but not too long away from home.\nCustomer Service Agent: Okay, 2 weeks in Thailand, departing from Singapore. And how many people will be travelling?\nCustomer: Just the two of us this time! The kids are old enough to look after themselves... mostly! Ha! So, it's a trip for 2. We're mostly around 41-55 years old, still young at heart though!\nCustomer Service Agent: Noted, 2 travellers in the 41-55 age group. During your 2 weeks in Thailand, are you planning any specific activities? Sometimes people like to do water sports or hiking.\nCustomer: Oh yes! Definitely! That's actually one of the main things! We want to try Scuba Diving. My friend went last year and her photos were incredible, under the sea with all the fish! I've always wanted to try it. So we need coverage for Scuba Diving, just in case, you know? Better safe than sorry when trying new things.\nCustomer Service Agent: Right, planning for scuba diving. That’s good to know. Are there any specific medical considerations for either traveller? For example, any pre-existing conditions or special equipment you need to bring?\nCustomer: No special medical equipment needed, thankfully. But my husband, David, has high blood pressure. It's well-controlled with medication he takes daily, but do we need to declare high blood pressure? We want to make sure that if, God forbid, something happens related to that, or anything else really, we have proper medical coverage. Getting sick overseas is my biggest worry – finding a doctor, hospital stays, you know.\nCustomer Service Agent: Okay, I've noted the query about declaring high blood pressure and the need for comprehensive medical coverage during the trip. Besides medical concerns, are there any other aspects of the travel you're thinking about?\nCustomer: Well, you know how flights are these days! Always seem to be delays. We were stuck in Hong Kong airport for nearly 9 hours once, horrible experience! It cost a fortune just eating at the airport cafe. So, yes, what happens if our flight gets delayed significantly? Need to know we're covered for extra hotel nights or meals if we get stuck.\nCustomer Service Agent: Okay, so cover for significant travel delays causing additional expenses like accommodation and meals.\nCustomer: Exactly! And speaking of delays... this is maybe a bit unusual, but we have a cat, Snowy. She's like our third child, really. She'll be staying at a pet hotel while we're away. If our flight back to Singapore gets cancelled or super delayed, we'd need her to stay there longer. That costs extra, you know! So, I was wondering, is there *any* possibility of getting cover for those extra pet hotel fees if we are delayed getting back?\nCustomer Service Agent: Understood, you're specifically asking about coverage for additional pet accommodation costs incurred if your return to Singapore is unexpectedly delayed. I've made a note of that requirement. Thinking about the journey itself, what about your belongings?\nCustomer: Oh goodness, yes, luggage! My sister-in-law, her suitcase got completely mangled on a trip to Australia last year. Wheels broken, handle snapped off! And you hear horror stories about bags just disappearing. So coverage for lost or damaged luggage is a must. Just for peace of mind, really. I’d hate to arrive with nothing to wear!\nCustomer Service Agent: Makes sense, coverage for lost, damaged, or delayed baggage. What about unforeseen circumstances *before* you travel? Things that might force you to cancel the trip altogether?\nCustomer: Ah, cancellation, yes. Touch wood, hopefully not! But you never know, right? Like if one of us gets seriously ill just before we're supposed to leave, or there's a bad family emergency back home. We've already paid for flights and the hotel booking is non-refundable after a certain date. So, yes, cover for trip cancellation due to major reasons like illness or emergencies is important.\nCustomer Service Agent: Right, noted: trip cancellation coverage. And finally, do you have a particular budget in mind for the travel insurance policy for the two of you?\nCustomer: Budget... hmm. We were thinking something around $400 for the insurance for both of us for the two weeks? Is that realistic for the kind of things we need? We're flexible, but yeah, around $400 would be ideal.\nCustomer Service Agent: Okay, noted a budget of around $400. Thank you, Mrs. Lim, that gives me a clear picture of your needs. Just to quickly recap: You're looking for travel insurance for 2 adults, age group 41-55, travelling from Singapore to Thailand for 2 weeks. Key requirements include medical coverage (noting the query on high blood pressure), cover for scuba diving activities, protection against significant travel delays including meals and accommodation, specific cover for additional pet hotel costs due to return delays, lost or damaged luggage cover, and trip cancellation protection. The budget is around $400. Have I captured everything correctly?\nCustomer: Yes, Priya, that sounds exactly right! You've got it all down. It feels good to list it all out, makes me feel more organised, haha! Thanks for being so patient, I know I can chat a bit!\nCustomer Service Agent: Not at all, Mrs. Lim, it's important we understand exactly what you need. Thank you for providing all the details. I have recorded these requirements. Have a great day and enjoy planning the rest of your anniversary trip!\nCustomer: Thank you so much, Priya! You've been very helpful. Have a lovely day too! Bye bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for anniversary trip to Thailand\",\n  \"detailed_description\": \"A couple is seeking travel insurance for their anniversary trip to Thailand. They require comprehensive medical coverage, including issues related to high blood pressure. They also need coverage for scuba diving, protection against travel delays causing extra expenses, additional pet accommodation costs in case of trip delay, coverage for lost or damaged luggage, and trip cancellation coverage due to serious health issues or emergencies.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"activity coverage\",\n    \"trip cancellation coverage\",\n    \"lost luggage coverage\",\n    \"travel delay coverage\",\n    \"pet accommodation coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"scuba diving\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget around $400 for insurance coverage\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Thailand\",\n    \"scuba diving\",\n    \"high blood pressure\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"travel delay\",\n    \"pet accommodation\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ-001",
+                "requirement_summary": "Travel insurance for anniversary trip to Thailand",
+                "detailed_description": "A couple is seeking travel insurance for their anniversary trip to Thailand. They require comprehensive medical coverage, including issues related to high blood pressure. They also need coverage for scuba diving, protection against travel delays causing extra expenses, additional pet accommodation costs in case of trip delay, coverage for lost or damaged luggage, and trip cancellation coverage due to serious health issues or emergencies.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Thailand",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "medical coverage",
+                    "activity coverage",
+                    "trip cancellation coverage",
+                    "lost luggage coverage",
+                    "travel delay coverage",
+                    "pet accommodation coverage"
+                ],
+                "pre_existing_conditions": [
+                    "high blood pressure"
+                ],
+                "medical_needs": [],
+                "activities_to_cover": [
+                    "scuba diving"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Budget around $400 for insurance coverage",
+                "keywords": [
+                    "travel insurance",
+                    "Thailand",
+                    "scuba diving",
+                    "high blood pressure",
+                    "trip cancellation",
+                    "lost luggage",
+                    "travel delay",
+                    "pet accommodation"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 75898,
+        "prompt_tokens": 63969,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 11929,
+        "successful_requests": 41
+    }
+}

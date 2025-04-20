@@ -1,0 +1,95 @@
+{
+    "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance coverage for a 3-week trip to Europe for two travelers aged 41-55.\",\n  \"detailed_description\": \"Coverage required for Medical needs including emergency treatment for one traveler with high blood pressure, Lost, Damaged or Delayed Luggage, potential Travel Delays with accommodations and meals covered, Sports and Adventure activities coverage specifically for hiking, and Trip Cancellation coverage for family emergencies related to an important event like a wedding. Budget is flexible but expected to provide fair value.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\"Medical Coverage\", \"Lost or Damaged Luggage\", \"Travel Delays\", \"Sports and Adventure Activities\", \"Trip Cancellation\"],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"emergency treatment\", \"hospital stays\"],\n  \"activities_to_cover\": [\"hiking\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Ensure proper coverage and no misunderstandings on claims.\",\n  \"keywords\": [\"travel insurance\", \"Europe\", \"hiking\", \"medical coverage\", \"trip cancellation\", \"lost luggage\", \"travel delays\"]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "001",
+        "requirement_summary": "Travel insurance coverage for a 3-week trip to Europe for two travelers aged 41-55.",
+        "detailed_description": "Coverage required for Medical needs including emergency treatment for one traveler with high blood pressure, Lost, Damaged or Delayed Luggage, potential Travel Delays with accommodations and meals covered, Sports and Adventure activities coverage specifically for hiking, and Trip Cancellation coverage for family emergencies related to an important event like a wedding. Budget is flexible but expected to provide fair value.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Europe",
+        "travel_duration": "3 weeks",
+        "insurance_coverage_type": [
+            "Medical Coverage",
+            "Lost or Damaged Luggage",
+            "Travel Delays",
+            "Sports and Adventure Activities",
+            "Trip Cancellation"
+        ],
+        "pre_existing_conditions": [
+            "high blood pressure"
+        ],
+        "medical_needs": [
+            "emergency treatment",
+            "hospital stays"
+        ],
+        "activities_to_cover": [
+            "hiking"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Ensure proper coverage and no misunderstandings on claims.",
+        "keywords": [
+            "travel insurance",
+            "Europe",
+            "hiking",
+            "medical coverage",
+            "trip cancellation",
+            "lost luggage",
+            "travel delays"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd. My name is Siti. How may I help you today?\nCustomer: Look, I need travel insurance, but frankly, after the last fiasco trying to claim anything, I'm not expecting much from you people. Just get me the details, okay?\nCustomer Service Agent: I understand you've had frustrations previously, sir/madam. I'll do my best to assist you efficiently today. To start, could you please let me know your travel destination and the duration of your trip?\nCustomer: We're planning a trip to Europe. It's for 3 weeks. There will be 2 of us traveling, and we're mostly around the 41-55 age group. We're flying from Singapore, of course. Just make sure I don't get ripped off.\nCustomer Service Agent: Okay, thank you. A 3-week trip to Europe for two travellers in the 41-55 age group, departing from Singapore. Got it. Will you be participating in any specific activities during your trip? For example, any sports or adventurous excursions?\nCustomer: We plan to do some hiking. Nothing extreme, but knowing my luck, something will go wrong. What about that? Last time, some gear got slightly damaged, and claiming was ridiculous. So, yes, we need coverage for hiking. What falls under your **Sports and Adventure Activities** cover?\nCustomer Service Agent: Noted, coverage required for hiking under Sports and Adventure Activities. Thank you. Are there any health concerns I should be aware of for the travellers? Any pre-existing conditions?\nCustomer: Yes, one traveler has high blood pressure. It's managed, but you insurance companies always look for excuses. So, do we need to declare high blood pressure? And I want to be absolutely clear – we need proper **Medical Coverage**. That means covering emergency treatment, hospital stays if needed, the works. No nonsense.\nCustomer Service Agent: Alright, I've noted the requirement for comprehensive Medical Coverage and that one traveller has high blood pressure, which would typically need to be declared. Thank you for sharing that. What about potential travel disruptions? Are you concerned about flight issues?\nCustomer: Concerned? Of course, I'm concerned! Flights are constantly delayed or cancelled these days. If we get stuck somewhere because of the airline, I expect ISS to cover it. So, what's the situation with **Travel Delays**? Does it cover extra hotel nights, meals? I refuse to be out of pocket because of some airline's incompetence!\nCustomer Service Agent: Okay, I have noted your requirement for coverage regarding Travel Delays, including accommodation and meal expenses. Understood. How about your luggage? Any concerns there?\nCustomer: Don't even start! Last trip, my bag went missing for three whole days! It was a nightmare getting any compensation. So, yes, I need coverage for **Lost or Damaged Luggage**. And I mean proper reimbursement for lost items and essentials if it's delayed, not some insulting token amount you guys usually offer.\nCustomer Service Agent: Understood. Requirement noted for Lost, Damaged, or Delayed Luggage coverage. Thank you. Is there anything specific that might cause you to cancel the trip beforehand that you are particularly worried about?\nCustomer: Yes, actually! This is critical. My sister is getting married around the time we're supposed to travel. If something happens, some family emergency relating to that, and we *have* to cancel our trip to be there for the wedding, are we covered? I need to know specifically about **Trip Cancellation** for that reason. I won't accept losing all our money because of a genuine family obligation like a wedding! I need a straight answer, is that covered or not?\nCustomer Service Agent: Okay, I've noted the requirement for Trip Cancellation coverage, and specifically your query regarding cancellation due to needing to attend an important family event like your sister's wedding. I understand you need clarity on whether this specific reason is covered under the policy terms. Thank you for highlighting that. Lastly, do you have a budget range in mind for this insurance policy?\nCustomer: Our budget for insurance is flexible, but don't think that gives you a blank cheque. It needs to be fair value, especially considering all the potential problems I foresee. I expect proper coverage for what I pay.\nCustomer Service Agent: Noted, flexible budget. Thank you. Let me quickly summarize the requirements I've gathered to ensure I have everything correct. You're planning a 3-week trip to Europe for two travellers aged 41-55, departing from Singapore. You require coverage for: Medical needs, acknowledging one traveller has high blood pressure; Lost, Damaged or Delayed Luggage; potential Travel Delays; Sports and Adventure activities, specifically hiking; and Trip Cancellation, with a specific need to clarify coverage if cancellation is due to an important family event like attending your sister's wedding. Your budget is flexible. Is that all correct?\nCustomer: Yes, that seems to be everything. Just make sure these requirements are properly passed on. I don't want any misunderstandings later.\nCustomer Service Agent: Thank you for confirming. I have recorded all these requirements accurately. Someone from our team will review these details and get back to you shortly with the relevant policy information that matches your needs. Thank you for calling ISS Insurance.\nCustomer: Fine. Just make it quick. Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance coverage for a 3-week trip to Europe for two travelers aged 41-55.\",\n  \"detailed_description\": \"Coverage required for Medical needs including emergency treatment for one traveler with high blood pressure, Lost, Damaged or Delayed Luggage, potential Travel Delays with accommodations and meals covered, Sports and Adventure activities coverage specifically for hiking, and Trip Cancellation coverage for family emergencies related to an important event like a wedding. Budget is flexible but expected to provide fair value.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\"Medical Coverage\", \"Lost or Damaged Luggage\", \"Travel Delays\", \"Sports and Adventure Activities\", \"Trip Cancellation\"],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"emergency treatment\", \"hospital stays\"],\n  \"activities_to_cover\": [\"hiking\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Ensure proper coverage and no misunderstandings on claims.\",\n  \"keywords\": [\"travel insurance\", \"Europe\", \"hiking\", \"medical coverage\", \"trip cancellation\", \"lost luggage\", \"travel delays\"]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "001",
+                "requirement_summary": "Travel insurance coverage for a 3-week trip to Europe for two travelers aged 41-55.",
+                "detailed_description": "Coverage required for Medical needs including emergency treatment for one traveler with high blood pressure, Lost, Damaged or Delayed Luggage, potential Travel Delays with accommodations and meals covered, Sports and Adventure activities coverage specifically for hiking, and Trip Cancellation coverage for family emergencies related to an important event like a wedding. Budget is flexible but expected to provide fair value.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Europe",
+                "travel_duration": "3 weeks",
+                "insurance_coverage_type": [
+                    "Medical Coverage",
+                    "Lost or Damaged Luggage",
+                    "Travel Delays",
+                    "Sports and Adventure Activities",
+                    "Trip Cancellation"
+                ],
+                "pre_existing_conditions": [
+                    "high blood pressure"
+                ],
+                "medical_needs": [
+                    "emergency treatment",
+                    "hospital stays"
+                ],
+                "activities_to_cover": [
+                    "hiking"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Ensure proper coverage and no misunderstandings on claims.",
+                "keywords": [
+                    "travel insurance",
+                    "Europe",
+                    "hiking",
+                    "medical coverage",
+                    "trip cancellation",
+                    "lost luggage",
+                    "travel delays"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 129012,
+        "prompt_tokens": 108937,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 20075,
+        "successful_requests": 69
+    }
+}

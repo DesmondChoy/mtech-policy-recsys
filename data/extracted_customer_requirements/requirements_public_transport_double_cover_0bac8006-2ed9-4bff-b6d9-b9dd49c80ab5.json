@@ -1,0 +1,95 @@
+{
+    "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance for a 3-week trip to Europe from Singapore covering two adults aged 26-40 with specific needs.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance for a 3-week trip to Europe. Coverage needed for two adults aged 26-40, including medical coverage for high blood pressure, white water rafting, lost/damaged luggage, trip cancellation for any reason, travel delays, and double indemnity for accidental death on public transport. Flexible budget focused on top-tier service.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical\",\n    \"trip cancellation\",\n    \"lost/damaged luggage\",\n    \"travel delay\",\n    \"double indemnity\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"white water rafting\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Comprehensive coverage with no exclusions, flexible budget prioritizing best coverage.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Europe\",\n    \"comprehensive coverage\",\n    \"high blood pressure\",\n    \"white water rafting\",\n    \"lost luggage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"double indemnity\",\n    \"flexible budget\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "001",
+        "requirement_summary": "Travel insurance for a 3-week trip to Europe from Singapore covering two adults aged 26-40 with specific needs.",
+        "detailed_description": "Customer requires comprehensive travel insurance for a 3-week trip to Europe. Coverage needed for two adults aged 26-40, including medical coverage for high blood pressure, white water rafting, lost/damaged luggage, trip cancellation for any reason, travel delays, and double indemnity for accidental death on public transport. Flexible budget focused on top-tier service.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Europe",
+        "travel_duration": "3 weeks",
+        "insurance_coverage_type": [
+            "medical",
+            "trip cancellation",
+            "lost/damaged luggage",
+            "travel delay",
+            "double indemnity"
+        ],
+        "pre_existing_conditions": [
+            "high blood pressure"
+        ],
+        "medical_needs": null,
+        "activities_to_cover": [
+            "white water rafting"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Comprehensive coverage with no exclusions, flexible budget prioritizing best coverage.",
+        "keywords": [
+            "travel insurance",
+            "Europe",
+            "comprehensive coverage",
+            "high blood pressure",
+            "white water rafting",
+            "lost luggage",
+            "trip cancellation",
+            "travel delays",
+            "double indemnity",
+            "flexible budget"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd. My name is Siti, how may I assist you today?\nCustomer: Yes, finally. Took long enough to get through. I need travel insurance. I'm planning a trip and I need the best coverage you have. I've been with ISS for years, you know.\nCustomer Service Agent: Thank you for your loyalty, sir. I can certainly help gather the details needed for a quote. Could you tell me where you'll be traveling from?\nCustomer: We're based in Singapore, obviously. That's where your company is, right?\nCustomer Service Agent: Yes, that's correct. And where will you be traveling to?\nCustomer: We're planning a trip to Europe. Quite extensive.\nCustomer Service Agent: Alright, Europe. And how long will you be away for?\nCustomer: It will be a 3 weeks trip. A proper holiday, not some short getaway.\nCustomer Service Agent: Understood, three weeks. And how many people will be traveling?\nCustomer: There will be 2 of us traveling. Both adults.\nCustomer Service Agent: Okay, two adults. Could you let me know which age group the travelers fall into?\nCustomer: We're mostly around 26-40 years old. Prime travel age.\nCustomer Service Agent: Noted, 26-40 age group. Now, regarding your trip, are there any particular activities you plan on participating in that might require specific coverage?\nCustomer: Yes, we plan to do White Water Rafting during our trip. And I expect that to be fully covered, no excuses if something happens. Don't try to tell me it's excluded later.\nCustomer Service Agent: Okay, I've noted down white water rafting as an activity you require coverage for. Are there any specific medical considerations I should be aware of, such as pre-existing conditions?\nCustomer: Well, my partner has high blood pressure. It's managed, but it absolutely needs to be covered. I won't accept any policy that tries to exclude that. It's a basic requirement.\nCustomer Service Agent: I understand you require coverage that considers high blood pressure. I've made a note of that. Do you need to bring any special medical equipment like a wheelchair or CPAP machine?\nCustomer: No, no special medical equipment needed. Just the standard things.\nCustomer Service Agent: Okay. Thinking about potential issues during travel, what are your main concerns? For example, regarding your belongings or potential disruptions?\nCustomer: Look, my main concern is that everything is covered. If my luggage gets lost or damaged, I expect full replacement value, period. I don't want excuses about electronics or whatever you people usually try to exclude. And if the trip gets cancelled for *any* reason – illness, work, anything – I expect a full refund of my costs. Don't give me a list of 'covered reasons', I want *all* reasons covered.\nCustomer Service Agent: So you're looking for coverage for lost or damaged luggage, and comprehensive trip cancellation protection. Are there any other potential issues, like delays?\nCustomer: Absolutely. If there are significant travel delays, I expect ISS to cover hotels, meals, everything needed without a fuss. Don't tell me I have to wait six or eight hours either. Any serious delay needs compensation.\nCustomer Service Agent: Alright, I've noted your requirement for coverage related to travel delays, lost/damaged baggage, and trip cancellation.\nCustomer: And another thing. I was reading about payouts. I want to know if the policy provides extra coverage if an accident happens while I'm on a bus or train – like a double payout for accidental death specifically on public transport. That needs to be included. Don't try and sell me a basic plan.\nCustomer Service Agent: Okay, I have noted your specific requirement for double indemnity coverage for accidental death occurring while traveling on public transport. Regarding the overall plan, do you have a specific budget range in mind for the insurance premium?\nCustomer: Budget? My budget is flexible. The *best* coverage is the budget. I pay my premiums, I expect top-tier service and coverage. Don't short-change me. If you can't provide what I need, I'll take my business elsewhere. Is your supervisor available? Maybe they understand better.\nCustomer Service Agent: I understand you prioritize comprehensive coverage, sir. I'm noting all your requirements to find the options that best match what you've described. Allow me to summarize what I've gathered so far. You're looking for travel insurance for two adults, aged 26-40, traveling from Singapore to Europe for three weeks. The requirements include medical coverage, considering a pre-existing condition of high blood pressure. You need coverage for participating in white water rafting. You also require comprehensive cover for trip cancellation, travel delays, and lost or damaged luggage, with an expectation for broad coverage terms. Additionally, you specifically require a double payout benefit for accidental death if it occurs while traveling on public transport. Your budget is flexible, prioritizing the level of cover. Have I captured everything correctly?\nCustomer: Yes, that's what I expect. Make sure those points, *especially* the double payout on public transport and the broad cancellation cover, are addressed. No excuses.\nCustomer Service Agent: Thank you for confirming, sir. I have recorded all these requirements. We will use this information to identify suitable policy options for you. Someone from our quotes team will be in touch shortly.\nCustomer: Fine. Make sure it's soon. I don't have all day.\nCustomer Service Agent: Understood. Thank you for calling ISS Insurance. Have a good day.\nCustomer: Right. *click*\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance for a 3-week trip to Europe from Singapore covering two adults aged 26-40 with specific needs.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance for a 3-week trip to Europe. Coverage needed for two adults aged 26-40, including medical coverage for high blood pressure, white water rafting, lost/damaged luggage, trip cancellation for any reason, travel delays, and double indemnity for accidental death on public transport. Flexible budget focused on top-tier service.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical\",\n    \"trip cancellation\",\n    \"lost/damaged luggage\",\n    \"travel delay\",\n    \"double indemnity\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"white water rafting\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Comprehensive coverage with no exclusions, flexible budget prioritizing best coverage.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Europe\",\n    \"comprehensive coverage\",\n    \"high blood pressure\",\n    \"white water rafting\",\n    \"lost luggage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"double indemnity\",\n    \"flexible budget\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "001",
+                "requirement_summary": "Travel insurance for a 3-week trip to Europe from Singapore covering two adults aged 26-40 with specific needs.",
+                "detailed_description": "Customer requires comprehensive travel insurance for a 3-week trip to Europe. Coverage needed for two adults aged 26-40, including medical coverage for high blood pressure, white water rafting, lost/damaged luggage, trip cancellation for any reason, travel delays, and double indemnity for accidental death on public transport. Flexible budget focused on top-tier service.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Europe",
+                "travel_duration": "3 weeks",
+                "insurance_coverage_type": [
+                    "medical",
+                    "trip cancellation",
+                    "lost/damaged luggage",
+                    "travel delay",
+                    "double indemnity"
+                ],
+                "pre_existing_conditions": [
+                    "high blood pressure"
+                ],
+                "medical_needs": null,
+                "activities_to_cover": [
+                    "white water rafting"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Comprehensive coverage with no exclusions, flexible budget prioritizing best coverage.",
+                "keywords": [
+                    "travel insurance",
+                    "Europe",
+                    "comprehensive coverage",
+                    "high blood pressure",
+                    "white water rafting",
+                    "lost luggage",
+                    "trip cancellation",
+                    "travel delays",
+                    "double indemnity",
+                    "flexible budget"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 79787,
+        "prompt_tokens": 67267,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 12520,
+        "successful_requests": 43
+    }
+}

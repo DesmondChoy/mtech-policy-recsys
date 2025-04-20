@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly requested trip cancellation coverage and provided a specific reason (illness/injury before departure).",
+      "customer_quote": "[20] And trip cancellation! What if something happens just before we leave, like a serious illness or injury, and we have to cancel the whole thing? Need cover for that.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and confirmed the requirement.",
+      "agent_quote": "[21] Understood. Requirement for Trip Cancellation cover due to reasons like unforeseen illness or injury."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested medical coverage and provided specific examples (sickness/accident, emergency treatment, hospital stays, doctor visits).",
+      "customer_quote": "[18] Of course, the usual worries. What if one of us falls sick or has an accident over there? Need cover for emergency medical treatment, like hospital stays or doctor visits. That's essential.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement and appropriately probed for related details like pre-existing conditions and special medical equipment.",
+      "agent_quote": "[19] Okay, noted the need for Medical Coverage including emergency treatment and hospitalisation. ... [26] Are there any pre-existing medical conditions we should be aware of for either traveller? ... [28] And are you travelling with any special medical equipment?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly asked for coverage for lost or damaged luggage (beyond the golf clubs) and mentioned reimbursement.",
+      "customer_quote": "[24] And luggage! Apart from the golf clubs, what about our normal bags getting lost or damaged by the airline? Need reimbursement for that.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement and correctly included reimbursement for essentials during delay.",
+      "agent_quote": "[25] Okay, cover for Lost or Damaged Luggage, including reimbursement for essentials if it's delayed. Noted."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about coverage for major delays and provided specific examples (extra hotel nights, meals, missed connections).",
+      "customer_quote": "[22] What about flights being delayed? If we get stuck somewhere because of a major delay, we need cover for extra hotel nights and meals, right? Missed connections too.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement.",
+      "agent_quote": "[23] Yes, noted. Coverage for additional expenses due to significant Travel Delays."
+    },
+    {
+      "coverage_type": "sports_and_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the trip was primarily for golf and detailed specific golf-related coverage needs: equipment loss/damage, unused green fees reimbursement, golf buggy damage, and a hole-in-one benefit. These fall under specialized sports coverage.",
+      "customer_quote": "[14] Yes, that\u2019s the main point. We're going primarily for golf. So I need specific cover for that. My golf clubs need to be covered if they get lost or damaged. Also, what if I get sick and can't use the pre-booked green fees? Need reimbursement for unused green fees. And if I accidentally damage the golf buggy? Need coverage for that too. Oh, and is there any special benefit if I hit a hole-in-one?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about activities, listened carefully to the specific golf requirements, and accurately summarized them for confirmation.",
+      "agent_quote": "[13] Okay. Are there any particular activities you plan to do during your trip to Japan? This helps us understand the type of coverage you might need. ... [15] Okay, thank you for sharing that. So, noted specific requirements for golf cover: protection for golf equipment against loss or damage, reimbursement for unused green fees due to unforeseen circumstances like illness, coverage for accidental damage to a rented golf buggy, and a benefit for achieving a hole-in-one. Have I captured that correctly?"
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered all standard and scenario-specific coverage requirements. The customer clearly stated their needs for standard coverage (Trip Cancellation, Medical, Luggage, Delays) and specific golf-related coverage. The agent performed well by proactively asking about activities, listening attentively, confirming understanding through summarization, and asking relevant clarifying questions (pre-existing conditions). Despite the customer's request for speed, the agent efficiently collected the necessary details."
+  },
+  "transcript_name": "transcript_golf_coverage_89824d02-87f2-470e-b547-87b4543c9edd",
+  "scenario": "golf_coverage"
+}
