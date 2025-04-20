@@ -4,29 +4,29 @@
       "total_customers": 20,
       "total_requirements": 135,
       "total_valid_requirements": 124,
-      "total_covered_requirements": 106,
-      "total_not_covered_requirements": 18,
+      "total_covered_requirements": 109,
+      "total_not_covered_requirements": 15,
       "total_not_exist_requirements": 11,
       "customers_with_invalid_requirements": 6,
-      "perfect_coverage_count": 5,
-      "overall_total_coverage_percentage": 78.52,
-      "overall_valid_coverage_percentage": 85.48,
-      "perfect_coverage_percentage": 25.0
+      "perfect_coverage_count": 6,
+      "overall_total_coverage_percentage": 80.74,
+      "overall_valid_coverage_percentage": 87.9,
+      "perfect_coverage_percentage": 30.0
     },
     "evaluations": {
       "a62c32d2-66eb-4397-975f-7d488ffac243": {
         "customer_id": "a62c32d2-66eb-4397-975f-7d488ffac243",
         "recommended_policy": "GELS - Platinum",
-        "total_coverage_ratio": "4/8",
-        "total_coverage_percentage": 50.0,
-        "valid_coverage_ratio": "4/6",
-        "valid_coverage_percentage": 66.67,
+        "total_coverage_ratio": "5/8",
+        "total_coverage_percentage": 62.5,
+        "valid_coverage_ratio": "5/6",
+        "valid_coverage_percentage": 83.33,
         "has_invalid_requirements": true,
         "requirements_breakdown": {
           "total": 8,
           "valid": 6,
-          "covered": 4,
-          "not_covered": 2,
+          "covered": 5,
+          "not_covered": 1,
           "not_exist": 2
         },
         "status_summary": {
@@ -34,11 +34,11 @@
             "Trip Cancellation Protection",
             "Travel Delay Coverage",
             "Lost Luggage",
+            "Pet Accommodation Coverage",
             "Adventurous activities or Amateur sports"
           ],
           "not_covered_requirements": [
-            "Damaged Luggage",
-            "Pet Accommodation Coverage"
+            "Damaged Luggage"
           ],
           "not_exist_requirements": [
             "Comprehensive Medical Coverage",
@@ -136,14 +136,16 @@
             "coverage_status": "NOT_EXIST"
           },
           "Pet Accommodation Coverage": {
-            "matched_key": "Additional Accommodation & Travelling Expenses",
+            "matched_key": "Pet Accommodation/Care",
             "matched_values": [
-              "SOMPO - Deluxe",
-              "SOMPO - Elite",
-              "SOMPO - GO Japan!"
+              "FWD - Business",
+              "FWD - First",
+              "FWD - Premium",
+              "GELS - Gold",
+              "GELS - Platinum"
             ],
             "recommended_policy": "GELS - Platinum",
-            "coverage_status": "NOT_COVERED"
+            "coverage_status": "COVERED"
           },
           "Adventurous activities or Amateur sports": {
             "matched_key": "Adventurous activities or Amateur sports",
@@ -625,16 +627,16 @@
       "24212af4-bd19-48e9-ba0b-f556d3fd7632": {
         "customer_id": "24212af4-bd19-48e9-ba0b-f556d3fd7632",
         "recommended_policy": "GELS - Platinum",
-        "total_coverage_ratio": "6/7",
-        "total_coverage_percentage": 85.71,
-        "valid_coverage_ratio": "6/7",
-        "valid_coverage_percentage": 85.71,
+        "total_coverage_ratio": "7/7",
+        "total_coverage_percentage": 100.0,
+        "valid_coverage_ratio": "7/7",
+        "valid_coverage_percentage": 100.0,
         "has_invalid_requirements": false,
         "requirements_breakdown": {
           "total": 7,
           "valid": 7,
-          "covered": 6,
-          "not_covered": 1,
+          "covered": 7,
+          "not_covered": 0,
           "not_exist": 0
         },
         "status_summary": {
@@ -644,11 +646,10 @@
             "Luggage Coverage",
             "Travel Delay Expense Coverage",
             "Skiing Coverage",
+            "Pet Accommodation Coverage",
             "Adventurous activities or Amateur sports"
           ],
-          "not_covered_requirements": [
-            "Pet Accommodation Coverage"
-          ],
+          "not_covered_requirements": [],
           "not_exist_requirements": []
         },
         "requirements_coverage": {
@@ -729,14 +730,16 @@
             "coverage_status": "COVERED"
           },
           "Pet Accommodation Coverage": {
-            "matched_key": "Additional Accommodation & Travelling Expenses",
+            "matched_key": "Pet Accommodation/Care",
             "matched_values": [
-              "SOMPO - Deluxe",
-              "SOMPO - Elite",
-              "SOMPO - GO Japan!"
+              "FWD - Business",
+              "FWD - First",
+              "FWD - Premium",
+              "GELS - Gold",
+              "GELS - Platinum"
             ],
             "recommended_policy": "GELS - Platinum",
-            "coverage_status": "NOT_COVERED"
+            "coverage_status": "COVERED"
           },
           "Adventurous activities or Amateur sports": {
             "matched_key": "Adventurous activities or Amateur sports",
@@ -758,16 +761,16 @@
       "ef0e5e2d-a940-4a0c-a075-2cb04df4f93e": {
         "customer_id": "ef0e5e2d-a940-4a0c-a075-2cb04df4f93e",
         "recommended_policy": "GELS - Platinum",
-        "total_coverage_ratio": "5/7",
-        "total_coverage_percentage": 71.43,
-        "valid_coverage_ratio": "5/7",
-        "valid_coverage_percentage": 71.43,
+        "total_coverage_ratio": "6/7",
+        "total_coverage_percentage": 85.71,
+        "valid_coverage_ratio": "6/7",
+        "valid_coverage_percentage": 85.71,
         "has_invalid_requirements": false,
         "requirements_breakdown": {
           "total": 7,
           "valid": 7,
-          "covered": 5,
-          "not_covered": 2,
+          "covered": 6,
+          "not_covered": 1,
           "not_exist": 0
         },
         "status_summary": {
@@ -775,11 +778,11 @@
             "medical",
             "trip cancellation",
             "travel delays",
+            "pet accommodation",
             "Lost luggage",
             "Adventurous activities or Amateur sports"
           ],
           "not_covered_requirements": [
-            "pet accommodation",
             "Damaged luggage"
           ],
           "not_exist_requirements": []
@@ -846,14 +849,16 @@
             "coverage_status": "COVERED"
           },
           "pet accommodation": {
-            "matched_key": "Additional Accommodation & Travelling Expenses",
+            "matched_key": "Pet Accommodation/Care",
             "matched_values": [
-              "SOMPO - Deluxe",
-              "SOMPO - Elite",
-              "SOMPO - GO Japan!"
+              "FWD - Business",
+              "FWD - First",
+              "FWD - Premium",
+              "GELS - Gold",
+              "GELS - Platinum"
             ],
             "recommended_policy": "GELS - Platinum",
-            "coverage_status": "NOT_COVERED"
+            "coverage_status": "COVERED"
           },
           "Lost luggage": {
             "matched_key": "Baggage loss",
