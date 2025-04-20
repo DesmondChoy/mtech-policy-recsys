@@ -1,17 +1,17 @@
 {
   "customer_id": "401e4271-0308-47fb-a870-68200b052a9d",
   "recommended_policy": "INCOME - Deluxe",
-  "total_coverage_ratio": "6/9",
-  "total_coverage_percentage": 66.67,
-  "valid_coverage_ratio": "6/7",
-  "valid_coverage_percentage": 85.71,
-  "has_invalid_requirements": true,
+  "total_coverage_ratio": "6/6",
+  "total_coverage_percentage": 100.0,
+  "valid_coverage_ratio": "6/6",
+  "valid_coverage_percentage": 100.0,
+  "has_invalid_requirements": false,
   "requirements_breakdown": {
-    "total": 9,
-    "valid": 7,
+    "total": 6,
+    "valid": 6,
     "covered": 6,
-    "not_covered": 1,
-    "not_exist": 2
+    "not_covered": 0,
+    "not_exist": 0
   },
   "status_summary": {
     "covered_requirements": [
@@ -22,13 +22,8 @@
       "Damaged luggage",
       "Adventurous activities or Amateur sports"
     ],
-    "not_covered_requirements": [
-      "double payout for accidental death on public transport"
-    ],
-    "not_exist_requirements": [
-      "Bungee Jumping",
-      "Hot Air Ballooning"
-    ]
+    "not_covered_requirements": [],
+    "not_exist_requirements": []
   },
   "requirements_coverage": {
     "medical emergencies": {
@@ -127,27 +122,6 @@
       ],
       "recommended_policy": "INCOME - Deluxe",
       "coverage_status": "COVERED"
-    },
-    "Bungee Jumping": {
-      "matched_key": null,
-      "matched_values": [],
-      "recommended_policy": "INCOME - Deluxe",
-      "coverage_status": "NOT_EXIST"
-    },
-    "Hot Air Ballooning": {
-      "matched_key": null,
-      "matched_values": [],
-      "recommended_policy": "INCOME - Deluxe",
-      "coverage_status": "NOT_EXIST"
-    },
-    "double payout for accidental death on public transport": {
-      "matched_key": "Public transport double indemnity",
-      "matched_values": [
-        "GELS - Gold",
-        "GELS - Platinum"
-      ],
-      "recommended_policy": "INCOME - Deluxe",
-      "coverage_status": "NOT_COVERED"
     },
     "Adventurous activities or Amateur sports": {
       "matched_key": "Adventurous activities or Amateur sports",

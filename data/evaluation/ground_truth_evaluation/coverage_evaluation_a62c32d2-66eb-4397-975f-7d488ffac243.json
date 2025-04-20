@@ -1,32 +1,31 @@
 {
   "customer_id": "a62c32d2-66eb-4397-975f-7d488ffac243",
   "recommended_policy": "GELS - Platinum",
-  "total_coverage_ratio": "5/8",
-  "total_coverage_percentage": 62.5,
+  "total_coverage_ratio": "5/7",
+  "total_coverage_percentage": 71.43,
   "valid_coverage_ratio": "5/6",
   "valid_coverage_percentage": 83.33,
   "has_invalid_requirements": true,
   "requirements_breakdown": {
-    "total": 8,
+    "total": 7,
     "valid": 6,
     "covered": 5,
     "not_covered": 1,
-    "not_exist": 2
+    "not_exist": 1
   },
   "status_summary": {
     "covered_requirements": [
       "Trip Cancellation Protection",
       "Travel Delay Coverage",
       "Lost Luggage",
-      "Pet Accommodation Coverage",
-      "Adventurous activities or Amateur sports"
+      "Adventurous activities or Amateur sports",
+      "Pet Accommodation Coverage"
     ],
     "not_covered_requirements": [
       "Damaged Luggage"
     ],
     "not_exist_requirements": [
-      "Comprehensive Medical Coverage",
-      "Activity Coverage for Hiking"
+      "Comprehensive Medical Coverage"
     ]
   },
   "requirements_coverage": {
@@ -113,24 +112,6 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "NOT_COVERED"
     },
-    "Activity Coverage for Hiking": {
-      "matched_key": null,
-      "matched_values": [],
-      "recommended_policy": "GELS - Platinum",
-      "coverage_status": "NOT_EXIST"
-    },
-    "Pet Accommodation Coverage": {
-      "matched_key": "Pet Accommodation/Care",
-      "matched_values": [
-        "FWD - Business",
-        "FWD - First",
-        "FWD - Premium",
-        "GELS - Gold",
-        "GELS - Platinum"
-      ],
-      "recommended_policy": "GELS - Platinum",
-      "coverage_status": "COVERED"
-    },
     "Adventurous activities or Amateur sports": {
       "matched_key": "Adventurous activities or Amateur sports",
       "matched_values": [
@@ -140,6 +121,18 @@
         "SOMPO - Deluxe",
         "SOMPO - Elite",
         "SOMPO - GO Japan!",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "COVERED"
+    },
+    "Pet Accommodation Coverage": {
+      "matched_key": "Pet Accommodation/Care",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
         "GELS - Gold",
         "GELS - Platinum"
       ],

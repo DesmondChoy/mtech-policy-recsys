@@ -2,47 +2,46 @@
   "summary": {
     "overall_stats": {
       "total_customers": 20,
-      "total_requirements": 135,
-      "total_valid_requirements": 124,
+      "total_requirements": 130,
+      "total_valid_requirements": 122,
       "total_covered_requirements": 109,
-      "total_not_covered_requirements": 15,
-      "total_not_exist_requirements": 11,
-      "customers_with_invalid_requirements": 6,
-      "perfect_coverage_count": 6,
-      "overall_total_coverage_percentage": 80.74,
-      "overall_valid_coverage_percentage": 87.9,
-      "perfect_coverage_percentage": 30.0
+      "total_not_covered_requirements": 13,
+      "total_not_exist_requirements": 8,
+      "customers_with_invalid_requirements": 5,
+      "perfect_coverage_count": 7,
+      "overall_total_coverage_percentage": 83.85,
+      "overall_valid_coverage_percentage": 89.34,
+      "perfect_coverage_percentage": 35.0
     },
     "evaluations": {
       "a62c32d2-66eb-4397-975f-7d488ffac243": {
         "customer_id": "a62c32d2-66eb-4397-975f-7d488ffac243",
         "recommended_policy": "GELS - Platinum",
-        "total_coverage_ratio": "5/8",
-        "total_coverage_percentage": 62.5,
+        "total_coverage_ratio": "5/7",
+        "total_coverage_percentage": 71.43,
         "valid_coverage_ratio": "5/6",
         "valid_coverage_percentage": 83.33,
         "has_invalid_requirements": true,
         "requirements_breakdown": {
-          "total": 8,
+          "total": 7,
           "valid": 6,
           "covered": 5,
           "not_covered": 1,
-          "not_exist": 2
+          "not_exist": 1
         },
         "status_summary": {
           "covered_requirements": [
             "Trip Cancellation Protection",
             "Travel Delay Coverage",
             "Lost Luggage",
-            "Pet Accommodation Coverage",
-            "Adventurous activities or Amateur sports"
+            "Adventurous activities or Amateur sports",
+            "Pet Accommodation Coverage"
           ],
           "not_covered_requirements": [
             "Damaged Luggage"
           ],
           "not_exist_requirements": [
-            "Comprehensive Medical Coverage",
-            "Activity Coverage for Hiking"
+            "Comprehensive Medical Coverage"
           ]
         },
         "requirements_coverage": {
@@ -129,24 +128,6 @@
             "recommended_policy": "GELS - Platinum",
             "coverage_status": "NOT_COVERED"
           },
-          "Activity Coverage for Hiking": {
-            "matched_key": null,
-            "matched_values": [],
-            "recommended_policy": "GELS - Platinum",
-            "coverage_status": "NOT_EXIST"
-          },
-          "Pet Accommodation Coverage": {
-            "matched_key": "Pet Accommodation/Care",
-            "matched_values": [
-              "FWD - Business",
-              "FWD - First",
-              "FWD - Premium",
-              "GELS - Gold",
-              "GELS - Platinum"
-            ],
-            "recommended_policy": "GELS - Platinum",
-            "coverage_status": "COVERED"
-          },
           "Adventurous activities or Amateur sports": {
             "matched_key": "Adventurous activities or Amateur sports",
             "matched_values": [
@@ -156,6 +137,18 @@
               "SOMPO - Deluxe",
               "SOMPO - Elite",
               "SOMPO - GO Japan!",
+              "GELS - Gold",
+              "GELS - Platinum"
+            ],
+            "recommended_policy": "GELS - Platinum",
+            "coverage_status": "COVERED"
+          },
+          "Pet Accommodation Coverage": {
+            "matched_key": "Pet Accommodation/Care",
+            "matched_values": [
+              "FWD - Business",
+              "FWD - First",
+              "FWD - Premium",
               "GELS - Gold",
               "GELS - Platinum"
             ],
@@ -323,17 +316,17 @@
       "401e4271-0308-47fb-a870-68200b052a9d": {
         "customer_id": "401e4271-0308-47fb-a870-68200b052a9d",
         "recommended_policy": "INCOME - Deluxe",
-        "total_coverage_ratio": "6/9",
-        "total_coverage_percentage": 66.67,
-        "valid_coverage_ratio": "6/7",
-        "valid_coverage_percentage": 85.71,
-        "has_invalid_requirements": true,
+        "total_coverage_ratio": "6/6",
+        "total_coverage_percentage": 100.0,
+        "valid_coverage_ratio": "6/6",
+        "valid_coverage_percentage": 100.0,
+        "has_invalid_requirements": false,
         "requirements_breakdown": {
-          "total": 9,
-          "valid": 7,
+          "total": 6,
+          "valid": 6,
           "covered": 6,
-          "not_covered": 1,
-          "not_exist": 2
+          "not_covered": 0,
+          "not_exist": 0
         },
         "status_summary": {
           "covered_requirements": [
@@ -344,13 +337,8 @@
             "Damaged luggage",
             "Adventurous activities or Amateur sports"
           ],
-          "not_covered_requirements": [
-            "double payout for accidental death on public transport"
-          ],
-          "not_exist_requirements": [
-            "Bungee Jumping",
-            "Hot Air Ballooning"
-          ]
+          "not_covered_requirements": [],
+          "not_exist_requirements": []
         },
         "requirements_coverage": {
           "medical emergencies": {
@@ -450,27 +438,6 @@
             "recommended_policy": "INCOME - Deluxe",
             "coverage_status": "COVERED"
           },
-          "Bungee Jumping": {
-            "matched_key": null,
-            "matched_values": [],
-            "recommended_policy": "INCOME - Deluxe",
-            "coverage_status": "NOT_EXIST"
-          },
-          "Hot Air Ballooning": {
-            "matched_key": null,
-            "matched_values": [],
-            "recommended_policy": "INCOME - Deluxe",
-            "coverage_status": "NOT_EXIST"
-          },
-          "double payout for accidental death on public transport": {
-            "matched_key": "Public transport double indemnity",
-            "matched_values": [
-              "GELS - Gold",
-              "GELS - Platinum"
-            ],
-            "recommended_policy": "INCOME - Deluxe",
-            "coverage_status": "NOT_COVERED"
-          },
           "Adventurous activities or Amateur sports": {
             "matched_key": "Adventurous activities or Amateur sports",
             "matched_values": [
@@ -506,9 +473,9 @@
         "status_summary": {
           "covered_requirements": [
             "Trip Cancellation",
-            "Lost/Damaged Luggage",
+            "Lost Luggage",
+            "Damaged Luggage",
             "Travel Delays",
-            "Sports and Adventure Activities",
             "Adventurous activities or Amateur sports"
           ],
           "not_covered_requirements": [
@@ -545,7 +512,27 @@
             "recommended_policy": "INCOME - Preferred",
             "coverage_status": "COVERED"
           },
-          "Lost/Damaged Luggage": {
+          "Lost Luggage": {
+            "matched_key": "Baggage loss",
+            "matched_values": [
+              "FWD - Business",
+              "FWD - First",
+              "FWD - Premium",
+              "INCOME - Classic",
+              "INCOME - Deluxe",
+              "INCOME - Preferred",
+              "SOMPO - Deluxe",
+              "SOMPO - Elite",
+              "SOMPO - GO Japan!",
+              "SOMPO - Vital",
+              "GELS - Basic",
+              "GELS - Gold",
+              "GELS - Platinum"
+            ],
+            "recommended_policy": "INCOME - Preferred",
+            "coverage_status": "COVERED"
+          },
+          "Damaged Luggage": {
             "matched_key": "Damage of baggage and personal belongings",
             "matched_values": [
               "FWD - Business",
@@ -582,7 +569,7 @@
             "recommended_policy": "INCOME - Preferred",
             "coverage_status": "COVERED"
           },
-          "Sports and Adventure Activities": {
+          "Adventurous activities or Amateur sports": {
             "matched_key": "Adventurous activities or Amateur sports",
             "matched_values": [
               "INCOME - Classic",
@@ -606,36 +593,21 @@
             ],
             "recommended_policy": "INCOME - Preferred",
             "coverage_status": "NOT_COVERED"
-          },
-          "Adventurous activities or Amateur sports": {
-            "matched_key": "Adventurous activities or Amateur sports",
-            "matched_values": [
-              "INCOME - Classic",
-              "INCOME - Deluxe",
-              "INCOME - Preferred",
-              "SOMPO - Deluxe",
-              "SOMPO - Elite",
-              "SOMPO - GO Japan!",
-              "GELS - Gold",
-              "GELS - Platinum"
-            ],
-            "recommended_policy": "INCOME - Preferred",
-            "coverage_status": "COVERED"
           }
         }
       },
       "24212af4-bd19-48e9-ba0b-f556d3fd7632": {
         "customer_id": "24212af4-bd19-48e9-ba0b-f556d3fd7632",
         "recommended_policy": "GELS - Platinum",
-        "total_coverage_ratio": "7/7",
+        "total_coverage_ratio": "6/6",
         "total_coverage_percentage": 100.0,
-        "valid_coverage_ratio": "7/7",
+        "valid_coverage_ratio": "6/6",
         "valid_coverage_percentage": 100.0,
         "has_invalid_requirements": false,
         "requirements_breakdown": {
-          "total": 7,
-          "valid": 7,
-          "covered": 7,
+          "total": 6,
+          "valid": 6,
+          "covered": 6,
           "not_covered": 0,
           "not_exist": 0
         },
@@ -645,9 +617,8 @@
             "Trip Cancellation",
             "Luggage Coverage",
             "Travel Delay Expense Coverage",
-            "Skiing Coverage",
-            "Pet Accommodation Coverage",
-            "Adventurous activities or Amateur sports"
+            "Adventurous activities or Amateur sports",
+            "Pet Accommodation Coverage"
           ],
           "not_covered_requirements": [],
           "not_exist_requirements": []
@@ -721,9 +692,16 @@
             "recommended_policy": "GELS - Platinum",
             "coverage_status": "COVERED"
           },
-          "Skiing Coverage": {
-            "matched_key": "Pre-existing conditions coverage (Add-on)",
+          "Adventurous activities or Amateur sports": {
+            "matched_key": "Adventurous activities or Amateur sports",
             "matched_values": [
+              "INCOME - Classic",
+              "INCOME - Deluxe",
+              "INCOME - Preferred",
+              "SOMPO - Deluxe",
+              "SOMPO - Elite",
+              "SOMPO - GO Japan!",
+              "GELS - Gold",
               "GELS - Platinum"
             ],
             "recommended_policy": "GELS - Platinum",
@@ -735,21 +713,6 @@
               "FWD - Business",
               "FWD - First",
               "FWD - Premium",
-              "GELS - Gold",
-              "GELS - Platinum"
-            ],
-            "recommended_policy": "GELS - Platinum",
-            "coverage_status": "COVERED"
-          },
-          "Adventurous activities or Amateur sports": {
-            "matched_key": "Adventurous activities or Amateur sports",
-            "matched_values": [
-              "INCOME - Classic",
-              "INCOME - Deluxe",
-              "INCOME - Preferred",
-              "SOMPO - Deluxe",
-              "SOMPO - Elite",
-              "SOMPO - GO Japan!",
               "GELS - Gold",
               "GELS - Platinum"
             ],
@@ -1203,16 +1166,16 @@
       "8d447b59-6d4d-4a32-9335-fbfb8934ac63": {
         "customer_id": "8d447b59-6d4d-4a32-9335-fbfb8934ac63",
         "recommended_policy": "FWD - First",
-        "total_coverage_ratio": "5/7",
-        "total_coverage_percentage": 71.43,
-        "valid_coverage_ratio": "5/7",
-        "valid_coverage_percentage": 71.43,
+        "total_coverage_ratio": "6/7",
+        "total_coverage_percentage": 85.71,
+        "valid_coverage_ratio": "6/7",
+        "valid_coverage_percentage": 85.71,
         "has_invalid_requirements": false,
         "requirements_breakdown": {
           "total": 7,
           "valid": 7,
-          "covered": 5,
-          "not_covered": 2,
+          "covered": 6,
+          "not_covered": 1,
           "not_exist": 0
         },
         "status_summary": {
@@ -1220,17 +1183,17 @@
             "Medical Coverage",
             "Trip Cancellation",
             "Travel Delays",
-            "Lost/Damaged Luggage",
+            "Lost Luggage",
+            "Damaged Luggage",
             "Accidental Death Coverage"
           ],
           "not_covered_requirements": [
-            "Sports and Adventure Coverage",
             "Adventurous activities or Amateur sports"
           ],
           "not_exist_requirements": []
         },
         "requirements_coverage": {
-          "Sports and Adventure Coverage": {
+          "Adventurous activities or Amateur sports": {
             "matched_key": "Adventurous activities or Amateur sports",
             "matched_values": [
               "INCOME - Classic",
@@ -1305,7 +1268,27 @@
             "recommended_policy": "FWD - First",
             "coverage_status": "COVERED"
           },
-          "Lost/Damaged Luggage": {
+          "Lost Luggage": {
+            "matched_key": "Baggage loss",
+            "matched_values": [
+              "FWD - Business",
+              "FWD - First",
+              "FWD - Premium",
+              "INCOME - Classic",
+              "INCOME - Deluxe",
+              "INCOME - Preferred",
+              "SOMPO - Deluxe",
+              "SOMPO - Elite",
+              "SOMPO - GO Japan!",
+              "SOMPO - Vital",
+              "GELS - Basic",
+              "GELS - Gold",
+              "GELS - Platinum"
+            ],
+            "recommended_policy": "FWD - First",
+            "coverage_status": "COVERED"
+          },
+          "Damaged Luggage": {
             "matched_key": "Damage of baggage and personal belongings",
             "matched_values": [
               "FWD - Business",
@@ -1341,21 +1324,6 @@
             ],
             "recommended_policy": "FWD - First",
             "coverage_status": "COVERED"
-          },
-          "Adventurous activities or Amateur sports": {
-            "matched_key": "Adventurous activities or Amateur sports",
-            "matched_values": [
-              "INCOME - Classic",
-              "INCOME - Deluxe",
-              "INCOME - Preferred",
-              "SOMPO - Deluxe",
-              "SOMPO - Elite",
-              "SOMPO - GO Japan!",
-              "GELS - Gold",
-              "GELS - Platinum"
-            ],
-            "recommended_policy": "FWD - First",
-            "coverage_status": "NOT_COVERED"
           }
         }
       },
@@ -1377,13 +1345,13 @@
         "status_summary": {
           "covered_requirements": [
             "Medical Coverage",
-            "Sports and Adventure Coverage",
+            "Lost Luggage",
+            "Adventurous activities or Amateur sports",
             "Travel Delay Benefits",
-            "Trip Cancellation Coverage",
-            "Adventurous activities or Amateur sports"
+            "Trip Cancellation Coverage"
           ],
           "not_covered_requirements": [
-            "Lost/Damaged Luggage"
+            "Damaged Luggage"
           ],
           "not_exist_requirements": []
         },
@@ -1408,7 +1376,27 @@
             "recommended_policy": "GELS - Gold",
             "coverage_status": "COVERED"
           },
-          "Lost/Damaged Luggage": {
+          "Lost Luggage": {
+            "matched_key": "Baggage loss",
+            "matched_values": [
+              "FWD - Business",
+              "FWD - First",
+              "FWD - Premium",
+              "INCOME - Classic",
+              "INCOME - Deluxe",
+              "INCOME - Preferred",
+              "SOMPO - Deluxe",
+              "SOMPO - Elite",
+              "SOMPO - GO Japan!",
+              "SOMPO - Vital",
+              "GELS - Basic",
+              "GELS - Gold",
+              "GELS - Platinum"
+            ],
+            "recommended_policy": "GELS - Gold",
+            "coverage_status": "COVERED"
+          },
+          "Damaged Luggage": {
             "matched_key": "Damage of baggage and personal belongings",
             "matched_values": [
               "FWD - Business",
@@ -1425,7 +1413,7 @@
             "recommended_policy": "GELS - Gold",
             "coverage_status": "NOT_COVERED"
           },
-          "Sports and Adventure Coverage": {
+          "Adventurous activities or Amateur sports": {
             "matched_key": "Adventurous activities or Amateur sports",
             "matched_values": [
               "INCOME - Classic",
@@ -1479,36 +1467,21 @@
             ],
             "recommended_policy": "GELS - Gold",
             "coverage_status": "COVERED"
-          },
-          "Adventurous activities or Amateur sports": {
-            "matched_key": "Adventurous activities or Amateur sports",
-            "matched_values": [
-              "INCOME - Classic",
-              "INCOME - Deluxe",
-              "INCOME - Preferred",
-              "SOMPO - Deluxe",
-              "SOMPO - Elite",
-              "SOMPO - GO Japan!",
-              "GELS - Gold",
-              "GELS - Platinum"
-            ],
-            "recommended_policy": "GELS - Gold",
-            "coverage_status": "COVERED"
           }
         }
       },
       "a461e74f-29f8-4864-852e-b4f48e80fdb1": {
         "customer_id": "a461e74f-29f8-4864-852e-b4f48e80fdb1",
         "recommended_policy": "SOMPO - Elite",
-        "total_coverage_ratio": "6/8",
-        "total_coverage_percentage": 75.0,
-        "valid_coverage_ratio": "6/6",
+        "total_coverage_ratio": "7/9",
+        "total_coverage_percentage": 77.78,
+        "valid_coverage_ratio": "7/7",
         "valid_coverage_percentage": 100.0,
         "has_invalid_requirements": true,
         "requirements_breakdown": {
-          "total": 8,
-          "valid": 6,
-          "covered": 6,
+          "total": 9,
+          "valid": 7,
+          "covered": 7,
           "not_covered": 0,
           "not_exist": 2
         },
@@ -1517,7 +1490,8 @@
             "General Medical Coverage",
             "Trip Cancellation",
             "Travel Delays",
-            "Lost/Damaged Luggage",
+            "Lost Luggage",
+            "Damaged Luggage",
             "Golf Equipment Coverage",
             "Golf Buggy Damage Liability"
           ],
@@ -1586,7 +1560,27 @@
             "recommended_policy": "SOMPO - Elite",
             "coverage_status": "COVERED"
           },
-          "Lost/Damaged Luggage": {
+          "Lost Luggage": {
+            "matched_key": "Baggage loss",
+            "matched_values": [
+              "FWD - Business",
+              "FWD - First",
+              "FWD - Premium",
+              "INCOME - Classic",
+              "INCOME - Deluxe",
+              "INCOME - Preferred",
+              "SOMPO - Deluxe",
+              "SOMPO - Elite",
+              "SOMPO - GO Japan!",
+              "SOMPO - Vital",
+              "GELS - Basic",
+              "GELS - Gold",
+              "GELS - Platinum"
+            ],
+            "recommended_policy": "SOMPO - Elite",
+            "coverage_status": "COVERED"
+          },
+          "Damaged Luggage": {
             "matched_key": "Damage of baggage and personal belongings",
             "matched_values": [
               "FWD - Business",
@@ -1644,15 +1638,15 @@
       "1cd04b1c-3dbd-458b-857e-ae193381ab81": {
         "customer_id": "1cd04b1c-3dbd-458b-857e-ae193381ab81",
         "recommended_policy": "SOMPO - Elite",
-        "total_coverage_ratio": "5/5",
+        "total_coverage_ratio": "6/6",
         "total_coverage_percentage": 100.0,
-        "valid_coverage_ratio": "5/5",
+        "valid_coverage_ratio": "6/6",
         "valid_coverage_percentage": 100.0,
         "has_invalid_requirements": false,
         "requirements_breakdown": {
-          "total": 5,
-          "valid": 5,
-          "covered": 5,
+          "total": 6,
+          "valid": 6,
+          "covered": 6,
           "not_covered": 0,
           "not_exist": 0
         },
@@ -1661,7 +1655,8 @@
             "Medical Coverage",
             "Trip Cancellation",
             "Travel Delays",
-            "Lost/Damaged Luggage",
+            "Lost Luggage",
+            "Damaged Luggage",
             "Golf Equipment Coverage"
           ],
           "not_covered_requirements": [],
@@ -1728,7 +1723,27 @@
             "recommended_policy": "SOMPO - Elite",
             "coverage_status": "COVERED"
           },
-          "Lost/Damaged Luggage": {
+          "Lost Luggage": {
+            "matched_key": "Baggage loss",
+            "matched_values": [
+              "FWD - Business",
+              "FWD - First",
+              "FWD - Premium",
+              "INCOME - Classic",
+              "INCOME - Deluxe",
+              "INCOME - Preferred",
+              "SOMPO - Deluxe",
+              "SOMPO - Elite",
+              "SOMPO - GO Japan!",
+              "SOMPO - Vital",
+              "GELS - Basic",
+              "GELS - Gold",
+              "GELS - Platinum"
+            ],
+            "recommended_policy": "SOMPO - Elite",
+            "coverage_status": "COVERED"
+          },
+          "Damaged Luggage": {
             "matched_key": "Damage of baggage and personal belongings",
             "matched_values": [
               "FWD - Business",
@@ -2199,26 +2214,25 @@
       "a4d60f08-2de2-44ab-957a-de0ccab10e30": {
         "customer_id": "a4d60f08-2de2-44ab-957a-de0ccab10e30",
         "recommended_policy": "GELS - Platinum",
-        "total_coverage_ratio": "6/7",
-        "total_coverage_percentage": 85.71,
-        "valid_coverage_ratio": "6/7",
-        "valid_coverage_percentage": 85.71,
+        "total_coverage_ratio": "5/6",
+        "total_coverage_percentage": 83.33,
+        "valid_coverage_ratio": "5/6",
+        "valid_coverage_percentage": 83.33,
         "has_invalid_requirements": false,
         "requirements_breakdown": {
-          "total": 7,
-          "valid": 7,
-          "covered": 6,
+          "total": 6,
+          "valid": 6,
+          "covered": 5,
           "not_covered": 1,
           "not_exist": 0
         },
         "status_summary": {
           "covered_requirements": [
             "medical coverage",
-            "skiing coverage",
+            "Adventurous activities or Amateur sports",
             "Lost luggage",
             "travel delays",
-            "trip cancellation",
-            "Adventurous activities or Amateur sports"
+            "trip cancellation"
           ],
           "not_covered_requirements": [
             "Damaged luggage"
@@ -2246,9 +2260,16 @@
             "recommended_policy": "GELS - Platinum",
             "coverage_status": "COVERED"
           },
-          "skiing coverage": {
-            "matched_key": "Pre-existing conditions coverage (Add-on)",
+          "Adventurous activities or Amateur sports": {
+            "matched_key": "Adventurous activities or Amateur sports",
             "matched_values": [
+              "INCOME - Classic",
+              "INCOME - Deluxe",
+              "INCOME - Preferred",
+              "SOMPO - Deluxe",
+              "SOMPO - Elite",
+              "SOMPO - GO Japan!",
+              "GELS - Gold",
               "GELS - Platinum"
             ],
             "recommended_policy": "GELS - Platinum",
@@ -2327,21 +2348,6 @@
               "SOMPO - Elite",
               "SOMPO - GO Japan!",
               "SOMPO - Vital"
-            ],
-            "recommended_policy": "GELS - Platinum",
-            "coverage_status": "COVERED"
-          },
-          "Adventurous activities or Amateur sports": {
-            "matched_key": "Adventurous activities or Amateur sports",
-            "matched_values": [
-              "INCOME - Classic",
-              "INCOME - Deluxe",
-              "INCOME - Preferred",
-              "SOMPO - Deluxe",
-              "SOMPO - Elite",
-              "SOMPO - GO Japan!",
-              "GELS - Gold",
-              "GELS - Platinum"
             ],
             "recommended_policy": "GELS - Platinum",
             "coverage_status": "COVERED"
@@ -2472,15 +2478,15 @@
       "4cf8d8ab-bb79-4c24-9724-15efd54457f7": {
         "customer_id": "4cf8d8ab-bb79-4c24-9724-15efd54457f7",
         "recommended_policy": "GELS - Platinum",
-        "total_coverage_ratio": "6/6",
+        "total_coverage_ratio": "5/5",
         "total_coverage_percentage": 100.0,
-        "valid_coverage_ratio": "6/6",
+        "valid_coverage_ratio": "5/5",
         "valid_coverage_percentage": 100.0,
         "has_invalid_requirements": false,
         "requirements_breakdown": {
-          "total": 6,
-          "valid": 6,
-          "covered": 6,
+          "total": 5,
+          "valid": 5,
+          "covered": 5,
           "not_covered": 0,
           "not_exist": 0
         },
@@ -2488,10 +2494,9 @@
           "covered_requirements": [
             "Medical Coverage",
             "Lost, Damaged, or Delayed Luggage Coverage",
-            "Adventure Activities Coverage",
+            "Adventurous activities or Amateur sports",
             "Travel Delay Coverage",
-            "Trip Cancellation Coverage",
-            "Adventurous activities or Amateur sports"
+            "Trip Cancellation Coverage"
           ],
           "not_covered_requirements": [],
           "not_exist_requirements": []
@@ -2537,7 +2542,7 @@
             "recommended_policy": "GELS - Platinum",
             "coverage_status": "COVERED"
           },
-          "Adventure Activities Coverage": {
+          "Adventurous activities or Amateur sports": {
             "matched_key": "Adventurous activities or Amateur sports",
             "matched_values": [
               "INCOME - Classic",
@@ -2588,21 +2593,6 @@
               "SOMPO - Elite",
               "SOMPO - GO Japan!",
               "SOMPO - Vital"
-            ],
-            "recommended_policy": "GELS - Platinum",
-            "coverage_status": "COVERED"
-          },
-          "Adventurous activities or Amateur sports": {
-            "matched_key": "Adventurous activities or Amateur sports",
-            "matched_values": [
-              "INCOME - Classic",
-              "INCOME - Deluxe",
-              "INCOME - Preferred",
-              "SOMPO - Deluxe",
-              "SOMPO - Elite",
-              "SOMPO - GO Japan!",
-              "GELS - Gold",
-              "GELS - Platinum"
             ],
             "recommended_policy": "GELS - Platinum",
             "coverage_status": "COVERED"

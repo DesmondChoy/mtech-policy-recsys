@@ -16,9 +16,9 @@
   "status_summary": {
     "covered_requirements": [
       "Trip Cancellation",
-      "Lost/Damaged Luggage",
+      "Lost Luggage",
+      "Damaged Luggage",
       "Travel Delays",
-      "Sports and Adventure Activities",
       "Adventurous activities or Amateur sports"
     ],
     "not_covered_requirements": [
@@ -55,7 +55,27 @@
       "recommended_policy": "INCOME - Preferred",
       "coverage_status": "COVERED"
     },
-    "Lost/Damaged Luggage": {
+    "Lost Luggage": {
+      "matched_key": "Baggage loss",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
+      "recommended_policy": "INCOME - Preferred",
+      "coverage_status": "COVERED"
+    },
+    "Damaged Luggage": {
       "matched_key": "Damage of baggage and personal belongings",
       "matched_values": [
         "FWD - Business",
@@ -92,7 +112,7 @@
       "recommended_policy": "INCOME - Preferred",
       "coverage_status": "COVERED"
     },
-    "Sports and Adventure Activities": {
+    "Adventurous activities or Amateur sports": {
       "matched_key": "Adventurous activities or Amateur sports",
       "matched_values": [
         "INCOME - Classic",
@@ -116,21 +136,6 @@
       ],
       "recommended_policy": "INCOME - Preferred",
       "coverage_status": "NOT_COVERED"
-    },
-    "Adventurous activities or Amateur sports": {
-      "matched_key": "Adventurous activities or Amateur sports",
-      "matched_values": [
-        "INCOME - Classic",
-        "INCOME - Deluxe",
-        "INCOME - Preferred",
-        "SOMPO - Deluxe",
-        "SOMPO - Elite",
-        "SOMPO - GO Japan!",
-        "GELS - Gold",
-        "GELS - Platinum"
-      ],
-      "recommended_policy": "INCOME - Preferred",
-      "coverage_status": "COVERED"
     }
   }
 }

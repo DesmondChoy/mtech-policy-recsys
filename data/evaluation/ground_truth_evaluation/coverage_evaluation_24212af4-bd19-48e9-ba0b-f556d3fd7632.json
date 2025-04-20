@@ -1,15 +1,15 @@
 {
   "customer_id": "24212af4-bd19-48e9-ba0b-f556d3fd7632",
   "recommended_policy": "GELS - Platinum",
-  "total_coverage_ratio": "7/7",
+  "total_coverage_ratio": "6/6",
   "total_coverage_percentage": 100.0,
-  "valid_coverage_ratio": "7/7",
+  "valid_coverage_ratio": "6/6",
   "valid_coverage_percentage": 100.0,
   "has_invalid_requirements": false,
   "requirements_breakdown": {
-    "total": 7,
-    "valid": 7,
-    "covered": 7,
+    "total": 6,
+    "valid": 6,
+    "covered": 6,
     "not_covered": 0,
     "not_exist": 0
   },
@@ -19,9 +19,8 @@
       "Trip Cancellation",
       "Luggage Coverage",
       "Travel Delay Expense Coverage",
-      "Skiing Coverage",
-      "Pet Accommodation Coverage",
-      "Adventurous activities or Amateur sports"
+      "Adventurous activities or Amateur sports",
+      "Pet Accommodation Coverage"
     ],
     "not_covered_requirements": [],
     "not_exist_requirements": []
@@ -95,9 +94,16 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "Skiing Coverage": {
-      "matched_key": "Pre-existing conditions coverage (Add-on)",
+    "Adventurous activities or Amateur sports": {
+      "matched_key": "Adventurous activities or Amateur sports",
       "matched_values": [
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "GELS - Gold",
         "GELS - Platinum"
       ],
       "recommended_policy": "GELS - Platinum",
@@ -109,21 +115,6 @@
         "FWD - Business",
         "FWD - First",
         "FWD - Premium",
-        "GELS - Gold",
-        "GELS - Platinum"
-      ],
-      "recommended_policy": "GELS - Platinum",
-      "coverage_status": "COVERED"
-    },
-    "Adventurous activities or Amateur sports": {
-      "matched_key": "Adventurous activities or Amateur sports",
-      "matched_values": [
-        "INCOME - Classic",
-        "INCOME - Deluxe",
-        "INCOME - Preferred",
-        "SOMPO - Deluxe",
-        "SOMPO - Elite",
-        "SOMPO - GO Japan!",
         "GELS - Gold",
         "GELS - Platinum"
       ],

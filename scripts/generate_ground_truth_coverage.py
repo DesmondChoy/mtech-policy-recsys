@@ -9,9 +9,15 @@ This script evaluates how well recommended insurance policies cover customer req
 3. Using semantic search to match requirements with ground truth data via the EmbeddingMatcher
 4. Evaluating whether each requirement is covered by the recommended policy
 
-Key Feature: This script not only processes the stated "insurance_coverage_type" requirements but also
-examines the "activities_to_cover" field to intelligently add additional requirements based on activities.
-For example, if a customer lists "golf" in their activities, the script adds golf coverage to their requirements.
+Key Features:
+1. Compound Requirement Atomization: The script automatically detects and splits compound requirements
+   like "Lost or Damaged Luggage" into atomic requirements ("Lost Luggage" and "Damaged Luggage").
+   This allows for more accurate evaluation of coverage when a policy might cover part but not all
+   of a compound requirement.
+
+2. Activity-Based Enhancement: The script examines the "activities_to_cover" field to intelligently
+   add additional requirements based on activities. For example, if a customer lists "golf" in 
+   their activities, the script adds golf coverage to their requirements.
 
 The script handles requirements that don't exist in any policy (NOT_EXIST) differently from
 requirements that exist but aren't covered by the recommended policy (NOT_COVERED).
@@ -24,6 +30,7 @@ Features:
 - Batch processing of all customers
 - Detailed breakdown of covered/not covered/non-existent requirements
 - Activity-based requirement enhancement (adds requirements based on activities_to_cover field)
+- Compound requirement atomization (splits "or"/"and" requirements for more accurate evaluation)
 - Summary statistics across all customers
 - Individual evaluation files for each customer
 
@@ -40,6 +47,7 @@ import re
 import sys
 from pathlib import Path
 import glob
+import argparse
 
 # Add the project root directory to the Python path
 project_root = Path(__file__).parent.parent
@@ -87,6 +95,7 @@ def get_customer_requirements(requirement_file):
     1. If activities field is empty: No additional requirements added
     2. If activities contains golf: Add "Golf Coverage" if no golf-related requirement exists
     3. If activities contains non-golf activities: Add "Adventurous activities or Amateur sports"
+       only if no similar sports/adventure coverage requirement already exists
     
     This enhancement ensures that customers' activity plans (like golf or hiking) are properly
     factored into coverage requirements, even if not explicitly listed in insurance_coverage_type.
@@ -110,10 +119,51 @@ def get_customer_requirements(requirement_file):
             # Check activities_to_cover field
             activities = data["json_dict"].get("activities_to_cover", [])
             
-            if not activities:
-                # If empty, ignore
-                pass
-            else:
+            # First, identify and standardize any sport/activity specific requirements
+            # (except golf-related ones)
+            activity_keywords = ["hiking", "trek", "climb", "swim", "dive", "ski", "snowboard", 
+                              "adventure", "sport", "activity", "recreation", "bungee", "balloon"]
+            
+            # Track if we need to add adventure sports coverage
+            has_adventure_coverage = False
+            
+            # Create a new list for the updated requirements
+            updated_requirements = []
+            
+            # Process each requirement
+            for req in requirements:
+                req_lower = req.lower()
+                
+                # Skip golf-related requirements
+                if "golf" in req_lower:
+                    updated_requirements.append(req)
+                    continue
+                
+                # Check if this is an activity/sport related requirement
+                is_activity_req = False
+                for keyword in activity_keywords:
+                    if keyword in req_lower:
+                        is_activity_req = True
+                        break
+                
+                # If it's an activity requirement, replace it with the standard one
+                if is_activity_req:
+                    # Skip if it's already our standard format
+                    if req == "Adventurous activities or Amateur sports":
+                        updated_requirements.append(req)
+                        has_adventure_coverage = True
+                    elif not has_adventure_coverage:
+                        updated_requirements.append("Adventurous activities or Amateur sports")
+                        has_adventure_coverage = True
+                else:
+                    # Keep non-activity requirements as they are
+                    updated_requirements.append(req)
+            
+            # Use the updated requirements list going forward
+            requirements = updated_requirements
+            
+            # Now proceed with the regular activity enhancement
+            if activities:
                 # Check for golf activities
                 has_golf = any("golf" in activity.lower() for activity in activities)
                 has_non_golf = any("golf" not in activity.lower() for activity in activities)
@@ -122,9 +172,26 @@ def get_customer_requirements(requirement_file):
                 if has_golf and not any("golf" in req.lower() for req in requirements):
                     requirements.append("Golf Coverage")
                 
-                # If there's any non-golf activity
-                if has_non_golf and "Adventurous activities or Amateur sports" not in requirements:
-                    requirements.append("Adventurous activities or Amateur sports")
+                # If there are non-golf activities and no adventure coverage yet
+                if has_non_golf and not has_adventure_coverage:
+                    # Define keywords that would indicate adventure/sports coverage
+                    # Using word boundaries to match whole words only
+                    adventure_keywords = [r"\badventur", r"\bsport", r"\bactiv", r"\brecreation"]
+                    
+                    # Check if any existing requirement already contains these keywords
+                    for req in requirements:
+                        req_lower = req.lower()
+                        for keyword in adventure_keywords:
+                            # Use regex with word boundaries to match whole words only
+                            if re.search(keyword, req_lower):
+                                has_adventure_coverage = True
+                                break
+                        if has_adventure_coverage:
+                            break
+                    
+                    # Only add if no similar requirement exists and there are non-golf activities
+                    if not has_adventure_coverage:
+                        requirements.append("Adventurous activities or Amateur sports")
             
             return requirements
     except Exception as e:
@@ -135,12 +202,13 @@ def atomize_requirements(requirements):
     """
     Split compound requirements into atomic requirements.
     
-    This function looks for conjunctions like 'or', 'and' in requirements
+    This function looks for conjunctions like 'or', 'and', '/' in requirements
     and splits them into separate requirements when appropriate.
     
     Examples:
     - "Lost or Damaged Luggage" -> ["Lost Luggage", "Damaged Luggage"]
     - "Baggage Delay and Loss" -> ["Baggage Delay", "Baggage Loss"]
+    - "Loss/Damage of Baggage" -> ["Loss of Baggage", "Damage of Baggage"]
     
     Args:
         requirements (list): List of requirement strings
@@ -170,7 +238,26 @@ def atomize_requirements(requirements):
         # Pattern for "Loss or Damage of Baggage"
         (r"(Loss|Damage|Delay|Theft)\s+or\s+(Loss|Damage|Delay|Theft)\s+of\s+(Luggage|Baggage)", 
          lambda match, req: [f"{match.group(1)} of {match.group(3)}", 
-                           f"{match.group(2)} of {match.group(3)}"])
+                           f"{match.group(2)} of {match.group(3)}"]),
+                           
+        # Pattern for "Loss/Damage of Baggage" (with slash)
+        (r"(Loss|Damage|Delay|Theft)/(Loss|Damage|Delay|Theft)(\s+of\s+|\s+)(Luggage|Baggage|Items|Belongings)",
+         lambda match, req: [f"{match.group(1)}{match.group(3)}{match.group(4)}", 
+                           f"{match.group(2)}{match.group(3)}{match.group(4)}"]),
+                           
+        # Pattern for "Theft/Loss" (simple slash pattern)
+        (r"(Lost|Loss|Damaged|Damage|Delayed|Delay|Theft|Stolen)/(Lost|Loss|Damaged|Damage|Delayed|Delay|Theft|Stolen)",
+         lambda match, req: [
+             req.replace(f"{match.group(1)}/{match.group(2)}", match.group(1)),
+             req.replace(f"{match.group(1)}/{match.group(2)}", match.group(2))
+         ]),
+         
+        # Pattern for "Loss & Damage"
+        (r"(Loss|Damage|Delay|Theft)\s+&\s+(Loss|Damage|Delay|Theft)",
+         lambda match, req: [
+             req.replace(f"{match.group(1)} & {match.group(2)}", match.group(1)),
+             req.replace(f"{match.group(1)} & {match.group(2)}", match.group(2))
+         ])
     ]
     
     for requirement in requirements:
@@ -189,7 +276,7 @@ def atomize_requirements(requirements):
     
     return atomized_requirements
 
-def evaluate_coverage(customer_id, requirements, recommended_policy, matcher):
+def evaluate_coverage(customer_id, requirements, recommended_policy, matcher, debug=False):
     """
     Evaluate if the recommended policy covers the customer requirements.
     
@@ -201,6 +288,7 @@ def evaluate_coverage(customer_id, requirements, recommended_policy, matcher):
         requirements (list): List of requirement strings
         recommended_policy (str): The recommended policy (e.g., "GELS - Platinum")
         matcher (EmbeddingMatcher): Instance of the EmbeddingMatcher for similarity search
+        debug (bool, optional): Whether to print debug information. Defaults to False.
         
     Returns:
         dict: Evaluation results containing coverage metrics and detailed breakdown
@@ -208,7 +296,7 @@ def evaluate_coverage(customer_id, requirements, recommended_policy, matcher):
     coverage_results = {}
     
     # Get ground truth matches for all requirements at once
-    ground_truth_matches = matcher.get_values_batch(requirements)
+    ground_truth_matches = matcher.get_values_batch(requirements, debug=debug)
     
     # Track counts for different statuses
     covered_count = 0
@@ -298,6 +386,11 @@ def main():
     4. Calculate overall statistics
     5. Save summary file with all evaluations
     """
+    parser = argparse.ArgumentParser(description='Generate ground truth coverage evaluation')
+    parser.add_argument('--debug', action='store_true', help='Enable debug output for similarity scores')
+    parser.add_argument('--customer', type=str, help='Process only this specific customer ID')
+    args = parser.parse_args()
+    
     # Initialize paths
     requirements_path = project_root / "data" / "extracted_customer_requirements"
     results_path = project_root / "results"
@@ -317,6 +410,13 @@ def main():
         if match:
             customer_id = match.group(1)
             customer_ids.append(customer_id)
+    
+    # If a specific customer ID is provided, filter to only that one
+    if args.customer:
+        customer_ids = [cid for cid in customer_ids if cid == args.customer]
+        if not customer_ids:
+            print(f"Customer ID {args.customer} not found")
+            return
     
     all_evaluations = {}
     overall_stats = {
@@ -356,14 +456,118 @@ def main():
         if not recommended_policy:
             print(f"  Could not extract recommended policy for customer {customer_id}")
             continue
+            
+        # Manual check for adventure activities
+        # Load the customer data to directly check activities_to_cover
+        try:
+            with open(req_files[0], 'r') as file:
+                data = json.load(file)
+                if "json_dict" in data:
+                    # First, identify and standardize any sport/activity specific requirements
+                    # (except golf-related ones)
+                    activity_keywords = ["hiking", "trek", "climb", "swim", "dive", "ski", "snowboard", 
+                                       "adventure", "sport", "activity", "recreation", "bungee", "balloon"]
+                    
+                    # Track if we need to add adventure sports coverage
+                    has_adventure_coverage = False
+                    
+                    # Create a new list for the updated requirements
+                    updated_requirements = []
+                    
+                    # Process each requirement
+                    for req in requirements:
+                        req_lower = req.lower()
+                        
+                        # Skip golf-related requirements
+                        if "golf" in req_lower:
+                            updated_requirements.append(req)
+                            continue
+                        
+                        # Check if this is an activity/sport related requirement
+                        is_activity_req = False
+                        for keyword in activity_keywords:
+                            if keyword in req_lower:
+                                is_activity_req = True
+                                break
+                        
+                        # If it's an activity requirement, replace it with the standard one
+                        if is_activity_req:
+                            # Skip if it's already our standard format
+                            if req == "Adventurous activities or Amateur sports":
+                                updated_requirements.append(req)
+                                has_adventure_coverage = True
+                            elif not has_adventure_coverage:
+                                updated_requirements.append("Adventurous activities or Amateur sports")
+                                has_adventure_coverage = True
+                        else:
+                            # Keep non-activity requirements as they are
+                            updated_requirements.append(req)
+                    
+                    # Use the updated requirements list going forward
+                    requirements = updated_requirements
+                    
+                    # Now check for activities to cover
+                    activities = data["json_dict"].get("activities_to_cover", [])
+                    
+                    # If there are adventure-type activities and no similar coverage exists
+                    if activities and len(activities) > 0:
+                        # Check if there are any non-golf activities
+                        has_golf = any("golf" in activity.lower() for activity in activities)
+                        has_non_golf = any("golf" not in activity.lower() for activity in activities)
+                        
+                        # If there's golf mentioned in activities and no golf requirement
+                        if has_golf and not any("golf" in req.lower() for req in requirements):
+                            requirements.append("Golf Coverage")
+                            if args.debug:
+                                print(f"  Added 'Golf Coverage' due to golf activities")
+                        
+                        # Only add adventure coverage if we don't already have it and there are non-golf activities
+                        if has_non_golf and not has_adventure_coverage:
+                            # Define keywords that would indicate adventure/sports coverage
+                            # Using word boundaries to match whole words only
+                            adventure_keywords = [r"\badventur", r"\bsport", r"\bactiv", r"\brecreation"]
+                            
+                            # Check if any existing requirement already contains these keywords
+                            for req in requirements:
+                                req_lower = req.lower()
+                                for keyword in adventure_keywords:
+                                    # Use regex with word boundaries to match whole words only
+                                    if re.search(keyword, req_lower):
+                                        has_adventure_coverage = True
+                                        break
+                                if has_adventure_coverage:
+                                    break
+                            
+                            # Add adventure sports requirement if none exists and we have non-golf activities
+                            if not has_adventure_coverage:
+                                requirements.append("Adventurous activities or Amateur sports")
+                                if args.debug:
+                                    print(f"  Added 'Adventurous activities or Amateur sports' due to non-golf activities: {[act for act in activities if 'golf' not in act.lower()]}")
+        except Exception as e:
+            print(f"  Error checking activities: {e}")
+        
+        # If in debug mode, show original requirements and their similarity scores
+        if args.debug:
+            print("\n=== ORIGINAL REQUIREMENTS ===")
+            for req in requirements:
+                print(f"  {req}")
+                matcher.debug_similarity(req)
         
         # Atomize compound requirements into separate requirements
         atomized_requirements = atomize_requirements(requirements)
         if len(atomized_requirements) > len(requirements):
             print(f"  Atomized {len(requirements)} requirements into {len(atomized_requirements)} atomic requirements")
+            
+            # If in debug mode, show atomized requirements and their similarity scores
+            if args.debug:
+                print("\n=== ATOMIZED REQUIREMENTS ===")
+                for req in atomized_requirements:
+                    if req not in requirements:  # Only show new requirements from atomization
+                        print(f"  {req}")
+                        matcher.debug_similarity(req)
         
         # Evaluate coverage
-        evaluation = evaluate_coverage(customer_id, atomized_requirements, recommended_policy, matcher)
+        evaluation = evaluate_coverage(customer_id, atomized_requirements, recommended_policy, matcher, args.debug)
         all_evaluations[customer_id] = evaluation
         
         # Update overall stats

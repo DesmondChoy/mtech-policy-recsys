@@ -16,13 +16,13 @@
   "status_summary": {
     "covered_requirements": [
       "Medical Coverage",
-      "Sports and Adventure Coverage",
+      "Lost Luggage",
+      "Adventurous activities or Amateur sports",
       "Travel Delay Benefits",
-      "Trip Cancellation Coverage",
-      "Adventurous activities or Amateur sports"
+      "Trip Cancellation Coverage"
     ],
     "not_covered_requirements": [
-      "Lost/Damaged Luggage"
+      "Damaged Luggage"
     ],
     "not_exist_requirements": []
   },
@@ -47,7 +47,27 @@
       "recommended_policy": "GELS - Gold",
       "coverage_status": "COVERED"
     },
-    "Lost/Damaged Luggage": {
+    "Lost Luggage": {
+      "matched_key": "Baggage loss",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
+      "recommended_policy": "GELS - Gold",
+      "coverage_status": "COVERED"
+    },
+    "Damaged Luggage": {
       "matched_key": "Damage of baggage and personal belongings",
       "matched_values": [
         "FWD - Business",
@@ -64,7 +84,7 @@
       "recommended_policy": "GELS - Gold",
       "coverage_status": "NOT_COVERED"
     },
-    "Sports and Adventure Coverage": {
+    "Adventurous activities or Amateur sports": {
       "matched_key": "Adventurous activities or Amateur sports",
       "matched_values": [
         "INCOME - Classic",
@@ -115,21 +135,6 @@
         "SOMPO - Elite",
         "SOMPO - GO Japan!",
         "SOMPO - Vital"
-      ],
-      "recommended_policy": "GELS - Gold",
-      "coverage_status": "COVERED"
-    },
-    "Adventurous activities or Amateur sports": {
-      "matched_key": "Adventurous activities or Amateur sports",
-      "matched_values": [
-        "INCOME - Classic",
-        "INCOME - Deluxe",
-        "INCOME - Preferred",
-        "SOMPO - Deluxe",
-        "SOMPO - Elite",
-        "SOMPO - GO Japan!",
-        "GELS - Gold",
-        "GELS - Platinum"
       ],
       "recommended_policy": "GELS - Gold",
       "coverage_status": "COVERED"

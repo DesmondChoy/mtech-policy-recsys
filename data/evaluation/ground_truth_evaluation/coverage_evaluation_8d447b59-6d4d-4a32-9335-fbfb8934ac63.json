@@ -1,16 +1,16 @@
 {
   "customer_id": "8d447b59-6d4d-4a32-9335-fbfb8934ac63",
   "recommended_policy": "FWD - First",
-  "total_coverage_ratio": "5/7",
-  "total_coverage_percentage": 71.43,
-  "valid_coverage_ratio": "5/7",
-  "valid_coverage_percentage": 71.43,
+  "total_coverage_ratio": "6/7",
+  "total_coverage_percentage": 85.71,
+  "valid_coverage_ratio": "6/7",
+  "valid_coverage_percentage": 85.71,
   "has_invalid_requirements": false,
   "requirements_breakdown": {
     "total": 7,
     "valid": 7,
-    "covered": 5,
-    "not_covered": 2,
+    "covered": 6,
+    "not_covered": 1,
     "not_exist": 0
   },
   "status_summary": {
@@ -18,17 +18,17 @@
       "Medical Coverage",
       "Trip Cancellation",
       "Travel Delays",
-      "Lost/Damaged Luggage",
+      "Lost Luggage",
+      "Damaged Luggage",
       "Accidental Death Coverage"
     ],
     "not_covered_requirements": [
-      "Sports and Adventure Coverage",
       "Adventurous activities or Amateur sports"
     ],
     "not_exist_requirements": []
   },
   "requirements_coverage": {
-    "Sports and Adventure Coverage": {
+    "Adventurous activities or Amateur sports": {
       "matched_key": "Adventurous activities or Amateur sports",
       "matched_values": [
         "INCOME - Classic",
@@ -103,7 +103,27 @@
       "recommended_policy": "FWD - First",
       "coverage_status": "COVERED"
     },
-    "Lost/Damaged Luggage": {
+    "Lost Luggage": {
+      "matched_key": "Baggage loss",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
+      "recommended_policy": "FWD - First",
+      "coverage_status": "COVERED"
+    },
+    "Damaged Luggage": {
       "matched_key": "Damage of baggage and personal belongings",
       "matched_values": [
         "FWD - Business",
@@ -139,21 +159,6 @@
       ],
       "recommended_policy": "FWD - First",
       "coverage_status": "COVERED"
-    },
-    "Adventurous activities or Amateur sports": {
-      "matched_key": "Adventurous activities or Amateur sports",
-      "matched_values": [
-        "INCOME - Classic",
-        "INCOME - Deluxe",
-        "INCOME - Preferred",
-        "SOMPO - Deluxe",
-        "SOMPO - Elite",
-        "SOMPO - GO Japan!",
-        "GELS - Gold",
-        "GELS - Platinum"
-      ],
-      "recommended_policy": "FWD - First",
-      "coverage_status": "NOT_COVERED"
     }
   }
 }
