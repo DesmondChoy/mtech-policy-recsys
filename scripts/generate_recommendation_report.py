@@ -31,7 +31,7 @@ Example:
 import argparse
 import asyncio  # Import asyncio
 import glob
-import json  # Keep json import just in case
+import json  # Uncommented for loading transcript/requirements
 import logging
 import os
 import re
@@ -70,6 +70,7 @@ logger = logging.getLogger(__name__)
 # Constants (Define project root and results dir relative to this script)
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 RESULTS_DIR = PROJECT_ROOT / "results"
+TRANSCRIPTS_DIR = PROJECT_ROOT / "data" / "transcripts" / "processed"
 
 
 # --- Task 1: Markdown Report Parser ---
@@ -281,33 +282,45 @@ PROMPT_TEMPLATE_STAGE2 = """
 # Role: Expert Travel Insurance Advisor
 
 # Goal:
-Review the detailed comparison reports for the top {num_candidates} candidate policies identified in Stage 1. Select the SINGLE best overall policy (Insurer + Tier) for the customer based on a nuanced comparison of their strengths, weaknesses, and alignment with the original customer requirements. Provide a comprehensive justification for your final choice.
+Review the detailed comparison reports for the top {num_candidates} candidate policies AND the provided **customer transcript**. Select the SINGLE best overall policy (Insurer + Tier) for the customer based on a nuanced comparison of their strengths, weaknesses, alignment with customer needs (using the transcript for prioritization cues), AND any prioritization cues identified in the transcript. Provide a comprehensive justification for your final choice.
 
-# Customer Requirements Summary:
-(Optional but recommended: Include key customer requirements summary here if available)
+# Parsed Customer Transcript:
+(This is the conversation history)
 ```json
-{customer_requirements_summary_json}
+{parsed_transcript_json}
 ```
 
 # Candidate Policy Reports:
-Here are the full comparison reports for the finalist policies:
+Here are the full comparison reports for the finalist policies identified in Stage 1:
 
 {candidate_reports_markdown}
 
-# Re-ranking and Final Selection Task:
+# Analysis and Recommendation Task:
 
-1.  **Review Reports:** Carefully read and understand each provided comparison report. Pay attention to the recommended tier, the detailed requirement analysis (including 'Coverage Assessment'), and the summary strengths/weaknesses for each candidate.
-2.  **Compare Candidates:** Compare the candidate policies *relative to each other*. Consider:
-    *   How well does each policy meet the most critical customer requirements?
-    *   What are the key trade-offs between the candidates (e.g., better coverage vs. higher cost, specific benefit differences)?
-    *   Which policy offers the best overall value proposition considering both coverage and potential gaps?
-3.  **Select Single Best Policy:** Based on your comparative analysis, determine the single best policy (Insurer + Tier) from the candidates provided.
-4.  **Provide Justification:** Write a clear, comprehensive justification explaining your final choice. This justification MUST:
+1.  **Review Transcript:** Carefully read the provided **Parsed Customer Transcript**. Identify if the customer expressed any explicit or implicit prioritization among their requirements in the dialogue. Look for cues like:
+    *   Direct statements ("This is non-negotiable", "The most important thing is...", "I'm really worried about X").
+    *   Repetition or emphasis on certain topics.
+    *   Emotional language associated with specific concerns.
+    *   The order in which requirements were mentioned (though less reliable).
+    *   If no clear prioritization cues are found, assume all requirements carry equal weight.
+
+2.  **Review Comparison Reports:** Carefully read and understand each provided comparison report. Pay attention to the recommended tier, the detailed requirement analysis (including 'Coverage Assessment'), and the summary strengths/weaknesses for each candidate.
+
+3.  **Compare Candidates (Informed by Transcript):** Compare the candidate policies *relative to each other*. Consider:
+    *   How well does each policy meet the customer's needs, giving weight to any priorities identified in the transcript analysis (Step 1)?
+    *   What are the key trade-offs between the candidates, especially concerning prioritized requirements?
+    *   Which policy offers the best overall value proposition considering coverage, potential gaps, AND the customer's likely priorities based on the transcript?
+
+4.  **Select Single Best Policy:** Based on your comparative analysis (informed by transcript prioritization), determine the single best policy (Insurer + Tier) from the candidates provided.
+
+5.  **Provide Justification:** Write a clear, comprehensive justification explaining your final choice. This justification MUST:
     *   Explicitly state the chosen Insurer and Tier.
-    *   Compare the chosen policy against the *other finalist(s)*, highlighting the key reasons for its selection.
-    *   Reference specific strengths, weaknesses, or coverage details from the reports to support your reasoning. **Where relevant, include key source references (e.g., page or section numbers from the policy documents mentioned in the reports) to substantiate important comparison points.**
+    *   Reference any prioritization cues identified in the transcript (Step 1) and explain how they influenced the decision. If no prioritization was found and equal weighting was assumed, state this.
+    *   Compare the chosen policy against the *other finalist(s)*, highlighting the key reasons for its selection, particularly in relation to prioritized requirements (if any).
+    *   Reference specific strengths, weaknesses, or coverage details from the reports to support your reasoning. Where relevant, include key source references (e.g., page or section numbers from the policy documents mentioned in the reports) to substantiate important comparison points.
     *   Explain the trade-offs considered.
-5.  **Output Format:** Provide your response as a JSON object matching the following Pydantic schema:
+
+6.  **Output Format:** Provide your response as a JSON object matching the following Pydantic schema:
 
 ```json
 {{
@@ -324,18 +337,18 @@ Here are the full comparison reports for the finalist policies:
 # Placeholder function for Stage 2 logic
 async def run_stage2_reranking(
     top_candidates: List[Dict[str, Any]],
-    customer_requirements_summary: Optional[Dict[str, Any]] = None,  # Optional summary
+    parsed_transcript_data: Optional[List[Dict[str, str]]] = None,  # Transcript data
 ) -> Optional[FinalRecommendation]:
     """
-    Takes the top candidate reports from Stage 1, prepares a prompt for Stage 2
-    LLM re-ranking, calls the LLM, and returns the structured final recommendation.
+    Takes the top candidate reports from Stage 1 and the parsed transcript,
+    prepares a prompt for Stage 2 LLM re-ranking, calls the LLM, and returns
+    the structured final recommendation.
 
     Args:
         top_candidates: A list of dictionaries, where each dictionary represents
                         a candidate from Stage 1 and must contain at least
                         'report_path' or 'report_content'.
-        customer_requirements_summary: Optional dictionary containing key customer
-                                       requirements to provide context to the LLM.
+        parsed_transcript_data: Optional list of dicts representing the parsed transcript.
 
     Returns:
         A FinalRecommendation Pydantic object, or None if an error occurs.
@@ -381,25 +394,30 @@ async def run_stage2_reranking(
         candidate_reports_markdown += f"{report_content}\n"
         candidate_reports_markdown += f"--- Candidate {i + 1} End ---\n\n"
 
-    # Prepare customer requirements summary JSON string
-    customer_req_summary_str = "{}"  # Default empty JSON
-    if customer_requirements_summary:
+    # Prepare parsed transcript JSON string
+    parsed_transcript_str = "[]"  # Default empty JSON list
+    if parsed_transcript_data:
         try:
-            customer_req_summary_str = json.dumps(
-                customer_requirements_summary, indent=2
-            )
+            # Ensure transcript data is a list of dicts before dumping
+            if isinstance(parsed_transcript_data, list) and all(
+                isinstance(item, dict) for item in parsed_transcript_data
+            ):
+                parsed_transcript_str = json.dumps(parsed_transcript_data, indent=2)
+            else:
+                logger.warning(
+                    f"Transcript data is not a list of dicts, using default. Type: {type(parsed_transcript_data)}"
+                )
+                parsed_transcript_str = '{"error": "Invalid transcript data format"}'
         except Exception as e:
-            logger.warning(f"Could not serialize customer requirements summary: {e}")
-            customer_req_summary_str = (
-                '{"error": "Could not serialize requirements summary"}'
-            )
+            logger.warning(f"Could not serialize parsed transcript data: {e}")
+            parsed_transcript_str = '{"error": "Could not serialize transcript data"}'
 
     # Format the Stage 2 prompt
     prompt = ""  # Initialize
     try:
         prompt = PROMPT_TEMPLATE_STAGE2.format(
             num_candidates=len(top_candidates),
-            customer_requirements_summary_json=customer_req_summary_str,
+            parsed_transcript_json=parsed_transcript_str,
             candidate_reports_markdown=candidate_reports_markdown.strip(),
         )
         logger.debug(f"Stage 2 Prompt prepared (length: {len(prompt)} chars).")
@@ -706,6 +724,33 @@ async def main(
         )
         return ranked_results, None
 
+    # --- Load Transcript for Stage 2 Context ---
+    parsed_transcript_data: Optional[List[Dict[str, str]]] = None
+
+    # Find and load parsed transcript
+    try:
+        transcript_pattern = str(
+            TRANSCRIPTS_DIR / f"parsed_transcript_*_{customer_uuid}.json"
+        )
+        transcript_files = glob.glob(transcript_pattern)
+        if transcript_files:
+            if len(transcript_files) > 1:
+                logger.warning(
+                    f"Multiple transcripts found for {customer_uuid}, using first: {transcript_files[0]}"
+                )
+            transcript_path = Path(transcript_files[0])
+            with open(transcript_path, "r", encoding="utf-8") as f:
+                parsed_transcript_data = json.load(f)
+            logger.info(f"Successfully loaded transcript: {transcript_path.name}")
+        else:
+            logger.warning(
+                f"No parsed transcript found for customer {customer_uuid} matching pattern {transcript_pattern}"
+            )
+    except Exception as e:
+        logger.error(
+            f"Error loading transcript for {customer_uuid}: {e}", exc_info=True
+        )
+
     # --- Stage 2 ---
     # Select top candidates for Stage 2
     top_candidates = ranked_results[:top_n]
@@ -719,13 +764,10 @@ async def main(
         f"\nProceeding to Stage 2 re-ranking with {len(top_candidates)} candidates..."
     )
 
-    # Optional: Load customer requirements summary if needed for Stage 2 prompt
-    # customer_req_summary = load_customer_requirements_summary(customer_uuid) # Placeholder
-    customer_req_summary = None  # Set to None for now
-
+    # Pass loaded transcript to Stage 2
     final_recommendation = await run_stage2_reranking(
         top_candidates=top_candidates,
-        customer_requirements_summary=customer_req_summary,
+        parsed_transcript_data=parsed_transcript_data,  # Pass loaded transcript
     )
 
     if final_recommendation:

@@ -49,6 +49,7 @@ graph TD
         FilterLogicReport --> ComparisonScript[scripts/generate_policy_comparison.py (LLMService/Gemini)]
         ProcessedPolicies --> ComparisonScript
         ComparisonScript --> ComparisonReports[results/{uuid}/*.md]
+        ProcessedTranscripts --> RecommendScript # Added dependency
         ComparisonReports --> RecommendScript[scripts/generate_recommendation_report.py (LLMService/Gemini)]
         RecommendScript --> FinalRecommendationMD[results/{uuid}/recommendation_report_{uuid}.md]
     end
@@ -192,10 +193,12 @@ graph TD
 - **Dependencies**: `LLMService`, Extractor Agent output, Policy Extraction Script output.
 
 ### Recommendation Report Script (`scripts/generate_recommendation_report.py`)
-- **Purpose**: Parses comparison reports, performs Stage 1 scoring, calls LLM for Stage 2 re-ranking, generates a final Markdown report, and saves it.
-- **Inputs**: Markdown comparison reports (`results/{uuid}/*.md`).
+- **Purpose**: Parses comparison reports, performs Stage 1 scoring, calls LLM for Stage 2 re-ranking (using transcript context), generates a final Markdown report, and saves it.
+- **Inputs**:
+    - Markdown comparison reports (`results/{uuid}/*.md`).
+    - Processed transcript JSON (`data/transcripts/processed/parsed_transcript_*_{uuid}.json`).
 - **Outputs**: Final recommendation Markdown report (`results/{uuid}/recommendation_report_{uuid}.md`).
-- **Dependencies**: `LLMService`, Comparison Report Script output, Pydantic (`FinalRecommendation` model).
+- **Dependencies**: `LLMService`, Comparison Report Script output, Processed Transcript data, Pydantic (`FinalRecommendation` model).
 
 ### ML Models (Future)
 - **Purpose**: Uncover insights from data.
@@ -320,10 +323,11 @@ sequenceDiagram
     Note right of CompareP: Saves report to results/{uuid}/policy_comparison_report_*.md
     CompareP->>UserDev: Provide Comparison Report (Implicitly, via file system)
 
-    %% Recommendation Path (Requires Comparison Reports)
+    %% Recommendation Path (Requires Comparison Reports & Processed Transcript)
     RecommendR->>RecommendR: Parse Reports & Stage 1 Score/Rank
     Note right of RecommendR: Reads reports from results/{uuid}/
-    RecommendR->>LLM_Gemini: Stage 2 Re-rank Top Candidates
+    Note right of RecommendR: Reads transcript from data/transcripts/processed/
+    RecommendR->>LLM_Gemini: Stage 2 Re-rank Top Candidates (with transcript context)
     LLM_Gemini-->>RecommendR: Final Recommendation (Structured JSON)
     RecommendR->>RecommendR: Generate Final Markdown Report
     Note right of RecommendR: Saves final MD report to results/{uuid}/recommendation_report_*.md

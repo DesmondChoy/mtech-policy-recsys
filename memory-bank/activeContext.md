@@ -239,6 +239,12 @@ The project has moved beyond initial setup and is focused on refining the existi
 31. **Onboarding Instructions Update**:
     - Onboarding/setup instructions updated: README and Memory Bank now specify that new users must run `npm install` after cloning to install Node.js dependencies.
 
+32. **Recommendation Report Script Enhancement (Transcript Context)**:
+    - Modified `scripts/generate_recommendation_report.py` to incorporate the parsed customer transcript into the Stage 2 LLM re-ranking prompt (`PROMPT_TEMPLATE_STAGE2`).
+    - Updated the `run_stage2_reranking` function to load, format, and pass the transcript data.
+    - Updated the prompt instructions to guide the LLM on using transcript cues for prioritization.
+    - **Revision:** Subsequently removed the loading and usage of the extracted requirements summary (`json_dict`) from the Stage 2 prompt and logic, simplifying the context to focus solely on the transcript and comparison reports.
+
 ## Next Steps (Revised Focus)
 
 1.  **Test & Refine PDF Extraction Evaluation**:

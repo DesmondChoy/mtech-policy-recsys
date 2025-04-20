@@ -1,5 +1,7 @@
 # Recommender Logic Implementation Plan
 
+**Status:** Completed
+
 ## 1. Context & Goal
 
 -   **Current Stage**: The system generates detailed insurer-level policy comparison reports (`results/{uuid}/policy_comparison_report_{insurer}_{uuid}.md`) by comparing extracted customer requirements (`data/extracted_customer_requirements/requirements_{scenario_name}_{uuid}.json`) against processed policy data (`data/policies/processed/{insurer}_{tier}.json`).
@@ -54,17 +56,21 @@
     *   The `Weaknesses/Gaps` summary section is *not* used in this scoring calculation, ensuring the score is based purely on the per-requirement assessment.
     *   This prioritizes policies with the highest degree of explicit requirement fulfillment.
 
-## 4. Stage 2: LLM Re-ranking (High-Level Plan)
+## 4. Stage 2: LLM Re-ranking (Current Implementation)
 
--   **Input**: The full Markdown comparison reports for the top 2-3 candidates identified in Stage 1.
--   **Process**: Feed these selected reports into a final LLM call (using `LLMService`).
+-   **Input**:
+    *   The full Markdown comparison reports for the top 2-3 candidates identified in Stage 1.
+    *   The parsed customer transcript (`data/transcripts/processed/parsed_transcript_*_{uuid}.json`).
+    *   **(Removed):** The extracted requirements summary (`json_dict`) is no longer passed as input.
+-   **Process**: Feed the selected reports and the transcript into a final LLM call (using `LLMService` via `scripts/generate_recommendation_report.py`).
 -   **Prompting**: Instruct the LLM to:
     *   Act as an expert insurance advisor.
-    *   Carefully review the provided reports for the finalist policies.
-    *   Compare their strengths, weaknesses, coverage details, and justifications *relative to each other* and the original customer needs (context might need to be provided).
-    *   Select the single best policy (Insurer + Tier).
-    *   Provide a clear, comprehensive justification for the final choice, explaining the trade-offs considered.
--   **Output**: Structured output (e.g., JSON) containing the recommended policy (Insurer, Tier) and the textual justification.
+    *   Carefully review the provided reports for the finalist policies AND the customer transcript.
+    *   Analyze the transcript for prioritization cues (emphasis, repetition, direct statements).
+    *   Compare the candidates' strengths, weaknesses, coverage details, and justifications *relative to each other*, using the transcript analysis to weight the importance of different needs.
+    *   Select the single best policy (Insurer + Tier) based on this context-aware comparison.
+    *   Provide a clear, comprehensive justification for the final choice, explaining the trade-offs considered and referencing transcript cues if applicable.
+-   **Output**: Structured JSON output (`FinalRecommendation` model) containing the recommended policy (Insurer, Tier) and the textual justification.
 
 ## 5. Implementation Tasks
 
@@ -293,4 +299,4 @@
         *   **Regression Detection:** Identify if changes negatively impact performance.
         *   **Faithfulness/Correctness:** Verify adherence to expected behavior.
         *   **Objective Comparison:** Benchmark different models/prompts/logic.
--   [ ] **Task 12 (Future Enhancement):** Enhance the final Markdown report (Task 6) with personalization by referencing key points or context from the original customer transcript (`data/transcripts/processed/parsed_transcript_{scenario_name}_{uuid}.json`).
+-   [x] **Task 12 (Transcript Context for Justification):** Updated Stage 2 prompt (Task 4) to instruct the LLM to reference transcript context/cues when generating the justification, enabling personalization in the final report (Task 6).
