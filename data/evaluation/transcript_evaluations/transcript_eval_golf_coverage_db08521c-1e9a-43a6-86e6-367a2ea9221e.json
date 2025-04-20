@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Trip Cancellation coverage and provided specific examples of covered reasons (major illness, family emergency).",
+      "customer_quote": "[22] And Trip Cancellation. If something serious happens before we go \u2013 like a major illness or family emergency \u2013 I expect my non-refundable costs back. Not excuses.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement for Trip Cancellation coverage. The agent also later probed for pre-existing conditions [27], which is relevant for potential exclusions.",
+      "agent_quote": "[23] Okay, Trip Cancellation coverage for specified unforeseen events."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Medical Coverage and specified the types of services they expect to be covered (hospital stays, doctor visits).",
+      "customer_quote": "[20] Of course! The usual things everyone needs, which you guys probably try to exclude! What about Medical Coverage? If one of us falls sick or gets injured \u2013 properly covered, mind you, no tricks. Hospital stays, doctor visits, the works.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the need for comprehensive medical coverage and appropriately probed for pre-existing medical conditions, which is a key factor for this coverage type.",
+      "agent_quote": "[21] Right, comprehensive Medical Coverage for emergency treatment during the trip. ... [27] Are there any pre-existing medical conditions, like asthma or high blood pressure, for either traveller that we should note?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer requested coverage for Lost or Damaged Luggage beyond just the golf equipment, specifying general items like suitcases, clothes, and essentials.",
+      "customer_quote": "[26] And don't forget Lost or Damaged Luggage in general. Not just the golf clubs. My wife\u2019s suitcase, clothes, essentials... If the airline loses it or smashes it, ISS needs to pay up properly this time.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement for general Lost, Damaged, or Delayed Baggage coverage.",
+      "agent_quote": "[27] Noted, coverage for Lost, Damaged, or Delayed Baggage."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Travel Delay coverage and specified the types of expenses they expect covered (extra hotel nights, meals) and their concern about the delay duration trigger.",
+      "customer_quote": "[24] Travel Delays too! Airlines are constantly delayed. If we get stuck somewhere, I expect cover for extra hotel nights and meals. Don't tell me it needs to be a 12-hour delay either, make it reasonable!",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement for Travel Delay coverage, including the specific expenses mentioned by the customer.",
+      "agent_quote": "[25] Understood. Coverage for necessary expenses due to significant Travel Delays."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The agent probed for specific activities. The customer confirmed it was a golf trip and provided extensive, specific details required by the scenario: golf equipment coverage, unused green fee reimbursement, golf buggy damage liability, and a hole-in-one benefit.",
+      "customer_quote": "[12] It's a golf trip! ... I need absolute certainty my golf equipment is covered... [14] And what if I pre-pay for expensive green fees... I expect to be reimbursed... [16] And those golf buggies! What if I accidentally bump it or scratch it? Am I covered for damage liability?... [18] One more thing for golf \u2013 some insurers offer a small payout or benefit if you score a hole-in-one.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about specific activities and then meticulously acknowledged each of the customer's detailed golf-related coverage requirements, ensuring all scenario-specific needs were captured.",
+      "agent_quote": "[11] Are there any specific activities you plan to do...? [13] Okay, noted. Coverage specifically for golf equipment against loss or damage. [15] Understood. Reimbursement for unused green fees due to covered reasons. [17] Okay, cover for potential damage liability for a rented golf buggy. [19] Acknowledged. A request for a hole-in-one achievement benefit."
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered information for all standard travel insurance coverage types mentioned by the customer. The customer was very specific about their needs, particularly the detailed requirements for golf coverage (equipment, green fees, buggy liability, hole-in-one benefit), which fall under the Sports and Adventure Activities category. The agent effectively acknowledged each requirement and performed necessary probes, such as asking about specific activities and pre-existing medical conditions. All standard and scenario-specific coverage requirements mentioned were captured."
+  },
+  "transcript_name": "transcript_golf_coverage_db08521c-1e9a-43a6-86e6-367a2ea9221e",
+  "scenario": "golf_coverage"
+}

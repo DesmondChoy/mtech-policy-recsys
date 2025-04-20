@@ -1,39 +1,39 @@
 {
-    "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a two-week trip to Japan for two travellers, including specific coverage needs.\",\n  \"detailed_description\": \"The customer requires travel insurance for a trip to Japan from Singapore for two weeks. Key coverage areas include hiking-related activities, clarity on medical coverage pertaining to a pre-existing condition (high blood pressure), trip cancellation triggers, travel delay benefits, lost/damaged luggage specifics, and a double indemnity feature for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"Sports and Adventure Coverage\", \"Medical Coverage\", \"Trip Cancellation\", \"Travel Delays\", \"Lost/Damaged Luggage\", \"Accidental Death Coverage\"],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"Clarity on medical coverage relating to pre-existing conditions\"],\n  \"activities_to_cover\": [\"Hiking\"],\n  \"age_group\": \"41-55 years old\",\n  \"additional_requests\": \"Details on coverage limits and exclusions, especially for luggage items and double indemnity for accidental death on public transport.\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"hiking\", \"trip cancellation\", \"travel delays\", \"lost luggage\", \"double indemnity\"]\n}",
+    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan\",\n  \"detailed_description\": \"Travel insurance needed for a two-week trip to Japan for two travelers aged 41-55, with specific coverage needs for hiking, medical issues related to high blood pressure, trip cancellation, travel delays, lost/damaged luggage, and accidental death coverage on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Sports and Adventure Activities\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Accidental Death\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Emergency medical coverage for pre-existing conditions\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Need details on trip cancellation triggers, travel delays activation time, lost/damaged luggage limits and exclusions, and double indemnity for accidental death on public transport.\",\n  \"keywords\": [\n    \"hiking\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"accidental death\",\n    \"double indemnity\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "req-001",
-        "requirement_summary": "Travel insurance requirements for a two-week trip to Japan for two travellers, including specific coverage needs.",
-        "detailed_description": "The customer requires travel insurance for a trip to Japan from Singapore for two weeks. Key coverage areas include hiking-related activities, clarity on medical coverage pertaining to a pre-existing condition (high blood pressure), trip cancellation triggers, travel delay benefits, lost/damaged luggage specifics, and a double indemnity feature for accidental death on public transport.",
+        "requirement_id": "REQ-001",
+        "requirement_summary": "Travel insurance requirements for a trip to Japan",
+        "detailed_description": "Travel insurance needed for a two-week trip to Japan for two travelers aged 41-55, with specific coverage needs for hiking, medical issues related to high blood pressure, trip cancellation, travel delays, lost/damaged luggage, and accidental death coverage on public transport.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "2 weeks",
         "insurance_coverage_type": [
-            "Sports and Adventure Coverage",
+            "Sports and Adventure Activities",
             "Medical Coverage",
             "Trip Cancellation",
             "Travel Delays",
             "Lost/Damaged Luggage",
-            "Accidental Death Coverage"
+            "Accidental Death"
         ],
         "pre_existing_conditions": [
-            "high blood pressure"
+            "High blood pressure"
         ],
         "medical_needs": [
-            "Clarity on medical coverage relating to pre-existing conditions"
+            "Emergency medical coverage for pre-existing conditions"
         ],
         "activities_to_cover": [
             "Hiking"
         ],
-        "age_group": "41-55 years old",
-        "additional_requests": "Details on coverage limits and exclusions, especially for luggage items and double indemnity for accidental death on public transport.",
+        "age_group": "41-55",
+        "additional_requests": "Need details on trip cancellation triggers, travel delays activation time, lost/damaged luggage limits and exclusions, and double indemnity for accidental death on public transport.",
         "keywords": [
-            "travel insurance",
-            "Japan",
             "hiking",
+            "medical coverage",
             "trip cancellation",
             "travel delays",
             "lost luggage",
+            "accidental death",
             "double indemnity"
         ]
     },
@@ -43,41 +43,41 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a two-week trip to Japan for two travellers, including specific coverage needs.\",\n  \"detailed_description\": \"The customer requires travel insurance for a trip to Japan from Singapore for two weeks. Key coverage areas include hiking-related activities, clarity on medical coverage pertaining to a pre-existing condition (high blood pressure), trip cancellation triggers, travel delay benefits, lost/damaged luggage specifics, and a double indemnity feature for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"Sports and Adventure Coverage\", \"Medical Coverage\", \"Trip Cancellation\", \"Travel Delays\", \"Lost/Damaged Luggage\", \"Accidental Death Coverage\"],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"Clarity on medical coverage relating to pre-existing conditions\"],\n  \"activities_to_cover\": [\"Hiking\"],\n  \"age_group\": \"41-55 years old\",\n  \"additional_requests\": \"Details on coverage limits and exclusions, especially for luggage items and double indemnity for accidental death on public transport.\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"hiking\", \"trip cancellation\", \"travel delays\", \"lost luggage\", \"double indemnity\"]\n}",
+            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan\",\n  \"detailed_description\": \"Travel insurance needed for a two-week trip to Japan for two travelers aged 41-55, with specific coverage needs for hiking, medical issues related to high blood pressure, trip cancellation, travel delays, lost/damaged luggage, and accidental death coverage on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Sports and Adventure Activities\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Accidental Death\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Emergency medical coverage for pre-existing conditions\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Need details on trip cancellation triggers, travel delays activation time, lost/damaged luggage limits and exclusions, and double indemnity for accidental death on public transport.\",\n  \"keywords\": [\n    \"hiking\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"accidental death\",\n    \"double indemnity\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "req-001",
-                "requirement_summary": "Travel insurance requirements for a two-week trip to Japan for two travellers, including specific coverage needs.",
-                "detailed_description": "The customer requires travel insurance for a trip to Japan from Singapore for two weeks. Key coverage areas include hiking-related activities, clarity on medical coverage pertaining to a pre-existing condition (high blood pressure), trip cancellation triggers, travel delay benefits, lost/damaged luggage specifics, and a double indemnity feature for accidental death on public transport.",
+                "requirement_id": "REQ-001",
+                "requirement_summary": "Travel insurance requirements for a trip to Japan",
+                "detailed_description": "Travel insurance needed for a two-week trip to Japan for two travelers aged 41-55, with specific coverage needs for hiking, medical issues related to high blood pressure, trip cancellation, travel delays, lost/damaged luggage, and accidental death coverage on public transport.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "2 weeks",
                 "insurance_coverage_type": [
-                    "Sports and Adventure Coverage",
+                    "Sports and Adventure Activities",
                     "Medical Coverage",
                     "Trip Cancellation",
                     "Travel Delays",
                     "Lost/Damaged Luggage",
-                    "Accidental Death Coverage"
+                    "Accidental Death"
                 ],
                 "pre_existing_conditions": [
-                    "high blood pressure"
+                    "High blood pressure"
                 ],
                 "medical_needs": [
-                    "Clarity on medical coverage relating to pre-existing conditions"
+                    "Emergency medical coverage for pre-existing conditions"
                 ],
                 "activities_to_cover": [
                     "Hiking"
                 ],
-                "age_group": "41-55 years old",
-                "additional_requests": "Details on coverage limits and exclusions, especially for luggage items and double indemnity for accidental death on public transport.",
+                "age_group": "41-55",
+                "additional_requests": "Need details on trip cancellation triggers, travel delays activation time, lost/damaged luggage limits and exclusions, and double indemnity for accidental death on public transport.",
                 "keywords": [
-                    "travel insurance",
-                    "Japan",
                     "hiking",
+                    "medical coverage",
                     "trip cancellation",
                     "travel delays",
                     "lost luggage",
+                    "accidental death",
                     "double indemnity"
                 ]
             },
@@ -86,10 +86,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 27681,
-        "prompt_tokens": 23045,
+        "total_tokens": 46775,
+        "prompt_tokens": 39042,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 4636,
-        "successful_requests": 16
+        "completion_tokens": 7733,
+        "successful_requests": 26
     }
 }

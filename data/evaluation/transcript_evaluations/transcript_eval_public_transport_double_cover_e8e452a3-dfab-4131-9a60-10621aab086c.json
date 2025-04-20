@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Trip Cancellation coverage and provided specific reasons like serious illness or major incidents causing flight cancellations.",
+      "customer_quote": "[16] Absolutely. This trip costs a fortune. If something major happens \u2013 one of us gets seriously ill beforehand, or some major incident cancels flights \u2013 I need Trip Cancellation coverage to get my money back.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent prompted the customer about potential disruptions ([15]) and then confirmed the requirement for Trip Cancellation coverage ([17], [19]).",
+      "agent_quote": "[15] What about the trip plan itself? Any concerns about potential disruptions before or during travel? ... [19] You require: ... Trip Cancellation protection..."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested comprehensive medical coverage, mentioning emergencies, doctor visits, and hospital stays. They also provided a specific detail about a pre-existing condition (high blood pressure).",
+      "customer_quote": "[12] We absolutely need solid medical coverage for emergencies \u2013 doctor visits, hospital stays, the works. Can't be caught out by huge bills overseas. ... However, my partner has high blood pressure.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about health considerations ([11]) and confirmed the requirement for comprehensive medical coverage, acknowledging the high blood pressure mention ([13], [19]).",
+      "agent_quote": "[11] Are there any specific health considerations or medical equipment needed for either traveler? ... [19] You require: Comprehensive Medical Coverage, including consideration for high blood pressure..."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer clearly stated the need for coverage for lost, damaged, or delayed luggage, including compensation for essential purchases during delays.",
+      "customer_quote": "[14] Look, things go wrong. I need cover if my luggage gets lost or damaged by those baggage handlers. And delays! If it's delayed significantly, I expect compensation for buying essentials.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent prompted the customer about concerns regarding belongings ([13]) and confirmed the requirement for lost, damaged, or delayed luggage coverage ([15], [19]).",
+      "agent_quote": "[13] Regarding other potential issues, what are your main concerns about the journey itself or your belongings? ... [19] You require: ... coverage for Lost, Damaged, or Delayed Luggage..."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Travel Delay coverage, specifying the need for coverage for extra hotel nights and meals due to long delays.",
+      "customer_quote": "[16] And flight delays are practically guaranteed these days. If we're stuck somewhere because of a long delay, I expect the insurance to cover extra hotel nights and meals. Travel delay coverage is non-negotiable.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent prompted the customer about potential disruptions ([15]) and confirmed the requirement for Travel Delay coverage ([17], [19]).",
+      "agent_quote": "[15] What about the trip plan itself? Any concerns about potential disruptions before or during travel? ... [19] You require: ... Travel Delay benefits..."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer specifically mentioned planning to Scuba Dive and requested full coverage for potential injuries under the sports and adventure section.",
+      "customer_quote": "[10] Yes, we plan to do Scuba Diving. I expect that to be fully covered, not some basic mention. Injuries happen, and that needs proper coverage under the sports and adventure section.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about planned activities ([9]) and confirmed the specific requirement for Scuba Diving coverage ([11], [19]).",
+      "agent_quote": "[9] And are there any particular activities you plan to participate in during your trip? ... [19] You require: ... Sports and Adventure coverage specifically for Scuba Diving..."
+    },
+    {
+      "coverage_type": "accidental_death_public_transport",
+      "name": "Accidental Death - Public Transport Double Payout",
+      "result": "PASS",
+      "justification": "The customer explicitly requested a specific policy feature: double payout for accidental death occurring on public transport. This was a scenario-specific requirement.",
+      "customer_quote": "[18] Yes, one more thing... I want to know if the policy provides extra coverage, specifically double the payout for accidental death, if the worst happens while traveling on public transport like a bus or train over there. That specific benefit needs to be included.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent asked a relevant open-ended question about other specific features ([17]) and accurately confirmed this specific requirement in the summary ([19]).",
+      "agent_quote": "[17] Are there any other specific policy features or benefits you're looking for? ... [19] ...and confirmation on the inclusion of a double payout for accidental death if it occurs on public transport."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered all standard coverage requirements mentioned by the customer (Trip Cancellation, Medical, Luggage, Travel Delay, Sports/Adventure) and also captured the scenario-specific requirement for double payout on accidental death via public transport. The agent used appropriate probing questions and effectively summarized the customer's needs. Both coverage gathering and agent performance were excellent."
+  },
+  "transcript_name": "transcript_public_transport_double_cover_e8e452a3-dfab-4131-9a60-10621aab086c",
+  "scenario": "public_transport_double_cover"
+}

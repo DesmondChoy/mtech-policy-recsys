@@ -1,0 +1,138 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for calling ISS Insurance Ltd. My name is Sarah. How may I assist you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Finally! I've been on hold for ages. Look, I need travel insurance, but frankly, after my last experience with ISS, I'm not expecting much. You guys really messed up my claim last year."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "I'm very sorry to hear you had a difficult experience previously, sir. I understand your frustration. I'll do my best to assist you efficiently today with your new inquiry. Could I start with your name, please?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It's Tan Keng Boon. And don't just say you understand, *fix* things this time. I need proper coverage, not the nonsense I got before."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, Mr. Tan. Thank you. To help me understand what you need for this upcoming trip, could you tell me where you'll be travelling to?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're planning a trip to Australia. And don't try to sell me some useless basic plan."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Noted, Australia. And how long will you be away for, Mr. Tan?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It will be a 2 weeks trip. Just myself and my wife."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, two weeks for two travellers. And may I ask which age group the travellers fall into? For policy purposes."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're mostly around 41-55 years old. Why? Are you going to charge me more?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "It's just one of the standard factors for quoting, Mr. Tan. Thank you. You mentioned it's a trip to Australia. Are there any specific activities you plan to do that we should be aware of? Like skiing or scuba diving?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It's a golf trip! That's the main point. And this is where ISS better get it right this time. I need absolute certainty my golf equipment is covered if it gets lost or damaged by the airline or anyone else. Last time the payout was pathetic."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted. Coverage specifically for golf equipment against loss or damage."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes! And what if I pre-pay for expensive green fees and then something happens – say, I get injured, or the flight is massively delayed – and I can't play? I expect to be reimbursed for those unused fees. It's only fair!"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. Reimbursement for unused green fees due to covered reasons."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "And those golf buggies! What if I accidentally bump it or scratch it? Am I covered for damage liability? Because I'm not paying out of pocket for that after paying for your insurance."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, cover for potential damage liability for a rented golf buggy."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "One more thing for golf – some insurers offer a small payout or benefit if you score a hole-in-one. Does ISS do that? Because if you do, I want it included. It’s the least you could do."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Acknowledged. A request for a hole-in-one achievement benefit. So, specific golf coverage noted. Are there any other general travel concerns you want coverage for?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Of course! The usual things everyone needs, which you guys probably try to exclude! What about Medical Coverage? If one of us falls sick or gets injured – properly covered, mind you, no tricks. Hospital stays, doctor visits, the works."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Right, comprehensive Medical Coverage for emergency treatment during the trip."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "And Trip Cancellation. If something serious happens before we go – like a major illness or family emergency – I expect my non-refundable costs back. Not excuses."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, Trip Cancellation coverage for specified unforeseen events."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Travel Delays too! Airlines are constantly delayed. If we get stuck somewhere, I expect cover for extra hotel nights and meals. Don't tell me it needs to be a 12-hour delay either, make it reasonable!"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. Coverage for necessary expenses due to significant Travel Delays."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "And don't forget Lost or Damaged Luggage in general. Not just the golf clubs. My wife’s suitcase, clothes, essentials... If the airline loses it or smashes it, ISS needs to pay up properly this time."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Noted, coverage for Lost, Damaged, or Delayed Baggage. Are there any pre-existing medical conditions, like asthma or high blood pressure, for either traveller that we should note?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No, no pre-existing conditions. We're healthy."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you, Mr. Tan. Let me quickly summarize the requirements I've noted down for your trip to Australia for 2 weeks, for two travellers aged 41-55, travelling from Singapore. You require standard coverage for Medical emergencies, Trip Cancellation, Travel Delays, and Lost/Damaged Luggage. Additionally, you have specific requirements for comprehensive golf coverage including protection for your golf equipment, reimbursement for unused green fees, liability cover for golf buggy damage, and a hole-in-one benefit. Is that all correct?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, that's what I need. And I expect it to actually *work* this time if I need to claim. No nonsense."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "I have recorded all these requirements, Mr. Tan. Thank you for providing the details. This information will be passed on to our quotations team who will prepare the relevant options for you."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Fine. Just make sure they cover everything I said."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. Thank you for calling ISS Insurance Ltd, Mr. Tan. Have a good day."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Hmph. Alright. Bye."
+    }
+]

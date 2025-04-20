@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned needing trip cancellation coverage and provided a specific, scenario-required detail regarding cancellation for a sister's wedding.",
+      "customer_quote": "[16] Also need trip cancellation. Specifically, need to know if covered if I cancel for my sister's wedding.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the need for trip cancellation and specifically addressed the customer's question about cancelling for a wedding, correctly noting it's typically not standard but flagging it for review.",
+      "agent_quote": "[17] You also require trip cancellation coverage, and you specifically want to know if cancelling because of your sister's wedding would be a covered reason. I have noted that specific scenario regarding the wedding; typically, personal events like weddings are not standard covered reasons for cancellation under most policies, but I've recorded it as a key point for you to check in the policy details."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer stated the need for medical cover overseas, and the agent confirmed this and appropriately probed for related details like pre-existing conditions.",
+      "customer_quote": "[16] Medical cover overseas.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the medical coverage requirement and asked relevant follow-up questions about pre-existing conditions and medical equipment.",
+      "agent_quote": "[17] Understood. So, key requirements are medical coverage for treatment needed during the trip... [19] Do any travellers have pre-existing medical conditions we should be aware of? [21] And will you be travelling with any special medical equipment?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned needing coverage for lost luggage.",
+      "customer_quote": "[16] Lost luggage.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and confirmed the customer's requirement for lost/damaged luggage coverage.",
+      "agent_quote": "[17] coverage for lost or damaged luggage"
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned needing coverage for significant travel delays.",
+      "customer_quote": "[16] Significant travel delays.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and confirmed the customer's requirement for coverage related to significant travel delays.",
+      "agent_quote": "[17] cover for significant travel delays causing extra expenses."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The agent proactively asked about sports/activities, and the customer specified hiking.",
+      "customer_quote": "[12] Hiking.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent appropriately probed for participation in sports/activities and noted the specific activity mentioned by the customer.",
+      "agent_quote": "[11] Will you be participating in any specific sports or activities during your trip? ... [17] Lastly, coverage related to hiking activities."
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered information on all required coverage types. The customer explicitly stated needs for medical, luggage, delays, and cancellation (including the specific wedding scenario). The agent proactively inquired about sports/activities and appropriately probed for medical details. The agent handled the specific cancellation scenario correctly by acknowledging it and setting realistic expectations regarding standard coverage."
+  },
+  "transcript_name": "transcript_uncovered_cancellation_reason_6d9ae3f9-721d-4faa-b13b-ee35a33da240",
+  "scenario": "uncovered_cancellation_reason"
+}

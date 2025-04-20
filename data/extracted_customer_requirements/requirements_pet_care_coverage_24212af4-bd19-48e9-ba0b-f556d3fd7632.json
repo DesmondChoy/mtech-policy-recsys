@@ -1,41 +1,41 @@
 {
-    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Japan\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for a 2-week trip from Singapore to Japan, covering medical expenses, trip cancellation, lost/damaged luggage, travel delay expenses, skiing activities, and additional pet accommodation costs due to flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Luggage Coverage\",\n    \"Travel Delay Expense Coverage\",\n    \"Skiing Coverage\",\n    \"Pet Accommodation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Emergency medical coverage\",\n    \"Hospitalisation coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"Skiing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Ensure no exclusions and that all specific requirements are noted accurately.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"luggage coverage\",\n    \"travel delay\",\n    \"skiing\",\n    \"pet accommodation\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan.\",\n  \"detailed_description\": \"Customer needs comprehensive travel insurance for a two-week trip from Singapore to Japan. Requires coverage for skiing activities, trip cancellation, comprehensive medical coverage including high blood pressure, lost or damaged luggage, travel delays, and additional pet accommodation costs due to potential return flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Skiing\",\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Luggage Coverage\",\n    \"Travel Delay Expenses\",\n    \"Pet Accommodation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High Blood Pressure\"\n  ],\n  \"medical_needs\": [\n    \"Emergency medical coverage\",\n    \"Hospitalisation\"\n  ],\n  \"activities_to_cover\": [\n    \"Skiing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Customer explicitly requests no exclusions and that all requirements be covered properly.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"Skiing\",\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"luggage\",\n    \"travel delays\",\n    \"pet accommodation\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "1",
-        "requirement_summary": "Travel insurance coverage for a trip to Japan",
-        "detailed_description": "The customer requires comprehensive travel insurance for a 2-week trip from Singapore to Japan, covering medical expenses, trip cancellation, lost/damaged luggage, travel delay expenses, skiing activities, and additional pet accommodation costs due to flight delays.",
+        "requirement_id": "req-001",
+        "requirement_summary": "Travel insurance requirements for a trip to Japan.",
+        "detailed_description": "Customer needs comprehensive travel insurance for a two-week trip from Singapore to Japan. Requires coverage for skiing activities, trip cancellation, comprehensive medical coverage including high blood pressure, lost or damaged luggage, travel delays, and additional pet accommodation costs due to potential return flight delays.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "2 weeks",
         "insurance_coverage_type": [
-            "Medical Coverage",
+            "Skiing",
             "Trip Cancellation",
+            "Medical Coverage",
             "Luggage Coverage",
-            "Travel Delay Expense Coverage",
-            "Skiing Coverage",
+            "Travel Delay Expenses",
             "Pet Accommodation Coverage"
         ],
         "pre_existing_conditions": [
-            "High blood pressure"
+            "High Blood Pressure"
         ],
         "medical_needs": [
             "Emergency medical coverage",
-            "Hospitalisation coverage"
+            "Hospitalisation"
         ],
         "activities_to_cover": [
             "Skiing"
         ],
         "age_group": "41-55",
-        "additional_requests": "Ensure no exclusions and that all specific requirements are noted accurately.",
+        "additional_requests": "Customer explicitly requests no exclusions and that all requirements be covered properly.",
         "keywords": [
             "travel insurance",
             "Japan",
+            "Skiing",
             "trip cancellation",
             "medical coverage",
-            "luggage coverage",
-            "travel delay",
-            "skiing",
+            "luggage",
+            "travel delays",
             "pet accommodation"
         ]
     },
@@ -45,43 +45,43 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Japan\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for a 2-week trip from Singapore to Japan, covering medical expenses, trip cancellation, lost/damaged luggage, travel delay expenses, skiing activities, and additional pet accommodation costs due to flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Luggage Coverage\",\n    \"Travel Delay Expense Coverage\",\n    \"Skiing Coverage\",\n    \"Pet Accommodation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Emergency medical coverage\",\n    \"Hospitalisation coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"Skiing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Ensure no exclusions and that all specific requirements are noted accurately.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"luggage coverage\",\n    \"travel delay\",\n    \"skiing\",\n    \"pet accommodation\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan.\",\n  \"detailed_description\": \"Customer needs comprehensive travel insurance for a two-week trip from Singapore to Japan. Requires coverage for skiing activities, trip cancellation, comprehensive medical coverage including high blood pressure, lost or damaged luggage, travel delays, and additional pet accommodation costs due to potential return flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Skiing\",\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Luggage Coverage\",\n    \"Travel Delay Expenses\",\n    \"Pet Accommodation Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High Blood Pressure\"\n  ],\n  \"medical_needs\": [\n    \"Emergency medical coverage\",\n    \"Hospitalisation\"\n  ],\n  \"activities_to_cover\": [\n    \"Skiing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Customer explicitly requests no exclusions and that all requirements be covered properly.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"Skiing\",\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"luggage\",\n    \"travel delays\",\n    \"pet accommodation\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "1",
-                "requirement_summary": "Travel insurance coverage for a trip to Japan",
-                "detailed_description": "The customer requires comprehensive travel insurance for a 2-week trip from Singapore to Japan, covering medical expenses, trip cancellation, lost/damaged luggage, travel delay expenses, skiing activities, and additional pet accommodation costs due to flight delays.",
+                "requirement_id": "req-001",
+                "requirement_summary": "Travel insurance requirements for a trip to Japan.",
+                "detailed_description": "Customer needs comprehensive travel insurance for a two-week trip from Singapore to Japan. Requires coverage for skiing activities, trip cancellation, comprehensive medical coverage including high blood pressure, lost or damaged luggage, travel delays, and additional pet accommodation costs due to potential return flight delays.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "2 weeks",
                 "insurance_coverage_type": [
-                    "Medical Coverage",
+                    "Skiing",
                     "Trip Cancellation",
+                    "Medical Coverage",
                     "Luggage Coverage",
-                    "Travel Delay Expense Coverage",
-                    "Skiing Coverage",
+                    "Travel Delay Expenses",
                     "Pet Accommodation Coverage"
                 ],
                 "pre_existing_conditions": [
-                    "High blood pressure"
+                    "High Blood Pressure"
                 ],
                 "medical_needs": [
                     "Emergency medical coverage",
-                    "Hospitalisation coverage"
+                    "Hospitalisation"
                 ],
                 "activities_to_cover": [
                     "Skiing"
                 ],
                 "age_group": "41-55",
-                "additional_requests": "Ensure no exclusions and that all specific requirements are noted accurately.",
+                "additional_requests": "Customer explicitly requests no exclusions and that all requirements be covered properly.",
                 "keywords": [
                     "travel insurance",
                     "Japan",
+                    "Skiing",
                     "trip cancellation",
                     "medical coverage",
-                    "luggage coverage",
-                    "travel delay",
-                    "skiing",
+                    "luggage",
+                    "travel delays",
                     "pet accommodation"
                 ]
             },
@@ -90,10 +90,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 11996,
-        "prompt_tokens": 10052,
+        "total_tokens": 20652,
+        "prompt_tokens": 17387,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 1944,
-        "successful_requests": 7
+        "completion_tokens": 3265,
+        "successful_requests": 11
     }
 }

@@ -1,0 +1,140 @@
+{
+  "customer_id": "9b3d93a9-fc56-4641-90a8-488794c0698d",
+  "personality": {
+    "name": "The Overwhelmed & Stressed",
+    "characteristics": [
+      "Sounds flustered, panicked, or highly emotional (beyond simple anger)",
+      "Overwhelmed by the situation (e.g., accident aftermath, complex claim)",
+      "May have difficulty articulating needs clearly",
+      "Expresses feeling stressed by the process itself",
+      "Needs patience, calming, and clear guidance"
+    ]
+  },
+  "transcript": [
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Thank you for calling ISS Insurance Ltd Singapore. My name is Sarah. How may I help you today?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Oh, hi. Yes, hello. I need... I need to ask about travel insurance. It’s all just... so much. I'm trying to plan this trip and honestly, my head is spinning. I just need to get this sorted."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, please take a deep breath. I can certainly help you with your inquiry about travel insurance. It can feel overwhelming, but we can go through it step by step. Can you tell me where you'll be traveling to?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Right, yes. Japan. We're planning a trip to Japan. From Singapore, obviously."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Japan, wonderful. And how long will you be travelling for?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "It’s supposed to be for 3 weeks. Three whole weeks... if everything goes to plan, which, honestly, right now feels like a big 'if'."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "I understand travel planning can be stressful. And how many people will be travelling?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Just two of us. My husband and myself."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, two adults travelling from Singapore to Japan for three weeks. To understand what kind of coverage you might need, could you tell me a bit about your general health? Are there any pre-existing medical conditions I should be aware of for quoting purposes?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Oh, yes, well, my husband has high blood pressure. It's managed, but... what if something happens over there? Finding a doctor, the costs... it’s terrifying to think about needing treatment so far from home. That’s a major worry. We absolutely need cover if, you know, something medical happens."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Alright, noted. Coverage for potential medical needs, including considering the pre-existing condition of high blood pressure. And are you planning any specific activities during your trip? Sometimes certain activities require specific mention."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Activities... yes, we wanted to do some hiking. Not like, mountain climbing, just some scenic trails. But still, you hear stories... what if one of us falls? Gets injured on a trail? That needs to be covered too, right? The hiking?"
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, noted. Hiking coverage. Thank you for mentioning that. What other concerns do you have about this trip?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Concerns? Oh, where do I start? Everything! What if the airline loses our luggage? I’ve packed essentials, yes, but replacing everything… it would be a nightmare, an absolute disaster on top of everything else! And what if my suitcase itself gets smashed? That has to be covered."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, so concerns regarding potential loss or damage to your luggage. I've noted that down."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Yes! And... and what if we can't even go? What if one of us gets seriously ill just before, or there's a family emergency here? We've paid for flights, accommodation... cancelling would mean losing thousands! The thought just makes me sick with anxiety. We need protection if we have to cancel the whole thing for a serious reason."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Alright, so cover for potential trip cancellation due to unforeseen, covered reasons is important for you. I understand. Are there any other potential disruptions you're worried about?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Delays! Yes! What happens if the flight is delayed for hours and hours, or even cancelled? We'd be stuck at the airport, needing food, maybe even a hotel? Or miss a connecting internal flight in Japan? That would be chaos. We need help with costs if there are major delays."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, coverage for significant travel delays and associated expenses. That's clear."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "And... oh my goodness, I just remembered. Our cat! Mittens! She's booked into a cattery here while we're away for the three weeks. But what if our flight back to Singapore is delayed? Like, seriously delayed by a day or two? The cattery booking ends! We'd need to pay for extra days at the pet hotel! Is that something... can that be covered? The extra kennel fees if we're delayed getting home? That's honestly another huge stressor."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Thank you for bringing that up. So, you require clarity on coverage for additional pet accommodation costs, specifically for your cat's cattery stay, should your return trip to Singapore be significantly delayed. I have noted that specific requirement."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Just a couple more details to help us find the right options later. Could you let me know the approximate age group of the travellers?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Oh, we're... let's see, in the 41-55 bracket."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, 41-55. And do you have a specific budget in mind for the insurance premium?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Budget... Honestly, at this point, it’s flexible. Getting the right cover for peace of mind is more important than sticking to a strict number. There’s just so much that could go wrong."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Understood. So, just to quickly recap the main areas of cover you're concerned about: You need Medical Coverage, factoring in a pre-existing condition; Lost or Damaged Luggage cover; cover for Hiking activities; Trip Cancellation protection; cover for significant Travel Delays; and specifically, cover for additional Pet Accommodation costs if your return is delayed. Does that sound correct?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Yes... yes, that's everything. Hearing it listed out like that... okay. It helps a bit. Thank you."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "You're welcome. Thank you for providing all that detail, I know it can be stressful to think about. I have noted all these requirements. The next step would be for our team to prepare some suitable quotes based on these needs for your trip to Japan. We will get back to you with those options."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Okay. Thank you. Thank you, Sarah. That was… helpful."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "You're most welcome. Thank you for calling ISS Insurance. Have a good day."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "You too. Bye."
+    }
+  ],
+  "scenario": "pet_care_coverage"
+}

@@ -1,10 +1,10 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a golf trip to Thailand.\",\n  \"detailed_description\": \"Customer requires travel insurance for two travellers, with specific coverage for golf-related activities and general travel risks.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"General Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Reimbursement for Unused Green Fees\",\n    \"Golf Buggy Damage Liability\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"standard medical cover\"],\n  \"activities_to_cover\": [\"golf\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget range around $200-$300.\",\n  \"keywords\": [\"golf trip\", \"travel insurance\", \"Singapore\", \"Thailand\", \"high blood pressure\"]\n}",
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance for a golf trip for two travellers with specific medical and activity coverage.\",\n  \"detailed_description\": \"Customer requires travel insurance for a trip to Thailand from Singapore for two travellers aged 41-55. One traveller has a pre-existing condition of high blood pressure. Coverage required includes general medical coverage, trip cancellation, travel delays, lost luggage, as well as specific golf-related coverage such as golf equipment insurance, unused green fees reimbursement, golf buggy damage liability, and a hole-in-one benefit.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"General Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Unused Green Fees Reimbursement\",\n    \"Golf Buggy Damage Liability\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High Blood Pressure\"\n  ],\n  \"medical_needs\": [\n    \"Standard Medical Cover\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget around $200-$300.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"golf trip\",\n    \"high blood pressure\",\n    \"10 days\",\n    \"two travellers\",\n    \"Thailand\",\n    \"Singapore\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ123456",
-        "requirement_summary": "Travel insurance for a golf trip to Thailand.",
-        "detailed_description": "Customer requires travel insurance for two travellers, with specific coverage for golf-related activities and general travel risks.",
+        "requirement_id": "1",
+        "requirement_summary": "Travel insurance for a golf trip for two travellers with specific medical and activity coverage.",
+        "detailed_description": "Customer requires travel insurance for a trip to Thailand from Singapore for two travellers aged 41-55. One traveller has a pre-existing condition of high blood pressure. Coverage required includes general medical coverage, trip cancellation, travel delays, lost luggage, as well as specific golf-related coverage such as golf equipment insurance, unused green fees reimbursement, golf buggy damage liability, and a hole-in-one benefit.",
         "travel_origin": "Singapore",
         "travel_destination": "Thailand",
         "travel_duration": "10 days",
@@ -14,27 +14,29 @@
             "Travel Delays",
             "Lost/Damaged Luggage",
             "Golf Equipment Coverage",
-            "Reimbursement for Unused Green Fees",
+            "Unused Green Fees Reimbursement",
             "Golf Buggy Damage Liability",
             "Hole-in-One Benefit"
         ],
         "pre_existing_conditions": [
-            "high blood pressure"
+            "High Blood Pressure"
         ],
         "medical_needs": [
-            "standard medical cover"
+            "Standard Medical Cover"
         ],
         "activities_to_cover": [
-            "golf"
+            "Golf"
         ],
         "age_group": "41-55",
-        "additional_requests": "Budget range around $200-$300.",
+        "additional_requests": "Budget around $200-$300.",
         "keywords": [
-            "golf trip",
             "travel insurance",
-            "Singapore",
+            "golf trip",
+            "high blood pressure",
+            "10 days",
+            "two travellers",
             "Thailand",
-            "high blood pressure"
+            "Singapore"
         ]
     },
     "tasks_output": [
@@ -43,12 +45,12 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a golf trip to Thailand.\",\n  \"detailed_description\": \"Customer requires travel insurance for two travellers, with specific coverage for golf-related activities and general travel risks.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"General Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Reimbursement for Unused Green Fees\",\n    \"Golf Buggy Damage Liability\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"standard medical cover\"],\n  \"activities_to_cover\": [\"golf\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget range around $200-$300.\",\n  \"keywords\": [\"golf trip\", \"travel insurance\", \"Singapore\", \"Thailand\", \"high blood pressure\"]\n}",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance for a golf trip for two travellers with specific medical and activity coverage.\",\n  \"detailed_description\": \"Customer requires travel insurance for a trip to Thailand from Singapore for two travellers aged 41-55. One traveller has a pre-existing condition of high blood pressure. Coverage required includes general medical coverage, trip cancellation, travel delays, lost luggage, as well as specific golf-related coverage such as golf equipment insurance, unused green fees reimbursement, golf buggy damage liability, and a hole-in-one benefit.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"General Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Unused Green Fees Reimbursement\",\n    \"Golf Buggy Damage Liability\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High Blood Pressure\"\n  ],\n  \"medical_needs\": [\n    \"Standard Medical Cover\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget around $200-$300.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"golf trip\",\n    \"high blood pressure\",\n    \"10 days\",\n    \"two travellers\",\n    \"Thailand\",\n    \"Singapore\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ123456",
-                "requirement_summary": "Travel insurance for a golf trip to Thailand.",
-                "detailed_description": "Customer requires travel insurance for two travellers, with specific coverage for golf-related activities and general travel risks.",
+                "requirement_id": "1",
+                "requirement_summary": "Travel insurance for a golf trip for two travellers with specific medical and activity coverage.",
+                "detailed_description": "Customer requires travel insurance for a trip to Thailand from Singapore for two travellers aged 41-55. One traveller has a pre-existing condition of high blood pressure. Coverage required includes general medical coverage, trip cancellation, travel delays, lost luggage, as well as specific golf-related coverage such as golf equipment insurance, unused green fees reimbursement, golf buggy damage liability, and a hole-in-one benefit.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Thailand",
                 "travel_duration": "10 days",
@@ -58,27 +60,29 @@
                     "Travel Delays",
                     "Lost/Damaged Luggage",
                     "Golf Equipment Coverage",
-                    "Reimbursement for Unused Green Fees",
+                    "Unused Green Fees Reimbursement",
                     "Golf Buggy Damage Liability",
                     "Hole-in-One Benefit"
                 ],
                 "pre_existing_conditions": [
-                    "high blood pressure"
+                    "High Blood Pressure"
                 ],
                 "medical_needs": [
-                    "standard medical cover"
+                    "Standard Medical Cover"
                 ],
                 "activities_to_cover": [
-                    "golf"
+                    "Golf"
                 ],
                 "age_group": "41-55",
-                "additional_requests": "Budget range around $200-$300.",
+                "additional_requests": "Budget around $200-$300.",
                 "keywords": [
-                    "golf trip",
                     "travel insurance",
-                    "Singapore",
+                    "golf trip",
+                    "high blood pressure",
+                    "10 days",
+                    "two travellers",
                     "Thailand",
-                    "high blood pressure"
+                    "Singapore"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -86,10 +90,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 10293,
-        "prompt_tokens": 8638,
+        "total_tokens": 15092,
+        "prompt_tokens": 12752,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 1655,
-        "successful_requests": 6
+        "completion_tokens": 2340,
+        "successful_requests": 8
     }
 }

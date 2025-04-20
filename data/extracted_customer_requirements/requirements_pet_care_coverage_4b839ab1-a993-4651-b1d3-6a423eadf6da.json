@@ -1,17 +1,17 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ001\",\n  \"requirement_summary\": \"Travel insurance coverage for a solo traveler to Japan for 2 weeks with specific coverage needs.\",\n  \"detailed_description\": \"The customer requires travel insurance for a 2-week trip to Japan. Key coverage requirements include medical coverage, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs for delays.\",\n  \"travel_origin\": null,\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost or damaged luggage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs due to travel delays.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"skiing\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"pet accommodation\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance requirements for a solo trip to Japan.\",\n  \"detailed_description\": \"Customer requires travel insurance for a solo trip to Japan for 2 weeks, including coverage for medical expenses, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs if the return is delayed.\",\n  \"travel_origin\": null,\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"medical coverage\", \"trip cancellation\", \"travel delay\", \"lost or damaged luggage\"],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\"medical coverage\"],\n  \"activities_to_cover\": [\"skiing\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for extra pet accommodation costs due to travel delays.\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"2 weeks\", \"solo traveler\", \"medical coverage\", \"trip cancellation\", \"travel delays\", \"lost luggage\", \"skiing\", \"pet accommodation\"]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ001",
-        "requirement_summary": "Travel insurance coverage for a solo traveler to Japan for 2 weeks with specific coverage needs.",
-        "detailed_description": "The customer requires travel insurance for a 2-week trip to Japan. Key coverage requirements include medical coverage, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs for delays.",
+        "requirement_id": "1",
+        "requirement_summary": "Travel insurance requirements for a solo trip to Japan.",
+        "detailed_description": "Customer requires travel insurance for a solo trip to Japan for 2 weeks, including coverage for medical expenses, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs if the return is delayed.",
         "travel_origin": null,
         "travel_destination": "Japan",
         "travel_duration": "2 weeks",
         "insurance_coverage_type": [
             "medical coverage",
             "trip cancellation",
-            "travel delays",
+            "travel delay",
             "lost or damaged luggage"
         ],
         "pre_existing_conditions": [],
@@ -22,15 +22,17 @@
             "skiing"
         ],
         "age_group": "41-55",
-        "additional_requests": "Coverage for additional pet accommodation costs due to travel delays.",
+        "additional_requests": "Coverage for extra pet accommodation costs due to travel delays.",
         "keywords": [
             "travel insurance",
             "Japan",
-            "skiing",
+            "2 weeks",
+            "solo traveler",
             "medical coverage",
             "trip cancellation",
             "travel delays",
             "lost luggage",
+            "skiing",
             "pet accommodation"
         ]
     },
@@ -40,19 +42,19 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ001\",\n  \"requirement_summary\": \"Travel insurance coverage for a solo traveler to Japan for 2 weeks with specific coverage needs.\",\n  \"detailed_description\": \"The customer requires travel insurance for a 2-week trip to Japan. Key coverage requirements include medical coverage, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs for delays.\",\n  \"travel_origin\": null,\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost or damaged luggage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs due to travel delays.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"skiing\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"pet accommodation\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance requirements for a solo trip to Japan.\",\n  \"detailed_description\": \"Customer requires travel insurance for a solo trip to Japan for 2 weeks, including coverage for medical expenses, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs if the return is delayed.\",\n  \"travel_origin\": null,\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"medical coverage\", \"trip cancellation\", \"travel delay\", \"lost or damaged luggage\"],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\"medical coverage\"],\n  \"activities_to_cover\": [\"skiing\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for extra pet accommodation costs due to travel delays.\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"2 weeks\", \"solo traveler\", \"medical coverage\", \"trip cancellation\", \"travel delays\", \"lost luggage\", \"skiing\", \"pet accommodation\"]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ001",
-                "requirement_summary": "Travel insurance coverage for a solo traveler to Japan for 2 weeks with specific coverage needs.",
-                "detailed_description": "The customer requires travel insurance for a 2-week trip to Japan. Key coverage requirements include medical coverage, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs for delays.",
+                "requirement_id": "1",
+                "requirement_summary": "Travel insurance requirements for a solo trip to Japan.",
+                "detailed_description": "Customer requires travel insurance for a solo trip to Japan for 2 weeks, including coverage for medical expenses, trip cancellation, travel delays, lost or damaged luggage, skiing activities, and additional pet accommodation costs if the return is delayed.",
                 "travel_origin": null,
                 "travel_destination": "Japan",
                 "travel_duration": "2 weeks",
                 "insurance_coverage_type": [
                     "medical coverage",
                     "trip cancellation",
-                    "travel delays",
+                    "travel delay",
                     "lost or damaged luggage"
                 ],
                 "pre_existing_conditions": [],
@@ -63,15 +65,17 @@
                     "skiing"
                 ],
                 "age_group": "41-55",
-                "additional_requests": "Coverage for additional pet accommodation costs due to travel delays.",
+                "additional_requests": "Coverage for extra pet accommodation costs due to travel delays.",
                 "keywords": [
                     "travel insurance",
                     "Japan",
-                    "skiing",
+                    "2 weeks",
+                    "solo traveler",
                     "medical coverage",
                     "trip cancellation",
                     "travel delays",
                     "lost luggage",
+                    "skiing",
                     "pet accommodation"
                 ]
             },
@@ -80,10 +84,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 14731,
-        "prompt_tokens": 12225,
+        "total_tokens": 23344,
+        "prompt_tokens": 19560,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 2506,
-        "successful_requests": 9
+        "completion_tokens": 3784,
+        "successful_requests": 13
     }
 }

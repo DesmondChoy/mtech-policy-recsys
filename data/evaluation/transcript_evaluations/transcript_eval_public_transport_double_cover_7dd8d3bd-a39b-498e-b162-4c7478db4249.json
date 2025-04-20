@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Trip Cancellation coverage and specified the need for it to cover reasons like illness, distinguishing it from 'change of mind'. The agent acknowledged this specific requirement.",
+      "customer_quote": "[...] I need proper **Trip Cancellation** coverage, understand? For actual reasons like getting sick, not just 'change of mind' nonsense.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement for Trip Cancellation due to illness and included it in the summary.",
+      "agent_quote": "Noted, sir. Trip Cancellation coverage for valid reasons like illness."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Medical Coverage, specifying the need for emergency treatment and hospital stays. The agent confirmed this and appropriately probed for relevant details like age and pre-existing conditions.",
+      "customer_quote": "And if one of us gets seriously ill over there, I don't want to be arguing about **Medical Coverage**. I expect emergency treatment, hospital stays, the works, to be covered without a thousand questions.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the need for comprehensive medical coverage and asked relevant clarifying questions about age and pre-existing conditions.",
+      "agent_quote": "Understood. So that's Medical Coverage for emergencies, hospitalisation, and related treatment. And may I know the age group of the travellers? And are there any pre-existing medical conditions we should be aware of [...]?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Lost and Damaged Luggage coverage, providing specific details about needing reimbursement for essentials during delays based on a past experience.",
+      "customer_quote": "So yes, I absolutely need proper **Lost and Damaged Luggage** coverage \u2013 not just for lost items, but if it's delayed, I need reimbursement for essentials.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent accurately captured the customer's requirement for coverage related to lost, damaged, and delayed luggage, including reimbursement for essentials, and confirmed it in the summary.",
+      "agent_quote": "[...] coverage for Lost, Damaged, or Delayed Luggage including essentials reimbursement [...]"
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Travel Delay coverage, specifying the need for accommodation and meal expenses during significant delays.",
+      "customer_quote": "And don't forget **Travel Delays**! Stuck in an airport overnight because of the airline? I expect accommodation and meals to be covered, none of this 'delay wasn't long enough' rubbish.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement for Travel Delay coverage, including accommodation and meals for significant delays, and included it in the summary.",
+      "agent_quote": "[...] coverage for significant Travel Delays including accommodation and meals [...]"
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer inquired about coverage for a specific activity (Hiking) under the Sports and Adventure category, providing details about the type of hiking planned.",
+      "customer_quote": "We plan to do some **Hiking**. Nothing extreme, just regular hiking trails. Is that going to be another hidden exclusion under your so-called **Sports and Adventure** cover? Or will it actually cover us if something happens on a trail?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent noted the specific activity (Hiking) mentioned by the customer and confirmed its inclusion under the Sports and Adventure requirement in the summary.",
+      "agent_quote": "Noted, coverage required for Hiking under the Sports and Adventure section."
+    },
+    {
+      "coverage_type": "scenario_specific_double_payout",
+      "name": "Double Payout on Public Transport",
+      "result": "PASS",
+      "justification": "The customer specifically asked about and requested confirmation for a double payout feature for accidental death on public transport, which is a scenario-specific requirement.",
+      "customer_quote": "I want to confirm if your policy offers that **double payout for accidental death if it happens specifically on public transport**, like a bus or train over there. Is that included? I want that noted.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent accurately captured this specific requirement in the summary, noting that the customer requires confirmation on this feature.",
+      "agent_quote": "[...] and you specifically require confirmation on whether the policy includes a double payout for accidental death occurring on public transport."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered all standard and scenario-specific coverage requirements mentioned by the customer. The agent effectively used clarifying questions (e.g., for medical details) and accurately summarized all points at the end of the call, demonstrating good listening skills and adherence to the information gathering process despite the customer's initial tone."
+  },
+  "transcript_name": "transcript_public_transport_double_cover_7dd8d3bd-a39b-498e-b162-4c7478db4249",
+  "scenario": "public_transport_double_cover"
+}

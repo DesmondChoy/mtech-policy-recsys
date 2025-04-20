@@ -1,39 +1,37 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ1234\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two adults\",\n  \"detailed_description\": \"Travel insurance coverage required for a trip to Japan for two adults aged 41-55, including comprehensive medical coverage, trip cancellation for unforeseen events, lost/damaged luggage, travel delays, specific coverage for hiking, and double indemnity for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delays\",\n    \"Sports and Adventure Activities\",\n    \"Accidental Death Double Indemnity\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": [\n    \"Emergency treatment\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Get back quickly with options that match all requirements.\",\n  \"keywords\": [\n    \"double payout\",\n    \"accidental death\",\n    \"public transport\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"medical coverage\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for trip to Japan including comprehensive medical, trip cancellation, and coverage for hiking and luggage.\",\n  \"detailed_description\": \"The customer requires travel insurance for a trip to Japan, covering two adults aged 41-55. They need comprehensive medical coverage, trip cancellation for unforeseen events, coverage for lost or damaged luggage including delays, travel delays compensation for accommodation and meals, and specific hiking coverage under sports and adventure activities. They also express interest in double payout for accidental death on public transport. The budget for the insurance is flexible with a priority on proper coverage.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delays\",\n    \"Sports and Adventure Activities\",\n    \"Accidental Death on Public Transport\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Check for policies offering double payout for accidental death during public transport.\",\n  \"keywords\": [\n    \"Travel Insurance\",\n    \"Japan\",\n    \"Hiking\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost Luggage\",\n    \"Travel Delays\",\n    \"Accidental Death\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ1234",
-        "requirement_summary": "Travel insurance for a trip to Japan for two adults",
-        "detailed_description": "Travel insurance coverage required for a trip to Japan for two adults aged 41-55, including comprehensive medical coverage, trip cancellation for unforeseen events, lost/damaged luggage, travel delays, specific coverage for hiking, and double indemnity for accidental death on public transport.",
+        "requirement_id": "REQ-001",
+        "requirement_summary": "Travel insurance for trip to Japan including comprehensive medical, trip cancellation, and coverage for hiking and luggage.",
+        "detailed_description": "The customer requires travel insurance for a trip to Japan, covering two adults aged 41-55. They need comprehensive medical coverage, trip cancellation for unforeseen events, coverage for lost or damaged luggage including delays, travel delays compensation for accommodation and meals, and specific hiking coverage under sports and adventure activities. They also express interest in double payout for accidental death on public transport. The budget for the insurance is flexible with a priority on proper coverage.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "2 weeks",
         "insurance_coverage_type": [
-            "Comprehensive Medical Coverage",
+            "Medical Coverage",
             "Trip Cancellation",
             "Lost/Damaged Luggage",
             "Travel Delays",
             "Sports and Adventure Activities",
-            "Accidental Death Double Indemnity"
+            "Accidental Death on Public Transport"
         ],
         "pre_existing_conditions": null,
-        "medical_needs": [
-            "Emergency treatment",
-            "Hospital stays"
-        ],
+        "medical_needs": null,
         "activities_to_cover": [
             "Hiking"
         ],
         "age_group": "41-55",
-        "additional_requests": "Get back quickly with options that match all requirements.",
+        "additional_requests": "Check for policies offering double payout for accidental death during public transport.",
         "keywords": [
-            "double payout",
-            "accidental death",
-            "public transport",
-            "lost luggage",
-            "travel delays",
-            "trip cancellation",
-            "medical coverage"
+            "Travel Insurance",
+            "Japan",
+            "Hiking",
+            "Medical Coverage",
+            "Trip Cancellation",
+            "Lost Luggage",
+            "Travel Delays",
+            "Accidental Death"
         ]
     },
     "tasks_output": [
@@ -42,41 +40,39 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ1234\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two adults\",\n  \"detailed_description\": \"Travel insurance coverage required for a trip to Japan for two adults aged 41-55, including comprehensive medical coverage, trip cancellation for unforeseen events, lost/damaged luggage, travel delays, specific coverage for hiking, and double indemnity for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delays\",\n    \"Sports and Adventure Activities\",\n    \"Accidental Death Double Indemnity\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": [\n    \"Emergency treatment\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Get back quickly with options that match all requirements.\",\n  \"keywords\": [\n    \"double payout\",\n    \"accidental death\",\n    \"public transport\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"medical coverage\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for trip to Japan including comprehensive medical, trip cancellation, and coverage for hiking and luggage.\",\n  \"detailed_description\": \"The customer requires travel insurance for a trip to Japan, covering two adults aged 41-55. They need comprehensive medical coverage, trip cancellation for unforeseen events, coverage for lost or damaged luggage including delays, travel delays compensation for accommodation and meals, and specific hiking coverage under sports and adventure activities. They also express interest in double payout for accidental death on public transport. The budget for the insurance is flexible with a priority on proper coverage.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost/Damaged Luggage\",\n    \"Travel Delays\",\n    \"Sports and Adventure Activities\",\n    \"Accidental Death on Public Transport\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Check for policies offering double payout for accidental death during public transport.\",\n  \"keywords\": [\n    \"Travel Insurance\",\n    \"Japan\",\n    \"Hiking\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost Luggage\",\n    \"Travel Delays\",\n    \"Accidental Death\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ1234",
-                "requirement_summary": "Travel insurance for a trip to Japan for two adults",
-                "detailed_description": "Travel insurance coverage required for a trip to Japan for two adults aged 41-55, including comprehensive medical coverage, trip cancellation for unforeseen events, lost/damaged luggage, travel delays, specific coverage for hiking, and double indemnity for accidental death on public transport.",
+                "requirement_id": "REQ-001",
+                "requirement_summary": "Travel insurance for trip to Japan including comprehensive medical, trip cancellation, and coverage for hiking and luggage.",
+                "detailed_description": "The customer requires travel insurance for a trip to Japan, covering two adults aged 41-55. They need comprehensive medical coverage, trip cancellation for unforeseen events, coverage for lost or damaged luggage including delays, travel delays compensation for accommodation and meals, and specific hiking coverage under sports and adventure activities. They also express interest in double payout for accidental death on public transport. The budget for the insurance is flexible with a priority on proper coverage.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "2 weeks",
                 "insurance_coverage_type": [
-                    "Comprehensive Medical Coverage",
+                    "Medical Coverage",
                     "Trip Cancellation",
                     "Lost/Damaged Luggage",
                     "Travel Delays",
                     "Sports and Adventure Activities",
-                    "Accidental Death Double Indemnity"
+                    "Accidental Death on Public Transport"
                 ],
                 "pre_existing_conditions": null,
-                "medical_needs": [
-                    "Emergency treatment",
-                    "Hospital stays"
-                ],
+                "medical_needs": null,
                 "activities_to_cover": [
                     "Hiking"
                 ],
                 "age_group": "41-55",
-                "additional_requests": "Get back quickly with options that match all requirements.",
+                "additional_requests": "Check for policies offering double payout for accidental death during public transport.",
                 "keywords": [
-                    "double payout",
-                    "accidental death",
-                    "public transport",
-                    "lost luggage",
-                    "travel delays",
-                    "trip cancellation",
-                    "medical coverage"
+                    "Travel Insurance",
+                    "Japan",
+                    "Hiking",
+                    "Medical Coverage",
+                    "Trip Cancellation",
+                    "Lost Luggage",
+                    "Travel Delays",
+                    "Accidental Death"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -84,10 +80,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 23974,
-        "prompt_tokens": 19958,
+        "total_tokens": 41435,
+        "prompt_tokens": 34600,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 4016,
-        "successful_requests": 14
+        "completion_tokens": 6835,
+        "successful_requests": 23
     }
 }

@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for trip cancellation. The agent confirmed this requirement and probed for pre-existing conditions, which is a common exclusion.",
+      "customer_quote": "[16] Customer: Need cover if trip is cancelled.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement and asked a relevant follow-up question about pre-existing conditions.",
+      "agent_quote": "[17] Agent: Alright, so cover for trip cancellation... [19] Agent: Any pre-existing medical conditions we should be aware of...?"
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for medical emergencies. The agent confirmed this and appropriately probed for pre-existing conditions and special medical equipment.",
+      "customer_quote": "[16] Customer: Medical emergencies.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement and asked relevant clarifying questions about pre-existing conditions and medical equipment.",
+      "agent_quote": "[17] Agent: ...medical emergencies... [19] Agent: Any pre-existing medical conditions we should be aware of...? [21] Agent: And will you be traveling with any special medical equipment...?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for lost or damaged luggage. The agent confirmed this requirement.",
+      "customer_quote": "[16] Customer: Also if luggage is lost or damaged.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the customer's requirement for luggage coverage.",
+      "agent_quote": "[17] Agent: ...lost or damaged luggage..."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for extra costs due to flight delays. The agent confirmed this requirement.",
+      "customer_quote": "[16] Customer: Flight delays causing extra cost.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the customer's requirement for travel delay coverage.",
+      "agent_quote": "[17] Agent: ...and travel delays."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The agent proactively asked if the customer planned any specific activities like skiing or scuba diving. The customer confirmed they did not, clarifying this coverage was not needed.",
+      "customer_quote": "[14] Customer: No special activities planned. Just sightseeing.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively probed for the need for sports/adventure coverage, which is good practice.",
+      "agent_quote": "[13] Agent: Are there any specific activities you plan to participate in during your trip, like skiing or scuba diving?"
+    },
+    {
+      "coverage_type": "pet_accommodation_costs",
+      "name": "Pet Accommodation Costs (Scenario Specific)",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the scenario-specific requirement for coverage for pet hotel costs if their return was delayed. The agent confirmed understanding of this specific need.",
+      "customer_quote": "[24] Customer: Yes. Need cover for pet hotel costs if return flight to Singapore is delayed. Have a cat.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and confirmed the specific requirement volunteered by the customer after a general prompt.",
+      "agent_quote": "[25] Agent: Okay, cover for additional pet accommodation costs due to travel delay on return. Noted."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered information on all standard coverage types mentioned by the customer and proactively checked for sports/adventure activities. The agent also effectively probed for relevant details like pre-existing conditions and captured the scenario-specific requirement regarding pet accommodation costs. The agent confirmed all gathered requirements in a clear summary at the end. Overall, a thorough and effective information gathering process."
+  },
+  "transcript_name": "transcript_pet_care_coverage_4de7e924-389c-4af6-a8ed-35541261d07f",
+  "scenario": "pet_care_coverage"
+}

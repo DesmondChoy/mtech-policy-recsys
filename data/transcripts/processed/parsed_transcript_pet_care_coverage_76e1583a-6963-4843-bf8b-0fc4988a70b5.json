@@ -1,0 +1,122 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Thank you for calling ISS Insurance Ltd Singapore. My name is Sarah. How can I help you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Hi Sarah, need travel insurance. Quick as possible please, I don't have much time."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, I can certainly help you with gathering the details for a quote. Could you tell me where you'll be travelling from?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Singapore, obviously. We're based in Singapore."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Got it, travelling from Singapore. And what is your destination?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Japan."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Japan, noted. And how long will the trip be?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "10 days. Look, can we speed this up? I just need the standard stuff."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Certainly. To ensure we find the right fit, I need a few more details. How many people will be travelling?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Two of us. We're mostly around 26-40 years old."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, two travellers in the 26-40 age group. Any particular activities planned during the 10 days in Japan?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, we plan to do skiing. Is that covered? Need to know quickly."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, skiing. I've noted that. And regarding medical history, are there any pre-existing conditions for either traveller we should be aware of?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No, no pre-existing conditions. Health is fine. Just need the usual coverage if something happens over there, you know, doctor visits, hospital stays, that kind of thing."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood, coverage for emergency medical treatment. And are you taking any special medical equipment with you?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No special medical equipment needed."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Right. Now, thinking about potential issues, what are your main concerns for this trip?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Look, things go wrong, right? What if we have to cancel last minute because someone gets sick? Need cover for that."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted - cover for trip cancellation due to unforeseen illness."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "And flight delays! If the flight back is delayed, what happens? Need cover for extra hotel nights, meals, that stuff. It's a nightmare being stuck."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, coverage for additional expenses due to significant travel delays."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Also, bags. What if the airline loses our luggage or damages it? That needs to be covered."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood, coverage for lost or damaged luggage."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, exactly. Oh, and most important actually – I have a cat at home in Singapore. If our return flight is delayed, I need cover for the extra days she'll have to stay in the pet hotel. That's absolutely critical. Can you add that?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, let me note that specific requirement: coverage for additional pet accommodation costs at a kennel or pet hotel in Singapore if your return is unavoidably delayed. Is that correct?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, exactly that. Don't forget it. How much is this all going to cost roughly? Hoping to spend around $400."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "I've noted your budget preference of around $400. So, just to quickly summarise, you need travel insurance for two adults, aged 26-40, travelling from Singapore to Japan for 10 days. You require coverage for trip cancellation, emergency medical expenses, travel delays including compensation for delays, lost or damaged luggage, and specific cover for skiing activities. Additionally, you require cover for additional pet accommodation costs in Singapore if your return is delayed. Is that all correct?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, yes, that's it. Just get me the options quickly, please."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, I have recorded all your requirements. Our quotations team will prepare the relevant options based on these details and will be in touch shortly."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Okay, make it fast. Thanks. Bye."
+    }
+]

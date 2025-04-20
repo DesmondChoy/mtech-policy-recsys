@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about Trip Cancellation coverage, specifically requesting clarification on the definition of 'close family member' for bereavement claims, acknowledging standard covered reasons like illness.",
+      "customer_quote": "[22] Yes. Furthermore, regarding trip cancellation coverage. I understand standard covered reasons like unforeseen illness or natural disasters. I'd like clarification on how 'close family member' is typically defined in the context of cancellation due to bereavement.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's specific question about the definition of 'close family member' within trip cancellation.",
+      "agent_quote": "[23] Noted. Clarification needed on the definition of 'close family member' within the trip cancellation benefit terms for bereavement."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer inquired about Medical Coverage, providing the specific detail of a traveler having managed high blood pressure and asking how this interacts with pre-existing condition clauses.",
+      "customer_quote": "[14] Correct. Also, regarding health matters, do we need to declare high blood pressure? One traveler has managed high blood pressure. I want to understand how this interacts with the emergency medical coverage and potential pre-existing condition clauses.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the query regarding high blood pressure and pre-existing conditions, and appropriately probed for related information (medical devices).",
+      "agent_quote": "[15] Noted. You have a query regarding the declaration of high blood pressure and how it relates to the medical coverage, especially concerning pre-existing conditions. Are there any specific medical devices you need to bring, like a CPAP machine?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer asked for details on Lost/Damaged Luggage coverage, specifically mentioning coverage limits, claim procedures, the minimum delay duration for essential purchases under delayed baggage, and typical exclusions like cameras.",
+      "customer_quote": "[18] I've been reviewing general policy structures. I need details on the coverage limits and claim procedures for lost or damaged luggage. Specifically, what's the typical minimum delay duration before reimbursement for essential purchases is triggered under delayed baggage cover? Are items like cameras typically excluded from damage claims?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly acknowledged the customer's specific points regarding delay thresholds and exclusions for luggage coverage.",
+      "agent_quote": "[19] Understood. You need details on lost, damaged, and delayed baggage coverage, including the delay threshold for essential purchases and typical exclusions like electronics."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer inquired about the Travel Delay benefit, asking for specifics on the standard qualifying delay period (in hours) and the types of expenses typically covered (e.g., accommodation, meals).",
+      "customer_quote": "[20] Precisely. And concerning potential disruptions, I need to understand the travel delay benefit. What's the standard qualifying delay period, usually in hours, and what types of expenses, like accommodation or meals, are generally covered?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed understanding of the customer's need for details on minimum delay duration and covered expenses under the travel delay benefit.",
+      "agent_quote": "[21] Okay, details required on the travel delay benefit, specifically the minimum delay duration and covered expenses such as accommodation and meals."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer mentioned planning hiking and specifically asked for clarity on the coverage level for Sports and Adventure Activities, including details on typical exclusions like lack of proper guidance or activities against local advice.",
+      "customer_quote": "[12] Yes, we plan to do some hiking during our trip. I need clarity on the coverage level for sports and adventure activities. Specifically, I'm interested in understanding the usual exclusions, like participation without proper guidance or activities against local advice.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's plan to hike and their need for specific information on coverage and exclusions for this activity.",
+      "agent_quote": "[13] Okay, so you require information on the coverage specifics and exclusions related to hiking under the Sports and Adventure Activities benefit. Noted."
+    },
+    {
+      "coverage_type": "public_transport_double_cover",
+      "name": "Public Transport Double Payout",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about the scenario-specific requirement: whether the policy offers a double payout for accidental death occurring while traveling as a fare-paying passenger on public transport.",
+      "customer_quote": "[24] And one final, very specific requirement. I want to know if the policy provides extra coverage if an accident happens while I'm on public transport. Does your policy offer a double payout for accidental death specifically if it occurs while traveling as a fare-paying passenger on scheduled public conveyance like a bus or train?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent specifically acknowledged and noted the customer's requirement regarding the double indemnity feature for accidental death on public transport.",
+      "agent_quote": "[25] Okay, I've noted that you require confirmation on whether the policy includes a specific benefit for double indemnity for accidental death occurring while travelling on public transport."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The customer was highly specific and clearly articulated their information needs for all standard coverage types relevant to their trip, as well as the scenario-specific requirement for double payout on public transport. The agent performed excellently, demonstrating active listening by acknowledging each specific detail and question raised by the customer. The agent asked relevant clarifying questions and provided an accurate summary, ensuring all requirements were captured effectively."
+  },
+  "transcript_name": "transcript_public_transport_double_cover_b3736600-39af-4612-a1dd-441ad36c1835",
+  "scenario": "public_transport_double_cover"
+}
