@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about coverage if they had to cancel the trip before departure due to illness.",
+      "customer_quote": "[18] What if something happens *before* we even leave? Like, if one of us gets really sick... and we just can't go on the trip anymore? Do we lose all the money we paid for flights and hotels?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent accurately confirmed the customer's need for information on trip cancellation coverage due to reasons like illness.",
+      "agent_quote": "[19] Okay, so you're asking about situations where you might need to cancel the trip beforehand for reasons like illness, and whether associated costs can be covered."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer expressed concern about falling sick during the trip and needing a doctor or hospitalisation.",
+      "customer_quote": "[16] Well, yes... what if one of us falls sick? Like, properly sick, needing a doctor or even ending up in hospital in Japan? That worries me a lot.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly identified and confirmed the customer's requirement for information on medical coverage for doctor visits or hospital stays.",
+      "agent_quote": "[17] Understood, so cover for medical situations like needing a doctor or hospital stay during the trip is something you'd like to know about."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer specifically asked about coverage for lost or damaged luggage, referencing a friend's negative experience.",
+      "customer_quote": "[20] And luggage!... What happens if our luggage gets lost? Or damaged? Is that covered?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the customer's interest in coverage for lost, damaged, or delayed luggage.",
+      "agent_quote": "[21] Alright, so cover for checked-in luggage that might be lost, damaged, or even delayed by the airline is another area of interest for you."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer inquired about coverage for expenses like food and hotel if their flight was significantly delayed.",
+      "customer_quote": "[22] And... speaking of delays... what if the flight itself is very delayed? Like, we get stuck somewhere for hours and hours? Do we just have to pay for extra food or maybe a hotel if it's really bad?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent accurately summarised the customer's query regarding coverage for expenses resulting from significant travel delays.",
+      "agent_quote": "[23] Okay, noted. So you're also interested in cover for expenses incurred due to significant travel delays, like for meals or accommodation."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer mentioned planning to go hiking and asked if it required specific insurance consideration.",
+      "customer_quote": "[14] Activities... um, yes! We plan to do some hiking during our trip. Nothing too extreme, just hiking trails. Does that... matter for insurance?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's planned activity (hiking) and confirmed their interest in understanding related coverage.",
+      "agent_quote": "[15] Okay, noted hiking. So you're interested in understanding coverage related to activities like hiking."
+    },
+    {
+      "coverage_type": "scenario_specific_double_payout",
+      "name": "Double Payout on Public Transport",
+      "result": "PASS",
+      "justification": "The customer specifically asked about the scenario-specific requirement regarding a potential double payout for accidental death occurring on public transport.",
+      "customer_quote": "[24] Is it true that sometimes, if there's a very serious accident, like... like accidental death, the insurance pays out *more*, maybe double, if it happens when you're on, say, a bus or a train overseas? I want to know if the policy provides extra coverage if an accident happens while I'm on a bus or train.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent accurately identified and confirmed the customer's specific query about enhanced/double payouts for accidental death on public transport.",
+      "agent_quote": "[25] Understood. So you have a specific query about potential enhanced or double payouts for accidental death specifically if it occurs while using public transport during your trip."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully identified and confirmed all standard coverage types mentioned by the customer (Trip Cancellation, Medical, Luggage, Delays, Sports/Activities) as well as the scenario-specific requirement regarding double payout for accidental death on public transport. The agent used effective active listening and summarization techniques to ensure all customer concerns were captured accurately. No probing was strictly necessary as the customer volunteered information on all key areas, but the agent's confirmation was clear and appropriate."
+  },
+  "transcript_name": "transcript_public_transport_double_cover_4fffc35e-310e-4483-8fba-d869c01b339c",
+  "scenario": "public_transport_double_cover"
+}

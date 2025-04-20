@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about coverage if they had to cancel the trip before departure due to illness or a family emergency.",
+      "customer_quote": "[16] And what if we have to cancel the whole trip beforehand? Say, if one of us gets sick just before we leave, or if there's a family emergency? We'd lose all that money... that's a huge worry.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's concern and accurately confirmed the requirement for trip cancellation coverage due to unforeseen reasons like illness.",
+      "agent_quote": "[17] Understood. So you're also looking for information on coverage in case you need to cancel the trip due to unforeseen reasons like illness before departure?"
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer expressed concern about needing medical assistance abroad, specifically mentioning doctor visits and hospital stays, and disclosed a pre-existing condition (high blood pressure).",
+      "customer_quote": "[14] Well, yes, my husband... he has high blood pressure. It's managed, but... what if something happens over there? What if he needs a doctor or, heaven forbid, a hospital? Does the insurance even cover that kind of thing?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent appropriately probed for pre-existing conditions, acknowledged the specific medical concerns (doctor visits, hospital stays), and confirmed this requirement.",
+      "agent_quote": "[15] Okay, I've noted down the pre-existing condition, high blood pressure for one traveler, and that you require information on coverage for potential medical treatment needed during the trip, like doctor visits or hospital stays."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer specifically asked about coverage for lost or damaged luggage by the airline and the need to buy essential items if bags are delayed.",
+      "customer_quote": "[20] And the luggage! What if the airline loses our bags? Or they arrive damaged? What are we supposed to do then, especially if it happens at the start of the trip? We'd need to buy things...",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent accurately summarized the customer's need for coverage related to lost, damaged, or delayed baggage, including reimbursement for essentials.",
+      "agent_quote": "[21] Right, so you require information on coverage for lost, damaged, or delayed baggage, including reimbursement for essentials if your bags are delayed."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer inquired about coverage for expenses resulting from significant flight delays or missed connections, specifically mentioning accommodation.",
+      "customer_quote": "[18] And what about while we're actually traveling? You hear stories about awful flight delays... what if our flight is delayed for hours and hours, or we miss a connection? Where would we stay? Who pays for that?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed understanding of the need for coverage related to expenses like accommodation and meals due to significant travel delays.",
+      "agent_quote": "[19] Okay, I understand that concern. So you need details regarding coverage for expenses incurred due to significant travel delays, such as accommodation or meals?"
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer mentioned planning to do hiking (day hikes) and asked if injuries sustained during this activity would be covered.",
+      "customer_quote": "[22] And... we're planning to do some activities. We plan to do some hiking during our trip. Just day hikes, nothing too extreme, but... what if someone slips and gets injured? Is that covered?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the planned activity (hiking) and confirmed the customer's need for information regarding coverage for potential injuries related to it.",
+      "agent_quote": "[23] Okay, noted. You'll be participating in hiking, and you need information on coverage for potential injuries related to such activities."
+    },
+    {
+      "coverage_type": "public_transport_double_cover",
+      "name": "Public Transport Accidental Death Double Payout",
+      "result": "PASS",
+      "justification": "The customer specifically asked about a double payout benefit for accidental death if it occurs while traveling on public transport (bus/train). This aligns with the scenario-specific requirement.",
+      "customer_quote": "[24] I need to know if the policy provides extra coverage if an accident... a fatal accident... happens while I'm on a bus or train over there? Like, is there some kind of double payout for accidental death if it occurs specifically on public transport?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent explicitly acknowledged and noted this very specific requirement regarding the double payout benefit on public transport.",
+      "agent_quote": "[25] Okay, I've specifically noted your requirement regarding clarification on whether there is a double payout benefit for accidental death occurring while traveling on public transport."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered all required standard coverage information (Trip Cancellation, Medical, Luggage, Delays, Sports/Activities) as prompted by the customer's concerns. The agent also correctly identified and noted the specific scenario requirement regarding the double payout for accidental death on public transport. The agent demonstrated good listening skills, confirmed understanding effectively, and probed appropriately (e.g., pre-existing conditions). All necessary information appears to have been captured."
+  },
+  "transcript_name": "transcript_public_transport_double_cover_3557d3d0-4bda-4506-9fff-a4ad226ce5e4",
+  "scenario": "public_transport_double_cover"
+}

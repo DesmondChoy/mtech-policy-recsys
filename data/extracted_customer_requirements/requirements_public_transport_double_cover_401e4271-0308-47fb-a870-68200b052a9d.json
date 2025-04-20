@@ -1,21 +1,18 @@
 {
-    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance for trip from Singapore to Australia for two adults, including comprehensive medical coverage, trip cancellation, and coverage for specific activities.\",\n  \"detailed_description\": \"Customer requires travel insurance for two travelers aged 26-40, flying from Singapore to Australia for three weeks, with a budget of around $400. They want coverage for major medical emergencies, trip cancellation due to unforeseen events, expenses due to significant travel delays, loss or damage of luggage, and specific coverage for Bungee Jumping and Hot Air Ballooning. They additionally request a provision for a double payout for accidental death occurring while using public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"three weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"significant travel delays\",\n    \"lost or damaged luggage\",\n    \"Bungee Jumping\",\n    \"Hot Air Ballooning\",\n    \"double payout for accidental death on public transport\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Bungee Jumping\",\n    \"Hot Air Ballooning\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Confirmation of coverage specific to accidental death while using public transport.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"emergency medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"Bungee Jumping\",\n    \"Hot Air Ballooning\",\n    \"double payout\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Comprehensive travel insurance for a three-week trip to Australia from Singapore for two adults aged 26-40.\",\n  \"detailed_description\": \"The customer requests travel insurance that includes coverage for medical emergencies, trip cancellation due to unforeseen events, expenses incurred from significant travel delays, and coverage for lost or damaged luggage. Additionally, the insurance should cover extreme activities such as Bungee Jumping and Hot Air Ballooning, and the customer specifically asks for a doubled payout clause for accidental death occurring while using public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"Three weeks\",\n  \"insurance_coverage_type\": [\"Medical emergencies\", \"Trip cancellation\", \"Travel delay\", \"Lost or damaged luggage\"],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\"Bungee Jumping\", \"Hot Air Ballooning\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death while using public transport.\",\n  \"keywords\": [\"travel insurance\", \"medical coverage\", \"trip cancellation\", \"travel delays\", \"luggage coverage\", \"Bungee Jumping\", \"Hot Air Ballooning\", \"accidental death\"]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "1",
-        "requirement_summary": "Travel insurance for trip from Singapore to Australia for two adults, including comprehensive medical coverage, trip cancellation, and coverage for specific activities.",
-        "detailed_description": "Customer requires travel insurance for two travelers aged 26-40, flying from Singapore to Australia for three weeks, with a budget of around $400. They want coverage for major medical emergencies, trip cancellation due to unforeseen events, expenses due to significant travel delays, loss or damage of luggage, and specific coverage for Bungee Jumping and Hot Air Ballooning. They additionally request a provision for a double payout for accidental death occurring while using public transport.",
+        "requirement_id": "REQ123456",
+        "requirement_summary": "Comprehensive travel insurance for a three-week trip to Australia from Singapore for two adults aged 26-40.",
+        "detailed_description": "The customer requests travel insurance that includes coverage for medical emergencies, trip cancellation due to unforeseen events, expenses incurred from significant travel delays, and coverage for lost or damaged luggage. Additionally, the insurance should cover extreme activities such as Bungee Jumping and Hot Air Ballooning, and the customer specifically asks for a doubled payout clause for accidental death occurring while using public transport.",
         "travel_origin": "Singapore",
         "travel_destination": "Australia",
-        "travel_duration": "three weeks",
+        "travel_duration": "Three weeks",
         "insurance_coverage_type": [
-            "medical emergencies",
-            "trip cancellation",
-            "significant travel delays",
-            "lost or damaged luggage",
-            "Bungee Jumping",
-            "Hot Air Ballooning",
-            "double payout for accidental death on public transport"
+            "Medical emergencies",
+            "Trip cancellation",
+            "Travel delay",
+            "Lost or damaged luggage"
         ],
         "pre_existing_conditions": null,
         "medical_needs": null,
@@ -24,16 +21,16 @@
             "Hot Air Ballooning"
         ],
         "age_group": "26-40",
-        "additional_requests": "Confirmation of coverage specific to accidental death while using public transport.",
+        "additional_requests": "Double payout for accidental death while using public transport.",
         "keywords": [
             "travel insurance",
-            "emergency medical coverage",
+            "medical coverage",
             "trip cancellation",
             "travel delays",
-            "lost luggage",
+            "luggage coverage",
             "Bungee Jumping",
             "Hot Air Ballooning",
-            "double payout"
+            "accidental death"
         ]
     },
     "tasks_output": [
@@ -42,23 +39,20 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance for trip from Singapore to Australia for two adults, including comprehensive medical coverage, trip cancellation, and coverage for specific activities.\",\n  \"detailed_description\": \"Customer requires travel insurance for two travelers aged 26-40, flying from Singapore to Australia for three weeks, with a budget of around $400. They want coverage for major medical emergencies, trip cancellation due to unforeseen events, expenses due to significant travel delays, loss or damage of luggage, and specific coverage for Bungee Jumping and Hot Air Ballooning. They additionally request a provision for a double payout for accidental death occurring while using public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"three weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"significant travel delays\",\n    \"lost or damaged luggage\",\n    \"Bungee Jumping\",\n    \"Hot Air Ballooning\",\n    \"double payout for accidental death on public transport\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Bungee Jumping\",\n    \"Hot Air Ballooning\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Confirmation of coverage specific to accidental death while using public transport.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"emergency medical coverage\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost luggage\",\n    \"Bungee Jumping\",\n    \"Hot Air Ballooning\",\n    \"double payout\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Comprehensive travel insurance for a three-week trip to Australia from Singapore for two adults aged 26-40.\",\n  \"detailed_description\": \"The customer requests travel insurance that includes coverage for medical emergencies, trip cancellation due to unforeseen events, expenses incurred from significant travel delays, and coverage for lost or damaged luggage. Additionally, the insurance should cover extreme activities such as Bungee Jumping and Hot Air Ballooning, and the customer specifically asks for a doubled payout clause for accidental death occurring while using public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"Three weeks\",\n  \"insurance_coverage_type\": [\"Medical emergencies\", \"Trip cancellation\", \"Travel delay\", \"Lost or damaged luggage\"],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\"Bungee Jumping\", \"Hot Air Ballooning\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Double payout for accidental death while using public transport.\",\n  \"keywords\": [\"travel insurance\", \"medical coverage\", \"trip cancellation\", \"travel delays\", \"luggage coverage\", \"Bungee Jumping\", \"Hot Air Ballooning\", \"accidental death\"]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "1",
-                "requirement_summary": "Travel insurance for trip from Singapore to Australia for two adults, including comprehensive medical coverage, trip cancellation, and coverage for specific activities.",
-                "detailed_description": "Customer requires travel insurance for two travelers aged 26-40, flying from Singapore to Australia for three weeks, with a budget of around $400. They want coverage for major medical emergencies, trip cancellation due to unforeseen events, expenses due to significant travel delays, loss or damage of luggage, and specific coverage for Bungee Jumping and Hot Air Ballooning. They additionally request a provision for a double payout for accidental death occurring while using public transport.",
+                "requirement_id": "REQ123456",
+                "requirement_summary": "Comprehensive travel insurance for a three-week trip to Australia from Singapore for two adults aged 26-40.",
+                "detailed_description": "The customer requests travel insurance that includes coverage for medical emergencies, trip cancellation due to unforeseen events, expenses incurred from significant travel delays, and coverage for lost or damaged luggage. Additionally, the insurance should cover extreme activities such as Bungee Jumping and Hot Air Ballooning, and the customer specifically asks for a doubled payout clause for accidental death occurring while using public transport.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Australia",
-                "travel_duration": "three weeks",
+                "travel_duration": "Three weeks",
                 "insurance_coverage_type": [
-                    "medical emergencies",
-                    "trip cancellation",
-                    "significant travel delays",
-                    "lost or damaged luggage",
-                    "Bungee Jumping",
-                    "Hot Air Ballooning",
-                    "double payout for accidental death on public transport"
+                    "Medical emergencies",
+                    "Trip cancellation",
+                    "Travel delay",
+                    "Lost or damaged luggage"
                 ],
                 "pre_existing_conditions": null,
                 "medical_needs": null,
@@ -67,16 +61,16 @@
                     "Hot Air Ballooning"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Confirmation of coverage specific to accidental death while using public transport.",
+                "additional_requests": "Double payout for accidental death while using public transport.",
                 "keywords": [
                     "travel insurance",
-                    "emergency medical coverage",
+                    "medical coverage",
                     "trip cancellation",
                     "travel delays",
-                    "lost luggage",
+                    "luggage coverage",
                     "Bungee Jumping",
                     "Hot Air Ballooning",
-                    "double payout"
+                    "accidental death"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -84,10 +78,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 22104,
-        "prompt_tokens": 18379,
+        "total_tokens": 89340,
+        "prompt_tokens": 75316,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 3725,
-        "successful_requests": 13
+        "completion_tokens": 14024,
+        "successful_requests": 48
     }
 }

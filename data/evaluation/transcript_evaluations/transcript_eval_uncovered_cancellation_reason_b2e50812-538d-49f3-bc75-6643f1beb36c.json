@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned concerns about cancelling the trip due to illness and, more specifically, due to obligations related to their sister's wedding (a scenario-specific requirement). The agent acknowledged both standard reasons and the specific wedding scenario.",
+      "customer_quote": "[18] Before...? You mean like... having to cancel? That's a nightmare scenario. What if one of us gets really sick? But... actually, there's something specific... oh my god, what if I have to cancel for my sister's wedding? ... Is *that* kind of cancellation covered?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent prompted the topic of pre-trip concerns and specifically acknowledged the customer's unique query about cancelling for a wedding, noting it required clarification.",
+      "agent_quote": "[19] I understand your concern, cancelling for personal events like a wedding can be very important. So you need standard trip cancellation cover for things like illness, but you're *specifically* asking about whether cancelling due to your sister's wedding requirements would be covered? I've noted that specific question down."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer expressed a need for coverage for doctor visits or hospital stays during the trip and also disclosed a pre-existing condition (asthma).",
+      "customer_quote": "[12] Oh, health... yes. I have asthma... Do we need to declare asthma? And I definitely want to make sure we're covered if, heaven forbid, something happens and we need a doctor or hospital. That's a major worry. Just general medical things.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about pre-existing conditions and confirmed the customer's need for general medical emergency coverage.",
+      "agent_quote": "[11] And regarding health matters, are there any pre-existing medical conditions for either traveller that we should be aware of? ... [13] Alright, noted on the asthma and the need for general medical coverage for emergencies like doctor visits or hospital stays during the trip."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly stated concern about lost, damaged, or delayed baggage and confirmed this coverage was important.",
+      "customer_quote": "[16] My luggage! Yes! You hear horror stories... bags getting lost, or arriving broken... So coverage for lost, damaged, or delayed baggage is important too.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent prompted the customer about concerns regarding belongings and confirmed the requirement for luggage coverage.",
+      "agent_quote": "[15] And how about your belongings during the trip? Any concerns there? ... [17] Understood, noting down coverage for lost, damaged, or delayed luggage."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer expressed significant worry about travel delays, missing connections, and the associated costs like extra hotel nights and food.",
+      "customer_quote": "[14] Oh god, don't remind me! The thought of being stuck somewhere... delayed for hours, missing a connection... What happens then? The extra hotel nights, food... it all adds up. Yes, I definitely worry about travel delays.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent prompted the topic of travel disruptions and confirmed the customer's concern about coverage for expenses due to significant delays.",
+      "agent_quote": "[13] What about potential disruptions to your travel plans themselves? Sometimes flights get delayed or cancelled. ... [15] Okay, so cover for additional expenses due to significant travel delays is something you're concerned about."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer specifically mentioned planning to do Hiking and expressed concern about potential injuries like twisting an ankle during the activity, asking if insurance covers such incidents.",
+      "customer_quote": "[10] Activities... yes! That's another thing worrying me. We plan to do some Hiking... what if someone twists an ankle or something worse? Does the insurance cover things like that? Out there?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about planned activities and acknowledged the customer's specific mention of hiking and the need for related coverage.",
+      "agent_quote": "[9] And during your 10-day trip to Japan, are you planning any specific activities? ... [11] Okay, so you'd like to ensure potential incidents during hiking activities are noted."
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent performed excellently, successfully gathering specific details for all five standard coverage types. The agent used effective probing questions tailored to the customer's initial vagueness and stress, ensuring all key areas were covered. Notably, the agent correctly identified and recorded the customer's specific, non-standard cancellation concern (sister's wedding) as a requirement needing further clarification, demonstrating thoroughness and attention to detail beyond the standard checklist. The agent's patient and structured approach was highly effective."
+  },
+  "transcript_name": "transcript_uncovered_cancellation_reason_b2e50812-538d-49f3-bc75-6643f1beb36c",
+  "scenario": "uncovered_cancellation_reason"
+}

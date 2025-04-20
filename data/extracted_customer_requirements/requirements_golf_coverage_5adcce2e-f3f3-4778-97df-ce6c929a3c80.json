@@ -1,19 +1,19 @@
 {
-    "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Australia from Singapore for two travellers.\",\n  \"detailed_description\": \"The customer is looking for comprehensive travel insurance coverage for a 10-day trip to Australia from Singapore. The travellers are concerned about medical emergencies, coverage for golf-related activities, lost luggage including golf clubs, trip cancellations, and significant travel delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical emergency coverage\",\n    \"trip cancellation coverage\",\n    \"travel delay coverage\",\n    \"golf equipment coverage\",\n    \"liability for golf buggy damage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"comprehensive medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for reimbursement of unused golf fees due to injury or adverse weather, and inquiry about hole-in-one benefits.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Australia\",\n    \"golf trip\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"travel delay\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a golf trip to Australia from Singapore.\",\n  \"detailed_description\": \"Insurance required for a 10-day trip to Australia from Singapore for two travelers, one of whom has a pre-existing high blood pressure condition. Coverage needed for luggage (including golf clubs), medical emergencies, trip cancellation, significant travel delays, reimbursement for unused green fees, and additional golf-related coverages.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"luggage loss/damage\",\n    \"golf-related coverages\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"comprehensive medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"coverage for reimbursement of unused green fees, accidental damage to golf buggies, and potential hole-in-one payout.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Australia\",\n    \"Singapore\",\n    \"golf trip\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"travel delays\",\n    \"luggage coverage\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "001",
-        "requirement_summary": "Travel insurance for a trip to Australia from Singapore for two travellers.",
-        "detailed_description": "The customer is looking for comprehensive travel insurance coverage for a 10-day trip to Australia from Singapore. The travellers are concerned about medical emergencies, coverage for golf-related activities, lost luggage including golf clubs, trip cancellations, and significant travel delays.",
+        "requirement_id": "REQ123456",
+        "requirement_summary": "Travel insurance for a golf trip to Australia from Singapore.",
+        "detailed_description": "Insurance required for a 10-day trip to Australia from Singapore for two travelers, one of whom has a pre-existing high blood pressure condition. Coverage needed for luggage (including golf clubs), medical emergencies, trip cancellation, significant travel delays, reimbursement for unused green fees, and additional golf-related coverages.",
         "travel_origin": "Singapore",
         "travel_destination": "Australia",
         "travel_duration": "10 days",
         "insurance_coverage_type": [
-            "medical emergency coverage",
-            "trip cancellation coverage",
-            "travel delay coverage",
-            "golf equipment coverage",
-            "liability for golf buggy damage"
+            "medical emergencies",
+            "trip cancellation",
+            "travel delays",
+            "luggage loss/damage",
+            "golf-related coverages"
         ],
         "pre_existing_conditions": [
             "high blood pressure"
@@ -25,15 +25,16 @@
             "golf"
         ],
         "age_group": "41-55",
-        "additional_requests": "Coverage for reimbursement of unused golf fees due to injury or adverse weather, and inquiry about hole-in-one benefits.",
+        "additional_requests": "coverage for reimbursement of unused green fees, accidental damage to golf buggies, and potential hole-in-one payout.",
         "keywords": [
             "travel insurance",
             "Australia",
+            "Singapore",
             "golf trip",
-            "medical coverage",
             "trip cancellation",
-            "lost luggage",
-            "travel delay"
+            "medical emergencies",
+            "travel delays",
+            "luggage coverage"
         ]
     },
     "tasks_output": [
@@ -42,21 +43,21 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Australia from Singapore for two travellers.\",\n  \"detailed_description\": \"The customer is looking for comprehensive travel insurance coverage for a 10-day trip to Australia from Singapore. The travellers are concerned about medical emergencies, coverage for golf-related activities, lost luggage including golf clubs, trip cancellations, and significant travel delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical emergency coverage\",\n    \"trip cancellation coverage\",\n    \"travel delay coverage\",\n    \"golf equipment coverage\",\n    \"liability for golf buggy damage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"comprehensive medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for reimbursement of unused golf fees due to injury or adverse weather, and inquiry about hole-in-one benefits.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Australia\",\n    \"golf trip\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"travel delay\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a golf trip to Australia from Singapore.\",\n  \"detailed_description\": \"Insurance required for a 10-day trip to Australia from Singapore for two travelers, one of whom has a pre-existing high blood pressure condition. Coverage needed for luggage (including golf clubs), medical emergencies, trip cancellation, significant travel delays, reimbursement for unused green fees, and additional golf-related coverages.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"travel delays\",\n    \"luggage loss/damage\",\n    \"golf-related coverages\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"comprehensive medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"coverage for reimbursement of unused green fees, accidental damage to golf buggies, and potential hole-in-one payout.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Australia\",\n    \"Singapore\",\n    \"golf trip\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"travel delays\",\n    \"luggage coverage\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "001",
-                "requirement_summary": "Travel insurance for a trip to Australia from Singapore for two travellers.",
-                "detailed_description": "The customer is looking for comprehensive travel insurance coverage for a 10-day trip to Australia from Singapore. The travellers are concerned about medical emergencies, coverage for golf-related activities, lost luggage including golf clubs, trip cancellations, and significant travel delays.",
+                "requirement_id": "REQ123456",
+                "requirement_summary": "Travel insurance for a golf trip to Australia from Singapore.",
+                "detailed_description": "Insurance required for a 10-day trip to Australia from Singapore for two travelers, one of whom has a pre-existing high blood pressure condition. Coverage needed for luggage (including golf clubs), medical emergencies, trip cancellation, significant travel delays, reimbursement for unused green fees, and additional golf-related coverages.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Australia",
                 "travel_duration": "10 days",
                 "insurance_coverage_type": [
-                    "medical emergency coverage",
-                    "trip cancellation coverage",
-                    "travel delay coverage",
-                    "golf equipment coverage",
-                    "liability for golf buggy damage"
+                    "medical emergencies",
+                    "trip cancellation",
+                    "travel delays",
+                    "luggage loss/damage",
+                    "golf-related coverages"
                 ],
                 "pre_existing_conditions": [
                     "high blood pressure"
@@ -68,15 +69,16 @@
                     "golf"
                 ],
                 "age_group": "41-55",
-                "additional_requests": "Coverage for reimbursement of unused golf fees due to injury or adverse weather, and inquiry about hole-in-one benefits.",
+                "additional_requests": "coverage for reimbursement of unused green fees, accidental damage to golf buggies, and potential hole-in-one payout.",
                 "keywords": [
                     "travel insurance",
                     "Australia",
+                    "Singapore",
                     "golf trip",
-                    "medical coverage",
                     "trip cancellation",
-                    "lost luggage",
-                    "travel delay"
+                    "medical emergencies",
+                    "travel delays",
+                    "luggage coverage"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -84,10 +86,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 9009,
-        "prompt_tokens": 7593,
+        "total_tokens": 20728,
+        "prompt_tokens": 17600,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 1416,
-        "successful_requests": 5
+        "completion_tokens": 3128,
+        "successful_requests": 11
     }
 }

@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned concerns about cancelling the trip before departure due to specific reasons.",
+      "customer_quote": "[16] Customer: Because, what if... what if something happens *before* we go? Like, if one of us gets really sick, or there\u2019s a family emergency, and we have to cancel the whole trip?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and correctly noted the customer's requirement for trip cancellation coverage due to unforeseen events.",
+      "agent_quote": "[17] Customer Service Agent: Okay, so you'd like coverage for Trip Cancellation due to unforeseen events like illness or emergencies. Noted."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer expressed concern about needing medical attention during the trip and mentioned a specific pre-existing condition (asthma).",
+      "customer_quote": "[12] Customer: And... oh, medical things in general. What if we get sick? My partner has asthma, you see. Do we need to declare asthma? ... I just panic thinking about needing a doctor over there.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the need for medical coverage, noted the pre-existing condition, and probed appropriately for related needs like medical equipment.",
+      "agent_quote": "[13] Customer Service Agent: Okay, so you require coverage that includes activities like Scuba Diving. And you have concerns about potential medical needs during the trip, noting one traveler has asthma. It\u2019s good you mentioned that. We'll note down the need for comprehensive Medical Coverage details. Are there any specific medical equipment needs, like a wheelchair or oxygen tank?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer specifically raised concerns about the airline losing or damaging their luggage.",
+      "customer_quote": "[14] Customer: But... what about other things? Like... what if the airline loses our bags? That would be a nightmare. All our stuff gone, or damaged.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the customer's requirement for lost or damaged luggage coverage.",
+      "agent_quote": "[15] Customer Service Agent: Alright, so coverage for Lost or Damaged Luggage is important for you. I've noted that down."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The agent prompted the customer about travel delays, and the customer confirmed this was a concern, mentioning specific associated costs.",
+      "customer_quote": "[18] Customer: Oh god, yes, delays! That\u2019s another worry. Flights are so unpredictable lately. If we get stuck somewhere, needing extra hotel nights or food... it all adds up.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about travel delays and then confirmed the customer's need for coverage related to extra accommodation and meal expenses.",
+      "agent_quote": "[17] Customer Service Agent: And what about delays during the trip itself? For instance, if your flight gets significantly delayed? \n[19] Customer Service Agent: Okay, I understand. So you're looking for coverage for Travel Delays, covering additional accommodation and meal expenses."
+    },
+    {
+      "coverage_type": "sports_and_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer explicitly stated they planned to participate in Scuba Diving and expressed concern about potential incidents during this activity.",
+      "customer_quote": "[12] Customer: Activities... um, yes! We definitely want to try Scuba Diving. We've booked a session. That's one of the things I'm worried about, actually, what if something happens during that?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and noted the requirement for coverage including Scuba Diving.",
+      "agent_quote": "[13] Customer Service Agent: Okay, so you require coverage that includes activities like Scuba Diving."
+    },
+    {
+      "coverage_type": "pet_accommodation_costs",
+      "name": "Pet Accommodation Costs (Scenario Specific)",
+      "result": "PASS",
+      "justification": "The customer specifically asked about coverage for additional pet hotel costs if their return to Singapore was delayed, which is a scenario-specific requirement.",
+      "customer_quote": "[18] Customer: My cat! ... If our flight back to Singapore is delayed for days or something, she'll need to stay longer. Does insurance ever cover extra pet hotel costs?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent explicitly acknowledged and noted this specific requirement related to pet accommodation costs due to travel delays.",
+      "agent_quote": "[19] Customer Service Agent: And I've specifically noted your requirement regarding potential coverage for additional pet accommodation costs at the hotel or kennel if your return to Singapore is delayed."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered information on all standard coverage types prompted by the customer's concerns (Trip Cancellation, Medical, Luggage, Delays, Sports/Adventure). The agent also effectively identified and noted the crucial scenario-specific requirement regarding pet accommodation costs. The agent used good active listening and summarizing techniques ([20]) to confirm understanding. Performance was strong in identifying and confirming the customer's stated needs."
+  },
+  "transcript_name": "transcript_pet_care_coverage_e405849f-cad5-40f8-a1e6-c7c5b131b5f3",
+  "scenario": "pet_care_coverage"
+}

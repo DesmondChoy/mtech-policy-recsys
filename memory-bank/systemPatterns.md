@@ -2,7 +2,7 @@
 
 ## System Architecture
 
-The project follows a workflow orchestrated by `scripts/orchestrate_scenario_evaluation.py`. This script manages data generation (parallel scenarios), processing (parallel transcript evaluation, sequential parsing/extraction), sequential report generation (per UUID), and final evaluation aggregation. A single agent (Extractor) is used within this workflow. The original multi-agent concept is not implemented.
+The project follows a workflow orchestrated by `scripts/orchestrate_scenario_evaluation.py`. This script manages data generation (parallel scenarios), processing (parallel transcript evaluation, sequential parsing/extraction), sequential report generation (per UUID), and final evaluation aggregation. It includes flags like `--skip_transcript_eval` and `--only_aggregate` to control execution flow. A single agent (Extractor) is used within this workflow. The original multi-agent concept is not implemented.
 
 ```mermaid
 graph TD
@@ -49,6 +49,7 @@ graph TD
         FilterLogicReport --> ComparisonScript[scripts/generate_policy_comparison.py (LLMService/Gemini)]
         ProcessedPolicies --> ComparisonScript
         ComparisonScript --> ComparisonReports[results/{uuid}/*.md]
+        ProcessedTranscripts --> RecommendScript # Added dependency
         ComparisonReports --> RecommendScript[scripts/generate_recommendation_report.py (LLMService/Gemini)]
         RecommendScript --> FinalRecommendationMD[results/{uuid}/recommendation_report_{uuid}.md]
     end
@@ -61,7 +62,7 @@ graph TD
         EvalPdfExtraction --> EvalPdfResults[data/evaluation/pdf_extraction_evaluations/*.json]
         OrchFinalEval --> ScenarioEvalScript[scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py]
         ScenarioEvalScript --> ScenarioEvalResults[data/evaluation/scenario_evaluation/results_*.json]
-        OrchFinalEval --> AggregatedResults[data/evaluation/scenario_evaluation/results_*_aggregated_*.json]
+        OrchFinalEval --> FinalEvalOutput[data/evaluation/scenario_evaluation/results_*_all_transcripts_*.json] # Updated Output
         ComparisonScript --> PlannedComparisonEval{Planned: Comparison Report Evaluation}
     end
 
@@ -88,6 +89,7 @@ graph TD
     OrchFinalEval --> ScenarioEvalScript
     ScenarioEvalScript --> ScenarioEvalResults
     ScenarioEvalResults --> OrchFinalEval # Implies reading latest result
+    OrchFinalEval --> FinalEvalOutput # Save final output
     OrchEnd --> User[User/Developer]
 
     %% Other Connections
@@ -192,10 +194,13 @@ graph TD
 - **Dependencies**: `LLMService`, Extractor Agent output, Policy Extraction Script output.
 
 ### Recommendation Report Script (`scripts/generate_recommendation_report.py`)
-- **Purpose**: Parses comparison reports, performs Stage 1 scoring, calls LLM for Stage 2 re-ranking, generates a final Markdown report, and saves it.
-- **Inputs**: Markdown comparison reports (`results/{uuid}/*.md`).
-- **Outputs**: Final recommendation Markdown report (`results/{uuid}/recommendation_report_{uuid}.md`).
-- **Dependencies**: `LLMService`, Comparison Report Script output, Pydantic (`FinalRecommendation` model).
+- **Purpose**: Parses comparison reports, performs Stage 1 scoring, calls LLM for Stage 2 re-ranking (using transcript context), generates a final Markdown report, and saves it. Checks for existing report and `--overwrite` flag before processing to avoid redundant work.
+- **Inputs**:
+    - Markdown comparison reports (`results/{uuid}/*.md`).
+    - Processed transcript JSON (`data/transcripts/processed/parsed_transcript_*_{uuid}.json`).
+    - Command-line arguments (`--customer_id`, `--top_n`, `--overwrite`).
+- **Outputs**: Final recommendation Markdown report (`results/{uuid}/recommendation_report_{uuid}.md`), potentially skipped if exists and `overwrite=False`.
+- **Dependencies**: `LLMService`, Comparison Report Script output, Processed Transcript data, Pydantic (`FinalRecommendation` model).
 
 ### ML Models (Future)
 - **Purpose**: Uncover insights from data.
@@ -320,10 +325,11 @@ sequenceDiagram
     Note right of CompareP: Saves report to results/{uuid}/policy_comparison_report_*.md
     CompareP->>UserDev: Provide Comparison Report (Implicitly, via file system)
 
-    %% Recommendation Path (Requires Comparison Reports)
+    %% Recommendation Path (Requires Comparison Reports & Processed Transcript)
     RecommendR->>RecommendR: Parse Reports & Stage 1 Score/Rank
     Note right of RecommendR: Reads reports from results/{uuid}/
-    RecommendR->>LLM_Gemini: Stage 2 Re-rank Top Candidates
+    Note right of RecommendR: Reads transcript from data/transcripts/processed/
+    RecommendR->>LLM_Gemini: Stage 2 Re-rank Top Candidates (with transcript context)
     LLM_Gemini-->>RecommendR: Final Recommendation (Structured JSON)
     RecommendR->>RecommendR: Generate Final Markdown Report
     Note right of RecommendR: Saves final MD report to results/{uuid}/recommendation_report_*.md

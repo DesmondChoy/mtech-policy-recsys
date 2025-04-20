@@ -1,39 +1,39 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip from Singapore to Japan.\",\n  \"detailed_description\": \"Customer requires travel insurance for a trip to Japan including specific coverage for skiing, medical expenses, lost or damaged luggage, travel delays, and trip cancellation related to a family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"skiing coverage\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"trip cancellation\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Need clarification on trip cancellation due to a sister's wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"skiing\",\n    \"medical coverage\",\n    \"asthma\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"wedding\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance for trip to Japan for two adults with specific coverage needs.\",\n  \"detailed_description\": \"The customer is planning a 10-day trip from Singapore to Japan with their partner. They have specific requirements for their travel insurance, including coverage for skiing, comprehensive medical coverage including a pre-existing condition (asthma), coverage for lost or damaged luggage, coverage for travel delays, and trip cancellation coverage due to a family event (sister's wedding). The budget for insurance is around $400.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost/damaged luggage\",\n    \"travel delays\",\n    \"sports/adventure activities\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": [\n    \"comprehensive medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clarification needed on trip cancellation coverage due to a sister's wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"skiing\",\n    \"medical coverage\",\n    \"cancellation\",\n    \"lost luggage\",\n    \"travel delays\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ-001",
-        "requirement_summary": "Travel insurance requirements for a trip from Singapore to Japan.",
-        "detailed_description": "Customer requires travel insurance for a trip to Japan including specific coverage for skiing, medical expenses, lost or damaged luggage, travel delays, and trip cancellation related to a family wedding.",
+        "requirement_id": "req-001",
+        "requirement_summary": "Travel insurance for trip to Japan for two adults with specific coverage needs.",
+        "detailed_description": "The customer is planning a 10-day trip from Singapore to Japan with their partner. They have specific requirements for their travel insurance, including coverage for skiing, comprehensive medical coverage including a pre-existing condition (asthma), coverage for lost or damaged luggage, coverage for travel delays, and trip cancellation coverage due to a family event (sister's wedding). The budget for insurance is around $400.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "10 days",
         "insurance_coverage_type": [
             "medical coverage",
-            "skiing coverage",
-            "lost or damaged luggage",
+            "trip cancellation",
+            "lost/damaged luggage",
             "travel delays",
-            "trip cancellation"
+            "sports/adventure activities"
         ],
         "pre_existing_conditions": [
             "asthma"
         ],
-        "medical_needs": null,
+        "medical_needs": [
+            "comprehensive medical coverage"
+        ],
         "activities_to_cover": [
             "skiing"
         ],
         "age_group": "26-40",
-        "additional_requests": "Need clarification on trip cancellation due to a sister's wedding.",
+        "additional_requests": "Clarification needed on trip cancellation coverage due to a sister's wedding.",
         "keywords": [
             "travel insurance",
             "Japan",
             "skiing",
             "medical coverage",
-            "asthma",
+            "cancellation",
             "lost luggage",
-            "travel delays",
-            "trip cancellation",
-            "wedding"
+            "travel delays"
         ]
     },
     "tasks_output": [
@@ -42,41 +42,41 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip from Singapore to Japan.\",\n  \"detailed_description\": \"Customer requires travel insurance for a trip to Japan including specific coverage for skiing, medical expenses, lost or damaged luggage, travel delays, and trip cancellation related to a family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"skiing coverage\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"trip cancellation\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Need clarification on trip cancellation due to a sister's wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"skiing\",\n    \"medical coverage\",\n    \"asthma\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"wedding\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance for trip to Japan for two adults with specific coverage needs.\",\n  \"detailed_description\": \"The customer is planning a 10-day trip from Singapore to Japan with their partner. They have specific requirements for their travel insurance, including coverage for skiing, comprehensive medical coverage including a pre-existing condition (asthma), coverage for lost or damaged luggage, coverage for travel delays, and trip cancellation coverage due to a family event (sister's wedding). The budget for insurance is around $400.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"lost/damaged luggage\",\n    \"travel delays\",\n    \"sports/adventure activities\"\n  ],\n  \"pre_existing_conditions\": [\n    \"asthma\"\n  ],\n  \"medical_needs\": [\n    \"comprehensive medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"skiing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Clarification needed on trip cancellation coverage due to a sister's wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"skiing\",\n    \"medical coverage\",\n    \"cancellation\",\n    \"lost luggage\",\n    \"travel delays\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ-001",
-                "requirement_summary": "Travel insurance requirements for a trip from Singapore to Japan.",
-                "detailed_description": "Customer requires travel insurance for a trip to Japan including specific coverage for skiing, medical expenses, lost or damaged luggage, travel delays, and trip cancellation related to a family wedding.",
+                "requirement_id": "req-001",
+                "requirement_summary": "Travel insurance for trip to Japan for two adults with specific coverage needs.",
+                "detailed_description": "The customer is planning a 10-day trip from Singapore to Japan with their partner. They have specific requirements for their travel insurance, including coverage for skiing, comprehensive medical coverage including a pre-existing condition (asthma), coverage for lost or damaged luggage, coverage for travel delays, and trip cancellation coverage due to a family event (sister's wedding). The budget for insurance is around $400.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "10 days",
                 "insurance_coverage_type": [
                     "medical coverage",
-                    "skiing coverage",
-                    "lost or damaged luggage",
+                    "trip cancellation",
+                    "lost/damaged luggage",
                     "travel delays",
-                    "trip cancellation"
+                    "sports/adventure activities"
                 ],
                 "pre_existing_conditions": [
                     "asthma"
                 ],
-                "medical_needs": null,
+                "medical_needs": [
+                    "comprehensive medical coverage"
+                ],
                 "activities_to_cover": [
                     "skiing"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Need clarification on trip cancellation due to a sister's wedding.",
+                "additional_requests": "Clarification needed on trip cancellation coverage due to a sister's wedding.",
                 "keywords": [
                     "travel insurance",
                     "Japan",
                     "skiing",
                     "medical coverage",
-                    "asthma",
+                    "cancellation",
                     "lost luggage",
-                    "travel delays",
-                    "trip cancellation",
-                    "wedding"
+                    "travel delays"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -84,10 +84,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 34865,
-        "prompt_tokens": 29145,
+        "total_tokens": 145025,
+        "prompt_tokens": 122439,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 5720,
-        "successful_requests": 20
+        "completion_tokens": 22586,
+        "successful_requests": 78
     }
 }

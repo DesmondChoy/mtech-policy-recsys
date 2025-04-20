@@ -177,4 +177,6 @@ ux-webapp/public/results/
 ux-webapp/public/data/
 
 # Local Netlify folder
-.netlify
+.netlify/
+
+.vscode/

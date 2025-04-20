@@ -1,33 +1,33 @@
 {
-    "raw": "{\n  \"requirement_id\": \"RQ12345\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip from Singapore to Japan for two adults aged 26-40.\",\n  \"detailed_description\": \"The customer is looking for comprehensive travel insurance details focusing on medical coverage limits, lost/damaged luggage protection specifics, sports and adventure activities coverage, travel delay benefits, and trip cancellation terms. Key concerns include hiking activity coverage and specific conditions for cancellation due to a family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Lost/Damaged Luggage\",\n    \"Sports and Adventure Coverage\",\n    \"Travel Delay Benefits\",\n    \"Trip Cancellation Coverage\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Budget of around $400 for the insurance premium.\",\n  \"keywords\": [\n    \"TravelSecure\",\n    \"medical treatment\",\n    \"baggage protection\",\n    \"travel delays\",\n    \"trip cancellation\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"REQ12345\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip from Singapore to Japan.\",\n  \"detailed_description\": \"Customer inquires about travel insurance options for two weeks in Japan, specifically seeking information on medical coverage, luggage protection, coverage for hiking, travel delay benefits, and trip cancellation due to a family event.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"Medical Coverage\", \"Lost/Damaged Luggage\", \"Sports and Adventure\", \"Travel Delay\", \"Trip Cancellation\"],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\"Hiking\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Budget for insurance is around $400. No special medical equipment needed for this trip.\",\n  \"keywords\": [\"medical coverage\", \"lost luggage\", \"travel delay\", \"trip cancellation\", \"hiking\"]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "RQ12345",
-        "requirement_summary": "Travel insurance requirements for a trip from Singapore to Japan for two adults aged 26-40.",
-        "detailed_description": "The customer is looking for comprehensive travel insurance details focusing on medical coverage limits, lost/damaged luggage protection specifics, sports and adventure activities coverage, travel delay benefits, and trip cancellation terms. Key concerns include hiking activity coverage and specific conditions for cancellation due to a family wedding.",
+        "requirement_id": "REQ12345",
+        "requirement_summary": "Travel insurance requirements for a trip from Singapore to Japan.",
+        "detailed_description": "Customer inquires about travel insurance options for two weeks in Japan, specifically seeking information on medical coverage, luggage protection, coverage for hiking, travel delay benefits, and trip cancellation due to a family event.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "2 weeks",
         "insurance_coverage_type": [
             "Medical Coverage",
             "Lost/Damaged Luggage",
-            "Sports and Adventure Coverage",
-            "Travel Delay Benefits",
-            "Trip Cancellation Coverage"
+            "Sports and Adventure",
+            "Travel Delay",
+            "Trip Cancellation"
         ],
-        "pre_existing_conditions": null,
-        "medical_needs": null,
+        "pre_existing_conditions": [],
+        "medical_needs": [],
         "activities_to_cover": [
             "Hiking"
         ],
         "age_group": "26-40",
-        "additional_requests": "Budget of around $400 for the insurance premium.",
+        "additional_requests": "Budget for insurance is around $400. No special medical equipment needed for this trip.",
         "keywords": [
-            "TravelSecure",
-            "medical treatment",
-            "baggage protection",
-            "travel delays",
-            "trip cancellation"
+            "medical coverage",
+            "lost luggage",
+            "travel delay",
+            "trip cancellation",
+            "hiking"
         ]
     },
     "tasks_output": [
@@ -36,35 +36,35 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"RQ12345\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip from Singapore to Japan for two adults aged 26-40.\",\n  \"detailed_description\": \"The customer is looking for comprehensive travel insurance details focusing on medical coverage limits, lost/damaged luggage protection specifics, sports and adventure activities coverage, travel delay benefits, and trip cancellation terms. Key concerns include hiking activity coverage and specific conditions for cancellation due to a family wedding.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Lost/Damaged Luggage\",\n    \"Sports and Adventure Coverage\",\n    \"Travel Delay Benefits\",\n    \"Trip Cancellation Coverage\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Budget of around $400 for the insurance premium.\",\n  \"keywords\": [\n    \"TravelSecure\",\n    \"medical treatment\",\n    \"baggage protection\",\n    \"travel delays\",\n    \"trip cancellation\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"REQ12345\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip from Singapore to Japan.\",\n  \"detailed_description\": \"Customer inquires about travel insurance options for two weeks in Japan, specifically seeking information on medical coverage, luggage protection, coverage for hiking, travel delay benefits, and trip cancellation due to a family event.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"Medical Coverage\", \"Lost/Damaged Luggage\", \"Sports and Adventure\", \"Travel Delay\", \"Trip Cancellation\"],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\"Hiking\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Budget for insurance is around $400. No special medical equipment needed for this trip.\",\n  \"keywords\": [\"medical coverage\", \"lost luggage\", \"travel delay\", \"trip cancellation\", \"hiking\"]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "RQ12345",
-                "requirement_summary": "Travel insurance requirements for a trip from Singapore to Japan for two adults aged 26-40.",
-                "detailed_description": "The customer is looking for comprehensive travel insurance details focusing on medical coverage limits, lost/damaged luggage protection specifics, sports and adventure activities coverage, travel delay benefits, and trip cancellation terms. Key concerns include hiking activity coverage and specific conditions for cancellation due to a family wedding.",
+                "requirement_id": "REQ12345",
+                "requirement_summary": "Travel insurance requirements for a trip from Singapore to Japan.",
+                "detailed_description": "Customer inquires about travel insurance options for two weeks in Japan, specifically seeking information on medical coverage, luggage protection, coverage for hiking, travel delay benefits, and trip cancellation due to a family event.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "2 weeks",
                 "insurance_coverage_type": [
                     "Medical Coverage",
                     "Lost/Damaged Luggage",
-                    "Sports and Adventure Coverage",
-                    "Travel Delay Benefits",
-                    "Trip Cancellation Coverage"
+                    "Sports and Adventure",
+                    "Travel Delay",
+                    "Trip Cancellation"
                 ],
-                "pre_existing_conditions": null,
-                "medical_needs": null,
+                "pre_existing_conditions": [],
+                "medical_needs": [],
                 "activities_to_cover": [
                     "Hiking"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Budget of around $400 for the insurance premium.",
+                "additional_requests": "Budget for insurance is around $400. No special medical equipment needed for this trip.",
                 "keywords": [
-                    "TravelSecure",
-                    "medical treatment",
-                    "baggage protection",
-                    "travel delays",
-                    "trip cancellation"
+                    "medical coverage",
+                    "lost luggage",
+                    "travel delay",
+                    "trip cancellation",
+                    "hiking"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -72,10 +72,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 36731,
-        "prompt_tokens": 30742,
+        "total_tokens": 152118,
+        "prompt_tokens": 128508,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 5989,
-        "successful_requests": 21
+        "completion_tokens": 23610,
+        "successful_requests": 82
     }
 }

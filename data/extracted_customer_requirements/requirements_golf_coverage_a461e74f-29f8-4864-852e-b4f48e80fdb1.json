@@ -1,10 +1,10 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a golf trip to Thailand.\",\n  \"detailed_description\": \"Customer requires travel insurance for two travellers, with specific coverage for golf-related activities and general travel risks.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"General Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Reimbursement for Unused Green Fees\",\n    \"Golf Buggy Damage Liability\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"standard medical cover\"],\n  \"activities_to_cover\": [\"golf\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget range around $200-$300.\",\n  \"keywords\": [\"golf trip\", \"travel insurance\", \"Singapore\", \"Thailand\", \"high blood pressure\"]\n}",
+    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a golf trip to Thailand for two travelers with specific coverage needs.\",\n  \"detailed_description\": \"Travel insurance for 10 days in Thailand from Singapore for two travelers, including coverage for general medical needs and specific golfing activities.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\"General Medical Coverage\", \"Trip Cancellation\", \"Travel Delays\", \"Lost/Damaged Luggage\", \"Golf Equipment Coverage\", \"Unused Green Fees Reimbursement\", \"Golf Buggy Damage Liability\", \"Hole-in-One Benefit\"],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"standard medical cover\"],\n  \"activities_to_cover\": [\"golf\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget of around $200-$300.\",\n  \"keywords\": [\"travel insurance\", \"Thailand\", \"golf trip\", \"medical coverage\", \"trip cancellation\", \"high blood pressure\"]\n}",
     "pydantic": null,
     "json_dict": {
         "requirement_id": "REQ123456",
-        "requirement_summary": "Travel insurance for a golf trip to Thailand.",
-        "detailed_description": "Customer requires travel insurance for two travellers, with specific coverage for golf-related activities and general travel risks.",
+        "requirement_summary": "Travel insurance for a golf trip to Thailand for two travelers with specific coverage needs.",
+        "detailed_description": "Travel insurance for 10 days in Thailand from Singapore for two travelers, including coverage for general medical needs and specific golfing activities.",
         "travel_origin": "Singapore",
         "travel_destination": "Thailand",
         "travel_duration": "10 days",
@@ -14,7 +14,7 @@
             "Travel Delays",
             "Lost/Damaged Luggage",
             "Golf Equipment Coverage",
-            "Reimbursement for Unused Green Fees",
+            "Unused Green Fees Reimbursement",
             "Golf Buggy Damage Liability",
             "Hole-in-One Benefit"
         ],
@@ -28,12 +28,13 @@
             "golf"
         ],
         "age_group": "41-55",
-        "additional_requests": "Budget range around $200-$300.",
+        "additional_requests": "Budget of around $200-$300.",
         "keywords": [
-            "golf trip",
             "travel insurance",
-            "Singapore",
             "Thailand",
+            "golf trip",
+            "medical coverage",
+            "trip cancellation",
             "high blood pressure"
         ]
     },
@@ -43,12 +44,12 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a golf trip to Thailand.\",\n  \"detailed_description\": \"Customer requires travel insurance for two travellers, with specific coverage for golf-related activities and general travel risks.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"General Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Reimbursement for Unused Green Fees\",\n    \"Golf Buggy Damage Liability\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"standard medical cover\"],\n  \"activities_to_cover\": [\"golf\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget range around $200-$300.\",\n  \"keywords\": [\"golf trip\", \"travel insurance\", \"Singapore\", \"Thailand\", \"high blood pressure\"]\n}",
+            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a golf trip to Thailand for two travelers with specific coverage needs.\",\n  \"detailed_description\": \"Travel insurance for 10 days in Thailand from Singapore for two travelers, including coverage for general medical needs and specific golfing activities.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\"General Medical Coverage\", \"Trip Cancellation\", \"Travel Delays\", \"Lost/Damaged Luggage\", \"Golf Equipment Coverage\", \"Unused Green Fees Reimbursement\", \"Golf Buggy Damage Liability\", \"Hole-in-One Benefit\"],\n  \"pre_existing_conditions\": [\"high blood pressure\"],\n  \"medical_needs\": [\"standard medical cover\"],\n  \"activities_to_cover\": [\"golf\"],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Budget of around $200-$300.\",\n  \"keywords\": [\"travel insurance\", \"Thailand\", \"golf trip\", \"medical coverage\", \"trip cancellation\", \"high blood pressure\"]\n}",
             "pydantic": null,
             "json_dict": {
                 "requirement_id": "REQ123456",
-                "requirement_summary": "Travel insurance for a golf trip to Thailand.",
-                "detailed_description": "Customer requires travel insurance for two travellers, with specific coverage for golf-related activities and general travel risks.",
+                "requirement_summary": "Travel insurance for a golf trip to Thailand for two travelers with specific coverage needs.",
+                "detailed_description": "Travel insurance for 10 days in Thailand from Singapore for two travelers, including coverage for general medical needs and specific golfing activities.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Thailand",
                 "travel_duration": "10 days",
@@ -58,7 +59,7 @@
                     "Travel Delays",
                     "Lost/Damaged Luggage",
                     "Golf Equipment Coverage",
-                    "Reimbursement for Unused Green Fees",
+                    "Unused Green Fees Reimbursement",
                     "Golf Buggy Damage Liability",
                     "Hole-in-One Benefit"
                 ],
@@ -72,12 +73,13 @@
                     "golf"
                 ],
                 "age_group": "41-55",
-                "additional_requests": "Budget range around $200-$300.",
+                "additional_requests": "Budget of around $200-$300.",
                 "keywords": [
-                    "golf trip",
                     "travel insurance",
-                    "Singapore",
                     "Thailand",
+                    "golf trip",
+                    "medical coverage",
+                    "trip cancellation",
                     "high blood pressure"
                 ]
             },
@@ -86,10 +88,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 10293,
-        "prompt_tokens": 8638,
+        "total_tokens": 28148,
+        "prompt_tokens": 23842,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 1655,
-        "successful_requests": 6
+        "completion_tokens": 4306,
+        "successful_requests": 15
     }
 }

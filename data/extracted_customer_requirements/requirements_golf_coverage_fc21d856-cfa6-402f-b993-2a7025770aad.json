@@ -1,0 +1,85 @@
+{
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance quote for a trip to Japan.\",\n  \"detailed_description\": \"One traveler, aged 41-55, traveling for 10 days from Singapore to Japan. Requires standard emergency medical coverage, trip cancellation cover, lost/damaged luggage cover, coverage for significant travel delays, and specific golf-related coverage.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"emergency medical coverage\",\n    \"trip cancellation cover\",\n    \"lost/damaged luggage cover\",\n    \"travel delay cover\",\n    \"golf coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"standard medical cover for emergencies\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Cover for golf clubs, reimbursement for unused green fees due to illness or injury, damage to a golf buggy, and a hole-in-one benefit. Standard lost or damaged luggage cover and meals/accommodation cover for travel delays.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"golf\",\n    \"trip cancellation\",\n    \"travel delays\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "1",
+        "requirement_summary": "Travel insurance quote for a trip to Japan.",
+        "detailed_description": "One traveler, aged 41-55, traveling for 10 days from Singapore to Japan. Requires standard emergency medical coverage, trip cancellation cover, lost/damaged luggage cover, coverage for significant travel delays, and specific golf-related coverage.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "10 days",
+        "insurance_coverage_type": [
+            "emergency medical coverage",
+            "trip cancellation cover",
+            "lost/damaged luggage cover",
+            "travel delay cover",
+            "golf coverage"
+        ],
+        "pre_existing_conditions": [],
+        "medical_needs": [
+            "standard medical cover for emergencies"
+        ],
+        "activities_to_cover": [
+            "golf"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Cover for golf clubs, reimbursement for unused green fees due to illness or injury, damage to a golf buggy, and a hole-in-one benefit. Standard lost or damaged luggage cover and meals/accommodation cover for travel delays.",
+        "keywords": [
+            "travel insurance",
+            "Japan",
+            "golf",
+            "trip cancellation",
+            "travel delays"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd. My name is Priya. How may I assist you today?\nCustomer: Need travel insurance quote.\nCustomer Service Agent: Certainly. I can help gather the details for that. Could you let me know the travel destination?\nCustomer: Japan.\nCustomer Service Agent: Alright, Japan. And how long will the trip be?\nCustomer: 10 days.\nCustomer Service Agent: Got it, 10 days. How many people will be traveling?\nCustomer: Just myself.\nCustomer Service Agent: Okay, one traveler. And may I know which age group the traveler falls into? For quoting purposes.\nCustomer: 41-55.\nCustomer Service Agent: Noted, 41-55. Are there any specific activities planned during the trip that we should be aware of for coverage?\nCustomer: Yes, golf. Need specific cover: golf clubs, reimbursement for unused green fees if unable to play due to illness or injury, damage to a golf buggy, and a benefit for a hole-in-one.\nCustomer Service Agent: Okay, understand the requirement for comprehensive golf cover, including the equipment, unused fees, potential buggy damage liability, and the hole-in-one benefit. I have noted that as a specific requirement under sports coverage.\nCustomer: Fine.\nCustomer Service Agent: Just to ensure we have all the necessary health information, are there any pre-existing medical conditions we need to be aware of?\nCustomer: No.\nCustomer Service Agent: And will you be traveling with any special medical equipment, like a CPAP machine or wheelchair?\nCustomer: No. Standard medical cover is needed, for emergencies.\nCustomer Service Agent: Understood, noting the need for standard emergency medical coverage. Are you concerned about potential trip cancellations before you depart? For example, due to unforeseen illness?\nCustomer: Yes, need trip cancellation cover. Reimbursement for non-refundable costs if I cancel for covered reasons like illness.\nCustomer Service Agent: Okay, trip cancellation cover included. And what about cover for your baggage during the trip?\nCustomer: Standard lost or damaged luggage cover required.\nCustomer Service Agent: Noted. And how about potential travel delays, for instance, if your flight is significantly delayed?\nCustomer: Yes, include cover for major travel delays. Meals, accommodation if needed.\nCustomer Service Agent: Okay, cover for significant travel delays noted. Do you have a particular budget in mind for this insurance policy?\nCustomer: Around $200-$300.\nCustomer Service Agent: Thank you. Let me just summarise the requirements I've gathered. This is for one traveler, age group 41-55, traveling from Singapore to Japan for 10 days. You require standard emergency medical coverage, trip cancellation cover, lost/damaged luggage cover, and travel delay cover. Additionally, you need specific golf coverage including protection for golf equipment, reimbursement for unused green fees due to illness/injury, cover for accidental damage to a golf buggy, and a hole-in-one benefit. There are no pre-existing conditions or special medical equipment. The budget is around $200-$300. Is that all correct?\nCustomer: Correct.\nCustomer Service Agent: Excellent. Thank you for providing all the details. I have recorded these requirements, and we will use them to prepare the appropriate quote options for you. Someone will be in touch shortly with the information. Is there anything else I can note down for you today?\nCustomer: No, that's all. Thank you.\nCustomer Service Agent: You're welcome. Thank you for calling ISS Insurance. Goodbye.\nCustomer: Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance quote for a trip to Japan.\",\n  \"detailed_description\": \"One traveler, aged 41-55, traveling for 10 days from Singapore to Japan. Requires standard emergency medical coverage, trip cancellation cover, lost/damaged luggage cover, coverage for significant travel delays, and specific golf-related coverage.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"emergency medical coverage\",\n    \"trip cancellation cover\",\n    \"lost/damaged luggage cover\",\n    \"travel delay cover\",\n    \"golf coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"standard medical cover for emergencies\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Cover for golf clubs, reimbursement for unused green fees due to illness or injury, damage to a golf buggy, and a hole-in-one benefit. Standard lost or damaged luggage cover and meals/accommodation cover for travel delays.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"golf\",\n    \"trip cancellation\",\n    \"travel delays\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "1",
+                "requirement_summary": "Travel insurance quote for a trip to Japan.",
+                "detailed_description": "One traveler, aged 41-55, traveling for 10 days from Singapore to Japan. Requires standard emergency medical coverage, trip cancellation cover, lost/damaged luggage cover, coverage for significant travel delays, and specific golf-related coverage.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "10 days",
+                "insurance_coverage_type": [
+                    "emergency medical coverage",
+                    "trip cancellation cover",
+                    "lost/damaged luggage cover",
+                    "travel delay cover",
+                    "golf coverage"
+                ],
+                "pre_existing_conditions": [],
+                "medical_needs": [
+                    "standard medical cover for emergencies"
+                ],
+                "activities_to_cover": [
+                    "golf"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Cover for golf clubs, reimbursement for unused green fees due to illness or injury, damage to a golf buggy, and a hole-in-one benefit. Standard lost or damaged luggage cover and meals/accommodation cover for travel delays.",
+                "keywords": [
+                    "travel insurance",
+                    "Japan",
+                    "golf",
+                    "trip cancellation",
+                    "travel delays"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 40103,
+        "prompt_tokens": 33885,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 6218,
+        "successful_requests": 21
+    }
+}

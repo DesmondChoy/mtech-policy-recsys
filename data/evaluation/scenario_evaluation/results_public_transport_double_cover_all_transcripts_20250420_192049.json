@@ -1,0 +1,622 @@
+[
+  {
+    "report_file": "0bac8006-2ed9-4bff-b6d9-b9dd49c80ab5\\recommendation_report_0bac8006-2ed9-4bff-b6d9-b9dd49c80ab5.md",
+    "uuid": "0bac8006-2ed9-4bff-b6d9-b9dd49c80ab5",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  },
+  {
+    "report_file": "168fd5d4-e211-48af-a63c-823659be9c0f\\recommendation_report_168fd5d4-e211-48af-a63c-823659be9c0f.md",
+    "uuid": "168fd5d4-e211-48af-a63c-823659be9c0f",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  },
+  {
+    "report_file": "2d423cff-ede7-4ee0-891f-7bf0ab4e3877\\recommendation_report_2d423cff-ede7-4ee0-891f-7bf0ab4e3877.md",
+    "uuid": "2d423cff-ede7-4ee0-891f-7bf0ab4e3877",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  },
+  {
+    "report_file": "2ed4c6bc-a812-4c4e-9a5f-3adb63ee87da\\recommendation_report_2ed4c6bc-a812-4c4e-9a5f-3adb63ee87da.md",
+    "uuid": "2ed4c6bc-a812-4c4e-9a5f-3adb63ee87da",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  },
+  {
+    "report_file": "3557d3d0-4bda-4506-9fff-a4ad226ce5e4\\recommendation_report_3557d3d0-4bda-4506-9fff-a4ad226ce5e4.md",
+    "uuid": "3557d3d0-4bda-4506-9fff-a4ad226ce5e4",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  },
+  {
+    "report_file": "401e4271-0308-47fb-a870-68200b052a9d\\recommendation_report_401e4271-0308-47fb-a870-68200b052a9d.md",
+    "uuid": "401e4271-0308-47fb-a870-68200b052a9d",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "income - deluxe",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+  },
+  {
+    "report_file": "4fffc35e-310e-4483-8fba-d869c01b339c\\recommendation_report_4fffc35e-310e-4483-8fba-d869c01b339c.md",
+    "uuid": "4fffc35e-310e-4483-8fba-d869c01b339c",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "income - preferred",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+  },
+  {
+    "report_file": "54acb620-926b-4c0a-956f-be9f6e2d9e52\\recommendation_report_54acb620-926b-4c0a-956f-be9f6e2d9e52.md",
+    "uuid": "54acb620-926b-4c0a-956f-be9f6e2d9e52",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "income - preferred",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+  },
+  {
+    "report_file": "54b5cc22-f1ba-4752-870a-0514f7e1d726\\recommendation_report_54b5cc22-f1ba-4752-870a-0514f7e1d726.md",
+    "uuid": "54b5cc22-f1ba-4752-870a-0514f7e1d726",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  },
+  {
+    "report_file": "7d4e1792-4138-41b7-9239-a38fc49322a2\\recommendation_report_7d4e1792-4138-41b7-9239-a38fc49322a2.md",
+    "uuid": "7d4e1792-4138-41b7-9239-a38fc49322a2",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  },
+  {
+    "report_file": "7dd8d3bd-a39b-498e-b162-4c7478db4249\\recommendation_report_7dd8d3bd-a39b-498e-b162-4c7478db4249.md",
+    "uuid": "7dd8d3bd-a39b-498e-b162-4c7478db4249",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  },
+  {
+    "report_file": "8d447b59-6d4d-4a32-9335-fbfb8934ac63\\recommendation_report_8d447b59-6d4d-4a32-9335-fbfb8934ac63.md",
+    "uuid": "8d447b59-6d4d-4a32-9335-fbfb8934ac63",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "fwd - first",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "FAIL",
+    "match_justification": null
+  },
+  {
+    "report_file": "a0e2fbbf-54b6-4840-953e-3bef1f0b6bac\\recommendation_report_a0e2fbbf-54b6-4840-953e-3bef1f0b6bac.md",
+    "uuid": "a0e2fbbf-54b6-4840-953e-3bef1f0b6bac",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  },
+  {
+    "report_file": "b3736600-39af-4612-a1dd-441ad36c1835\\recommendation_report_b3736600-39af-4612-a1dd-441ad36c1835.md",
+    "uuid": "b3736600-39af-4612-a1dd-441ad36c1835",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  },
+  {
+    "report_file": "b4c8602a-dc38-4c23-9823-8f064cef4fcb\\recommendation_report_b4c8602a-dc38-4c23-9823-8f064cef4fcb.md",
+    "uuid": "b4c8602a-dc38-4c23-9823-8f064cef4fcb",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "fwd - first",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "FAIL",
+    "match_justification": null
+  },
+  {
+    "report_file": "b917aae0-5352-4b52-9923-ded0dc9559c4\\recommendation_report_b917aae0-5352-4b52-9923-ded0dc9559c4.md",
+    "uuid": "b917aae0-5352-4b52-9923-ded0dc9559c4",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  },
+  {
+    "report_file": "e4d37e24-ddac-45fe-8a9f-10c6989af395\\recommendation_report_e4d37e24-ddac-45fe-8a9f-10c6989af395.md",
+    "uuid": "e4d37e24-ddac-45fe-8a9f-10c6989af395",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  },
+  {
+    "report_file": "e8e452a3-dfab-4131-9a60-10621aab086c\\recommendation_report_e8e452a3-dfab-4131-9a60-10621aab086c.md",
+    "uuid": "e8e452a3-dfab-4131-9a60-10621aab086c",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  },
+  {
+    "report_file": "f3283b80-4732-4d3e-bc71-1495074cab10\\recommendation_report_f3283b80-4732-4d3e-bc71-1495074cab10.md",
+    "uuid": "f3283b80-4732-4d3e-bc71-1495074cab10",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "fwd - first",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "FAIL",
+    "match_justification": null
+  },
+  {
+    "report_file": "fa6487ea-164e-4d20-9e43-98b35f0fee52\\recommendation_report_fa6487ea-164e-4d20-9e43-98b35f0fee52.md",
+    "uuid": "fa6487ea-164e-4d20-9e43-98b35f0fee52",
+    "scenario": "public_transport_double_cover",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "full_cover_available",
+    "expected_policies": [
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Deluxe",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      },
+      {
+        "insurer": "income",
+        "tier": "Preferred",
+        "justification": "JSON explicitly lists 'Public transport double cover for accidental death' benefit."
+      }
+    ],
+    "evaluation_result": "PASS",
+    "match_justification": "JSON explicitly lists 'Public transport double indemnity' benefit."
+  }
+]

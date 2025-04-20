@@ -1,0 +1,91 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance coverage for trip to Japan including medical, cancellation, hiking, and luggage.\",\n  \"detailed_description\": \"Mr. David Tan requires comprehensive travel insurance for a two-week trip to Japan from Singapore for himself and his wife. He seeks coverage that encompasses essential medical expenses, trip cancellation for unforeseen events, active hiking during the trip, lost/damaged luggage coverage, and specific requests such as double payout for accidental death while using public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Accidental Death Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"comprehensive Medical Coverage including hospital stays and emergencies\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Need assurance that hiking and high blood pressure won't be used against them in emergencies; must include coverage for essentials if luggage is delayed; budget of $200-$300.\",\n  \"keywords\": [\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost baggage\",\n    \"hiking coverage\",\n    \"double payout accidental death\",\n    \"medical coverage\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ123456",
+        "requirement_summary": "Travel insurance coverage for trip to Japan including medical, cancellation, hiking, and luggage.",
+        "detailed_description": "Mr. David Tan requires comprehensive travel insurance for a two-week trip to Japan from Singapore for himself and his wife. He seeks coverage that encompasses essential medical expenses, trip cancellation for unforeseen events, active hiking during the trip, lost/damaged luggage coverage, and specific requests such as double payout for accidental death while using public transport.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "Medical Coverage",
+            "Trip Cancellation",
+            "Travel Delays",
+            "Lost/Damaged Luggage",
+            "Accidental Death Coverage"
+        ],
+        "pre_existing_conditions": [
+            "high blood pressure"
+        ],
+        "medical_needs": [
+            "comprehensive Medical Coverage including hospital stays and emergencies"
+        ],
+        "activities_to_cover": [
+            "Hiking"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Need assurance that hiking and high blood pressure won't be used against them in emergencies; must include coverage for essentials if luggage is delayed; budget of $200-$300.",
+        "keywords": [
+            "trip cancellation",
+            "travel delays",
+            "lost baggage",
+            "hiking coverage",
+            "double payout accidental death",
+            "medical coverage"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd. My name is Sarah. How may I assist you today?\nCustomer: Yes, hello. I need to get travel insurance, but frankly, I'm already annoyed. Trying to find straightforward answers from insurance companies is impossible! It feels like you deliberately make things complicated.\nCustomer Service Agent: I understand that navigating insurance details can sometimes feel frustrating, sir. I'm here to help clarify things and gather the necessary information for your needs today. Could I start with your name, please?\nCustomer: David Tan. Look, I just want proper coverage, not some policy full of loopholes like the last time I dealt with an insurance company – not yours, another one – completely useless when things actually went wrong.\nCustomer Service Agent: Okay, Mr. Tan. I hear your frustration. Let's focus on getting the details for the coverage *you* need for this upcoming trip. Could you tell me where you'll be traveling from?\nCustomer: We're based in Singapore, obviously. That's where we're starting from.\nCustomer Service Agent: Noted, departing from Singapore. And where is the destination for this trip?\nCustomer: We're planning a trip to Japan.\nCustomer Service Agent: Japan, alright. And how long will you be away for?\nCustomer: It will be a 2 weeks trip. Two weeks exactly.\nCustomer Service Agent: Okay, two weeks in Japan. And how many people will be traveling under this policy?\nCustomer: There will be 2 of us traveling. Myself and my wife.\nCustomer Service Agent: Two travelers. And could you let me know the general age group for both travelers?\nCustomer: We're mostly around 41-55 years old.\nCustomer Service Agent: Okay, 41-55 age group. Are there any specific activities you plan to do during your trip that we should be aware of? Sometimes activities like skiing or diving require specific mention.\nCustomer: We plan to do Hiking during our trip. Not mountains or anything extreme, but proper hiking trails. I expect that to be covered properly, not excused if something happens! And don't try to tell me hiking isn't covered under standard medical stuff if there's an accident. I want specific confirmation for **Sports and Adventure Activities** coverage for hiking.\nCustomer Service Agent: Understood, Mr. Tan. So you require coverage that specifically includes hiking as a listed activity under the Sports and Adventure section. Noted. Regarding health, are there any pre-existing medical conditions we should be aware of, like asthma or diabetes?\nCustomer: Yes, my wife has **high blood pressure**. Do we need to declare high blood pressure? I swear if this becomes an excuse not to cover something later... We absolutely need proper **Medical Coverage**. Hospital stays, doctors, the works. No nonsense about pre-existing conditions excluding emergencies!\nCustomer Service Agent: Thank you for letting me know. I've noted the requirement for comprehensive Medical Coverage, and the point about needing clarity on how pre-existing conditions like high blood pressure are handled, particularly for emergency situations. Will either of you be traveling with any medical equipment, like a CPAP machine or wheelchair?\nCustomer: No, no special medical equipment needed.\nCustomer Service Agent: Okay. Now, thinking about the journey itself and your stay, are you concerned about potential travel hold-ups?\nCustomer: Absolutely! Flights get delayed constantly. If we get stuck somewhere, I expect the insurance to cover hotels and meals. It's only fair. We need **Travel Delays** coverage, and not with some ridiculous 12-hour minimum wait either. What good is that?\nCustomer Service Agent: Alright, I've noted your requirement for Travel Delays coverage, including accommodation and meals due to significant delays. What about your belongings?\nCustomer: My luggage? After what happened to my friend last year – airline completely lost his bag, took weeks to get a pathetic payout – yes, I want **Lost/Damaged Luggage** coverage. Reimbursement for lost items, essentials if it’s delayed, and cover if the suitcase itself gets smashed up. Don't tell me electronics aren't covered either, that's ridiculous in this day and age.\nCustomer Service Agent: Noted the requirement for Lost, Damaged, and Delayed Luggage coverage, including cover for essential purchases during delay and damage to the luggage itself. I've also noted your concern about electronics potentially being excluded, which is common, but I'll ensure this requirement is clear. Now, what if something unexpected forces you to cancel the entire trip beforehand?\nCustomer: That's another thing! If one of us gets seriously ill, or there's a family emergency, we can't just lose all the money we've paid for flights and hotels. It’s not fair! We need **Trip Cancellation** coverage for things like illness or family emergencies.\nCustomer Service Agent: Understood. Trip Cancellation coverage for unforeseen events like illness or family emergencies is noted. Are there any other specific coverage points you need to ensure are included?\nCustomer: Yes, one very specific thing I read about somewhere. I want to know if the policy provides extra coverage if an accident happens while I'm on a bus or train over there. Like, **double payout for accidental death if it occurs while traveling on public transport**. Is that something you offer? Because I want that included.\nCustomer Service Agent: Okay, Mr. Tan. You're specifically asking for a feature that provides an enhanced or double payout for accidental death if it occurs while traveling as a fare-paying passenger on public transport like buses or trains. I have noted this specific requirement down. Are you working within a particular budget for this insurance policy?\nCustomer: We're hoping to spend $200-$300. But the coverage has to be right. I won't pay for rubbish.\nCustomer Service Agent: Okay, noted the budget preference of $200-$300. So, let me quickly summarize the requirements I've noted for your travel insurance inquiry for two adults, aged 41-55, traveling from Singapore to Japan for two weeks:\nCustomer: Yes, that seems right. Especially the double payout thing and making sure that hiking and the blood pressure situation don't become excuses later. The coverage needs to be solid.\nCustomer Service Agent: Thank you, Mr. Tan. I have recorded all these requirements. This information will help us identify the most suitable options based on your specified needs. We will review this and get back to you with the relevant policy information and quotes that match these requirements.\nCustomer: Okay, fine. Just make sure it actually covers what I've asked for. Don't waste my time.\nCustomer Service Agent: We will ensure the options provided address the requirements you've detailed today, Mr. Tan. Thank you for calling ISS Insurance Ltd. Goodbye.\nCustomer: Alright. Bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance coverage for trip to Japan including medical, cancellation, hiking, and luggage.\",\n  \"detailed_description\": \"Mr. David Tan requires comprehensive travel insurance for a two-week trip to Japan from Singapore for himself and his wife. He seeks coverage that encompasses essential medical expenses, trip cancellation for unforeseen events, active hiking during the trip, lost/damaged luggage coverage, and specific requests such as double payout for accidental death while using public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Accidental Death Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"comprehensive Medical Coverage including hospital stays and emergencies\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Need assurance that hiking and high blood pressure won't be used against them in emergencies; must include coverage for essentials if luggage is delayed; budget of $200-$300.\",\n  \"keywords\": [\n    \"trip cancellation\",\n    \"travel delays\",\n    \"lost baggage\",\n    \"hiking coverage\",\n    \"double payout accidental death\",\n    \"medical coverage\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ123456",
+                "requirement_summary": "Travel insurance coverage for trip to Japan including medical, cancellation, hiking, and luggage.",
+                "detailed_description": "Mr. David Tan requires comprehensive travel insurance for a two-week trip to Japan from Singapore for himself and his wife. He seeks coverage that encompasses essential medical expenses, trip cancellation for unforeseen events, active hiking during the trip, lost/damaged luggage coverage, and specific requests such as double payout for accidental death while using public transport.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "Medical Coverage",
+                    "Trip Cancellation",
+                    "Travel Delays",
+                    "Lost/Damaged Luggage",
+                    "Accidental Death Coverage"
+                ],
+                "pre_existing_conditions": [
+                    "high blood pressure"
+                ],
+                "medical_needs": [
+                    "comprehensive Medical Coverage including hospital stays and emergencies"
+                ],
+                "activities_to_cover": [
+                    "Hiking"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Need assurance that hiking and high blood pressure won't be used against them in emergencies; must include coverage for essentials if luggage is delayed; budget of $200-$300.",
+                "keywords": [
+                    "trip cancellation",
+                    "travel delays",
+                    "lost baggage",
+                    "hiking coverage",
+                    "double payout accidental death",
+                    "medical coverage"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 81947,
+        "prompt_tokens": 69101,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 12846,
+        "successful_requests": 44
+    }
+}

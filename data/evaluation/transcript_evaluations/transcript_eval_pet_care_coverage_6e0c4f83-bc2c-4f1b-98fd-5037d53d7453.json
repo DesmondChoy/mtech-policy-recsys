@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned needing Trip Cancellation coverage and provided specific details regarding covered reasons (illness/injury, natural disasters, provider bankruptcy) and exclusions (change of mind, work reasons).",
+      "customer_quote": "[20] Following on from that, Trip Cancellation coverage is also necessary. Besides the standard illness or injury triggers, I need to know if it covers cancellation due to unforeseen events like natural disasters affecting the destination, or if the travel provider declares bankruptcy before departure. And just to confirm, this wouldn't cover changing our minds or work-related cancellations, correct?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly acknowledged the requirement and confirmed the specific triggers and exclusions mentioned by the customer.",
+      "agent_quote": "[21] Right, requirement noted for Trip Cancellation coverage, including triggers like illness/injury, natural disasters, travel provider bankruptcy, and clarification on exclusions such as change of mind or work reasons."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer stated that robust medical coverage was essential and specified interest in limits for emergency treatment, hospitalisation, doctor visits, and prescription medication handling, while also confirming no pre-existing conditions.",
+      "customer_quote": "[14] Primarily, robust medical coverage is essential. I need clarity on the limits for emergency medical treatment, hospitalisation expenses, and doctor visits while in Thailand. I also want to understand how prescription medications needed due to an emergency covered under the policy are handled. We have no pre-existing conditions to declare, but I want to be sure about the scope.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent accurately captured the customer's need for comprehensive medical coverage and noted the specific areas of interest mentioned.",
+      "agent_quote": "[15] Noted. Comprehensive Medical Coverage, focusing on emergency treatment, hospital stays, doctor visits, and prescription medication reimbursement, with the understanding of no pre-existing conditions."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer requested details on luggage protection, specifically asking about reimbursement processes/limits for lost/damaged items, the definition and conditions for 'essential purchases' during delays (mentioning a specific timeframe), and confirming typical exclusions (electronics, cash).",
+      "customer_quote": "[16] Luggage protection. I need details on the process and limits for reimbursement if luggage is lost or damaged by the carrier. Also, what constitutes 'essential purchases' if our baggage is delayed, say for more than 6 hours, and what are the typical exclusions? I assume electronics and cash aren't usually covered under this section?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement and confirmed the specific details the customer asked about, including reimbursement, essential purchases, delay triggers, and exclusions.",
+      "agent_quote": "[17] Understood. Coverage required for Lost/Damaged Luggage, including reimbursement for lost items, clarification on essential purchases during delay, handling of damaged luggage, and understanding typical exclusions like electronics and cash, as well as the minimum delay period trigger."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer expressed interest in the Travel Delays benefit and asked for specific details regarding the minimum delay duration for claims (accommodation/meals) and coverage for missed connections.",
+      "customer_quote": "[18] Yes, disruptions. I'm interested in the Travel Delays benefit. Specifically, what's the minimum number of hours a delay must be before we can claim for additional accommodation or meal expenses? Does it cover costs incurred due to missed connections resulting from an initial delay?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement and noted the customer's specific questions about the delay threshold and missed connection coverage.",
+      "agent_quote": "[19] Okay, noted Travel Delays cover as a requirement, with specific interest in the minimum delay threshold for claiming accommodation and meals, and coverage for missed connections."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer explicitly stated they plan to do Scuba Diving and asked for confirmation of coverage for related medical emergencies/evacuation, specifying conditions like certified limits, licensed operators, and potential exclusions (depth/certification).",
+      "customer_quote": "[12] Yes, we plan to do Scuba Diving during our trip. I'd need confirmation that the policy covers medical emergencies or evacuation related to recreational scuba diving, assuming we're diving within certified limits and with a licensed operator. Does your standard Sports and Adventure Activities rider cover this, or are there specific exclusions I should note regarding depth or certification?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the specific activity (Scuba Diving) and the customer's detailed questions regarding coverage conditions and exclusions, noting it for further review.",
+      "agent_quote": "[13] Okay, I've noted the requirement for Scuba Diving coverage under the Sports and Adventure Activities benefit. I'll ensure the team looks into the specific terms related to certifications and licensed operators for you."
+    },
+    {
+      "coverage_type": "pet_accommodation_costs",
+      "name": "Pet Accommodation Costs (Scenario-Specific)",
+      "result": "PASS",
+      "justification": "The customer introduced this specific requirement, asking if additional pet accommodation costs in Singapore would be covered under the travel delay benefit if their return was significantly delayed due to a covered reason, providing a specific timeframe (>12 hours).",
+      "customer_quote": "[22] Yes, one rather specific point related to travel delay on the return journey. We have a cat that would need to stay in a pet hotel in Singapore. If our return flight to Singapore is significantly delayed \u2013 let's say by over 12 hours due to a covered reason \u2013 would the policy provide any coverage under the travel delay benefit for the additional, unforeseen pet accommodation costs incurred at the kennel here?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent recognized this as a specific scenario, clearly noted the requirement, the conditions (return delay > 12 hours, covered reason), and the potential link to the Travel Delay benefit, confirming it would be checked.",
+      "agent_quote": "[23] That's a very specific scenario. Let me note that down clearly: Requirement to check if additional pet accommodation (kennel/hotel) fees incurred in Singapore due to a covered return travel delay are claimable, potentially under the Travel Delay benefit provisions."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered information on all standard and scenario-specific coverage requirements. The customer was proactive in providing specific details for each coverage type, minimizing the need for extensive probing from the agent. The agent demonstrated good listening skills by accurately acknowledging and summarizing the customer's specific needs and questions for each requirement."
+  },
+  "transcript_name": "transcript_pet_care_coverage_6e0c4f83-bc2c-4f1b-98fd-5037d53d7453",
+  "scenario": "pet_care_coverage"
+}

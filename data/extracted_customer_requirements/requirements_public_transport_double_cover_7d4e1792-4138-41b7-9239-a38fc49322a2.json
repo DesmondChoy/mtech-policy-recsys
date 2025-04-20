@@ -1,10 +1,10 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Comprehensive travel insurance for a trip to Europe including medical coverage, trip cancellation, and additional benefits.\",\n  \"detailed_description\": \"Customer requires travel insurance for a 3-week trip to Europe for 2 travelers, with comprehensive medical coverage including pre-existing high blood pressure, coverage for trip cancellation, lost or damaged luggage, travel delay benefits including accommodation and meals, coverage for hiking activities, and a specific benefit for double payout for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Travel Delay Benefits\",\n    \"Accidental Death Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Doctor visits\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Double payout for accidental death occurring while using public transport.\",\n  \"keywords\": [\n    \"Comprehensive\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Hiking\",\n    \"Accidental Death\",\n    \"Public Transport\",\n    \"Pre-existing Condition\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Comprehensive travel insurance for a 3-week trip to Europe for two travelers.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance covering various needs including medical coverage, trip cancellation, lost/delayed luggage, travel delay benefits, and specific accidental death benefits.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Travel Delay Benefits\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Coverage for doctor visits\",\n    \"Coverage for hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Double payout for accidental death occurring while using public transport.\",\n  \"keywords\": [\n    \"comprehensive cover\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"luggage cover\",\n    \"travel delay\",\n    \"hiking\",\n    \"accidental death\",\n    \"public transport\"\n  ]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ123456",
-        "requirement_summary": "Comprehensive travel insurance for a trip to Europe including medical coverage, trip cancellation, and additional benefits.",
-        "detailed_description": "Customer requires travel insurance for a 3-week trip to Europe for 2 travelers, with comprehensive medical coverage including pre-existing high blood pressure, coverage for trip cancellation, lost or damaged luggage, travel delay benefits including accommodation and meals, coverage for hiking activities, and a specific benefit for double payout for accidental death on public transport.",
+        "requirement_id": "001",
+        "requirement_summary": "Comprehensive travel insurance for a 3-week trip to Europe for two travelers.",
+        "detailed_description": "Customer requires comprehensive travel insurance covering various needs including medical coverage, trip cancellation, lost/delayed luggage, travel delay benefits, and specific accidental death benefits.",
         "travel_origin": "Singapore",
         "travel_destination": "Europe",
         "travel_duration": "3 weeks",
@@ -12,15 +12,14 @@
             "Comprehensive Medical Coverage",
             "Trip Cancellation",
             "Lost, Damaged, or Delayed Luggage",
-            "Travel Delay Benefits",
-            "Accidental Death Coverage"
+            "Travel Delay Benefits"
         ],
         "pre_existing_conditions": [
             "High blood pressure"
         ],
         "medical_needs": [
-            "Doctor visits",
-            "Hospital stays"
+            "Coverage for doctor visits",
+            "Coverage for hospital stays"
         ],
         "activities_to_cover": [
             "Hiking"
@@ -28,14 +27,14 @@
         "age_group": "41-55",
         "additional_requests": "Double payout for accidental death occurring while using public transport.",
         "keywords": [
-            "Comprehensive",
-            "Medical Coverage",
-            "Trip Cancellation",
-            "Travel Delay",
-            "Hiking",
-            "Accidental Death",
-            "Public Transport",
-            "Pre-existing Condition"
+            "comprehensive cover",
+            "medical coverage",
+            "trip cancellation",
+            "luggage cover",
+            "travel delay",
+            "hiking",
+            "accidental death",
+            "public transport"
         ]
     },
     "tasks_output": [
@@ -44,12 +43,12 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Comprehensive travel insurance for a trip to Europe including medical coverage, trip cancellation, and additional benefits.\",\n  \"detailed_description\": \"Customer requires travel insurance for a 3-week trip to Europe for 2 travelers, with comprehensive medical coverage including pre-existing high blood pressure, coverage for trip cancellation, lost or damaged luggage, travel delay benefits including accommodation and meals, coverage for hiking activities, and a specific benefit for double payout for accidental death on public transport.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Travel Delay Benefits\",\n    \"Accidental Death Coverage\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Doctor visits\",\n    \"Hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Double payout for accidental death occurring while using public transport.\",\n  \"keywords\": [\n    \"Comprehensive\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Hiking\",\n    \"Accidental Death\",\n    \"Public Transport\",\n    \"Pre-existing Condition\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Comprehensive travel insurance for a 3-week trip to Europe for two travelers.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance covering various needs including medical coverage, trip cancellation, lost/delayed luggage, travel delay benefits, and specific accidental death benefits.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Travel Delay Benefits\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"Coverage for doctor visits\",\n    \"Coverage for hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Double payout for accidental death occurring while using public transport.\",\n  \"keywords\": [\n    \"comprehensive cover\",\n    \"medical coverage\",\n    \"trip cancellation\",\n    \"luggage cover\",\n    \"travel delay\",\n    \"hiking\",\n    \"accidental death\",\n    \"public transport\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ123456",
-                "requirement_summary": "Comprehensive travel insurance for a trip to Europe including medical coverage, trip cancellation, and additional benefits.",
-                "detailed_description": "Customer requires travel insurance for a 3-week trip to Europe for 2 travelers, with comprehensive medical coverage including pre-existing high blood pressure, coverage for trip cancellation, lost or damaged luggage, travel delay benefits including accommodation and meals, coverage for hiking activities, and a specific benefit for double payout for accidental death on public transport.",
+                "requirement_id": "001",
+                "requirement_summary": "Comprehensive travel insurance for a 3-week trip to Europe for two travelers.",
+                "detailed_description": "Customer requires comprehensive travel insurance covering various needs including medical coverage, trip cancellation, lost/delayed luggage, travel delay benefits, and specific accidental death benefits.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Europe",
                 "travel_duration": "3 weeks",
@@ -57,15 +56,14 @@
                     "Comprehensive Medical Coverage",
                     "Trip Cancellation",
                     "Lost, Damaged, or Delayed Luggage",
-                    "Travel Delay Benefits",
-                    "Accidental Death Coverage"
+                    "Travel Delay Benefits"
                 ],
                 "pre_existing_conditions": [
                     "High blood pressure"
                 ],
                 "medical_needs": [
-                    "Doctor visits",
-                    "Hospital stays"
+                    "Coverage for doctor visits",
+                    "Coverage for hospital stays"
                 ],
                 "activities_to_cover": [
                     "Hiking"
@@ -73,14 +71,14 @@
                 "age_group": "41-55",
                 "additional_requests": "Double payout for accidental death occurring while using public transport.",
                 "keywords": [
-                    "Comprehensive",
-                    "Medical Coverage",
-                    "Trip Cancellation",
-                    "Travel Delay",
-                    "Hiking",
-                    "Accidental Death",
-                    "Public Transport",
-                    "Pre-existing Condition"
+                    "comprehensive cover",
+                    "medical coverage",
+                    "trip cancellation",
+                    "luggage cover",
+                    "travel delay",
+                    "hiking",
+                    "accidental death",
+                    "public transport"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -88,10 +86,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 25866,
-        "prompt_tokens": 21529,
+        "total_tokens": 96987,
+        "prompt_tokens": 81843,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 4337,
-        "successful_requests": 15
+        "completion_tokens": 15144,
+        "successful_requests": 52
     }
 }

@@ -1,0 +1,93 @@
+{
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance for trip to Japan.\",\n  \"detailed_description\": \"Travel insurance required for a 2-week trip to Japan from Singapore for two travelers aged 26-40. Coverage needed for medical emergencies, lost or damaged luggage, significant travel delays, and trip cancellation including specific reasons related to attending a family wedding. Hiking activities to be covered; no pre-existing conditions or special medical equipment to consider. Budget preference around $200-$300 per person.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"trip cancellation\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": [\n    \"doctor visits\",\n    \"hospital\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Check if trip cancellation is covered due to attending a family wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"Singapore\",\n    \"medical emergencies\",\n    \"hiking\",\n    \"trip cancellation\",\n    \"luggage\",\n    \"travel delays\",\n    \"Budget $200-$300\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "1",
+        "requirement_summary": "Travel insurance for trip to Japan.",
+        "detailed_description": "Travel insurance required for a 2-week trip to Japan from Singapore for two travelers aged 26-40. Coverage needed for medical emergencies, lost or damaged luggage, significant travel delays, and trip cancellation including specific reasons related to attending a family wedding. Hiking activities to be covered; no pre-existing conditions or special medical equipment to consider. Budget preference around $200-$300 per person.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "medical emergencies",
+            "lost or damaged luggage",
+            "travel delays",
+            "trip cancellation"
+        ],
+        "pre_existing_conditions": null,
+        "medical_needs": [
+            "doctor visits",
+            "hospital"
+        ],
+        "activities_to_cover": [
+            "hiking"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Check if trip cancellation is covered due to attending a family wedding.",
+        "keywords": [
+            "travel insurance",
+            "Japan",
+            "Singapore",
+            "medical emergencies",
+            "hiking",
+            "trip cancellation",
+            "luggage",
+            "travel delays",
+            "Budget $200-$300"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd Singapore. My name is Priya. How may I help you today?\nCustomer: Need travel insurance quote.\nCustomer Service Agent: Certainly. I can help gather the details needed for that. Could you tell me where you'll be travelling to?\nCustomer: Japan.\nCustomer Service Agent: And how long will your trip be?\nCustomer: 2 weeks.\nCustomer Service Agent: Okay, travelling from Singapore for 2 weeks to Japan. And how many people will be travelling?\nCustomer: Two.\nCustomer Service Agent: Got it, two travellers. Could you let me know the age group for the travellers?\nCustomer: 26-40.\nCustomer Service Agent: Alright. And are there any specific activities planned during the trip that might involve some risk, like sports or adventure activities?\nCustomer: Hiking.\nCustomer Service Agent: Noted, hiking. Are there any particular concerns or potential situations you want to ensure the insurance covers?\nCustomer: Medical emergencies. Doctor visits, hospital.\nCustomer Service Agent: Okay, coverage for medical treatment needed during the trip. Anything else?\nCustomer: Luggage. If lost or damaged.\nCustomer Service Agent: Understood, coverage related to baggage issues. What about potential disruptions?\nCustomer: Yes, if flights are delayed significantly. Need cover for costs.\nCustomer Service Agent: Right, cover for expenses due to major travel delays.\nCustomer: Also need trip cancellation cover.\nCustomer Service Agent: Okay, trip cancellation cover. Are there any specific cancellation reasons you're concerned about?\nCustomer: Yes. What if I have to cancel for my sister's wedding? Is that covered?\nCustomer Service Agent: Thank you for specifying. So, a requirement for trip cancellation cover, with a specific query about cancellation due to attending a family event like a wedding. I must note that cancellation for personal events like weddings is often not a standard covered reason, but I will record it as your requirement to check policy details.\nCustomer: Okay.\nCustomer Service Agent: Just to confirm regarding medical aspects, are there any pre-existing medical conditions for either traveller?\nCustomer: No.\nCustomer Service Agent: And will you be travelling with any special medical equipment?\nCustomer: No.\nCustomer Service Agent: Lastly, do you have a budget range in mind for the insurance premium per person?\nCustomer: Around $200-$300.\nCustomer Service Agent: Okay, thank you. So, just to quickly summarize, I have noted down the requirements for two travellers, aged 26-40, travelling from Singapore to Japan for 2 weeks. You require coverage for medical emergencies, lost or damaged luggage, significant travel delays, and trip cancellation, including a specific check on cancellation due to attending a family wedding. You also need cover for hiking activities, have no pre-existing conditions or special medical equipment, and have a budget preference of around $200-$300. Is that all correct?\nCustomer: Yes.\nCustomer Service Agent: Great. Thank you for providing all the details. We will use this information to find suitable options for you. Someone from our quotations team will be in touch shortly. Is there anything else I can assist with for now?\nCustomer: No. Thank you.\nCustomer Service Agent: You're welcome. Thank you for calling ISS Insurance. Have a good day.\nCustomer: Okay. Bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance for trip to Japan.\",\n  \"detailed_description\": \"Travel insurance required for a 2-week trip to Japan from Singapore for two travelers aged 26-40. Coverage needed for medical emergencies, lost or damaged luggage, significant travel delays, and trip cancellation including specific reasons related to attending a family wedding. Hiking activities to be covered; no pre-existing conditions or special medical equipment to consider. Budget preference around $200-$300 per person.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"trip cancellation\"\n  ],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": [\n    \"doctor visits\",\n    \"hospital\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Check if trip cancellation is covered due to attending a family wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"Singapore\",\n    \"medical emergencies\",\n    \"hiking\",\n    \"trip cancellation\",\n    \"luggage\",\n    \"travel delays\",\n    \"Budget $200-$300\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "1",
+                "requirement_summary": "Travel insurance for trip to Japan.",
+                "detailed_description": "Travel insurance required for a 2-week trip to Japan from Singapore for two travelers aged 26-40. Coverage needed for medical emergencies, lost or damaged luggage, significant travel delays, and trip cancellation including specific reasons related to attending a family wedding. Hiking activities to be covered; no pre-existing conditions or special medical equipment to consider. Budget preference around $200-$300 per person.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "medical emergencies",
+                    "lost or damaged luggage",
+                    "travel delays",
+                    "trip cancellation"
+                ],
+                "pre_existing_conditions": null,
+                "medical_needs": [
+                    "doctor visits",
+                    "hospital"
+                ],
+                "activities_to_cover": [
+                    "hiking"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Check if trip cancellation is covered due to attending a family wedding.",
+                "keywords": [
+                    "travel insurance",
+                    "Japan",
+                    "Singapore",
+                    "medical emergencies",
+                    "hiking",
+                    "trip cancellation",
+                    "luggage",
+                    "travel delays",
+                    "Budget $200-$300"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 127163,
+        "prompt_tokens": 107368,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 19795,
+        "successful_requests": 68
+    }
+}

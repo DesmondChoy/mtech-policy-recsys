@@ -1,0 +1,108 @@
+{
+  "customer_id": "e405849f-cad5-40f8-a1e6-c7c5b131b5f3",
+  "personality": {
+    "name": "The Overwhelmed & Stressed",
+    "characteristics": [
+      "Sounds flustered, panicked, or highly emotional (beyond simple anger)",
+      "Overwhelmed by the situation (e.g., accident aftermath, complex claim)",
+      "May have difficulty articulating needs clearly",
+      "Expresses feeling stressed by the process itself",
+      "Needs patience, calming, and clear guidance"
+    ]
+  },
+  "transcript": [
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Thank you for calling ISS Insurance Ltd Singapore. My name is Sarah, how can I help you today?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Oh, hello! Yes, help! I need... I need to sort out travel insurance. It's all just... so much. I'm planning this trip and my head is spinning, honestly. I keep thinking about what could go wrong."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, take a breath. I can certainly help you gather the information needed for a travel insurance quote. Don't worry, we'll go through it step by step. Can you tell me where you'll be traveling from?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Yes, from Singapore. We're based in Singapore. Flying out from Changi."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Alright, noted. And where is your destination?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "We're planning a trip to Thailand. Phuket, specifically."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, Thailand. And how long will you be away for?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "It’s meant to be... I think 10 days. Yes, 10 days. Just trying to get away, but now the planning... it's stressful."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "I understand planning can feel overwhelming. And how many people will be travelling on this policy?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "It's just two of us. Me and my partner. We're mostly around the 26-40 years old age group."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, two travellers, 26-40 age group, for 10 days to Thailand. What kind of activities are you planning during your trip? Anything specific?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Activities... um, yes! We definitely want to try Scuba Diving. We've booked a session. That's one of the things I'm worried about, actually, what if something happens during that? And... oh, medical things in general. What if we get sick? My partner has asthma, you see. Do we need to declare asthma? Does it change anything? I just panic thinking about needing a doctor over there."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, so you require coverage that includes activities like Scuba Diving. And you have concerns about potential medical needs during the trip, noting one traveler has asthma. It’s good you mentioned that. We'll note down the need for comprehensive Medical Coverage details. Are there any specific medical equipment needs, like a wheelchair or oxygen tank?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "No, no special medical equipment needed, thank goodness. Just the asthma inhalers. But... what about other things? Like... what if the airline loses our bags? That would be a nightmare. All our stuff gone, or damaged. That’s happened to a friend before. The stress!"
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Alright, so coverage for Lost or Damaged Luggage is important for you. I've noted that down. Thinking about the overall cost, do you have a particular budget range in mind for the insurance policy?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Budget... I don't know exactly... maybe around $400? Somewhere there? We just want proper cover. Because, what if... what if something happens *before* we go? Like, if one of us gets really sick, or there’s a family emergency, and we have to cancel the whole trip? All that money down the drain... it’s just awful to think about."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, so you'd like coverage for Trip Cancellation due to unforeseen events like illness or emergencies. Noted. And what about delays during the trip itself? For instance, if your flight gets significantly delayed?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Oh god, yes, delays! That’s another worry. Flights are so unpredictable lately. If we get stuck somewhere, needing extra hotel nights or food... it all adds up. And... oh, wait! My cat! I just remembered! She's going into a pet hotel while we're away. If our flight back to Singapore is delayed for days or something, she'll need to stay longer. Does insurance ever cover extra pet hotel costs? That’s honestly stressing me out just thinking about leaving her."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, I understand. So you're looking for coverage for Travel Delays, covering additional accommodation and meal expenses. And I've specifically noted your requirement regarding potential coverage for additional pet accommodation costs at the hotel or kennel if your return to Singapore is delayed."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Alright, let me quickly summarize the key requirements you've mentioned for your 10-day trip to Thailand for two travellers. You need information on policies that include: Medical Coverage, keeping in mind the declared asthma; coverage for Sports and Adventure activities, specifically Scuba Diving; protection against Lost or Damaged Luggage; Trip Cancellation coverage; Travel Delay benefits for extra expenses; and specifically, clarification on coverage for additional Pet Accommodation costs due to return travel delays. Does that sound correct?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Yes, yes, I think that's everything... it's just so much to think about. But yes, that covers the main worries I have right now. Thank you for listening, it's a bit... chaotic in my head."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Not a problem at all, I'm glad I could help outline your needs. I have recorded all these requirements. We will use this information to identify suitable policy options for you. Someone from our team will be in touch shortly with the relevant details and quotes based on what we've discussed."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Okay, thank you. I appreciate your patience. I'll wait to hear back then."
+    }
+  ],
+  "scenario": "pet_care_coverage"
+}

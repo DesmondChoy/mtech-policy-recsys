@@ -1,0 +1,130 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Good morning, thank you for calling ISS Insurance Ltd. My name is Sarah. How may I assist you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Good morning, Sarah. I'm calling to gather information for a travel insurance quote. I've reviewed your general policy wording document online, version TI-SG-2024-V3, but I have some specific coverage requirements I need noted for my upcoming trip."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Certainly, I can help you with that. I'll just need to gather the details of your requirements. Could you start with some basic trip information? Where will you be travelling to?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're planning a trip to Thailand."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, Thailand. And what are the planned travel dates, or the duration?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It will be a 10 days trip."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Got it, 10 days. And how many people will be travelling under this policy?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "There will be 2 of us traveling."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Two travellers. And could you let me know the general age group for the travellers?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're mostly around 26-40 years old."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood, 26-40. Are there any specific activities you plan to participate in during your trip to Thailand?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, we plan to do Scuba Diving during our trip. I'd need confirmation that the policy covers medical emergencies or evacuation related to recreational scuba diving, assuming we're diving within certified limits and with a licensed operator. Does your standard Sports and Adventure Activities rider cover this, or are there specific exclusions I should note regarding depth or certification?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, I've noted the requirement for Scuba Diving coverage under the Sports and Adventure Activities benefit. I'll ensure the team looks into the specific terms related to certifications and licensed operators for you. Besides diving, what are the main areas of coverage you're focused on for this policy?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Primarily, robust medical coverage is essential. I need clarity on the limits for emergency medical treatment, hospitalisation expenses, and doctor visits while in Thailand. I also want to understand how prescription medications needed due to an emergency covered under the policy are handled. We have no pre-existing conditions to declare, but I want to be sure about the scope."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Noted. Comprehensive Medical Coverage, focusing on emergency treatment, hospital stays, doctor visits, and prescription medication reimbursement, with the understanding of no pre-existing conditions. What else is important for your trip?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Luggage protection. I need details on the process and limits for reimbursement if luggage is lost or damaged by the carrier. Also, what constitutes 'essential purchases' if our baggage is delayed, say for more than 6 hours, and what are the typical exclusions? I assume electronics and cash aren't usually covered under this section?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. Coverage required for Lost/Damaged Luggage, including reimbursement for lost items, clarification on essential purchases during delay, handling of damaged luggage, and understanding typical exclusions like electronics and cash, as well as the minimum delay period trigger. Any other key areas?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, disruptions. I'm interested in the Travel Delays benefit. Specifically, what's the minimum number of hours a delay must be before we can claim for additional accommodation or meal expenses? Does it cover costs incurred due to missed connections resulting from an initial delay?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted Travel Delays cover as a requirement, with specific interest in the minimum delay threshold for claiming accommodation and meals, and coverage for missed connections."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Following on from that, Trip Cancellation coverage is also necessary. Besides the standard illness or injury triggers, I need to know if it covers cancellation due to unforeseen events like natural disasters affecting the destination, or if the travel provider declares bankruptcy before departure. And just to confirm, this wouldn't cover changing our minds or work-related cancellations, correct?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Right, requirement noted for Trip Cancellation coverage, including triggers like illness/injury, natural disasters, travel provider bankruptcy, and clarification on exclusions such as change of mind or work reasons. Is there anything else?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, one rather specific point related to travel delay on the return journey. We have a cat that would need to stay in a pet hotel in Singapore. If our return flight to Singapore is significantly delayed – let's say by over 12 hours due to a covered reason – would the policy provide any coverage under the travel delay benefit for the additional, unforeseen pet accommodation costs incurred at the kennel here?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "That's a very specific scenario. Let me note that down clearly: Requirement to check if additional pet accommodation (kennel/hotel) fees incurred in Singapore due to a covered return travel delay are claimable, potentially under the Travel Delay benefit provisions. Thank you for highlighting that. Do you have any specific budget in mind for the insurance premium?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Our budget for insurance is flexible, the priority is ensuring the coverage meets these specific needs."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, budget is flexible. And just to confirm, will any travellers require specific medical equipment like a wheelchair or CPAP machine during the trip?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No special medical equipment needed."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Perfect. Thank you. Allow me to quickly summarize the requirements I've noted for your travel insurance to Thailand for two travellers, aged 26-40, for 10 days. You require:"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, that summary is accurate and covers all my points, especially the query regarding the pet accommodation costs during a return delay."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Excellent. Thank you for providing those detailed requirements. I have recorded all these points, and they will be used to determine the appropriate policy options and generate a quotation for you. Someone from our quotations team will follow up with you shortly."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Thank you, Sarah. I appreciate your efficiency. I look forward to receiving the information."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "You're welcome. Thank you for calling ISS Insurance Ltd. Have a great day!"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "You too. Goodbye."
+    }
+]

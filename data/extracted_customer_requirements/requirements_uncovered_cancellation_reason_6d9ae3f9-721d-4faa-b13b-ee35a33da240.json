@@ -1,0 +1,89 @@
+{
+    "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Europe.\",\n  \"detailed_description\": \"The customer is planning a 2-week trip to Europe for 2 travellers aged 26-40 from Singapore. Key insurance coverage required includes medical expenses, lost or damaged luggage, coverage for significant travel delays, and trip cancellation (with a specific emphasis on cancelling due to a sister's wedding). The budget for the insurance premium is between $200-$300. There are no pre-existing medical conditions or special medical equipment needed.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"medical expenses\", \"lost or damaged luggage\", \"travel delays\", \"trip cancellation\"],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\"hiking\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cancellation coverage specifically in case of sister's wedding.\",\n  \"keywords\": [\"travel insurance\", \"Europe\", \"2 weeks\", \"2 travellers\", \"medical cover\", \"lost luggage\", \"travel delays\", \"trip cancellation\", \"hiking\", \"budget $200-$300\"]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "req-001",
+        "requirement_summary": "Travel insurance requirements for a trip to Europe.",
+        "detailed_description": "The customer is planning a 2-week trip to Europe for 2 travellers aged 26-40 from Singapore. Key insurance coverage required includes medical expenses, lost or damaged luggage, coverage for significant travel delays, and trip cancellation (with a specific emphasis on cancelling due to a sister's wedding). The budget for the insurance premium is between $200-$300. There are no pre-existing medical conditions or special medical equipment needed.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Europe",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "medical expenses",
+            "lost or damaged luggage",
+            "travel delays",
+            "trip cancellation"
+        ],
+        "pre_existing_conditions": null,
+        "medical_needs": null,
+        "activities_to_cover": [
+            "hiking"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Cancellation coverage specifically in case of sister's wedding.",
+        "keywords": [
+            "travel insurance",
+            "Europe",
+            "2 weeks",
+            "2 travellers",
+            "medical cover",
+            "lost luggage",
+            "travel delays",
+            "trip cancellation",
+            "hiking",
+            "budget $200-$300"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Priya. How can I help you today?\nCustomer: Need travel insurance quote.\nCustomer Service Agent: Alright, I can help gather the details for that. Could you please tell me where you'll be travelling to?\nCustomer: Europe.\nCustomer Service Agent: And for how long will your trip be?\nCustomer: 2 weeks.\nCustomer Service Agent: Okay. How many people will be travelling?\nCustomer: 2.\nCustomer Service Agent: And could you let me know the age group of the travellers?\nCustomer: 26-40.\nCustomer Service Agent: Got it. Will you be participating in any specific sports or activities during your trip?\nCustomer: Hiking.\nCustomer Service Agent: Hiking, noted. Do you have a budget in mind for the insurance premium?\nCustomer: Hoping to spend $200-$300.\nCustomer Service Agent: Okay, $200 to $300. To ensure we find the most suitable options, could you share what aspects of coverage are most important for this trip?\nCustomer: Medical cover overseas. Lost luggage. Significant travel delays. Also need trip cancellation. Specifically, need to know if covered if I cancel for my sister's wedding.\nCustomer Service Agent: Understood. So, key requirements are medical coverage for treatment needed during the trip, coverage for lost or damaged luggage, and cover for significant travel delays causing extra expenses. You also require trip cancellation coverage, and you specifically want to know if cancelling because of your sister's wedding would be a covered reason. I have noted that specific scenario regarding the wedding; typically, personal events like weddings are not standard covered reasons for cancellation under most policies, but I've recorded it as a key point for you to check in the policy details. Lastly, coverage related to hiking activities. Is that right?\nCustomer: Yes.\nCustomer Service Agent: Thank you. Just a couple more things. Do any travellers have pre-existing medical conditions we should be aware of?\nCustomer: No.\nCustomer Service Agent: And will you be travelling with any special medical equipment?\nCustomer: No.\nCustomer Service Agent: Okay, thank you. So just to confirm, that's a trip to Europe for 2 weeks for 2 travellers aged 26-40, originating from Singapore. You require coverage for medical expenses, lost/damaged luggage, travel delays, trip cancellation (with a specific question about cancelling for a sister's wedding), and participation in hiking. Your budget is around $200-$300, and there are no pre-existing conditions or special medical equipment. Have I captured everything correctly?\nCustomer: Yes, correct.\nCustomer Service Agent: Great. Thank you for providing all the details. I have recorded your requirements.\nCustomer: Okay. Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Europe.\",\n  \"detailed_description\": \"The customer is planning a 2-week trip to Europe for 2 travellers aged 26-40 from Singapore. Key insurance coverage required includes medical expenses, lost or damaged luggage, coverage for significant travel delays, and trip cancellation (with a specific emphasis on cancelling due to a sister's wedding). The budget for the insurance premium is between $200-$300. There are no pre-existing medical conditions or special medical equipment needed.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\"medical expenses\", \"lost or damaged luggage\", \"travel delays\", \"trip cancellation\"],\n  \"pre_existing_conditions\": null,\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\"hiking\"],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cancellation coverage specifically in case of sister's wedding.\",\n  \"keywords\": [\"travel insurance\", \"Europe\", \"2 weeks\", \"2 travellers\", \"medical cover\", \"lost luggage\", \"travel delays\", \"trip cancellation\", \"hiking\", \"budget $200-$300\"]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "req-001",
+                "requirement_summary": "Travel insurance requirements for a trip to Europe.",
+                "detailed_description": "The customer is planning a 2-week trip to Europe for 2 travellers aged 26-40 from Singapore. Key insurance coverage required includes medical expenses, lost or damaged luggage, coverage for significant travel delays, and trip cancellation (with a specific emphasis on cancelling due to a sister's wedding). The budget for the insurance premium is between $200-$300. There are no pre-existing medical conditions or special medical equipment needed.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Europe",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "medical expenses",
+                    "lost or damaged luggage",
+                    "travel delays",
+                    "trip cancellation"
+                ],
+                "pre_existing_conditions": null,
+                "medical_needs": null,
+                "activities_to_cover": [
+                    "hiking"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Cancellation coverage specifically in case of sister's wedding.",
+                "keywords": [
+                    "travel insurance",
+                    "Europe",
+                    "2 weeks",
+                    "2 travellers",
+                    "medical cover",
+                    "lost luggage",
+                    "travel delays",
+                    "trip cancellation",
+                    "hiking",
+                    "budget $200-$300"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 138023,
+        "prompt_tokens": 116567,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 21456,
+        "successful_requests": 74
+    }
+}

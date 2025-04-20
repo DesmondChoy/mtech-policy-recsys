@@ -1,0 +1,87 @@
+{
+    "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan from Singapore for two travelers.\",\n  \"detailed_description\": \"Customer needs coverage for medical expenses, lost or damaged luggage, travel delays, hiking injuries, and trip cancellation due to sickness or family events.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical expenses\",\n    \"luggage coverage\",\n    \"travel delay coverage\",\n    \"trip cancellation coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"doctor visits\",\n    \"hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Customer is specifically concerned about trip cancellation due to significant family events such as a wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical expenses\",\n    \"luggage\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"hiking\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "req-001",
+        "requirement_summary": "Travel insurance requirements for a trip to Japan from Singapore for two travelers.",
+        "detailed_description": "Customer needs coverage for medical expenses, lost or damaged luggage, travel delays, hiking injuries, and trip cancellation due to sickness or family events.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "10 days",
+        "insurance_coverage_type": [
+            "medical expenses",
+            "luggage coverage",
+            "travel delay coverage",
+            "trip cancellation coverage"
+        ],
+        "pre_existing_conditions": [],
+        "medical_needs": [
+            "doctor visits",
+            "hospital stays"
+        ],
+        "activities_to_cover": [
+            "hiking"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Customer is specifically concerned about trip cancellation due to significant family events such as a wedding.",
+        "keywords": [
+            "travel insurance",
+            "medical expenses",
+            "luggage",
+            "travel delays",
+            "trip cancellation",
+            "hiking"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Priya, how can I help you today?\nCustomer: Oh, hello Priya. Yes, I need... insurance? For a trip. I'm a bit lost, actually. My friend said I should call. I've never bought this travel insurance thing before.\nCustomer Service Agent: No worries at all, I can certainly help guide you through understanding what you might need. To start, could you tell me a little about your trip? Where will you be traveling from?\nCustomer: Uhm, yes. We'll be traveling from Singapore. That's where we live.\nCustomer Service Agent: Okay, traveling from Singapore. And where are you heading to?\nCustomer: We're planning a trip to Japan.\nCustomer Service Agent: Japan, lovely! And how many people will be traveling?\nCustomer: Just two of us. Me and my husband.\nCustomer Service Agent: Alright, two travelers. And how long will you be away for?\nCustomer: It will be a 10 days trip.\nCustomer Service Agent: Ten days in Japan for two people, starting from Singapore. Got it. Are you planning any specific activities while you're there? Sometimes people go skiing or diving, things like that.\nCustomer: Oh! Yes, we wanted to do some hiking. Is that... special? Do I need to say that? Sorry, I don't understand these things well. We just want to be covered if, you know, something happens during the hike? Like an injury?\nCustomer Service Agent: Okay, noted. Hiking. So, understanding potential needs related to specific activities like hiking is important. And generally, what are some things you're concerned about for this trip that you feel insurance might help with?\nCustomer: Concerned? Uhm... well, what happens if one of us gets sick? Like, really sick, needing a doctor or even a hospital in Japan? That sounds expensive. Is that something insurance covers?\nCustomer Service Agent: Alright, so cover for medical expenses like doctor visits or hospital stays is something you're thinking about. What else comes to mind?\nCustomer: Hmm. Okay, another thing... luggage. What if our bags get lost by the airline? Or damaged? Does insurance help with that? Replacing things? I feel so clueless asking this.\nCustomer Service Agent: Not at all, these are very common questions! So, cover for issues with luggage – lost, damaged, or even delayed – is another point you'd like addressed. Anything else regarding the travel itself?\nCustomer: Delays! Yes! What if the flight gets delayed for a long time? You hear stories... do we get money back? Or help with booking another flight or a hotel if we get stuck somewhere?\nCustomer Service Agent: Okay, so cover for significant travel delays and the costs that might arise from that, like accommodation or meals. That's clear.\nCustomer: Yes, that. And... this is maybe the most important one for me. What if... what if we have to cancel the whole trip *before* we even go?\nCustomer Service Agent: Okay, trip cancellation cover. Could you tell me more about what sort of reasons for cancellation you're thinking about?\nCustomer: Well, like... what if one of us gets very sick? Or... okay, this is specific, but my sister is planning her wedding, and the date might end up being right when we planned our trip. If I have to cancel because I need to go to her wedding, is that covered? I really need to know about that. I feel so bad asking all this.\nCustomer Service Agent: Please don't feel bad, it's good to ask! So you're interested in trip cancellation, covering reasons like unexpected illness, but you specifically want to know about cancelling due to an important family event, like your sister's wedding. We'll note that specific scenario down. Are there any other cancellation reasons you're wondering about?\nCustomer: Uhm, no, I think the sickness and the wedding are the main ones. That’s what worries me most.\nCustomer Service Agent: Understood. Just a couple more details to get a clearer picture. Roughly, what age group do the travelers fall into?\nCustomer: We're mostly around 26-40 years old.\nCustomer Service Agent: Okay, 26-40. And do either of you have any pre-existing medical conditions we should be aware of, like asthma or diabetes?\nCustomer: No, no pre-existing conditions.\nCustomer Service Agent: Great. And will you be travelling with any special medical equipment, like a wheelchair or an insulin pump?\nCustomer: No special medical equipment needed.\nCustomer Service Agent: Alright. And finally, do you have a rough budget in mind for the insurance premium per person?\nCustomer: Oh. Uhm, maybe... We're hoping to spend $200-$300? Is that realistic? I don't really know.\nCustomer Service Agent: Okay, noted a budget preference of $200-$300. Thank you, that gives me a good overview. So, just to quickly summarise what you're looking for in terms of potential coverage: medical expenses during the trip, protection for lost or damaged luggage, help if your travel plans are significantly delayed, cover if you need to cancel the trip for certain reasons – specifically noting your query about cancelling for your sister's wedding – and cover related to injuries while hiking. Is that correct?\nCustomer: Yes! Yes, that sounds right. You explained it much better than I did. Sorry for being confusing.\nCustomer Service Agent: Not at all, you were very clear. Thank you for sharing all that information. I have noted down all these requirements.\nCustomer: Okay, thank you so much, Priya.\nCustomer Service Agent: You're welcome. Have a great day!\nCustomer: You too, bye bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Japan from Singapore for two travelers.\",\n  \"detailed_description\": \"Customer needs coverage for medical expenses, lost or damaged luggage, travel delays, hiking injuries, and trip cancellation due to sickness or family events.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"medical expenses\",\n    \"luggage coverage\",\n    \"travel delay coverage\",\n    \"trip cancellation coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"doctor visits\",\n    \"hospital stays\"\n  ],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Customer is specifically concerned about trip cancellation due to significant family events such as a wedding.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"medical expenses\",\n    \"luggage\",\n    \"travel delays\",\n    \"trip cancellation\",\n    \"hiking\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "req-001",
+                "requirement_summary": "Travel insurance requirements for a trip to Japan from Singapore for two travelers.",
+                "detailed_description": "Customer needs coverage for medical expenses, lost or damaged luggage, travel delays, hiking injuries, and trip cancellation due to sickness or family events.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "10 days",
+                "insurance_coverage_type": [
+                    "medical expenses",
+                    "luggage coverage",
+                    "travel delay coverage",
+                    "trip cancellation coverage"
+                ],
+                "pre_existing_conditions": [],
+                "medical_needs": [
+                    "doctor visits",
+                    "hospital stays"
+                ],
+                "activities_to_cover": [
+                    "hiking"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Customer is specifically concerned about trip cancellation due to significant family events such as a wedding.",
+                "keywords": [
+                    "travel insurance",
+                    "medical expenses",
+                    "luggage",
+                    "travel delays",
+                    "trip cancellation",
+                    "hiking"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 134589,
+        "prompt_tokens": 113699,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 20890,
+        "successful_requests": 72
+    }
+}

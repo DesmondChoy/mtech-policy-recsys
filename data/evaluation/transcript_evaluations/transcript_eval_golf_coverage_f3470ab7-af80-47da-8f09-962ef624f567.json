@@ -1,0 +1,101 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The agent prompted for this coverage [15], and the customer confirmed the need, specifying a reason [16].",
+      "customer_quote": "[16] Yes, yes, include that. If we have to cancel because someone gets seriously ill beforehand...",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about trip cancellation [15] and confirmed the requirement [17].",
+      "agent_quote": "[15] What about situations like trip cancellation or significant travel delays?"
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for medical emergencies and hospital stays [14] and confirmed no pre-existing conditions [16].",
+      "customer_quote": "[14] But obviously, we need the standard stuff too. You know... medical emergencies, hospital stays, that sort of thing.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's request and confirmed the requirement, including the note about no pre-existing conditions [17].",
+      "agent_quote": "[17] Okay, thank you. Just to confirm I have everything noted down correctly... The required coverage includes: standard medical coverage... You confirmed... no pre-existing medical conditions to declare..."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned needing cover if the airline loses or damages their bags [14].",
+      "customer_quote": "[14] And cover if the airline loses our bags, or if they get damaged. The usual baggage headaches.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's request [15] and confirmed the requirement [17].",
+      "agent_quote": "[15] Understood. So, coverage for emergency medical expenses and for lost or damaged luggage."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The agent prompted for this coverage [15], and the customer confirmed the need, specifying concerns about extra hotel and meal costs due to massive delays [16].",
+      "customer_quote": "[16] Yes, yes, include that... if there are massive delays causing extra hotel nights or meal costs.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about travel delays [15] and confirmed the requirement [17].",
+      "agent_quote": "[15] What about situations like trip cancellation or significant travel delays?"
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer heavily focused on golf [8]. The agent specifically asked if *other* sports or adventure activities were planned [13], and the customer confirmed only golf [14]. This sufficiently covers the general requirement.",
+      "customer_quote": "[14] No, no, just golf. That's the focus.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent appropriately probed for activities beyond the customer's primary focus (golf) to ensure comprehensive understanding.",
+      "agent_quote": "[13] Are there any other sports or adventure activities planned besides golf? Like scuba diving or anything like that?"
+    },
+    {
+      "coverage_type": "golf_equipment",
+      "name": "Golf Equipment (Scenario Specific)",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for their golf clubs against loss or damage [10].",
+      "customer_quote": "[10] Right, quickly now. My clubs \u2013 need them covered against loss or damage, naturally.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and confirmed this specific requirement [11, 17].",
+      "agent_quote": "[11] Okay, so coverage for your golf equipment..."
+    },
+    {
+      "coverage_type": "unused_green_fees",
+      "name": "Unused Green Fees (Scenario Specific)",
+      "result": "PASS",
+      "justification": "The customer explicitly asked for reimbursement for pre-booked green fees if unable to play due to illness [10].",
+      "customer_quote": "[10] Also, what if I pre-book green fees and then can't play because I get sick or something? Need reimbursement for that.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and confirmed this specific requirement [11, 17].",
+      "agent_quote": "[11] ...reimbursement for unused green fees due to unforeseen circumstances..."
+    },
+    {
+      "coverage_type": "golf_buggy_damage",
+      "name": "Golf Buggy Damage Liability (Scenario Specific)",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about liability coverage if they damage a golf buggy [10].",
+      "customer_quote": "[10] And, crucially, what if I accidentally damage a golf buggy? Does the insurance cover that liability?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and confirmed this specific requirement [11, 17].",
+      "agent_quote": "[11] ...and coverage related to potential damage to a golf buggy."
+    },
+    {
+      "coverage_type": "hole_in_one_benefit",
+      "name": "Hole-in-One Benefit (Scenario Specific)",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about a special benefit or payout for scoring a hole-in-one [12].",
+      "customer_quote": "[12] Yes! Almost forgot. Is there any kind of special payout or benefit if I manage to score a hole-in-one?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged and confirmed this specific requirement [13, 17].",
+      "agent_quote": "[13] Alright, noted. A specific benefit related to achieving a hole-in-one."
+    }
+  ],
+  "summary": {
+    "total_requirements": 9,
+    "requirements_met": 9,
+    "overall_assessment": "The agent successfully gathered all standard and scenario-specific coverage requirements. The agent effectively managed the customer's initial focus on golf by first addressing those specific needs, then prompting for standard coverage types, and finally confirming all details comprehensively. The customer provided clear information, and the agent demonstrated good listening and probing skills."
+  },
+  "transcript_name": "transcript_golf_coverage_f3470ab7-af80-47da-8f09-962ef624f567",
+  "scenario": "golf_coverage"
+}

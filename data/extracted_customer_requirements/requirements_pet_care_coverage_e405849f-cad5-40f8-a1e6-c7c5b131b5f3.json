@@ -1,0 +1,91 @@
+{
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Thailand for two travelers, including medical, cancellation, and activity-related coverage.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance for a 10-day trip to Thailand from Singapore, covering medical needs due to asthma, activities like scuba diving, lost luggage, trip cancellation, travel delays, and potentially additional pet accommodation costs.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost or Damaged Luggage\",\n    \"Travel Delay\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Asthma inhalers\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs in case of travel delays.\",\n  \"keywords\": [\n    \"Travel Insurance\",\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Travel Delay\",\n    \"Scuba Diving\",\n    \"Lost Luggage\",\n    \"Asthma\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "1",
+        "requirement_summary": "Travel insurance coverage for a trip to Thailand for two travelers, including medical, cancellation, and activity-related coverage.",
+        "detailed_description": "Customer requires comprehensive travel insurance for a 10-day trip to Thailand from Singapore, covering medical needs due to asthma, activities like scuba diving, lost luggage, trip cancellation, travel delays, and potentially additional pet accommodation costs.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Thailand",
+        "travel_duration": "10 days",
+        "insurance_coverage_type": [
+            "Medical Coverage",
+            "Trip Cancellation",
+            "Lost or Damaged Luggage",
+            "Travel Delay"
+        ],
+        "pre_existing_conditions": [
+            "Asthma"
+        ],
+        "medical_needs": [
+            "Asthma inhalers"
+        ],
+        "activities_to_cover": [
+            "Scuba Diving"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Coverage for additional pet accommodation costs in case of travel delays.",
+        "keywords": [
+            "Travel Insurance",
+            "Trip Cancellation",
+            "Medical Coverage",
+            "Travel Delay",
+            "Scuba Diving",
+            "Lost Luggage",
+            "Asthma"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd Singapore. My name is Sarah, how can I help you today?\nCustomer: Oh, hello! Yes, help! I need... I need to sort out travel insurance. It's all just... so much. I'm planning this trip and my head is spinning, honestly. I keep thinking about what could go wrong.\nCustomer Service Agent: Okay, take a breath. I can certainly help you gather the information needed for a travel insurance quote. Don't worry, we'll go through it step by step. Can you tell me where you'll be traveling from?\nCustomer: Yes, from Singapore. We're based in Singapore. Flying out from Changi.\nCustomer Service Agent: Alright, noted. And where is your destination?\nCustomer: We're planning a trip to Thailand. Phuket, specifically.\nCustomer Service Agent: Okay, Thailand. And how long will you be away for?\nCustomer: It’s meant to be... I think 10 days. Yes, 10 days. Just trying to get away, but now the planning... it's stressful.\nCustomer Service Agent: I understand planning can feel overwhelming. And how many people will be travelling on this policy?\nCustomer: It's just two of us. Me and my partner. We're mostly around the 26-40 years old age group.\nCustomer Service Agent: Okay, two travellers, 26-40 age group, for 10 days to Thailand. What kind of activities are you planning during your trip? Anything specific?\nCustomer: Activities... um, yes! We definitely want to try Scuba Diving. We've booked a session. That's one of the things I'm worried about, actually, what if something happens during that? And... oh, medical things in general. What if we get sick? My partner has asthma, you see. Do we need to declare asthma? Does it change anything? I just panic thinking about needing a doctor over there.\nCustomer Service Agent: Okay, so you require coverage that includes activities like Scuba Diving. And you have concerns about potential medical needs during the trip, noting one traveler has asthma. It’s good you mentioned that. We'll note down the need for comprehensive Medical Coverage details. Are there any specific medical equipment needs, like a wheelchair or oxygen tank?\nCustomer: No, no special medical equipment needed, thank goodness. Just the asthma inhalers. But... what about other things? Like... what if the airline loses our bags? That would be a nightmare. All our stuff gone, or damaged. That’s happened to a friend before. The stress!\nCustomer Service Agent: Alright, so coverage for Lost or Damaged Luggage is important for you. I've noted that down. Thinking about the overall cost, do you have a particular budget range in mind for the insurance policy?\nCustomer: Budget... I don't know exactly... maybe around $400? Somewhere there? We just want proper cover. Because, what if... what if something happens *before* we go? Like, if one of us gets really sick, or there’s a family emergency, and we have to cancel the whole trip? All that money down the drain... it’s just awful to think about.\nCustomer Service Agent: Okay, so you'd like coverage for Trip Cancellation due to unforeseen events like illness or emergencies. Noted. And what about delays during the trip itself? For instance, if your flight gets significantly delayed?\nCustomer: Oh god, yes, delays! That’s another worry. Flights are so unpredictable lately. If we get stuck somewhere, needing extra hotel nights or food... it all adds up. And... oh, wait! My cat! I just remembered! She's going into a pet hotel while we're away. If our flight back to Singapore is delayed for days or something, she'll need to stay longer. Does insurance ever cover extra pet hotel costs? That’s honestly stressing me out just thinking about leaving her.\nCustomer Service Agent: Okay, I understand. So you're looking for coverage for Travel Delays, covering additional accommodation and meal expenses. And I've specifically noted your requirement regarding potential coverage for additional pet accommodation costs at the hotel or kennel if your return to Singapore is delayed.\nCustomer Service Agent: Alright, let me quickly summarize the key requirements you've mentioned for your 10-day trip to Thailand for two travellers. You need information on policies that include: Medical Coverage, keeping in mind the declared asthma; coverage for Sports and Adventure activities, specifically Scuba Diving; protection against Lost or Damaged Luggage; Trip Cancellation coverage; Travel Delay benefits for extra expenses; and specifically, clarification on coverage for additional Pet Accommodation costs due to return travel delays. Does that sound correct?\nCustomer: Yes, yes, I think that's everything... it's just so much to think about. But yes, that covers the main worries I have right now. Thank you for listening, it's a bit... chaotic in my head.\nCustomer Service Agent: Not a problem at all, I'm glad I could help outline your needs. I have recorded all these requirements. We will use this information to identify suitable policy options for you. Someone from our team will be in touch shortly with the relevant details and quotes based on what we've discussed.\nCustomer: Okay, thank you. I appreciate your patience. I'll wait to hear back then.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance coverage for a trip to Thailand for two travelers, including medical, cancellation, and activity-related coverage.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance for a 10-day trip to Thailand from Singapore, covering medical needs due to asthma, activities like scuba diving, lost luggage, trip cancellation, travel delays, and potentially additional pet accommodation costs.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Thailand\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Lost or Damaged Luggage\",\n    \"Travel Delay\"\n  ],\n  \"pre_existing_conditions\": [\n    \"Asthma\"\n  ],\n  \"medical_needs\": [\n    \"Asthma inhalers\"\n  ],\n  \"activities_to_cover\": [\n    \"Scuba Diving\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Coverage for additional pet accommodation costs in case of travel delays.\",\n  \"keywords\": [\n    \"Travel Insurance\",\n    \"Trip Cancellation\",\n    \"Medical Coverage\",\n    \"Travel Delay\",\n    \"Scuba Diving\",\n    \"Lost Luggage\",\n    \"Asthma\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "1",
+                "requirement_summary": "Travel insurance coverage for a trip to Thailand for two travelers, including medical, cancellation, and activity-related coverage.",
+                "detailed_description": "Customer requires comprehensive travel insurance for a 10-day trip to Thailand from Singapore, covering medical needs due to asthma, activities like scuba diving, lost luggage, trip cancellation, travel delays, and potentially additional pet accommodation costs.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Thailand",
+                "travel_duration": "10 days",
+                "insurance_coverage_type": [
+                    "Medical Coverage",
+                    "Trip Cancellation",
+                    "Lost or Damaged Luggage",
+                    "Travel Delay"
+                ],
+                "pre_existing_conditions": [
+                    "Asthma"
+                ],
+                "medical_needs": [
+                    "Asthma inhalers"
+                ],
+                "activities_to_cover": [
+                    "Scuba Diving"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Coverage for additional pet accommodation costs in case of travel delays.",
+                "keywords": [
+                    "Travel Insurance",
+                    "Trip Cancellation",
+                    "Medical Coverage",
+                    "Travel Delay",
+                    "Scuba Diving",
+                    "Lost Luggage",
+                    "Asthma"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 70766,
+        "prompt_tokens": 59665,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 11101,
+        "successful_requests": 38
+    }
+}

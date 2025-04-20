@@ -1,0 +1,95 @@
+{
+    "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Europe\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for a three-week trip to Europe, specifically covering various aspects of potential travel issues.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Sports and Adventure Coverage (Scuba Diving)\",\n    \"Double Payout for Accidental Death on Public Transport\"\n  ],\n  \"pre_existing_conditions\": [\"High blood pressure\"],\n  \"medical_needs\": [\"Solid medical coverage for emergencies\"],\n  \"activities_to_cover\": [\"Scuba Diving\"],\n  \"age_group\": \"41-55 years\",\n  \"additional_requests\": \"Customer expects solid coverage for emergencies, particularly in case of serious illness or flight cancellations. Interested in ensuring comprehensive coverage options without missing key points.\",\n  \"keywords\": [\"comprehensive coverage\", \"trip cancellation\", \"travel delay\", \"scuba diving\", \"accidental death\", \"public transport\", \"lost luggage\"]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "001",
+        "requirement_summary": "Travel insurance requirements for a trip to Europe",
+        "detailed_description": "The customer requires comprehensive travel insurance for a three-week trip to Europe, specifically covering various aspects of potential travel issues.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Europe",
+        "travel_duration": "3 weeks",
+        "insurance_coverage_type": [
+            "Comprehensive Medical Coverage",
+            "Lost, Damaged, or Delayed Luggage",
+            "Trip Cancellation",
+            "Travel Delay",
+            "Sports and Adventure Coverage (Scuba Diving)",
+            "Double Payout for Accidental Death on Public Transport"
+        ],
+        "pre_existing_conditions": [
+            "High blood pressure"
+        ],
+        "medical_needs": [
+            "Solid medical coverage for emergencies"
+        ],
+        "activities_to_cover": [
+            "Scuba Diving"
+        ],
+        "age_group": "41-55 years",
+        "additional_requests": "Customer expects solid coverage for emergencies, particularly in case of serious illness or flight cancellations. Interested in ensuring comprehensive coverage options without missing key points.",
+        "keywords": [
+            "comprehensive coverage",
+            "trip cancellation",
+            "travel delay",
+            "scuba diving",
+            "accidental death",
+            "public transport",
+            "lost luggage"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd. My name is Sarah. How may I help you today?\nCustomer: Yes, I need to sort out travel insurance. Don't waste my time, I expect comprehensive coverage. I've been with ISS for ages.\nCustomer Service Agent: Of course, I can certainly help gather your requirements for a travel insurance quote. Could you please tell me where you'll be traveling to?\nCustomer: We're planning a trip to Europe. Finally getting away.\nCustomer Service Agent: Europe, noted. And how long will the trip be?\nCustomer: It will be a 3 weeks trip. Starting from Singapore, obviously.\nCustomer Service Agent: Okay, a three-week trip to Europe from Singapore. And how many people will be traveling?\nCustomer: Just two of us. We're mostly around 41-55 years old, if that makes a difference to your forms.\nCustomer Service Agent: Thank you. And are there any particular activities you plan to participate in during your trip?\nCustomer: Yes, we plan to do Scuba Diving. I expect that to be fully covered, not some basic mention. Injuries happen, and that needs proper coverage under the sports and adventure section.\nCustomer Service Agent: Alright, noted: Scuba Diving coverage required. Are there any specific health considerations or medical equipment needed for either traveler?\nCustomer: No specific equipment needed. However, my partner has high blood pressure. Does that complicate things? Whatever the case, I expect it to be factored in. We absolutely need solid medical coverage for emergencies – doctor visits, hospital stays, the works. Can't be caught out by huge bills overseas.\nCustomer Service Agent: Okay, I've noted the need for comprehensive medical coverage and the mention of high blood pressure. Regarding other potential issues, what are your main concerns about the journey itself or your belongings?\nCustomer: Look, things go wrong. I need cover if my luggage gets lost or damaged by those baggage handlers. And delays! If it's delayed significantly, I expect compensation for buying essentials. It's ridiculous waiting around. So, Lost and Damaged Luggage cover is a must.\nCustomer Service Agent: Understood, coverage for lost, damaged, or delayed luggage. What about the trip plan itself? Any concerns about potential disruptions before or during travel?\nCustomer: Absolutely. This trip costs a fortune. If something major happens – one of us gets seriously ill beforehand, or some major incident cancels flights – I need Trip Cancellation coverage to get my money back. Don't tell me \"change of mind\" isn't covered, I know that, but genuine emergencies must be. And flight delays are practically guaranteed these days. If we're stuck somewhere because of a long delay, I expect the insurance to cover extra hotel nights and meals. Travel delay coverage is non-negotiable.\nCustomer Service Agent: Okay, Trip Cancellation and Travel Delay coverage requirements noted. Are there any other specific policy features or benefits you're looking for?\nCustomer: Yes, one more thing. It might sound grim, but I need clarity. I want to know if the policy provides extra coverage, specifically double the payout for accidental death, if the worst happens while traveling on public transport like a bus or train over there. That specific benefit needs to be included. Don't just give me a standard policy; check for this. My budget is flexible, so get me the right plan, not the cheapest.\nCustomer Service Agent: Understood regarding the requirement for double indemnity for accidental death specifically on public transport. Let me quickly summarize the requirements you've outlined for your three-week trip to Europe for two travelers, aged 41-55, departing from Singapore. You require: Comprehensive Medical Coverage, including consideration for high blood pressure; coverage for Lost, Damaged, or Delayed Luggage; Trip Cancellation protection; Travel Delay benefits; Sports and Adventure coverage specifically for Scuba Diving; and confirmation on the inclusion of a double payout for accidental death if it occurs on public transport. Is that all correct?\nCustomer: Yes, that covers the main points. Make sure those are all properly addressed in the options you find. Don't come back with policies that miss these key things.\nCustomer Service Agent: Thank you for confirming. I have noted all your requirements. We will use this information to identify suitable plans. Someone from our policy advisory team will be in touch shortly to discuss the options based on these specific needs.\nCustomer: Fine. Make it quick. Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Europe\",\n  \"detailed_description\": \"The customer requires comprehensive travel insurance for a three-week trip to Europe, specifically covering various aspects of potential travel issues.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Europe\",\n  \"travel_duration\": \"3 weeks\",\n  \"insurance_coverage_type\": [\n    \"Comprehensive Medical Coverage\",\n    \"Lost, Damaged, or Delayed Luggage\",\n    \"Trip Cancellation\",\n    \"Travel Delay\",\n    \"Sports and Adventure Coverage (Scuba Diving)\",\n    \"Double Payout for Accidental Death on Public Transport\"\n  ],\n  \"pre_existing_conditions\": [\"High blood pressure\"],\n  \"medical_needs\": [\"Solid medical coverage for emergencies\"],\n  \"activities_to_cover\": [\"Scuba Diving\"],\n  \"age_group\": \"41-55 years\",\n  \"additional_requests\": \"Customer expects solid coverage for emergencies, particularly in case of serious illness or flight cancellations. Interested in ensuring comprehensive coverage options without missing key points.\",\n  \"keywords\": [\"comprehensive coverage\", \"trip cancellation\", \"travel delay\", \"scuba diving\", \"accidental death\", \"public transport\", \"lost luggage\"]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "001",
+                "requirement_summary": "Travel insurance requirements for a trip to Europe",
+                "detailed_description": "The customer requires comprehensive travel insurance for a three-week trip to Europe, specifically covering various aspects of potential travel issues.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Europe",
+                "travel_duration": "3 weeks",
+                "insurance_coverage_type": [
+                    "Comprehensive Medical Coverage",
+                    "Lost, Damaged, or Delayed Luggage",
+                    "Trip Cancellation",
+                    "Travel Delay",
+                    "Sports and Adventure Coverage (Scuba Diving)",
+                    "Double Payout for Accidental Death on Public Transport"
+                ],
+                "pre_existing_conditions": [
+                    "High blood pressure"
+                ],
+                "medical_needs": [
+                    "Solid medical coverage for emergencies"
+                ],
+                "activities_to_cover": [
+                    "Scuba Diving"
+                ],
+                "age_group": "41-55 years",
+                "additional_requests": "Customer expects solid coverage for emergencies, particularly in case of serious illness or flight cancellations. Interested in ensuring comprehensive coverage options without missing key points.",
+                "keywords": [
+                    "comprehensive coverage",
+                    "trip cancellation",
+                    "travel delay",
+                    "scuba diving",
+                    "accidental death",
+                    "public transport",
+                    "lost luggage"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 111748,
+        "prompt_tokens": 94240,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 17508,
+        "successful_requests": 60
+    }
+}

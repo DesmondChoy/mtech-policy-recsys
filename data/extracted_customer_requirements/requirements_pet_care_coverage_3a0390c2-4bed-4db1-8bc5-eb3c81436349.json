@@ -1,10 +1,10 @@
 {
-    "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two adults.\",\n  \"detailed_description\": \"Customer is inquiring about travel insurance for two adults, aged 26-40, travelling from Singapore to Japan for 10 days. Coverage required includes trip cancellation, lost or damaged luggage, medical expenses incurred overseas, additional expenses due to travel delays, and specific coverage for extra pet accommodation fees due to delayed return travel. The customer also plans to partake in hiking activities during the trip.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"medical expenses\",\n    \"travel delays coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cover for extra pet hotel fees if return flight to Singapore is delayed.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"10 days\",\n    \"two adults\",\n    \"hiking\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"medical expenses\",\n    \"travel delays\",\n    \"pet accommodation\"\n  ]\n}",
+    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two adults.\",\n  \"detailed_description\": \"Customer requires travel insurance for a trip to Japan for two adults, covering trip cancellation, lost or damaged luggage, medical expenses incurred overseas, additional expenses due to travel delays, and specific coverage for extra pet accommodation fees if the return is delayed. The duration of the trip is 10 days.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"medical expenses\",\n    \"travel delay expenses\",\n    \"pet accommodation fees\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Budget around $200-$300\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"trip cancellation\", \"medical expenses\", \"hiking\"]\n}",
     "pydantic": null,
     "json_dict": {
-        "requirement_id": "REQ123456",
+        "requirement_id": "REQ-001",
         "requirement_summary": "Travel insurance for a trip to Japan for two adults.",
-        "detailed_description": "Customer is inquiring about travel insurance for two adults, aged 26-40, travelling from Singapore to Japan for 10 days. Coverage required includes trip cancellation, lost or damaged luggage, medical expenses incurred overseas, additional expenses due to travel delays, and specific coverage for extra pet accommodation fees due to delayed return travel. The customer also plans to partake in hiking activities during the trip.",
+        "detailed_description": "Customer requires travel insurance for a trip to Japan for two adults, covering trip cancellation, lost or damaged luggage, medical expenses incurred overseas, additional expenses due to travel delays, and specific coverage for extra pet accommodation fees if the return is delayed. The duration of the trip is 10 days.",
         "travel_origin": "Singapore",
         "travel_destination": "Japan",
         "travel_duration": "10 days",
@@ -12,7 +12,8 @@
             "trip cancellation",
             "lost or damaged luggage",
             "medical expenses",
-            "travel delays coverage"
+            "travel delay expenses",
+            "pet accommodation fees"
         ],
         "pre_existing_conditions": [],
         "medical_needs": [],
@@ -20,18 +21,13 @@
             "hiking"
         ],
         "age_group": "26-40",
-        "additional_requests": "Cover for extra pet hotel fees if return flight to Singapore is delayed.",
+        "additional_requests": "Budget around $200-$300",
         "keywords": [
             "travel insurance",
             "Japan",
-            "10 days",
-            "two adults",
-            "hiking",
             "trip cancellation",
-            "lost luggage",
             "medical expenses",
-            "travel delays",
-            "pet accommodation"
+            "hiking"
         ]
     },
     "tasks_output": [
@@ -40,12 +36,12 @@
             "name": null,
             "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
             "summary": "Analyze the travel insurance call transcript below and extract key...",
-            "raw": "{\n  \"requirement_id\": \"REQ123456\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two adults.\",\n  \"detailed_description\": \"Customer is inquiring about travel insurance for two adults, aged 26-40, travelling from Singapore to Japan for 10 days. Coverage required includes trip cancellation, lost or damaged luggage, medical expenses incurred overseas, additional expenses due to travel delays, and specific coverage for extra pet accommodation fees due to delayed return travel. The customer also plans to partake in hiking activities during the trip.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"medical expenses\",\n    \"travel delays coverage\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cover for extra pet hotel fees if return flight to Singapore is delayed.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"10 days\",\n    \"two adults\",\n    \"hiking\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"medical expenses\",\n    \"travel delays\",\n    \"pet accommodation\"\n  ]\n}",
+            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan for two adults.\",\n  \"detailed_description\": \"Customer requires travel insurance for a trip to Japan for two adults, covering trip cancellation, lost or damaged luggage, medical expenses incurred overseas, additional expenses due to travel delays, and specific coverage for extra pet accommodation fees if the return is delayed. The duration of the trip is 10 days.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"10 days\",\n  \"insurance_coverage_type\": [\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"medical expenses\",\n    \"travel delay expenses\",\n    \"pet accommodation fees\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"hiking\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Budget around $200-$300\",\n  \"keywords\": [\"travel insurance\", \"Japan\", \"trip cancellation\", \"medical expenses\", \"hiking\"]\n}",
             "pydantic": null,
             "json_dict": {
-                "requirement_id": "REQ123456",
+                "requirement_id": "REQ-001",
                 "requirement_summary": "Travel insurance for a trip to Japan for two adults.",
-                "detailed_description": "Customer is inquiring about travel insurance for two adults, aged 26-40, travelling from Singapore to Japan for 10 days. Coverage required includes trip cancellation, lost or damaged luggage, medical expenses incurred overseas, additional expenses due to travel delays, and specific coverage for extra pet accommodation fees due to delayed return travel. The customer also plans to partake in hiking activities during the trip.",
+                "detailed_description": "Customer requires travel insurance for a trip to Japan for two adults, covering trip cancellation, lost or damaged luggage, medical expenses incurred overseas, additional expenses due to travel delays, and specific coverage for extra pet accommodation fees if the return is delayed. The duration of the trip is 10 days.",
                 "travel_origin": "Singapore",
                 "travel_destination": "Japan",
                 "travel_duration": "10 days",
@@ -53,7 +49,8 @@
                     "trip cancellation",
                     "lost or damaged luggage",
                     "medical expenses",
-                    "travel delays coverage"
+                    "travel delay expenses",
+                    "pet accommodation fees"
                 ],
                 "pre_existing_conditions": [],
                 "medical_needs": [],
@@ -61,18 +58,13 @@
                     "hiking"
                 ],
                 "age_group": "26-40",
-                "additional_requests": "Cover for extra pet hotel fees if return flight to Singapore is delayed.",
+                "additional_requests": "Budget around $200-$300",
                 "keywords": [
                     "travel insurance",
                     "Japan",
-                    "10 days",
-                    "two adults",
-                    "hiking",
                     "trip cancellation",
-                    "lost luggage",
                     "medical expenses",
-                    "travel delays",
-                    "pet accommodation"
+                    "hiking"
                 ]
             },
             "agent": "Call Transcript Analyst",
@@ -80,10 +72,10 @@
         }
     ],
     "token_usage": {
-        "total_tokens": 13360,
-        "prompt_tokens": 11117,
+        "total_tokens": 47368,
+        "prompt_tokens": 40039,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 2243,
-        "successful_requests": 8
+        "completion_tokens": 7329,
+        "successful_requests": 25
     }
 }

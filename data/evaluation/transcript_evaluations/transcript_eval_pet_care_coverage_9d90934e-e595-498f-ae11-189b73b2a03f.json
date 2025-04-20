@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about coverage for cancelling the trip due to last-minute serious illness or a family emergency back home, including reimbursement for flights and hotels.",
+      "customer_quote": "[10] Like\u2026 what if we have to cancel the whole trip last minute? Say, if one of us gets seriously ill just before we leave, or heaven forbid, a family emergency back home? Will we get our money back for the flights and hotels?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's concern, confirmed understanding of the specific scenarios (illness, family emergency), and noted it as a key requirement.",
+      "agent_quote": "[11] Understood. So, cover for potential trip cancellation due to unforeseen events like illness or family emergencies is a key concern for you. I've noted that down."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer expressed concern about injuries during the trip (specifically falling while hiking), the cost of overseas hospital bills, and explicitly asked about declaring a pre-existing condition (high blood pressure) and its impact on coverage.",
+      "customer_quote": "[8] what if one of us falls? Gets injured? What happens then? Does the insurance cover hospital bills overseas? They can be so expensive! And... this is a bit sensitive, but my partner has high blood pressure. Do we need to declare that? Will that affect the coverage if something happens related to it?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the concerns about medical expenses, hospital stays, doctor visits, and specifically noted the query regarding the pre-existing condition. The agent also probed appropriately about specific medical equipment.",
+      "agent_quote": "[9] Okay, I've noted down... your concerns regarding potential medical expenses overseas, including hospital stays and doctor visits, and the query regarding the pre-existing condition of high blood pressure. [15] Just to check, will you be travelling with any specific medical equipment...?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer specifically asked about coverage scenarios including lost bags, smashed suitcases, reimbursement for belongings, and purchasing essentials if bags are delayed.",
+      "customer_quote": "[14] And luggage! What happens if the airline loses our bags? Or if they arrive but the suitcase is completely smashed? ... Will we get money back for our things? What about things we need to buy immediately if our bags are delayed?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent clearly acknowledged the customer's requirement for coverage related to lost, damaged, or delayed baggage and confirmed it was noted.",
+      "agent_quote": "[15] Alright, so coverage related to lost, damaged, or delayed baggage is another requirement. I've noted that down as well."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer expressed concern about significant flight delays on the return journey and specifically asked about coverage for the cost of an extra hotel night.",
+      "customer_quote": "[12] And delays! Oh goodness, the thought of being stuck\u2026 What if our flight back is delayed by a whole day, or more? Where would we stay? Who pays for the extra hotel night?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the concern, confirmed the need for coverage for additional expenses like accommodation and meals during significant delays, and noted it.",
+      "agent_quote": "[13] So, you require clarification on coverage for additional expenses like accommodation and meals during significant travel delays..."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer mentioned planning to do 'Hiking (Just day hikes, nothing too extreme)' and linked this activity directly to a concern about potential injury ('what if one of us falls? Gets injured?').",
+      "customer_quote": "[8] Well, mostly sightseeing, but\u2026 we were thinking of doing some Hiking. Just day hikes, nothing too extreme, but still\u2026 what if one of us falls? Gets injured?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the planned activity (Hiking) and noted the customer's associated concern about potential injuries and medical expenses, linking it appropriately to the medical coverage requirement.",
+      "agent_quote": "[9] Okay, I've noted down the plan for Hiking, and your concerns regarding potential medical expenses overseas..."
+    },
+    {
+      "coverage_type": "pet_accommodation_costs",
+      "name": "Pet Accommodation Costs (Scenario Specific)",
+      "result": "PASS",
+      "justification": "The customer explicitly asked if the insurance would cover additional pet hotel/kennel costs in Singapore if their return flight was delayed.",
+      "customer_quote": "[12] If our return is delayed, she\u2019ll need to stay longer. Would the insurance cover those extra kennel costs? That's something I've been really anxious about.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent validated the customer's concern, explicitly acknowledged the need for coverage for additional pet accommodation costs due to return delays, and confirmed this specific requirement was noted.",
+      "agent_quote": "[13] That's not silly at all, it's a practical concern... specifically, you need cover for additional pet accommodation costs if your return to Singapore is unexpectedly delayed. I have noted this specific requirement regarding the pet hotel costs."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered all standard and scenario-specific coverage requirements mentioned. The customer provided specific details for each area of concern, and the agent effectively acknowledged, confirmed, and summarized these needs, including probing appropriately regarding medical conditions and equipment. The agent demonstrated active listening and ensured all key worries, including the unique pet accommodation cost requirement, were documented."
+  },
+  "transcript_name": "transcript_pet_care_coverage_9d90934e-e595-498f-ae11-189b73b2a03f",
+  "scenario": "pet_care_coverage"
+}

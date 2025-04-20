@@ -1,0 +1,149 @@
+**Recommended Tier:** : Business
+
+**Justification:**
+
+Comparing the FWD Premium, Business, and First tiers for the customer's trip to Japan: All tiers cover the core requirements like Medical, Trip Cancellation, Travel Delay, and Luggage, and would typically cover leisure hiking. All tiers also offer an *optional* add-on for Pre-existing Medical Conditions, which is crucial for the customer due to the high blood pressure condition; this add-on MUST be purchased separately for related coverage to apply.
+
+However, the tiers differ significantly in coverage limits.
+*   **Premium:** Offers the lowest limits (e.g., $200k base medical, $7.5k cancellation, $50k pre-existing medical add-on limit). While the cheapest, these limits, especially the pre-existing condition medical cover, might be insufficient for potential emergencies in an expensive country like Japan.
+*   **Business:** Provides substantially higher limits than Premium (e.g., $500k base medical, $10k cancellation, $100k pre-existing medical add-on limit). This offers a much better safety net, particularly for the pre-existing condition concern, representing a good balance between coverage and likely cost (mid-range price).
+*   **First:** Offers the highest limits (e.g., $1M base medical, $15k cancellation, $150k pre-existing medical add-on limit). While providing the most comprehensive protection, it is also the most expensive tier and may exceed the customer's $200-$300 budget.
+
+Crucially, none of the FWD tiers (Premium, Business, or First) include the specific requested feature of a "double payout for accidental death occurring while using public transport". This requirement cannot be met by any FWD tier.
+
+Given the No Mix-and-Match rule (the customer must select one complete tier), the **Business** tier is recommended. It provides significantly more robust coverage than the Premium tier, especially the higher limit ($100k vs $50k) for the essential pre-existing condition medical add-on, which is vital for peace of mind in Japan. While First offers even higher limits, the Business tier's limits are substantial and likely offer a more appropriate balance considering the customer's budget constraints compared to the potentially much higher cost of the First tier. The customer must purchase the 'Pre-existing medical conditions' add-on with the Business plan.
+
+## Detailed Coverage Analysis for Recommended Tier: Business
+
+### Requirement: Medical Coverage
+
+*   **Policy Coverage:** Medical expenses incurred overseas
+    *   **Base Limits:** [{'type': 'Adult below 70 years of age', 'limit': 500000, 'basis': None}, {'type': 'Adult 70 years old or older', 'limit': 100000, 'basis': None}, {'type': 'Child covered under a family plan', 'limit': 150000, 'basis': None}, {'type': 'Overall limit for family plan', 'limit': 1250000, 'basis': None}, {'type': 'Sub-limit for mobility aids', 'limit': 500, 'basis': None}, {'type': 'Sub-limit for dental expenses caused by accident', 'limit': 5000, 'basis': None}]
+    *   **Conditional Limits:** [{'condition': "With 'Pre-existing medical conditions' add-on (Claim due to pre-existing condition)", 'limits': [{'type': 'Per Person', 'limit': 100000, 'basis': None}], 'source_location': 'Page 9, Optional Covers & Page 24'}]
+    *   **Source Specific Details:** [{'detail_snippet': 'Reimburses medically necessary treatment costs for unexpected illness or injury suffered overseas. Covers treatment for up to 30 days from first treatment date.', 'source_location': 'Page 7, 19 & 24'}, {'detail_snippet': 'Includes: Dental treatment for injury caused by accident (up to S$5,000), ambulance, specialist (if referred by GP), mobility aids (crutches, wheelchairs etc., up to S$500, excl prosthesis), medical equipment for recovery.', 'source_location': 'Page 7, 19 & 24'}, {'detail_snippet': 'Exclusions: Dental treatment due to non-accident tooth/gum/oral disease or wear; non-natural teeth (dentures, implants etc.); treatment by interested party; planned/pre-arranged treatment.', 'source_location': 'Page 19 & 26'}, {'detail_snippet': "For 'Pre-existing medical conditions' add-on: Covers overseas medical expenses due to pre-existing condition up to S$100,000 limit. Exclusions apply (e.g., specific dental, Chinese med, planned treatment).", 'source_location': 'Page 24 & 26'}]
+*   **Policy Coverage:** Emergency medical evacuation & repatriation
+    *   **Base Limits:** [{'type': 'Per Person', 'limit': 'Unlimited', 'basis': None}]
+    *   **Conditional Limits:** [{'condition': "With 'Pre-existing medical conditions' add-on (Claim due to pre-existing condition)", 'limits': [{'type': 'Per Person', 'limit': 100000, 'basis': None}], 'source_location': 'Page 9, Optional Covers & Page 24'}]
+    *   **Source Specific Details:** [{'detail_snippet': 'Covers moving you to appropriate medical facility (overseas or Singapore) or returning you to Singapore for treatment if you suffer a life-threatening illness/injury overseas. Also covers repatriation of mortal remains. MUST call Emergency Assistance (+65 6322 2072). FWD decides transport method.', 'source_location': 'Page 7, 17 & 24'}, {'detail_snippet': 'Pays for transport (air/surface ambulance, regular transport etc.), admin fees for changing tickets, reasonable mortician/undertaker costs (embalmment, cremation, basic casket/urn).', 'source_location': 'Page 17 & 24'}, {'detail_snippet': "For 'Pre-existing medical conditions' add-on: Covers evacuation/repatriation due to pre-existing condition up to S$100,000 limit. Exclusions apply.", 'source_location': 'Page 24 & 26'}]
+*   **Policy Coverage:** Daily hospital cash while overseas
+    *   **Base Limits:** [{'type': 'Per Person', 'limit': 8000, 'basis': 'Capped at S$200 per day (S$400 per day in intensive care)'}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Pays a daily cash benefit for every continuous 24-hour period confined to an overseas hospital due to unexpected illness/injury suffered overseas. Admission must be medically necessary.', 'source_location': 'Page 7 & 19'}, {'detail_snippet': 'Daily amount is doubled if hospitalised in intensive care unit (ICU), up to S$400 per day.', 'source_location': 'Page 7 & 19'}]
+*   **Policy Coverage:** Medical expenses incurred in Singapore
+    *   **Base Limits:** [{'type': 'Adult below 70 years of age', 'limit': 15000, 'basis': None}, {'type': 'Adult 70 years old or older', 'limit': 3000, 'basis': None}, {'type': 'Child covered under a family plan', 'limit': 4500, 'basis': None}, {'type': 'Overall limit for family plan', 'limit': 37500, 'basis': None}, {'type': 'Sub-limit for mobility aids', 'limit': 500, 'basis': None}, {'type': 'Sub-limit for dental expenses caused by accident', 'limit': 5000, 'basis': None}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Reimburses medically necessary treatment costs in Singapore after returning, for unexpected illness or injury suffered overseas. Covers treatment for up to 30 days from date of return.', 'source_location': 'Page 8 & 20'}, {'detail_snippet': 'Conditions: Must have received medical treatment overseas for the same illness/injury OR seek medical treatment in Singapore within 48 hours of returning.', 'source_location': 'Page 20'}, {'detail_snippet': 'Includes: Dental treatment for injury caused by accident (up to S$5,000), ambulance, specialist (if referred by GP), mobility aids (crutches, wheelchairs etc., up to S$500, excl prosthesis), medical equipment for recovery.', 'source_location': 'Page 8 & 20'}, {'detail_snippet': 'Exclusions: Dental treatment due to non-accident tooth/gum/oral disease or wear; non-natural teeth (dentures, implants etc.); treatment by interested party.', 'source_location': 'Page 20'}]
+*   **Policy Coverage:** Daily hospital cash while in Singapore
+    *   **Base Limits:** [{'type': 'Per Person', 'limit': 1200, 'basis': 'Capped at S$100 per day (S$200 per day in intensive care)'}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Pays a daily cash benefit for every continuous 24-hour period confined to a hospital in Singapore due to unexpected illness/injury suffered overseas. Admission must be medically necessary.', 'source_location': 'Page 8 & 21'}, {'detail_snippet': 'Conditions: Hospital confinement must start within 48 hours of return OR within 30 days after return if medical treatment was sought overseas during the trip.', 'source_location': 'Page 21'}, {'detail_snippet': 'Daily amount is doubled if hospitalised in intensive care unit (ICU), up to S$200 per day.', 'source_location': 'Page 8 & 21'}]
+*   **Policy Coverage:** Chinese medicine practitioner, physiotherapist and chiropractor expenses
+    *   **Base Limits:** [{'type': 'Per Person', 'limit': 500, 'basis': 'Capped at S$50 per visit'}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Pays for treatment from Chinese medicine practitioner, physiotherapist, or chiropractor overseas or within 48 hours of returning to Singapore, due to unexpected illness/injury suffered overseas. Capped at S$50 per visit.', 'source_location': 'Page 8 & 20'}, {'detail_snippet': 'Conditions: Must have received medical treatment overseas for the same illness/injury OR seek this treatment within 48 hours of returning to Singapore.', 'source_location': 'Page 20'}, {'detail_snippet': 'Excludes treatment received from an interested party.', 'source_location': 'Page 20'}, {'detail_snippet': "Excluded under the optional Pre-existing medical conditions cover.", 'source_location': 'Page 26'}]
+*   **Policy Coverage:** Emergency phone charges
+    *   **Base Limits:** [{'type': 'Per Person', 'limit': 300, 'basis': None}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Reimburses costs of phone calls made while overseas to: FWD Emergency Assistance hotline, police, medical facilities, consulates, or family members in Singapore for assistance/support due to serious illness/injury.', 'source_location': 'Page 8 & 19'}]
+*   **Policy Coverage:** Hospitalisation visit
+    *   **Base Limits:** [{'type': 'Per Person', 'limit': 7500, 'basis': None}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Reimburses reasonable costs (return economy transport, standard room accom) for one adult family member to travel to be with you if you are confined to hospital overseas for at least 5 continuous days due to unexpected illness/injury, confirmed unable to return to SG, and have no adult family member with you.', 'source_location': 'Page 8, 19 & 20'}, {'detail_snippet': 'Benefit stops after 30 days from first confinement or when medically fit to travel/return.', 'source_location': 'Page 20'}, {'detail_snippet': 'If you die while hospitalised, only one benefit (Hospitalisation Visit, Child Companion, or Compassionate Travel) is paid (whichever is highest).', 'source_location': 'Page 20'}]
+*   **Policy Coverage:** Child companion
+    *   **Base Limits:** [{'type': 'Per Person', 'limit': 7500, 'basis': None}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Reimburses reasonable costs (return economy transport, standard room accom) for one adult family member to travel to look after your child(ren) if you are confined to hospital overseas for at least 5 continuous days due to unexpected illness/injury, confirmed unable to return to SG, travelling with child(ren), and are the only adult.', 'source_location': 'Page 8, 19 & 20'}, {'detail_snippet': 'Benefit stops after 30 days from first confinement or when medically fit to travel/return.', 'source_location': 'Page 20'}, {'detail_snippet': 'If you die while hospitalised, only one benefit (Hospitalisation Visit, Child Companion, or Compassionate Travel) is paid (whichever is highest).', 'source_location': 'Page 20'}]
+*   **Policy Coverage:** Compassionate travel
+    *   **Base Limits:** [{'type': 'Per Person', 'limit': 7500, 'basis': None}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Reimburses reasonable costs (return economy transport, standard room accom) for one adult family member to travel to arrange return of your body if you die overseas from unexpected illness/injury and no other adult family member is on the trip.', 'source_location': 'Page 8, 19 & 20'}, {'detail_snippet': 'If you die while hospitalised, only one benefit (Hospitalisation Visit, Child Companion, or Compassionate Travel) is paid (whichever is highest).', 'source_location': 'Page 20'}]
+*   **Policy Coverage:** Automatic policy extension
+    *   **Base Limits:** [{'type': 'Duration', 'limit': '14 days', 'basis': None}]
+    *   **Conditional Limits:** [{'condition': "With 'Pre-existing medical conditions' add-on (Extension due to pre-existing condition)", 'limits': [{'type': 'Duration', 'limit': '30 days', 'basis': None}], 'source_location': 'Page 9, Optional Covers & Page 24'}]
+    *   **Source Specific Details:** [{'detail_snippet': 'Policy cover automatically extended free of charge if return to Singapore delayed by serious public event OR if confined to hospital overseas on advice of medical practitioner.', 'source_location': 'Page 7 & 19'}, {'detail_snippet': "For 'Pre-existing medical conditions' add-on: Extension up to 30 days if delayed due to hospitalisation or being medically unfit to travel due to the pre-existing condition.", 'source_location': 'Page 24'}]
+*   **Coverage Assessment:** Fully Met (Requires purchase of 'Pre-existing medical conditions' add-on for coverage related to high blood pressure).
+
+### Requirement: Trip Cancellation
+
+*   **Policy Coverage:** Trip cancellation and loss of deposit
+    *   **Base Limits:** [{'type': 'Per Person', 'limit': 10000, 'basis': None}, {'type': 'Overall limit for family plan', 'limit': 25000, 'basis': None}]
+    *   **Conditional Limits:** [{'condition': "With 'Pre-existing medical conditions' add-on (Claim due to pre-existing condition)", 'limits': [{'type': 'Per Person (50% co-payment)', 'limit': 10000, 'basis': None}], 'source_location': 'Page 9, Optional Covers & Page 22'}, {'condition': "With 'Cancel for any reason' add-on (Claim for reason not covered by base)", 'limits': [{'type': 'Per Person (50% reimbursement)', 'limit': 3000, 'basis': None}, {'type': 'Overall limit for family plan (50% reimbursement)', 'limit': 7500, 'basis': None}], 'source_location': 'Page 9, Optional Covers & Page 27'}]
+    *   **Source Specific Details:** [{'detail_snippet': 'Pays if trip cancelled within 30 days before departure due to specified events (e.g., serious injury/illness/death of insured/companion/family, witness duty, home damage, serious public event, onward flight cancellation by airline due to specific reasons, hijack >12hrs). Covers unused, non-refundable costs and cancellation fees.', 'source_location': 'Page 10 & 11'}, {'detail_snippet': 'Excludes claims if policy bought <72 hours before departure (unless due to accidental death). Excludes amounts refundable from other sources (cash, vouchers, credits etc.). Excludes upgrades.', 'source_location': 'Page 11'}, {'detail_snippet': "For 'Cancel for any reason' add-on: Must be purchased within 7 days of initial trip deposit. Reimburses 50% of costs up to the limit for cancellation reasons not covered by the base policy.", 'source_location': 'Page 27'}, {'detail_snippet': "For 'Pre-existing medical conditions' add-on: Covers cancellation due to pre-existing condition subject to 50% co-payment and specific limits. Exclusions apply (e.g., cover bought <72hrs before departure, terminal illness).", 'source_location': 'Page 22 & 25-26'}, {'detail_snippet': 'General exclusion applies for events known before booking/policy purchase.', 'source_location': 'Page 31'}]
+*   **Coverage Assessment:** Fully Met (Requires purchase of 'Pre-existing medical conditions' add-on for cancellation due to high blood pressure, subject to 50% co-payment and terms).
+
+### Requirement: Travel Delays
+
+*   **Policy Coverage:** Travel delay
+    *   **Base Limits:** [{'type': 'Overseas Delay (Per Person Max)', 'limit': 500, 'basis': 'S$100 for every six hours delay while overseas'}, {'type': 'Singapore Delay (Per Person Max)', 'limit': 100, 'basis': 'S$100 for the first six hours delay in Singapore only'}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Pays if scheduled public transport is delayed or overbooked for 6 continuous hours or more. Pays S$100 per 6 hours overseas (max S$500). Pays S$100 for first 6 hours delay in Singapore only.', 'source_location': 'Page 5, 12 & 13'}, {'detail_snippet': 'Must have checked in on time. Requires written proof of delay from provider/agent showing hours and reason.', 'source_location': 'Page 13'}, {'detail_snippet': 'Excludes delay caused by you, your family member or travel companion.', 'source_location': 'Page 13'}]
+*   **Coverage Assessment:** Fully Met
+
+### Requirement: Lost or Damaged Luggage
+
+*   **Policy Coverage:** Theft of or damage to baggage or personal belongings
+    *   **Base Limits:** [{'type': 'Per Person', 'limit': 5000, 'basis': None}, {'type': 'Sub-limit for laptop / tablet (in total)', 'limit': 1000, 'basis': None}, {'type': 'Sub-limit for mobile phone (in total)', 'limit': 500, 'basis': None}, {'type': 'Sub-limit for jewellery (in total)', 'limit': 500, 'basis': None}, {'type': 'Sub-limit for all other items (per item)', 'limit': 500, 'basis': None}, {'type': 'Overall limit for family plan', 'limit': 12500, 'basis': None}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Pays if baggage/personal belongings stolen or accidentally damaged during trip, or lost by airline operator. Payment based on depreciation (age vs purchase price) or current market value (max S$50 per item, max 5 items without proof). FWD decides repair/replace/cash. Damaged item may become FWD property.', 'source_location': 'Page 6, 14, 15 & 36'}, {'detail_snippet': 'Conditions: Mobile phones, laptops, tablets, jewellery must be carried by you (not checked-in or left unattended). Items must be under your care or authorised person\'s care. Report theft to police/authority within 24 hours.', 'source_location': 'Page 15'}, {'detail_snippet': 'Exclusions: Perishables, consumables, vehicles, cards, musical instruments, business goods, sports equipment, stored data, unexplained loss, wear & tear.', 'source_location': 'Page 15'}, {'detail_snippet': 'Benefit reduced by any amount paid under Baggage Delay for the same items.', 'source_location': 'Page 15'}]
+*   **Policy Coverage:** Baggage delay
+    *   **Base Limits:** [{'type': 'Overseas Delay (Per Person Max)', 'limit': 600, 'basis': 'S$150 for every six hours of delay'}, {'type': 'Singapore Delay (Per Person Max)', 'limit': 150, 'basis': 'S$150 for first six hour delay in Singapore only'}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Pays if your checked-in baggage is delayed, misdirected, or misplaced by public transport provider for 6 continuous hours or more after arrival. Pays S$150 per 6 hours (max S$600). Pays S$150 for first 6 hours delay on final return to Singapore.', 'source_location': 'Page 6 & 14'}, {'detail_snippet': 'Requires written proof from provider/agent stating name, date, time, duration, and reason for delay. Paid per claim, not per bag. Only one person paid if multiple share bag.', 'source_location': 'Page 14'}]
+*   **Policy Coverage:** Loss of passport, travel documents & theft of money
+    *   **Base Limits:** [{'type': 'Per Person', 'limit': 600, 'basis': None}, {'type': 'Sub-limit for theft of your money', 'limit': 300, 'basis': None}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': "Pays for replacement costs of lost passport/travel documents overseas, and value of stolen cash/travellers' cheques (up to S$300).", 'source_location': 'Page 6 & 16'}, {'detail_snippet': 'Conditions: Call Emergency Assistance (+65 6322 2072) for advice. Items must be under care/locked. Money must be stolen while carried by you (not checked-in or left unattended). Report loss/theft to police/authority within 24 hours.', 'source_location': 'Page 16'}]
+*   **Coverage Assessment:** Fully Met
+
+### Requirement: Sports and Adventure Activities
+
+*   **Policy Coverage:** General Policy Terms / Medical / Accident Benefits
+    *   **Base Limits:** N/A (Covered under relevant sections like Medical Expenses, Personal Accident unless specifically excluded)
+    *   **Conditional Limits:** N/A
+    *   **Source Specific Details:** [{'detail_snippet': 'Standard leisure hiking is not listed as an exclusion in the general exclusions or specific benefit sections provided. Injuries sustained during covered activities would fall under Medical Expenses and Personal Accident benefits, subject to policy terms and limits.', 'source_location': 'General Policy Wording (Implicit), Exclusions Sections (e.g., Page 15, 17, 31-32)'}]
+*   **Coverage Assessment:** Fully Met (Assumes standard leisure hiking; extreme/professional activities may be excluded).
+
+### Requirement: Pre-existing conditions
+
+*   **Policy Coverage:** Pre-existing medical conditions (Optional Add-on)
+    *   **Base Limits:** []
+    *   **Conditional Limits:** [{'condition': 'Optional add-on purchased', 'limits': [{'type': 'Trip cancellation/loss deposit (50% co-pay)', 'limit': 10000, 'basis': None}, {'type': 'Trip postponement (50% co-pay)', 'limit': 1000, 'basis': None}, {'type': 'Trip cut short (50% co-pay)', 'limit': 10000, 'basis': None}, {'type': 'Trip disruption (50% co-pay)', 'limit': 2000, 'basis': None}, {'type': 'Medical expenses incurred overseas', 'limit': 100000, 'basis': None}, {'type': 'Emergency medical evacuation & repatriation', 'limit': 100000, 'basis': None}, {'type': 'Automatic policy extension', 'limit': '30 days', 'basis': None}], 'source_location': 'Page 9, Optional Covers'}]
+    *   **Source Specific Details:** [{'detail_snippet': 'Optional add-on providing coverage for specified benefits when the claim arises directly from a pre-existing medical condition of insured, travelling family member, or travel companion (if also covered).', 'source_location': 'Page 22'}, {'detail_snippet': 'Pre-existing condition defined as one aware of (or reasonably expected to be aware of) before trip, or received advice/tests/treatment/diagnosis/drugs for in 12 months before trip.', 'source_location': 'Page 44'}, {'detail_snippet': '50% co-payment applies to Trip Cancellation, Postponement, Cut Short, and Disruption benefits under this cover.', 'source_location': 'Page 22-23'}, {'detail_snippet': 'Exclusions: Claims if cover bought <72hrs before departure, specific costs (upgrades, unused tickets etc.), claims from airline fault, non-direct claims, known illness if cover not bought for affected person, terminal illness diagnosis (<12mths), specific medical exclusions (dental, Chinese med, planned treatment).', 'source_location': 'Page 25-26'}]
+*   **Coverage Assessment:** Fully Met (Requires purchase of the optional 'Pre-existing medical conditions' add-on. Note the specific limits and co-payments associated with this add-on).
+
+### Requirement: Medical needs
+
+*   **Policy Coverage:** Emergency medical treatment (Covered under 'Medical expenses incurred overseas' and 'Emergency medical evacuation & repatriation')
+    *   **Base Limits:** See 'Medical Coverage' section above.
+    *   **Conditional Limits:** See 'Medical Coverage' section above.
+    *   **Source Specific Details:** See 'Medical Coverage' section above.
+*   **Coverage Assessment:** Fully Met (Requires purchase of 'Pre-existing medical conditions' add-on for coverage related to high blood pressure).
+
+### Requirement: Activities to cover
+
+*   **Policy Coverage:** Hiking (Covered under General Policy Terms / Medical / Accident Benefits)
+    *   **Base Limits:** N/A
+    *   **Conditional Limits:** N/A
+    *   **Source Specific Details:** See 'Sports and Adventure Activities' section above.
+*   **Coverage Assessment:** Fully Met (Assumes standard leisure hiking).
+
+### Requirement: Additional requests
+
+*   **Policy Coverage:** Personal accident (Double payout for accidental death occurring while using public transport)
+    *   **Base Limits:** [{'type': 'Adult below 70 years of age', 'limit': 300000, 'basis': None}, {'type': 'Adult 70 years old or older', 'limit': 60000, 'basis': None}, {'type': 'Child covered under a family plan', 'limit': 90000, 'basis': None}, {'type': 'Overall limit for family plan', 'limit': 750000, 'basis': None}]
+    *   **Conditional Limits:** null
+    *   **Source Specific Details:** [{'detail_snippet': 'Pays lump sum if you suffer an accident during trip causing death or total permanent disability within 90 days. Payment based on percentage scale for specific injuries (e.g., loss of limb/sight, burns). Max 100% of sum insured per person.', 'source_location': 'Page 7 & 18'}, {'detail_snippet': 'Total and permanent disability defined as unable to work in any job/business for 6 months due to accident and unlikely ever to do so.', 'source_location': 'Page 18'}, {'detail_snippet': 'Disappearance clause: If on public transport that disappears/wrecked/sinks and body not found after 1 year, considered deceased.', 'source_location': 'Page 18'}, {'detail_snippet': 'General exclusion for suicide/self-inflicted acts applies.', 'source_location': 'Page 31'}]
+*   **Coverage Assessment:** Not Met: The policy details do not mention a specific double payout for accidental death occurring on public transport. The standard Personal Accident limits apply.
+
+## Summary for Recommended Tier: Business
+
+*   **Strengths:**
+    *   Provides comprehensive coverage for core requirements (Medical, Cancellation, Delay, Luggage).
+    *   Offers significantly higher limits than the Premium tier, particularly for Medical Expenses ($500k base) and the crucial optional Pre-existing Condition Medical add-on ($100k limit).
+    *   Includes Unlimited Emergency Medical Evacuation & Repatriation (base cover).
+    *   Covers leisure hiking under general terms.
+    *   Offers a good balance between coverage levels and likely cost compared to Premium and First tiers.
+*   **Weaknesses/Gaps:**
+    *   Requires the purchase of an *additional* 'Pre-existing medical conditions' add-on for coverage related to high blood pressure; this is not included automatically.
+    *   Does **not** meet the specific request for a double payout for accidental death occurring on public transport.
+    *   May potentially be closer to the upper end or slightly exceed the $200-$300 budget for two adults once the pre-existing condition add-on is included (actual premium check required).

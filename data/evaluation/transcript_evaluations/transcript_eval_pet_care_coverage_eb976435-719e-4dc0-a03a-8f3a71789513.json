@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about the Trip Cancellation benefit and specified the types of covered reasons they were interested in (illness/injury of traveler or family member) and those they were not (work reasons, change of mind).",
+      "customer_quote": "[14] Yes, that's important. I need clarity on the Trip Cancellation benefit. What constitutes a 'covered reason'? I assume serious illness or injury of a traveller, or perhaps a close family member back home, are standard triggers, but I'd like confirmation on the general scope outlined in the policy wording. I'm not concerned about work reasons or changing my mind, just the typical insurable events.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's need for clarification on trip cancellation and specifically noted the focus on illness or injury as covered reasons.",
+      "agent_quote": "[15] Okay, noted. You're looking for clarification on the covered reasons for trip cancellation, specifically mentioning illness or injury."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer asked specific questions about the scope of emergency Medical Coverage, including limits for hospital stays/treatment overseas (Japan), coverage for prescription medications, and confirmed no pre-existing conditions.",
+      "customer_quote": "[12] No, no pre-existing conditions for either of us. However, I do want to understand the scope of the emergency Medical Coverage. Specifically, what are the typical limits for hospital stays or emergency medical treatment overseas, say in Japan? And does it cover necessary prescription medications if prescribed locally due to an incident?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly acknowledged the customer's specific questions regarding medical coverage limits, treatment, prescriptions, and the absence of pre-existing conditions.",
+      "agent_quote": "[13] Understood. So, you require details on the medical coverage limits for emergency treatment, hospital stays, and local prescription medications, specifically noting no pre-existing conditions apply."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer mentioned Lost/Damaged Luggage coverage and asked for specific details regarding sub-limits for valuables/electronics, confirmation of cash exclusion, and coverage for essential purchases during delay and luggage damage.",
+      "customer_quote": "[18] Ah yes, Lost/Damaged Luggage coverage. I'm familiar with the general concept... However, I need to know the typical sub-limits. For example, are there specific lower limits for valuable items or electronics? I understand cash is usually excluded.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent accurately summarized the customer's specific queries about sub-limits, exclusions, essential purchases, and damage coverage under the Lost/Damaged Luggage benefit.",
+      "agent_quote": "[19] Noted. You're asking about the specifics of Lost/Damaged Luggage coverage, including typical sub-limits for valuables and electronics, confirmation of cash exclusion, and coverage for essential purchases during baggage delay and luggage damage."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer asked about standard Travel Delay coverage (minimum hours threshold) and, crucially, introduced the scenario-specific requirement for coverage of additional pet accommodation costs due to a significant return travel delay.",
+      "customer_quote": "[16] Regarding Travel Delays, I see policies usually cover accommodation or meals after a certain number of hours, like 6 or 8 hours. Can you confirm the typical threshold? More importantly, I have a specific, non-standard requirement here. If our return journey to Singapore is significantly delayed... I need coverage for additional pet accommodation costs.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent explicitly acknowledged both the standard travel delay query and the specific, non-standard requirement regarding pet hotel fees, confirming understanding.",
+      "agent_quote": "[17] I understand. So, you need details on the standard travel delay benefit, including the minimum delay period, and you have a specific requirement for coverage of additional pet hotel fees for your cat in Singapore due to a covered return travel delay. Let me note that down clearly."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer specifically mentioned planning Scuba Diving and asked for confirmation of adequate coverage for medical expenses/emergency assistance related to this activity, noting certification and depth limits.",
+      "customer_quote": "[10] Yes, we plan to do Scuba Diving during our trip. I need to ensure the policy provides adequate coverage for medical expenses or emergency assistance related specifically to recreational scuba diving, assuming we are certified and diving within standard depth limits.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the requirement for Scuba Diving coverage and appropriately followed up by asking about pre-existing medical conditions, which is relevant context for medical coverage related to activities.",
+      "agent_quote": "[11] Okay, I've noted down the requirement for coverage related to Scuba Diving. Regarding health, are there any pre-existing medical conditions for either traveller that we should be aware of?"
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The customer clearly articulated their needs for standard coverage types (Trip Cancellation, Medical, Luggage, Travel Delays, Sports/Adventure) and provided specific details or questions for each. They also introduced a clear scenario-specific requirement (pet accommodation costs under Travel Delays). The agent performed excellently, actively listening, acknowledging each requirement, confirming understanding of the specifics (including the non-standard pet requirement), and summarizing accurately. All required coverage areas mentioned by the customer were captured."
+  },
+  "transcript_name": "transcript_pet_care_coverage_eb976435-719e-4dc0-a03a-8f3a71789513",
+  "scenario": "pet_care_coverage"
+}

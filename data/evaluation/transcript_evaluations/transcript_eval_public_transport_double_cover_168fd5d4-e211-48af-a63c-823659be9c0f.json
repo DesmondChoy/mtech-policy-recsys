@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the need for Trip Cancellation coverage and provided specific reasons (illness, family emergency) they wanted covered.",
+      "customer_quote": "[26] That's another thing! If one of us gets seriously ill, or there's a family emergency, we can't just lose all the money we've paid for flights and hotels. It\u2019s not fair! We need **Trip Cancellation** coverage for things like illness or family emergencies.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement and the specific reasons mentioned.",
+      "agent_quote": "[27] Understood. Trip Cancellation coverage for unforeseen events like illness or family emergencies is noted."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Medical Coverage, detailing needs like hospital stays and doctor visits, and importantly raised the issue of a pre-existing condition (high blood pressure) and the need for clarity on coverage, especially for emergencies.",
+      "customer_quote": "[18] Yes, my wife has **high blood pressure**. Do we need to declare high blood pressure? I swear if this becomes an excuse not to cover something later... We absolutely need proper **Medical Coverage**. Hospital stays, doctors, the works. No nonsense about pre-existing conditions excluding emergencies!",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about pre-existing conditions, acknowledged the customer's specific needs, and noted the concern regarding how pre-existing conditions are handled in emergencies.",
+      "agent_quote": "[19] Thank you for letting me know. I've noted the requirement for comprehensive Medical Coverage, and the point about needing clarity on how pre-existing conditions like high blood pressure are handled, particularly for emergency situations."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer clearly stated the need for Lost/Damaged Luggage coverage, specifying reimbursement for lost items, essential purchases during delay, cover for damaged luggage, and raised a concern about electronics exclusion.",
+      "customer_quote": "[24] My luggage? After what happened to my friend last year \u2013 airline completely lost his bag, took weeks to get a pathetic payout \u2013 yes, I want **Lost/Damaged Luggage** coverage. Reimbursement for lost items, essentials if it\u2019s delayed, and cover if the suitcase itself gets smashed up. Don't tell me electronics aren't covered either, that's ridiculous in this day and age.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the specific requirements mentioned by the customer, including the concern about electronics.",
+      "agent_quote": "[25] Noted the requirement for Lost, Damaged, and Delayed Luggage coverage, including cover for essential purchases during delay and damage to the luggage itself. I've also noted your concern about electronics potentially being excluded, which is common, but I'll ensure this requirement is clear."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly requested Travel Delays coverage, specifying the need for hotel and meal coverage, and expressed concern about minimum delay time requirements.",
+      "customer_quote": "[22] Absolutely! Flights get delayed constantly. If we get stuck somewhere, I expect the insurance to cover hotels and meals. It's only fair. We need **Travel Delays** coverage, and not with some ridiculous 12-hour minimum wait either. What good is that?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the customer's requirement for delay coverage including accommodation and meals, and implicitly acknowledged the concern about minimum wait times by noting the requirement.",
+      "agent_quote": "[23] Alright, I've noted your requirement for Travel Delays coverage, including accommodation and meals due to significant delays."
+    },
+    {
+      "coverage_type": "sports_and_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The agent proactively asked about activities. The customer confirmed they plan hiking and explicitly requested specific coverage under 'Sports and Adventure Activities', expressing concern it might otherwise be excluded.",
+      "customer_quote": "[16] We plan to do Hiking during our trip. Not mountains or anything extreme, but proper hiking trails. I expect that to be covered properly, not excused if something happens! And don't try to tell me hiking isn't covered under standard medical stuff if there's an accident. I want specific confirmation for **Sports and Adventure Activities** coverage for hiking.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent appropriately probed for specific activities and then confirmed the customer's explicit requirement for hiking to be covered under this section.",
+      "agent_quote": "[17] Understood, Mr. Tan. So you require coverage that specifically includes hiking as a listed activity under the Sports and Adventure section. Noted."
+    },
+    {
+      "coverage_type": "scenario_specific_double_payout",
+      "name": "Double Payout on Public Transport",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned the scenario-specific requirement for a double payout for accidental death occurring on public transport (bus/train).",
+      "customer_quote": "[28] Yes, one very specific thing I read about somewhere. I want to know if the policy provides extra coverage if an accident happens while I'm on a bus or train over there. Like, **double payout for accidental death if it occurs while traveling on public transport**. Is that something you offer? Because I want that included.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly identified and confirmed this specific, additional requirement requested by the customer.",
+      "agent_quote": "[29] Okay, Mr. Tan. You're specifically asking for a feature that provides an enhanced or double payout for accidental death if it occurs while traveling as a fare-paying passenger on public transport like buses or trains. I have noted this specific requirement down."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered information on all standard coverage types and the specific scenario requirement. The customer was clear, albeit demanding, about their needs and concerns (e.g., pre-existing conditions, specific activities, delay minimums, electronics). The agent performed well by actively listening, confirming understanding, noting specific details and concerns, and probing appropriately (e.g., asking about activities and pre-existing conditions). All necessary information appears to have been captured."
+  },
+  "transcript_name": "transcript_public_transport_double_cover_168fd5d4-e211-48af-a63c-823659be9c0f",
+  "scenario": "public_transport_double_cover"
+}

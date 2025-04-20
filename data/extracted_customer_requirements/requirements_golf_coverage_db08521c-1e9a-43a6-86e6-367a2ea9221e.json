@@ -1,0 +1,101 @@
+{
+    "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a golf trip to Australia.\",\n  \"detailed_description\": \"Customer Tan Keng Boon is seeking comprehensive travel insurance for a 2-week trip to Australia. Coverage required includes medical emergencies, trip cancellation, travel delays, lost/damaged luggage, and specific golf-related coverage including loss or damage to golf equipment, reimbursement for unused green fees, liability coverage for rented golf buggies, and a hole-in-one benefit.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Unused Green Fees Reimbursement\",\n    \"Golf Buggy Damage Liability\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Hospital stays\",\n    \"Doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Ensure proper coverage and reimbursements as previously experienced issues were reported.\",\n  \"keywords\": [\n    \"Travel Insurance\",\n    \"Golf Trip\",\n    \"Australia\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost Luggage\",\n    \"Golf Equipment\",\n    \"Prepaid Expenses\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "req-001",
+        "requirement_summary": "Travel insurance requirements for a golf trip to Australia.",
+        "detailed_description": "Customer Tan Keng Boon is seeking comprehensive travel insurance for a 2-week trip to Australia. Coverage required includes medical emergencies, trip cancellation, travel delays, lost/damaged luggage, and specific golf-related coverage including loss or damage to golf equipment, reimbursement for unused green fees, liability coverage for rented golf buggies, and a hole-in-one benefit.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Australia",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "Medical Coverage",
+            "Trip Cancellation",
+            "Travel Delays",
+            "Lost/Damaged Luggage",
+            "Golf Equipment Coverage",
+            "Unused Green Fees Reimbursement",
+            "Golf Buggy Damage Liability",
+            "Hole-in-One Benefit"
+        ],
+        "pre_existing_conditions": [],
+        "medical_needs": [
+            "Hospital stays",
+            "Doctor visits"
+        ],
+        "activities_to_cover": [
+            "Golf"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Ensure proper coverage and reimbursements as previously experienced issues were reported.",
+        "keywords": [
+            "Travel Insurance",
+            "Golf Trip",
+            "Australia",
+            "Medical Coverage",
+            "Trip Cancellation",
+            "Travel Delays",
+            "Lost Luggage",
+            "Golf Equipment",
+            "Prepaid Expenses"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd. My name is Sarah. How may I assist you today?\nCustomer: Finally! I've been on hold for ages. Look, I need travel insurance, but frankly, after my last experience with ISS, I'm not expecting much. You guys really messed up my claim last year.\nCustomer Service Agent: I'm very sorry to hear you had a difficult experience previously, sir. I understand your frustration. I'll do my best to assist you efficiently today with your new inquiry. Could I start with your name, please?\nCustomer: It's Tan Keng Boon. And don't just say you understand, *fix* things this time. I need proper coverage, not the nonsense I got before.\nCustomer Service Agent: Okay, Mr. Tan. Thank you. To help me understand what you need for this upcoming trip, could you tell me where you'll be travelling to?\nCustomer: We're planning a trip to Australia. And don't try to sell me some useless basic plan.\nCustomer Service Agent: Noted, Australia. And how long will you be away for, Mr. Tan?\nCustomer: It will be a 2 weeks trip. Just myself and my wife.\nCustomer Service Agent: Alright, two weeks for two travellers. And may I ask which age group the travellers fall into? For policy purposes.\nCustomer: We're mostly around 41-55 years old. Why? Are you going to charge me more?\nCustomer Service Agent: It's just one of the standard factors for quoting, Mr. Tan. Thank you. You mentioned it's a trip to Australia. Are there any specific activities you plan to do that we should be aware of? Like skiing or scuba diving?\nCustomer: It's a golf trip! That's the main point. And this is where ISS better get it right this time. I need absolute certainty my golf equipment is covered if it gets lost or damaged by the airline or anyone else. Last time the payout was pathetic.\nCustomer Service Agent: Okay, noted. Coverage specifically for golf equipment against loss or damage.\nCustomer: Yes! And what if I pre-pay for expensive green fees and then something happens – say, I get injured, or the flight is massively delayed – and I can't play? I expect to be reimbursed for those unused fees. It's only fair!\nCustomer Service Agent: Understood. Reimbursement for unused green fees due to covered reasons.\nCustomer: And those golf buggies! What if I accidentally bump it or scratch it? Am I covered for damage liability? Because I'm not paying out of pocket for that after paying for your insurance.\nCustomer Service Agent: Okay, cover for potential damage liability for a rented golf buggy.\nCustomer: One more thing for golf – some insurers offer a small payout or benefit if you score a hole-in-one. Does ISS do that? Because if you do, I want it included. It’s the least you could do.\nCustomer Service Agent: Acknowledged. A request for a hole-in-one achievement benefit. So, specific golf coverage noted. Are there any other general travel concerns you want coverage for?\nCustomer: Of course! The usual things everyone needs, which you guys probably try to exclude! What about Medical Coverage? If one of us falls sick or gets injured – properly covered, mind you, no tricks. Hospital stays, doctor visits, the works.\nCustomer Service Agent: Right, comprehensive Medical Coverage for emergency treatment during the trip.\nCustomer: And Trip Cancellation. If something serious happens before we go – like a major illness or family emergency – I expect my non-refundable costs back. Not excuses.\nCustomer Service Agent: Okay, Trip Cancellation coverage for specified unforeseen events.\nCustomer: Travel Delays too! Airlines are constantly delayed. If we get stuck somewhere, I expect cover for extra hotel nights and meals. Don't tell me it needs to be a 12-hour delay either, make it reasonable!\nCustomer Service Agent: Understood. Coverage for necessary expenses due to significant Travel Delays.\nCustomer: And don't forget Lost or Damaged Luggage in general. Not just the golf clubs. My wife’s suitcase, clothes, essentials... If the airline loses it or smashes it, ISS needs to pay up properly this time.\nCustomer Service Agent: Noted, coverage for Lost, Damaged, or Delayed Baggage. Are there any pre-existing medical conditions, like asthma or high blood pressure, for either traveller that we should note?\nCustomer: No, no pre-existing conditions. We're healthy.\nCustomer Service Agent: Thank you, Mr. Tan. Let me quickly summarize the requirements I've noted down for your trip to Australia for 2 weeks, for two travellers aged 41-55, travelling from Singapore. You require standard coverage for Medical emergencies, Trip Cancellation, Travel Delays, and Lost/Damaged Luggage. Additionally, you have specific requirements for comprehensive golf coverage including protection for your golf equipment, reimbursement for unused green fees, liability cover for golf buggy damage, and a hole-in-one benefit. Is that all correct?\nCustomer: Yes, that's what I need. And I expect it to actually *work* this time if I need to claim. No nonsense.\nCustomer Service Agent: I have recorded all these requirements, Mr. Tan. Thank you for providing the details. This information will be passed on to our quotations team who will prepare the relevant options for you.\nCustomer: Fine. Just make sure they cover everything I said.\nCustomer Service Agent: Understood. Thank you for calling ISS Insurance Ltd, Mr. Tan. Have a good day.\nCustomer: Hmph. Alright. Bye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a golf trip to Australia.\",\n  \"detailed_description\": \"Customer Tan Keng Boon is seeking comprehensive travel insurance for a 2-week trip to Australia. Coverage required includes medical emergencies, trip cancellation, travel delays, lost/damaged luggage, and specific golf-related coverage including loss or damage to golf equipment, reimbursement for unused green fees, liability coverage for rented golf buggies, and a hole-in-one benefit.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost/Damaged Luggage\",\n    \"Golf Equipment Coverage\",\n    \"Unused Green Fees Reimbursement\",\n    \"Golf Buggy Damage Liability\",\n    \"Hole-in-One Benefit\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [\n    \"Hospital stays\",\n    \"Doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"Golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Ensure proper coverage and reimbursements as previously experienced issues were reported.\",\n  \"keywords\": [\n    \"Travel Insurance\",\n    \"Golf Trip\",\n    \"Australia\",\n    \"Medical Coverage\",\n    \"Trip Cancellation\",\n    \"Travel Delays\",\n    \"Lost Luggage\",\n    \"Golf Equipment\",\n    \"Prepaid Expenses\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "req-001",
+                "requirement_summary": "Travel insurance requirements for a golf trip to Australia.",
+                "detailed_description": "Customer Tan Keng Boon is seeking comprehensive travel insurance for a 2-week trip to Australia. Coverage required includes medical emergencies, trip cancellation, travel delays, lost/damaged luggage, and specific golf-related coverage including loss or damage to golf equipment, reimbursement for unused green fees, liability coverage for rented golf buggies, and a hole-in-one benefit.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Australia",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "Medical Coverage",
+                    "Trip Cancellation",
+                    "Travel Delays",
+                    "Lost/Damaged Luggage",
+                    "Golf Equipment Coverage",
+                    "Unused Green Fees Reimbursement",
+                    "Golf Buggy Damage Liability",
+                    "Hole-in-One Benefit"
+                ],
+                "pre_existing_conditions": [],
+                "medical_needs": [
+                    "Hospital stays",
+                    "Doctor visits"
+                ],
+                "activities_to_cover": [
+                    "Golf"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Ensure proper coverage and reimbursements as previously experienced issues were reported.",
+                "keywords": [
+                    "Travel Insurance",
+                    "Golf Trip",
+                    "Australia",
+                    "Medical Coverage",
+                    "Trip Cancellation",
+                    "Travel Delays",
+                    "Lost Luggage",
+                    "Golf Equipment",
+                    "Prepaid Expenses"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 35022,
+        "prompt_tokens": 29754,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 5268,
+        "successful_requests": 18
+    }
+}

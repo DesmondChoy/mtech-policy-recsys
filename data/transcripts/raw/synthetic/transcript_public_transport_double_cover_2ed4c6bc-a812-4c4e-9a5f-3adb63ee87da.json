@@ -1,0 +1,128 @@
+{
+  "customer_id": "2ed4c6bc-a812-4c4e-9a5f-3adb63ee87da",
+  "personality": {
+    "name": "The Overwhelmed & Stressed",
+    "characteristics": [
+      "Sounds flustered, panicked, or highly emotional (beyond simple anger)",
+      "Overwhelmed by the situation (e.g., accident aftermath, complex claim)",
+      "May have difficulty articulating needs clearly",
+      "Expresses feeling stressed by the process itself",
+      "Needs patience, calming, and clear guidance"
+    ]
+  },
+  "transcript": [
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Thank you for calling ISS Insurance Ltd Singapore. My name is Kevin, how can I help you today?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Oh, hello? Kevin? Yes, hi. I… I need some help. Travel insurance. It’s all just… so much. My head is spinning trying to figure this out. We're planning a trip and I'm just completely overwhelmed."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "I understand, planning a trip can certainly feel that way sometimes. Take a deep breath, I'm here to help gather the details you need. Could you tell me a bit about your trip? For example, where are you planning to go?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Right, yes. Sorry. We're planning a trip to Japan. From Singapore, of course. We're based in Singapore."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, Japan. And how many people will be traveling?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "There will be 2 of us travelling. Just my spouse and I."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Got it, two travelers to Japan. And roughly how long will you be away for?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "It will be a 2 weeks trip. Oh god, just thinking about packing… and what if something goes wrong?"
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "It's good you're thinking about insurance to cover potential issues. To help find the right fit, could you share the general age group of the travelers?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "We're mostly around 41-55 years old."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, 41-55 age group. And what sort of activities are you planning during your two weeks in Japan? Anything specific?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Activities... yes, we were hoping… We plan to do Hiking during our trip. Not like, mountain climbing, just some trails. Is… is that covered? If someone twists an ankle or something? That would need the... the sports thing, right? Sports and Adventure Activities coverage?"
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, noted. Hiking. And related to health, are there any pre-existing medical conditions I should be aware of?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Oh, that’s another worry! Yes, one traveler has high blood pressure. Does that… Does that cause problems? We just need cover if, you know, something *unexpected* happens, like a hospital visit for something else entirely. Not routine checks, obviously, but proper Emergency medical treatment. That’s a standard thing, isn't it? Medical Coverage? It's just so stressful worrying about getting sick far from home."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "I understand the concern. So, noted on the pre-existing condition of high blood pressure and the need for medical coverage for emergencies. Will you be traveling with any special medical equipment?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "No, no special medical equipment needed, thankfully. One less thing to worry about, I suppose. But what about… oh dear, what if the airline loses our bags? Or they get damaged? That would be a nightmare. I need to know there's coverage for Lost/Damaged Luggage. The stress would be unbearable."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Alright, so coverage for lost or damaged luggage is important for you."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Yes, definitely. And… and flights! What if the flight is delayed for ages? We'd be stuck, need a hotel… It’s so expensive there. We need Travel Delays cover. And worse, what if we have to cancel the whole trip beforehand? Like if one of us gets seriously ill? That's thousands of dollars down the drain... We absolutely need Trip Cancellation cover. This whole process is just making my anxiety worse."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, I've noted the requirement for coverage regarding significant travel delays and trip cancellation due to unforeseen covered reasons like illness. Take your time, is there anything else you feel is important for your peace of mind on this trip?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Um… yes, actually. Something specific I read somewhere. It's a bit morbid, I know, but it would make me feel better. I want to know if the policy provides extra coverage, like a double payout, for accidental death if it occurs while traveling on public transport? You know, like if something happens on a bus or a train over there? We’ll be using them a lot. Is that something specific I need to ask for?"
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Okay, I understand. You're specifically asking about a benefit for accidental death that provides a doubled payout if it occurs while on public transportation. I've noted that down. And just to confirm, do you have a budget in mind for the insurance premium?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Oh, budget. Right. We're hoping to spend around $200-$300, if possible. Is that realistic with all this? It's just… so much to think about."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Alright, I've noted the budget range as well. Let me quickly summarize the key requirements you've mentioned. You're looking for travel insurance for two adults, aged 41-55, traveling from Singapore to Japan for two weeks. Key coverage needs include: Medical Coverage, considering one traveler has high blood pressure; Trip Cancellation protection; cover for potential Travel Delays; protection for Lost or Damaged Luggage; specific coverage for Hiking under Sports and Adventure Activities; and you specifically require information on whether a policy offers a double payout for accidental death occurring on public transport. Your budget is around $200-$300. Does that sound correct?"
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Yes… yes, I think that covers everything. It sounds like a lot when you list it like that. Oh dear. But yes, that’s what we need."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "Thank you for confirming all those details. I have noted down all your requirements. I will pass this information along so we can identify suitable options for you. Someone will be in touch shortly."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "Okay. Thank you, Kevin. I… I appreciate your patience."
+    },
+    {
+      "speaker": "Customer Service Agent",
+      "dialogue": "You're welcome. Thank you for calling ISS Insurance Ltd. Have a good day."
+    },
+    {
+      "speaker": "Customer",
+      "dialogue": "You too. Bye."
+    }
+  ],
+  "scenario": "public_transport_double_cover"
+}

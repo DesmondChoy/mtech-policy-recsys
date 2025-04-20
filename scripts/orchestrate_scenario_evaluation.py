@@ -33,12 +33,14 @@ Workflow Steps:
     aggregated file.
 
 Usage:
-    python scripts/orchestrate_scenario_evaluation.py [-n NUM_TRANSCRIPTS] [--skip_transcript_eval]
+    python scripts/orchestrate_scenario_evaluation.py [-n NUM_TRANSCRIPTS] [--skip_transcript_eval] [--only_aggregate]
 
 Arguments:
     -n, --num_transcripts     Number of transcripts to generate per scenario (default: 5).
     --skip_transcript_eval  If set, skips the transcript evaluation step. All generated
                               transcripts will proceed to report generation.
+    --only_aggregate        If set, skips steps 1-3 (generation, pipeline, reports) and
+                              only runs step 4 (final evaluation and aggregation).
 
 Prerequisites:
 -   Python environment set up with dependencies from `requirements.txt`.
@@ -560,28 +562,33 @@ def aggregate_and_filter_evaluations(scenario_uuids: Dict[str, List[str]]):
             )
             continue
 
-        # Filter results based on UUIDs from this run
-        uuids_for_this_scenario = set(scenario_uuids.get(scenario, []))
-        filtered_results = [
-            result
-            for result in all_results
-            if isinstance(result, dict)
-            and result.get("uuid") in uuids_for_this_scenario
-        ]
+        # --- Filtering step removed ---
+        # uuids_for_this_scenario = set(scenario_uuids.get(scenario, []))
+        # filtered_results = [
+        #     result
+        #     for result in all_results
+        #     if isinstance(result, dict)
+        #     and result.get("uuid") in uuids_for_this_scenario
+        # ]
+        # logging.info(
+        #     f"Filtered {len(all_results)} results down to {len(filtered_results)} for scenario {scenario} based on current run UUIDs."
+        # )
         logging.info(
-            f"Filtered {len(all_results)} results down to {len(filtered_results)} for scenario {scenario} based on current run UUIDs."
+            f"Loaded {len(all_results)} results for scenario {scenario} from latest evaluation file."
         )
 
-        # Save the filtered results to a new aggregated file
+        # Save the complete (unfiltered) results to a new file with the specified name
         try:
-            aggregated_filename = (
+            output_filename = (
                 SCENARIO_EVAL_DIR
-                / f"results_{scenario}_aggregated_{run_timestamp}.json"
+                / f"results_{scenario}_all_transcripts_{run_timestamp}.json"  # New filename format
             )
-            with open(aggregated_filename, "w", encoding="utf-8") as f:
-                json.dump(filtered_results, f, indent=2)
+            with open(output_filename, "w", encoding="utf-8") as f:
+                json.dump(
+                    all_results, f, indent=2
+                )  # Save all_results, not filtered_results
             logging.info(
-                f"Saved aggregated results for {scenario} to: {aggregated_filename.name}"
+                f"Saved complete evaluation results for {scenario} to: {output_filename.name}"
             )
         except Exception as e:
             logging.error(
@@ -611,37 +618,51 @@ def main():
         action="store_true",
         help="Skip the transcript evaluation step.",
     )
+    parser.add_argument(
+        "--only_aggregate",
+        action="store_true",
+        help="Skip transcript generation, pipeline processing, and report generation, and only run the final aggregation step.",
+    )
     args = parser.parse_args()
 
     logging.info("--- Starting Scenario Evaluation Orchestration ---")
     logging.info(f"Target Scenarios: {', '.join(TARGET_SCENARIOS)}")
     logging.info(f"Transcripts per scenario: {args.num_transcripts}")
     logging.info(f"Skip transcript evaluation: {args.skip_transcript_eval}")
+    logging.info(f"Only aggregate: {args.only_aggregate}")  # Log the new flag
 
-    # Step 1: Generate Transcripts (Async)
-    scenario_uuids, all_uuids = generate_transcripts_async(
-        TARGET_SCENARIOS, args.num_transcripts
-    )
-    if not all_uuids:
-        logging.error("Transcript generation failed or produced no UUIDs. Exiting.")
-        sys.exit(1)
-    logging.info(
-        f"Generated {len(all_uuids)} total transcripts across {len(TARGET_SCENARIOS)} scenarios."
-    )
+    if not args.only_aggregate:
+        # Step 1: Generate Transcripts (Async)
+        scenario_uuids, all_uuids = generate_transcripts_async(
+            TARGET_SCENARIOS, args.num_transcripts
+        )
+        if not all_uuids:
+            logging.error("Transcript generation failed or produced no UUIDs. Exiting.")
+            sys.exit(1)
+        logging.info(
+            f"Generated {len(all_uuids)} total transcripts across {len(TARGET_SCENARIOS)} scenarios."
+        )
 
-    # Step 2: Run Pipeline (Eval, Parse, Extract)
-    # Pass scenario_uuids dict instead of flat list all_uuids
-    passed_uuids = run_pipeline(scenario_uuids, args.skip_transcript_eval)
-    if passed_uuids is None:  # Handle potential critical failure in pipeline
-        logging.error("Pipeline execution failed. Exiting.")
-        sys.exit(1)
+        # Step 2: Run Pipeline (Eval, Parse, Extract)
+        # Pass scenario_uuids dict instead of flat list all_uuids
+        passed_uuids = run_pipeline(scenario_uuids, args.skip_transcript_eval)
+        if passed_uuids is None:  # Handle potential critical failure in pipeline
+            logging.error("Pipeline execution failed. Exiting.")
+            sys.exit(1)
 
-    # Step 3: Generate Reports (Async)
-    # Pass the dictionary mapping scenarios to lists of UUIDs
-    generate_reports_async(scenario_uuids, passed_uuids)
+        # Step 3: Generate Reports (Async)
+        # Pass the dictionary mapping scenarios to lists of UUIDs
+        generate_reports_async(scenario_uuids, passed_uuids)
 
-    # Step 4: Run Final Evaluation and Aggregate Results
-    aggregate_and_filter_evaluations(scenario_uuids)
+        # Step 4: Run Final Evaluation and Aggregate Results (using generated UUIDs)
+        aggregate_and_filter_evaluations(scenario_uuids)
+
+    else:
+        logging.info("Skipping steps 1-3 due to --only_aggregate flag.")
+        # Step 4: Run Final Evaluation and Aggregate Results (using target scenarios directly)
+        # The function only needs the scenario names (keys)
+        scenario_map_for_aggregation = {scenario: [] for scenario in TARGET_SCENARIOS}
+        aggregate_and_filter_evaluations(scenario_map_for_aggregation)
 
     logging.info("--- Scenario Evaluation Orchestration Finished ---")
 

@@ -1,0 +1,89 @@
+{
+    "raw": "{\n  \"requirement_id\": \"TS2023-001\",\n  \"requirement_summary\": \"Travel insurance for a two-week trip to Japan for two travellers aged 41-55 from Singapore with specific coverage needs.\",\n  \"detailed_description\": \"The customer is looking for insurance coverage due to worries about potential unforeseen events during their trip to Japan. They seek comprehensive medical coverage, including pre-existing condition considerations, trip cancellation, and coverage for lost or delayed luggage, travel delays, and additional accommodation costs for their pet in case of delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Comprehensive Medical Coverage\",\n    \"Lost, Damaged or Delayed Luggage\",\n    \"Travel Delays\",\n    \"Pet Accommodation Costs\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Sightseeing\",\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for additional accommodation and meal costs during significant travel delays.\",\n  \"keywords\": [\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"luggage\",\n    \"travel delay\",\n    \"pet accommodation\",\n    \"hiking\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "TS2023-001",
+        "requirement_summary": "Travel insurance for a two-week trip to Japan for two travellers aged 41-55 from Singapore with specific coverage needs.",
+        "detailed_description": "The customer is looking for insurance coverage due to worries about potential unforeseen events during their trip to Japan. They seek comprehensive medical coverage, including pre-existing condition considerations, trip cancellation, and coverage for lost or delayed luggage, travel delays, and additional accommodation costs for their pet in case of delays.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "Trip Cancellation",
+            "Comprehensive Medical Coverage",
+            "Lost, Damaged or Delayed Luggage",
+            "Travel Delays",
+            "Pet Accommodation Costs"
+        ],
+        "pre_existing_conditions": [
+            "High blood pressure"
+        ],
+        "medical_needs": null,
+        "activities_to_cover": [
+            "Sightseeing",
+            "Hiking"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Coverage for additional accommodation and meal costs during significant travel delays.",
+        "keywords": [
+            "trip cancellation",
+            "medical coverage",
+            "luggage",
+            "travel delay",
+            "pet accommodation",
+            "hiking"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Sarah, how may I help you today?\nCustomer: Oh, hello Sarah. Yes, I… I need to ask about travel insurance. We're planning a trip and I’m just… feeling quite worried about everything that could possibly go wrong. It’s a bit overwhelming.\nCustomer Service Agent: I understand planning a trip can bring up some worries, but getting the right information about insurance can certainly help ease your mind. I can help gather your requirements today. Could you tell me where you'll be travelling to and for how long?\nCustomer: Yes, um, we're planning a trip to Japan. It will be a 2 weeks trip. It sounds lovely but… what if something happens there? Are we really covered?\nCustomer Service Agent: Okay, Japan for two weeks. Noted. And who will be travelling? Just yourself, or…? And where will you be travelling from?\nCustomer: Oh, there will be 2 of us travelling. My partner and I. We're both in the, uh, 41-55 age group. We'll be traveling from Singapore, of course. I just keep thinking, what if one of us gets sick right before? Or something happens while we are there?\nCustomer Service Agent: Alright, two travellers, age group 41-55, travelling from Singapore to Japan for two weeks. Thank you. To help understand what you might need, could you share a little about what you plan to do during the trip? Any specific activities?\nCustomer: Well, mostly sightseeing, but… we were thinking of doing some Hiking. Just day hikes, nothing too extreme, but still… what if one of us falls? Gets injured? What happens then? Does the insurance cover hospital bills overseas? They can be so expensive! And... this is a bit sensitive, but my partner has high blood pressure. Do we need to declare that? Will that affect the coverage if something happens related to it? I’m really worried about that part.\nCustomer Service Agent: Okay, I've noted down the plan for Hiking, and your concerns regarding potential medical expenses overseas, including hospital stays and doctor visits, and the query regarding the pre-existing condition of high blood pressure. Understanding these concerns is helpful. Do you have a specific budget in mind for the insurance premium?\nCustomer: Honestly, the budget is flexible. The most important thing is feeling secure. Like… what if we have to cancel the whole trip last minute? Say, if one of us gets seriously ill just before we leave, or heaven forbid, a family emergency back home? Will we get our money back for the flights and hotels? That's a huge worry.\nCustomer Service Agent: Understood. So, cover for potential trip cancellation due to unforeseen events like illness or family emergencies is a key concern for you. I've noted that down.\nCustomer: Yes, absolutely. And delays! Oh goodness, the thought of being stuck… What if our flight back is delayed by a whole day, or more? Where would we stay? Who pays for the extra hotel night? And… this might sound silly, but we have a cat. She’ll be in a pet hotel here in Singapore. If our return is delayed, she’ll need to stay longer. Would the insurance cover those extra kennel costs? That's something I've been really anxious about.\nCustomer Service Agent: That's not silly at all, it's a practical concern. So, you require clarification on coverage for additional expenses like accommodation and meals during significant travel delays, and specifically, you need cover for additional pet accommodation costs if your return to Singapore is unexpectedly delayed. I have noted this specific requirement regarding the pet hotel costs.\nCustomer: Yes, please. Thank you. And luggage! What happens if the airline loses our bags? Or if they arrive but the suitcase is completely smashed? It sounds like a nightmare. Will we get money back for our things? What about things we need to buy immediately if our bags are delayed? I need to be sure about that.\nCustomer Service Agent: Alright, so coverage related to lost, damaged, or delayed baggage is another requirement. I've noted that down as well. Just to check, will you be travelling with any specific medical equipment, like a CPAP machine or anything similar?\nCustomer: Oh, no. No special medical equipment needed for us. Just the usual things. It’s mostly just the 'what ifs' that get me worried, you know? Wanting to be sure we're prepared.\nCustomer Service Agent: I understand completely. Okay, thank you for sharing all that information. Let me quickly summarise the requirements I've gathered to make sure I haven't missed anything. You're looking for travel insurance for two travellers, aged 41-55, travelling from Singapore to Japan for two weeks. You have a flexible budget. Key requirements include: coverage for Trip Cancellation, comprehensive Medical Coverage overseas, including considering a pre-existing condition of high blood pressure, coverage for Lost, Damaged or Delayed Luggage, coverage for significant Travel Delays including accommodation and meals, specific coverage for additional Pet Accommodation costs due to return delays, and cover related to participating in Hiking activities. Is that all correct?\nCustomer: Yes, I… I think that covers all the main worries. It sounds right. Just need to be sure we're really, truly covered for those things. Especially the medical and the cancellation… and the cat.\nCustomer Service Agent: Understood. Thank you for confirming. I have documented all these requirements clearly. We will use this information to identify the most suitable policy options for your specific needs. Someone from our team will be in touch shortly with the relevant details. Thank you for calling ISS Insurance Ltd.\nCustomer: Okay, thank you very much for your help, Sarah. I appreciate it. Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"TS2023-001\",\n  \"requirement_summary\": \"Travel insurance for a two-week trip to Japan for two travellers aged 41-55 from Singapore with specific coverage needs.\",\n  \"detailed_description\": \"The customer is looking for insurance coverage due to worries about potential unforeseen events during their trip to Japan. They seek comprehensive medical coverage, including pre-existing condition considerations, trip cancellation, and coverage for lost or delayed luggage, travel delays, and additional accommodation costs for their pet in case of delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"Trip Cancellation\",\n    \"Comprehensive Medical Coverage\",\n    \"Lost, Damaged or Delayed Luggage\",\n    \"Travel Delays\",\n    \"Pet Accommodation Costs\"\n  ],\n  \"pre_existing_conditions\": [\n    \"High blood pressure\"\n  ],\n  \"medical_needs\": null,\n  \"activities_to_cover\": [\n    \"Sightseeing\",\n    \"Hiking\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Coverage for additional accommodation and meal costs during significant travel delays.\",\n  \"keywords\": [\n    \"trip cancellation\",\n    \"medical coverage\",\n    \"luggage\",\n    \"travel delay\",\n    \"pet accommodation\",\n    \"hiking\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "TS2023-001",
+                "requirement_summary": "Travel insurance for a two-week trip to Japan for two travellers aged 41-55 from Singapore with specific coverage needs.",
+                "detailed_description": "The customer is looking for insurance coverage due to worries about potential unforeseen events during their trip to Japan. They seek comprehensive medical coverage, including pre-existing condition considerations, trip cancellation, and coverage for lost or delayed luggage, travel delays, and additional accommodation costs for their pet in case of delays.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "Trip Cancellation",
+                    "Comprehensive Medical Coverage",
+                    "Lost, Damaged or Delayed Luggage",
+                    "Travel Delays",
+                    "Pet Accommodation Costs"
+                ],
+                "pre_existing_conditions": [
+                    "High blood pressure"
+                ],
+                "medical_needs": null,
+                "activities_to_cover": [
+                    "Sightseeing",
+                    "Hiking"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Coverage for additional accommodation and meal costs during significant travel delays.",
+                "keywords": [
+                    "trip cancellation",
+                    "medical coverage",
+                    "luggage",
+                    "travel delay",
+                    "pet accommodation",
+                    "hiking"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 63312,
+        "prompt_tokens": 53364,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 9948,
+        "successful_requests": 34
+    }
+}

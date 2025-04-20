@@ -1,0 +1,154 @@
+[
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Good morning, thank you for calling ISS Insurance Ltd Singapore. My name is Priya, how can I help you today?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Oh, hello Priya. Yes, I need... insurance? For a trip. I'm a bit lost, actually. My friend said I should call. I've never bought this travel insurance thing before."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "No worries at all, I can certainly help guide you through understanding what you might need. To start, could you tell me a little about your trip? Where will you be traveling from?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Uhm, yes. We'll be traveling from Singapore. That's where we live."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, traveling from Singapore. And where are you heading to?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're planning a trip to Japan."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Japan, lovely! And how many people will be traveling?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Just two of us. Me and my husband."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, two travelers. And how long will you be away for?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "It will be a 10 days trip."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Ten days in Japan for two people, starting from Singapore. Got it. Are you planning any specific activities while you're there? Sometimes people go skiing or diving, things like that."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Oh! Yes, we wanted to do some hiking. Is that... special? Do I need to say that? Sorry, I don't understand these things well. We just want to be covered if, you know, something happens during the hike? Like an injury?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted. Hiking. So, understanding potential needs related to specific activities like hiking is important. And generally, what are some things you're concerned about for this trip that you feel insurance might help with?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Concerned? Uhm... well, what happens if one of us gets sick? Like, really sick, needing a doctor or even a hospital in Japan? That sounds expensive. Is that something insurance covers?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright, so cover for medical expenses like doctor visits or hospital stays is something you're thinking about. What else comes to mind?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Hmm. Okay, another thing... luggage. What if our bags get lost by the airline? Or damaged? Does insurance help with that? Replacing things? I feel so clueless asking this."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Not at all, these are very common questions! So, cover for issues with luggage – lost, damaged, or even delayed – is another point you'd like addressed. Anything else regarding the travel itself?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Delays! Yes! What if the flight gets delayed for a long time? You hear stories... do we get money back? Or help with booking another flight or a hotel if we get stuck somewhere?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, so cover for significant travel delays and the costs that might arise from that, like accommodation or meals. That's clear."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes, that. And... this is maybe the most important one for me. What if... what if we have to cancel the whole trip *before* we even go?"
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, trip cancellation cover. Could you tell me more about what sort of reasons for cancellation you're thinking about?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Well, like... what if one of us gets very sick? Or... okay, this is specific, but my sister is planning her wedding, and the date might end up being right when we planned our trip. If I have to cancel because I need to go to her wedding, is that covered? I really need to know about that. I feel so bad asking all this."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Please don't feel bad, it's good to ask! So you're interested in trip cancellation, covering reasons like unexpected illness, but you specifically want to know about cancelling due to an important family event, like your sister's wedding. We'll note that specific scenario down. Are there any other cancellation reasons you're wondering about?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Uhm, no, I think the sickness and the wedding are the main ones. That’s what worries me most."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Understood. Just a couple more details to get a clearer picture. Roughly, what age group do the travelers fall into?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "We're mostly around 26-40 years old."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, 26-40. And do either of you have any pre-existing medical conditions we should be aware of, like asthma or diabetes?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No, no pre-existing conditions."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Great. And will you be travelling with any special medical equipment, like a wheelchair or an insulin pump?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "No special medical equipment needed."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Alright. And finally, do you have a rough budget in mind for the insurance premium per person?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Oh. Uhm, maybe... We're hoping to spend $200-$300? Is that realistic? I don't really know."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Okay, noted a budget preference of $200-$300. Thank you, that gives me a good overview. So, just to quickly summarise what you're looking for in terms of potential coverage: medical expenses during the trip, protection for lost or damaged luggage, help if your travel plans are significantly delayed, cover if you need to cancel the trip for certain reasons – specifically noting your query about cancelling for your sister's wedding – and cover related to injuries while hiking. Is that correct?"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Yes! Yes, that sounds right. You explained it much better than I did. Sorry for being confusing."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "Not at all, you were very clear. Thank you for sharing all that information. I have noted down all these requirements."
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "Okay, thank you so much, Priya."
+    },
+    {
+        "speaker": "Customer Service Agent",
+        "dialogue": "You're welcome. Have a great day!"
+    },
+    {
+        "speaker": "Customer",
+        "dialogue": "You too, bye bye."
+    }
+]

@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned needing cancellation coverage [18] and provided specific reasons of concern: illness/family emergency [18] and a specific family event (sister's wedding) [20]. The agent acknowledged both the general need [19] and the specific scenario [21].",
+      "customer_quote": "[18] Right. Now, the main thing \u2013 cancellation. If something unexpected comes up, like, we get sick or there's a family emergency, we need to be able to cancel and get our money back for the flights and hotel. [20] Yes, but specifically \u2013 what if I have to cancel because of a family event? Say, my sister suddenly moves her wedding date right into our trip dates?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the general requirement [19] and specifically acknowledged the customer's unique concern about the family event, noting it as a requirement needing clarification [21].",
+      "agent_quote": "[19] Okay, so coverage for trip cancellation due to specific unforeseen events like illness is a requirement. [21] Thank you for specifying that. So, you have a requirement to understand if cancellation due to a significant family event, like your sister's wedding date changing, would be covered. I've noted this specific cancellation scenario as a requirement you need addressed."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the need for medical coverage [12] and provided specific details like hospital bills and doctor visits.",
+      "customer_quote": "[12] But obviously, we need medical coverage, right? If something happens, hospital bills, doctors, that kind of thing. Standard.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about pre-existing conditions [11] and confirmed the requirement for emergency medical needs [13].",
+      "agent_quote": "[11] And regarding health, are there any pre-existing medical conditions I should note for any traveller? [13] Understood, so coverage for emergency medical needs during the trip is a requirement."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly mentioned needing coverage for luggage [16] and specified concerns about lost or broken bags.",
+      "customer_quote": "[16] Yes. And luggage! Always worried the airline will lose it or break it. Need cover for lost or damaged bags.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement for lost, damaged, or delayed baggage [17]. No further probing was necessary based on the customer's statement.",
+      "agent_quote": "[17] Got it, requirement noted for lost, damaged, or delayed baggage."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about coverage for significant delays [14] and provided specific details like needing cover for hotels and food.",
+      "customer_quote": "[14] Yes, obviously. And what about if the flight gets massively delayed? Stuck in Bangkok or something. We'll need cover for hotels, food, right?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent confirmed the requirement for cover related to significant travel delays [15].",
+      "agent_quote": "[15] Okay, so you require cover related to significant travel delays."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer mentioned planning specific activities [10] and specified scuba diving as needing coverage.",
+      "customer_quote": "[10] Yes, yes, we plan to do some scuba diving. So make sure that's covered.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about planned activities [9] and specifically noted the requirement for scuba diving coverage [11].",
+      "agent_quote": "[9] Are there any particular activities you plan on doing there? Sometimes specific activities require noting. [11] Okay, noted potential coverage needed for scuba diving."
+    },
+    {
+      "coverage_type": "scenario_specific_cancellation",
+      "name": "Cancellation for Family Event (Wedding)",
+      "result": "PASS",
+      "justification": "The customer explicitly raised the scenario-specific requirement regarding cancellation due to a sister's wedding date changing [20]. This specific detail was provided.",
+      "customer_quote": "[20] Yes, but specifically \u2013 what if I have to cancel because of a family event? Say, my sister suddenly moves her wedding date right into our trip dates? It's important, I'd have to cancel the trip. Is that covered? Need to know.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent correctly identified this as a specific requirement needing clarification, rather than a standard covered reason, and explicitly noted it [21]. The agent confirmed understanding of this specific need in the summary [23].",
+      "agent_quote": "[21] Thank you for specifying that. So, you have a requirement to understand if cancellation due to a significant family event, like your sister's wedding date changing, would be covered. I've noted this specific cancellation scenario as a requirement you need addressed. [...] [23] [...] and specifically, clarification on cancellation cover if you need to cancel due to a family event like your sister's wedding."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent successfully gathered all standard coverage requirements mentioned by the customer (Medical, Luggage, Delays, Standard Cancellation, Activities) and correctly identified and noted the scenario-specific requirement regarding cancellation for a family wedding. Despite the customer being rushed, the agent maintained structure, confirmed understanding, and appropriately probed or acknowledged details for each requirement, including the specific activity (scuba diving) and the unique cancellation concern. The agent's summary accurately reflected all gathered requirements."
+  },
+  "transcript_name": "transcript_uncovered_cancellation_reason_980e9a0f-8dd0-42de-858b-f9ba3a238a94",
+  "scenario": "uncovered_cancellation_reason"
+}

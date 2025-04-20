@@ -1,0 +1,89 @@
+{
+    "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan from Singapore\",\n  \"detailed_description\": \"Customer requires travel insurance for two adults aged 26-40 traveling to Japan for 2 weeks. Coverage is needed for medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and additional pet accommodation costs due to return flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"additional pet accommodation costs\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"sightseeing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cover for pet hotel costs if return flight to Singapore is delayed.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"Singapore\",\n    \"2 weeks\",\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"pet accommodation\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "REQ-001",
+        "requirement_summary": "Travel insurance for a trip to Japan from Singapore",
+        "detailed_description": "Customer requires travel insurance for two adults aged 26-40 traveling to Japan for 2 weeks. Coverage is needed for medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and additional pet accommodation costs due to return flight delays.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "medical emergencies",
+            "trip cancellation",
+            "lost or damaged luggage",
+            "travel delays",
+            "additional pet accommodation costs"
+        ],
+        "pre_existing_conditions": [],
+        "medical_needs": [],
+        "activities_to_cover": [
+            "sightseeing"
+        ],
+        "age_group": "26-40",
+        "additional_requests": "Cover for pet hotel costs if return flight to Singapore is delayed.",
+        "keywords": [
+            "travel insurance",
+            "Japan",
+            "Singapore",
+            "2 weeks",
+            "medical emergencies",
+            "trip cancellation",
+            "lost luggage",
+            "travel delays",
+            "pet accommodation"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Thank you for calling ISS Insurance Ltd. My name is Sarah. How can I help you today?\nCustomer: Need travel insurance details.\nCustomer Service Agent: Okay, I can help with that. I just need to gather some details about your trip and what you require coverage for. Could you tell me where you'll be traveling to?\nCustomer: Japan.\nCustomer Service Agent: And how long will your trip be?\nCustomer: 2 weeks.\nCustomer Service Agent: Traveling from Singapore, correct?\nCustomer: Yes.\nCustomer Service Agent: And how many people will be traveling?\nCustomer: 2.\nCustomer Service Agent: Thank you. Could you share the age group of the travelers? For example, 18-25, 26-40?\nCustomer: 26-40.\nCustomer Service Agent: Noted. Are there any specific activities you plan to participate in during your trip, like skiing or scuba diving?\nCustomer: No special activities planned. Just sightseeing.\nCustomer Service Agent: Okay. To ensure we find the right policy, could you tell me what aspects of the trip you want to make sure are covered? Any particular concerns?\nCustomer: Need cover if trip is cancelled. Also if luggage is lost or damaged. Medical emergencies. Flight delays causing extra cost.\nCustomer Service Agent: Alright, so cover for trip cancellation, lost or damaged luggage, medical emergencies, and travel delays.\nCustomer: Yes.\nCustomer Service Agent: Any pre-existing medical conditions we should be aware of, like asthma or high blood pressure?\nCustomer: No pre-existing conditions.\nCustomer Service Agent: And will you be traveling with any special medical equipment, such as a CPAP machine or wheelchair?\nCustomer: No special medical equipment needed.\nCustomer Service Agent: Understood. Is there anything else, perhaps any specific situations you're concerned about for this trip?\nCustomer: Yes. Need cover for pet hotel costs if return flight to Singapore is delayed. Have a cat.\nCustomer Service Agent: Okay, cover for additional pet accommodation costs due to travel delay on return. Noted. Do you have a budget range in mind for the insurance premium?\nCustomer: Flexible.\nCustomer Service Agent: Alright. Let me just summarize the requirements I've noted down. You're looking for travel insurance for two adults, age group 26-40, traveling from Singapore to Japan for 2 weeks. You require standard coverage for medical emergencies, trip cancellation, lost or damaged luggage, and travel delays. No specific sports or adventure activities planned, and no pre-existing conditions or special medical equipment. Additionally, you specifically require coverage for potential extra pet hotel costs for your cat should your return to Singapore be delayed. Is that all correct?\nCustomer: Yes, correct.\nCustomer Service Agent: Thank you. I have recorded all your requirements. We will use this information to identify suitable policy options for you. Someone from our team will be in touch shortly with quotes and details.\nCustomer: Okay, thanks. Goodbye.\nCustomer Service Agent: You're welcome. Thank you for calling ISS Insurance. Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"REQ-001\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan from Singapore\",\n  \"detailed_description\": \"Customer requires travel insurance for two adults aged 26-40 traveling to Japan for 2 weeks. Coverage is needed for medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and additional pet accommodation costs due to return flight delays.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"lost or damaged luggage\",\n    \"travel delays\",\n    \"additional pet accommodation costs\"\n  ],\n  \"pre_existing_conditions\": [],\n  \"medical_needs\": [],\n  \"activities_to_cover\": [\n    \"sightseeing\"\n  ],\n  \"age_group\": \"26-40\",\n  \"additional_requests\": \"Cover for pet hotel costs if return flight to Singapore is delayed.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"Japan\",\n    \"Singapore\",\n    \"2 weeks\",\n    \"medical emergencies\",\n    \"trip cancellation\",\n    \"lost luggage\",\n    \"travel delays\",\n    \"pet accommodation\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "REQ-001",
+                "requirement_summary": "Travel insurance for a trip to Japan from Singapore",
+                "detailed_description": "Customer requires travel insurance for two adults aged 26-40 traveling to Japan for 2 weeks. Coverage is needed for medical emergencies, trip cancellation, lost or damaged luggage, travel delays, and additional pet accommodation costs due to return flight delays.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "medical emergencies",
+                    "trip cancellation",
+                    "lost or damaged luggage",
+                    "travel delays",
+                    "additional pet accommodation costs"
+                ],
+                "pre_existing_conditions": [],
+                "medical_needs": [],
+                "activities_to_cover": [
+                    "sightseeing"
+                ],
+                "age_group": "26-40",
+                "additional_requests": "Cover for pet hotel costs if return flight to Singapore is delayed.",
+                "keywords": [
+                    "travel insurance",
+                    "Japan",
+                    "Singapore",
+                    "2 weeks",
+                    "medical emergencies",
+                    "trip cancellation",
+                    "lost luggage",
+                    "travel delays",
+                    "pet accommodation"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 50139,
+        "prompt_tokens": 42244,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 7895,
+        "successful_requests": 27
+    }
+}

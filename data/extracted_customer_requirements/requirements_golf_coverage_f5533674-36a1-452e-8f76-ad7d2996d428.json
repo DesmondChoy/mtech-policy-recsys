@@ -1,0 +1,105 @@
+{
+    "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Australia.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance coverage for a trip to Australia from Singapore for two travelers, aged 41-55. Specific coverage is needed for trip cancellation, medical emergencies (noting high blood pressure), travel delays, lost or damaged luggage, golf equipment coverage, reimbursement for unused green fees, accidental damage to a golf buggy, and a special benefit for scoring a hole-in-one.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"comprehensive\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"travel delays\",\n    \"lost or damaged luggage\",\n    \"golf equipment coverage\",\n    \"reimbursement for unused green fees\",\n    \"accidental damage liability for golf buggy\",\n    \"hole-in-one benefit\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"full coverage for hospital stays\",\n    \"doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Expect premium service and competitive rates due to long customer history.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"comprehensive cover\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"golf trip\",\n    \"equipment coverage\",\n    \"accidental damage\",\n    \"hole-in-one\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "req-001",
+        "requirement_summary": "Travel insurance requirements for a trip to Australia.",
+        "detailed_description": "Customer requires comprehensive travel insurance coverage for a trip to Australia from Singapore for two travelers, aged 41-55. Specific coverage is needed for trip cancellation, medical emergencies (noting high blood pressure), travel delays, lost or damaged luggage, golf equipment coverage, reimbursement for unused green fees, accidental damage to a golf buggy, and a special benefit for scoring a hole-in-one.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Australia",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "comprehensive",
+            "trip cancellation",
+            "medical emergencies",
+            "travel delays",
+            "lost or damaged luggage",
+            "golf equipment coverage",
+            "reimbursement for unused green fees",
+            "accidental damage liability for golf buggy",
+            "hole-in-one benefit"
+        ],
+        "pre_existing_conditions": [
+            "high blood pressure"
+        ],
+        "medical_needs": [
+            "full coverage for hospital stays",
+            "doctor visits"
+        ],
+        "activities_to_cover": [
+            "golf"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Expect premium service and competitive rates due to long customer history.",
+        "keywords": [
+            "travel insurance",
+            "comprehensive cover",
+            "trip cancellation",
+            "medical emergencies",
+            "golf trip",
+            "equipment coverage",
+            "accidental damage",
+            "hole-in-one"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd. My name is Sarah, how may I assist you today?\nCustomer: Yes, I need to get travel insurance sorted out. I’ve been a customer for years, you know, so I expect this to be quick and efficient.\nCustomer Service Agent: Certainly, I can help you with that. To start, could you please provide me with your full name and NRIC number for verification?\nCustomer: It’s Tan Ah Beng, S1234567A. Look, I don't have all day. I need comprehensive cover.\nCustomer Service Agent: Thank you for verifying, Mr. Tan. I understand you're looking for comprehensive cover. To make sure we note down the right requirements, could you tell me where you'll be travelling to?\nCustomer: We're planning a trip to Australia. Two of us.\nCustomer Service Agent: Australia, noted. And how long will your trip be?\nCustomer: We'll be away for 2 weeks, travelling from Singapore, obviously.\nCustomer Service Agent: Okay, a 2-week trip to Australia for two travellers from Singapore. And may I know the approximate age group of the travellers?\nCustomer: We're mostly around 41-55 years old. And just so you know, I expect premium service. One of us does have high blood pressure, but that shouldn't be an issue for coverage, right? You guys need to cover that properly.\nCustomer Service Agent: Thank you for that information, Mr. Tan. I've noted the pre-existing condition. Could you tell me a bit about the activities you plan to do during your trip? Anything specific we should be aware of?\nCustomer: Yes, this is primarily a golf trip. So I need absolute top-tier coverage for that. My golf clubs need to be fully covered against loss or damage – they're expensive. And if something happens, like bad weather or I get injured, and I can't use the green fees I've already paid for, I expect full reimbursement. No questions asked.\nCustomer Service Agent: Okay, so coverage for golf equipment and reimbursement for unused green fees due to unforeseen circumstances.\nCustomer: Exactly. And what about golf buggies? If I accidentally damage one, I'm not paying for it. Your insurance needs to cover that liability. It’s essential.\nCustomer Service Agent: Understood, coverage for accidental damage to a rented golf buggy.\nCustomer: One more thing for golf – I'm feeling lucky. If I happen to score a hole-in-one, ISS should provide some sort of special payout or benefit. Loyal customers who achieve something rare should be rewarded. Put that down.\nCustomer Service Agent: Alright, I've noted your request for a potential hole-in-one benefit. Aside from the golf-specific aspects, what are your general concerns when travelling? What kind of protection are you looking for?\nCustomer: Well, the usual things, obviously. If the airline loses my luggage or damages it, I expect immediate compensation to buy replacements. None of this waiting around nonsense. And what if the flight is delayed significantly? You need to cover hotel costs and meals if we get stuck somewhere.\nCustomer Service Agent: Okay, so coverage for lost, damaged, or delayed baggage, and expenses arising from significant travel delays.\nCustomer: Yes. And medical emergencies, naturally. Full coverage for hospital stays, doctor visits, the works. Don't try to exclude things – if something happens, I expect ISS to pay up.\nCustomer Service Agent: Noted, comprehensive medical coverage for emergencies during the trip.\nCustomer: And trip cancellation! If something comes up – say, I get sick before leaving, or there’s a family emergency – I expect a full refund for the trip costs. No funny business with exclusions.\nCustomer Service Agent: Understood, coverage for trip cancellation due to specified unforeseen events. Are there any specific medical equipment you or your travel partner will be bringing?\nCustomer: No, no special equipment. Just the high blood pressure condition I mentioned, which *must* be covered.\nCustomer Service Agent: Noted. Lastly, do you have a particular budget in mind for this insurance policy?\nCustomer: Budget is flexible, but given my long history with ISS, I expect a very competitive rate. Don't quote me your standard price; I deserve better.\nCustomer Service Agent: Thank you, Mr. Tan. Just to confirm, I've noted down the following requirements for your travel insurance quote: a 2-week trip to Australia for two travellers aged 41-55, travelling from Singapore. You require coverage for trip cancellation, medical emergencies (noting one traveller has high blood pressure), travel delays, and lost or damaged luggage. Specifically for your golf activities, you need coverage for golf equipment, reimbursement for unused green fees, coverage for accidental damage to a golf buggy, and you're inquiring about a special benefit for achieving a hole-in-one. Have I captured everything correctly?\nCustomer: Yes, that seems to cover the main points. Make sure that high blood pressure is fully included and the golf coverage is exactly as I specified. I don't want any surprises later.\nCustomer Service Agent: Thank you for confirming, Mr. Tan. I have recorded all these requirements. Someone from our policy team will review these and get back to you with the relevant options and quotes based on the coverage details you've outlined.\nCustomer: Fine. Just make sure they call back soon. I don't like waiting.\nCustomer Service Agent: We will process your request promptly. Thank you for calling ISS Insurance Ltd. Have a good day.\nCustomer: Alright. Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"req-001\",\n  \"requirement_summary\": \"Travel insurance requirements for a trip to Australia.\",\n  \"detailed_description\": \"Customer requires comprehensive travel insurance coverage for a trip to Australia from Singapore for two travelers, aged 41-55. Specific coverage is needed for trip cancellation, medical emergencies (noting high blood pressure), travel delays, lost or damaged luggage, golf equipment coverage, reimbursement for unused green fees, accidental damage to a golf buggy, and a special benefit for scoring a hole-in-one.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Australia\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"comprehensive\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"travel delays\",\n    \"lost or damaged luggage\",\n    \"golf equipment coverage\",\n    \"reimbursement for unused green fees\",\n    \"accidental damage liability for golf buggy\",\n    \"hole-in-one benefit\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"full coverage for hospital stays\",\n    \"doctor visits\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Expect premium service and competitive rates due to long customer history.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"comprehensive cover\",\n    \"trip cancellation\",\n    \"medical emergencies\",\n    \"golf trip\",\n    \"equipment coverage\",\n    \"accidental damage\",\n    \"hole-in-one\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "req-001",
+                "requirement_summary": "Travel insurance requirements for a trip to Australia.",
+                "detailed_description": "Customer requires comprehensive travel insurance coverage for a trip to Australia from Singapore for two travelers, aged 41-55. Specific coverage is needed for trip cancellation, medical emergencies (noting high blood pressure), travel delays, lost or damaged luggage, golf equipment coverage, reimbursement for unused green fees, accidental damage to a golf buggy, and a special benefit for scoring a hole-in-one.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Australia",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "comprehensive",
+                    "trip cancellation",
+                    "medical emergencies",
+                    "travel delays",
+                    "lost or damaged luggage",
+                    "golf equipment coverage",
+                    "reimbursement for unused green fees",
+                    "accidental damage liability for golf buggy",
+                    "hole-in-one benefit"
+                ],
+                "pre_existing_conditions": [
+                    "high blood pressure"
+                ],
+                "medical_needs": [
+                    "full coverage for hospital stays",
+                    "doctor visits"
+                ],
+                "activities_to_cover": [
+                    "golf"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Expect premium service and competitive rates due to long customer history.",
+                "keywords": [
+                    "travel insurance",
+                    "comprehensive cover",
+                    "trip cancellation",
+                    "medical emergencies",
+                    "golf trip",
+                    "equipment coverage",
+                    "accidental damage",
+                    "hole-in-one"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 38616,
+        "prompt_tokens": 32688,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 5928,
+        "successful_requests": 20
+    }
+}

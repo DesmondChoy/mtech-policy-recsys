@@ -1,0 +1,71 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly requested trip cancellation coverage and mentioned specific concerns like getting sick before the trip or other emergencies.",
+      "customer_quote": "[16] Exactly! What if one of us gets sick just before, or some other emergency happens? I'm not throwing my money away. We need proper trip cancellation cover that actually pays out for legitimate reasons, not just finds loopholes.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about the need for cancellation coverage and confirmed the requirement.",
+      "agent_quote": "[15] Now, sometimes trips don't go as planned. Have you thought about what happens if you need to cancel before you even leave? ... [17] Okay, so cover for trip cancellation is important."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer explicitly stated the need for medical coverage and provided a specific detail regarding a pre-existing condition (asthma) requiring coverage.",
+      "customer_quote": "[10] Yes, one traveler has asthma. And I expect full coverage if there's an emergency because of it... Proper medical coverage is non-negotiable.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about health considerations, including pre-existing conditions, noted the specific condition (asthma), and confirmed the requirement.",
+      "agent_quote": "[9] To understand your needs better, are there any specific health considerations I should be aware of? For example, any pre-existing conditions for either traveler? ... [11] Okay, I've noted the requirement for medical coverage, and I'll ensure the pre-existing condition of asthma is recorded for consideration in the policy options."
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for lost or damaged luggage, citing past experiences.",
+      "customer_quote": "[20] My luggage! Yes. If the airline loses my bag again, or if it arrives smashed up, I expect to be compensated properly and quickly... So, coverage for lost or damaged luggage is definitely needed.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent prompted the customer about belongings and confirmed the requirement for luggage coverage.",
+      "agent_quote": "[19] And how about your belongings? ... [21] Alright, cover for lost, damaged, or delayed luggage."
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for travel delays, specifying concerns about flight delays and the need for coverage for extra hotel nights and meals.",
+      "customer_quote": "[18] Don't even get me started on delays! Flights are always messed up. If we get stuck somewhere because the airline delays us for hours, I expect the insurance to cover the extra hotel night and meals. So, yes, travel delay coverage is essential.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about potential travel issues like delays and confirmed the requirement.",
+      "agent_quote": "[17] What about potential issues during travel, like flight delays? ... [19] Noted, coverage for significant travel delays."
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "The customer explicitly requested coverage for sports and adventure activities and specified the exact activity (White Water Rafting).",
+      "customer_quote": "[14] Yes, we plan to do White Water Rafting. And I want to be absolutely sure that if something happens during *that*, we are covered... So, sports and adventure coverage is a must.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about adventurous activities and confirmed the requirement for the specific activity mentioned.",
+      "agent_quote": "[13] And regarding your activities, are you planning anything adventurous during your trip to Thailand? ... [15] Understood, coverage required for White Water Rafting. Noted as Sports and Adventure Activities."
+    },
+    {
+      "coverage_type": "scenario_specific_double_payout",
+      "name": "Double Payout on Public Transport",
+      "result": "PASS",
+      "justification": "The customer specifically asked for a policy feature providing double payout for accidental death on public transport (bus, train, ferry).",
+      "customer_quote": "[22] Yes, one more thing. I read somewhere about policies offering extra payout, like double, if you die in an accident while on public transport \u2013 you know, a bus, train, ferry, something like that overseas... I specifically want this included.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent asked if there were any other specific requirements and accurately confirmed understanding and notation of this specific double payout feature.",
+      "agent_quote": "[21] Is there anything else specific you are looking for in the policy? ... [23] Okay, thank you for clarifying. I've noted your requirement for a policy that includes a provision for double payout for accidental death specifically occurring while travelling as a fare-paying passenger on public transport."
+    }
+  ],
+  "summary": {
+    "total_requirements": 6,
+    "requirements_met": 6,
+    "overall_assessment": "The agent performed excellently, systematically addressing all standard coverage types by asking relevant questions. The agent successfully elicited specific details for each required coverage, including the pre-existing condition for medical coverage and the specific activity for sports coverage. Furthermore, the agent effectively handled the customer's specific request for the double payout feature, confirming understanding accurately. All requirements, including the scenario-specific one, were identified and sufficient details gathered."
+  },
+  "transcript_name": "transcript_public_transport_double_cover_a0e2fbbf-54b6-4840-953e-3bef1f0b6bac",
+  "scenario": "public_transport_double_cover"
+}

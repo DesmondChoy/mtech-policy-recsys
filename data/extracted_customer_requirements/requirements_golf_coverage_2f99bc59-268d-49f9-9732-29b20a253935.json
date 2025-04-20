@@ -1,0 +1,95 @@
+{
+    "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan from Singapore for two travelers aged 41-55 with specific coverage needs.\",\n  \"detailed_description\": \"The customer requires coverage for standard medical emergencies, trip cancellation, travel delays, lost or damaged luggage, and specific golf-related insurance such as coverage for golf equipment, reimbursement of unused green fees, liability for accidental golf buggy damage, and a query regarding a hole-in-one benefit. The customer also mentions a pre-existing condition of high blood pressure that needs declaration.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation coverage\",\n    \"travel delay coverage\",\n    \"lost or damaged luggage coverage\",\n    \"golf equipment coverage\",\n    \"unused green fees reimbursement\",\n    \"golf buggy damage liability\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"standard emergency medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Inquiry about hole-in-one benefit.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"trip cancellation\",\n    \"travel delay\",\n    \"medical emergencies\",\n    \"lost luggage\",\n    \"golf coverage\"\n  ]\n}",
+    "pydantic": null,
+    "json_dict": {
+        "requirement_id": "1",
+        "requirement_summary": "Travel insurance for a trip to Japan from Singapore for two travelers aged 41-55 with specific coverage needs.",
+        "detailed_description": "The customer requires coverage for standard medical emergencies, trip cancellation, travel delays, lost or damaged luggage, and specific golf-related insurance such as coverage for golf equipment, reimbursement of unused green fees, liability for accidental golf buggy damage, and a query regarding a hole-in-one benefit. The customer also mentions a pre-existing condition of high blood pressure that needs declaration.",
+        "travel_origin": "Singapore",
+        "travel_destination": "Japan",
+        "travel_duration": "2 weeks",
+        "insurance_coverage_type": [
+            "medical coverage",
+            "trip cancellation coverage",
+            "travel delay coverage",
+            "lost or damaged luggage coverage",
+            "golf equipment coverage",
+            "unused green fees reimbursement",
+            "golf buggy damage liability"
+        ],
+        "pre_existing_conditions": [
+            "high blood pressure"
+        ],
+        "medical_needs": [
+            "standard emergency medical coverage"
+        ],
+        "activities_to_cover": [
+            "golf"
+        ],
+        "age_group": "41-55",
+        "additional_requests": "Inquiry about hole-in-one benefit.",
+        "keywords": [
+            "travel insurance",
+            "trip cancellation",
+            "travel delay",
+            "medical emergencies",
+            "lost luggage",
+            "golf coverage"
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "Analyze the travel insurance call transcript below and extract key customer requirements.\nStep 1: Read the transcript carefully and extract all relevant details. For each field in the schema, provide a brief annotation or reference to the specific portion(s) of the transcript where the detail was found.\nStep 2: Review your annotations to verify that every extracted detail directly matches the transcript. Resolve any discrepancies or conflicts in the data.\nStep 3: Produce a final, validated JSON object that adheres exactly to the TravelInsuranceRequirement schema\n\nIf a field is not mentioned in the transcript, use null.\n\nTranscript:\nCustomer Service Agent: Good morning, thank you for calling ISS Insurance Ltd. My name is Siti, how may I help you today?\nCustomer: Yes, hello. I need to inquire about travel insurance. Frankly, I'm not convinced these policies are worth the paper they're written on, but let's see what you offer.\nCustomer Service Agent: I understand your concern, sir. I can certainly help by gathering the details of your trip and your requirements. Could you please tell me where you'll be travelling from?\nCustomer: We're based in Singapore.\nCustomer Service Agent: Thank you. And what is your travel destination?\nCustomer: We're planning a trip to Japan.\nCustomer Service Agent: Japan, noted. And how long will you be away for?\nCustomer: It will be a 2 weeks trip.\nCustomer Service Agent: Alright, two weeks in Japan starting from Singapore. May I know how many people will be travelling?\nCustomer: There will be 2 of us traveling.\nCustomer Service Agent: Okay, two travellers. And could you share the general age group of the travellers?\nCustomer: We're mostly around 41-55 years old.\nCustomer Service Agent: Noted, 41 to 55. Are there any specific activities you plan to do during your trip that might require particular attention, like adventure sports?\nCustomer: No special activities planned like bungee jumping or anything crazy. It's mainly a golf trip. But speaking of golf, that’s a major concern. I need proper coverage for my golf equipment – these clubs aren't cheap, you know. What happens if they get lost or damaged by the airline? And what if I pay for green fees in advance and then can't play because of illness or some other issue? Will I get my money back? Also, need to know if I accidentally damage one of those golf buggies – are we covered? Some policies are very tricky about that.\nCustomer Service Agent: Okay, so specific coverage related to golf is important. You've mentioned cover for your golf equipment against loss or damage, reimbursement for unused green fees due to covered reasons, and cover for accidental damage to a golf buggy. Have I got that right?\nCustomer: Yes, precisely. And one more thing, rather unusual perhaps, but does your policy offer anything special if I manage to get a hole-in-one? Some specialist policies do. Probably just a gimmick, but worth asking.\nCustomer Service Agent: Alright, I've noted the request for a potential hole-in-one benefit as well. Thank you for highlighting these specific needs. So, besides golf, just confirming no other sports like skiing or diving planned?\nCustomer: No, none of that. Just golf.\nCustomer Service Agent: Understood. Now, regarding the health of the travellers, are there any pre-existing medical conditions we should be aware of when looking at policies? Sometimes declarations are needed.\nCustomer: Well, one traveler has high blood pressure. How does that usually work? I bet you use that as an excuse not to pay out if something happens, right? Do we need to declare high blood pressure? And what about general medical stuff overseas? If we get sick, need a doctor or hospital... how good is the coverage *really*?\nCustomer Service Agent: Okay, I've noted the mention of high blood pressure – the requirement is typically to declare pre-existing conditions. And you also require standard medical coverage for emergencies, doctor visits, and hospital stays during the trip. Are there any specific medical equipment needs, like a wheelchair or CPAP machine?\nCustomer: No, no special medical equipment needed. Just the usual potential medical emergencies you worry about when travelling.\nCustomer Service Agent: Right, so standard emergency medical cover noted. What about situations that might force you to cancel the trip beforehand, or cause significant delays while travelling? Things like unexpected illness before you leave, or flight issues?\nCustomer: Yes, that's another thing. What if one of us gets seriously ill just before we go? Or a family emergency? We’d lose all the money for flights and hotels. So, yes, need cover for trip cancellation. And travel delays too – getting stuck somewhere costs money for extra hotels and food. Does the policy actually pay out reasonably for that, or is it pennies after a 12-hour wait?\nCustomer Service Agent: Understood. So, you require coverage for trip cancellation due to unforeseen covered events, and also coverage for additional expenses incurred due to significant travel delays.\nCustomer: Correct. Assuming it actually works when you need it. And what about luggage? Apart from the golf clubs, what happens if our suitcases get lost or busted? Heard horror stories about claiming for that.\nCustomer Service Agent: Okay, so you also need coverage for lost, damaged, or delayed baggage during your trip.\nCustomer: Yes. I need to know what the process is, but for now, just note that requirement.\nCustomer Service Agent: Certainly. Lost or damaged luggage coverage noted. Lastly, do you have a budget range in mind for the insurance premium for the two of you?\nCustomer: We're hoping to spend $200-$300 maybe. Is that even realistic for the kind of specific coverage I'm asking for, especially the golf part? Seems unlikely.\nCustomer Service Agent: Okay, I've noted your budget preference of around $200 to $300. So, just to summarize the key requirements I've gathered for your two-week trip to Japan for two travellers aged 41-55: Standard medical coverage, noting a declaration for high blood pressure; Trip cancellation coverage; Travel delay coverage; Lost or damaged luggage coverage; and specific golf-related coverage including equipment protection, unused green fee reimbursement, golf buggy damage liability, and inquiry about a hole-in-one benefit. Does that sound complete?\nCustomer: Yes, that covers the main points I'm worried about. Make sure all those specifics, especially the golf ones, are properly recorded. I don't want any misunderstandings later. Perhaps you could email me this list of requirements?\nCustomer Service Agent: I have documented all the requirements you've mentioned, including the specific golf coverages. I can certainly ensure these requirements are clearly noted for the next step. Thank you for detailing your needs. Is there anything else I can note for you today?\nCustomer: No, that’s everything for now. Let’s see what you come back with.\nCustomer Service Agent: Thank you very much for your call, sir. Someone will be in touch regarding policies that match these requirements. Have a good day.\nCustomer: Alright. Goodbye.\n",
+            "name": null,
+            "expected_output": "A JSON object that matches the TravelInsuranceRequirement model.",
+            "summary": "Analyze the travel insurance call transcript below and extract key...",
+            "raw": "{\n  \"requirement_id\": \"1\",\n  \"requirement_summary\": \"Travel insurance for a trip to Japan from Singapore for two travelers aged 41-55 with specific coverage needs.\",\n  \"detailed_description\": \"The customer requires coverage for standard medical emergencies, trip cancellation, travel delays, lost or damaged luggage, and specific golf-related insurance such as coverage for golf equipment, reimbursement of unused green fees, liability for accidental golf buggy damage, and a query regarding a hole-in-one benefit. The customer also mentions a pre-existing condition of high blood pressure that needs declaration.\",\n  \"travel_origin\": \"Singapore\",\n  \"travel_destination\": \"Japan\",\n  \"travel_duration\": \"2 weeks\",\n  \"insurance_coverage_type\": [\n    \"medical coverage\",\n    \"trip cancellation coverage\",\n    \"travel delay coverage\",\n    \"lost or damaged luggage coverage\",\n    \"golf equipment coverage\",\n    \"unused green fees reimbursement\",\n    \"golf buggy damage liability\"\n  ],\n  \"pre_existing_conditions\": [\n    \"high blood pressure\"\n  ],\n  \"medical_needs\": [\n    \"standard emergency medical coverage\"\n  ],\n  \"activities_to_cover\": [\n    \"golf\"\n  ],\n  \"age_group\": \"41-55\",\n  \"additional_requests\": \"Inquiry about hole-in-one benefit.\",\n  \"keywords\": [\n    \"travel insurance\",\n    \"trip cancellation\",\n    \"travel delay\",\n    \"medical emergencies\",\n    \"lost luggage\",\n    \"golf coverage\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "requirement_id": "1",
+                "requirement_summary": "Travel insurance for a trip to Japan from Singapore for two travelers aged 41-55 with specific coverage needs.",
+                "detailed_description": "The customer requires coverage for standard medical emergencies, trip cancellation, travel delays, lost or damaged luggage, and specific golf-related insurance such as coverage for golf equipment, reimbursement of unused green fees, liability for accidental golf buggy damage, and a query regarding a hole-in-one benefit. The customer also mentions a pre-existing condition of high blood pressure that needs declaration.",
+                "travel_origin": "Singapore",
+                "travel_destination": "Japan",
+                "travel_duration": "2 weeks",
+                "insurance_coverage_type": [
+                    "medical coverage",
+                    "trip cancellation coverage",
+                    "travel delay coverage",
+                    "lost or damaged luggage coverage",
+                    "golf equipment coverage",
+                    "unused green fees reimbursement",
+                    "golf buggy damage liability"
+                ],
+                "pre_existing_conditions": [
+                    "high blood pressure"
+                ],
+                "medical_needs": [
+                    "standard emergency medical coverage"
+                ],
+                "activities_to_cover": [
+                    "golf"
+                ],
+                "age_group": "41-55",
+                "additional_requests": "Inquiry about hole-in-one benefit.",
+                "keywords": [
+                    "travel insurance",
+                    "trip cancellation",
+                    "travel delay",
+                    "medical emergencies",
+                    "lost luggage",
+                    "golf coverage"
+                ]
+            },
+            "agent": "Call Transcript Analyst",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 16733,
+        "prompt_tokens": 14289,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 2444,
+        "successful_requests": 9
+    }
+}

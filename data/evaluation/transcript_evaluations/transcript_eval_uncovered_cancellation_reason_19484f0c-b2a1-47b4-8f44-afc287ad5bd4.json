@@ -1,0 +1,61 @@
+{
+  "evaluations": [
+    {
+      "coverage_type": "trip_cancellation",
+      "name": "Trip Cancellation",
+      "result": "PASS",
+      "justification": "The customer explicitly asked about trip cancellation, mentioned standard reasons, and provided a specific scenario (sister's wedding date change) they needed clarification on.",
+      "customer_quote": "[20] Finally, and this is quite important, I need clarification on trip cancellation. The standard covered reasons like illness or natural disasters are clear, but I have a specific scenario. What happens if I have to cancel my trip for an important family event, like if my sister's wedding date unexpectedly changes and clashes with our travel dates? Is that a covered reason?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent acknowledged the standard reasons and specifically confirmed understanding of the unique family event scenario, noting it as a requirement.",
+      "agent_quote": "[21] Understood. So, besides the standard trip cancellation coverage for reasons like illness or injury, you have a specific requirement to understand if cancelling due to a significant family event, specifically your sister's wedding date changing, would be covered. I've noted this specific scenario query."
+    },
+    {
+      "coverage_type": "medical_coverage",
+      "name": "Medical Coverage",
+      "result": "PASS",
+      "justification": "The customer asked about medical coverage specifics after the agent prompted about pre-existing conditions, mentioning emergency treatment, hospital stays, and declaring asthma.",
+      "customer_quote": "[12] Yes, one traveller has asthma, it's well-controlled, but do we need to declare asthma? I'm interested in the specifics of the medical coverage, particularly concerning emergency medical treatment and hospital stays should something unexpected occur related to that or anything else.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively probed for pre-existing conditions and then confirmed they noted the customer's specific requirements regarding emergency care and the declared condition.",
+      "agent_quote": "[11] Are there any pre-existing medical conditions we should be aware of for either traveller? For example, conditions like asthma or diabetes?"
+    },
+    {
+      "coverage_type": "lost_damaged_luggage",
+      "name": "Lost/Damaged Luggage",
+      "result": "PASS",
+      "justification": "Following the agent's prompt, the customer asked for specific details about coverage limits, reimbursement processes for lost vs. delayed luggage, and exclusions like electronics/cash.",
+      "customer_quote": "[16] Yes, definitely. I need to understand the coverage limits for lost or damaged luggage. What's the typical process for reimbursement for lost items versus essential purchases if luggage is delayed? I'm looking at your standard policy wording regarding exclusions for electronics or cash.",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent appropriately prompted the customer about luggage concerns and accurately summarized the specific details the customer requested.",
+      "agent_quote": "[15] Moving on, how about luggage? Do you have concerns regarding baggage?"
+    },
+    {
+      "coverage_type": "travel_delays",
+      "name": "Travel Delays",
+      "result": "PASS",
+      "justification": "Following the agent's prompt about disruptions, the customer asked for specifics on travel delay coverage, including accommodation/meal expenses, a specific delay duration (6+ hours), missed connections, and exclusion periods.",
+      "customer_quote": "[18] What happens in the event of significant travel delays? I'm interested in coverage for additional accommodation and meal expenses if our flight is delayed by, say, more than 6 hours, or if we miss a connection due to the initial delay. Can you confirm the typical exclusion period for delays?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent prompted the customer about potential disruptions and then accurately confirmed the specific requirements mentioned by the customer regarding delay coverage.",
+      "agent_quote": "[17] Did you have any other areas of concern? Perhaps regarding potential disruptions to your travel schedule?"
+    },
+    {
+      "coverage_type": "sports_adventure_activities",
+      "name": "Sports and Adventure Activities",
+      "result": "PASS",
+      "justification": "Following the agent's prompt about planned activities, the customer specified skiing and requested coverage details for potential injuries related to this activity.",
+      "customer_quote": "[14] Yes, we plan to do Skiing during our trip. We'll need coverage for skiing, specifically for potential injuries sustained while participating. Does your policy cover medical expenses related to adventure sports like this?",
+      "agent_performance": "PASS",
+      "agent_performance_justification": "The agent proactively asked about planned activities, which elicited the specific requirement for skiing coverage, and the agent confirmed this was noted.",
+      "agent_quote": "[13] Are there any specific activities planned during your trip?"
+    }
+  ],
+  "summary": {
+    "total_requirements": 5,
+    "requirements_met": 5,
+    "overall_assessment": "The agent successfully gathered specific requirements for all five standard coverage types. The agent used effective probing questions (regarding pre-existing conditions, activities, luggage, and delays) to elicit detailed information when the customer didn't volunteer it initially. The agent also correctly captured the scenario-specific requirement under Trip Cancellation. The final summary accurately reflected the customer's needs. Overall, excellent performance in requirement gathering."
+  },
+  "transcript_name": "transcript_uncovered_cancellation_reason_19484f0c-b2a1-47b4-8f44-afc287ad5bd4",
+  "scenario": "uncovered_cancellation_reason"
+}
