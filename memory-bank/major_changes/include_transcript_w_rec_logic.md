@@ -1,6 +1,6 @@
 # Implementation Plan: Include Transcript Analysis in Recommendation Logic
 
-**Objective:** Enhance the Stage 2 recommendation re-ranking process in `scripts/generate_recommendation_report.py` to consider potential requirement prioritization cues derived directly from the customer's conversation transcript.
+**Objective:** Enhance the Stage 2 recommendation re-ranking process in `scripts/generate_recommendation_report.py` to consider potential requirement prioritization cues derived directly from the customer's conversation transcript, **and provide the extracted requirements summary for additional context**.
 
 **Date:** 2025-04-20
 **Author:** Cline
@@ -25,9 +25,11 @@ The root cause lies in the inputs and instructions provided to the Stage 2 LLM r
 
 ## 3. Proposed Solution
 
-Modify the `scripts/generate_recommendation_report.py` script and its Stage 2 prompt to incorporate the parsed customer transcript:
+Modify the `scripts/generate_recommendation_report.py` script and its Stage 2 prompt to incorporate the parsed customer transcript **and the extracted requirements summary**:
 
-1.  **Input Enhancement:** Pass the content of the relevant parsed transcript (`data/transcripts/processed/parsed_transcript_*_{uuid}.json`) to the Stage 2 LLM prompt.
+1.  **Input Enhancement:**
+    *   Pass the content of the relevant parsed transcript (`data/transcripts/processed/parsed_transcript_*_{uuid}.json`) to the Stage 2 LLM prompt.
+    *   **Pass the extracted requirements summary (the dictionary value of the `json_dict` key from `data/extracted_customer_requirements/requirements_*_{uuid}.json`) to the Stage 2 LLM prompt.**
 2.  **Instruction Enhancement:** Update the prompt to explicitly instruct the LLM to:
     *   Analyze the provided transcript dialogue for any cues indicating customer prioritization of specific requirements (e.g., emphasis, repetition, direct statements like "this is non-negotiable").
     *   If prioritization cues are detected, use this understanding to inform the re-ranking of candidate policies and the justification.
@@ -39,14 +41,19 @@ This will allow the Stage 2 re-ranking to be more context-aware, potentially lea
 
 -   [ ] **1. Modify Script Logic (`scripts/generate_recommendation_report.py`)**:
     *   [ ] Update the main execution flow (e.g., `main` async function) to:
-        *   Define the path to the processed transcripts directory (`data/transcripts/processed/`).
-        *   Construct the expected transcript filename pattern using the `customer_uuid` (e.g., `parsed_transcript_*_{customer_uuid}.json`). Use `glob` to find the specific file. Handle cases where the file is not found or multiple files match (log warning, potentially take the first match).
-        *   Read the content of the found transcript file (likely JSON). Handle file reading errors.
-    *   [ ] Modify the call to `run_stage2_reranking` to pass the loaded transcript data as a new argument.
+        *   Define paths to processed transcripts (`data/transcripts/processed/`) and extracted requirements (`data/extracted_customer_requirements/`).
+        *   Construct the expected transcript filename pattern (`parsed_transcript_*_{customer_uuid}.json`) and requirements filename pattern (`requirements_*_{customer_uuid}.json`) using the `customer_uuid`.
+        *   Use `glob` to find the specific transcript and requirements files. Handle cases where files are not found or multiple files match (log warning, take first match).
+        *   Read the content of the found transcript file (JSON list). Handle file reading errors.
+        *   Read the content of the found requirements file (JSON object). Handle file reading errors.
+        *   **Extract the dictionary value from the `json_dict` key within the requirements JSON.** Handle potential `KeyError`.
+    *   [ ] Modify the call to `run_stage2_reranking` to pass **both** the loaded transcript data (list) and the extracted requirements summary (dict from `json_dict`) as arguments.
 
 -   [ ] **2. Update `run_stage2_reranking` Function**:
-    *   [ ] Modify the function signature to accept a new parameter for the transcript data (e.g., `parsed_transcript_data: Optional[List[Dict[str, str]]] = None`).
-    *   [ ] Update the `PROMPT_TEMPLATE_STAGE2.format(...)` call to include the transcript data, likely formatted as a JSON string. Handle the case where transcript data is `None`.
+    *   [ ] Modify the function signature to accept a new parameter for the transcript data (e.g., `parsed_transcript_data: Optional[List[Dict[str, str]]] = None`). (The `customer_requirements_summary` parameter already exists).
+    *   [ ] **Inside the function, format the `parsed_transcript_data` into a JSON string using `json.dumps()` (handle `None`).**
+    *   [ ] **Inside the function, format the received `customer_requirements_summary` dictionary into a JSON string using `json.dumps()` (handle `None`).**
+    *   [ ] Update the `PROMPT_TEMPLATE_STAGE2.format(...)` call to include **both** the formatted transcript string (for `{parsed_transcript_json}`) and the formatted requirements summary string (for `{customer_requirements_summary_json}`). Handle cases where data is `None`.
 
 -   [ ] **3. Modify `PROMPT_TEMPLATE_STAGE2`**:
     *   [ ] Add a new section to the prompt template specifically for the transcript content (e.g., `# Parsed Customer Transcript:`).
@@ -74,10 +81,10 @@ PROMPT_TEMPLATE_STAGE2 = """
 # Role: Expert Travel Insurance Advisor
 
 # Goal:
-Review the detailed comparison reports for the top {num_candidates} candidate policies AND the provided customer transcript. Select the SINGLE best overall policy (Insurer + Tier) for the customer based on a nuanced comparison of their strengths, weaknesses, alignment with customer requirements, AND any prioritization cues identified in the transcript. Provide a comprehensive justification for your final choice.
+Review the detailed comparison reports for the top {num_candidates} candidate policies, the provided **extracted customer requirements summary**, AND the provided **customer transcript**. Select the SINGLE best overall policy (Insurer + Tier) for the customer based on a nuanced comparison of their strengths, weaknesses, alignment with customer requirements (using the summary as a reference), AND any prioritization cues identified in the transcript. Provide a comprehensive justification for your final choice.
 
 # Customer Requirements Summary:
-(Optional but recommended: Include key customer requirements summary here if available)
+(This is the structured summary extracted from the transcript)
 ```json
 {customer_requirements_summary_json}
 ```
@@ -95,7 +102,7 @@ Here are the full comparison reports for the finalist policies identified in Sta
 
 # Analysis and Recommendation Task:
 
-1.  **Review Transcript for Prioritization:** Carefully read the provided **Parsed Customer Transcript**. Identify if the customer expressed any explicit or implicit prioritization among their requirements. Look for cues like:
+1.  **Review Requirements Summary and Transcript:** First, review the **Customer Requirements Summary** to understand the core needs. Then, carefully read the provided **Parsed Customer Transcript**. Identify if the customer expressed any explicit or implicit prioritization among their requirements in the dialogue. Look for cues like:
     *   Direct statements ("This is non-negotiable", "The most important thing is...", "I'm really worried about X").
     *   Repetition or emphasis on certain topics.
     *   Emotional language associated with specific concerns.
@@ -104,8 +111,8 @@ Here are the full comparison reports for the finalist policies identified in Sta
 
 2.  **Review Comparison Reports:** Carefully read and understand each provided comparison report. Pay attention to the recommended tier, the detailed requirement analysis (including 'Coverage Assessment'), and the summary strengths/weaknesses for each candidate.
 
-3.  **Compare Candidates (Informed by Transcript):** Compare the candidate policies *relative to each other*. Consider:
-    *   How well does each policy meet the customer requirements, giving weight to any priorities identified in the transcript analysis (Step 1)?
+3.  **Compare Candidates (Informed by Summary & Transcript):** Compare the candidate policies *relative to each other*. Consider:
+    *   How well does each policy meet the customer requirements (referencing the **Customer Requirements Summary**), giving weight to any priorities identified in the transcript analysis (Step 1)?
     *   What are the key trade-offs between the candidates, especially concerning prioritized requirements?
     *   Which policy offers the best overall value proposition considering coverage, potential gaps, AND the customer's likely priorities based on the transcript?
 
@@ -113,7 +120,7 @@ Here are the full comparison reports for the finalist policies identified in Sta
 
 5.  **Provide Justification:** Write a clear, comprehensive justification explaining your final choice. This justification MUST:
     *   Explicitly state the chosen Insurer and Tier.
-    *   Reference any prioritization cues identified in the transcript (Step 1) and explain how they influenced the decision. If no prioritization was found and equal weighting was assumed, state this.
+    *   Reference the **Customer Requirements Summary** and any prioritization cues identified in the transcript (Step 1) and explain how they influenced the decision. If no prioritization was found and equal weighting was assumed, state this.
     *   Compare the chosen policy against the *other finalist(s)*, highlighting the key reasons for its selection, particularly in relation to prioritized requirements (if any).
     *   Reference specific strengths, weaknesses, or coverage details from the reports to support your reasoning. Where relevant, include key source references (e.g., page or section numbers from the policy documents mentioned in the reports) to substantiate important comparison points.
     *   Explain the trade-offs considered.
