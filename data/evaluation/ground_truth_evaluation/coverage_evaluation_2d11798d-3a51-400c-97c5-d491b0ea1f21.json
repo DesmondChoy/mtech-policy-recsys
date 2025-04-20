@@ -1,0 +1,137 @@
+{
+  "customer_id": "2d11798d-3a51-400c-97c5-d491b0ea1f21",
+  "recommended_policy": "SOMPO - Elite",
+  "total_coverage_ratio": "6/6",
+  "total_coverage_percentage": 100.0,
+  "valid_coverage_ratio": "6/6",
+  "valid_coverage_percentage": 100.0,
+  "has_invalid_requirements": false,
+  "requirements_breakdown": {
+    "total": 6,
+    "valid": 6,
+    "covered": 6,
+    "not_covered": 0,
+    "not_exist": 0
+  },
+  "status_summary": {
+    "covered_requirements": [
+      "Trip Cancellation",
+      "Medical Coverage",
+      "Lost, Damaged, or Delayed Luggage",
+      "Travel Delays",
+      "Adventurous activities or Amateur sports",
+      "Golf Coverage"
+    ],
+    "not_covered_requirements": [],
+    "not_exist_requirements": []
+  },
+  "requirements_coverage": {
+    "Trip Cancellation": {
+      "matched_key": "Trip cancellation",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital"
+      ],
+      "recommended_policy": "SOMPO - Elite",
+      "coverage_status": "COVERED"
+    },
+    "Medical Coverage": {
+      "matched_key": "Medical expenses incurred overseas",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
+      "recommended_policy": "SOMPO - Elite",
+      "coverage_status": "COVERED"
+    },
+    "Lost, Damaged, or Delayed Luggage": {
+      "matched_key": "Travel delay",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital"
+      ],
+      "recommended_policy": "SOMPO - Elite",
+      "coverage_status": "COVERED"
+    },
+    "Travel Delays": {
+      "matched_key": "Travel delay",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital"
+      ],
+      "recommended_policy": "SOMPO - Elite",
+      "coverage_status": "COVERED"
+    },
+    "Adventurous activities or Amateur sports": {
+      "matched_key": "Adventurous activities or Amateur sports",
+      "matched_values": [
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
+      "recommended_policy": "SOMPO - Elite",
+      "coverage_status": "COVERED"
+    },
+    "Golf Coverage": {
+      "matched_key": "Golf Cover",
+      "matched_values": [
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
+      "recommended_policy": "SOMPO - Elite",
+      "coverage_status": "COVERED"
+    }
+  }
+}

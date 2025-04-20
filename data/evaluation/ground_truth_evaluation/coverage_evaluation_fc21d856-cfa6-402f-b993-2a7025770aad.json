@@ -1,0 +1,120 @@
+{
+  "customer_id": "fc21d856-cfa6-402f-b993-2a7025770aad",
+  "recommended_policy": "SOMPO - Elite",
+  "total_coverage_ratio": "4/6",
+  "total_coverage_percentage": 66.67,
+  "valid_coverage_ratio": "4/5",
+  "valid_coverage_percentage": 80.0,
+  "has_invalid_requirements": true,
+  "requirements_breakdown": {
+    "total": 6,
+    "valid": 5,
+    "covered": 4,
+    "not_covered": 1,
+    "not_exist": 1
+  },
+  "status_summary": {
+    "covered_requirements": [
+      "emergency medical coverage",
+      "trip cancellation cover",
+      "travel delay cover",
+      "golf coverage"
+    ],
+    "not_covered_requirements": [
+      "lost luggage cover"
+    ],
+    "not_exist_requirements": [
+      "damaged luggage cover"
+    ]
+  },
+  "requirements_coverage": {
+    "emergency medical coverage": {
+      "matched_key": "Emergency medical evacuation",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
+      "recommended_policy": "SOMPO - Elite",
+      "coverage_status": "COVERED"
+    },
+    "trip cancellation cover": {
+      "matched_key": "Trip cancellation",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital"
+      ],
+      "recommended_policy": "SOMPO - Elite",
+      "coverage_status": "COVERED"
+    },
+    "lost luggage cover": {
+      "matched_key": "COVID-19 cover",
+      "matched_values": [
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred"
+      ],
+      "recommended_policy": "SOMPO - Elite",
+      "coverage_status": "NOT_COVERED"
+    },
+    "damaged luggage cover": {
+      "matched_key": null,
+      "matched_values": [],
+      "recommended_policy": "SOMPO - Elite",
+      "coverage_status": "NOT_EXIST"
+    },
+    "travel delay cover": {
+      "matched_key": "Travel delay",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital"
+      ],
+      "recommended_policy": "SOMPO - Elite",
+      "coverage_status": "COVERED"
+    },
+    "golf coverage": {
+      "matched_key": "Golf Cover",
+      "matched_values": [
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
+      "recommended_policy": "SOMPO - Elite",
+      "coverage_status": "COVERED"
+    }
+  }
+}

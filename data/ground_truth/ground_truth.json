@@ -1,0 +1,587 @@
+{
+  "Medical expenses incurred overseas": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Medical Expenses Incurred Upon Return to Singapore": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "physiotherapist and chiropractor expenses": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred"
+  ],
+  "Traditional Chinese Practitioner/Medicine expenses": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Emergency dental treatment": [
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "COVID-19 cover": [
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred"
+  ],
+  "Hospital Allowance for Hospitalisation in Singapore": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Hospitalisation visit": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Pre-existing Medical Conditions": [
+    "FWD - Business",
+    "SOMPO - Vital"
+  ],
+  "Pre-existing conditions coverage (Add-on)": [
+    "GELS - Platinum"
+  ],
+  "Overseas Hospitalisation Allowance": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Double Hospitalisation Allowance Whilst Overseas in ICU Arising from an Accident": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!"
+  ],
+  "Emergency medical evacuation": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Emergency Medical Repatriation (Including Mortal Remains) Back to Singapore": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Personal accident (Accidental death and permanent disability)": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Reconstructive Surgery Due to Burns": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!"
+  ],
+  "Trip cancellation": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Trip disruption": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!"
+  ],
+  "Trip postponement": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Trip cut short": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred"
+  ],
+  "Trip diversion": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium"
+  ],
+  "Trip Curtailment": [
+    "GELS - Gold",
+    "GELS - Platinum",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Travel delay": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Missed travel connections": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Flight Deviation": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Flight Overbooked Whilst Overseas": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Overbooked public transport": [
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred"
+  ],
+  "Delay Due to Hijacking": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!"
+  ],
+  "Baggage delay": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Baggage loss": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Damage of baggage and personal belongings": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Loss of baggage and personal belongings": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Loss of passport, travel documents & theft of money": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Loss of frequent flyer points": [
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Home contents cover (burglary and fire in your home while you are overseas)": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Personal liability": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Family Liability": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Adventurous activities or Amateur sports": [
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Golf Cover": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Sports equipment cover": [
+    "GELS - Platinum",
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium"
+  ],
+  "Rental vehicle excess cover": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Additional Accommodation & Travelling Expenses": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!"
+  ],
+  "Alternative Accommodation Arrangement": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Alternative Travel Arrangement": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!"
+  ],
+  "Automatic policy extension": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Child education grant": [
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Compassionate visit": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Condolence cash": [
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Emergency phone charges": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Guardian for Return of Dependent Children": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!"
+  ],
+  "Jewellery cover": [
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Kidnap and hostage": [
+    "GELS - Gold",
+    "GELS - Platinum",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!"
+  ],
+  "Loss of Hotel Facilities": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!"
+  ],
+  "Maternity care": [
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Paying for an adult family member to visit to look after your children (child companion)": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Pet Accommodation/Care": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Post-departure purchase": [
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred"
+  ],
+  "Public transport double indemnity": [
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Quarantine Allowance Due to 17 Infectious Diseases Upon Return to Singapore": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Recuperation Allowance Due to Accidental Miscarriage": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!"
+  ],
+  "Terrorism cover": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "War Cover": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital"
+  ],
+  "Fraudulent personal credit card usage": [
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ],
+  "Financial Collapse of Licensed Tour Operators (insolvent)": [
+    "SOMPO - Deluxe",
+    "SOMPO - Elite",
+    "SOMPO - GO Japan!",
+    "SOMPO - Vital",
+    "INCOME - Classic",
+    "INCOME - Deluxe",
+    "INCOME - Preferred",
+    "FWD - Business",
+    "FWD - First",
+    "FWD - Premium",
+    "GELS - Basic",
+    "GELS - Gold",
+    "GELS - Platinum"
+  ]
+}
