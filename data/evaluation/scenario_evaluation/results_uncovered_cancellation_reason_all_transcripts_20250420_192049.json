@@ -1,0 +1,722 @@
+[
+  {
+    "report_file": "10ac1e37-35a7-4691-9d1b-199fe028911e\\recommendation_report_10ac1e37-35a7-4691-9d1b-199fe028911e.md",
+    "uuid": "10ac1e37-35a7-4691-9d1b-199fe028911e",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "16c3c750-6085-42ae-a1c4-ef656e716732\\recommendation_report_16c3c750-6085-42ae-a1c4-ef656e716732.md",
+    "uuid": "16c3c750-6085-42ae-a1c4-ef656e716732",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "179387ae-aa2a-455a-b80e-dc7ac336405b\\recommendation_report_179387ae-aa2a-455a-b80e-dc7ac336405b.md",
+    "uuid": "179387ae-aa2a-455a-b80e-dc7ac336405b",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "19484f0c-b2a1-47b4-8f44-afc287ad5bd4\\recommendation_report_19484f0c-b2a1-47b4-8f44-afc287ad5bd4.md",
+    "uuid": "19484f0c-b2a1-47b4-8f44-afc287ad5bd4",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "1ebdf2b1-fbb8-4ff7-9496-32d959872aed\\recommendation_report_1ebdf2b1-fbb8-4ff7-9496-32d959872aed.md",
+    "uuid": "1ebdf2b1-fbb8-4ff7-9496-32d959872aed",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "fwd - first",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+  },
+  {
+    "report_file": "27162eee-bd03-418d-bc34-326a37b428b3\\recommendation_report_27162eee-bd03-418d-bc34-326a37b428b3.md",
+    "uuid": "27162eee-bd03-418d-bc34-326a37b428b3",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "31b9152e-c501-4eec-abf7-6679ff13456b\\recommendation_report_31b9152e-c501-4eec-abf7-6679ff13456b.md",
+    "uuid": "31b9152e-c501-4eec-abf7-6679ff13456b",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "fwd - business",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+  },
+  {
+    "report_file": "4cf8d8ab-bb79-4c24-9724-15efd54457f7\\recommendation_report_4cf8d8ab-bb79-4c24-9724-15efd54457f7.md",
+    "uuid": "4cf8d8ab-bb79-4c24-9724-15efd54457f7",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "550a83e3-823c-4b54-a391-a83be4cbb570\\recommendation_report_550a83e3-823c-4b54-a391-a83be4cbb570.md",
+    "uuid": "550a83e3-823c-4b54-a391-a83be4cbb570",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "5b2dabce-7267-4487-8020-eeb8b4d10887\\recommendation_report_5b2dabce-7267-4487-8020-eeb8b4d10887.md",
+    "uuid": "5b2dabce-7267-4487-8020-eeb8b4d10887",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "6b27a1f8-7ab3-421b-8e03-a1e465714ece\\recommendation_report_6b27a1f8-7ab3-421b-8e03-a1e465714ece.md",
+    "uuid": "6b27a1f8-7ab3-421b-8e03-a1e465714ece",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "fwd - first",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+  },
+  {
+    "report_file": "6d9ae3f9-721d-4faa-b13b-ee35a33da240\\recommendation_report_6d9ae3f9-721d-4faa-b13b-ee35a33da240.md",
+    "uuid": "6d9ae3f9-721d-4faa-b13b-ee35a33da240",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "7cb5218e-ab2e-4a30-9453-eccef120fe18\\recommendation_report_7cb5218e-ab2e-4a30-9453-eccef120fe18.md",
+    "uuid": "7cb5218e-ab2e-4a30-9453-eccef120fe18",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "980e9a0f-8dd0-42de-858b-f9ba3a238a94\\recommendation_report_980e9a0f-8dd0-42de-858b-f9ba3a238a94.md",
+    "uuid": "980e9a0f-8dd0-42de-858b-f9ba3a238a94",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "9cf0fb0d-7a4c-4d08-b6e6-94889ba7cbbe\\recommendation_report_9cf0fb0d-7a4c-4d08-b6e6-94889ba7cbbe.md",
+    "uuid": "9cf0fb0d-7a4c-4d08-b6e6-94889ba7cbbe",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "a4d60f08-2de2-44ab-957a-de0ccab10e30\\recommendation_report_a4d60f08-2de2-44ab-957a-de0ccab10e30.md",
+    "uuid": "a4d60f08-2de2-44ab-957a-de0ccab10e30",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "b2761c9f-9e6d-441a-a888-905af25e57ff\\recommendation_report_b2761c9f-9e6d-441a-a888-905af25e57ff.md",
+    "uuid": "b2761c9f-9e6d-441a-a888-905af25e57ff",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "b2e50812-538d-49f3-bc75-6643f1beb36c\\recommendation_report_b2e50812-538d-49f3-bc75-6643f1beb36c.md",
+    "uuid": "b2e50812-538d-49f3-bc75-6643f1beb36c",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - platinum",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "f2c7cac7-3d96-4440-b6ce-7b2a25d1f6a5\\recommendation_report_f2c7cac7-3d96-4440-b6ce-7b2a25d1f6a5.md",
+    "uuid": "f2c7cac7-3d96-4440-b6ce-7b2a25d1f6a5",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+  },
+  {
+    "report_file": "fbe77fb5-589b-4786-b5d7-abe18fe54573\\recommendation_report_fbe77fb5-589b-4786-b5d7-abe18fe54573.md",
+    "uuid": "fbe77fb5-589b-4786-b5d7-abe18fe54573",
+    "scenario": "uncovered_cancellation_reason",
+    "recommended_policy": "gels - gold",
+    "ground_truth_status": "partial_cover_only",
+    "expected_policies": [
+      {
+        "insurer": "fwd",
+        "tier": "Premium",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Platinum",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+      {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+      }
+    ],
+    "evaluation_result": "PASS (Partial Cover)",
+    "match_justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
+  }
+]

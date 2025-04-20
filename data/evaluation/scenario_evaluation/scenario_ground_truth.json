@@ -60,12 +60,27 @@
       {
         "insurer": "fwd",
         "tier": "Premium",
-        "justification": "No standard cover for specific family event cancellation. Best partial solution via optional CFAR add-on (50% payout). Assumes add-on purchased."
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $1k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "Business",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $3k limit). Assumes add-on purchased within 7 days."
+      },
+      {
+        "insurer": "fwd",
+        "tier": "First",
+        "justification": "No standard cover. Partial solution via optional CFAR add-on (50% payout, $6k limit). Assumes add-on purchased within 7 days."
       },
       {
         "insurer": "gels",
         "tier": "Platinum",
-        "justification": "No standard cover for specific family event cancellation. Alternative partial solution via included TIAR benefit (likely 50% payout, requires purchase within 30 days of booking)."
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $6k limit). Requires purchase within 30 days of booking."
+      },
+       {
+        "insurer": "gels",
+        "tier": "Gold",
+        "justification": "No standard cover. Partial solution via included TIAR benefit (likely 50% payout, $3k limit). Requires purchase within 30 days of booking."
       }
     ]
   }

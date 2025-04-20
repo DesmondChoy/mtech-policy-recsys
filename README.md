@@ -201,6 +201,26 @@ This section describes the available scripts for evaluating the quality and accu
   python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py --file_pattern "gels_{Gold}.json"
   ```
 
+### 5.4 Generating Aggregated Evaluation Results & Pass Rates
+
+After running the full orchestration or generating recommendation reports manually, you can generate the final evaluation results and calculate pass rates using these steps:
+
+1.  **Aggregate Scenario Evaluation Results**:
+    *   This step uses the orchestrator script with the `--only_aggregate` flag to run the `evaluate_scenario_recommendations.py` script for each target scenario and save the complete results (for all found reports) to timestamped files.
+    *   **Command**:
+        ```bash
+        python scripts/orchestrate_scenario_evaluation.py --only_aggregate
+        ```
+    *   **Output**: JSON files like `results_{scenario}_all_transcripts_{timestamp}.json` in `data/evaluation/scenario_evaluation/`.
+
+2.  **Calculate Pass Rates**:
+    *   This script reads the latest aggregated evaluation result files generated in the previous step and calculates the pass rate for each scenario.
+    *   **Command**:
+        ```bash
+        python scripts/calculate_scenario_pass_rates.py
+        ```
+    *   **Output**: Prints the pass rates to the console and saves a summary Markdown file (`scenario_evaluation_results.md`) to `data/evaluation/scenario_evaluation/`.
+
 ## 6. Future Enhancements
 
 The outputs from the current pipeline (Structured Policy JSON, Structured Requirements JSON, Comparison Reports, Final Recommendation) provide a solid foundation. Future work may focus on:

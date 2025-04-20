@@ -33,12 +33,14 @@ Workflow Steps:
     aggregated file.
 
 Usage:
-    python scripts/orchestrate_scenario_evaluation.py [-n NUM_TRANSCRIPTS] [--skip_transcript_eval]
+    python scripts/orchestrate_scenario_evaluation.py [-n NUM_TRANSCRIPTS] [--skip_transcript_eval] [--only_aggregate]
 
 Arguments:
     -n, --num_transcripts     Number of transcripts to generate per scenario (default: 5).
     --skip_transcript_eval  If set, skips the transcript evaluation step. All generated
                               transcripts will proceed to report generation.
+    --only_aggregate        If set, skips steps 1-3 (generation, pipeline, reports) and
+                              only runs step 4 (final evaluation and aggregation).
 
 Prerequisites:
 -   Python environment set up with dependencies from `requirements.txt`.
