@@ -15,11 +15,11 @@
   },
   "status_summary": {
     "covered_requirements": [
-      "Trip Cancellation Protection",
-      "Travel Delay Coverage",
+      "Trip Cancellation",
+      "Travel Delay",
       "Lost Luggage",
       "Adventurous activities or Amateur sports",
-      "Pet Accommodation Coverage"
+      "Pet Accommodation"
     ],
     "not_covered_requirements": [
       "Damaged Luggage"
@@ -35,7 +35,7 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "NOT_EXIST"
     },
-    "Trip Cancellation Protection": {
+    "Trip Cancellation": {
       "matched_key": "Trip cancellation",
       "matched_values": [
         "FWD - Business",
@@ -55,7 +55,7 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "Travel Delay Coverage": {
+    "Travel Delay": {
       "matched_key": "Travel delay",
       "matched_values": [
         "FWD - Business",
@@ -127,7 +127,7 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "Pet Accommodation Coverage": {
+    "Pet Accommodation": {
       "matched_key": "Pet Accommodation/Care",
       "matched_values": [
         "FWD - Business",

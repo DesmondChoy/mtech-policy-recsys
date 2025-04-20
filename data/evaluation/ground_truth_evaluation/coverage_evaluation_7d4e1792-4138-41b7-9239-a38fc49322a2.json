@@ -1,15 +1,15 @@
 {
   "customer_id": "7d4e1792-4138-41b7-9239-a38fc49322a2",
   "recommended_policy": "GELS - Platinum",
-  "total_coverage_ratio": "5/6",
-  "total_coverage_percentage": 83.33,
-  "valid_coverage_ratio": "5/5",
+  "total_coverage_ratio": "4/5",
+  "total_coverage_percentage": 80.0,
+  "valid_coverage_ratio": "4/4",
   "valid_coverage_percentage": 100.0,
   "has_invalid_requirements": true,
   "requirements_breakdown": {
-    "total": 6,
-    "valid": 5,
-    "covered": 5,
+    "total": 5,
+    "valid": 4,
+    "covered": 4,
     "not_covered": 0,
     "not_exist": 1
   },
@@ -18,7 +18,6 @@
       "Trip Cancellation",
       "Lost, Damaged, or Delayed Luggage",
       "Travel Delay Benefits",
-      "Accidental Death Coverage",
       "Adventurous activities or Amateur sports"
     ],
     "not_covered_requirements": [],
@@ -89,26 +88,6 @@
         "SOMPO - Elite",
         "SOMPO - GO Japan!",
         "SOMPO - Vital"
-      ],
-      "recommended_policy": "GELS - Platinum",
-      "coverage_status": "COVERED"
-    },
-    "Accidental Death Coverage": {
-      "matched_key": "Personal accident (Accidental death and permanent disability)",
-      "matched_values": [
-        "FWD - Business",
-        "FWD - First",
-        "FWD - Premium",
-        "INCOME - Classic",
-        "INCOME - Deluxe",
-        "INCOME - Preferred",
-        "SOMPO - Deluxe",
-        "SOMPO - Elite",
-        "SOMPO - GO Japan!",
-        "SOMPO - Vital",
-        "GELS - Basic",
-        "GELS - Gold",
-        "GELS - Platinum"
       ],
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"

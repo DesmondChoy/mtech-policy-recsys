@@ -16,10 +16,10 @@
   "status_summary": {
     "covered_requirements": [
       "Medical Coverage",
-      "Lost, Damaged, or Delayed Luggage Coverage",
-      "Adventurous activities or Amateur sports",
+      "Lost, Damaged, or Delayed Luggage",
       "Travel Delay Coverage",
-      "Trip Cancellation Coverage"
+      "Trip Cancellation Coverage",
+      "Adventurous activities or Amateur sports"
     ],
     "not_covered_requirements": [],
     "not_exist_requirements": []
@@ -45,7 +45,7 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "Lost, Damaged, or Delayed Luggage Coverage": {
+    "Lost, Damaged, or Delayed Luggage": {
       "matched_key": "Travel delay",
       "matched_values": [
         "FWD - Business",
@@ -61,21 +61,6 @@
         "SOMPO - Elite",
         "SOMPO - GO Japan!",
         "SOMPO - Vital"
-      ],
-      "recommended_policy": "GELS - Platinum",
-      "coverage_status": "COVERED"
-    },
-    "Adventurous activities or Amateur sports": {
-      "matched_key": "Adventurous activities or Amateur sports",
-      "matched_values": [
-        "INCOME - Classic",
-        "INCOME - Deluxe",
-        "INCOME - Preferred",
-        "SOMPO - Deluxe",
-        "SOMPO - Elite",
-        "SOMPO - GO Japan!",
-        "GELS - Gold",
-        "GELS - Platinum"
       ],
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
@@ -116,6 +101,21 @@
         "SOMPO - Elite",
         "SOMPO - GO Japan!",
         "SOMPO - Vital"
+      ],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "COVERED"
+    },
+    "Adventurous activities or Amateur sports": {
+      "matched_key": "Adventurous activities or Amateur sports",
+      "matched_values": [
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "GELS - Gold",
+        "GELS - Platinum"
       ],
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"

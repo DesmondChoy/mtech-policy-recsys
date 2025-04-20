@@ -1,39 +1,50 @@
 {
   "customer_id": "54acb620-926b-4c0a-956f-be9f6e2d9e52",
   "recommended_policy": "INCOME - Preferred",
-  "total_coverage_ratio": "5/7",
-  "total_coverage_percentage": 71.43,
-  "valid_coverage_ratio": "5/6",
-  "valid_coverage_percentage": 83.33,
-  "has_invalid_requirements": true,
+  "total_coverage_ratio": "6/6",
+  "total_coverage_percentage": 100.0,
+  "valid_coverage_ratio": "6/6",
+  "valid_coverage_percentage": 100.0,
+  "has_invalid_requirements": false,
   "requirements_breakdown": {
-    "total": 7,
+    "total": 6,
     "valid": 6,
-    "covered": 5,
-    "not_covered": 1,
-    "not_exist": 1
+    "covered": 6,
+    "not_covered": 0,
+    "not_exist": 0
   },
   "status_summary": {
     "covered_requirements": [
+      "Medical Coverage",
       "Trip Cancellation",
       "Lost Luggage",
       "Damaged Luggage",
       "Travel Delays",
       "Adventurous activities or Amateur sports"
     ],
-    "not_covered_requirements": [
-      "Accidental Death Double Indemnity"
-    ],
-    "not_exist_requirements": [
-      "Comprehensive Medical Coverage"
-    ]
+    "not_covered_requirements": [],
+    "not_exist_requirements": []
   },
   "requirements_coverage": {
-    "Comprehensive Medical Coverage": {
-      "matched_key": null,
-      "matched_values": [],
+    "Medical Coverage": {
+      "matched_key": "Medical expenses incurred overseas",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
       "recommended_policy": "INCOME - Preferred",
-      "coverage_status": "NOT_EXIST"
+      "coverage_status": "COVERED"
     },
     "Trip Cancellation": {
       "matched_key": "Trip cancellation",
@@ -126,16 +137,6 @@
       ],
       "recommended_policy": "INCOME - Preferred",
       "coverage_status": "COVERED"
-    },
-    "Accidental Death Double Indemnity": {
-      "matched_key": "Double Hospitalisation Allowance Whilst Overseas in ICU Arising from an Accident",
-      "matched_values": [
-        "SOMPO - Deluxe",
-        "SOMPO - Elite",
-        "SOMPO - GO Japan!"
-      ],
-      "recommended_policy": "INCOME - Preferred",
-      "coverage_status": "NOT_COVERED"
     }
   }
 }

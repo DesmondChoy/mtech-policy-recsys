@@ -18,7 +18,7 @@
       "medical coverage",
       "trip cancellation",
       "Lost luggage",
-      "travel delays",
+      "travel delay",
       "Adventurous activities or Amateur sports"
     ],
     "not_covered_requirements": [
@@ -104,7 +104,7 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "NOT_COVERED"
     },
-    "travel delays": {
+    "travel delay": {
       "matched_key": "Travel delay",
       "matched_values": [
         "FWD - Business",

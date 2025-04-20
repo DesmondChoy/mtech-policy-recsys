@@ -121,7 +121,7 @@ def get_customer_requirements(requirement_file):
             
             # First, identify and standardize any sport/activity specific requirements
             # (except golf-related ones)
-            activity_keywords = ["hiking", "trek", "climb", "swim", "dive", "ski", "snowboard", 
+            activity_keywords = ["hiking", "trek", "climb", "swim", "dive", "diving", "ski", "snowboard", 
                               "adventure", "sport", "activity", "recreation", "bungee", "balloon"]
             
             # Track if we need to add adventure sports coverage
@@ -209,6 +209,10 @@ def atomize_requirements(requirements):
     - "Lost or Damaged Luggage" -> ["Lost Luggage", "Damaged Luggage"]
     - "Baggage Delay and Loss" -> ["Baggage Delay", "Baggage Loss"]
     - "Loss/Damage of Baggage" -> ["Loss of Baggage", "Damage of Baggage"]
+    - "Lost, Damaged, Delayed Luggage" -> ["Lost Luggage", "Damaged Luggage", "Delayed Luggage"]
+    - "Lost, Damaged, Delayed Baggage" -> ["Lost Baggage", "Damaged Baggage", "Delayed Baggage"]
+    - "Lost, Damaged or Delayed Luggage" -> ["Lost Luggage", "Damaged Luggage", "Delayed Luggage"]
+    - "Loss, Damage or Delay of Baggage" -> ["Loss of Baggage", "Damage of Baggage", "Delay of Baggage"]
     
     Args:
         requirements (list): List of requirement strings
@@ -218,22 +222,52 @@ def atomize_requirements(requirements):
     """
     atomized_requirements = []
     compound_patterns = [
-        # Pattern for "Lost or Damaged Luggage" type compounds
-        (r"(Lost|loss)\s+or\s+(Damaged|damage)(\s+Luggage|\s+Baggage)?", 
+        # Pattern for "Loss, Damage or Delay of Baggage"
+        (r"(Loss|Damage|Delay|Theft)(?:,\s+)(Loss|Damage|Delay|Theft)(?:\s+or\s+)(Loss|Damage|Delay|Theft)\s+of\s+(Luggage|Baggage)",
          lambda match, req: [
-             f"Lost{match.group(3) or ' Luggage'}" if match.group(3) else "Lost Luggage", 
-             f"Damaged{match.group(3) or ' Luggage'}" if match.group(3) else "Damaged Luggage"
+             f"{match.group(1)} of {match.group(4)}", 
+             f"{match.group(2)} of {match.group(4)}",
+             f"{match.group(3)} of {match.group(4)}"
+         ]),
+         
+        # Pattern for mixed comma and 'or' - "Lost, Damaged or Delayed Luggage"
+        (r"(Lost|Damaged|Delayed|Stolen)(?:,\s+)(Lost|Damaged|Delayed|Stolen)(?:\s+or\s+)(Lost|Damaged|Delayed|Stolen)(\s+(Luggage|Baggage))",
+         lambda match, req: [
+             f"{match.group(1)} {match.group(5)}", 
+             f"{match.group(2)} {match.group(5)}",
+             f"{match.group(3)} {match.group(5)}"
+         ]),
+        
+        # Pattern for comma-separated luggage issues "Lost, Damaged, Delayed Luggage/Baggage"
+        (r"(Lost|Damaged|Delayed|Stolen)(?:,\s+)(Lost|Damaged|Delayed|Stolen)(?:,\s+)(Lost|Damaged|Delayed|Stolen)(\s+(Luggage|Baggage))",
+         lambda match, req: [
+             f"{match.group(1)} {match.group(5)}", 
+             f"{match.group(2)} {match.group(5)}",
+             f"{match.group(3)} {match.group(5)}"
+         ]),
+         
+        # Pattern for comma-separated pair "Lost, Damaged Luggage/Baggage"
+        (r"(Lost|Damaged|Delayed|Stolen)(?:,\s+)(Lost|Damaged|Delayed|Stolen)(\s+(Luggage|Baggage))",
+         lambda match, req: [
+             f"{match.group(1)} {match.group(4)}", 
+             f"{match.group(2)} {match.group(4)}"
+         ]),
+        
+        # Pattern for "Lost or Damaged Luggage" type compounds
+        (r"(Lost|loss)\s+or\s+(Damaged|damage)(\s+(Luggage|Baggage))?", 
+         lambda match, req: [
+             f"Lost {match.group(4) or 'Luggage'}" if match.group(3) else "Lost Luggage", 
+             f"Damaged {match.group(4) or 'Luggage'}" if match.group(3) else "Damaged Luggage"
          ]),
         
         # Pattern for "Baggage Delay and Loss" type compounds
-        (r"(Baggage|Luggage)\s+(Delay|Loss|Damage|Theft)\s+and\s+(Delay|Loss|Damage|Theft)", 
-         lambda match, req: [f"{match.group(1)} {match.group(2)}", 
-                           f"{match.group(1)} {match.group(3)}"]),
+        (r"((Baggage|Luggage)\s+(Delay|Loss|Damage|Theft))\s+and\s+(Delay|Loss|Damage|Theft)", 
+         lambda match, req: [match.group(1), f"{match.group(2)} {match.group(4)}"]),
                            
         # Pattern for "Lost and Delayed Baggage"
-        (r"(Lost|Delayed|Damaged|Stolen)\s+and\s+(Lost|Delayed|Damaged|Stolen)(\s+Luggage|\s+Baggage)", 
-         lambda match, req: [f"{match.group(1)}{match.group(3)}", 
-                           f"{match.group(2)}{match.group(3)}"]),
+        (r"(Lost|Delayed|Damaged|Stolen)\s+and\s+(Lost|Delayed|Damaged|Stolen)(\s+(Luggage|Baggage))", 
+         lambda match, req: [f"{match.group(1)} {match.group(4)}", 
+                           f"{match.group(2)} {match.group(4)}"]),
                            
         # Pattern for "Loss or Damage of Baggage"
         (r"(Loss|Damage|Delay|Theft)\s+or\s+(Loss|Damage|Delay|Theft)\s+of\s+(Luggage|Baggage)", 

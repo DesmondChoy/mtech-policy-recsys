@@ -20,7 +20,7 @@
       "Travel Delays",
       "Lost Luggage",
       "Damaged Luggage",
-      "Accidental Death Coverage"
+      "Accidental Death Benefit"
     ],
     "not_covered_requirements": [
       "Adventurous activities or Amateur sports"
@@ -140,7 +140,7 @@
       "recommended_policy": "FWD - First",
       "coverage_status": "COVERED"
     },
-    "Accidental Death Coverage": {
+    "Accidental Death Benefit": {
       "matched_key": "Personal accident (Accidental death and permanent disability)",
       "matched_values": [
         "FWD - Business",

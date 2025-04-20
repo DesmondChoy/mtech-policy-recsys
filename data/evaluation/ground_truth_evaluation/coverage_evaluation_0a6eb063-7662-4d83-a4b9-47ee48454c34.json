@@ -18,12 +18,12 @@
       "medical emergencies",
       "trip cancellation",
       "travel delays",
-      "lost luggage",
+      "lost baggage",
       "Golf Coverage",
       "Adventurous activities or Amateur sports"
     ],
     "not_covered_requirements": [
-      "damaged luggage"
+      "damaged baggage"
     ],
     "not_exist_requirements": []
   },
@@ -88,7 +88,7 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "lost luggage": {
+    "lost baggage": {
       "matched_key": "Baggage loss",
       "matched_values": [
         "FWD - Business",
@@ -108,7 +108,7 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "damaged luggage": {
+    "damaged baggage": {
       "matched_key": "Damage of baggage and personal belongings",
       "matched_values": [
         "FWD - Business",

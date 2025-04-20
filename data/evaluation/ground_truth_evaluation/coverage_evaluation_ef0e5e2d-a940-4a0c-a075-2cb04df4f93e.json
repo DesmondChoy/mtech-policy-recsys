@@ -15,9 +15,9 @@
   },
   "status_summary": {
     "covered_requirements": [
-      "medical",
+      "comprehensive medical",
       "trip cancellation",
-      "travel delays",
+      "travel delay",
       "pet accommodation",
       "Lost luggage",
       "Adventurous activities or Amateur sports"
@@ -28,7 +28,7 @@
     "not_exist_requirements": []
   },
   "requirements_coverage": {
-    "medical": {
+    "comprehensive medical": {
       "matched_key": "Medical expenses incurred overseas",
       "matched_values": [
         "FWD - Business",
@@ -68,7 +68,7 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "travel delays": {
+    "travel delay": {
       "matched_key": "Travel delay",
       "matched_values": [
         "FWD - Business",

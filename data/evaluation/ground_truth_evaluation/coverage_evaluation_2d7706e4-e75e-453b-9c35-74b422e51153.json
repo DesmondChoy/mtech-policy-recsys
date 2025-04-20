@@ -1,34 +1,30 @@
 {
   "customer_id": "2d7706e4-e75e-453b-9c35-74b422e51153",
   "recommended_policy": "GELS - Platinum",
-  "total_coverage_ratio": "5/9",
-  "total_coverage_percentage": 55.56,
+  "total_coverage_ratio": "5/6",
+  "total_coverage_percentage": 83.33,
   "valid_coverage_ratio": "5/6",
   "valid_coverage_percentage": 83.33,
-  "has_invalid_requirements": true,
+  "has_invalid_requirements": false,
   "requirements_breakdown": {
-    "total": 9,
+    "total": 6,
     "valid": 6,
     "covered": 5,
     "not_covered": 1,
-    "not_exist": 3
+    "not_exist": 0
   },
   "status_summary": {
     "covered_requirements": [
       "Emergency Medical Coverage",
       "Trip Cancellation",
-      "Travel Delays",
+      "Travel Delay Coverage",
       "Lost Luggage",
-      "Golf Equipment Coverage"
+      "Golf Coverage"
     ],
     "not_covered_requirements": [
       "Damaged Luggage"
     ],
-    "not_exist_requirements": [
-      "Reimbursement for Unused Green Fees",
-      "Accidental Damage to Rented Golf Buggy",
-      "Hole-in-One Benefit"
-    ]
+    "not_exist_requirements": []
   },
   "requirements_coverage": {
     "Emergency Medical Coverage": {
@@ -71,7 +67,7 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "Travel Delays": {
+    "Travel Delay Coverage": {
       "matched_key": "Travel delay",
       "matched_values": [
         "FWD - Business",
@@ -128,7 +124,7 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "NOT_COVERED"
     },
-    "Golf Equipment Coverage": {
+    "Golf Coverage": {
       "matched_key": "Golf Cover",
       "matched_values": [
         "SOMPO - Deluxe",
@@ -139,24 +135,6 @@
       ],
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
-    },
-    "Reimbursement for Unused Green Fees": {
-      "matched_key": null,
-      "matched_values": [],
-      "recommended_policy": "GELS - Platinum",
-      "coverage_status": "NOT_EXIST"
-    },
-    "Accidental Damage to Rented Golf Buggy": {
-      "matched_key": null,
-      "matched_values": [],
-      "recommended_policy": "GELS - Platinum",
-      "coverage_status": "NOT_EXIST"
-    },
-    "Hole-in-One Benefit": {
-      "matched_key": null,
-      "matched_values": [],
-      "recommended_policy": "GELS - Platinum",
-      "coverage_status": "NOT_EXIST"
     }
   }
 }

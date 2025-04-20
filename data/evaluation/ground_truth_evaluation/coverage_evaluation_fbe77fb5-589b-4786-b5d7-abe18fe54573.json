@@ -18,8 +18,8 @@
       "Medical Coverage",
       "Lost Luggage",
       "Adventurous activities or Amateur sports",
-      "Travel Delay Benefits",
-      "Trip Cancellation Coverage"
+      "Travel Delay",
+      "Trip Cancellation"
     ],
     "not_covered_requirements": [
       "Damaged Luggage"
@@ -99,7 +99,7 @@
       "recommended_policy": "GELS - Gold",
       "coverage_status": "COVERED"
     },
-    "Travel Delay Benefits": {
+    "Travel Delay": {
       "matched_key": "Travel delay",
       "matched_values": [
         "FWD - Business",
@@ -119,7 +119,7 @@
       "recommended_policy": "GELS - Gold",
       "coverage_status": "COVERED"
     },
-    "Trip Cancellation Coverage": {
+    "Trip Cancellation": {
       "matched_key": "Trip cancellation",
       "matched_values": [
         "FWD - Business",

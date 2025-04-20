@@ -15,9 +15,9 @@
   },
   "status_summary": {
     "covered_requirements": [
-      "medical emergencies",
-      "trip cancellation",
-      "significant travel delays",
+      "Medical emergencies",
+      "Trip cancellation",
+      "Travel delay",
       "Lost luggage",
       "Damaged luggage",
       "Adventurous activities or Amateur sports"
@@ -26,7 +26,7 @@
     "not_exist_requirements": []
   },
   "requirements_coverage": {
-    "medical emergencies": {
+    "Medical emergencies": {
       "matched_key": "Emergency medical evacuation",
       "matched_values": [
         "FWD - Business",
@@ -46,7 +46,7 @@
       "recommended_policy": "INCOME - Deluxe",
       "coverage_status": "COVERED"
     },
-    "trip cancellation": {
+    "Trip cancellation": {
       "matched_key": "Trip cancellation",
       "matched_values": [
         "FWD - Business",
@@ -66,7 +66,7 @@
       "recommended_policy": "INCOME - Deluxe",
       "coverage_status": "COVERED"
     },
-    "significant travel delays": {
+    "Travel delay": {
       "matched_key": "Travel delay",
       "matched_values": [
         "FWD - Business",

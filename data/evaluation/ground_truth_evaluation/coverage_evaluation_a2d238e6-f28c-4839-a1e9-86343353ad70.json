@@ -1,0 +1,157 @@
+{
+  "customer_id": "a2d238e6-f28c-4839-a1e9-86343353ad70",
+  "recommended_policy": "GELS - Platinum",
+  "total_coverage_ratio": "5/9",
+  "total_coverage_percentage": 55.56,
+  "valid_coverage_ratio": "5/6",
+  "valid_coverage_percentage": 83.33,
+  "has_invalid_requirements": true,
+  "requirements_breakdown": {
+    "total": 9,
+    "valid": 6,
+    "covered": 5,
+    "not_covered": 1,
+    "not_exist": 3
+  },
+  "status_summary": {
+    "covered_requirements": [
+      "Trip Cancellation",
+      "Travel Delay",
+      "Lost Luggage",
+      "Golf Equipment Coverage",
+      "Adventurous activities or Amateur sports"
+    ],
+    "not_covered_requirements": [
+      "Damaged Luggage"
+    ],
+    "not_exist_requirements": [
+      "Comprehensive Medical Coverage",
+      "Reimbursement for Unused Green Fees",
+      "Accidental Damage to Golf Buggy"
+    ]
+  },
+  "requirements_coverage": {
+    "Trip Cancellation": {
+      "matched_key": "Trip cancellation",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital"
+      ],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "COVERED"
+    },
+    "Comprehensive Medical Coverage": {
+      "matched_key": null,
+      "matched_values": [],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "NOT_EXIST"
+    },
+    "Travel Delay": {
+      "matched_key": "Travel delay",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital"
+      ],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "COVERED"
+    },
+    "Lost Luggage": {
+      "matched_key": "Baggage loss",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "COVERED"
+    },
+    "Damaged Luggage": {
+      "matched_key": "Damage of baggage and personal belongings",
+      "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "SOMPO - Vital"
+      ],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "NOT_COVERED"
+    },
+    "Golf Equipment Coverage": {
+      "matched_key": "Golf Cover",
+      "matched_values": [
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "COVERED"
+    },
+    "Reimbursement for Unused Green Fees": {
+      "matched_key": null,
+      "matched_values": [],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "NOT_EXIST"
+    },
+    "Accidental Damage to Golf Buggy": {
+      "matched_key": null,
+      "matched_values": [],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "NOT_EXIST"
+    },
+    "Adventurous activities or Amateur sports": {
+      "matched_key": "Adventurous activities or Amateur sports",
+      "matched_values": [
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "GELS - Gold",
+        "GELS - Platinum"
+      ],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "COVERED"
+    }
+  }
+}

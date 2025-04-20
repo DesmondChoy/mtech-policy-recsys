@@ -16,13 +16,13 @@
   "status_summary": {
     "covered_requirements": [
       "medical coverage",
-      "Adventurous activities or Amateur sports",
-      "Lost luggage",
+      "trip cancellation",
+      "lost luggage",
       "travel delays",
-      "trip cancellation"
+      "Adventurous activities or Amateur sports"
     ],
     "not_covered_requirements": [
-      "Damaged luggage"
+      "damaged luggage"
     ],
     "not_exist_requirements": []
   },
@@ -47,22 +47,27 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "Adventurous activities or Amateur sports": {
-      "matched_key": "Adventurous activities or Amateur sports",
+    "trip cancellation": {
+      "matched_key": "Trip cancellation",
       "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "GELS - Basic",
+        "GELS - Gold",
+        "GELS - Platinum",
         "INCOME - Classic",
         "INCOME - Deluxe",
         "INCOME - Preferred",
         "SOMPO - Deluxe",
         "SOMPO - Elite",
         "SOMPO - GO Japan!",
-        "GELS - Gold",
-        "GELS - Platinum"
+        "SOMPO - Vital"
       ],
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "Lost luggage": {
+    "lost luggage": {
       "matched_key": "Baggage loss",
       "matched_values": [
         "FWD - Business",
@@ -82,7 +87,7 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "Damaged luggage": {
+    "damaged luggage": {
       "matched_key": "Damage of baggage and personal belongings",
       "matched_values": [
         "FWD - Business",
@@ -119,22 +124,17 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "trip cancellation": {
-      "matched_key": "Trip cancellation",
+    "Adventurous activities or Amateur sports": {
+      "matched_key": "Adventurous activities or Amateur sports",
       "matched_values": [
-        "FWD - Business",
-        "FWD - First",
-        "FWD - Premium",
-        "GELS - Basic",
-        "GELS - Gold",
-        "GELS - Platinum",
         "INCOME - Classic",
         "INCOME - Deluxe",
         "INCOME - Preferred",
         "SOMPO - Deluxe",
         "SOMPO - Elite",
         "SOMPO - GO Japan!",
-        "SOMPO - Vital"
+        "GELS - Gold",
+        "GELS - Platinum"
       ],
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"

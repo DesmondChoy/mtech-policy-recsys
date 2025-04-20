@@ -1,31 +1,33 @@
 {
   "customer_id": "5adcce2e-f3f3-4778-97df-ce6c929a3c80",
   "recommended_policy": "GELS - Platinum",
-  "total_coverage_ratio": "5/5",
-  "total_coverage_percentage": 100.0,
-  "valid_coverage_ratio": "5/5",
-  "valid_coverage_percentage": 100.0,
+  "total_coverage_ratio": "5/6",
+  "total_coverage_percentage": 83.33,
+  "valid_coverage_ratio": "5/6",
+  "valid_coverage_percentage": 83.33,
   "has_invalid_requirements": false,
   "requirements_breakdown": {
-    "total": 5,
-    "valid": 5,
+    "total": 6,
+    "valid": 6,
     "covered": 5,
-    "not_covered": 0,
+    "not_covered": 1,
     "not_exist": 0
   },
   "status_summary": {
     "covered_requirements": [
-      "medical emergency coverage",
-      "trip cancellation coverage",
-      "travel delay coverage",
-      "golf equipment coverage",
-      "liability for golf buggy damage"
+      "medical emergencies",
+      "trip cancellation",
+      "travel delays",
+      "luggage loss",
+      "golf-related coverages"
     ],
-    "not_covered_requirements": [],
+    "not_covered_requirements": [
+      "luggage damage"
+    ],
     "not_exist_requirements": []
   },
   "requirements_coverage": {
-    "medical emergency coverage": {
+    "medical emergencies": {
       "matched_key": "Emergency medical evacuation",
       "matched_values": [
         "FWD - Business",
@@ -45,7 +47,7 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "trip cancellation coverage": {
+    "trip cancellation": {
       "matched_key": "Trip cancellation",
       "matched_values": [
         "FWD - Business",
@@ -65,7 +67,7 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "travel delay coverage": {
+    "travel delays": {
       "matched_key": "Travel delay",
       "matched_values": [
         "FWD - Business",
@@ -85,27 +87,32 @@
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "golf equipment coverage": {
-      "matched_key": "Golf Cover",
+    "luggage loss": {
+      "matched_key": "Baggage loss",
       "matched_values": [
+        "FWD - Business",
+        "FWD - First",
+        "FWD - Premium",
+        "INCOME - Classic",
+        "INCOME - Deluxe",
+        "INCOME - Preferred",
         "SOMPO - Deluxe",
         "SOMPO - Elite",
         "SOMPO - GO Japan!",
+        "SOMPO - Vital",
+        "GELS - Basic",
         "GELS - Gold",
         "GELS - Platinum"
       ],
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
     },
-    "liability for golf buggy damage": {
-      "matched_key": "Personal liability",
+    "luggage damage": {
+      "matched_key": "Damage of baggage and personal belongings",
       "matched_values": [
         "FWD - Business",
         "FWD - First",
         "FWD - Premium",
-        "GELS - Basic",
-        "GELS - Gold",
-        "GELS - Platinum",
         "INCOME - Classic",
         "INCOME - Deluxe",
         "INCOME - Preferred",
@@ -113,6 +120,18 @@
         "SOMPO - Elite",
         "SOMPO - GO Japan!",
         "SOMPO - Vital"
+      ],
+      "recommended_policy": "GELS - Platinum",
+      "coverage_status": "NOT_COVERED"
+    },
+    "golf-related coverages": {
+      "matched_key": "Golf Cover",
+      "matched_values": [
+        "SOMPO - Deluxe",
+        "SOMPO - Elite",
+        "SOMPO - GO Japan!",
+        "GELS - Gold",
+        "GELS - Platinum"
       ],
       "recommended_policy": "GELS - Platinum",
       "coverage_status": "COVERED"
