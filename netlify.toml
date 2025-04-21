@@ -1,5 +1,5 @@
 [build]
-  command = "cd ux-webapp && npm run build"
+  command = "cd ux-webapp && npm install && npm run build"
   publish = "ux-webapp/dist"
 
 [dev]
