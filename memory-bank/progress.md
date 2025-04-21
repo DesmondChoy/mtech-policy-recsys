@@ -20,7 +20,11 @@ The project is in the **initial setup and planning phase**. We are currently est
 10. **Policy Comparison Script**: Script (`scripts/generate_policy_comparison.py`) generates insurer-level Markdown comparison reports using `LLMService`, extracted requirements, and processed policies.
 11. **PDF Extraction Evaluation Script**: Script (`scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py`) compares processed policy JSON against source PDF using multi-modal LLM (`LLMService`) for accuracy/completeness checks. Enhanced with `--file_pattern` argument for flexible input filtering.
 12. **Recommendation Report Script**: Script (`scripts/generate_recommendation_report.py`) orchestrates the two-stage recommendation process: parses comparison reports, applies Stage 1 scoring, calls `LLMService` for Stage 2 re-ranking (prompt updated to use transcript context for prioritization and request source references), and generates/saves a final customer-friendly Markdown report. (Note: Requirements summary context removed from Stage 2). Includes unit tests for parser, scoring, and Markdown generation.
-13. **Node.js/Frontend Setup**: After cloning, run `npm install` to install Node.js dependencies if you intend to use any web or supporting scripts.
+13. **Ground Truth Data**: Curated ground truth (`data/ground_truth/ground_truth.json`) defining expected outcomes for specific scenarios.
+14. **Embedding Utilities**: `EmbeddingMatcher` class (`src/embedding/embedding_utils.py`) for semantic comparison using OpenAI embeddings, including caching (`src/embedding/cache/`).
+15. **Scenario Recommendation Evaluation Script**: Script (`scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`) evaluates final recommendations against ground truth using semantic matching via `EmbeddingMatcher`.
+16. **Ground Truth Coverage Script**: Script (`scripts/generate_ground_truth_coverage.py`) likely uses `EmbeddingMatcher` to analyze coverage against ground truth (exact function TBC).
+17. **Node.js/Frontend Setup**: After cloning, run `npm install` to install Node.js dependencies if you intend to use any web or supporting scripts.
 
 ## What's Left to Build
 
@@ -28,11 +32,14 @@ The project is in the **initial setup and planning phase**. We are currently est
     *   [ ] Run the new `eval_pdf_extraction.py` script with sample data.
     *   [ ] Analyze results and refine the script/prompt as needed.
     *   [ ] Define clear metrics for this evaluation (potentially derived from the script's JSON output).
-2.  **Implement Comparison Report Evaluation**:
+2.  **Test & Refine Scenario Recommendation Evaluation**:
+    *   [ ] Run `evaluate_scenario_recommendations.py` with diverse sample data.
+    *   [ ] Analyze results, refine `EmbeddingMatcher` logic/thresholds, and improve `ground_truth.json` as needed.
+3.  **Implement Comparison Report Evaluation**:
     *   [ ] Design and implement the evaluation script/process for `scripts/generate_policy_comparison.py` output.
     *   [ ] Define metrics for report quality, accuracy, and justification clarity.
-3.  **Orchestration Script**: Script (`scripts/orchestrate_scenario_evaluation.py`) automates the end-to-end workflow (generation, evaluation, parsing, extraction, comparison, recommendation, final evaluation). Includes parallel transcript evaluation, sequential report generation, and flags (`--skip_transcript_eval`, `--only_aggregate`) to control execution.
-4.  **Refine Core Logic**:
+4.  **Orchestration Script**: Script (`scripts/orchestrate_scenario_evaluation.py`) automates the end-to-end workflow (generation, evaluation, parsing, extraction, comparison, recommendation, final evaluation). Includes parallel transcript evaluation, sequential report generation, and flags (`--skip_transcript_eval`, `--only_aggregate`) to control execution.
+5.  **Refine Core Logic**:
     *   [ ] Iteratively improve prompts, models, and processing logic within existing scripts based on evaluation results and testing.
 4.  **Develop Recommendation Logic**:
     *   [ ] Define the process for generating final recommendations (e.g., selecting top insurers/tiers from comparison reports).
@@ -63,19 +70,25 @@ The project is in the **initial setup and planning phase**. We are currently est
 | **PDF Extraction Evaluation**      | **100%**    | **High** | **Script implemented (`eval_pdf_extraction.py`) with `--file_pattern` enhancement. Testing/Refinement pending.** |
 | Policy Comparison Evaluation       | Planned     | High     | Design and implement evaluation for `generate_policy_comparison.py`.                                 |
 | **Recommender Logic Script**       | **100%**    | **High** | **`scripts/generate_recommendation_report.py` implemented (parser, score, re-rank with transcript context, MD report, efficient overwrite check, improved logging).** |
+| **Ground Truth Data**              | **100%**    | **High** | **`data/ground_truth/ground_truth.json` created and refined.**                                       |
+| **Embedding Utilities**            | **100%**    | **High** | **`src/embedding/embedding_utils.py` implemented with `EmbeddingMatcher`.**                          |
+| **Scenario Rec. Evaluation**       | **100%**    | **High** | **`scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` implemented, uses embeddings. Testing/Refinement pending.** |
+| **Ground Truth Coverage Script**   | **100%**    | **Medium** | **`scripts/generate_ground_truth_coverage.py` added. Functionality/Testing pending.**                |
 | **Orchestration Script**           | **100%**    | **High** | **`scripts/orchestrate_scenario_evaluation.py` implemented and debugged. Parallel eval, sequential reports. Final evaluation includes all reports. Added `--only_aggregate` flag.** |
 | **Component Integration**          | **20%**     | **Medium** | **Internal Stage 1/2 integration done. Full pipeline orchestration pending.**                        |
 | Testing Framework                  | 20%         | Medium   | Unit tests added for recommender parser/scorer/MD report. More needed.                               |
 | ML Models                          | 0%          | Low      | Later phase.                                                                                         |
-| Documentation (Memory Bank)        | **100%**    | High     | **Core files updated for latest script changes. Script/Agent docstrings mostly present.**            |
+| Documentation (Memory Bank)        | **In Prog.**| High     | **Updating core files for Ground Truth feature.**                                                    |
 
 ## Known Issues
 
 1.  **LLM Accuracy & Consistency**:
     *   Ensuring high accuracy and consistent formatting from LLMs for extraction (policy, requirements) and comparison tasks remains a challenge. Requires ongoing prompt tuning and potentially model updates.
     *   Adherence to complex JSON schemas (e.g., policy extraction) needs careful validation.
-2.  **Evaluation Gaps**:
-    *   Lack of automated evaluation for *comparison report* quality. Manual review is currently required for that step. (Policy extraction evaluation script now exists but needs testing).
+2.  **Evaluation Gaps/Refinements**:
+    *   PDF extraction evaluation needs testing/validation.
+    *   Scenario recommendation evaluation depends on `EmbeddingMatcher` accuracy and ground truth quality; requires ongoing refinement.
+    *   Lack of automated evaluation for *comparison report* quality. Manual review is currently required for that step.
 3.  **Synthetic Data Limitations**:
     *   Generated transcripts might not fully capture the nuances of real user interactions.
 4.  **LLM Constraints**:
@@ -83,10 +96,10 @@ The project is in the **initial setup and planning phase**. We are currently est
 5.  **Lack of Integration**:
     *   Current components are largely standalone scripts. No automated workflow connects them end-to-end. Manual execution is required for each step.
 6.  **Extractor Agent Dependency**:
-    *   The Extractor Agent relies on OpenAI/CrewAI, separate from the Gemini-based `LLMService` used elsewhere. This adds complexity to configuration and potential cost management.
-6.  **Orchestrator Evaluation Scope**:
+    *   The Extractor Agent relies on OpenAI/CrewAI, separate from the Gemini-based `LLMService` used elsewhere. `EmbeddingMatcher` also uses OpenAI. This adds complexity to configuration and potential cost management across multiple components.
+7.  **Orchestrator Evaluation Scope**:
     *   The final evaluation step in the orchestrator now includes results for *all* reports found, not just the current run. Need to be mindful of this when interpreting the `*_all_transcripts_*.json` files.
-7.  **Orchestrator Flexibility**:
+8.  **Orchestrator Flexibility**:
     *   Added `--only_aggregate` flag to allow running only the final evaluation step.
 
 ## Recent Achievements (Summary - See `activeContext.md` for full detail)
@@ -99,3 +112,4 @@ The project is in the **initial setup and planning phase**. We are currently est
 6.  **Orchestration Script**: Implemented and debugged `scripts/orchestrate_scenario_evaluation.py` to automate the end-to-end workflow. Refactored transcript evaluation for parallel processing and report generation for sequential processing (per UUID) to improve reliability. Final evaluation step modified to include all reports found for a scenario. Added `--only_aggregate` flag for flexibility.
 7.  **Recommendation Script Efficiency/Logging**: Improved `scripts/generate_recommendation_report.py` to check for existing files before LLM calls and corrected summary logging. Added default values to docstrings.
 8.  **Scenario Evaluation Ground Truth Refinement**: Analyzed failing cases for `uncovered_cancellation_reason` scenario and relaxed the ground truth in `data/evaluation/scenario_evaluation/scenario_ground_truth.json` to include additional valid policy tiers (GELS Gold, FWD Business, FWD First), improving evaluation accuracy.
+9.  **Ground Truth Evaluation Feature**: Integrated ground truth data (`data/ground_truth/ground_truth.json`), embedding utilities (`src/embedding/embedding_utils.py`), and evaluation scripts (`scripts/generate_ground_truth_coverage.py`, updated `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`) for semantic evaluation of recommendations.

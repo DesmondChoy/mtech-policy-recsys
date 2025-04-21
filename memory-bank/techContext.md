@@ -16,7 +16,7 @@
         *   Configuration managed in `src/models/gemini_config.py`.
     *   **OpenAI Models (e.g., GPT-4o)**:
         *   Used *specifically* by the Extractor Agent (`src/agents/extractor.py`).
-        *   Accessed via the `crewai` framework.
+        *   Accessed via the `crewai` framework (for Extractor Agent) and directly via `openai` SDK (for `EmbeddingMatcher`).
         *   Configuration (API Key, Model Name) managed via `.env` file.
 
 3.  **CrewAI**:
@@ -28,7 +28,11 @@
     *   Data validation and settings management library.
     *   Used for: Defining and validating structured JSON outputs (e.g., `TravelInsuranceRequirement`, policy extraction schemas), managing configuration.
 
-5.  **Jupyter Notebooks**:
+5.  **NLTK**:
+    *   Natural Language Toolkit.
+    *   Used for: Text preprocessing (stopwords, stemming) within `src/embedding/embedding_utils.py`.
+
+6.  **Jupyter Notebooks**:
     *   Interactive development environment.
     *   Used for: Initial prototyping, experimentation, and demonstration (though core logic is now in scripts/agents).
 
@@ -73,15 +77,30 @@
 │   ├── transcripts/            # Conversation transcripts
 │   │   ├── raw/                # Raw transcripts (e.g., synthetic/, real/)
 │   │   └── processed/          # Processed/parsed transcripts (e.g., parsed_transcript_{scenario}_{uuid}.json)
-│   └── evaluation/             # Evaluation data
-│       └── transcript_evaluations/ # Transcript evaluation results
+│   ├── evaluation/             # Evaluation data & results
+│   │   ├── pdf_extraction_evaluations/ # PDF extraction eval results
+│   │   ├── scenario_evaluation/      # Scenario eval results & ground truth
+│   │   └── transcript_evaluations/   # Transcript evaluation results
+│   └── ground_truth/           # Curated ground truth data
+│       └── ground_truth.json
 ├── src/                        # Source code
 │   ├── agents/                 # Agent implementations (currently extractor.py, recommender.py [empty])
+│   ├── embedding/              # Embedding related utilities
+│   │   ├── __init__.py
+│   │   ├── embedding_utils.py
+│   │   └── cache/              # Cache for embeddings (*.pkl)
 │   ├── models/                 # LLM configurations (gemini_config.py) and services (llm_service.py)
 │   ├── utils/                  # Utility functions (transcript_processing.py, etc.)
 │   └── web/                    # Basic CLI runner (app.py)
 ├── tests/                      # Test cases
 ├── scripts/                    # Utility scripts
+│   ├── calculate_scenario_pass_rates.py
+│   ├── extract_policy_tier.py
+│   ├── generate_coverage_mapping.py
+│   ├── generate_ground_truth_coverage.py
+│   ├── generate_policy_comparison.py
+│   ├── generate_recommendation_report.py
+│   ├── orchestrate_scenario_evaluation.py
 │   ├── extract_policy_tier.py
 │   ├── generate_policy_comparison.py
 │   ├── generate_recommendation_report.py
@@ -202,9 +221,14 @@ This installs all necessary packages listed in `package.json` for any web or sup
    - Usage: Used extensively by `scripts/extract_policy_tier.py` to define and validate the complex nested JSON structure (including `PolicyExtraction`, `CoverageDetail`, `LimitDetail`, `ConditionalLimit`, `SourceDetail`) extracted by Gemini. Also used for loading API keys via `dotenv`.
 
 4. **OpenAI**:
-   - Purpose: LLM used by the Extractor agent
+   - Purpose: LLM used by the Extractor agent and for generating embeddings in `EmbeddingMatcher`.
    - Installation: `pip install openai` (Likely installed as a dependency of `crewai`)
-   - Usage: Accessed implicitly by `crewai` when configured via `.env` variables (`OPENAI_API_KEY`, `OPENAI_MODEL_NAME`).
+   - Usage: Accessed implicitly by `crewai` when configured via `.env` variables (`OPENAI_API_KEY`, `OPENAI_MODEL_NAME`). Accessed directly by `EmbeddingMatcher` (`src/embedding/embedding_utils.py`) using API key from `.env`.
+
+5. **NLTK**:
+   - Purpose: Text preprocessing (stopwords, stemming).
+   - Installation: `pip install nltk`
+   - Usage: Used by `EmbeddingMatcher` (`src/embedding/embedding_utils.py`). Requires downloading stopwords data (`nltk.download('stopwords')`).
 
 ### Internal Dependencies
 
@@ -225,24 +249,29 @@ This installs all necessary packages listed in `package.json` for any web or sup
     *   **Policy Extraction (`scripts/extract_policy_tier.py`)**: Depends on `LLMService`.
     *   **Transcript Evaluation (`scripts/evaluation/transcript_evaluation/`)**: Depends on `LLMService`.
     *   **Policy Comparison (`scripts/generate_policy_comparison.py`)**: Depends on `LLMService`, Extractor output, and Policy Extraction output.
+    *   **Scenario Evaluation (`scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`)**: Depends on Recommendation Report output, `data/ground_truth/ground_truth.json`, and `src/embedding/embedding_utils.py`.
+    *   **Ground Truth Coverage Generation (`scripts/generate_ground_truth_coverage.py`)**: Likely depends on `src/embedding/embedding_utils.py` and `data/ground_truth/ground_truth.json`.
     *   **Orchestration Script (`scripts/orchestrate_scenario_evaluation.py`)**: Automates the end-to-end workflow, calling other scripts. Includes flags like `--skip_transcript_eval` and `--only_aggregate` to control execution flow.
 
-4.  **Utility Modules (`src/utils/`)**:
-    *   `transcript_processing.py`: Defines `TravelInsuranceRequirement` Pydantic model (used by Extractor) and parsing logic.
+4.  **Utility Modules (`src/`)**:
+    *   `src/utils/transcript_processing.py`: Defines `TravelInsuranceRequirement` Pydantic model (used by Extractor) and parsing logic.
+    *   `src/embedding/embedding_utils.py`: Defines `EmbeddingMatcher` for semantic comparison against ground truth. Depends on OpenAI API and NLTK.
     *   Other utilities as needed.
 
 5.  **Data Dependencies**:
     *   Raw/Processed Policies (`data/policies/`)
     *   Raw/Processed Transcripts (`data/transcripts/`)
     *   Extracted Requirements (`data/extracted_customer_requirements/`)
+    *   Ground Truth Data (`data/ground_truth/ground_truth.json`)
     *   Evaluation Results (`data/evaluation/`)
     *   Supporting data (Scenarios, Coverage Requirements, Personalities).
+    *   Embedding Cache (`src/embedding/cache/*.pkl`)
 
 ## Configuration Management
 
 1.  **Environment Variables (`.env`)**:
-    *   Used primarily for **OpenAI** configuration needed by `crewai` (Extractor Agent): `OPENAI_API_KEY`, `OPENAI_MODEL_NAME`.
-    *   Also used for `GEMINI_API_KEY` loaded by `GeminiConfig`.
+    *   Used for **OpenAI** configuration needed by `crewai` (Extractor Agent) and `EmbeddingMatcher`: `OPENAI_API_KEY`, `OPENAI_MODEL_NAME` (optional, defaults to `gpt-4o` for crewai if not set).
+    *   Used for `GEMINI_API_KEY` loaded by `GeminiConfig`.
     *   Managed via `python-dotenv`.
 
 2.  **Configuration Files**:

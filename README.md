@@ -30,6 +30,7 @@ This will install all necessary packages listed in `package.json`.
 **3. Evaluation & Quality Assurance:**
 - **LLM-Based Transcript Evaluation**: Assesses generated transcripts for requirement coverage completeness (standard and scenario-specific) using LLMs, providing JSON results with quote-based justifications.
 - **PDF Extraction Evaluation**: Compares processed policy JSON against the source PDF using a multi-modal LLM to verify extraction accuracy and completeness.
+- **Ground Truth Recommendation Evaluation**: Compares final recommendations against a curated ground truth dataset (`data/ground_truth/ground_truth.json`) using semantic matching (`src/embedding/embedding_utils.py`) to assess accuracy for specific scenarios.
 
 **4. Future Goals:**
 - **(Planned) Conversational Interface**: Future goal for natural language interaction.
@@ -167,8 +168,8 @@ This section describes the available scripts for evaluating the quality and accu
 ### 5.2 Scenario Recommendation Evaluation
 
 - **Component**: `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`
-- **Purpose**: Evaluates the final recommendation report against a predefined ground truth for specific test scenarios. This verifies if the system recommends an appropriate policy given the scenario's constraints and expected outcomes.
-- **Input**: Ground truth JSON (`data/evaluation/scenario_evaluation/scenario_ground_truth.json`), recommendation reports (`results/{uuid}/recommendation_report_*.md`), and optionally raw transcripts for scenario mapping. Can evaluate a specific scenario using `--scenario`.
+- **Purpose**: Evaluates the final recommendation report against a predefined ground truth (`data/ground_truth/ground_truth.json`) for specific test scenarios. This verifies if the system recommends an appropriate policy given the scenario's constraints and expected outcomes. **It leverages semantic matching using OpenAI embeddings (via `src/embedding/embedding_utils.py`) for robust comparison against the ground truth.**
+- **Input**: Ground truth JSON (`data/ground_truth/ground_truth.json`), recommendation reports (`results/{uuid}/recommendation_report_*.md`), and optionally raw transcripts for scenario mapping. Can evaluate a specific scenario using `--scenario`.
 - **Output**: Evaluation results printed to console and optionally saved to a timestamped JSON file in `data/evaluation/scenario_evaluation/`.
 - **Rationale**: Automates checking if the pipeline produces expected outcomes for targeted scenarios. Useful for:
     *   **Regression Detection:** Identify if changes negatively impact performance.
@@ -248,6 +249,12 @@ The project includes a reusable LLM service that provides a unified interface to
 - **Features**: Content generation, structured output (JSON), streaming responses, batch processing
 - **Error Handling**: Retry logic, validation, and comprehensive error management
 - **Tutorial**: Example usage in `tutorials/llm_service_tutorial.py`
+
+### Embedding Utilities (`src/embedding/embedding_utils.py`)
+
+- **Purpose**: Provides the `EmbeddingMatcher` class for comparing text semantically using OpenAI embeddings.
+- **Features**: Handles embedding generation, caching (`src/embedding/cache/`), and multiple matching strategies (semantic, keyword, fuzzy).
+- **Usage**: Primarily used by `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` to evaluate recommendations against `data/ground_truth/ground_truth.json`.
 
 ## Getting Started
 

@@ -64,8 +64,10 @@ The system currently operates through a series of interconnected scripts and a s
     *   A script (`scripts/generate_policy_comparison.py` using LLMService/Gemini) compares the extracted customer requirements (JSON) against the structured policy data (JSON).
     *   It generates detailed Markdown reports comparing policies at the insurer level, selecting the best tier per insurer and providing justifications.
 
-6.  **Further Evaluation (Planned)**:
-    *   Additional evaluation steps are planned to assess the accuracy of the policy extraction and the quality of the comparison reports.
+6.  **Recommendation & Evaluation**:
+    *   A script (`scripts/generate_recommendation_report.py`) processes comparison reports, performs scoring, and uses an LLM to generate a final recommendation report.
+    *   The final recommendation is evaluated against a curated ground truth (`data/ground_truth/ground_truth.json`) for specific scenarios using semantic matching (`scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` with `src/embedding/embedding_utils.py`).
+    *   Additional evaluation steps are implemented for PDF extraction (`scripts/evaluation/pdf_extraction_evaluation/`) and planned for comparison report quality.
 
 7.  **Iterative Refinement (Manual)**:
     *   Developers can manually update inputs (scenarios, requirements definitions, prompts) and re-run the scripts to refine the outputs (transcripts, extractions, reports). Direct user interaction for refinement is not currently implemented.
@@ -90,7 +92,7 @@ While the end-goal includes a user-friendly conversational interface, the curren
     *   Comparison reports aim to provide clear justifications (though direct user interaction is missing).
 
 4.  **Data Quality Assurance**:
-    *   Evaluation steps (transcript evaluation, planned policy/comparison evaluation) provide checks on the quality of intermediate data.
+    *   Evaluation steps (transcript evaluation, PDF extraction evaluation, scenario recommendation evaluation against ground truth, planned comparison evaluation) provide checks on the quality of intermediate and final outputs.
 
 5.  **Efficiency**:
     *   Significantly faster than manual extraction and comparison.

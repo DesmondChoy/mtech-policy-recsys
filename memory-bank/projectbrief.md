@@ -23,9 +23,9 @@
     - Extract structured customer requirements from processed transcripts using an agent (`src/agents/extractor.py` with CrewAI/OpenAI).
     - Extract structured policy details (coverage, limits, conditions) from raw PDF documents (`scripts/extract_policy_tier.py` with LLMService/Gemini).
 - **Policy Comparison & Reporting**: LLMs compare extracted customer requirements against structured policy data to generate detailed comparison reports (`scripts/generate_policy_comparison.py` with LLMService/Gemini).
-- **Evaluation Focus**: Significant emphasis on evaluating the outputs of LLM-driven steps (transcript generation, planned: policy extraction, planned: comparison reports) to ensure quality and accuracy.
+- **Evaluation Focus**: Significant emphasis on evaluating the outputs of LLM-driven steps (transcript generation, policy extraction, scenario recommendation evaluation against ground truth, planned: comparison reports) to ensure quality and accuracy.
 - **Knowledge Discovery & Data Mining (Future)**: Planned use of supervised ML models trained on customer data (e.g., extracted requirements) and potentially comparison results to uncover insights on product/market positioning.
-- **Cognitive Techniques/Tools**: Use of structured knowledge bases (processed policies, extracted requirements) and planned transparent justification in comparison reports.
+- **Cognitive Techniques/Tools**: Use of structured knowledge bases (processed policies, extracted requirements, ground truth data) and planned transparent justification in comparison reports.
 
 # Project Scope - Technical Architecture (Current Implementation)
 
@@ -36,7 +36,7 @@
     - **Extraction**: An Extractor Agent (`src/agents/extractor.py` using CrewAI/OpenAI) processes parsed transcripts to produce structured customer requirement JSON files.
 - **Policy Processing Pipeline**: A script (`scripts/extract_policy_tier.py` using LLMService/Gemini) extracts detailed structured information from policy PDFs into JSON format.
 - **Comparison Reporting**: A script (`scripts/generate_policy_comparison.py` using LLMService/Gemini) takes extracted requirements and processed policies to generate insurer-level comparison reports in Markdown format.
-- **Evaluation Framework**: Includes transcript evaluation; planned evaluations for policy extraction and comparison report quality.
+- **Evaluation Framework**: Includes transcript evaluation (`scripts/evaluation/transcript_evaluation/`), PDF extraction evaluation (`scripts/evaluation/pdf_extraction_evaluation/`), scenario recommendation evaluation against ground truth (`scripts/evaluation/scenario_evaluation/`), and planned evaluation for comparison report quality.
 - **Machine Learning (Future)**: Supervised ML models planned for analyzing extracted requirements and comparison outcomes.
 - **Feedback Loop (Conceptual)**: While direct user interaction agents (CS Agent, Recommender) are not implemented, the script-based workflow allows for iterative refinement by modifying inputs (scenarios, requirements) and re-running the pipeline.
 
@@ -46,4 +46,4 @@
 - Dynamic Knowledge Base: User-generated conversation transcripts.
     - Initially synthetically generated via LLMs for diverse scenario coverage.
     - Potential inclusion of real human-AI conversational data
-- Ground Truth Labels: Derived from clearly defined user needs and expected recommendation outcomes.
+- Ground Truth Labels: Derived from clearly defined user needs and expected recommendation outcomes, curated into a structured format in `data/ground_truth/ground_truth.json`. Used for evaluating final recommendations in specific scenarios.

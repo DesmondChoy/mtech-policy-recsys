@@ -66,6 +66,13 @@ graph TD
         ComparisonScript --> PlannedComparisonEval{Planned: Comparison Report Evaluation}
     end
 
+    subgraph "Ground Truth & Embeddings"
+        direction LR
+        GroundTruthJson[data/ground_truth/ground_truth.json] --> EmbeddingUtils[src/embedding/embedding_utils.py]
+        EmbeddingUtils --> EmbeddingCache[src/embedding/cache/*.pkl]
+        EmbeddingUtils --> LLM_OpenAI_Embed[OpenAI Embedding API]
+    end
+
     %% Orchestrator Flow Connections
     OrchGenT --> GenTranscripts
     GenTranscripts --> RawTranscripts
@@ -87,6 +94,8 @@ graph TD
     RecommendScript --> FinalRecommendationMD
     FinalRecommendationMD --> OrchFinalEval
     OrchFinalEval --> ScenarioEvalScript
+    ScenarioEvalScript --> GroundTruthJson # Scenario Eval uses Ground Truth
+    ScenarioEvalScript --> EmbeddingUtils # Scenario Eval uses Embeddings
     ScenarioEvalScript --> ScenarioEvalResults
     ScenarioEvalResults --> OrchFinalEval # Implies reading latest result
     OrchFinalEval --> FinalEvalOutput # Save final output
@@ -127,7 +136,12 @@ graph TD
     *   Rationale: Enables systematic comparison, analysis, and validation.
     *   Implementation: Pydantic models (`TravelInsuranceRequirement`, policy extraction models) for validated JSON outputs.
 
-6.  **Hybrid Approach (Planned)**:
+6.  **Semantic Evaluation (Ground Truth)**:
+    *   Decision: Use semantic matching via embeddings (OpenAI) to compare final recommendations against a curated ground truth for specific scenarios.
+    *   Rationale: Provides a more robust evaluation of recommendation accuracy beyond simple string matching, understanding the meaning behind requirements.
+    *   Implementation: `src/embedding/embedding_utils.py` (handles embedding generation, caching, and matching logic), `data/ground_truth/ground_truth.json` (curated data), `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` (uses the embedding utilities).
+
+7.  **Hybrid Approach (Planned)**:
     *   Decision: Combine LLM-based reasoning with traditional ML (Future Goal).
     *   Rationale: Leverages strengths of both approaches (LLM for reasoning, ML for pattern recognition).
     *   Implementation: LLMs used in scripts/agent. Supervised ML for insights is planned for a later phase.
@@ -208,6 +222,19 @@ graph TD
 - **Outputs**: Insights on feature importance, product positioning.
 - **Dependencies**: Extractor Agent output, potentially other data sources.
 
+### Ground Truth Data (`data/ground_truth/ground_truth.json`)
+- **Purpose**: Stores curated ground truth data (expected coverage/policies) for specific evaluation scenarios.
+- **Inputs**: Manually curated based on scenario definitions and policy analysis.
+- **Outputs**: Consumed by evaluation scripts, particularly `evaluate_scenario_recommendations.py`.
+- **Dependencies**: Scenario definitions (`data/scenarios/`).
+
+### Embedding Utilities (`src/embedding/embedding_utils.py`)
+- **Purpose**: Provides the `EmbeddingMatcher` class for semantic comparison using OpenAI embeddings.
+- **Inputs**: Query text, `ground_truth.json` path.
+- **Outputs**: Best matching ground truth key, similarity score, policy values. Generates/uses cache files (`src/embedding/cache/*.pkl`).
+- **Dependencies**: OpenAI API (via `.env`), `ground_truth.json`, NLTK (for preprocessing).
+- **Consumers**: `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`.
+
 ### Evaluation Components
 
 #### Transcript Evaluation
@@ -273,7 +300,7 @@ graph TD
         -   `status="full_cover_available"` & No Match -> `"FAIL"`
         -   `status="partial_cover_only"` & Match -> `"PASS (Partial Cover)"` (Recommended an acceptable partial solution)
         -   `status="partial_cover_only"` & No Match -> `"FAIL (Partial)"` (Failed to recommend even an acceptable partial solution)
--   **Dependencies**: Ground Truth JSON, Recommendation Reports, Raw Transcripts (for scenario mapping).
+-   **Dependencies**: `data/ground_truth/ground_truth.json`, Recommendation Reports, Raw Transcripts (for scenario mapping), `src/embedding/embedding_utils.py`.
 
 ## Data Flow
 
@@ -289,7 +316,15 @@ sequenceDiagram
     participant RecommendR as Recommendation Report Script (LLMService) # Added
     participant LLM_Gemini as LLM Service (Gemini)
     participant LLM_OpenAI as OpenAI API
+    participant LLM_OpenAI_Embed as OpenAI Embedding API
+    participant EmbeddingUtil as Embedding Utils (src/embedding/embedding_utils.py)
+    participant GroundTruth as Ground Truth (data/ground_truth/ground_truth.json)
     participant UserDev as User/Developer
+
+    %% Ground Truth & Embedding Prep (Can happen anytime)
+    EmbeddingUtil->>LLM_OpenAI_Embed: Generate Embeddings for Ground Truth Keys
+    LLM_OpenAI_Embed-->>EmbeddingUtil: Embeddings
+    Note right of EmbeddingUtil: Caches embeddings to src/embedding/cache/
 
     %% Transcript Path
     GenT->>LLM_Gemini: Generate Raw Transcript
@@ -338,6 +373,13 @@ sequenceDiagram
     %% Planned Evaluations
     Note over EvalPDF: PDF Extraction Evaluation Implemented
     Note over CompareP: Planned: Comparison Report Evaluation
+
+    %% Scenario Evaluation Path (Requires Recommendation Report & Ground Truth)
+    participant ScenarioEval as Scenario Eval Script (evaluate_scenario_recommendations.py)
+    ScenarioEval->>GroundTruth: Read Expected Policies
+    ScenarioEval->>EmbeddingUtil: Find best match for Recommendation vs Ground Truth Keys
+    EmbeddingUtil-->>ScenarioEval: Match Result
+    ScenarioEval->>UserDev: Output Evaluation Result (PASS/FAIL)
 
 ```
 

@@ -4,8 +4,8 @@
 
 The project has moved beyond initial setup and is focused on refining the existing script-based pipelines and planning next steps. The current focus is on:
 
-1.  **Memory Bank Update**: Aligning all Memory Bank documents (`projectbrief.md`, `productContext.md`, `systemPatterns.md`, `techContext.md`, `progress.md`, `activeContext.md`) with the actual codebase and current workflow reality.
-2.  **Evaluation Framework Development**: **Testing and refining** the implemented PDF extraction evaluation (`eval_pdf_extraction.py`) and **planning/designing** the evaluation mechanism for comparison reports (`generate_policy_comparison.py`).
+1.  **Memory Bank Update**: Aligning all Memory Bank documents (`projectbrief.md`, `productContext.md`, `systemPatterns.md`, `techContext.md`, `progress.md`, `activeContext.md`) with the actual codebase and current workflow reality. **(In Progress)**
+2.  **Evaluation Framework Development**: **Testing and refining** implemented evaluations (PDF extraction via `eval_pdf_extraction.py`, scenario recommendation via `evaluate_scenario_recommendations.py`) and **planning/designing** the evaluation mechanism for comparison reports (`generate_policy_comparison.py`).
 3.  **Script Refinement**: Improving existing scripts based on testing and initial results (e.g., prompt engineering, error handling).
 4.  **Next Phase Planning**: Defining the implementation strategy for recommendation logic and potential integration of components.
 
@@ -263,6 +263,12 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Identified a consistent pattern: the system recommended valid alternative policies (GELS Gold, FWD Business/First) offering the required partial coverage (TIAR/CFAR) but these were not the exact tiers listed in the original ground truth (GELS Platinum/FWD Premium).
     - Concluded the ground truth was too strict, leading to an artificially low pass rate (40%).
     - Updated `data/evaluation/scenario_evaluation/scenario_ground_truth.json` to include GELS Gold, FWD Business, and FWD First as acceptable `expected_policies` for this scenario, relaxing the definition for a more accurate evaluation.
+37. **Ground Truth Evaluation Feature Integration (Merge `GroundTruth` branch - `cc4a2d7`)**:
+    - Renamed `data/coverages.json` to `data/ground_truth/ground_truth.json` and significantly refined its structure and content (atomizing requirements, merging duplicates, etc.).
+    - Added `src/embedding/embedding_utils.py` containing the `EmbeddingMatcher` class, which uses OpenAI embeddings and hybrid matching strategies to compare queries against ground truth keys.
+    - Added embedding caching mechanism to `src/embedding/cache/`.
+    - Added `scripts/generate_ground_truth_coverage.py` script to evaluate recommendations against the ground truth file using the embedding utilities.
+    - Updated `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` to utilize these embedding utilities for more robust evaluation.
 
 ## Next Steps (Revised Focus)
 
@@ -327,7 +333,8 @@ The project has moved beyond initial setup and is focused on refining the existi
     *   Ensuring high accuracy and consistent formatting from LLMs for extraction (policy, requirements), comparison, and *evaluation* tasks remains a primary challenge. Requires ongoing prompt tuning.
     *   Strict adherence to complex JSON schemas (policy extraction, evaluation output) needs robust validation.
 2.  **Evaluation Gaps**:
-    *   The new PDF extraction evaluation script (`eval_pdf_extraction.py`) needs testing and validation.
+    *   The PDF extraction evaluation script (`eval_pdf_extraction.py`) needs testing and validation.
+    *   The scenario recommendation evaluation (`evaluate_scenario_recommendations.py`) relies on the accuracy of the `EmbeddingMatcher` and ground truth quality. Ongoing refinement may be needed.
     *   Lack of automated evaluation for *comparison report* quality hinders rapid iteration. Implementing this is a key next step.
 3.  **Lack of Integration**:
     *   Components are disconnected scripts, requiring manual execution and data flow management. This increases complexity and potential for errors.
