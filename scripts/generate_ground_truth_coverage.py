@@ -419,6 +419,7 @@ def main():
        e. Save individual evaluation file
     4. Calculate overall statistics
     5. Save summary file with all evaluations
+    6. Generate a Markdown summary report
     """
     parser = argparse.ArgumentParser(description='Generate ground truth coverage evaluation')
     parser.add_argument('--debug', action='store_true', help='Enable debug output for similarity scores')
@@ -463,6 +464,9 @@ def main():
         "customers_with_invalid_requirements": 0,
         "perfect_coverage_count": 0,  # Customers with 100% adjusted coverage
     }
+    
+    # For the markdown report - track failing customers by coverage
+    failing_customers = {}
     
     for customer_id in customer_ids:
         print(f"Processing customer: {customer_id}")
@@ -617,6 +621,12 @@ def main():
             
         if evaluation["valid_coverage_percentage"] == 100:
             overall_stats["perfect_coverage_count"] += 1
+        else:
+            # Track failing customers for the markdown report
+            failing_customers[customer_id] = {
+                "valid_coverage_percentage": evaluation["valid_coverage_percentage"],
+                "not_covered_requirements": evaluation["status_summary"]["not_covered_requirements"]
+            }
         
         # Save individual evaluation
         output_file = output_path / f"coverage_evaluation_{customer_id}.json"
@@ -661,11 +671,97 @@ def main():
             }
         }, f, indent=2)
     
+    # Generate Markdown summary report
+    md_summary_file = output_path / "coverage_evaluation_summary.md"
+    
+    # Group failing customers by valid coverage percentage bands
+    failing_bands = {
+        "90-99%": [],
+        "80-89%": [], 
+        "70-79%": [],
+        "60-69%": [],
+        "50-59%": [],
+        "<50%": []
+    }
+    
+    for customer_id, data in failing_customers.items():
+        coverage = data["valid_coverage_percentage"]
+        if coverage >= 90:
+            failing_bands["90-99%"].append(customer_id)
+        elif coverage >= 80:
+            failing_bands["80-89%"].append(customer_id)
+        elif coverage >= 70:
+            failing_bands["70-79%"].append(customer_id)
+        elif coverage >= 60:
+            failing_bands["60-69%"].append(customer_id)
+        elif coverage >= 50:
+            failing_bands["50-59%"].append(customer_id)
+        else:
+            failing_bands["<50%"].append(customer_id)
+    
+    with open(md_summary_file, 'w') as f:
+        f.write("# Ground Truth Coverage Evaluation Results\n\n")
+        
+        # Overview explanation of Total vs Valid Coverage
+        f.write("## Coverage Metrics Explained\n\n")
+        f.write("This report uses two types of coverage metrics:\n\n")
+        f.write("- **Total Coverage**: Percentage of ALL requirements covered by recommended policies\n")
+        f.write("- **Valid Coverage**: Percentage of only VALID requirements covered (excluding requirements that don't exist in any policy)\n\n")
+        f.write("Unless otherwise specified, **Valid Coverage** is the primary metric used throughout this report.\n\n")
+        
+        # Overall statistics section
+        f.write("## Overall Statistics\n\n")
+        f.write(f"- Total Customers: {overall_stats['total_customers']}\n")
+        f.write(f"- Total Requirements (all): {overall_stats['total_requirements']}\n")
+        f.write(f"- Valid Requirements (excluding non-existent): {overall_stats['total_valid_requirements']}\n")
+        f.write(f"- Covered Requirements: {overall_stats['total_covered_requirements']}\n")
+        f.write(f"- **Total Coverage Rate**: {overall_stats['overall_total_coverage_percentage']}%\n")
+        f.write(f"- **Valid Coverage Rate**: {overall_stats['overall_valid_coverage_percentage']}%\n")
+        f.write(f"- Customers with 100% Valid Coverage: {overall_stats['perfect_coverage_count']} ({overall_stats['perfect_coverage_percentage']}%)\n\n")
+        
+        # Coverage bands section - using Valid Coverage
+        f.write("## Valid Coverage Breakdown\n\n")
+        f.write("Distribution of customers by valid coverage percentage (excluding non-existent requirements):\n\n")
+        f.write("| Valid Coverage Band | Number of Customers | Percentage |\n")
+        f.write("|----------------------|---------------------|------------|\n")
+        
+        # Perfect coverage (100%)
+        perfect_count = overall_stats["perfect_coverage_count"]
+        perfect_percent = round((perfect_count / overall_stats["total_customers"]) * 100, 2) if overall_stats["total_customers"] > 0 else 0
+        f.write(f"| 100% | {perfect_count} | {perfect_percent}% |\n")
+        
+        # Failing bands
+        for band, customers in failing_bands.items():
+            count = len(customers)
+            percent = round((count / overall_stats["total_customers"]) * 100, 2) if overall_stats["total_customers"] > 0 else 0
+            f.write(f"| {band} | {count} | {percent}% |\n")
+        
+        # Failing customers details - using Valid Coverage
+        f.write("\n## Customers With Incomplete Valid Coverage\n\n")
+        f.write("Details of customers with less than 100% valid coverage (excluding non-existent requirements):\n\n")
+        
+        for band, customers in failing_bands.items():
+            if customers:
+                f.write(f"### {band} Valid Coverage\n\n")
+                for customer_id in sorted(customers):
+                    f.write(f"#### Customer: {customer_id}\n")
+                    f.write(f"- Valid Coverage Rate: {failing_customers[customer_id]['valid_coverage_percentage']}%\n")
+                    f.write("- Uncovered Requirements:\n")
+                    for req in failing_customers[customer_id]["not_covered_requirements"]:
+                        f.write(f"  - {req}\n")
+                    f.write("\n")
+        
+        # Requirements statistics
+        f.write("## Requirements Statistics\n\n")
+        f.write(f"- Non-existent Requirements (not found in any policy): {overall_stats['total_not_exist_requirements']}\n")
+        f.write(f"- Customers with Non-existent Requirements: {overall_stats['customers_with_invalid_requirements']}\n")
+    
     print(f"\nEvaluation complete. Results saved to {output_path}")
     print(f"Overall total coverage: {overall_stats['overall_total_coverage_percentage']}%")
     print(f"Overall valid coverage (excluding non-existent requirements): {overall_stats['overall_valid_coverage_percentage']}%")
     print(f"Customers with perfect valid coverage: {overall_stats['perfect_coverage_count']}/{overall_stats['total_customers']} ({overall_stats['perfect_coverage_percentage']}%)")
     print(f"Customers with non-existent requirements: {overall_stats['customers_with_invalid_requirements']}/{overall_stats['total_customers']}")
+    print(f"Markdown summary saved to {md_summary_file}")
 
 if __name__ == "__main__":
     main() 
