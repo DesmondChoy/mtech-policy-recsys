@@ -22,7 +22,7 @@ import '../global.css';
 
 const tagline = 'Your journey, your coverage. Compare, understand, and choose with confidence.';
 
-const isDemo = import.meta.env.MODE !== 'production'; // Only show dropdown in demo/MVP
+// const isDemo = import.meta.env.MODE !== 'production'; // Removed unused variable
 
 const LandingPage: React.FC = () => {
   const [selectedCustomer, setSelectedCustomer] = useState('');

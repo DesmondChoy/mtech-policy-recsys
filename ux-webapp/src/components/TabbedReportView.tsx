@@ -4,7 +4,7 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import CompareIcon from '@mui/icons-material/Compare';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import ChatIcon from '@mui/icons-material/Chat';
-import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+// import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf'; // Removed unused import
 import { MarkdownRenderer } from './MarkdownRenderer';
 import { JsonPrettyViewer } from './JsonPrettyViewer';
 import { TranscriptViewer } from './TranscriptViewer'; // Import the new component
@@ -139,7 +139,7 @@ export const TabbedReportView: React.FC<TabbedReportViewProps> = ({ uuid, onSwit
   const transcriptPath = scenarioName ? `/data/transcripts/processed/parsed_transcript_${scenarioName}_${uuid}.json` : '';
 
   // Determine if main content is ready (insurers and scenario loaded without error)
-  const isContentReady = !loadingInsurers && !insurerError && !loadingScenario && !scenarioError;
+  // const isContentReady = !loadingInsurers && !insurerError && !loadingScenario && !scenarioError; // Removed unused variable
   const isLoading = loadingInsurers || loadingScenario;
   const hasError = insurerError || scenarioError;
 
