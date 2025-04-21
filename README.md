@@ -266,7 +266,7 @@ The outputs from the current pipeline (Structured Policy JSON, Structured Requir
 - **Jupyter Notebooks**: Development environment
 - **LLM Service**: Reusable interface to Google Gemini API
 
-## Components
+## 7. Components
 
 ### LLM Service
 
