@@ -1,20 +1,49 @@
-# LLM-Powered Workflow for Personalized Travel Insurance Recommendations
+# Revolutionizing Travel Insurance: An LLM-Powered Recommendation Workflow
 
-An LLM-powered workflow that transforms the complex process of buying travel insurance into a simple, personalized, and transparent experience.
+Navigating the complexities of travel insurance is a major consumer headache, leading to confusion and suboptimal choices.  
 
-## Project Overview
+This project tackles that challenge head-on with an intelligent workflow powered by Large Language Models (LLMs). We automate the heavy lifting – extracting critical data from dense policy documents and simulated customer interactions – enabling rapid, data-driven comparison and the generation of personalized, justified recommendations. 
 
-This system addresses common pain points in insurance purchasing by providing personalized, transparent, and objective recommendations through a conversational interface.
+This README outlines the workflow consisting of structured data extraction, automated analysis, and rigorous evaluation which unlocks unprecedented efficiency and transparency in insurance selection, paving the way for smarter, unbiased, and transparent recommendations.
 
 ## Getting Started
 
-If you are setting up this project for the first time (or after cloning), you must install the required Node.js dependencies:
+Follow these steps to set up the project environment:
 
-```bash
-npm install
-```
+1.  **Clone the Repository**:
+    ```bash
+    git clone <repository_url>
+    cd mtech-policy-recsys
+    ```
+    *(Replace `<repository_url>` with the actual URL)*
 
-This will install all necessary packages listed in `package.json`.
+2.  **Set Up Python Environment**:
+    It's recommended to use a virtual environment:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+    Install Python dependencies for the core backend scripts and logic:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3.  **Set Up API Keys**:
+    Create a `.env` file in the project root and add your API keys required for LLM interactions:
+    ```dotenv
+    GOOGLE_API_KEY="your_google_api_key_here"
+    OPENAI_API_KEY="your_openai_api_key_here"
+    # OPENAI_MODEL_NAME="gpt-4o" # Optional: Defaults to gpt-4o if not set for CrewAI/Extractor
+    ```
+
+4.  **Install Node.js Dependencies (for Frontend)**:
+    This project includes a frontend web application component located in the `ux-webapp/` directory. To set up the frontend, navigate to that directory and install the required Node.js dependencies:
+    ```bash
+    cd ux-webapp
+    npm install
+    cd ..
+    ```
+    *Note: Ensure you have Node.js and npm installed. This step is only necessary if you intend to run or develop the frontend application.*
 
 ### Key Features
 
@@ -33,7 +62,6 @@ This will install all necessary packages listed in `package.json`.
 - **Ground Truth Recommendation Evaluation**: Compares final recommendations against a curated ground truth dataset (`data/ground_truth/ground_truth.json`) using semantic matching (`src/embedding/embedding_utils.py`) to assess accuracy for specific scenarios.
 
 **4. Future Goals:**
-- **(Planned) Conversational Interface**: Future goal for natural language interaction.
 - **(Planned) Iterative Refinement**: Future goal for users to update needs and receive refined recommendations.
 
 ## How To Use
@@ -228,7 +256,6 @@ The outputs from the current pipeline (Structured Policy JSON, Structured Requir
 - Implementing automated evaluation for comparison report quality.
 - Developing a more sophisticated integration/orchestration layer to connect the scripts into a seamless workflow.
 - Exploring the use of ML models for deeper insights based on the generated data.
-- Potentially developing a conversational interface for end-users.
 
 
 ## Technical Stack
@@ -255,43 +282,6 @@ The project includes a reusable LLM service that provides a unified interface to
 - **Purpose**: Provides the `EmbeddingMatcher` class for comparing text semantically using OpenAI embeddings.
 - **Features**: Handles embedding generation, caching (`src/embedding/cache/`), and multiple matching strategies (semantic, keyword, fuzzy).
 - **Usage**: Primarily used by `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` to evaluate recommendations against `data/ground_truth/ground_truth.json`.
-
-## Getting Started
-
-1. Clone the repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Set up your Google Gemini API key:
-   ```
-   # In .env file or environment variables
-   GOOGLE_API_KEY="your_google_api_key_here"
-   OPENAI_API_KEY="your_openai_api_key_here"
-   # OPENAI_MODEL_NAME="gpt-4o" # Optional: Defaults to gpt-4o if not set
-   ```
-4. Explore the notebooks in the `notebooks/` directory.
-5. Check out the LLM service tutorial: `python tutorials/llm_service_tutorial.py`.
-6. Run the Extractor agent (ensure transcript exists):
-   ```bash
-    # Example using a processed transcript (replace with actual filename)
-    python src/agents/extractor.py data/transcripts/processed/parsed_transcript_golf_coverage_6aef8846-aed1-4a6e-8115-d5ca7d6d0abf.json
-
-6. Run the Policy Comparison script (replace UUID with actual):
-   ```bash
-   python scripts/generate_policy_comparison.py --customer_id 6aef8846-aed1-4a6e-8115-d5ca7d6d0abf
-   ```
-
-7. Run the Final Recommendation script (replace UUID with actual):
-   ```bash
-   python scripts/generate_recommendation_report.py --customer_id 6aef8846-aed1-4a6e-8115-d5ca7d6d0abf
-   ```
-
-8. Run Evaluation Scripts (Examples):
-   ```bash
-   # Evaluate a transcript
-   python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --transcript data/transcripts/raw/synthetic/transcript_golf_coverage_6aef8846-aed1-4a6e-8115-d5ca7d6d0abf.json
-
-   # Evaluate PDF extraction for a specific policy
-   python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py --file_pattern "fwd_{Premium}.json"
-   ```
 
 ## 8. Academic Project
 
