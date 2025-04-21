@@ -268,7 +268,14 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Added `src/embedding/embedding_utils.py` containing the `EmbeddingMatcher` class, which uses OpenAI embeddings and hybrid matching strategies to compare queries against ground truth keys.
     - Added embedding caching mechanism to `src/embedding/cache/`.
     - Added `scripts/generate_ground_truth_coverage.py` script to evaluate recommendations against the ground truth file using the embedding utilities.
-    - Updated `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` to utilize these embedding utilities for more robust evaluation.
+   - Updated `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` to utilize these embedding utilities for more robust evaluation.
+38. **Netlify Frontend Deployment Debugging**:
+    - Investigated Netlify deployment failures for the `ux-webapp` frontend.
+    - Corrected `netlify.toml` build command to `cd ux-webapp && npm install && npm run build` to ensure execution in the correct directory and installation of Node.js dependencies.
+    - Removed invalid version pin for `crewai` in root `requirements.txt` to allow Netlify's Python dependency installation step to pass (even though Python isn't strictly needed for the frontend build itself).
+    - Updated `ux-webapp/package.json`'s `build` script to include execution of `sync-public-assets.cjs` (`node ./scripts/sync-public-assets.cjs && tsc -b && vite build`) to ensure necessary data files (`results/`, `data/extracted_customer_requirements/`, etc.) are copied to `ux-webapp/public/` before the Vite build, making them available in the deployed site.
+    - Guided user to update Netlify site settings to deploy from the `main` branch instead of the old `ux` branch.
+    - Successfully deployed the frontend application to Netlify.
 
 ## Next Steps (Revised Focus)
 
@@ -291,6 +298,7 @@ The project has moved beyond initial setup and is focused on refining the existi
 6.  **Define Future Architecture**:
     *   Continue evaluating the effectiveness of the current script-heavy architecture versus potentially expanding the use of agents (`crewai` or other frameworks).
     *   Solidify the architectural plan based on refined project goals, performance analysis, and integration plans.
+7.  **Frontend Data Availability**: Ensure the deployed frontend (`ux-webapp` on Netlify) has access to all necessary backend-generated data (transcripts, reports) via the `sync-public-assets.cjs` script integrated into the build process.
 
 ## Active Decisions and Considerations
 
@@ -325,7 +333,12 @@ The project has moved beyond initial setup and is focused on refining the existi
 
 7.  **Deployment Strategy**:
     *   Current execution via CLI scripts is suitable for development.
-    *   Re-evaluate deployment options (local application, containerization, cloud functions/services) if the system needs to be accessible to non-developers or scale significantly.
+    *   **Frontend Deployment (Netlify)**: The `ux-webapp` frontend is successfully deployed to Netlify. Configuration requires:
+        *   `netlify.toml` build command: `cd ux-webapp && npm install && npm run build`
+        *   `netlify.toml` publish directory: `ux-webapp/dist`
+        *   `ux-webapp/package.json` build script includes asset sync: `node ./scripts/sync-public-assets.cjs && tsc -b && vite build`
+        *   Netlify site configured to deploy the correct branch (e.g., `main`).
+    *   **Backend Deployment**: Not currently deployed. Runs locally via Python scripts. Future deployment needs consideration (Docker, Cloud Functions, etc.).
 
 ## Current Challenges
 
@@ -341,12 +354,13 @@ The project has moved beyond initial setup and is focused on refining the existi
 4.  **Recommendation Logic Evaluation & Refinement**:
     *   Evaluating the effectiveness of the current two-stage recommendation logic and refining prompts/scoring based on results.
 5.  **Extractor Agent Dependency**:
-    *   The Extractor Agent's reliance on OpenAI/CrewAI introduces a separate dependency and configuration path compared to the Gemini/LLMService used elsewhere.
+    *   The Extractor Agent's reliance on OpenAI/CrewAI introduces a separate dependency and configuration path compared to the Gemini/LLMService used elsewhere. `EmbeddingMatcher` also uses OpenAI.
 6.  **Orchestrator Evaluation Scope**:
     *   The final evaluation step in the orchestrator now includes results for *all* reports found, not just the current run. Need to be mindful of this when interpreting the `*_all_transcripts_*.json` files.
 7.  **Synthetic Data Limitations**:
     *   Generated transcripts might not fully capture real-world complexities, potentially limiting the robustness of downstream components.
-7.  **Performance Optimization**:
+8.  **Performance Optimization**:
     *   Latency of multiple LLM calls (generation, evaluation, extraction, comparison) needs monitoring. Batch processing and the optimized recommendation script (skipping existing reports) help, but overall workflow time can still be significant.
 9.  **LLM Constraints**:
     *   Managing API rate limits, costs, and potential output token limits across both Gemini and OpenAI.
+10. **Frontend Data Sync**: Ensuring the `sync-public-assets.cjs` script correctly copies all necessary and *up-to-date* data before each production build is crucial for the deployed frontend's functionality.

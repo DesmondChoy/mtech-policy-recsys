@@ -76,9 +76,10 @@ The project is in the **initial setup and planning phase**. We are currently est
 | **Ground Truth Coverage Script**   | **100%**    | **Medium** | **`scripts/generate_ground_truth_coverage.py` added. Functionality/Testing pending.**                |
 | **Orchestration Script**           | **100%**    | **High** | **`scripts/orchestrate_scenario_evaluation.py` implemented and debugged. Parallel eval, sequential reports. Final evaluation includes all reports. Added `--only_aggregate` flag.** |
 | **Component Integration**          | **20%**     | **Medium** | **Internal Stage 1/2 integration done. Full pipeline orchestration pending.**                        |
+| **Frontend Deployment (Netlify)**  | **100%**    | **High** | **`ux-webapp` deployed. Required fixes to `netlify.toml`, `requirements.txt`, and `ux-webapp/package.json` build script for asset syncing.** |
 | Testing Framework                  | 20%         | Medium   | Unit tests added for recommender parser/scorer/MD report. More needed.                               |
 | ML Models                          | 0%          | Low      | Later phase.                                                                                         |
-| Documentation (Memory Bank)        | **In Prog.**| High     | **Updating core files for Ground Truth feature.**                                                    |
+| Documentation (Memory Bank)        | **100%**    | High     | **Updated core files for Ground Truth feature and Netlify deployment.**                              |
 
 ## Known Issues
 
@@ -101,6 +102,7 @@ The project is in the **initial setup and planning phase**. We are currently est
     *   The final evaluation step in the orchestrator now includes results for *all* reports found, not just the current run. Need to be mindful of this when interpreting the `*_all_transcripts_*.json` files.
 8.  **Orchestrator Flexibility**:
     *   Added `--only_aggregate` flag to allow running only the final evaluation step.
+9.  **Frontend Data Sync**: The `sync-public-assets.cjs` script copies necessary data to `ux-webapp/public` but relies on the build process triggering it for deployment.
 
 ## Recent Achievements (Summary - See `activeContext.md` for full detail)
 
@@ -113,3 +115,4 @@ The project is in the **initial setup and planning phase**. We are currently est
 7.  **Recommendation Script Efficiency/Logging**: Improved `scripts/generate_recommendation_report.py` to check for existing files before LLM calls and corrected summary logging. Added default values to docstrings.
 8.  **Scenario Evaluation Ground Truth Refinement**: Analyzed failing cases for `uncovered_cancellation_reason` scenario and relaxed the ground truth in `data/evaluation/scenario_evaluation/scenario_ground_truth.json` to include additional valid policy tiers (GELS Gold, FWD Business, FWD First), improving evaluation accuracy.
 9.  **Ground Truth Evaluation Feature**: Integrated ground truth data (`data/ground_truth/ground_truth.json`), embedding utilities (`src/embedding/embedding_utils.py`), and evaluation scripts (`scripts/generate_ground_truth_coverage.py`, updated `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`) for semantic evaluation of recommendations.
+10. **Netlify Frontend Deployment**: Successfully debugged and deployed the `ux-webapp` frontend to Netlify, including configuration changes to `netlify.toml`, `requirements.txt`, and `ux-webapp/package.json` to handle build commands, dependencies, and static asset synchronization.
