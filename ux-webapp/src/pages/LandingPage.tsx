@@ -132,7 +132,7 @@ const LandingPage: React.FC = () => {
         <rect x="650" y="200" width="60" height="500" rx="30" fill="#b2ebf2" />
       </svg>
       {/* Subtle right-aligned dropdown for MVP/demo only */}
-      {isDemo && showDropdown && (
+      {showDropdown && (
         <Box
           sx={{
             position: 'fixed',

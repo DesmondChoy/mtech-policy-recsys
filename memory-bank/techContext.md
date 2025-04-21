@@ -281,7 +281,9 @@ This installs all necessary packages listed in `package.json` for any web or sup
         *   Netlify site settings must point to the correct production branch (e.g., `main`).
     *   **Gemini LLM Configuration (`src/models/gemini_config.py`)**: Central configuration for Google Gemini models used by `LLMService`. Defines default model, parameters (temperature, `max_output_tokens`), safety settings, and loads API key from `.env`.
     *   **Agent Configuration (Implicit)**: The Extractor Agent's configuration (role, goal, LLM choice) is defined directly within `src/agents/extractor.py` using `crewai` constructs.
-    *   **Frontend Build Configuration (`ux-webapp/package.json`)**: The `build` script within the frontend's `package.json` is configured to run the asset sync script (`node ./scripts/sync-public-assets.cjs`) before compiling TypeScript (`tsc -b`) and running Vite (`vite build`).
+    *   **Frontend Build & Dev Configuration (`ux-webapp/package.json`)**:
+        *   The `build` script is configured to run the asset sync script (`node ./scripts/sync-public-assets.cjs`) before compiling TypeScript (`tsc -b`) and running Vite (`vite build`).
+        *   The `predev` script hook is configured to automatically run the asset sync script (`npm run sync-public-assets`) *before* the `dev` script (which runs `vite`) executes. This ensures data is synced for local development.
 
 3.  **Prompt Templates**:
     *   Defined as constants or formatted strings within the Python scripts/agents that use them (e.g., `extractor.py`, `generate_policy_comparison.py`, `extract_policy_tier.py`).

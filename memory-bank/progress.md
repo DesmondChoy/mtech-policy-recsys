@@ -77,9 +77,10 @@ The project is in the **initial setup and planning phase**. We are currently est
 | **Orchestration Script**           | **100%**    | **High** | **`scripts/orchestrate_scenario_evaluation.py` implemented and debugged. Parallel eval, sequential reports. Final evaluation includes all reports. Added `--only_aggregate` flag.** |
 | **Component Integration**          | **20%**     | **Medium** | **Internal Stage 1/2 integration done. Full pipeline orchestration pending.**                        |
 | **Frontend Deployment (Netlify)**  | **100%**    | **High** | **`ux-webapp` deployed. Required fixes to `netlify.toml`, `requirements.txt`, and `ux-webapp/package.json` build script for asset syncing.** |
+| **Frontend UX Enhancements**       | **100%**    | **Medium** | **Fixed report loading, dynamic dropdowns, requirements/transcript display formats, animation speeds.** |
 | Testing Framework                  | 20%         | Medium   | Unit tests added for recommender parser/scorer/MD report. More needed.                               |
 | ML Models                          | 0%          | Low      | Later phase.                                                                                         |
-| Documentation (Memory Bank)        | **100%**    | High     | **Updated core files for Ground Truth feature and Netlify deployment.**                              |
+| Documentation (Memory Bank)        | **100%**    | High     | **Updated core files for Ground Truth feature, Netlify deployment, and recent frontend changes.**    |
 
 ## Known Issues
 

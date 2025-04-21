@@ -276,6 +276,14 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Updated `ux-webapp/package.json`'s `build` script to include execution of `sync-public-assets.cjs` (`node ./scripts/sync-public-assets.cjs && tsc -b && vite build`) to ensure necessary data files (`results/`, `data/extracted_customer_requirements/`, etc.) are copied to `ux-webapp/public/` before the Vite build, making them available in the deployed site.
     - Guided user to update Netlify site settings to deploy from the `main` branch instead of the old `ux` branch.
     - Successfully deployed the frontend application to Netlify.
+39. **Frontend Landing Page Demo Dropdown**: Modified `ux-webapp/src/pages/LandingPage.tsx` to remove the `isDemo` condition, making the demo customer ID dropdown always visible, including in production builds.
+40. **Frontend Report Viewer Fixes & Enhancements**:
+    - **Dynamic Insurer Dropdown**: Modified `ux-webapp/scripts/sync-public-assets.cjs` to generate an `index.json` listing available reports within each `results/{uuid}/` directory. Updated `ux-webapp/src/pages/ReportViewerPage.tsx` to remove hardcoded insurers. Updated `ux-webapp/src/components/TabbedReportView.tsx` to fetch the `index.json`, dynamically populate the insurer dropdown based on available reports, and handle loading/error states.
+    - **Comparison Report Path Fix**: Corrected the path construction in `TabbedReportView.tsx` for the policy comparison report to include the UUID (`policy_comparison_report_{insurer}_{uuid}.md`), resolving the issue where it previously loaded `index.html`.
+    - **Requirements/Transcript Path Fix**: Updated `TabbedReportView.tsx` to fetch the `transcripts_index.json`, extract the scenario name for the current UUID, and use it to construct the correct paths for the requirements (`requirements_{scenario_name}_{uuid}.json`) and transcript (`parsed_transcript_{scenario_name}_{uuid}.json`) files, resolving loading errors.
+    - **Requirements Display**: Modified `ux-webapp/src/components/JsonPrettyViewer.tsx` to accept an optional `dataPath` prop. Updated `TabbedReportView.tsx` to pass `dataPath="json_dict"` so the "Customer Requirements" tab displays only the nested `json_dict` object.
+    - **Transcript Display**: Created a new component `ux-webapp/src/components/TranscriptViewer.tsx` to fetch and render the transcript JSON using the existing `ChatBubble` component. Updated `TabbedReportView.tsx` to use this component for the "Transcript" tab.
+    - **Markdown Animation**: Modified `ux-webapp/src/components/MarkdownRenderer.tsx` to support different animation modes (`character`, `paragraph`, `none`) via an `animationMode` prop. Updated `TabbedReportView.tsx` to use `'character'` mode (fast chunking) for the "Recommendation" tab and `'paragraph'` mode for the "Policy Comparison" tab. Adjusted animation speed calculation for faster rendering.
 
 ## Next Steps (Revised Focus)
 

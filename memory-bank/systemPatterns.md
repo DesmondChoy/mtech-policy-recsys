@@ -101,6 +101,46 @@ graph TD
     OrchFinalEval --> FinalEvalOutput # Save final output
     OrchEnd --> User[User/Developer]
 
+    %% Frontend Connections (Simplified)
+    subgraph "Frontend (ux-webapp)"
+        direction TB
+        WebApp[React App (Vite)] --> ReportViewerPage[pages/ReportViewerPage.tsx]
+        ReportViewerPage --> TabbedReportView[components/TabbedReportView.tsx]
+        TabbedReportView --> MarkdownRenderer[components/MarkdownRenderer.tsx]
+        TabbedReportView --> JsonPrettyViewer[components/JsonPrettyViewer.tsx]
+        TabbedReportView --> TranscriptViewer[components/TranscriptViewer.tsx]
+        TranscriptViewer --> ChatBubble[components/ChatBubble.tsx]
+
+        %% Data Fetching by Frontend
+        TabbedReportView -- Fetches --> PublicResultsIndex[public/results/{uuid}/index.json]
+        TabbedReportView -- Fetches --> PublicTranscriptsIndex[public/transcripts_index.json]
+        MarkdownRenderer -- Fetches --> PublicRecReport[public/results/{uuid}/recommendation_report_{uuid}.md]
+        MarkdownRenderer -- Fetches --> PublicCompReport[public/results/{uuid}/policy_comparison_report_{insurer}_{uuid}.md]
+        JsonPrettyViewer -- Fetches --> PublicReqs[public/data/extracted_customer_requirements/requirements_{scenario}_{uuid}.json]
+        TranscriptViewer -- Fetches --> PublicTranscript[public/data/transcripts/processed/parsed_transcript_{scenario}_{uuid}.json]
+
+    end
+
+    %% Data Sync (Build Time)
+    subgraph "Build Time Sync (sync-public-assets.cjs)"
+        direction TB
+        SyncScript[scripts/sync-public-assets.cjs]
+        ComparisonReports --> SyncScript
+        FinalRecommendationMD --> SyncScript
+        ExtractedReqs --> SyncScript
+        ProcessedTranscripts --> SyncScript
+        RawPolicies --> SyncScript # For PDF Viewer (if re-enabled)
+
+        SyncScript -- Creates --> PublicResultsIndex
+        SyncScript -- Creates --> PublicTranscriptsIndex
+        SyncScript -- Copies --> PublicRecReport
+        SyncScript -- Copies --> PublicCompReport
+        SyncScript -- Copies --> PublicReqs
+        SyncScript -- Copies --> PublicTranscript
+        SyncScript -- Copies --> PublicPolicies[public/data/policies/raw/*.pdf]
+    end
+
+
     %% Other Connections
     Policy Processing --> ProcessedPolicies
     RawPolicies --> EvalPdfExtraction

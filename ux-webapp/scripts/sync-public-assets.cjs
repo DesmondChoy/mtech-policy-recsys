@@ -73,3 +73,40 @@ if (fs.existsSync(transcriptsProcessedDir)) {
 } else {
   console.warn(`Processed transcripts directory does not exist: ${transcriptsProcessedDir}`);
 }
+
+// === Report Index Generation ===
+const resultsPublicDir = path.join(publicBase, 'results');
+
+if (fs.existsSync(resultsPublicDir)) {
+  console.log(`Scanning ${resultsPublicDir} for report indices...`);
+  for (const uuidEntry of fs.readdirSync(resultsPublicDir, { withFileTypes: true })) {
+    if (uuidEntry.isDirectory()) {
+      const uuidDirPath = path.join(resultsPublicDir, uuidEntry.name);
+      const reportFiles = [];
+      try {
+        for (const reportEntry of fs.readdirSync(uuidDirPath, { withFileTypes: true })) {
+          // Match filenames like policy_comparison_report_INSURER_uuid.md or policy_comparison_report_INSURER.md
+          // Be flexible with potential UUID presence at the end
+          if (reportEntry.isFile() && reportEntry.name.startsWith('policy_comparison_report_') && reportEntry.name.endsWith('.md')) {
+            // Exclude the main recommendation report if it follows a similar pattern by mistake
+            if (!reportEntry.name.startsWith('policy_comparison_report_recommendation_report_')) {
+               reportFiles.push(reportEntry.name);
+            }
+          }
+        }
+        if (reportFiles.length > 0) {
+          const indexPath = path.join(uuidDirPath, 'index.json');
+          fs.writeFileSync(indexPath, JSON.stringify(reportFiles.sort(), null, 2));
+          console.log(`  - Created index for ${uuidEntry.name} at ${indexPath}`);
+        } else {
+          // console.log(`  - No reports found for ${uuidEntry.name}, skipping index.`);
+        }
+      } catch (err) {
+        console.error(`  - Error processing directory ${uuidDirPath}:`, err);
+      }
+    }
+  }
+  console.log('Report index generation complete.');
+} else {
+  console.warn(`Public results directory does not exist: ${resultsPublicDir}`);
+}
