@@ -1,5 +1,5 @@
 google-genai==1.10.0
-crewai
+# crewai # uncomment if you need to run the extractor.
 pydantic==2.11.3
 python-dotenv==1.1.0
 openai==1.72.0 # Used by Extractor Agent via crewai
