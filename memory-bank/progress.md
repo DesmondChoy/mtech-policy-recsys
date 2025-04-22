@@ -78,6 +78,7 @@ The project is in the **initial setup and planning phase**. We are currently est
 | **Component Integration**          | **20%**     | **Medium** | **Internal Stage 1/2 integration done. Full pipeline orchestration pending.**                        |
 | **Frontend Deployment (Netlify)**  | **100%**    | **High** | **`ux-webapp` deployed. Required fixes to `netlify.toml`, `requirements.txt`, and `ux-webapp/package.json` build script for asset syncing.** |
 | **Frontend UX Enhancements**       | **100%**    | **Medium** | **Fixed report loading, dynamic dropdowns, requirements/transcript display formats, animation speeds.** |
+| **Frontend Landing Page Updates**  | **100%**    | **Medium** | **Fixed mobile dropdown visibility, updated text content, rebranded to "Aegis AI" with custom shield icon.** |
 | Testing Framework                  | 20%         | Medium   | Unit tests added for recommender parser/scorer/MD report. More needed.                               |
 | ML Models                          | 0%          | Low      | Later phase.                                                                                         |
 | Documentation (Memory Bank)        | **100%**    | High     | **Updated core files for Ground Truth feature, Netlify deployment, and recent frontend changes.**    |
@@ -104,6 +105,7 @@ The project is in the **initial setup and planning phase**. We are currently est
 8.  **Orchestrator Flexibility**:
     *   Added `--only_aggregate` flag to allow running only the final evaluation step.
 9.  **Frontend Data Sync**: The `sync-public-assets.cjs` script copies necessary data to `ux-webapp/public` but relies on the build process triggering it for deployment.
+10. **Frontend Landing Page Fixes & Rebranding**: Fixed mobile visibility of the demo dropdown, updated various text elements (tagline, helper text, captions), and rebranded the app to "Aegis AI" (titles, copyright, custom shield icon).
 
 ## Recent Achievements (Summary - See `activeContext.md` for full detail)
 
@@ -117,3 +119,4 @@ The project is in the **initial setup and planning phase**. We are currently est
 8.  **Scenario Evaluation Ground Truth Refinement**: Analyzed failing cases for `uncovered_cancellation_reason` scenario and relaxed the ground truth in `data/evaluation/scenario_evaluation/scenario_ground_truth.json` to include additional valid policy tiers (GELS Gold, FWD Business, FWD First), improving evaluation accuracy.
 9.  **Ground Truth Evaluation Feature**: Integrated ground truth data (`data/ground_truth/ground_truth.json`), embedding utilities (`src/embedding/embedding_utils.py`), and evaluation scripts (`scripts/generate_ground_truth_coverage.py`, updated `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`) for semantic evaluation of recommendations.
 10. **Netlify Frontend Deployment**: Successfully debugged and deployed the `ux-webapp` frontend to Netlify, including configuration changes to `netlify.toml`, `requirements.txt`, and `ux-webapp/package.json` to handle build commands, dependencies, and static asset synchronization.
+11. **Frontend Landing Page Updates**: Completed fixes for mobile dropdown visibility, updated text content (tagline, helper text, captions), and rebranded to "Aegis AI" using a custom shield image.

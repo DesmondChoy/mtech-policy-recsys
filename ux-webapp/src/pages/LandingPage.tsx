@@ -14,13 +14,13 @@ import {
   IconButton,
   Tooltip
 } from '@mui/material';
-import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
+// Removed FlightTakeoffIcon and ShieldIcon imports
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 import { fetchCustomerIds } from '../utils/fetchCustomerIds';
 import { useNavigate } from 'react-router-dom';
 import '../global.css';
 
-const tagline = 'Your journey, your coverage. Compare, understand, and choose with confidence.';
+const tagline = 'Travel Insurance Made Simple. Finally.'; // Updated tagline
 
 // const isDemo = import.meta.env.MODE !== 'production'; // Removed unused variable
 
@@ -33,8 +33,7 @@ const LandingPage: React.FC = () => {
   const [error, setError] = useState('');
   const theme = useTheme();
   const cardRef = useRef<HTMLDivElement>(null);
-  const [dropdownTop, setDropdownTop] = useState<number | undefined>(undefined);
-  const [dropdownLeft, setDropdownLeft] = useState<number | undefined>(undefined);
+  // Removed dropdownTop, dropdownLeft state
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -48,20 +47,7 @@ const LandingPage: React.FC = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  // Helper to update dropdown position
-  const updateDropdownPosition = () => {
-    if (cardRef.current) {
-      const rect = cardRef.current.getBoundingClientRect();
-      setDropdownTop(rect.top);
-      setDropdownLeft(rect.right + 16); // 16px gap from card
-    }
-  };
-
-  useEffect(() => {
-    updateDropdownPosition();
-    window.addEventListener('resize', updateDropdownPosition);
-    return () => window.removeEventListener('resize', updateDropdownPosition);
-  }, [loading]);
+  // Removed updateDropdownPosition function and the useEffect hook that called it
 
   // Validate input on change
   useEffect(() => {
@@ -131,97 +117,103 @@ const LandingPage: React.FC = () => {
         <rect x="200" y="650" width="500" height="60" rx="30" fill="#b2ebf2" />
         <rect x="650" y="200" width="60" height="500" rx="30" fill="#b2ebf2" />
       </svg>
-      {/* Subtle right-aligned dropdown for MVP/demo only */}
-      {showDropdown && (
-        <Box
-          sx={{
-            position: 'fixed',
-            top: dropdownTop !== undefined ? dropdownTop : 28,
-            left: dropdownLeft !== undefined ? dropdownLeft : 'auto',
-            minWidth: 140,
-            maxWidth: 180,
-            bgcolor: 'rgba(255,255,255,0.75)',
-            borderRadius: 2,
-            boxShadow: 1,
-            opacity: 0.72,
-            zIndex: 10,
-            p: 1.2,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-end',
-            border: '1px solid #e3e3e3',
-            fontSize: 13,
-          }}
-        >
-          <FormControl fullWidth size="small" sx={{ m: 0 }}>
-            <InputLabel
-              id="customer-select-label-demo"
-              sx={{ fontSize: 13, top: '-6px', left: '-2px', bgcolor: 'rgba(255,255,255,0.75)', px: 0.5 }}
-              shrink
-            >
-              Customer ID (Demo)
-            </InputLabel>
-            <Select
-              labelId="customer-select-label-demo"
-              value={selectedCustomer}
-              label="Customer ID (Demo)"
-              onChange={handleDropdownChange}
-              sx={{ fontSize: 13, minHeight: 36, background: 'rgba(255,255,255,0.9)' }}
-              MenuProps={{
-                PaperProps: {
-                  sx: { fontSize: 13, maxHeight: 200 }
-                }
-              }}
-            >
-              {customerIds.length === 0 && !loading ? (
-                <MenuItem value="" disabled>
-                  No customer IDs found
-                </MenuItem>
-              ) : (
-                customerIds.map(id => (
-                  <MenuItem key={id} value={id} sx={{ fontSize: 13 }}>
-                    {id}
-                  </MenuItem>
-                ))
-              )}
-            </Select>
-          </FormControl>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, width: '100%', mt: 1, mb: 0.5 }}>
-            <Tooltip title="Pick Random Customer">
-              <IconButton
-                size="small"
-                aria-label="random-customer"
-                onClick={handleRandomPick}
-                sx={{ color: 'primary.main', bgcolor: 'rgba(144,202,249,0.08)', '&:hover': { bgcolor: 'rgba(144,202,249,0.18)' }, mr: 0.5 }}
-                disabled={customerIds.length === 0}
+      {/* New container Box to stack dropdown and card */}
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: 2 }}>
+        {/* Subtle dropdown for MVP/demo only - MOVED HERE (Above Card) */}
+        {showDropdown && (
+          <Box
+            sx={{
+              mb: 2, // Margin below dropdown
+              width: '100%', // Take full width of container
+              maxWidth: 420, // Match card width
+              bgcolor: 'rgba(240,240,240,0.75)',
+              borderRadius: 1,
+              boxShadow: 1,
+              opacity: 0.9,
+              p: 1.2,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center', // Center items within dropdown box
+              border: '1px solid #e3e3e3',
+              fontSize: 13,
+            }}
+          >
+            <FormControl fullWidth size="small" sx={{ m: 0 }}>
+              <InputLabel
+                id="customer-select-label-demo"
+                sx={{ fontSize: 13, top: '-6px', left: '-2px', bgcolor: 'rgba(255,255,255,0.75)', px: 0.5 }}
+                shrink
               >
-                <ShuffleIcon fontSize="small" />
-              </IconButton>
-            </Tooltip>
-            <Typography variant="caption" color="text.secondary" sx={{ fontSize: 12, lineHeight: 1.2 }}>
-              This dropdown is for MVP/demo only; will not appear in production.
-            </Typography>
+                Customer ID (Demo)
+              </InputLabel>
+              <Select
+                labelId="customer-select-label-demo"
+                value={selectedCustomer}
+                label="Customer ID (Demo)"
+                onChange={handleDropdownChange}
+                sx={{ fontSize: 13, minHeight: 36, background: 'rgba(255,255,255,0.9)' }}
+                MenuProps={{
+                  PaperProps: {
+                    sx: { fontSize: 13, maxHeight: 200 }
+                  }
+                }}
+              >
+                {customerIds.length === 0 && !loading ? (
+                  <MenuItem value="" disabled>
+                    No customer IDs found
+                  </MenuItem>
+                ) : (
+                  customerIds.map(id => (
+                    <MenuItem key={id} value={id} sx={{ fontSize: 13 }}>
+                      {id}
+                    </MenuItem>
+                  ))
+                )}
+              </Select>
+            </FormControl>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1, width: '100%', mt: 1, mb: 0.5 }}>
+              <Tooltip title="Pick Random Customer">
+                <IconButton
+                  size="small"
+                  aria-label="random-customer"
+                  onClick={handleRandomPick}
+                  sx={{ color: 'primary.main', bgcolor: 'rgba(144,202,249,0.08)', '&:hover': { bgcolor: 'rgba(144,202,249,0.18)' }, mr: 0.5 }}
+                  disabled={customerIds.length === 0}
+                >
+                  <ShuffleIcon fontSize="small" />
+                </IconButton>
+              </Tooltip>
+              <Typography variant="caption" color="text.secondary" sx={{ fontSize: 12, lineHeight: 1.2 }}>
+                This dropdown is for MVP/demo only; will not appear in production.
+              </Typography>
+            </Box>
           </Box>
-        </Box>
-      )}
-      <Card ref={cardRef} sx={{ p: 4, width: '100%', maxWidth: 420, boxShadow: 3, zIndex: 2 }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 2 }}>
-          <FlightTakeoffIcon color="primary" sx={{ fontSize: 48, mb: 1 }} />
+        )}
+        {/* Main Login Card */}
+        <Card ref={cardRef} sx={{ p: 4, width: '100%', maxWidth: 420, boxShadow: 3 /* Removed zIndex */ }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 2 }}>
+            {/* Replaced ShieldIcon with img tag */}
+            <img
+              src="/assets/aegis-shield.jpeg" /* Corrected extension */
+              alt="Aegis AI Shield Logo"
+              style={{ width: 48, height: 48, marginBottom: theme.spacing(1) }}
+            />
           <Typography variant="h5" fontWeight={700} gutterBottom>
-            TravelSafe Recommender System
+            Aegis AI {/* Updated Title */}
           </Typography>
           <Typography variant="subtitle1" color="text.secondary" gutterBottom align="center">
             {tagline}
           </Typography>
         </Box>
         <CardContent>
+          {/* Dropdown removed from here */}
           <TextField
             label="Customer ID"
             value={inputValue}
             onChange={handleInputChange}
             fullWidth
             error={!!error}
-            helperText={error || 'Enter or select your customer ID'}
+            helperText={error || ''} // Removed default helper text
             sx={{ mb: 2 }}
             autoFocus
           />
@@ -235,14 +227,19 @@ const LandingPage: React.FC = () => {
           >
             Continue
           </Button>
-          <Typography variant="caption" color="text.secondary" display="block" align="center" sx={{ mt: 2 }}>
-            Select or enter your customer profile to view your personalized recommendations.
+          {/* Updated caption below button, split into two lines */}
+          <Typography variant="caption" color="text.secondary" display="block" align="center" sx={{ mt: 2, mb: 0.5 }}>
+            Your Perfect Trip Deserves Perfect Coverage.
+          </Typography>
+          <Typography variant="caption" color="text.secondary" display="block" align="center">
+            Login To View Your Personalized Report.
           </Typography>
         </CardContent>
       </Card>
+      </Box> {/* End of new container Box */}
       <Box sx={{ position: 'fixed', bottom: 16, width: '100%' }}>
         <Typography variant="body2" color="text.secondary" align="center">
-          &copy; {new Date().getFullYear()} TravelSafe. Powered by AI Reasoning System.
+          &copy; {new Date().getFullYear()} Aegis AI. Powered by AI Reasoning System. {/* Updated Copyright */}
         </Typography>
       </Box>
     </Box>

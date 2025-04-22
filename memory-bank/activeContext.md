@@ -284,6 +284,16 @@ The project has moved beyond initial setup and is focused on refining the existi
     - **Requirements Display**: Modified `ux-webapp/src/components/JsonPrettyViewer.tsx` to accept an optional `dataPath` prop. Updated `TabbedReportView.tsx` to pass `dataPath="json_dict"` so the "Customer Requirements" tab displays only the nested `json_dict` object.
     - **Transcript Display**: Created a new component `ux-webapp/src/components/TranscriptViewer.tsx` to fetch and render the transcript JSON using the existing `ChatBubble` component. Updated `TabbedReportView.tsx` to use this component for the "Transcript" tab.
     - **Markdown Animation**: Modified `ux-webapp/src/components/MarkdownRenderer.tsx` to support different animation modes (`character`, `paragraph`, `none`) via an `animationMode` prop. Updated `TabbedReportView.tsx` to use `'character'` mode (fast chunking) for the "Recommendation" tab and `'paragraph'` mode for the "Policy Comparison" tab. Adjusted animation speed calculation for faster rendering.
+41. **Frontend Landing Page Mobile Dropdown Fix**: Refactored `ux-webapp/src/pages/LandingPage.tsx` to move the demo customer ID dropdown from a fixed position (which was off-screen on mobile) to be part of the main card's layout flow, ensuring visibility on all screen sizes. Initially placed inside `CardContent`, then moved above the `Card` within a new flex container based on user feedback.
+42. **Frontend Landing Page Text Updates**: Modified text content in `ux-webapp/src/pages/LandingPage.tsx`:
+    - Updated tagline to "Travel Insurance Made Simple. Finally.".
+    - Removed default helper text from the Customer ID input field.
+    - Replaced the caption below the "Continue" button with two separate lines: "Your Perfect Trip Deserves Perfect Coverage." and "Login To View Your Personalized Report.".
+43. **Frontend Rebranding to Aegis AI**:
+    - Updated the HTML title in `ux-webapp/index.html` to "Aegis AI".
+    - Changed the main title in `ux-webapp/src/pages/LandingPage.tsx` from "TravelSafe Recommender System" to "Aegis AI".
+    - Replaced the `FlightTakeoffIcon` with a custom image (`/assets/aegis-shield.jpeg`) in `ux-webapp/src/pages/LandingPage.tsx`. Ensured the image path was corrected from `.jpg` to `.jpeg`.
+    - Updated the copyright notice in `ux-webapp/src/pages/LandingPage.tsx` to "© [Year] Aegis AI. Powered by AI Reasoning System.".
 
 ## Next Steps (Revised Focus)
 
