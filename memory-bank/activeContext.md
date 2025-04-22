@@ -294,6 +294,13 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Changed the main title in `ux-webapp/src/pages/LandingPage.tsx` from "TravelSafe Recommender System" to "Aegis AI".
     - Replaced the `FlightTakeoffIcon` with a custom image (`/assets/aegis-shield.jpeg`) in `ux-webapp/src/pages/LandingPage.tsx`. Ensured the image path was corrected from `.jpg` to `.jpeg`.
     - Updated the copyright notice in `ux-webapp/src/pages/LandingPage.tsx` to "© [Year] Aegis AI. Powered by AI Reasoning System.".
+44. **Frontend Report Viewer TOC & UI Polish**:
+    - Implemented dynamic Table of Contents (TOC) for Markdown views (`Recommendation`, `Policy Comparison`) using `rehype-slug` and a custom `remark-extract-headings` plugin (`ux-webapp/src/lib/remark-extract-headings.ts`).
+    - Created `ux-webapp/src/components/TableOfContents.tsx` to display the TOC.
+    - Integrated TOC into `ux-webapp/src/components/TabbedReportView.tsx`, handling responsive display (desktop sidebar, mobile drawer).
+    - Debugged and resolved issues related to React component lifecycle and state updates causing TOC instability (using debouncing in `TabbedReportView.tsx` and simplified callback logic in `ux-webapp/src/components/MarkdownRenderer.tsx`).
+    - Relocated the mobile TOC toggle button from the AppBar to be next to the insurer dropdown on the "Policy Comparison" tab for better context.
+    - Changed the "Switch Customer" button text in the `TabbedReportView` AppBar to "Log out".
 
 ## Next Steps (Revised Focus)
 
@@ -382,3 +389,4 @@ The project has moved beyond initial setup and is focused on refining the existi
 9.  **LLM Constraints**:
     *   Managing API rate limits, costs, and potential output token limits across both Gemini and OpenAI.
 10. **Frontend Data Sync**: Ensuring the `sync-public-assets.cjs` script correctly copies all necessary and *up-to-date* data before each production build is crucial for the deployed frontend's functionality.
+11. **Frontend TOC**: The dynamic TOC feature is implemented but relies on specific component lifecycle interactions; monitor for potential edge cases or regressions.

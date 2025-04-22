@@ -1,20 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react'; // Removed useRef
 import { Box, CircularProgress } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
+// Removed incorrect PluggableList import
 import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug'; // Import rehype-slug
+import { remarkExtractHeadings, type HeadingData } from '../lib/remark-extract-headings'; // Import custom plugin and type
 
 // Define animation modes
 type AnimationMode = 'character' | 'paragraph' | 'none';
 
-export const MarkdownRenderer: React.FC<{ filePath: string; animationMode?: AnimationMode }> = ({ filePath, animationMode = 'none' }) => { // Default to 'none'
+interface MarkdownRendererProps {
+  filePath: string;
+  animationMode?: AnimationMode;
+  onHeadingsExtracted?: (headings: HeadingData[]) => void; // Add callback prop
+}
+
+export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
+  filePath,
+  animationMode = 'none',
+  onHeadingsExtracted,
+}) => {
   const [content, setContent] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  // Removed headingsRef, handleHeadingsExtractionDuringRender, and the useEffect hook for calling onHeadingsExtracted
 
   useEffect(() => {
     setLoading(true);
     setContent('');
     setError(null);
+    // headingsRef.current = []; // Removed this line as headingsRef is no longer used here
     const controller = new AbortController();
     fetch(filePath, { signal: controller.signal })
       .then(res => {
@@ -82,9 +97,24 @@ export const MarkdownRenderer: React.FC<{ filePath: string; animationMode?: Anim
 
   if (loading) return <Box sx={{ textAlign: 'center', py: 4 }}><CircularProgress /></Box>;
   if (error) return <Box sx={{ color: 'error.main', py: 2 }}>{error}</Box>;
+
+  // Define plugins: remarkGfm and our custom plugin with the ref-updating callback
+  // Cast the tuple to 'any' as a workaround for complex type inference issues with PluggableList
+  // Pass the onHeadingsExtracted prop directly to the plugin options
+  const remarkPluginsWithOptions = [
+    remarkGfm,
+    // Ensure the callback exists before passing it
+    ...(onHeadingsExtracted ? [[remarkExtractHeadings, { onHeadingsExtracted }] as any] : [])
+  ];
+
   return (
     <Box sx={{ fontSize: '1rem', lineHeight: 1.7, px: 1 }}>
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{displayed}</ReactMarkdown>
+      <ReactMarkdown
+        remarkPlugins={remarkPluginsWithOptions}
+        rehypePlugins={[rehypeSlug]} // Add rehype-slug here
+      >
+        {displayed}
+      </ReactMarkdown>
     </Box>
   );
 };

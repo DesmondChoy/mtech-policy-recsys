@@ -79,6 +79,7 @@ The project is in the **initial setup and planning phase**. We are currently est
 | **Frontend Deployment (Netlify)**  | **100%**    | **High** | **`ux-webapp` deployed. Required fixes to `netlify.toml`, `requirements.txt`, and `ux-webapp/package.json` build script for asset syncing.** |
 | **Frontend UX Enhancements**       | **100%**    | **Medium** | **Fixed report loading, dynamic dropdowns, requirements/transcript display formats, animation speeds.** |
 | **Frontend Landing Page Updates**  | **100%**    | **Medium** | **Fixed mobile dropdown visibility, updated text content, rebranded to "Aegis AI" with custom shield icon.** |
+| **Frontend TOC Implementation**    | **100%**    | **Medium** | **Implemented dynamic TOC, debugged stability, relocated mobile button, updated AppBar button text.** |
 | Testing Framework                  | 20%         | Medium   | Unit tests added for recommender parser/scorer/MD report. More needed.                               |
 | ML Models                          | 0%          | Low      | Later phase.                                                                                         |
 | Documentation (Memory Bank)        | **100%**    | High     | **Updated core files for Ground Truth feature, Netlify deployment, and recent frontend changes.**    |
@@ -106,6 +107,7 @@ The project is in the **initial setup and planning phase**. We are currently est
     *   Added `--only_aggregate` flag to allow running only the final evaluation step.
 9.  **Frontend Data Sync**: The `sync-public-assets.cjs` script copies necessary data to `ux-webapp/public` but relies on the build process triggering it for deployment.
 10. **Frontend Landing Page Fixes & Rebranding**: Fixed mobile visibility of the demo dropdown, updated various text elements (tagline, helper text, captions), and rebranded the app to "Aegis AI" (titles, copyright, custom shield icon).
+11. **Frontend TOC**: The dynamic TOC feature is implemented but relies on specific component lifecycle interactions; monitor for potential edge cases or regressions.
 
 ## Recent Achievements (Summary - See `activeContext.md` for full detail)
 
