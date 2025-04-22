@@ -109,9 +109,12 @@ graph TD
         TabbedReportView --> MarkdownRenderer[components/MarkdownRenderer.tsx]
         TabbedReportView --> JsonPrettyViewer[components/JsonPrettyViewer.tsx]
         TabbedReportView --> TranscriptViewer[components/TranscriptViewer.tsx]
+        TabbedReportView --> TOC[components/TableOfContents.tsx] # Added TOC
         TranscriptViewer --> ChatBubble[components/ChatBubble.tsx]
 
-        %% Data Fetching by Frontend
+        %% Data Flow & Fetching by Frontend
+        MarkdownRenderer -- Extracts Headings --> TabbedReportView # Via callback
+        TabbedReportView -- Passes Headings --> TOC # Prop
         TabbedReportView -- Fetches --> PublicResultsIndex[public/results/{uuid}/index.json]
         TabbedReportView -- Fetches --> PublicTranscriptsIndex[public/transcripts_index.json]
         MarkdownRenderer -- Fetches --> PublicRecReport[public/results/{uuid}/recommendation_report_{uuid}.md]
