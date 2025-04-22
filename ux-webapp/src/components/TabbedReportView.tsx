@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react'; // Added useRef
-import { Box, AppBar, Tabs, Tab, Toolbar, Typography, Button, MenuItem, Select, FormControl, InputLabel, CircularProgress, Grid, Drawer, IconButton, useTheme, useMediaQuery } from '@mui/material'; // Added Grid, Drawer, IconButton, useTheme, useMediaQuery
+import { Box, AppBar, Tabs, Tab, Toolbar, Typography, Button, MenuItem, Select, FormControl, InputLabel, CircularProgress, Drawer, IconButton, useTheme, useMediaQuery } from '@mui/material'; // Removed Grid, Added Drawer, IconButton, useTheme, useMediaQuery
 import DescriptionIcon from '@mui/icons-material/Description';
 import CompareIcon from '@mui/icons-material/Compare';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
@@ -9,7 +9,7 @@ import { MarkdownRenderer } from './MarkdownRenderer';
 import { JsonPrettyViewer } from './JsonPrettyViewer';
 import { TranscriptViewer } from './TranscriptViewer';
 import TableOfContents from './TableOfContents'; // Import TOC component
-import { type HeadingData } from '../lib/remark-extract-headings'; // Import HeadingData type
+import { type HeadingData } from '../lib/remark-extract-headings.ts'; // Import HeadingData type, added .ts extension
 
 export interface TabbedReportViewProps {
   uuid: string;

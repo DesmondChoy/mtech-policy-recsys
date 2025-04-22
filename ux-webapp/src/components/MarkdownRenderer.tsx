@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useCallback } from 'react'; // Removed useRef
+import React, { useEffect, useState } from 'react'; // Removed useRef, useCallback
 import { Box, CircularProgress } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
 // Removed incorrect PluggableList import
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug'; // Import rehype-slug
-import { remarkExtractHeadings, type HeadingData } from '../lib/remark-extract-headings'; // Import custom plugin and type
+import { remarkExtractHeadings, type HeadingData } from '../lib/remark-extract-headings.ts'; // Import custom plugin and type, added .ts extension
 
 // Define animation modes
 type AnimationMode = 'character' | 'paragraph' | 'none';

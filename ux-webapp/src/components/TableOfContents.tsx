@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, List, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
-import { type HeadingData } from '../lib/remark-extract-headings'; // Import the type
+import { type HeadingData } from '../lib/remark-extract-headings.ts'; // Import the type, added .ts extension
 
 interface TableOfContentsProps {
   headings: HeadingData[];
@@ -12,7 +12,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ headings, onLi
     return null; // Don't render anything if there are no headings
   }
 
-  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleLinkClick = () => { // Removed unused 'event' parameter
     // Prevent default if necessary, or just call the callback
     if (onLinkClick) {
       onLinkClick();
