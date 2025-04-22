@@ -9,7 +9,7 @@ import { MarkdownRenderer } from './MarkdownRenderer';
 import { JsonPrettyViewer } from './JsonPrettyViewer';
 import { TranscriptViewer } from './TranscriptViewer';
 import TableOfContents from './TableOfContents'; // Import TOC component
-import { type HeadingData } from '../lib/remark-extract-headings.ts'; // Import HeadingData type, added .ts extension
+import { type HeadingData } from '@/lib/remark-extract-headings.ts'; // Use path alias and add .ts extension
 
 export interface TabbedReportViewProps {
   uuid: string;
