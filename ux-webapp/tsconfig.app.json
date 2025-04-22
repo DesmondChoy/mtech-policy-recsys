@@ -20,8 +20,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-    "rootDir": "." // Explicitly set root directory
+    "noUncheckedSideEffectImports": true
+    // Removed rootDir
   },
-  "include": ["src", "lib"] // Include both src and lib directories
+  "include": ["src"] // Only include src, as lib is inside it
 }
