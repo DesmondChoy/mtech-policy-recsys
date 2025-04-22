@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, List, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
-import { type HeadingData } from '@/lib/remark-extract-headings.ts'; // Use path alias and add .ts extension
+import { type HeadingData } from '../lib/remark-extract-headings'; // Reverted to relative path, removed .ts extension
 
 interface TableOfContentsProps {
   headings: HeadingData[];

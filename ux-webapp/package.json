@@ -7,7 +7,7 @@
     "sync-public-assets": "node ./scripts/sync-public-assets.cjs",
     "predev": "npm run sync-public-assets",
     "dev": "vite",
-    "build": "node ./scripts/sync-public-assets.cjs && vite build",
+    "build": "node ./scripts/sync-public-assets.cjs && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
