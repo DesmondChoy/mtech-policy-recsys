@@ -22,7 +22,8 @@ const FeedbackTabContent: React.FC = () => {
     // setFeedbackText('');
   };
 
-  const handleSnackbarClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+  // Prefix unused 'event' parameter with underscore to satisfy TS6133
+  const handleSnackbarClose = (_event?: React.SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
       return;
     }
