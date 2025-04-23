@@ -5,10 +5,13 @@ import CompareIcon from '@mui/icons-material/Compare';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import MenuIcon from '@mui/icons-material/Menu'; // Icon for mobile TOC toggle
 import ChatIcon from '@mui/icons-material/Chat';
+import FeedbackIcon from '@mui/icons-material/Feedback'; // Import Feedback icon
 import { MarkdownRenderer } from './MarkdownRenderer';
 import { JsonPrettyViewer } from './JsonPrettyViewer';
 import { TranscriptViewer } from './TranscriptViewer';
+import FeedbackTabContent from './FeedbackTabContent'; // Import FeedbackTabContent component
 import TableOfContents from './TableOfContents'; // Import TOC component
+import FeedbackButtons from './FeedbackButtons'; // Import FeedbackButtons component
 import { type HeadingData } from './remark-extract-headings'; // Updated path after moving file
 
 export interface TabbedReportViewProps {
@@ -23,6 +26,7 @@ const tabLabels = [
   { label: 'Policy Comparison', icon: <CompareIcon /> },
   { label: 'Customer Requirements', icon: <AssignmentIndIcon /> },
   { label: 'Transcript', icon: <ChatIcon /> },
+  { label: 'Feedback', icon: <FeedbackIcon /> }, // Add Feedback tab
   // { label: 'Policy PDFs', icon: <PictureAsPdfIcon /> }, // Comment out for now
 ];
 
@@ -217,13 +221,13 @@ export const TabbedReportView: React.FC<TabbedReportViewProps> = ({ uuid, onSwit
           onChange={handleTabChange} // Use updated handler
           indicatorColor="primary"
           textColor="primary"
-          variant={isMobile ? "scrollable" : "standard"} // Make tabs scrollable on mobile
+          variant="scrollable" // Always use scrollable variant
           scrollButtons="auto"
           allowScrollButtonsMobile
-          centered={!isMobile} // Center tabs on desktop
+          // centered={!isMobile} // Remove centered prop, not ideal with scrollable
         >
           {tabLabels.map((tab) => (
-            <Tab key={tab.label} label={isMobile ? undefined : tab.label} icon={tab.icon} iconPosition="start" /> // Hide label on mobile if needed, or let it wrap
+            <Tab key={tab.label} label={tab.label} icon={tab.icon} iconPosition="start" /> // Always show label
           ))}
         </Tabs>
       </AppBar>
@@ -233,14 +237,17 @@ export const TabbedReportView: React.FC<TabbedReportViewProps> = ({ uuid, onSwit
           {/* Content Column (Box) */}
           <Box sx={{ flexGrow: 1, maxWidth: showTocArea && !isMobile && headings.length > 0 ? '75%' : '100%' }}> {/* Adjust width based on TOC visibility */}
             {tabIndex === 0 && (
-              <MarkdownRenderer
-                filePath={recommendationPath}
-                animationMode="character"
-                onHeadingsExtracted={handleHeadingsExtracted} // Pass callback
-              />
-            )}
-            {tabIndex === 1 && (
-              <Box>
+                  <> {/* Wrap in Fragment */}
+                    <MarkdownRenderer
+                      filePath={recommendationPath}
+                      animationMode="character"
+                      onHeadingsExtracted={handleHeadingsExtracted} // Pass callback
+                    />
+                    <FeedbackButtons /> {/* Add FeedbackButtons here */}
+                  </>
+                )}
+                {tabIndex === 1 && (
+                  <Box>
                 {loadingInsurers ? (
                   <CircularProgress size={24} />
                 ) : insurerError ? (
@@ -283,24 +290,40 @@ export const TabbedReportView: React.FC<TabbedReportViewProps> = ({ uuid, onSwit
                   />
                 ) : !loadingInsurers && !insurerError ? (
                   <Typography>Select an insurer to view the comparison.</Typography>
-                ) : null}
+                    ) : null}
+                    <FeedbackButtons /> {/* Add FeedbackButtons here */}
+                  </Box>
+                )}
+                {tabIndex === 2 && (
+                  isLoading ? <CircularProgress size={24} /> :
+                  hasError ? <Typography color="error">{scenarioError || 'Error loading data.'}</Typography> :
+                  requirementsPath ? (
+                    <> {/* Wrap in Fragment */}
+                      <JsonPrettyViewer filePath={requirementsPath} dataPath="json_dict" />
+                      <FeedbackButtons />
+                    </>
+                  ) : (
+                    <Typography>Could not determine requirements file path.</Typography>
+                  )
+                )}
+                {tabIndex === 3 && (
+                  isLoading ? <CircularProgress size={24} /> :
+                  hasError ? <Typography color="error">{scenarioError || 'Error loading data.'}</Typography> :
+                  transcriptPath ? (
+                    <> {/* Wrap in Fragment */}
+                      <TranscriptViewer filePath={transcriptPath} />
+                      <FeedbackButtons />
+                    </>
+                  ) : (
+                    <Typography>Could not determine transcript file path.</Typography>
+                  )
+                )}
+                {tabIndex === 4 && ( /* Add rendering for Feedback tab */
+                  <FeedbackTabContent />
+                )}
               </Box>
-            )}
-            {tabIndex === 2 && (
-              isLoading ? <CircularProgress size={24} /> :
-              hasError ? <Typography color="error">{scenarioError || 'Error loading data.'}</Typography> :
-              requirementsPath ? <JsonPrettyViewer filePath={requirementsPath} dataPath="json_dict" /> :
-              <Typography>Could not determine requirements file path.</Typography>
-            )}
-            {tabIndex === 3 && (
-              isLoading ? <CircularProgress size={24} /> :
-              hasError ? <Typography color="error">{scenarioError || 'Error loading data.'}</Typography> :
-              transcriptPath ? <TranscriptViewer filePath={transcriptPath} /> :
-              <Typography>Could not determine transcript file path.</Typography>
-            )}
-          </Box>
 
-          {/* Desktop TOC Column (Box) */}
+              {/* Desktop TOC Column (Box) */}
           {!isMobile && showTocArea && headings.length > 0 && (
             <Box sx={{
               width: '25%', // Give TOC a width

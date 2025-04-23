@@ -64,9 +64,11 @@ The project is in the **initial setup and planning phase**. We are currently est
 | **Frontend Landing Page Updates**  | **100%**    | **Medium** | **Fixed mobile dropdown visibility, updated text content, rebranded to "Aegis AI" with custom shield icon.** |
 | **Frontend TOC Implementation**    | **100%**    | **Medium** | **Implemented dynamic TOC, debugged stability, relocated mobile button, updated AppBar button text. Resolved Netlify build errors by moving plugin.** |
 | **Frontend Disclaimer Page**       | **100%**    | **Medium** | **Added disclaimer page (`DisclaimerPage.tsx`), route (`/disclaimer/:uuid`), and updated `TransitionPage` navigation.** |
+| **Frontend Feedback UI**           | **100%**    | **Medium** | **Added Feedback tab, thumbs up/down buttons (centered), styled predefined feedback buttons (chip-style, blue, left-aligned), text area, send button with snackbar.** |
+| **Frontend Tab Scrolling**         | **100%**    | **Medium** | **Fixed tab label cutoff by making tabs always scrollable.**                                         |
 | Testing Framework                  | 20%         | Medium   | Unit tests added for recommender parser/scorer/MD report. More needed.                               |
 | ML Models                          | 0%          | Low      | Later phase.                                                                                         |
-| Documentation (Memory Bank)        | **100%**    | High     | **Updated core files for Ground Truth feature, Netlify deployment, and recent frontend changes.**    |
+| Documentation (Memory Bank)        | **In Prog.**| High     | **Updating core files for recent frontend changes.**                                                 |
 
 ## Known Issues
 
@@ -77,7 +79,7 @@ The project is in the **initial setup and planning phase**. We are currently est
 5.  **Integration & Orchestration Management**: While the orchestration script automates the workflow, managing dependencies, potential failures, and overall runtime within this script-chaining approach requires ongoing monitoring and maintenance.
 6.  **Dual LLM Dependency**: Reliance on both OpenAI (Extractor Agent via CrewAI, EmbeddingMatcher) and Google Gemini (LLMService) adds complexity (config, cost, maintenance).
 7.  **Frontend Data Sync Reliability**: Ensuring the `sync-public-assets.cjs` script runs correctly during the build process and copies all necessary, up-to-date data is vital for production functionality.
-8.  **Frontend Maintenance**: Ongoing monitoring is needed for the deployed frontend, including UI components like the dynamic TOC, to catch potential regressions or issues.
+8.  **Frontend Maintenance**: Ongoing monitoring is needed for the deployed frontend, including UI components like the dynamic TOC and feedback elements, to catch potential regressions or issues.
 
 ## Recent Achievements (Summary - See `activeContext.md` for full detail)
 
@@ -92,3 +94,5 @@ The project is in the **initial setup and planning phase**. We are currently est
 9.  **Ground Truth Evaluation Feature**: Integrated ground truth data (`data/ground_truth/ground_truth.json`), embedding utilities (`src/embedding/embedding_utils.py`), and evaluation scripts (`scripts/generate_ground_truth_coverage.py`, updated `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`) for semantic evaluation of recommendations.
 10. **Netlify Frontend Deployment**: Successfully debugged and deployed the `ux-webapp` frontend to Netlify, including configuration changes to `netlify.toml`, `requirements.txt`, and `ux-webapp/package.json` to handle build commands, dependencies, and static asset synchronization.
 11. **Frontend Landing Page Updates**: Completed fixes for mobile dropdown visibility, updated text content (tagline, helper text, captions), and rebranded to "Aegis AI" using a custom shield image.
+12. **Frontend Feedback UI Implementation**: Added Feedback tab, thumbs up/down buttons (centered), styled predefined feedback buttons, text area, and send button with snackbar confirmation.
+13. **Frontend Tab Scrolling Fix**: Resolved tab label cutoff issue by making tabs always scrollable.

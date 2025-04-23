@@ -91,7 +91,7 @@
 │   │   └── cache/              # Cache for embeddings (*.pkl)
 │   ├── models/                 # LLM configurations (gemini_config.py) and services (llm_service.py)
 │   ├── utils/                  # Utility functions (transcript_processing.py, etc.)
-│   ├── components/             # React components (includes remark-extract-headings.ts now)
+│   ├── components/             # Frontend React UI components (TabbedReportView, FeedbackButtons, etc.)
 │   └── web/                    # Basic CLI runner (app.py)
 ├── tests/                      # Test cases
 ├── scripts/                    # Utility scripts
@@ -266,8 +266,7 @@ This installs all necessary packages listed in `package.json` for any web or sup
 4.  **Utility Modules (`src/`)**:
     *   `src/utils/transcript_processing.py`: Defines `TravelInsuranceRequirement` Pydantic model (used by Extractor) and parsing logic.
     *   `src/embedding/embedding_utils.py`: Defines `EmbeddingMatcher` for semantic comparison against ground truth. Depends on OpenAI API and NLTK.
-    *   `ux-webapp/src/components/remark-extract-headings.ts`: Custom remark plugin to extract headings for TOC (moved from `lib/`).
-    *   `ux-webapp/src/components/`: Various React components for the frontend (`TabbedReportView`, `MarkdownRenderer`, `TableOfContents`, etc.).
+    *   `ux-webapp/src/components/`: Contains various React components for the frontend UI (e.g., `TabbedReportView`, `MarkdownRenderer`, `FeedbackButtons`, `FeedbackTabContent`, `TableOfContents`). Includes custom remark plugin `remark-extract-headings.ts`.
     *   Other utilities as needed.
 
 5.  **Data Dependencies**:

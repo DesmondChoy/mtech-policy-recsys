@@ -311,6 +311,12 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Added a route `/disclaimer/:uuid` in `ux-webapp/src/App.tsx` pointing to the new page.
     - Modified `ux-webapp/src/pages/TransitionPage.tsx` to navigate to `/disclaimer/:uuid` after the loading phases, instead of directly to `/report/:uuid`.
     - The `DisclaimerPage` includes "I understand" (navigates to `/report/:uuid`) and "Log out" (navigates to `/`) buttons.
+47. **Frontend Feedback Components**:
+    - Created `ux-webapp/src/components/FeedbackButtons.tsx` with thumbs up/down icons, state management, and subtle click animation. Centered alignment.
+    - Created `ux-webapp/src/components/FeedbackTabContent.tsx` with description, styled predefined feedback buttons (chip-style, blue background, normal case, left-aligned), text area, and non-functional "Send" button with confirmation snackbar. Description text split into two lines.
+    - Integrated `FeedbackButtons` into existing tabs (`Recommendation`, `Policy Comparison`, `Customer Requirements`, `Transcript`) in `ux-webapp/src/components/TabbedReportView.tsx`.
+    - Added a new "Feedback" tab to `TabbedReportView.tsx` rendering `FeedbackTabContent`.
+48. **Frontend Tab Scrolling Fix**: Modified `ux-webapp/src/components/TabbedReportView.tsx` to make the main tabs always scrollable (`variant="scrollable"`) and always display labels, fixing label cutoff issues.
 
 ## Next Steps (Revised Focus)
 
@@ -374,3 +380,4 @@ The project has moved beyond initial setup and is focused on refining the existi
 5.  **Synthetic Data Limitations**: Generated transcripts might not fully capture real-world complexities or edge cases, potentially limiting the robustness of downstream components and evaluations. *(Ongoing)*
 6.  **Performance Optimization**: Latency of multiple LLM calls in the orchestrated workflow needs monitoring, especially if scaling up the number of scenarios or policies. *(Ongoing)*
 7.  **Frontend Data Sync & Maintenance**: Ensuring the data sync script runs reliably during deployment and maintaining the stability of frontend components requires ongoing attention. *(Ongoing Maintenance)*
+8.  **Frontend Styling Refinements**: Address any minor styling inconsistencies or improvements identified during testing (e.g., feedback button alignment/wrapping). *(Ongoing Maintenance)*
