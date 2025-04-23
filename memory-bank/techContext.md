@@ -91,8 +91,7 @@
 │   │   └── cache/              # Cache for embeddings (*.pkl)
 │   ├── models/                 # LLM configurations (gemini_config.py) and services (llm_service.py)
 │   ├── utils/                  # Utility functions (transcript_processing.py, etc.)
-│   ├── lib/                    # Frontend library code (e.g., remark plugins)
-│   │   └── remark-extract-headings.ts # Custom remark plugin for TOC
+│   ├── components/             # React components (includes remark-extract-headings.ts now)
 │   └── web/                    # Basic CLI runner (app.py)
 ├── tests/                      # Test cases
 ├── scripts/                    # Utility scripts
@@ -238,7 +237,7 @@ This installs all necessary packages listed in `package.json` for any web or sup
 7. **ReactMarkdown & Remark/Rehype Plugins**:
    - Purpose: Rendering Markdown content and processing it.
    - Installation: `npm install` in `ux-webapp` directory.
-   - Key Plugins: `react-markdown`, `remark-gfm`, `rehype-slug`, `remark-extract-headings` (custom), `unist-util-visit`, `mdast-util-to-string`, `unified`.
+   - Key Plugins: `react-markdown`, `remark-gfm`, `rehype-slug`, `remark-extract-headings` (custom, now in `src/components/`), `unist-util-visit`, `mdast-util-to-string`, `unified`.
    - Usage: Used in `ux-webapp/src/components/MarkdownRenderer.tsx` for report display and TOC generation.
 
 ### Internal Dependencies
@@ -267,7 +266,7 @@ This installs all necessary packages listed in `package.json` for any web or sup
 4.  **Utility Modules (`src/`)**:
     *   `src/utils/transcript_processing.py`: Defines `TravelInsuranceRequirement` Pydantic model (used by Extractor) and parsing logic.
     *   `src/embedding/embedding_utils.py`: Defines `EmbeddingMatcher` for semantic comparison against ground truth. Depends on OpenAI API and NLTK.
-    *   `ux-webapp/src/lib/remark-extract-headings.ts`: Custom remark plugin to extract headings for TOC.
+    *   `ux-webapp/src/components/remark-extract-headings.ts`: Custom remark plugin to extract headings for TOC (moved from `lib/`).
     *   `ux-webapp/src/components/`: Various React components for the frontend (`TabbedReportView`, `MarkdownRenderer`, `TableOfContents`, etc.).
     *   Other utilities as needed.
 

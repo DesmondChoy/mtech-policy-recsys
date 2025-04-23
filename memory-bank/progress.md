@@ -28,31 +28,14 @@ The project is in the **initial setup and planning phase**. We are currently est
 
 ## What's Left to Build
 
-1.  **Test & Refine PDF Extraction Evaluation**:
-    *   [ ] Run the new `eval_pdf_extraction.py` script with sample data.
-    *   [ ] Analyze results and refine the script/prompt as needed.
-    *   [ ] Define clear metrics for this evaluation (potentially derived from the script's JSON output).
-2.  **Test & Refine Scenario Recommendation Evaluation**:
-    *   [ ] Run `evaluate_scenario_recommendations.py` with diverse sample data.
-    *   [ ] Analyze results, refine `EmbeddingMatcher` logic/thresholds, and improve `ground_truth.json` as needed.
-3.  **Implement Comparison Report Evaluation**:
+1.  **Implement Comparison Report Evaluation**:
     *   [ ] Design and implement the evaluation script/process for `scripts/generate_policy_comparison.py` output.
     *   [ ] Define metrics for report quality, accuracy, and justification clarity.
-4.  **Orchestration Script**: Script (`scripts/orchestrate_scenario_evaluation.py`) automates the end-to-end workflow (generation, evaluation, parsing, extraction, comparison, recommendation, final evaluation). Includes parallel transcript evaluation, sequential report generation, and flags (`--skip_transcript_eval`, `--only_aggregate`) to control execution.
-5.  **Refine Core Logic**:
-    *   [ ] Iteratively improve prompts, models, and processing logic within existing scripts based on evaluation results and testing.
-4.  **Develop Recommendation Logic**:
-    *   [ ] Define the process for generating final recommendations (e.g., selecting top insurers/tiers from comparison reports).
-    *   [ ] Implement this logic, potentially as a new script or a simple agent (`src/agents/recommender.py` is currently empty).
-    *   [ ] Determine the desired output format for recommendations.
-5.  **Plan Integration/Workflow V1**:
-    *   [ ] Design a basic workflow to connect the key steps (e.g., Extraction -> Comparison -> Recommendation).
-    *   [ ] Consider orchestration methods (script chaining, `crewai`, etc.).
-6.  **ML Model Development (Later Phase)**:
-    *   [ ] Prepare dataset using extracted requirements and comparison results.
-    *   [ ] Train initial models to derive insights.
-7.  **Define Future Architecture**:
-    *   [ ] Solidify the plan for integrating components and decide on the final architecture (script-based, agent-based, or hybrid) based on refined goals and the performance of the current approach.
+2.  **ML Model Development (Later Phase)**:
+    *   [ ] Prepare dataset.
+    *   [ ] Train initial models.
+3.  **Define Future Architecture**:
+    *   [ ] Solidify the plan for integrating components (script-based, agent-based, hybrid).
 
 ## Implementation Progress
 
@@ -79,35 +62,21 @@ The project is in the **initial setup and planning phase**. We are currently est
 | **Frontend Deployment (Netlify)**  | **100%**    | **High** | **`ux-webapp` deployed. Required fixes to `netlify.toml`, `requirements.txt`, and `ux-webapp/package.json` build script for asset syncing.** |
 | **Frontend UX Enhancements**       | **100%**    | **Medium** | **Fixed report loading, dynamic dropdowns, requirements/transcript display formats, animation speeds.** |
 | **Frontend Landing Page Updates**  | **100%**    | **Medium** | **Fixed mobile dropdown visibility, updated text content, rebranded to "Aegis AI" with custom shield icon.** |
-| **Frontend TOC Implementation**    | **100%**    | **Medium** | **Implemented dynamic TOC, debugged stability, relocated mobile button, updated AppBar button text.** |
+| **Frontend TOC Implementation**    | **100%**    | **Medium** | **Implemented dynamic TOC, debugged stability, relocated mobile button, updated AppBar button text. Resolved Netlify build errors by moving plugin.** |
 | Testing Framework                  | 20%         | Medium   | Unit tests added for recommender parser/scorer/MD report. More needed.                               |
 | ML Models                          | 0%          | Low      | Later phase.                                                                                         |
 | Documentation (Memory Bank)        | **100%**    | High     | **Updated core files for Ground Truth feature, Netlify deployment, and recent frontend changes.**    |
 
 ## Known Issues
 
-1.  **LLM Accuracy & Consistency**:
-    *   Ensuring high accuracy and consistent formatting from LLMs for extraction (policy, requirements) and comparison tasks remains a challenge. Requires ongoing prompt tuning and potentially model updates.
-    *   Adherence to complex JSON schemas (e.g., policy extraction) needs careful validation.
-2.  **Evaluation Gaps/Refinements**:
-    *   PDF extraction evaluation needs testing/validation.
-    *   Scenario recommendation evaluation depends on `EmbeddingMatcher` accuracy and ground truth quality; requires ongoing refinement.
-    *   Lack of automated evaluation for *comparison report* quality. Manual review is currently required for that step.
-3.  **Synthetic Data Limitations**:
-    *   Generated transcripts might not fully capture the nuances of real user interactions.
-4.  **LLM Constraints**:
-    *   API rate limits, costs, and potential output token limits need management. `LLMService` helps mitigate some aspects (retries, central config).
-5.  **Lack of Integration**:
-    *   Current components are largely standalone scripts. No automated workflow connects them end-to-end. Manual execution is required for each step.
-6.  **Extractor Agent Dependency**:
-    *   The Extractor Agent relies on OpenAI/CrewAI, separate from the Gemini-based `LLMService` used elsewhere. `EmbeddingMatcher` also uses OpenAI. This adds complexity to configuration and potential cost management across multiple components.
-7.  **Orchestrator Evaluation Scope**:
-    *   The final evaluation step in the orchestrator now includes results for *all* reports found, not just the current run. Need to be mindful of this when interpreting the `*_all_transcripts_*.json` files.
-8.  **Orchestrator Flexibility**:
-    *   Added `--only_aggregate` flag to allow running only the final evaluation step.
-9.  **Frontend Data Sync**: The `sync-public-assets.cjs` script copies necessary data to `ux-webapp/public` but relies on the build process triggering it for deployment.
-10. **Frontend Landing Page Fixes & Rebranding**: Fixed mobile visibility of the demo dropdown, updated various text elements (tagline, helper text, captions), and rebranded the app to "Aegis AI" (titles, copyright, custom shield icon).
-11. **Frontend TOC**: The dynamic TOC feature is implemented but relies on specific component lifecycle interactions; monitor for potential edge cases or regressions.
+1.  **LLM Accuracy & Consistency**: Ensuring high accuracy and consistent formatting from LLMs remains an ongoing effort, particularly for complex extraction and comparison tasks.
+2.  **Evaluation Gaps**: The lack of automated evaluation for *comparison report* quality is the primary remaining evaluation gap.
+3.  **Synthetic Data Limitations**: Generated transcripts might not fully capture the nuances and edge cases of real user interactions.
+4.  **LLM Constraints & Costs**: Managing API rate limits, costs, and potential output token limits across both Gemini and OpenAI requires monitoring. Orchestration runtime can be significant.
+5.  **Integration & Orchestration Management**: While the orchestration script automates the workflow, managing dependencies, potential failures, and overall runtime within this script-chaining approach requires ongoing monitoring and maintenance.
+6.  **Dual LLM Dependency**: Reliance on both OpenAI (Extractor Agent via CrewAI, EmbeddingMatcher) and Google Gemini (LLMService) adds complexity (config, cost, maintenance).
+7.  **Frontend Data Sync Reliability**: Ensuring the `sync-public-assets.cjs` script runs correctly during the build process and copies all necessary, up-to-date data is vital for production functionality.
+8.  **Frontend Maintenance**: Ongoing monitoring is needed for the deployed frontend, including UI components like the dynamic TOC, to catch potential regressions or issues.
 
 ## Recent Achievements (Summary - See `activeContext.md` for full detail)
 

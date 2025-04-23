@@ -109,7 +109,7 @@ graph TD
         TabbedReportView --> MarkdownRenderer[components/MarkdownRenderer.tsx]
         TabbedReportView --> JsonPrettyViewer[components/JsonPrettyViewer.tsx]
         TabbedReportView --> TranscriptViewer[components/TranscriptViewer.tsx]
-        TabbedReportView --> TOC[components/TableOfContents.tsx] # Added TOC
+        TabbedReportView --> TOC[components/TableOfContents.tsx]
         TranscriptViewer --> ChatBubble[components/ChatBubble.tsx]
 
         %% Data Flow & Fetching by Frontend

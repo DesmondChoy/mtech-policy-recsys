@@ -1,5 +1,11 @@
 # UX Polish: Dynamic Table of Contents (TOC) Implementation
 
+**Date:** 2025-04-12
+
+**Author:** Cline
+
+**Status:** ✅ Completed  
+
 ## Goal
 
 Implement a dynamic, responsive Table of Contents (TOC) sidebar for the Markdown report views (Recommendation and Policy Comparison tabs) within the `ux-webapp`. The TOC should automatically list headings from the Markdown content and allow users to click links to navigate to the corresponding sections, similar to documentation sites like Quarto.
@@ -63,7 +69,7 @@ Implement a dynamic, responsive Table of Contents (TOC) sidebar for the Markdown
 
 ## Current Challenge
 
-*   **TOC Not Visible:** Despite the implementation and fixes, the TOC sidebar (on desktop) and the mobile toggle button are not appearing in the UI, as confirmed by user screenshots.
+*   **TOC Not Visible:** Despite the implementation and fixes, the TOC sidebar (on desktop) and the mobile toggle button are not appearing in the UI, as confirmed by user screenshots. *(Note: This was resolved by fixing the data flow and debouncing state updates)*
 
 ## Proposed Next Steps (Debugging)
 
@@ -71,4 +77,43 @@ Implement a dynamic, responsive Table of Contents (TOC) sidebar for the Markdown
     *   Inside `handleHeadingsExtracted` to verify if headings data is being received from `MarkdownRenderer`.
     *   Just before the main `return` statement to log the values of `isMobile`, `showTocArea`, and `headings.length` to check the conditions controlling the TOC's visibility.
 2.  **Analyze Logs:** Run the application, navigate to the relevant tabs, and inspect the browser's developer console to see the logged values.
-3.  **Adjust Logic/Layout:** Based on the log output, adjust the conditional rendering logic or the Flexbox layout properties in `TabbedReportView.tsx` to ensure the TOC components are rendered correctly. For example, if `headings.length` is always 0, the issue lies in the data flow from the renderer; if the conditions are met but it's still not visible, the layout styles need adjustment.
+3.  **Adjust Logic/Layout:** Based on the log output, adjust the conditional rendering logic or the Flexbox layout properties in `TabbedReportView.tsx` to ensure the TOC components are rendered correctly. For example, if `headings.length` is always 0, the issue lies in the data flow from the renderer; if the conditions are met but it's still not visible, the layout styles need adjustment. *(Note: This debugging led to fixes involving debouncing and ensuring correct state updates)*
+
+## Deployment Errors & Troubleshooting (Related to TOC Implementation)
+
+While the TOC feature was implemented locally, deploying the `ux-webapp` to Netlify consistently failed due to TypeScript build errors, specifically related to resolving the custom `remark-extract-headings.ts` module.
+
+**Key Issue:**
+
+*   The build command (`npm run build`, which includes `tsc -b`) failed with errors like `TS2307: Cannot find module '../lib/remark-extract-headings'` (or variations like `./../lib/...` or `lib/...`) originating from the components importing the module (`MarkdownRenderer.tsx`, `TabbedReportView.tsx`, `TableOfContents.tsx`).
+*   This occurred despite confirming the file exists at `ux-webapp/src/lib/remark-extract-headings.ts` and the importing components are in `ux-webapp/src/components/`.
+
+**Troubleshooting Steps Attempted (Unsuccessful):**
+
+1.  **Explicit File Extension:** Added `.ts` to the import paths (`../lib/remark-extract-headings.ts`). Build still failed.
+2.  **Path Aliases:**
+    *   Configured `@/` alias in `tsconfig.app.json` (`baseUrl`, `paths`).
+    *   Updated imports to use `@/lib/remark-extract-headings.ts`.
+    *   Configured the same alias in `vite.config.ts`.
+    *   Result: Build still failed, initially with the `tsc -b` error, and later with Vite itself failing to resolve the alias path (`[vite:load-fallback] Could not load ...`).
+3.  **Reverted Aliases & Corrected Relative Path:**
+    *   Removed alias configurations from `tsconfig.app.json` and `vite.config.ts`.
+    *   Corrected import paths to the accurate relative path: `../lib/remark-extract-headings` (since `lib` is inside `src`, one level up from `components`).
+    *   Build still failed with the `TS2307` error.
+4.  **Adjusted `tsconfig.app.json`:**
+    *   Tried explicitly adding `"lib"` to the `"include"` array and setting `"rootDir": "."`. Build still failed.
+    *   Tried simplifying back to just `"include": ["src"]` and removing `"rootDir"`. Build still failed.
+
+**Potential Next Steps / Ideas:**
+
+*   **Move the Module:** Relocate `remark-extract-headings.ts` from `src/lib/` directly into `src/components/` and update imports to use `./remark-extract-headings`. This avoids the `../` directory traversal which might be problematic for `tsc -b` in the build environment.
+*   **Simplify `tsconfig.json`:** Remove the project references (`references` array) in the root `ux-webapp/tsconfig.json` and consolidate necessary compiler options into a single config file to see if project references are interfering with path resolution during the `tsc -b` step.
+*   **Investigate `tsc -b` Behavior:** Research potential issues or known limitations with `tsc -b` (TypeScript's project reference build) regarding relative path resolution, especially in containerized build environments like Netlify's.
+*   **Move the Module:** Relocate `remark-extract-headings.ts` from `src/lib/` directly into `src/components/` and update imports to use `./remark-extract-headings`. This avoids the `../` directory traversal which might be problematic for `tsc -b` in the build environment. **(Implemented & Fixed the Netlify build)**
+*   **Simplify `tsconfig.json`:** Remove the project references (`references` array) in the root `ux-webapp/tsconfig.json` and consolidate necessary compiler options into a single config file to see if project references are interfering with path resolution during the `tsc -b` step.
+*   **Investigate `tsc -b` Behavior:** Research potential issues or known limitations with `tsc -b` (TypeScript's project reference build) regarding relative path resolution, especially in containerized build environments like Netlify's.
+*   **Alternative Build Command:** Experiment with different build commands in `package.json`, perhaps using only `vite build` if Vite's type checking is sufficient, or exploring other TypeScript compilation options.
+
+## Status: COMPLETE (2025-04-23)
+
+The dynamic TOC feature is implemented, and the Netlify build errors related to the `remark-extract-headings` plugin have been resolved by moving the plugin file to the `components` directory and updating import paths.
