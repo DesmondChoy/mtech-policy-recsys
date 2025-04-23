@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 // Removed incorrect PluggableList import
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug'; // Import rehype-slug
-import { remarkExtractHeadings, type HeadingData } from './../lib/remark-extract-headings'; // Trying explicit relative path
+import { remarkExtractHeadings, type HeadingData } from './remark-extract-headings'; // Updated path after moving file
 
 // Define animation modes
 type AnimationMode = 'character' | 'paragraph' | 'none';

@@ -9,7 +9,7 @@ import { MarkdownRenderer } from './MarkdownRenderer';
 import { JsonPrettyViewer } from './JsonPrettyViewer';
 import { TranscriptViewer } from './TranscriptViewer';
 import TableOfContents from './TableOfContents'; // Import TOC component
-import { type HeadingData } from '../lib/remark-extract-headings'; // Corrected relative path
+import { type HeadingData } from './remark-extract-headings'; // Updated path after moving file
 
 export interface TabbedReportViewProps {
   uuid: string;

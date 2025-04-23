@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, List, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
-// Corrected import path relative to components directory
-import { type HeadingData } from '../lib/remark-extract-headings';
+// Updated import path after moving file
+import { type HeadingData } from './remark-extract-headings';
 
 interface TableOfContentsProps {
   headings: HeadingData[];
