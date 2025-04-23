@@ -6,6 +6,61 @@ This project tackles that challenge head-on with an intelligent workflow powered
 
 This README outlines the workflow consisting of structured data extraction, automated analysis, and rigorous evaluation which unlocks unprecedented efficiency and transparency in insurance selection, paving the way for smarter, unbiased, and transparent recommendations.
 
+## System Overview
+
+```mermaid
+graph TD
+    %% Main Components
+    User[User/Customer]
+    WebApp[Web Interface]
+    
+    %% Data Sources
+    PolicyPDFs[Insurance Policy PDFs]
+    Transcripts[Customer Conversations]
+    
+    %% Processing Components
+    PDFExtractor[Policy Extractor]
+    TranscriptEval[Transcript Evaluator]
+    ReqExtractor[Requirements Extractor]
+    PolicyCompare[Policy Comparator]
+    Recommender[Recommendation Engine]
+    
+    %% Data Stores
+    StructuredPolicies[(Structured Policy Data)]
+    CustomerReqs[(Customer Requirements)]
+    ComparisonReports[(Comparison Reports)]
+    
+    %% Flow
+    PolicyPDFs -->|PDF Processing| PDFExtractor
+    PDFExtractor -->|Structured JSON| StructuredPolicies
+    
+    Transcripts -->|Quality Check| TranscriptEval
+    TranscriptEval -->|Validated Transcripts| ReqExtractor
+    ReqExtractor -->|Structured Requirements| CustomerReqs
+    
+    CustomerReqs -->|Requirements Input| PolicyCompare
+    StructuredPolicies -->|Policy Input| PolicyCompare
+    PolicyCompare -->|Insurer-Level Reports| ComparisonReports
+    
+    ComparisonReports -->|Top Candidates| Recommender
+    Transcripts -.->|Context for Prioritization| Recommender
+    Recommender -->|Final Recommendation| WebApp
+    
+    WebApp -->|View Reports| User
+    User -->|Customer ID| WebApp
+    
+    %% Evaluation Components
+    PDFEval[PDF Extraction Evaluator]
+    RecEval[Recommendation Evaluator]
+    GroundTruth[(Ground Truth Data)]
+    
+    PDFExtractor -.->|Verify Accuracy| PDFEval
+    PolicyPDFs -.->|Source Verification| PDFEval
+    
+    Recommender -.->|Verify Recommendations| RecEval
+    GroundTruth -.->|Expected Outcomes| RecEval
+```
+
 ## Getting Started
 
 Follow these steps to set up the project environment:
@@ -43,9 +98,45 @@ Follow these steps to set up the project environment:
     npm install
     cd ..
     ```
-    *Note: Ensure you have Node.js and npm installed. This step is only necessary if you intend to run or develop the frontend application.*
+    *Note: Ensure you have Node.js and npm installed. This step is necessary to run the web interface.*
 
-### Key Features
+## User-Friendly Web Interface
+
+This project includes a modern, easy-to-use web application that makes exploring insurance recommendations simple:
+
+- **Simple Login**: Enter your customer ID to access your personalized reports
+- **Intuitive Navigation**: Browse different sections of your recommendation through a familiar tab-based interface
+- **Interactive Features**:
+  - View your personalized recommendation with clear justifications
+  - Compare different insurance policies side-by-side
+  - Review your original conversation
+  - Provide feedback on recommendations
+- **Mobile-Friendly**: Access your recommendations on any device
+
+### Running the Web Interface
+
+1. **Start the Development Server**:
+   ```bash
+   cd ux-webapp
+   npm run dev
+   ```
+   Then open your browser to the displayed URL (typically http://localhost:5173)
+
+2. **Build for Production** (optional):
+   ```bash
+   cd ux-webapp
+   npm run build
+   ```
+   This creates optimized files in the `ux-webapp/dist` directory.
+
+### Online Access
+
+The web application is deployed and accessible online at:
+[https://aegis-recsys.netlify.app/](https://aegis-recsys.netlify.app/)
+
+You can use this link to explore the interface and functionality without installing the project locally.
+
+## Key Features
 
 **1. Data Generation & Processing:**
 - **Synthetic Transcript Generation**: Creates realistic, scenario-driven customer conversations using LLMs, incorporating personalities and specific coverage requirements.
@@ -64,225 +155,152 @@ Follow these steps to set up the project environment:
 **4. Future Goals:**
 - **(Planned) Iterative Refinement**: Future goal for users to update needs and receive refined recommendations.
 
-## How To Use
+## Command-Line Usage
 
-This section outlines the primary workflows for preparing data, processing transcripts, and generating comparison reports within the system.
+This section outlines the key commands available for running different parts of the system.
 
-## 1. Data Preparation and Processing Pipeline
+### Data Generation and Processing
 
-This section describes the end-to-end workflow for preparing policy data and generating/processing transcript data to extract customer requirements.
+1. **Extract Policy Data**:
+   ```bash
+   # Process a specific policy PDF
+   python scripts/extract_policy_tier.py --pdf_path data/policies/raw/fwd_Premium.pdf --output_dir data/policies/processed/
 
-1.  **Extract Policy Data**:
-    *   **Input**: Place raw insurance policy documents (PDF) into `data/policies/raw/` following the naming convention `insurer_{policy_tier}.pdf`.
-    *   **Action**: Run `python scripts/extract_policy_tier.py`.
-    *   **Process**: Uses Gemini API to extract structured coverage details for the specified tier, validates output using Pydantic.
-    *   **Output**: Structured JSON files (`insurer_{policy_tier}.json`) saved in `data/policies/processed/`.
+   # Process all policy PDFs in the raw directory
+   python scripts/extract_policy_tier.py
+   ```
 
-2.  **Generate Personalities (Optional)**:
-    *   **Action**: If `data/transcripts/personalities.json` is missing or needs updating, run `python scripts/data_generation/generate_personalities.py`.
-    *   **Process**: Uses Gemini API to generate a list of customer personalities.
-    *   **Output**: `data/transcripts/personalities.json`.
+2. **Generate Personalities** (optional):
+   ```bash
+   python scripts/data_generation/generate_personalities.py
+   ```
 
-3.  **Generate Synthetic Transcripts**:
-    *   **Input**: `data/transcripts/personalities.json`, `data/coverage_requirements/coverage_requirements.py`. Optionally, specify a scenario file from `data/scenarios/` using `-s`.
-    *   **Action**: Run `python scripts/data_generation/generate_transcripts.py -n <number_of_transcripts> [-s <scenario_name>]`.
-    *   **Process**: Uses Gemini API to create synthetic conversation transcripts based on inputs.
-    *   **Output**: Structured JSON transcript files saved in `data/transcripts/raw/synthetic/`. Filenames follow the format `transcript_{scenario_name}_{timestamp}.json` (if scenario used) or `transcript_{timestamp}.json` (if no scenario). Example: `transcript_golf_coverage_20250410_220036.json`.
+3. **Generate Synthetic Transcripts**:
+   ```bash
+   # Generate 5 general transcripts
+   python scripts/data_generation/generate_transcripts.py -n 5
 
-4.  **Evaluate Raw Transcripts**:
-    *   **Input**: Raw synthetic transcripts from `data/transcripts/raw/synthetic/`.
-    *   **Action**: Run `python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/`.
-    *   **Process**: Evaluates if the raw transcripts adequately cover standard and scenario-specific requirements using Gemini API.
-    *   **Output**: Evaluation results saved in `data/evaluation/transcript_evaluations/`. (Note: The pipeline proceeds regardless of pass/fail currently).
+   # Generate 3 transcripts for a specific scenario (e.g., golf coverage)
+   python scripts/data_generation/generate_transcripts.py -n 3 -s golf_coverage
+   ```
+   Available scenarios: `golf_coverage`, `pet_care_coverage`, `public_transport_double_cover`, `uncovered_cancellation_reason`
 
-5.  **Parse Raw Transcripts (Batch)**:
-    *   **Input**: Raw synthetic transcripts (`.json`) from `data/transcripts/raw/synthetic/`.
-    *   **Action**: Run `python src/utils/transcript_processing.py`.
-    *   **Process**: Batch-processes all raw transcripts, parsing them into a standardized JSON list format.
-    *   **Output**: Parsed JSON files saved in `data/transcripts/processed/` with a `parsed_` prefix (e.g., `parsed_transcript_golf_coverage_20250410_220036.json`).
+4. **Evaluate Transcripts**:
+   ```bash
+   # Evaluate a single transcript
+   python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --transcript data/transcripts/raw/synthetic/transcript_golf_coverage_6aef8846-aed1-4a6e-8115-d5ca7d6d0abf.json
 
-6.  **Extract Requirements (Batch)**:
-    *   **Input**: Parsed transcript JSON files from `data/transcripts/processed/`.
-    *   **Action**: Run `python src/agents/extractor.py`. (Optionally specify `--input_dir` or `--output_dir`).
-    *   **Process**: Batch-processes all parsed transcripts using the Extractor Agent (CrewAI with OpenAI) to extract structured requirements.
-    *   **Output**: Structured requirements JSON files saved in `data/extracted_customer_requirements/`. Filenames follow the format `requirements_{original_name_part}.json` (e.g., `requirements_the_confused_novice_20250403_175921.json`), conforming to the `TravelInsuranceRequirement` Pydantic model.
+   # Evaluate all transcripts in a directory
+   python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/
+   ```
 
-This sequence takes you from raw data to structured policy information and customer requirements, ready for downstream analysis and comparison.
+5. **Parse Transcripts**:
+   ```bash
+   python src/utils/transcript_processing.py
+   ```
 
-## 2. Automated Scenario Evaluation Workflow (Orchestrator)
+6. **Extract Requirements**:
+   ```bash
+   python src/agents/extractor.py
+   ```
 
-For end-to-end testing and evaluation of specific scenarios, the `scripts/orchestrate_scenario_evaluation.py` script automates the entire pipeline.
+### Analysis and Recommendation
 
-1.  **Purpose**: Runs the full workflow for a specified number of transcripts per target scenario (`golf_coverage`, `pet_care_coverage`, `public_transport_double_cover`, `uncovered_cancellation_reason`). It handles transcript generation, evaluation (optional), parsing, extraction, comparison report generation, recommendation report generation, and final scenario evaluation against ground truth.
-2.  **Workflow Steps**:
-    *   Generate Transcripts (Parallel Scenarios)
-    *   Evaluate Transcripts (Parallel Transcripts, Optional)
-    *   Parse Transcripts (Sequential Batch)
-    *   Extract Requirements (Sequential Batch)
-    *   Generate Comparison & Recommendation Reports (Sequential UUIDs)
-    *   Run Final Scenario Evaluation & Aggregate Results
-3.  **Usage**:
+7. **Generate Policy Comparison Reports**:
+   ```bash
+   # Generate comparison reports for a specific customer
+   python scripts/generate_policy_comparison.py --customer_id 49eb20af-32b0-46e0-a14e-0dbe3e3c6e73
+   ```
+
+8. **Generate Final Recommendation**:
+   ```bash
+   # Generate recommendation for a specific customer
+   python scripts/generate_recommendation_report.py --customer_id 49eb20af-32b0-46e0-a14e-0dbe3e3c6e73
+
+   # Force overwrite of existing recommendation
+   python scripts/generate_recommendation_report.py --customer_id 49eb20af-32b0-46e0-a14e-0dbe3e3c6e73 --overwrite
+   ```
+
+### Evaluation Tools
+
+9. **Evaluate PDF Extraction**:
+   ```bash
+   # Evaluate all processed policy JSON files
+   python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py
+
+   # Evaluate only specific policies (using file pattern)
+   python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py --file_pattern "fwd_*.json"
+   ```
+
+10. **Evaluate Recommendations**:
     ```bash
-    # Run the full workflow, generating 5 transcripts per scenario
+    # Evaluate recommendations for a specific scenario
+    python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py --scenario golf_coverage
+
+    # Evaluate recommendations for all scenarios
+    python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py
+    ```
+
+11. **Calculate Pass Rates**:
+    ```bash
+    python scripts/calculate_scenario_pass_rates.py
+    ```
+
+### End-to-End Workflow (Orchestrator)
+
+12. **Run Complete Pipeline**:
+    The `scripts/orchestrate_scenario_evaluation.py` script automates the entire workflow from transcript generation to final evaluation for target scenarios.
+    ```bash
+    # Run the full workflow with 5 transcripts per scenario
     python scripts/orchestrate_scenario_evaluation.py -n 5
 
-    # Run the workflow, generating 10 transcripts per scenario, skipping initial transcript evaluation
-    python scripts/orchestrate_scenario_evaluation.py -n 10 --skip_transcript_eval
+    # Skip transcript evaluation for faster processing
+    python scripts/orchestrate_scenario_evaluation.py -n 5 --skip_transcript_eval
+
+    # Only run the final evaluation step on existing results
+    python scripts/orchestrate_scenario_evaluation.py --only_aggregate
     ```
-4.  **Arguments**:
-    *   `-n`, `--num_transcripts`: Number of transcripts to generate per scenario (default: 5).
-    *   `--skip_transcript_eval`: If set, skips the initial transcript evaluation step.
-5.  **Output**: Creates intermediate files in `data/` subdirectories and final reports in `results/`. Aggregated scenario evaluation results (filtered for the current run) are saved in `data/evaluation/scenario_evaluation/results_{scenario}_aggregated_{timestamp}.json`.
+    *   **Arguments**:
+        *   `-n`, `--num_transcripts`: Number of transcripts per scenario (default: 5).
+        *   `--skip_transcript_eval`: Skips initial transcript evaluation.
+        *   `--only_aggregate`: Skips generation/processing, only runs final evaluation.
+    *   **Output**: Creates intermediate files and final reports. Aggregated scenario evaluation results are saved in `data/evaluation/scenario_evaluation/`.
 
----
+## Specialized Travel Scenarios
 
-*The following sections describe the individual scripts that are called by the orchestrator or can be run manually for specific tasks.*
+The system is designed to handle specific travel situations including:
 
----
+- **Golf Trips**: Coverage for equipment, green fees, and other golf-specific needs
+- **Pet Owners**: Options for pet accommodation if your return is delayed
+- **Public Transport**: Enhanced coverage when traveling on public transportation
+- **Special Events**: Coverage for trip cancellation due to important personal events
 
-## 3. Policy Comparison Report Generation (Insurer-Level)
+These scenarios can be selected when generating test data to see how the system handles specific travel needs. Use the `-s` flag with the `generate_transcripts.py` script to specify a scenario:
 
-This step uses the structured requirements and policy data to generate detailed Markdown comparison reports **for each insurer** against a specific customer's needs. This script implements the insurer-level analysis approach, comparing all tiers of an insurer in a single LLM call.
-
-1.  **Input**: Requires structured requirements JSON from step 6 (`data/extracted_customer_requirements/`) and processed policy JSON files from step 1 (`data/policies/processed/`). Also uses tier rankings from `data/policies/pricing_tiers/tier_rankings.py`.
-2.  **Processing**: Run the `scripts/generate_policy_comparison.py` script, providing the **customer UUID** via the `--customer_id` argument.
-    ```bash
-    # Example using a specific customer UUID
-    python scripts/generate_policy_comparison.py --customer_id 49eb20af-32b0-46e0-a14e-0dbe3e3c6e73
-    ```
-    The script finds the corresponding requirements file (`requirements_*_{uuid}.json`), identifies all available insurers and their tiers from `data/policies/processed/`, and uses the Gemini API via `LLMService` to generate a report for each insurer. It processes insurers asynchronously.
-3.  **Output**: Markdown reports are saved to a subdirectory within `results/` named after the customer UUID (e.g., `results/49eb20af-32b0-46e0-a14e-0dbe3e3c6e73/`). Each report file is named `policy_comparison_report_{insurer}_{customer_uuid}.md` and contains:
-    *   The recommended tier for that insurer.
-    *   Justification for the recommendation.
-    *   A detailed requirement-by-requirement analysis of the recommended tier's coverage.
-    *   A summary of the recommended tier's strengths and weaknesses.
-
-## 3. Final Recommendation Report Generation
-
-This step takes the insurer-level comparison reports generated in the previous step and produces a single, final recommendation report for the customer. It uses a two-stage process: initial scoring/ranking followed by LLM-based re-ranking and justification.
-
-1.  **Input**: Requires the Markdown comparison reports generated by `scripts/generate_policy_comparison.py` located in the `results/{uuid}/` directory.
-2.  **Processing**: Run the `scripts/generate_recommendation_report.py` script, providing the **customer UUID** via the `--customer_id` argument.
-    ```bash
-    # Example using a specific customer UUID
-    python scripts/generate_recommendation_report.py --customer_id 49eb20af-32b0-46e0-a14e-0dbe3e3c6e73
-    ```
-    The script parses the comparison reports, performs Stage 1 scoring based on requirement matching, selects top candidates, and then uses the Gemini API via `LLMService` for Stage 2 re-ranking and justification generation.
-3.  **Output**:
-    *   A final Markdown recommendation report saved to `results/{uuid}/recommendation_report_{uuid}.md`. This report includes the final ranked list of recommended policies, detailed justifications with source references, and an explanation of the scoring.
-
-## 5. Evaluation Scripts
-
-This section describes the available scripts for evaluating the quality and accuracy of different pipeline stages.
-
-### 4.1 Transcript Evaluation
-
-- **Component**: `scripts/evaluation/transcript_evaluation/eval_transcript_main.py`
-- **Purpose**: Evaluates if raw generated transcripts contain all required coverage information (standard and scenario-specific) using the Gemini API.
-- **Input**: Raw transcript JSON files (e.g., from `data/transcripts/raw/synthetic/`). Can process a single file or a directory.
-- **Output**: Evaluation results saved in `data/evaluation/transcript_evaluations/` (by default) in specified formats (JSON, TXT, CSV summary).
-- **Usage Examples**:
-  ```bash
-  # Evaluate a single transcript
-  python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --transcript data/transcripts/raw/synthetic/transcript_golf_coverage_6aef8846-aed1-4a6e-8115-d5ca7d6d0abf.json
-
-  # Evaluate all transcripts in a directory
-  python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/
-
-  # Specify output directory and formats
-  python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/ --output-dir custom/eval_results --format json,csv
-  ```
-
-### 5.2 Scenario Recommendation Evaluation
-
-- **Component**: `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`
-- **Purpose**: Evaluates the final recommendation report against a predefined ground truth (`data/ground_truth/ground_truth.json`) for specific test scenarios. This verifies if the system recommends an appropriate policy given the scenario's constraints and expected outcomes. **It leverages semantic matching using OpenAI embeddings (via `src/embedding/embedding_utils.py`) for robust comparison against the ground truth.**
-- **Input**: Ground truth JSON (`data/ground_truth/ground_truth.json`), recommendation reports (`results/{uuid}/recommendation_report_*.md`), and optionally raw transcripts for scenario mapping. Can evaluate a specific scenario using `--scenario`.
-- **Output**: Evaluation results printed to console and optionally saved to a timestamped JSON file in `data/evaluation/scenario_evaluation/`.
-- **Rationale**: Automates checking if the pipeline produces expected outcomes for targeted scenarios. Useful for:
-    *   **Regression Detection:** Identify if changes negatively impact performance.
-    *   **Faithfulness/Correctness:** Verify adherence to expected behavior.
-    *   **Objective Comparison:** Benchmark different models/prompts/logic.
-- **Usage Examples**:
-  ```bash
-  # Evaluate recommendations for the 'golf_coverage' scenario
-  python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py --scenario golf_coverage
-
-  # Evaluate recommendations for all scenarios found in results/
-  python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py
-  ```
-
-### 5.3 PDF Extraction Evaluation
-
-- **Component**: `scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py`
-- **Purpose**: Compares the structured JSON extracted from a policy PDF (`data/policies/processed/`) against the original source PDF (`data/policies/raw/`) using a multi-modal Gemini model to assess extraction accuracy and completeness. Performs two-way verification.
-- **Input**: Processed policy JSON files (`data/policies/processed/`) and corresponding raw policy PDFs (`data/policies/raw/`). Can filter input JSON files using a glob pattern.
-- **Output**: Evaluation results saved as JSON files in `data/evaluation/pdf_extraction_evaluations/`.
-- **Usage Examples**:
-  ```bash
-  # Evaluate all processed policy JSON files
-  python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py
-
-  # Evaluate only FWD policies
-  python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py --file_pattern "fwd_*.json"
-
-  # Evaluate only GELS Gold policy
-  python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py --file_pattern "gels_{Gold}.json"
-  ```
-
-### 5.4 Generating Aggregated Evaluation Results & Pass Rates
-
-After running the full orchestration or generating recommendation reports manually, you can generate the final evaluation results and calculate pass rates using these steps:
-
-1.  **Aggregate Scenario Evaluation Results**:
-    *   This step uses the orchestrator script with the `--only_aggregate` flag to run the `evaluate_scenario_recommendations.py` script for each target scenario and save the complete results (for all found reports) to timestamped files.
-    *   **Command**:
-        ```bash
-        python scripts/orchestrate_scenario_evaluation.py --only_aggregate
-        ```
-    *   **Output**: JSON files like `results_{scenario}_all_transcripts_{timestamp}.json` in `data/evaluation/scenario_evaluation/`.
-
-2.  **Calculate Pass Rates**:
-    *   This script reads the latest aggregated evaluation result files generated in the previous step and calculates the pass rate for each scenario.
-    *   **Command**:
-        ```bash
-        python scripts/calculate_scenario_pass_rates.py
-        ```
-    *   **Output**: Prints the pass rates to the console and saves a summary Markdown file (`scenario_evaluation_results.md`) to `data/evaluation/scenario_evaluation/`.
-
-## 6. Future Enhancements
-
-The outputs from the current pipeline (Structured Policy JSON, Structured Requirements JSON, Comparison Reports, Final Recommendation) provide a solid foundation. Future work may focus on:
-- Implementing automated evaluation for comparison report quality.
-- Developing a more sophisticated integration/orchestration layer to connect the scripts into a seamless workflow.
-- Exploring the use of ML models for deeper insights based on the generated data.
-
+```bash
+# Example: Generate 3 transcripts for golf coverage scenario
+python scripts/data_generation/generate_transcripts.py -n 3 -s golf_coverage
+```
 
 ## Technical Stack
 
-- **Python**: Primary programming language
-- **Google Gemini & OpenAI**: LLMs for natural language processing (Gemini via `LLMService`, OpenAI via `crewai` for Extractor)
-- **CrewAI**: Framework for multi-agent orchestration (used by Extractor)
-- **Jupyter Notebooks**: Development environment
-- **LLM Service**: Reusable interface to Google Gemini API
+- **Python**: Primary programming language for backend logic and data processing.
+- **Google Gemini & OpenAI**: Large Language Models used for various tasks like data generation, extraction, comparison, and evaluation.
+- **CrewAI**: Framework used for the requirement extraction agent.
+- **React & Material UI**: Used for building the frontend web application.
+- **Pydantic**: Used for data validation and defining structured schemas.
+- **NLTK**: Used for text preprocessing in embedding utilities.
 
-## 7. Components
+## Future Enhancements
 
-### LLM Service
+The current system provides a robust foundation. Future work could include:
 
-The project includes a reusable LLM service that provides a unified interface to the Google Gemini API:
+- **Functional Feedback System**: Implementing the backend logic to actually collect and process user feedback submitted through the web interface.
+- **Comparison Report Evaluation**: Adding automated evaluation for the quality and accuracy of the generated policy comparison reports.
+- **Advanced Orchestration**: Developing a more sophisticated workflow management system beyond the current script-based orchestration.
+- **Machine Learning Insights**: Training ML models on the generated data (requirements, recommendations) to uncover deeper insights.
+- **Iterative Refinement**: Allowing users to update their needs within the web interface and receive refined recommendations.
 
-- **Configuration**: Environment-based configuration with support for different models and parameter sets
-- **Features**: Content generation, structured output (JSON), streaming responses, batch processing
-- **Error Handling**: Retry logic, validation, and comprehensive error management
-- **Tutorial**: Example usage in `tutorials/llm_service_tutorial.py`
-
-### Embedding Utilities (`src/embedding/embedding_utils.py`)
-
-- **Purpose**: Provides the `EmbeddingMatcher` class for comparing text semantically using OpenAI embeddings.
-- **Features**: Handles embedding generation, caching (`src/embedding/cache/`), and multiple matching strategies (semantic, keyword, fuzzy).
-- **Usage**: Primarily used by `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` to evaluate recommendations against `data/ground_truth/ground_truth.json`.
-
-## 8. Academic Project
+## Academic Project
 
 This is an academic project focused on applying AI and LLM techniques to solve real-world problems in the insurance domain.
