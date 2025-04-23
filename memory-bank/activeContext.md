@@ -306,6 +306,11 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Moved `remark-extract-headings.ts` from `src/lib/` to `src/components/`.
     - Updated import paths in `MarkdownRenderer.tsx`, `TabbedReportView.tsx`, and `TableOfContents.tsx` to use the new relative path (`./remark-extract-headings`).
     - Deleted the original file from `src/lib/`. This resolved path resolution issues encountered by `tsc -b` in the Netlify environment.
+46. **Frontend Disclaimer Page**:
+    - Created a new page component `ux-webapp/src/pages/DisclaimerPage.tsx` to display a disclaimer message about AI-generated reports.
+    - Added a route `/disclaimer/:uuid` in `ux-webapp/src/App.tsx` pointing to the new page.
+    - Modified `ux-webapp/src/pages/TransitionPage.tsx` to navigate to `/disclaimer/:uuid` after the loading phases, instead of directly to `/report/:uuid`.
+    - The `DisclaimerPage` includes "I understand" (navigates to `/report/:uuid`) and "Log out" (navigates to `/`) buttons.
 
 ## Next Steps (Revised Focus)
 

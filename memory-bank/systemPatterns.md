@@ -104,7 +104,11 @@ graph TD
     %% Frontend Connections (Simplified)
     subgraph "Frontend (ux-webapp)"
         direction TB
-        WebApp[React App (Vite)] --> ReportViewerPage[pages/ReportViewerPage.tsx]
+        WebApp[React App (Vite)] --> LandingPage[pages/LandingPage.tsx]
+        LandingPage -- Login --> TransitionPage[pages/TransitionPage.tsx]
+        TransitionPage -- Finish Loading --> DisclaimerPage[pages/DisclaimerPage.tsx]
+        DisclaimerPage -- Accept --> ReportViewerPage[pages/ReportViewerPage.tsx]
+        DisclaimerPage -- Logout --> LandingPage
         ReportViewerPage --> TabbedReportView[components/TabbedReportView.tsx]
         TabbedReportView --> MarkdownRenderer[components/MarkdownRenderer.tsx]
         TabbedReportView --> JsonPrettyViewer[components/JsonPrettyViewer.tsx]

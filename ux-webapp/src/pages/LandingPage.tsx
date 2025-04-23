@@ -118,7 +118,14 @@ const LandingPage: React.FC = () => {
         <rect x="650" y="200" width="60" height="500" rx="30" fill="#b2ebf2" />
       </svg>
       {/* New container Box to stack dropdown and card */}
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: 2 }}>
+      <Box sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        zIndex: 2,
+        width: '100%', // Add width constraint
+        maxWidth: 420   // Add maxWidth constraint (same as card)
+      }}>
         {/* Subtle dropdown for MVP/demo only - MOVED HERE (Above Card) */}
         {showDropdown && (
           <Box

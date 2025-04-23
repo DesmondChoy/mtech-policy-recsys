@@ -113,7 +113,7 @@ const TransitionPage: React.FC = () => {
     WebkitTextFillColor: 'transparent',
     animation: `${muiShimmer} 2.5s linear infinite`,
     fontWeight: 600,
-    fontSize: '1.25rem',
+    fontSize: '1.5rem', // Increased font size
     letterSpacing: 0.2,
     minHeight: 32,
   } as React.CSSProperties;
@@ -126,9 +126,9 @@ const TransitionPage: React.FC = () => {
       const timer = setTimeout(() => setPhase((prev) => prev + 1), PHASE_DURATION);
       return () => clearTimeout(timer);
     } else {
-      // After last phase, navigate to report
+      // After last phase, navigate to the disclaimer page
       const navTimeout = setTimeout(() => {
-        navigate(`/report/${uuid}`);
+        navigate(`/disclaimer/${uuid}`); // Navigate to disclaimer page
       }, PHASE_DURATION);
       return () => clearTimeout(navTimeout);
     }
@@ -139,7 +139,7 @@ const TransitionPage: React.FC = () => {
       <CircularProgress sx={{ mb: 3 }} />
       <Typography
         variant="h6"
-        sx={shimmerStyle}
+        sx={{ ...shimmerStyle, textAlign: 'center' }} // Added textAlign: 'center'
         component="span"
       >
         {message}

@@ -63,6 +63,7 @@ The project is in the **initial setup and planning phase**. We are currently est
 | **Frontend UX Enhancements**       | **100%**    | **Medium** | **Fixed report loading, dynamic dropdowns, requirements/transcript display formats, animation speeds.** |
 | **Frontend Landing Page Updates**  | **100%**    | **Medium** | **Fixed mobile dropdown visibility, updated text content, rebranded to "Aegis AI" with custom shield icon.** |
 | **Frontend TOC Implementation**    | **100%**    | **Medium** | **Implemented dynamic TOC, debugged stability, relocated mobile button, updated AppBar button text. Resolved Netlify build errors by moving plugin.** |
+| **Frontend Disclaimer Page**       | **100%**    | **Medium** | **Added disclaimer page (`DisclaimerPage.tsx`), route (`/disclaimer/:uuid`), and updated `TransitionPage` navigation.** |
 | Testing Framework                  | 20%         | Medium   | Unit tests added for recommender parser/scorer/MD report. More needed.                               |
 | ML Models                          | 0%          | Low      | Later phase.                                                                                         |
 | Documentation (Memory Bank)        | **100%**    | High     | **Updated core files for Ground Truth feature, Netlify deployment, and recent frontend changes.**    |
