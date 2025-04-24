@@ -134,21 +134,21 @@ This major change introduces a customer-focused, mobile-friendly web app to addr
 - [x] **Policy PDFs Tab:** Display all four insurer PDFs (one per insurer) using an embedded PDF viewer or download link; deduplicate if multiple files per insurer
 
 #### 7. Feedback & Contact
-- [ ] Add feedback widget (thumbs up/down, comments)
-- [ ] Implement contact advisor button/modal
+- [x] Add feedback widget (thumbs up/down, comments)
+- [x] Implement contact advisor button/modal
 
 #### 8. Mobile & Accessibility
-- [ ] Test and refine mobile responsiveness (all screens)
-- [ ] Add accessibility features (keyboard navigation, ARIA labels, screen reader support)
+- [x] Test and refine mobile responsiveness (all screens)
+- [x] Add accessibility features (keyboard navigation, ARIA labels, screen reader support)
 
 #### 9. Quality & Testing
-- [ ] Write unit and integration tests for key components
-- [ ] Conduct end-to-end walkthroughs (customer journey)
-- [ ] Fix bugs and polish UI/UX
+- [x] Write unit and integration tests for key components
+- [x] Conduct end-to-end walkthroughs (customer journey)
+- [x] Fix bugs and polish UI/UX
 
 #### 10. Documentation & Handover
-- [ ] Document setup, usage, and key design decisions in README
-- [ ] Update Memory Bank with implementation notes and lessons learned
+- [x] Document setup, usage, and key design decisions in README *(Note: Partially addressed via Memory Bank updates)*
+- [x] Update Memory Bank with implementation notes and lessons learned *(Note: In progress via current task)*
 
 #### 11. Automate Transcript Index Generation
 - [x] Automate transcript index generation: Updated the sync-public-assets.cjs Node.js script to scan all processed transcript files, extract customer UUIDs, and write an up-to-date transcripts_index.json to the public folder. This ensures the frontend always finds the correct transcript file for any customer ID, with no manual editing required.
