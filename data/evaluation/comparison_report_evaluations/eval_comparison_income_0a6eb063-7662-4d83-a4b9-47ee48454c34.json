@@ -1,0 +1,136 @@
+{
+  "filename": "policy_comparison_report_income_0a6eb063-7662-4d83-a4b9-47ee48454c34.md",
+  "recommended_tier": "Preferred",
+  "analysis": [
+    {
+      "requirement": "medical emergencies",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 7, Section 14 (Medical expenses overseas); Page 8, Section 17 (Overseas hospital allowance); Page 8, Section 18 (Emergency medical evacuation); Page 3 ('Coverage for medical expenses')",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "trip cancellation",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 5, Section 1 (Cancelling your trip); Page 3 ('Up to $15,000...'); Page 10, Note 5",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "travel delays",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 5, Section 5 (Travel delay); Page 3 ('Coverage for unexpected travel delays'); Page 10, Note 3",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "lost baggage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 6, Section 10 (Loss or damage of baggage and personal belongings)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "damaged baggage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 6, Section 10 (Loss or damage of baggage and personal belongings)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "golf (activity coverage)",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 3 ('Coverage for adventurous activities'); Page 10, Note 2",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "hiking (activity coverage)",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 3 ('Coverage for adventurous activities'); Page 10, Note 2; Page 10, Note 7",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "coverage for lost, damaged or delayed golf equipment",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 6, Section 10 (Loss or damage of baggage and personal belongings); Page 6, Section 9 (Baggage delay)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "reimbursement for unused green fees due to illness",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "No",
+      "pdf_location": "N/A",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "liability coverage for rented golf buggy damage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 9, Section 24 (Personal liability); Page 9, Section 25 (Rental vehicle excess cover)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "potential hole-in-one benefit",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "No",
+      "pdf_location": "N/A",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    }
+  ],
+  "summary_validation": [
+    {
+      "statement": "Provides the highest coverage limits among INCOME tiers for core requirements like Medical Expenses Overseas ($1M), Trip Cancellation ($15k), and Baggage Loss/Damage ($8k).",
+      "validated": true,
+      "explanation": "The PDF benefit tables on pages 5, 6, and 7 confirm the S$1,000,000 limit for Medical Expenses Overseas (Sec 14, Adult < 70), S$15,000 for Trip Cancellation (Sec 1), and S$8,000 for Baggage Loss/Damage (Sec 10) under the Preferred tier. These limits are higher than those listed for the Classic and Deluxe tiers.",
+      "pdf_location": "Page 5 (Sec 1); Page 6 (Sec 10); Page 7 (Sec 14)"
+    },
+    {
+      "statement": "Offers Unlimited Emergency Medical Evacuation for adults under 70.",
+      "validated": true,
+      "explanation": "The PDF benefit table on page 8 confirms that Emergency Medical Evacuation (Sec 18) provides 'Unlimited' coverage for 'Adult under 70 years old' under the Preferred tier.",
+      "pdf_location": "Page 8 (Sec 18)"
+    },
+    {
+      "statement": "Covers participation in recreational golf and hiking under Adventurous Activities.",
+      "validated": true,
+      "explanation": "Page 3 lists 'hiking, trekking' under 'Coverage for adventurous activities'. Page 10, Note 2 defines adventurous activities as recreational activities commonly available to the public, not excluded under general exclusions. Golf fits this general description and is not listed as an extreme sport exclusion. Page 10, Note 7 provides specific conditions for hiking/trekking coverage.",
+      "pdf_location": "Page 3 ('Coverage for adventurous activities'); Page 10 (Note 2, Note 7)"
+    },
+    {
+      "statement": "Includes COVID-19 coverage for relevant sections (subject to conditions).",
+      "validated": true,
+      "explanation": "Page 9, Section 27 explicitly states 'COVID-19 cover (for sections 1 to 25 except section 15)' applies, subject to the limits of respective sections. Page 11, Note 10 outlines eligibility conditions (vaccination/tests, policy conditions like serious sickness for Sec 1 cancellation).",
+      "pdf_location": "Page 9 (Sec 27); Page 11 (Note 10); Page 3 ('Up to $1,000,000 for treatment relating to COVID-19...')"
+    },
+    {
+      "statement": "Does not meet specific golf requirements: No coverage for unused green fees, liability for rented golf buggy damage, or hole-in-one benefit.",
+      "validated": true,
+      "explanation": "The PDF benefit tables (Pages 5-9) and descriptions do not list specific benefits for unused green fees, liability specifically for golf buggies (Personal Liability in Sec 24 typically excludes property in control, and Rental Vehicle Excess in Sec 25 applies to rental vehicles, usually cars), or hole-in-one achievements.",
+      "pdf_location": "Page 5-9 (Benefit Tables); Page 9 (Sec 24, Sec 25)"
+    },
+    {
+      "statement": "Golf Equipment Coverage: Covered only under standard baggage limits with a $500 per item sub-limit, which may be insufficient for valuable equipment.",
+      "validated": true,
+      "explanation": "Page 6, Section 10 (Loss or damage of baggage and personal belongings) shows an overall limit of S$8,000 for the Preferred tier, but includes a sub-limit of S$500 for 'other items (for each item, set or pair)'. There is no separate, higher limit specified for sports equipment like golf clubs.",
+      "pdf_location": "Page 6 (Sec 10)"
+    }
+  ],
+  "overall_assessment": {
+    "pass_fail": "PASS",
+    "explanation": "The comparison report accurately reflects the coverage details, limits (S$), and specific exclusions/inclusions for the Preferred tier as presented in the provided policy document summary. All analysed requirements and summary statements were found to be consistent with the PDF content."
+  }
+}

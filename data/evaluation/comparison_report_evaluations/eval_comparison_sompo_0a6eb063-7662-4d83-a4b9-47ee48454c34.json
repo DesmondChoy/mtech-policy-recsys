@@ -1,0 +1,136 @@
+{
+  "filename": "policy_comparison_report_sompo_0a6eb063-7662-4d83-a4b9-47ee48454c34.md",
+  "recommended_tier": "Elite",
+  "analysis": [
+    {
+      "requirement": "medical emergencies (including emergency treatment, hospital stays)",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 3, Sections 2, 4, 5, 6; Page 2, Highlights",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "trip cancellation",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 4, Section 13; Page 2, Highlight",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "travel delays",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 4, Section 19; Page 1 & 2, Highlights",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "lost luggage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 4, Section 11",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "damaged luggage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 4, Section 11",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "golf activity coverage (general participation)",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 3, Sections 1, 2; Page 1 & 2, Amateur Sports Cover Highlight",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "hiking activity coverage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 3, Sections 1, 2; Page 1 & 2, Amateur Sports Cover Highlight",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "coverage for lost, damaged or delayed golf equipment",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 6, Section 36; Page 4, Section 18",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "reimbursement for unused green fees due to illness",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 6, Section 36",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "liability coverage for rented golf buggy damage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 6, Section 36",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "potential hole-in-one benefit",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 6, Section 36",
+      "justification_supported_by_pdf": "No",
+      "validated": false
+    }
+  ],
+  "summary_validation": [
+    {
+      "statement": "Provides comprehensive coverage for all core requirements (Medical, Cancellation, Delay, Baggage) with high limits.",
+      "validated": true,
+      "explanation": "The PDF confirms high limits for Elite: Medical Expenses Overseas SGD 1,000,000 (Page 3, Sec 2), Trip Cancellation SGD 15,000 (Page 4, Sec 13), Travel Delay max SGD 2,000 (Page 4, Sec 19), Baggage Loss/Damage SGD 8,000 (Page 4, Sec 11).",
+      "pdf_location": "Page 3, Sec 2; Page 4, Sec 11, 13, 19"
+    },
+    {
+      "statement": "Includes Amateur Sports Cover, explicitly covering hiking up to 3,500m and general golf participation.",
+      "validated": true,
+      "explanation": "The PDF highlights 'Amateur Sports Cover' on Page 1 & 2, explicitly mentioning 'trekking up to 3,500m'. While golf isn't explicitly listed in the highlight, it's typically considered an amateur sport, and the PDF doesn't exclude it under this cover.",
+      "pdf_location": "Page 1 & 2, Amateur Sports Cover Highlight"
+    },
+    {
+      "statement": "Uniquely among the suitable tiers, it offers a dedicated 'Golf Cover' section that addresses *all* the customer's specific golf-related requests: equipment loss/damage ($1000), unused green fees ($250), buggy damage liability ($500), and a hole-in-one benefit ($500).",
+      "validated": true,
+      "explanation": "Page 6, Section 36 confirms the Elite tier includes 'Golf Cover' with benefits for Loss/damage of golf equipment (SGD 1,000), Hole-in-one (SGD 500), Unused green fees (SGD 250), and Damage of buggy (SGD 500). The table shows these specific benefits are 'N.A.' or lower for the Deluxe tier.",
+      "pdf_location": "Page 6, Section 36"
+    },
+    {
+      "statement": "Offers Unlimited Emergency Medical Evacuation for travellers under 70.",
+      "validated": true,
+      "explanation": "Page 3, Section 4 confirms 'Unlimited' coverage for 'Emergency Medical Evacuation & Repatriation' for 'Per Insured Person up to 70 years' under the Elite tier.",
+      "pdf_location": "Page 3, Section 4"
+    },
+    {
+      "statement": "Potential Hole-in-one Benefit: The $500 benefit is only payable if the hole-in-one is achieved during a competition, which may not align with the customer's plans for casual play.",
+      "validated": false,
+      "explanation": "The PDF summary table on Page 6, Section 36 lists the 'Hole-in-one' benefit limit as SGD 500 for the Elite tier but does not mention the condition that it must be achieved 'during a competition'. This condition is not substantiated by the provided PDF brochure.",
+      "pdf_location": "Page 6, Section 36"
+    },
+    {
+      "statement": "Golf Equipment Coverage: While coverage is provided, the $1000 limit for loss/damage might be insufficient if the customer's golf clubs are particularly high-value.",
+      "validated": true,
+      "explanation": "Page 6, Section 36 confirms the 'Loss or damage of golf equipment' limit is SGD 1,000 for the Elite tier. The statement that this *might* be insufficient is a reasonable assessment, and the limit itself is factually correct based on the PDF.",
+      "pdf_location": "Page 6, Section 36"
+    }
+  ],
+  "overall_assessment": {
+    "pass_fail": "FAIL",
+    "explanation": "The report accurately reflects most benefits and limits for the Elite tier based on the PDF brochure. However, it fails validation because the justification for the 'Partially Met' assessment of the Hole-in-One benefit and the corresponding weakness statement in the summary (claiming it requires a competition) are not supported by the provided PDF summary."
+  }
+}

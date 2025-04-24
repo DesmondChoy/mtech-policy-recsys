@@ -60,10 +60,13 @@ graph TD
         ExtractPolicyScript --> EvalPdfExtraction[scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py]
         RawPolicies --> EvalPdfExtraction
         EvalPdfExtraction --> EvalPdfResults[data/evaluation/pdf_extraction_evaluations/*.json]
+        ComparisonScript --> EvalComparisonReport[scripts/evaluation/comparison_report_evaluation/eval_comparison_report.py] # Added
+        RawPolicies --> EvalComparisonReport # Added Input
+        ExtractedReqs --> EvalComparisonReport # Added Input
+        EvalComparisonReport --> EvalComparisonResults[data/evaluation/comparison_report_evaluations/*.json] # Added Output
         OrchFinalEval --> ScenarioEvalScript[scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py]
         ScenarioEvalScript --> ScenarioEvalResults[data/evaluation/scenario_evaluation/results_*.json]
         OrchFinalEval --> FinalEvalOutput[data/evaluation/scenario_evaluation/results_*_all_transcripts_*.json] # Updated Output
-        ComparisonScript --> PlannedComparisonEval{Planned: Comparison Report Evaluation}
     end
 
     subgraph "Ground Truth & Embeddings"
@@ -362,7 +365,8 @@ sequenceDiagram
     participant ExtractP as Policy Extraction Script (LLMService)
     participant EvalPDF as PDF Extraction Eval Script (LLMService)
     participant CompareP as Policy Comparison Script (LLMService)
-    participant RecommendR as Recommendation Report Script (LLMService) # Added
+    participant EvalCompare as Comparison Report Eval Script (LLMService) # Added
+    participant RecommendR as Recommendation Report Script (LLMService)
     participant LLM_Gemini as LLM Service (Gemini)
     participant LLM_OpenAI as OpenAI API
     participant LLM_OpenAI_Embed as OpenAI Embedding API
@@ -409,6 +413,11 @@ sequenceDiagram
     Note right of CompareP: Saves report to results/{uuid}/policy_comparison_report_*.md
     CompareP->>UserDev: Provide Comparison Report (Implicitly, via file system)
 
+    %% Comparison Report Evaluation Path (Requires Report, PDF, Requirements)
+    EvalCompare->>LLM_Gemini: Evaluate Comparison Report vs PDF (Multi-modal)
+    LLM_Gemini-->>EvalCompare: Evaluation Result JSON
+    Note right of EvalCompare: Saves result to data/evaluation/comparison_report_evaluations/
+
     %% Recommendation Path (Requires Comparison Reports & Processed Transcript)
     RecommendR->>RecommendR: Parse Reports & Stage 1 Score/Rank
     Note right of RecommendR: Reads reports from results/{uuid}/
@@ -421,7 +430,7 @@ sequenceDiagram
 
     %% Planned Evaluations
     Note over EvalPDF: PDF Extraction Evaluation Implemented
-    Note over CompareP: Planned: Comparison Report Evaluation
+    Note over EvalCompare: Comparison Report Evaluation Implemented
 
     %% Scenario Evaluation Path (Requires Recommendation Report & Ground Truth)
     participant ScenarioEval as Scenario Eval Script (evaluate_scenario_recommendations.py)

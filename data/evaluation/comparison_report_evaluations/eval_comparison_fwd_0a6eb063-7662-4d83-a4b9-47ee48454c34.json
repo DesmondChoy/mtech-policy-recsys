@@ -1,0 +1,154 @@
+{
+  "filename": "policy_comparison_report_fwd_0a6eb063-7662-4d83-a4b9-47ee48454c34.md",
+  "recommended_tier": "First",
+  "analysis": [
+    {
+      "requirement": "Medical Emergencies (Emergency Treatment, Hospital Stays)",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 7 (Medical expenses incurred overseas, Daily hospital cash while overseas), Page 8 (Medical expenses incurred in Singapore, Daily hospital cash while in Singapore, Chinese medicine practitioner..., Emergency phone charges), Page 9 (Optional Covers - Pre-existing medical conditions), Page 17 (Emergency medical evacuation & repatriation), Pages 19-21 (Detailed sections), Pages 22, 24, 26 (Pre-existing medical conditions details)",
+      "justification_supported_by_pdf": "Purchase of add-on required",
+      "validated": true
+    },
+    {
+      "requirement": "Trip Cancellation",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 5 (Trip cancellation and loss of deposit), Page 9 (Optional Covers - Pre-existing medical conditions, Cancel for any reason), Pages 10-11 (Detailed section), Page 22 (Pre-existing medical conditions details), Page 27 (Cancel for any reason details)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Travel Delays",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 5 (Travel delay), Page 12 (Travel delay definition), Page 13 (Travel delay details)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Lost Luggage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 6 (Theft of or damage to baggage or personal belongings, Baggage delay), Pages 14-15 (Detailed sections)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Damaged Luggage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 6 (Theft of or damage to baggage or personal belongings), Pages 14-15 (Detailed section)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Coverage for Golf Activity Participation",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 7 (Personal accident, Medical expenses incurred overseas), Page 17 (Emergency medical evacuation & repatriation), Page 18 (Personal accident details), Page 19 (Medical expenses incurred overseas details), Page 31 (General Exclusions - Professional sporting activities)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Coverage for Hiking Activity Participation",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 7 (Personal accident, Medical expenses incurred overseas), Page 17 (Emergency medical evacuation & repatriation), Page 18 (Personal accident details), Page 19 (Medical expenses incurred overseas details), Page 32 (General Exclusions - High altitude hiking or trekking > 3000m)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Coverage for lost, damaged or delayed golf equipment",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 9 (Optional Covers - Sports equipment protector), Pages 28-29 (Sports equipment protector details)",
+      "justification_supported_by_pdf": "Purchase of add-on required",
+      "validated": true
+    },
+    {
+      "requirement": "Reimbursement for unused green fees due to illness",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "No",
+      "pdf_location": "N/A",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Liability coverage for rented golf buggy damage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 6 (Car rental excess), Page 7 (Personal liability while on your trip), Page 9 (Optional Covers - Car rental excess), Page 17 (Personal liability details & exclusions), Page 28 (Car rental excess details)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Potential hole-in-one benefit",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "No",
+      "pdf_location": "N/A",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    }
+  ],
+  "summary_validation": [
+    {
+      "statement": "Provides the highest limits among FWD tiers for core coverages: Medical (SGD 1M), Trip Cancellation (SGD 15k), Baggage (SGD 7.5k), Personal Liability (SGD 1M).",
+      "validated": true,
+      "explanation": "The PDF confirms these limits for the 'First' tier: Medical Expenses Overseas S$1,000,000 (Page 7), Trip Cancellation S$15,000 (Page 5), Theft/Damage Baggage S$7,500 (Page 6), Personal Liability S$1,000,000 (Page 7). These are the highest limits shown in the tables compared to Premium and Business tiers.",
+      "pdf_location": "Pages 5, 6, 7 (Quick summary of your benefits tables)"
+    },
+    {
+      "statement": "Includes Unlimited Emergency Medical Evacuation.",
+      "validated": true,
+      "explanation": "The PDF confirms 'Unlimited' coverage for 'Emergency medical evacuation & repatriation' under the 'First' tier.",
+      "pdf_location": "Page 7 (Quick summary of your benefits table), Page 17 (Emergency medical evacuation & repatriation section)"
+    },
+    {
+      "statement": "Covers core requirements (Medical, Cancellation, Delay, Baggage) comprehensively.",
+      "validated": true,
+      "explanation": "The PDF details coverage for Medical Expenses (Pages 7, 19-21), Trip Cancellation (Pages 5, 10-11), Travel Delay (Pages 5, 12-13), and Baggage Delay/Theft/Damage (Pages 6, 14-15) under the First tier, with the highest limits offered by FWD.",
+      "pdf_location": "Pages 5-7, 10-15, 19-21"
+    },
+    {
+      "statement": "Covers participation in recreational golf and hiking.",
+      "validated": true,
+      "explanation": "The policy covers medical expenses (Page 19) and personal accident (Page 18) for injuries sustained during the trip. General exclusions (Page 31) exclude professional sports but not recreational participation. High altitude hiking (above 3000m) is excluded (Page 32), but standard recreational hiking is implicitly covered.",
+      "pdf_location": "Pages 18, 19, 31, 32"
+    },
+    {
+      "statement": "Includes Car Rental Excess cover (SGD 1k limit).",
+      "validated": true,
+      "explanation": "The PDF confirms 'Car rental excess' cover is 'Included in base cover' for the First tier with a limit of S$1,000.",
+      "pdf_location": "Page 6 (Quick summary of your benefits table), Page 9 (Optional Covers table note), Page 28 (Car rental excess section)"
+    },
+    {
+      "statement": "Does not cover reimbursement for unused green fees.",
+      "validated": true,
+      "explanation": "The PDF does not mention any specific benefit covering unused green fees due to illness or other reasons. Trip cancellation/cut short covers pre-paid travel/accommodation/tours (Page 11), but green fees are not explicitly listed.",
+      "pdf_location": "N/A (Benefit not found)"
+    },
+    {
+      "statement": "Does not cover liability for damage to a rented golf buggy.",
+      "validated": true,
+      "explanation": "Personal Liability (Page 17) explicitly excludes liability arising from the use of 'motorised vehicles'. Car Rental Excess (Page 28) applies to rental cars from licensed operators for road use and does not mention golf buggies.",
+      "pdf_location": "Page 17 (Personal liability while on your trip - What is not covered), Page 28 (Car rental excess)"
+    },
+    {
+      "statement": "Does not offer a hole-in-one benefit.",
+      "validated": true,
+      "explanation": "The PDF does not mention any specific benefit related to achieving a hole-in-one during golf.",
+      "pdf_location": "N/A (Benefit not found)"
+    },
+    {
+      "statement": "Requires purchase of an optional 'Sports equipment protector' add-on for golf equipment coverage, which has a SGD 2,000 limit and excludes damage occurring during play.",
+      "validated": true,
+      "explanation": "The PDF confirms 'Sports equipment protector' is an optional cover (Page 9) with a S$2,000 limit for the First tier. Page 28 defines covered equipment including golf clubs. Page 29 explicitly excludes 'damage that happens while your sports equipment is in use, whether for practice or play'.",
+      "pdf_location": "Page 9 (Optional Covers), Pages 28-29 (Sports equipment protector details)"
+    }
+  ],
+  "overall_assessment": {
+    "pass_fail": "PASS",
+    "explanation": "The comparison report section accurately reflects the coverage, limits, conditions, and exclusions for the FWD 'First' tier as detailed in the provided policy document. All analysed requirements and summary statements were found to be factually supported by the PDF, including the identification of required optional add-ons and specific exclusions relevant to the customer's needs."
+  }
+}
