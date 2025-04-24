@@ -53,7 +53,7 @@ The project is in the **initial setup and planning phase**. We are currently est
 | Policy Extraction Script           | 100%        | High     | `scripts/extract_policy_tier.py` - Extracts structured policy data. Uses Gemini.                     |
 | Policy Comparison Script           | 100%        | High     | `scripts/generate_policy_comparison.py` - Generates insurer-level reports. Uses Gemini.              |
 | **PDF Extraction Evaluation**      | **100%**    | **High** | **Script implemented (`eval_pdf_extraction.py`) with `--file_pattern` enhancement. Testing/Refinement pending.** |
-| **Policy Comparison Evaluation**   | **100%**    | **High** | **Script implemented (`eval_comparison_report.py`), debugged, and tested successfully. Refinement pending.** |
+| **Policy Comparison Evaluation**   | **100%**    | **High** | **Script implemented (`eval_comparison_report.py`), debugged, output structure updated (`/{uuid}/`), and tested successfully with `--overwrite`. Refinement pending.** |
 | **Recommender Logic Script**       | **100%**    | **High** | **`scripts/generate_recommendation_report.py` implemented (parser, score, re-rank with transcript context, MD report, efficient overwrite check, improved logging).** |
 | **Ground Truth Data**              | **100%**    | **High** | **`data/ground_truth/ground_truth.json` created and refined.**                                       |
 | **Embedding Utilities**            | **100%**    | **High** | **`src/embedding/embedding_utils.py` implemented with `EmbeddingMatcher`.**                          |
@@ -98,4 +98,4 @@ The project is in the **initial setup and planning phase**. We are currently est
 11. **Frontend Landing Page Updates**: Completed fixes for mobile dropdown visibility, updated text content (tagline, helper text, captions), and rebranded to "Aegis AI" using a custom shield image.
 12. **Frontend Feedback UI Implementation**: Added Feedback tab, thumbs up/down buttons (centered), styled predefined feedback buttons (chip-style, blue, left-aligned), text area, and send button with snackbar confirmation.
 13. **Frontend Tab Scrolling Fix**: Resolved tab label cutoff issue by making tabs always scrollable.
-14. **Comparison Report Evaluation Debugging**: Fixed multiple issues (`TypeError`, `429 RESOURCE_EXHAUSTED`, PDF input format) in `scripts/evaluation/comparison_report_evaluation/eval_comparison_report.py` and related config (`src/models/gemini_config.py`), enabling successful execution.
+14. **Comparison Report Evaluation Debugging & Refinement**: Fixed multiple issues (`TypeError`, `429 RESOURCE_EXHAUSTED`, PDF input format) in `scripts/evaluation/comparison_report_evaluation/eval_comparison_report.py` and related config (`src/models/gemini_config.py`). Modified script to save output to `data/evaluation/comparison_report_evaluations/{uuid}/`. Successfully tested with `--overwrite` flag.

@@ -1,0 +1,102 @@
+{
+  "filename": "policy_comparison_report_fwd_1cd04b1c-3dbd-458b-857e-ae193381ab81.md",
+  "recommended_tier": "Business",
+  "analysis": [
+    {
+      "requirement": "Medical Coverage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 7 (Medical expenses incurred overseas, Daily hospital cash while overseas), Page 8 (Emergency phone charges, Chinese medicine practitioner..., Medical expenses incurred in Singapore, Daily hospital cash while in Singapore), Page 17 (Emergency medical evacuation & repatriation), Pages 19-21 (Details on Medical/Hospital/Phone/Chinese Med), Page 9 & 24 (Optional Pre-existing medical conditions limits), Page 26 (Exclusions for Pre-existing medical conditions)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Trip Cancellation",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 5 (Trip cancellation and loss of deposit limits), Pages 10-11 (Details and conditions), Page 9 & 22 (Optional Pre-existing medical conditions), Page 9 & 27 (Optional Cancel for any reason)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Travel Delays",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 5 (Travel delay limits), Pages 12-13 (Details and conditions)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Lost/Damaged Luggage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 6 (Baggage delay limits, Theft of or damage to baggage limits), Page 14 (Baggage delay details), Pages 14-15 (Theft/Damage details and conditions), Page 36 (How property claims are paid)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Golf Equipment Coverage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 9 (Optional Sports equipment protector limits), Page 15 (Exclusion from base baggage cover), Pages 28-29 (Optional Sports equipment protector details, definition, exclusions)",
+      "justification_supported_by_pdf": "Purchase of add-on required",
+      "validated": true
+    },
+    {
+      "requirement": "Hole-in-One achievement benefit",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "No",
+      "pdf_location": "N/A",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    }
+  ],
+  "summary_validation": [
+    {
+      "statement": "Provides comprehensive coverage limits for core requirements like Medical (S$500k Overseas, Unlimited Evacuation), Trip Cancellation (S$10k), and Luggage (S$5k).",
+      "validated": true,
+      "explanation": "The PDF confirms these limits for the Business tier in the 'Quick summary of your benefits' tables. Medical Overseas S$500,000 (Adult <70) and Unlimited Evacuation are on Page 7. Trip Cancellation S$10,000 is on Page 5. Theft/Damage to Baggage S$5,000 is on Page 6. All amounts are in SGD.",
+      "pdf_location": "Page 5, 6, 7"
+    },
+    {
+      "statement": "Covers all specified types of requirements including Medical needs, Cancellation, Delays, and Luggage.",
+      "validated": true,
+      "explanation": "The PDF details coverage sections for Medical Expenses (Overseas and Singapore), Emergency Evacuation, Hospital Cash (Pages 7-8, 17, 19-21), Trip Cancellation (Pages 5, 10-11), Travel Delays (Pages 5, 12-13), and Baggage/Personal Belongings (Theft/Damage/Delay) (Pages 6, 14-15).",
+      "pdf_location": "Pages 5-8, 10-15, 17, 19-21"
+    },
+    {
+      "statement": "Offers the option to add specific Golf Equipment coverage via the 'Sports equipment protector' add-on.",
+      "validated": true,
+      "explanation": "The PDF lists 'Sports equipment protector' as an Optional Cover on Page 9 with a S$2,000 limit for Business. Pages 28-29 detail this cover, explicitly including 'golf clubs' under the definition of sports equipment.",
+      "pdf_location": "Page 9, 28-29"
+    },
+    {
+      "statement": "Represents a good balance between robust coverage levels and price compared to the Premium and First tiers.",
+      "validated": true,
+      "explanation": "The benefit summary tables (Pages 5-9) show Business tier limits (e.g., S$500k Medical Overseas, S$10k Trip Cancellation, S$5k Luggage) are substantially higher than Premium (S$200k, S$7.5k, S$3k respectively) and lower than First (S$1M, S$15k, S$7.5k respectively), supporting the claim of balanced, robust coverage relative to other tiers.",
+      "pdf_location": "Pages 5-9"
+    },
+    {
+      "statement": "Golf Equipment Coverage requires purchasing an optional add-on.",
+      "validated": true,
+      "explanation": "Page 15, under 'What is not covered' for Theft/Damage to Baggage, lists 'Sports equipment'. The specific cover is found under 'Optional covers' (Page 9) and detailed in the 'Sports equipment protector' section (Pages 28-29).",
+      "pdf_location": "Page 9, 15, 28-29"
+    },
+    {
+      "statement": "The S$2,000 limit on the optional Golf Equipment cover may not be sufficient for very expensive equipment, and damage during play is excluded.",
+      "validated": true,
+      "explanation": "The PDF confirms the S$2,000 limit for the 'Sports equipment protector' add-on for the Business tier on Page 9. Page 29 explicitly states under 'What is not covered': 'We do not cover any damage that happens while your sports equipment is in use, whether for practice or play.'",
+      "pdf_location": "Page 9, 29"
+    },
+    {
+      "statement": "The requested Hole-in-One achievement benefit is not covered by this tier or its available add-ons.",
+      "validated": true,
+      "explanation": "The policy wording PDF does not contain any mention of a benefit related to Hole-in-One achievements, neither in the base policy sections nor in the optional covers like 'Sports equipment protector'.",
+      "pdf_location": "N/A"
+    }
+  ],
+  "overall_assessment": {
+    "pass_fail": "PASS",
+    "explanation": "The comparison report section for FWD Business tier accurately reflects the coverage details, limits, conditions, and exclusions outlined in the provided policy wording PDF. All analysed requirements and summary statements were found to be factually supported by the document."
+  }
+}

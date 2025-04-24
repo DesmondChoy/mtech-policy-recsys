@@ -217,7 +217,9 @@ def evaluate_single_insurer(
     logging.info(f"--- Evaluating Insurer: {insurer} for UUID: {uuid} ---")
 
     report_path = RESULTS_DIR / uuid / f"policy_comparison_report_{insurer}_{uuid}.md"
-    output_path = OUTPUT_DIR / f"eval_comparison_{insurer}_{uuid}.json"
+    # Construct output path with UUID as a subdirectory
+    output_dir_for_uuid = OUTPUT_DIR / uuid
+    output_path = output_dir_for_uuid / f"eval_comparison_{insurer}.json"
 
     # Check if output exists and handle overwrite
     if output_path.exists() and not overwrite:

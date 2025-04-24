@@ -44,7 +44,7 @@ Implement a dedicated evaluation script (`scripts/evaluation/comparison_report_e
     *   [X] Define Pydantic models that precisely match the expected JSON output structure defined in the prompt. *(Done)*
 *   [X] **Task 9: Implement Output Handling & Validation**
     *   [X] Validate the LLM's JSON response against the Pydantic models. *(Done)*
-    *   [X] Add logic to save the validated JSON output to `data/evaluation/comparison_report_evaluations/eval_comparison_{insurer}_{uuid}.json`. *(Done)*
+    *   [X] **Modify logic to save the validated JSON output to `data/evaluation/comparison_report_evaluations/{uuid}/eval_comparison_{insurer}.json`, creating the `{uuid}` directory if needed.** *(Done)*
     *   [X] Implement `--overwrite` flag logic. *(Done)*
 *   [X] **Task 10: Add Basic Logging & Error Handling**
     *   [X] Include logging for key steps and potential errors. *(Done)*
@@ -71,5 +71,5 @@ Implement a dedicated evaluation script (`scripts/evaluation/comparison_report_e
 *   **Resolved Issue 5:** Script produced warnings: `Unsupported content type in 'contents' list: <class 'pathlib.WindowsPath'>`.
     *   **Diagnosis:** The script was passing the `pathlib.Path` object for the PDF directly to `LLMService` instead of the expected dictionary format with file bytes.
     *   **Solution:** Modified `eval_comparison_report.py` to read the PDF bytes and pass `{"mime_type": "application/pdf", "data": pdf_bytes}` to the `LLMService`. *(Implemented)*
-*   **Current Status:** The script now runs successfully without errors or warnings when executed with `python scripts/evaluation/comparison_report_evaluation/eval_comparison_report.py --uuid 0a6eb063-7662-4d83-a4b9-47ee48454c34`. The evaluations were skipped in the last run because output files existed.
-*   **Next Step:** Perform a full test run using the `--overwrite` flag to ensure the LLM calls and evaluations complete successfully. Update Memory Bank (`progress.md`, `activeContext.md`) after successful testing.
+*   **Current Status:** The script runs successfully. Output structure modified to save results under `data/evaluation/comparison_report_evaluations/{uuid}/`. Full test run with `--overwrite` completed successfully for test UUIDs.
+*   **Next Step:** Review evaluation results for quality. Consider Task 13 (Integration with Orchestrator) as a future enhancement. Update Memory Bank (`progress.md`, `activeContext.md`).

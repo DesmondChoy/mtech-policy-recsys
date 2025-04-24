@@ -6,7 +6,7 @@
       "requirement": "medical emergencies (including emergency treatment, hospital stays)",
       "report_has_analysis": "Yes",
       "found_in_pdf": "Yes",
-      "pdf_location": "Page 3, Sections 2, 4, 5, 6; Page 2, Highlights",
+      "pdf_location": "Page 3, Section 2 (Medical Expenses Incurred Overseas), Section 4 (Emergency Medical Evacuation & Repatriation), Section 5 (Overseas Hospitalisation Allowance), Section 6 (Double Hospitalisation Allowance Whilst Overseas in ICU)",
       "justification_supported_by_pdf": "Yes",
       "validated": true
     },
@@ -14,7 +14,7 @@
       "requirement": "trip cancellation",
       "report_has_analysis": "Yes",
       "found_in_pdf": "Yes",
-      "pdf_location": "Page 4, Section 13; Page 2, Highlight",
+      "pdf_location": "Page 4, Section 13 (Trip Cancellation or Postponement)",
       "justification_supported_by_pdf": "Yes",
       "validated": true
     },
@@ -22,7 +22,7 @@
       "requirement": "travel delays",
       "report_has_analysis": "Yes",
       "found_in_pdf": "Yes",
-      "pdf_location": "Page 4, Section 19; Page 1 & 2, Highlights",
+      "pdf_location": "Page 4, Section 19 (Travel Delay)",
       "justification_supported_by_pdf": "Yes",
       "validated": true
     },
@@ -30,7 +30,7 @@
       "requirement": "lost luggage",
       "report_has_analysis": "Yes",
       "found_in_pdf": "Yes",
-      "pdf_location": "Page 4, Section 11",
+      "pdf_location": "Page 4, Section 11 (Loss or Damage to Baggage & Personal Effects)",
       "justification_supported_by_pdf": "Yes",
       "validated": true
     },
@@ -38,7 +38,7 @@
       "requirement": "damaged luggage",
       "report_has_analysis": "Yes",
       "found_in_pdf": "Yes",
-      "pdf_location": "Page 4, Section 11",
+      "pdf_location": "Page 4, Section 11 (Loss or Damage to Baggage & Personal Effects)",
       "justification_supported_by_pdf": "Yes",
       "validated": true
     },
@@ -46,7 +46,7 @@
       "requirement": "golf activity coverage (general participation)",
       "report_has_analysis": "Yes",
       "found_in_pdf": "Yes",
-      "pdf_location": "Page 3, Sections 1, 2; Page 1 & 2, Amateur Sports Cover Highlight",
+      "pdf_location": "Page 1 & 2 (Amateur Sports Cover Highlight), Page 3, Section 1 (Personal Accident), Section 2 (Medical Expenses Incurred Overseas)",
       "justification_supported_by_pdf": "Yes",
       "validated": true
     },
@@ -54,7 +54,7 @@
       "requirement": "hiking activity coverage",
       "report_has_analysis": "Yes",
       "found_in_pdf": "Yes",
-      "pdf_location": "Page 3, Sections 1, 2; Page 1 & 2, Amateur Sports Cover Highlight",
+      "pdf_location": "Page 1 & 2 (Amateur Sports Cover Highlight), Page 3, Section 1 (Personal Accident), Section 2 (Medical Expenses Incurred Overseas)",
       "justification_supported_by_pdf": "Yes",
       "validated": true
     },
@@ -62,7 +62,7 @@
       "requirement": "coverage for lost, damaged or delayed golf equipment",
       "report_has_analysis": "Yes",
       "found_in_pdf": "Yes",
-      "pdf_location": "Page 6, Section 36; Page 4, Section 18",
+      "pdf_location": "Page 6, Section 36 (Golf Cover - Loss or damage of golf equipment), Page 4, Section 18 (Baggage Delay)",
       "justification_supported_by_pdf": "Yes",
       "validated": true
     },
@@ -70,7 +70,7 @@
       "requirement": "reimbursement for unused green fees due to illness",
       "report_has_analysis": "Yes",
       "found_in_pdf": "Yes",
-      "pdf_location": "Page 6, Section 36",
+      "pdf_location": "Page 6, Section 36 (Golf Cover - Unused green fees)",
       "justification_supported_by_pdf": "Yes",
       "validated": true
     },
@@ -78,7 +78,7 @@
       "requirement": "liability coverage for rented golf buggy damage",
       "report_has_analysis": "Yes",
       "found_in_pdf": "Yes",
-      "pdf_location": "Page 6, Section 36",
+      "pdf_location": "Page 6, Section 36 (Golf Cover - Damage of buggy)",
       "justification_supported_by_pdf": "Yes",
       "validated": true
     },
@@ -86,7 +86,7 @@
       "requirement": "potential hole-in-one benefit",
       "report_has_analysis": "Yes",
       "found_in_pdf": "Yes",
-      "pdf_location": "Page 6, Section 36",
+      "pdf_location": "Page 6, Section 36 (Golf Cover - Hole-in-one)",
       "justification_supported_by_pdf": "No",
       "validated": false
     }
@@ -95,19 +95,19 @@
     {
       "statement": "Provides comprehensive coverage for all core requirements (Medical, Cancellation, Delay, Baggage) with high limits.",
       "validated": true,
-      "explanation": "The PDF confirms high limits for Elite: Medical Expenses Overseas SGD 1,000,000 (Page 3, Sec 2), Trip Cancellation SGD 15,000 (Page 4, Sec 13), Travel Delay max SGD 2,000 (Page 4, Sec 19), Baggage Loss/Damage SGD 8,000 (Page 4, Sec 11).",
-      "pdf_location": "Page 3, Sec 2; Page 4, Sec 11, 13, 19"
+      "explanation": "The PDF confirms high limits for Elite: Medical Expenses Overseas (Sec 2, $1,000,000), Trip Cancellation (Sec 13, $15,000), Travel Delay (Sec 19, $2,000 max), Baggage Loss/Damage (Sec 11, $8,000).",
+      "pdf_location": "Page 3, Section 2; Page 4, Sections 11, 13, 19"
     },
     {
       "statement": "Includes Amateur Sports Cover, explicitly covering hiking up to 3,500m and general golf participation.",
       "validated": true,
-      "explanation": "The PDF highlights 'Amateur Sports Cover' on Page 1 & 2, explicitly mentioning 'trekking up to 3,500m'. While golf isn't explicitly listed in the highlight, it's typically considered an amateur sport, and the PDF doesn't exclude it under this cover.",
-      "pdf_location": "Page 1 & 2, Amateur Sports Cover Highlight"
+      "explanation": "The PDF highlights 'Amateur Sports Cover' on pages 1 & 2, explicitly mentioning 'trekking up to 3,500m'. While golf isn't explicitly listed in the highlight, its inclusion under general amateur sports is a reasonable interpretation for standard travel insurance.",
+      "pdf_location": "Page 1 & 2 (Amateur Sports Cover Highlight)"
     },
     {
       "statement": "Uniquely among the suitable tiers, it offers a dedicated 'Golf Cover' section that addresses *all* the customer's specific golf-related requests: equipment loss/damage ($1000), unused green fees ($250), buggy damage liability ($500), and a hole-in-one benefit ($500).",
       "validated": true,
-      "explanation": "Page 6, Section 36 confirms the Elite tier includes 'Golf Cover' with benefits for Loss/damage of golf equipment (SGD 1,000), Hole-in-one (SGD 500), Unused green fees (SGD 250), and Damage of buggy (SGD 500). The table shows these specific benefits are 'N.A.' or lower for the Deluxe tier.",
+      "explanation": "Page 6, Section 36 confirms the 'Golf Cover' section for Elite with the specified benefits and limits (SGD $1000, $250, $500, $500 respectively). The Deluxe tier only covers equipment loss/damage ($500) and marks the others as N.A., supporting the 'uniquely' claim among relevant tiers.",
       "pdf_location": "Page 6, Section 36"
     },
     {
@@ -119,18 +119,18 @@
     {
       "statement": "Potential Hole-in-one Benefit: The $500 benefit is only payable if the hole-in-one is achieved during a competition, which may not align with the customer's plans for casual play.",
       "validated": false,
-      "explanation": "The PDF summary table on Page 6, Section 36 lists the 'Hole-in-one' benefit limit as SGD 500 for the Elite tier but does not mention the condition that it must be achieved 'during a competition'. This condition is not substantiated by the provided PDF brochure.",
+      "explanation": "The PDF summary table on Page 6, Section 36 confirms the SGD $500 Hole-in-one benefit for Elite but does *not* state the condition 'during a competition' in the table itself. While the report claims this condition exists in source details (potentially the full policy wording), it is not verifiable from the provided PDF summary table.",
       "pdf_location": "Page 6, Section 36"
     },
     {
       "statement": "Golf Equipment Coverage: While coverage is provided, the $1000 limit for loss/damage might be insufficient if the customer's golf clubs are particularly high-value.",
       "validated": true,
-      "explanation": "Page 6, Section 36 confirms the 'Loss or damage of golf equipment' limit is SGD 1,000 for the Elite tier. The statement that this *might* be insufficient is a reasonable assessment, and the limit itself is factually correct based on the PDF.",
+      "explanation": "Page 6, Section 36 confirms the SGD $1,000 limit for 'Loss or damage of golf equipment' under Elite. The statement that this 'might be insufficient' is a reasonable subjective assessment based on the confirmed factual limit.",
       "pdf_location": "Page 6, Section 36"
     }
   ],
   "overall_assessment": {
     "pass_fail": "FAIL",
-    "explanation": "The report accurately reflects most benefits and limits for the Elite tier based on the PDF brochure. However, it fails validation because the justification for the 'Partially Met' assessment of the Hole-in-One benefit and the corresponding weakness statement in the summary (claiming it requires a competition) are not supported by the provided PDF summary."
+    "explanation": "The report accurately reflects most coverage details and limits for the Elite tier based on the PDF summary. However, the justification for the 'Partially Met' assessment of the Hole-in-One benefit relies on a condition ('during a competition') that is not explicitly stated in the provided PDF summary table, leading to a validation failure for that requirement and the corresponding summary point."
   }
 }

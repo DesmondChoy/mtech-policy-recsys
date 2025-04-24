@@ -1,0 +1,104 @@
+{
+  "filename": "policy_comparison_report_income_1cd04b1c-3dbd-458b-857e-ae193381ab81.md",
+  "recommended_tier": "Preferred",
+  "analysis": [
+    {
+      "requirement": "Medical Coverage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 7, Section 14 (Medical expenses overseas); Page 8, Section 15 (Medical expenses in Singapore); Page 8, Section 16 (Treatment by a Chinese medicine practitioner or a chiropractor); Page 8, Section 17 (Overseas hospital allowance); Page 8, Section 18 (Emergency medical evacuation); Page 3 ('Coverage for medical expenses'); Page 5 ('Coverage for standard plans' - Pre-existing condition exclusion)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Trip Cancellation",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 5, Section 1 (Cancelling your trip); Page 3 ('Up to $15,000...'); Page 10, Note 5 (COVID-19 conditions)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Travel Delays",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 5, Section 5 (Travel delay); Page 3 ('Coverage for unexpected travel delays'); Page 10, Note 3 (Condition for delay)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Lost/Damaged Luggage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 6, Section 10 (Loss or damage of baggage and personal belongings)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Golf Equipment Coverage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 6, Section 10 (Loss or damage of baggage and personal belongings)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Golf Activity Coverage",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "Yes",
+      "pdf_location": "Page 3 ('Coverage for adventurous activities'); Page 10, Note 2 (Definition of Adventurous Activity and Exclusions)",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    },
+    {
+      "requirement": "Hole-in-One Benefit",
+      "report_has_analysis": "Yes",
+      "found_in_pdf": "No",
+      "pdf_location": "N/A",
+      "justification_supported_by_pdf": "Yes",
+      "validated": true
+    }
+  ],
+  "summary_validation": [
+    {
+      "statement": "Provides the highest coverage limits among INCOME tiers for core requirements like Medical Expenses ($1M overseas), Trip Cancellation ($15k), and overall Baggage ($8k), aligning with the \"comprehensive\" request.",
+      "validated": true,
+      "explanation": "The PDF confirms these limits for the Preferred tier: Medical Expenses Overseas S$1,000,000 (Adult under 70), Trip Cancellation S$15,000, and Loss or damage of baggage S$8,000. These are the highest limits shown in the comparison tables.",
+      "pdf_location": "Page 7, Section 14; Page 5, Section 1; Page 6, Section 10"
+    },
+    {
+      "statement": "Offers Unlimited Emergency Medical Evacuation for adults under 70.",
+      "validated": true,
+      "explanation": "The PDF confirms 'Unlimited' coverage for Emergency Medical Evacuation for adults under 70 years old under the Preferred tier.",
+      "pdf_location": "Page 8, Section 18"
+    },
+    {
+      "statement": "Covers participation in Golf as a leisure activity.",
+      "validated": true,
+      "explanation": "While not explicitly listed, Golf fits the definition of an 'Adventurous Activity' covered for leisure as defined on Page 10, Note 2 (recreational, commonly available, safety procedures followed, not an excluded extreme sport). The PDF lists examples like hiking and motorcycling on Page 3.",
+      "pdf_location": "Page 3 ('Coverage for adventurous activities'); Page 10, Note 2"
+    },
+    {
+      "statement": "Includes robust coverage for Travel Delays and other inconveniences.",
+      "validated": true,
+      "explanation": "The PDF confirms Travel Delay coverage for the Preferred tier at S$100 per 6 hours overseas (Adult) and S$150 after 6 hours in Singapore (Adult), up to an overall limit of S$2,000. This is the highest limit among the tiers shown.",
+      "pdf_location": "Page 5, Section 5"
+    },
+    {
+      "statement": "Golf Equipment Coverage: No specific benefit; covered under general baggage with a low $500 limit per item/set/pair, which may be insufficient for expensive equipment.",
+      "validated": true,
+      "explanation": "The PDF does not list a specific benefit for golf equipment. It falls under 'Loss or damage of baggage and personal belongings', where the limit for 'other items (for each item, set or pair)' is S$500 for the Preferred tier.",
+      "pdf_location": "Page 6, Section 10"
+    },
+    {
+      "statement": "Hole-in-One Benefit: Not covered. Requirement explicitly identified as Not Met.",
+      "validated": true,
+      "explanation": "The PDF's benefit tables (Pages 5-9) do not mention any coverage or benefit related to achieving a hole-in-one.",
+      "pdf_location": "Pages 5-9 (Benefit Tables)"
+    }
+  ],
+  "overall_assessment": {
+    "pass_fail": "PASS",
+    "explanation": "The comparison report section accurately reflects the coverage details, limits (in SGD), and exclusions found in the provided policy document PDF for the Preferred tier. The assessments for each requirement, including the identified gaps for specific golf coverage (equipment limit, hole-in-one), are supported by the PDF content."
+  }
+}
