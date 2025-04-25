@@ -70,18 +70,18 @@ The project is in the **initial setup and planning phase**. We are currently est
 | **Frontend Tab Scrolling**         | **100%**    | **Medium** | **Fixed tab label cutoff by making tabs always scrollable.**                                         |
 | Testing Framework                  | 20%         | Medium   | Unit tests added for recommender parser/scorer/MD report. More needed.                               |
 | ML Models                          | 0%          | Low      | Later phase.                                                                                         |
-| Documentation (Memory Bank)        | **In Prog.**| High     | **Updating core files for recent frontend changes.**                                                 |
+| Documentation (Memory Bank)        | **In Prog.**| High     | **Updating core files for recent frontend changes and demo script debugging.**                       |
 
 ## Known Issues
 
-1.  **LLM Accuracy & Consistency**: Ensuring high accuracy and consistent formatting from LLMs remains an ongoing effort, particularly for complex extraction, comparison, and multi-modal evaluation tasks.
-2.  **Evaluation Refinement**: While evaluation scripts exist for all key stages (transcripts, PDF extraction, comparison reports, scenario recommendations), the comparison report evaluation needs review of its output quality and definition of clear pass/fail metrics.
-3.  **Synthetic Data Limitations**: Generated transcripts might not fully capture the nuances and edge cases of real user interactions.
-4.  **LLM Constraints & Costs**: Managing API rate limits, costs, and potential output token limits across both Gemini and OpenAI requires monitoring. Orchestration runtime can be significant, especially with multi-modal calls.
-5.  **Integration & Orchestration Management**: While the orchestration script automates the workflow, managing dependencies, potential failures, and overall runtime within this script-chaining approach requires ongoing monitoring and maintenance.
-6.  **Dual LLM Dependency**: Reliance on both OpenAI (Extractor Agent via CrewAI, EmbeddingMatcher) and Google Gemini (LLMService) adds complexity (config, cost, maintenance).
-7.  **Frontend Data Sync Reliability**: Ensuring the `sync-public-assets.cjs` script runs correctly during the build process and copies all necessary, up-to-date data is vital for production functionality.
-8.  **Frontend Maintenance**: Ongoing monitoring is needed for the deployed frontend, including UI components like the dynamic TOC and feedback elements, to catch potential regressions or issues.
+1.  **LLM Accuracy & Consistency**: Ensuring high accuracy and consistent formatting from LLMs remains an ongoing effort, particularly for complex extraction, comparison, and multi-modal evaluation tasks. *(Ongoing)*
+2.  **Evaluation Refinement**: While evaluation scripts exist for all key stages (transcripts, PDF extraction, comparison reports, scenario recommendations), the comparison report evaluation needs review of its output quality and definition of clear pass/fail metrics. *(Partially Addressed - Script Functional)*
+3.  **Synthetic Data Limitations**: Generated transcripts might not fully capture the nuances and edge cases of real user interactions. *(Ongoing)*
+4.  **LLM Constraints & Costs**: Managing API rate limits, costs, and potential output token limits across both Gemini and OpenAI requires monitoring. Orchestration runtime can be significant, especially with multi-modal calls. *(Ongoing)*
+5.  **Integration & Orchestration Management**: While the orchestration script automates the workflow, managing dependencies, potential failures, and overall runtime within this script-chaining approach requires ongoing monitoring and maintenance. *(Ongoing Management)*
+6.  **Dual LLM Dependency**: Reliance on both OpenAI (Extractor Agent via CrewAI, EmbeddingMatcher) and Google Gemini (LLMService) adds complexity (config, cost, maintenance). *(Ongoing)*
+7.  **Frontend Data Sync Reliability**: Ensuring the `sync-public-assets.cjs` script runs correctly during the build process and copies all necessary, up-to-date data is vital for production functionality. *(Ongoing Maintenance)*
+8.  **Frontend Maintenance**: Ongoing monitoring is needed for the deployed frontend, including UI components like the dynamic TOC and feedback elements, to catch potential regressions or issues. *(Ongoing Maintenance)*
 
 ## Recent Achievements (Summary - See `activeContext.md` for full detail)
 
@@ -99,3 +99,4 @@ The project is in the **initial setup and planning phase**. We are currently est
 12. **Frontend Feedback UI Implementation**: Added Feedback tab, thumbs up/down buttons (centered), styled predefined feedback buttons (chip-style, blue, left-aligned), text area, and send button with snackbar confirmation.
 13. **Frontend Tab Scrolling Fix**: Resolved tab label cutoff issue by making tabs always scrollable.
 14. **Comparison Report Evaluation Debugging & Refinement**: Fixed multiple issues (`TypeError`, `429 RESOURCE_EXHAUSTED`, PDF input format) in `scripts/evaluation/comparison_report_evaluation/eval_comparison_report.py` and related config (`src/models/gemini_config.py`). Modified script to save output to `data/evaluation/comparison_report_evaluations/{uuid}/`. Successfully tested with `--overwrite` flag.
+15. **Demo Script Debugging**: Resolved multiple issues in `scripts/run_recsys_demo.py` including argument mismatches and adapting dependent scripts (`transcript_processing.py`, `extractor.py`) for single-file execution. Confirmed necessary dependencies (`nltk`, `sklearn`) are installed.

@@ -1,6 +1,7 @@
 import json
 import re
 import os
+import argparse  # Added argparse
 from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any
 from datetime import date
@@ -188,8 +189,8 @@ def process_transcript(input_file_path, output_file_path):
     return parsed_data, export_success
 
 
-def main():
-    # --- Batch Processing Usage ---
+def run_batch_processing():
+    """Runs the original batch processing logic."""
     # Get the absolute path to the project root directory (2 levels up from this script)
     current_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.dirname(os.path.dirname(current_dir))
@@ -274,4 +275,38 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Parse transcript files (.txt or .json). Runs in batch mode if no arguments are provided."
+    )
+    parser.add_argument(
+        "--input", help="Path to a single input transcript file to process."
+    )
+    parser.add_argument(
+        "--output",
+        help="Path to save the parsed output JSON file (required if --input is specified).",
+    )
+    args = parser.parse_args()
+
+    if args.input and args.output:
+        # --- Single File Processing ---
+        print(f"Processing single file: {args.input}")
+        print(f"Output will be saved to: {args.output}")
+        # Create output directory if it doesn't exist
+        output_dir = os.path.dirname(args.output)
+        if (
+            output_dir
+        ):  # Ensure output_dir is not empty (e.g., if output is just a filename)
+            os.makedirs(output_dir, exist_ok=True)
+
+        parsed_data, success = process_transcript(args.input, args.output)
+        if success:
+            print(f"Successfully processed and saved to {args.output}")
+        else:
+            print(f"Failed to process {args.input}")
+            exit(1)  # Exit with error code if single file processing fails
+    elif args.input or args.output:
+        # Error if only one argument is provided
+        parser.error("--input and --output must be specified together.")
+    else:
+        # --- Batch Processing (Default) ---
+        run_batch_processing()

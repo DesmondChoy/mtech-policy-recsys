@@ -328,6 +328,13 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Modified `scripts/evaluation/comparison_report_evaluation/eval_comparison_report.py` to save output files to a new structure: `data/evaluation/comparison_report_evaluations/{uuid}/eval_comparison_{insurer}.json`.
     - Updated the corresponding plan document (`memory-bank/major_changes/comparison_report_eval.md`).
     *   Successfully re-ran the script with `--overwrite` for test UUIDs (`0a6eb063...`, `1cd04b1c...`) to validate the change and generate results in the new location.
+51. **Demo Script (`run_recsys_demo.py`) Debugging & Fixes**:
+    - Investigated and resolved multiple errors preventing the demo script from running end-to-end.
+    - **Fix 1 (Parsing):** Modified `src/utils/transcript_processing.py` to support single-file processing via `--input`/`--output` args. Updated demo script to call parser with these args.
+    - **Fix 2 (Evaluation Arg):** Corrected argument name from `--transcript_path` to `--transcript` when calling `eval_transcript_main.py` in demo script.
+    - **Fix 3 (Extraction):** Modified `src/agents/extractor.py` to support single-file processing via `--input`/`--output` args. Updated demo script to call extractor with these args.
+    - **Fix 4 (Comparison Eval Arg):** Corrected argument name from `--customer_id` to `--uuid` when calling `eval_comparison_report.py` in demo script.
+    - **Fix 5 (Dependencies):** Confirmed with user that required packages (`nltk`, `scikit-learn`) are installed in the active virtual environment, resolving previous `ModuleNotFoundError` issues.
 
 ## Next Steps (Revised Focus)
 
