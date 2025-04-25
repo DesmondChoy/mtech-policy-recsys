@@ -46,4 +46,6 @@
 - Dynamic Knowledge Base: User-generated conversation transcripts.
     - Initially synthetically generated via LLMs for diverse scenario coverage.
     - Potential inclusion of real human-AI conversational data
-- Ground Truth Labels: Derived from clearly defined user needs and expected recommendation outcomes, curated into a structured format in `data/ground_truth/ground_truth.json`. Used for evaluating final recommendations in specific scenarios.
+- Ground Truth Knowledge Base: A curated dataset (`data/ground_truth/ground_truth.json`) defining:
+    1.  **Requirement Coverage:** Which specific requirements (e.g., "Lost Luggage", "Medical Evacuation") are covered by which insurance policy tiers. This is used by the `EmbeddingMatcher` for detailed coverage evaluation (`scripts/generate_ground_truth_coverage.py`).
+    2.  **Scenario Outcomes:** The expected final policy recommendation for specific, predefined test scenarios. This is used for end-to-end scenario evaluation (`scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`).

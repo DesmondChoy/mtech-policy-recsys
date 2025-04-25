@@ -148,12 +148,16 @@ You can use this link to explore the interface and functionality without install
 - **Final Recommendation Report Generation**: Processes comparison reports, applies scoring, uses an LLM for re-ranking, and generates a final customer-friendly Markdown recommendation report.
 
 **3. Evaluation & Quality Assurance:**
-- **LLM-Based Transcript Evaluation**: Assesses generated transcripts for requirement coverage completeness (standard and scenario-specific) using LLMs, providing JSON results with quote-based justifications.
-- **PDF Extraction Evaluation**: Compares processed policy JSON against the source PDF using a multi-modal LLM to verify extraction accuracy and completeness.
-- **Ground Truth Recommendation Evaluation**: Compares final recommendations against a curated ground truth dataset (`data/ground_truth/ground_truth.json`) using semantic matching (`src/embedding/embedding_utils.py`) to assess accuracy for specific scenarios.
+The system incorporates several evaluation steps throughout the workflow to ensure data quality and accuracy. A central **Ground Truth Knowledge Base** (`data/ground_truth/ground_truth.json`) defines which specific requirements are covered by which policy tiers and is utilized by downstream evaluation steps. The key evaluations, in workflow order, are:
+
+- **LLM-Based Transcript Evaluation**: Assesses generated transcripts for quality, relevance, and requirement coverage completeness before they are processed further. (See `scripts/evaluation/transcript_evaluation/eval_transcript_main.py`).
+- **PDF Extraction Evaluation**: Compares the structured JSON data extracted from policy PDFs against the original source PDF using a multi-modal LLM to verify extraction accuracy and completeness. (See `scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py`).
+- **Comparison Report Evaluation**: Evaluates the quality and accuracy of the generated policy comparison reports using an LLM to compare against source PDFs and customer requirements. (See `scripts/evaluation/comparison_report_evaluation/eval_comparison_report.py`).
+- **Coverage Ground Truth Evaluation**: After a final recommendation is generated, this step assesses how well the *recommended policy* covers the customer's *individual requirements*. It uses semantic matching (`src/embedding/embedding_utils.py`) against the Ground Truth Knowledge Base to check each requirement's coverage status (Covered, Not Covered, or Requirement Not Found). (See `scripts/generate_ground_truth_coverage.py`).
+- **Scenario Ground Truth Evaluation**: Also performed after the final recommendation, this compares the *overall recommended policy* against *predefined expected outcomes* for specific test scenarios (which might also be defined within the knowledge base or a related file like `data/evaluation/scenario_evaluation/scenario_ground_truth.json`). This verifies if the final recommendation aligns with the expected policy for that specific situation. (See `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`).
 
 **4. Future Goals:**
-- **(Planned) Iterative Refinement**: Future goal for users to update needs and receive refined recommendations.
+- **Iterative Refinement**: Future goal for users to update needs and receive refined recommendations.
 
 ## Command-Line Usage
 
@@ -230,9 +234,18 @@ This section outlines the key commands available for running different parts of 
 
    # Evaluate only specific policies (using file pattern)
    python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py --file_pattern "fwd_*.json"
-   ```
+    ```
 
-10. **Evaluate Recommendations**:
+10. **Evaluate Recommendation Coverage (vs. Ground Truth)**:
+    ```bash
+    # Evaluate coverage for all customers
+    python scripts/generate_ground_truth_coverage.py
+
+    # Evaluate coverage for a specific customer with debug output
+    python scripts/generate_ground_truth_coverage.py --customer <customer_id> --debug 
+    ```
+
+11. **Evaluate Scenario Recommendations (vs. Ground Truth)**:
     ```bash
     # Evaluate recommendations for a specific scenario
     python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py --scenario golf_coverage
@@ -241,14 +254,14 @@ This section outlines the key commands available for running different parts of 
     python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py
     ```
 
-11. **Calculate Pass Rates**:
+12. **Calculate Scenario Pass Rates**:
     ```bash
     python scripts/calculate_scenario_pass_rates.py
     ```
 
 ### End-to-End Workflow (Orchestrator)
 
-12. **Run Complete Pipeline**:
+13. **Run Complete Pipeline**:
     The `scripts/orchestrate_scenario_evaluation.py` script automates the entire workflow from transcript generation to final evaluation for target scenarios.
     ```bash
     # Run the full workflow with 5 transcripts per scenario
@@ -296,7 +309,6 @@ python scripts/data_generation/generate_transcripts.py -n 3 -s golf_coverage
 The current system provides a robust foundation. Future work could include:
 
 - **Functional Feedback System**: Implementing the backend logic to actually collect and process user feedback submitted through the web interface.
-- **Comparison Report Evaluation**: Adding automated evaluation for the quality and accuracy of the generated policy comparison reports.
 - **Advanced Orchestration**: Developing a more sophisticated workflow management system beyond the current script-based orchestration.
 - **Machine Learning Insights**: Training ML models on the generated data (requirements, recommendations) to uncover deeper insights.
 - **Iterative Refinement**: Allowing users to update their needs within the web interface and receive refined recommendations.

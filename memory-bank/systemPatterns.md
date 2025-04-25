@@ -4,162 +4,61 @@
 
 The project follows a workflow orchestrated by `scripts/orchestrate_scenario_evaluation.py`. This script manages data generation (parallel scenarios), processing (parallel transcript evaluation, sequential parsing/extraction), sequential report generation (per UUID), and final evaluation aggregation. It includes flags like `--skip_transcript_eval` and `--only_aggregate` to control execution flow. A single agent (Extractor) is used within this workflow. The original multi-agent concept is not implemented.
 
-```mermaid
-graph TD
-    subgraph "Orchestration (scripts/orchestrate_scenario_evaluation.py)"
-        direction TB
-        OrchStart[Start Orchestration] --> OrchGenT[1. Generate Transcripts <br>(Parallel Scenarios)]
-        OrchGenT --> OrchEvalT[2a. Evaluate Transcripts <br>(Parallel Transcripts)]
-        OrchEvalT --> OrchParseT[2b. Parse Transcripts <br>(Sequential Batch)]
-        OrchParseT --> OrchExtractR[2c. Extract Requirements <br>(Sequential Batch)]
-        OrchExtractR --> OrchGenReports[3. Generate Reports <br>(Sequential UUIDs)]
-        OrchGenReports --> OrchFinalEval[4. Final Evaluation & Aggregation]
-        OrchFinalEval --> OrchEnd[End Orchestration]
-    end
+## System Architecture Overview
 
-    subgraph "Data Generation (Called by Orchestrator)"
-        direction LR
-        GenPersonalities[scripts/data_generation/generate_personalities.py] --> PersonalitiesJson[data/transcripts/personalities.json]
-        CoverageReqs[data/coverage_requirements/coverage_requirements.py] --> GenTranscripts
-        Scenarios[data/scenarios/*.json] --> GenTranscripts
-        PersonalitiesJson --> GenTranscripts
-        GenTranscripts[scripts/data_generation/generate_transcripts.py] --> RawTranscripts[data/transcripts/raw/synthetic/*.json]
-    end
+The system follows a primarily script-driven workflow, orchestrated by `scripts/orchestrate_scenario_evaluation.py` for end-to-end scenario testing. Key process flows include:
 
-    subgraph "Transcript Processing & Extraction (Called by Orchestrator)"
-        direction LR
-        RawTranscripts --> EvalTranscripts[scripts/evaluation/transcript_evaluation/eval_transcript_main.py]
-        EvalTranscripts -- Pass --> PassedUUIDs((Passed UUIDs))
-        RawTranscripts --> ParseTranscripts[src/utils/transcript_processing.py]
-        ParseTranscripts --> ProcessedTranscripts[data/transcripts/processed/*.json]
-        ProcessedTranscripts --> ExtractorAgent[src/agents/extractor.py (CrewAI/OpenAI)]
-        ExtractorAgent --> ExtractedReqs[data/extracted_customer_requirements/*.json]
-    end
+*   **Orchestration Flow (`orchestrate_scenario_evaluation.py`):**
+    *   1. Generate Transcripts (Parallel Scenarios)
+    *   2a. Evaluate Transcripts (Parallel Transcripts, Optional)
+    *   2b. Parse Transcripts (Sequential Batch)
+    *   2c. Extract Requirements (Sequential Batch)
+    *   3. Generate Comparison & Recommendation Reports (Sequential per UUID)
+    *   4. Final Scenario Evaluation & Aggregation
 
-    subgraph "Policy Processing (Standalone)"
-        direction LR
-        RawPolicies[data/policies/raw/*.pdf] --> ExtractPolicyScript[scripts/extract_policy_tier.py (LLMService/Gemini)]
-        ExtractPolicyScript --> ProcessedPolicies[data/policies/processed/*.json]
-    end
+*   **Data Generation:**
+    *   Inputs: Personalities (`personalities.json`), Coverage Requirements (`coverage_requirements.py`), Scenarios (`scenarios/*.json`).
+    *   Process: `generate_transcripts.py` uses inputs and LLMService.
+    *   Output: Raw synthetic transcripts (`data/transcripts/raw/synthetic/*.json`).
 
-    subgraph "Reporting & Analysis (Called by Orchestrator)"
-        direction LR
-        PassedUUIDs --> FilterLogicReport{Filter by Passed UUIDs}
-        ExtractedReqs --> FilterLogicReport
-        FilterLogicReport --> ComparisonScript[scripts/generate_policy_comparison.py (LLMService/Gemini)]
-        ProcessedPolicies --> ComparisonScript
-        ComparisonScript --> ComparisonReports[results/{uuid}/*.md]
-        ProcessedTranscripts --> RecommendScript # Added dependency
-        ComparisonReports --> RecommendScript[scripts/generate_recommendation_report.py (LLMService/Gemini)]
-        RecommendScript --> FinalRecommendationMD[results/{uuid}/recommendation_report_{uuid}.md]
-    end
+*   **Transcript Processing & Extraction:**
+    *   Input: Raw transcripts.
+    *   Processes:
+        *   `eval_transcript_main.py` evaluates quality (optional gate).
+        *   `transcript_processing.py` parses raw transcripts.
+        *   `extractor.py` (CrewAI/OpenAI agent) extracts requirements from processed transcripts.
+    *   Outputs: Passed UUIDs (from eval), Processed transcripts (`data/transcripts/processed/*.json`), Extracted requirements (`data/extracted_customer_requirements/*.json`).
 
-    subgraph "Evaluation Focus"
-        direction TB
-        EvalTranscripts --> EvalTranscriptResults[data/evaluation/transcript_evaluations/*.json]
-        ExtractPolicyScript --> EvalPdfExtraction[scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py]
-        RawPolicies --> EvalPdfExtraction
-        EvalPdfExtraction --> EvalPdfResults[data/evaluation/pdf_extraction_evaluations/*.json]
-        ComparisonScript --> EvalComparisonReport[scripts/evaluation/comparison_report_evaluation/eval_comparison_report.py] # Added
-        RawPolicies --> EvalComparisonReport # Added Input
-        ExtractedReqs --> EvalComparisonReport # Added Input
-        EvalComparisonReport --> EvalComparisonResults[data/evaluation/comparison_report_evaluations/*.json] # Added Output
-        OrchFinalEval --> ScenarioEvalScript[scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py]
-        ScenarioEvalScript --> ScenarioEvalResults[data/evaluation/scenario_evaluation/results_*.json]
-        OrchFinalEval --> FinalEvalOutput[data/evaluation/scenario_evaluation/results_*_all_transcripts_*.json] # Updated Output
-    end
+*   **Policy Processing (Standalone):**
+    *   Input: Raw policy PDFs (`data/policies/raw/*.pdf`).
+    *   Process: `extract_policy_tier.py` uses LLMService.
+    *   Output: Processed policy JSON (`data/policies/processed/*.json`).
 
-    subgraph "Ground Truth & Embeddings"
-        direction LR
-        GroundTruthJson[data/ground_truth/ground_truth.json] --> EmbeddingUtils[src/embedding/embedding_utils.py]
-        EmbeddingUtils --> EmbeddingCache[src/embedding/cache/*.pkl]
-        EmbeddingUtils --> LLM_OpenAI_Embed[OpenAI Embedding API]
-    end
+*   **Reporting & Analysis:**
+    *   Inputs: Extracted requirements, Processed policies, Processed transcripts, Passed UUIDs (if evaluation run).
+    *   Processes:
+        *   `generate_policy_comparison.py` compares requirements and policies.
+        *   `generate_recommendation_report.py` scores comparisons and generates final recommendation.
+    *   Outputs: Comparison reports (`results/{uuid}/*.md`), Final recommendation report (`results/{uuid}/recommendation_report_{uuid}.md`).
 
-    %% Orchestrator Flow Connections
-    OrchGenT --> GenTranscripts
-    GenTranscripts --> RawTranscripts
-    RawTranscripts --> OrchEvalT
-    OrchEvalT --> EvalTranscripts
-    EvalTranscripts --> PassedUUIDs
-    RawTranscripts --> OrchParseT
-    OrchParseT --> ParseTranscripts
-    ParseTranscripts --> ProcessedTranscripts
-    ProcessedTranscripts --> OrchExtractR
-    OrchExtractR --> ExtractorAgent
-    ExtractorAgent --> ExtractedReqs
-    PassedUUIDs --> OrchGenReports
-    ExtractedReqs --> OrchGenReports
-    ProcessedPolicies --> OrchGenReports
-    OrchGenReports --> ComparisonScript
-    ComparisonScript --> ComparisonReports
-    ComparisonReports --> RecommendScript
-    RecommendScript --> FinalRecommendationMD
-    FinalRecommendationMD --> OrchFinalEval
-    OrchFinalEval --> ScenarioEvalScript
-    ScenarioEvalScript --> GroundTruthJson # Scenario Eval uses Ground Truth
-    ScenarioEvalScript --> EmbeddingUtils # Scenario Eval uses Embeddings
-    ScenarioEvalScript --> ScenarioEvalResults
-    ScenarioEvalResults --> OrchFinalEval # Implies reading latest result
-    OrchFinalEval --> FinalEvalOutput # Save final output
-    OrchEnd --> User[User/Developer]
+*   **Evaluation Components:**
+    *   Transcript Evaluation (`eval_transcript_main.py`) -> `data/evaluation/transcript_evaluations/*.json`
+    *   PDF Extraction Evaluation (`eval_pdf_extraction.py`) -> `data/evaluation/pdf_extraction_evaluations/*.json`
+    *   Comparison Report Evaluation (`eval_comparison_report.py`) -> `data/evaluation/comparison_report_evaluations/*.json`
+    *   Scenario Recommendation Evaluation (`evaluate_scenario_recommendations.py`) -> `data/evaluation/scenario_evaluation/results_*.json` (Aggregated by orchestrator to `results_*_all_transcripts_*.json`)
+    *   Coverage Ground Truth Evaluation (`generate_ground_truth_coverage.py`) -> `data/evaluation/ground_truth_evaluation/*.json`
 
-    %% Frontend Connections (Simplified)
-    subgraph "Frontend (ux-webapp)"
-        direction TB
-        WebApp[React App (Vite)] --> LandingPage[pages/LandingPage.tsx]
-        LandingPage -- Login --> TransitionPage[pages/TransitionPage.tsx]
-        TransitionPage -- Finish Loading --> DisclaimerPage[pages/DisclaimerPage.tsx]
-        DisclaimerPage -- Accept --> ReportViewerPage[pages/ReportViewerPage.tsx]
-        DisclaimerPage -- Logout --> LandingPage
-        ReportViewerPage --> TabbedReportView[components/TabbedReportView.tsx]
-        TabbedReportView --> MarkdownRenderer[components/MarkdownRenderer.tsx]
-        TabbedReportView --> JsonPrettyViewer[components/JsonPrettyViewer.tsx]
-        TabbedReportView --> TranscriptViewer[components/TranscriptViewer.tsx]
-        TabbedReportView --> TOC[components/TableOfContents.tsx]
-        TabbedReportView --> FeedbackButtons[components/FeedbackButtons.tsx] # Added
-        TabbedReportView --> FeedbackTabContent[components/FeedbackTabContent.tsx] # Added
-        TranscriptViewer --> ChatBubble[components/ChatBubble.tsx]
+*   **Ground Truth & Embeddings:**
+    *   `ground_truth.json` is used by `embedding_utils.py`.
+    *   `embedding_utils.py` uses OpenAI API and creates cache files.
 
-        %% Data Flow & Fetching by Frontend
-        MarkdownRenderer -- Extracts Headings --> TabbedReportView # Via callback
-        TabbedReportView -- Passes Headings --> TOC # Prop
-        TabbedReportView -- Fetches --> PublicResultsIndex[public/results/{uuid}/index.json]
-        TabbedReportView -- Fetches --> PublicTranscriptsIndex[public/transcripts_index.json]
-        MarkdownRenderer -- Fetches --> PublicRecReport[public/results/{uuid}/recommendation_report_{uuid}.md]
-        MarkdownRenderer -- Fetches --> PublicCompReport[public/results/{uuid}/policy_comparison_report_{insurer}_{uuid}.md]
-        JsonPrettyViewer -- Fetches --> PublicReqs[public/data/extracted_customer_requirements/requirements_{scenario}_{uuid}.json]
-        TranscriptViewer -- Fetches --> PublicTranscript[public/data/transcripts/processed/parsed_transcript_{scenario}_{uuid}.json]
+*   **Frontend (`ux-webapp`):**
+    *   React app displaying reports fetched from the `public/` directory.
+    *   Includes landing page, disclaimer, report viewer with tabs (Recommendation, Comparison, Requirements, Transcript, Feedback), TOC, etc.
 
-    end
-
-    %% Data Sync (Build Time)
-    subgraph "Build Time Sync (sync-public-assets.cjs)"
-        direction TB
-        SyncScript[scripts/sync-public-assets.cjs]
-        ComparisonReports --> SyncScript
-        FinalRecommendationMD --> SyncScript
-        ExtractedReqs --> SyncScript
-        ProcessedTranscripts --> SyncScript
-        RawPolicies --> SyncScript # For PDF Viewer (if re-enabled)
-
-        SyncScript -- Creates --> PublicResultsIndex
-        SyncScript -- Creates --> PublicTranscriptsIndex
-        SyncScript -- Copies --> PublicRecReport
-        SyncScript -- Copies --> PublicCompReport
-        SyncScript -- Copies --> PublicReqs
-        SyncScript -- Copies --> PublicTranscript
-        SyncScript -- Copies --> PublicPolicies[public/data/policies/raw/*.pdf]
-    end
-
-
-    %% Other Connections
-    Policy Processing --> ProcessedPolicies
-    RawPolicies --> EvalPdfExtraction
-    ExtractPolicyScript --> EvalPdfExtraction
-    ExtractedReqs --> FutureML{Future: ML Models}
-
-```
+*   **Build Time Sync (`sync-public-assets.cjs`):**
+    *   Copies necessary results, requirements, and transcript data to `ux-webapp/public/` for frontend access during the build process.
+    *   Generates index files (`index.json`, `transcripts_index.json`) for dynamic loading in the frontend.
 
 ## Key Technical Decisions
 
@@ -189,9 +88,9 @@ graph TD
     *   Implementation: Pydantic models (`TravelInsuranceRequirement`, policy extraction models) for validated JSON outputs.
 
 6.  **Semantic Evaluation (Ground Truth)**:
-    *   Decision: Use semantic matching via embeddings (OpenAI) to compare final recommendations against a curated ground truth for specific scenarios.
+    *   Decision: Use semantic matching via embeddings (OpenAI) to compare system outputs against curated ground truth data.
     *   Rationale: Provides a more robust evaluation of recommendation accuracy beyond simple string matching, understanding the meaning behind requirements.
-    *   Implementation: `src/embedding/embedding_utils.py` (handles embedding generation, caching, and matching logic), `data/ground_truth/ground_truth.json` (curated data), `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` (uses the embedding utilities).
+    *   Implementation: `src/embedding/embedding_utils.py` (handles embedding generation, caching, and matching logic), `data/ground_truth/ground_truth.json` (curated data). This includes: a) comparing the final recommended policy against expected outcomes for specific scenarios (`evaluate_scenario_recommendations.py`), and b) checking if individual requirements are covered by the recommended policy using the ground truth as a knowledge base (`generate_ground_truth_coverage.py`).
 
 7.  **Hybrid Approach (Planned)**:
     *   Decision: Combine LLM-based reasoning with traditional ML (Future Goal).
@@ -275,17 +174,17 @@ graph TD
 - **Dependencies**: Extractor Agent output, potentially other data sources.
 
 ### Ground Truth Data (`data/ground_truth/ground_truth.json`)
-- **Purpose**: Stores curated ground truth data (expected coverage/policies) for specific evaluation scenarios.
+- **Purpose**: Stores curated ground truth data defining both **(a)** which specific requirements are covered by which policy tiers (acting as a knowledge base for coverage checks) and **(b)** the expected final policy recommendations for specific test scenarios.
 - **Inputs**: Manually curated based on scenario definitions and policy analysis.
-- **Outputs**: Consumed by evaluation scripts, particularly `evaluate_scenario_recommendations.py`.
+- **Outputs**: Consumed by evaluation scripts.
 - **Dependencies**: Scenario definitions (`data/scenarios/`).
 
 ### Embedding Utilities (`src/embedding/embedding_utils.py`)
-- **Purpose**: Provides the `EmbeddingMatcher` class for semantic comparison using OpenAI embeddings.
-- **Inputs**: Query text, `ground_truth.json` path.
-- **Outputs**: Best matching ground truth key, similarity score, policy values. Generates/uses cache files (`src/embedding/cache/*.pkl`).
+- **Purpose**: Provides the `EmbeddingMatcher` class for semantic comparison using OpenAI embeddings, primarily against the requirement coverage definitions in the ground truth data.
+- **Inputs**: Query text (e.g., a customer requirement), `ground_truth.json` path.
+- **Outputs**: Best matching ground truth key, similarity score, policy values (list of policies covering the requirement). Generates/uses cache files (`src/embedding/cache/*.pkl`).
 - **Dependencies**: OpenAI API (via `.env`), `ground_truth.json`, NLTK (for preprocessing).
-- **Consumers**: `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`.
+- **Consumers**: `scripts/generate_ground_truth_coverage.py`, `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`.
 
 ### Evaluation Components
 
@@ -325,6 +224,14 @@ graph TD
 -   **Evaluation Logic**: Relies on the multi-modal LLM's ability to compare the structured text data (JSON) with the visual and textual content of the PDF document based on the verification prompts.
 -   **Dependencies**: `LLMService` (multi-modal model), Processed Policy JSON, Raw Policy PDF.
 
+#### Coverage Ground Truth Evaluation
+-   **Purpose**: To evaluate how well the recommended policy covers the customer's individual requirements, atomizing compound requirements and enhancing based on activities.
+-   **Script**: `scripts/generate_ground_truth_coverage.py`
+-   **Inputs**: Extracted Customer Requirements (`data/extracted_customer_requirements/`), Recommendation Reports (`results/{uuid}/`), Ground Truth Knowledge Base (`data/ground_truth/ground_truth.json` via `EmbeddingMatcher`).
+-   **Workflow**: Extracts requirements and recommended policy, atomizes requirements, uses `EmbeddingMatcher` to check coverage of each requirement against the ground truth knowledge base for the recommended policy.
+-   **Evaluation Logic**: Determines coverage status (COVERED, NOT_COVERED, NOT_EXIST) for each requirement based on the ground truth lookup. Calculates overall 'Total Coverage' and 'Valid Coverage' metrics.
+-   **Dependencies**: Recommendation Reports, Extracted Customer Requirements, `src/embedding/embedding_utils.py`, `data/ground_truth/ground_truth.json`.
+
 #### Scenario Recommendation Evaluation
 -   **Purpose**: To evaluate the final recommendation generated by `scripts/generate_recommendation_report.py` against a predefined ground truth for specific test scenarios. This verifies if the system recommends an appropriate policy given the scenario's constraints and expected outcomes.
 -   **Script**: `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`
@@ -354,92 +261,26 @@ graph TD
         -   `status="partial_cover_only"` & No Match -> `"FAIL (Partial)"` (Failed to recommend even an acceptable partial solution)
 -   **Dependencies**: `data/ground_truth/ground_truth.json`, Recommendation Reports, Raw Transcripts (for scenario mapping), `src/embedding/embedding_utils.py`.
 
-## Data Flow
+## Data Flow Summary
 
-```mermaid
-sequenceDiagram
-    participant GenT as Transcript Generation Script
-    participant EvalT as Transcript Evaluation Script
-    participant ParseT as Transcript Parsing Script
-    participant Extractor as Extractor Agent (CrewAI/OpenAI)
-    participant ExtractP as Policy Extraction Script (LLMService)
-    participant EvalPDF as PDF Extraction Eval Script (LLMService)
-    participant CompareP as Policy Comparison Script (LLMService)
-    participant EvalCompare as Comparison Report Eval Script (LLMService) # Added
-    participant RecommendR as Recommendation Report Script (LLMService)
-    participant LLM_Gemini as LLM Service (Gemini)
-    participant LLM_OpenAI as OpenAI API
-    participant LLM_OpenAI_Embed as OpenAI Embedding API
-    participant EmbeddingUtil as Embedding Utils (src/embedding/embedding_utils.py)
-    participant GroundTruth as Ground Truth (data/ground_truth/ground_truth.json)
-    participant UserDev as User/Developer
-
-    %% Ground Truth & Embedding Prep (Can happen anytime)
-    EmbeddingUtil->>LLM_OpenAI_Embed: Generate Embeddings for Ground Truth Keys
-    LLM_OpenAI_Embed-->>EmbeddingUtil: Embeddings
-    Note right of EmbeddingUtil: Caches embeddings to src/embedding/cache/
-
-    %% Transcript Path
-    GenT->>LLM_Gemini: Generate Raw Transcript
-    LLM_Gemini-->>GenT: Raw Transcript Text/JSON
-    Note right of GenT: Saves to data/transcripts/raw/synthetic/
-
-    EvalT->>LLM_Gemini: Evaluate Raw Transcript
-    LLM_Gemini-->>EvalT: Evaluation Result (Pass/Fail)
-    Note right of EvalT: Saves result to data/evaluation/transcript_evaluations/
-
-    alt Evaluation Passes
-        ParseT->>ParseT: Parse Raw Transcript JSON
-        Note right of ParseT: Saves to data/transcripts/processed/
-        Extractor->>LLM_OpenAI: Extract Requirements from Processed Transcript
-        LLM_OpenAI-->>Extractor: Structured Requirements (Pydantic Object)
-        Note right of Extractor: Saves to data/extracted_customer_requirements/
-    else Evaluation Fails
-        EvalT->>UserDev: Notify Failure / Log Issue
-    end
-
-    %% Policy Path & PDF Eval Path
-    ExtractP->>LLM_Gemini: Extract Policy Details from PDF
-    LLM_Gemini-->>ExtractP: Structured Policy JSON
-    Note right of ExtractP: Saves to data/policies/processed/
-
-    EvalPDF->>LLM_Gemini: Evaluate Policy JSON vs PDF (Multi-modal, uses --file_pattern)
-    LLM_Gemini-->>EvalPDF: Evaluation Result JSON
-    Note right of EvalPDF: Saves to data/evaluation/pdf_extraction_evaluations/
-
-    %% Comparison Path (Requires both transcript and policy paths completed)
-    CompareP->>LLM_Gemini: Compare Requirements vs Policies
-    LLM_Gemini-->>CompareP: Comparison Report Content (Markdown)
-    Note right of CompareP: Saves report to results/{uuid}/policy_comparison_report_*.md
-    CompareP->>UserDev: Provide Comparison Report (Implicitly, via file system)
-
-    %% Comparison Report Evaluation Path (Requires Report, PDF, Requirements)
-    EvalCompare->>LLM_Gemini: Evaluate Comparison Report vs PDF (Multi-modal)
-    LLM_Gemini-->>EvalCompare: Evaluation Result JSON
-    Note right of EvalCompare: Saves result to data/evaluation/comparison_report_evaluations/
-
-    %% Recommendation Path (Requires Comparison Reports & Processed Transcript)
-    RecommendR->>RecommendR: Parse Reports & Stage 1 Score/Rank
-    Note right of RecommendR: Reads reports from results/{uuid}/
-    Note right of RecommendR: Reads transcript from data/transcripts/processed/
-    RecommendR->>LLM_Gemini: Stage 2 Re-rank Top Candidates (with transcript context)
-    LLM_Gemini-->>RecommendR: Final Recommendation (Structured JSON)
-    RecommendR->>RecommendR: Generate Final Markdown Report
-    Note right of RecommendR: Saves final MD report to results/{uuid}/recommendation_report_*.md
-    RecommendR->>UserDev: Provide Final Recommendation Report
-
-    %% Planned Evaluations
-    Note over EvalPDF: PDF Extraction Evaluation Implemented
-    Note over EvalCompare: Comparison Report Evaluation Implemented
-
-    %% Scenario Evaluation Path (Requires Recommendation Report & Ground Truth)
-    participant ScenarioEval as Scenario Eval Script (evaluate_scenario_recommendations.py)
-    ScenarioEval->>GroundTruth: Read Expected Policies
-    ScenarioEval->>EmbeddingUtil: Find best match for Recommendation vs Ground Truth Keys
-    EmbeddingUtil-->>ScenarioEval: Match Result
-    ScenarioEval->>UserDev: Output Evaluation Result (PASS/FAIL)
-
-```
+1.  **Ground Truth Embedding (Prep):** `EmbeddingUtil` generates and caches embeddings for ground truth keys using the OpenAI Embedding API.
+2.  **Transcript Generation:** `GenT` script uses `LLM_Gemini` to create raw transcripts, saved to `data/transcripts/raw/synthetic/`.
+3.  **Transcript Evaluation:** `EvalT` script uses `LLM_Gemini` to evaluate raw transcripts. Results saved to `data/evaluation/transcript_evaluations/`.
+4.  **Transcript Processing (if Eval passes):**
+    *   `ParseT` script parses raw transcript JSON, saving to `data/transcripts/processed/`.
+    *   `Extractor` agent uses `LLM_OpenAI` (via CrewAI) to extract requirements from processed transcripts, saving to `data/extracted_customer_requirements/`.
+5.  **Policy Processing (Independent Path):**
+    *   `ExtractP` script uses `LLM_Gemini` to extract details from policy PDFs, saving to `data/policies/processed/`.
+    *   `EvalPDF` script uses `LLM_Gemini` (multi-modal) to evaluate the extracted policy JSON against the source PDF, saving results to `data/evaluation/pdf_extraction_evaluations/`.
+6.  **Comparison Report Generation:** `CompareP` script uses `LLM_Gemini`, extracted requirements, and processed policies to generate comparison reports, saved to `results/{uuid}/`.
+7.  **Comparison Report Evaluation:** `EvalCompare` script uses `LLM_Gemini` (multi-modal) to evaluate comparison reports against source PDFs and requirements, saving results to `data/evaluation/comparison_report_evaluations/`.
+8.  **Recommendation Generation:**
+    *   `RecommendR` script parses comparison reports and processed transcripts.
+    *   It performs Stage 1 scoring.
+    *   It uses `LLM_Gemini` for Stage 2 re-ranking (using transcript context).
+    *   It generates the final Markdown report, saved to `results/{uuid}/`.
+9.  **Scenario Evaluation:** `ScenarioEval` script reads the final recommendation report and the `GroundTruth` data (expected policies), potentially uses `EmbeddingUtil` for matching, and outputs a PASS/FAIL result.
+10. **Coverage Evaluation (Implicit):** Although not shown as a separate step in the original sequence diagram, `generate_ground_truth_coverage.py` would typically run after step 8, using the final recommendation, extracted requirements, `EmbeddingUtil`, and `GroundTruth` to produce its evaluation JSON files.
 
 ## Error Handling and Resilience
 

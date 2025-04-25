@@ -264,11 +264,13 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Concluded the ground truth was too strict, leading to an artificially low pass rate (40%).
     - Updated `data/evaluation/scenario_evaluation/scenario_ground_truth.json` to include GELS Gold, FWD Business, and FWD First as acceptable `expected_policies` for this scenario, relaxing the definition for a more accurate evaluation.
 37. **Ground Truth Evaluation Feature Integration (Merge `GroundTruth` branch - `cc4a2d7`)**:
-    - Renamed `data/coverages.json` to `data/ground_truth/ground_truth.json` and significantly refined its structure and content (atomizing requirements, merging duplicates, etc.).
-    - Added `src/embedding/embedding_utils.py` containing the `EmbeddingMatcher` class, which uses OpenAI embeddings and hybrid matching strategies to compare queries against ground truth keys.
+    - Consolidated ground truth data into `data/ground_truth/ground_truth.json`. This file now serves a dual purpose:
+        - **Coverage Knowledge Base:** Defines which specific requirements are covered by which policy tiers.
+        - **Scenario Outcomes:** Defines the expected final policy recommendation for specific test scenarios.
+    - Added `src/embedding/embedding_utils.py` containing the `EmbeddingMatcher` class, which uses OpenAI embeddings and hybrid matching strategies to compare queries against the **Coverage Knowledge Base** keys.
     - Added embedding caching mechanism to `src/embedding/cache/`.
-    - Added `scripts/generate_ground_truth_coverage.py` script to evaluate recommendations against the ground truth file using the embedding utilities.
-   - Updated `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` to utilize these embedding utilities for more robust evaluation.
+    - Added `scripts/generate_ground_truth_coverage.py` script to evaluate how well a recommended policy covers individual requirements, using the `EmbeddingMatcher` against the **Coverage Knowledge Base**.
+    - Updated `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` to evaluate the final recommendation against the **Scenario Outcomes** defined in the ground truth data (potentially also using `EmbeddingMatcher` for robustness).
 38. **Netlify Frontend Deployment Debugging**:
     - Investigated Netlify deployment failures for the `ux-webapp` frontend.
     - Corrected `netlify.toml` build command to `cd ux-webapp && npm install && npm run build` to ensure execution in the correct directory and installation of Node.js dependencies.

@@ -259,13 +259,13 @@ This installs all necessary packages listed in `package.json` for any web or sup
     *   **Policy Extraction (`scripts/extract_policy_tier.py`)**: Depends on `LLMService`.
     *   **Transcript Evaluation (`scripts/evaluation/transcript_evaluation/`)**: Depends on `LLMService`.
     *   **Policy Comparison (`scripts/generate_policy_comparison.py`)**: Depends on `LLMService`, Extractor output, and Policy Extraction output.
-    *   **Scenario Evaluation (`scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`)**: Depends on Recommendation Report output, `data/ground_truth/ground_truth.json`, and `src/embedding/embedding_utils.py`.
-    *   **Ground Truth Coverage Generation (`scripts/generate_ground_truth_coverage.py`)**: Likely depends on `src/embedding/embedding_utils.py` and `data/ground_truth/ground_truth.json`.
+    *   **Scenario Evaluation (`scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`)**: Evaluates the final recommended policy against the expected outcome for a specific test scenario, using the **scenario outcome** definitions within `data/ground_truth/ground_truth.json` (potentially via `src/embedding/embedding_utils.py`). Depends on Recommendation Report output.
+    *   **Ground Truth Coverage Generation (`scripts/generate_ground_truth_coverage.py`)**: Evaluates how well the recommended policy covers individual customer requirements, using `src/embedding/embedding_utils.py` to compare requirements against the **coverage knowledge base** defined in `data/ground_truth/ground_truth.json`. Depends on Recommendation Report output and Extracted Requirements.
     *   **Orchestration Script (`scripts/orchestrate_scenario_evaluation.py`)**: Automates the end-to-end workflow, calling other scripts. Includes flags like `--skip_transcript_eval` and `--only_aggregate` to control execution flow.
 
 4.  **Utility Modules (`src/`)**:
     *   `src/utils/transcript_processing.py`: Defines `TravelInsuranceRequirement` Pydantic model (used by Extractor) and parsing logic.
-    *   `src/embedding/embedding_utils.py`: Defines `EmbeddingMatcher` for semantic comparison against ground truth. Depends on OpenAI API and NLTK.
+    *   `src/embedding/embedding_utils.py`: Defines `EmbeddingMatcher` for semantic comparison of requirements against the **coverage knowledge base** defined in `data/ground_truth/ground_truth.json`. Depends on OpenAI API and NLTK. Consumed by `generate_ground_truth_coverage.py` and potentially `evaluate_scenario_recommendations.py`.
     *   `ux-webapp/src/components/`: Contains various React components for the frontend UI (e.g., `TabbedReportView`, `MarkdownRenderer`, `FeedbackButtons`, `FeedbackTabContent`, `TableOfContents`). Includes custom remark plugin `remark-extract-headings.ts`.
     *   Other utilities as needed.
 
