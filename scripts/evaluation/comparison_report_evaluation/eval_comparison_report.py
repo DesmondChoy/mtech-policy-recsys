@@ -5,7 +5,8 @@ from pathlib import Path
 import sys
 import re
 import glob
-from typing import List, Optional, Tuple  # Corrected typing import
+import time  # Added for retry delay
+from typing import List, Optional, Tuple
 
 from pydantic import BaseModel, Field, ValidationError
 
@@ -325,46 +326,83 @@ def evaluate_single_insurer(
         logging.error(f"Error formatting prompt: {e}")
         return False
 
-    # Multi-modal LLM Call
-    logging.info(f"Sending request to LLM for evaluation of {report_identifier}...")
-    try:
-        # Read PDF content as bytes
-        try:
-            with open(policy_pdf_path, "rb") as pdf_file:
-                pdf_bytes = pdf_file.read()
-        except Exception as e:
-            logging.error(f"Error reading policy PDF file {policy_pdf_path}: {e}")
-            return False
+    # Multi-modal LLM Call with Retry Logic
+    logging.info(f"Attempting LLM evaluation for {report_identifier}...")
 
-        # Prepare multi-modal content list correctly
-        pdf_content_part = {"mime_type": "application/pdf", "data": pdf_bytes}
-        multi_modal_content = [
-            final_prompt,
-            pdf_content_part,
-        ]  # Pass dict instead of path
+    max_retries = 3
+    base_delay = 5  # seconds
+    validated_result = None  # Initialize before loop
 
-        evaluation_result_dict = llm_service.generate_structured_content(
-            prompt=None,
-            contents=multi_modal_content,  # Pass the correctly formatted list
-            # pydantic_model=EvaluationResult, # Removed: LLMService returns dict, validation happens next
+    for attempt in range(max_retries):
+        logging.info(
+            f"LLM Evaluation Attempt {attempt + 1}/{max_retries} for {report_identifier}"
         )
-        if not evaluation_result_dict:
-            logging.error("LLM returned empty or invalid response.")
-            return False
-        # Validate the dictionary returned by the LLM service here:
-        validated_result = EvaluationResult.model_validate(evaluation_result_dict)
-        # validated_result = evaluation_result_json # Original line assuming LLMService returns validated model
-        logging.info("Successfully received and validated evaluation result from LLM.")
+        try:
+            # Read PDF content as bytes (inside loop in case of file read issues)
+            try:
+                with open(policy_pdf_path, "rb") as pdf_file:
+                    pdf_bytes = pdf_file.read()
+            except Exception as e:
+                logging.error(
+                    f"Error reading policy PDF file {policy_pdf_path} on attempt {attempt + 1}: {e}"
+                )
+                # If PDF read fails, retrying the LLM call won't help
+                return False  # Exit function if PDF cannot be read
 
-    except ValidationError as e:
-        logging.error(f"Pydantic validation failed for LLM response: {e}")
-        # Optionally save raw invalid response here
-        return False
-    except Exception as e:
-        logging.error(f"Error during LLM call or validation: {e}")
-        return False
+            # Prepare multi-modal content list correctly
+            pdf_content_part = {"mime_type": "application/pdf", "data": pdf_bytes}
+            multi_modal_content = [
+                final_prompt,
+                pdf_content_part,
+            ]
 
-    # Save Output
+            evaluation_result_dict = llm_service.generate_structured_content(
+                prompt=None,
+                contents=multi_modal_content,
+            )
+            if not evaluation_result_dict:
+                # Consider this a failure scenario worth retrying
+                raise ValueError("LLM returned empty or invalid response.")
+
+            # Validate the dictionary returned by the LLM service here:
+            validated_result = EvaluationResult.model_validate(evaluation_result_dict)
+            logging.info(
+                f"Successfully received and validated evaluation result from LLM on attempt {attempt + 1}."
+            )
+            break  # Exit retry loop on success
+
+        except ValidationError as e:
+            logging.error(
+                f"Pydantic validation failed for LLM response on attempt {attempt + 1}: {e}"
+            )
+            # Don't retry validation errors, treat as final failure for this attempt.
+            validated_result = None  # Ensure it's None on validation failure
+            break  # Exit retry loop on validation failure
+        except Exception as e:
+            logging.warning(
+                f"Error during LLM call or processing on attempt {attempt + 1}: {e}"
+            )
+            if attempt < max_retries - 1:
+                delay = base_delay * (2**attempt)
+                logging.info(f"Retrying in {delay} seconds...")
+                time.sleep(delay)
+            else:
+                logging.error(
+                    f"LLM call failed after {max_retries} attempts for {report_identifier}."
+                )
+                validated_result = None  # Ensure it's None on final failure
+                # Loop will end, validated_result is None
+
+    # --- End Retry Logic ---
+
+    # Check if validation was successful after the loop
+    if validated_result is None:
+        logging.error(
+            f"Failed to get a valid evaluation result for {report_identifier} after retries."
+        )
+        return False  # Indicate failure for this insurer
+
+    # Save Output (only if validated_result is not None)
     try:
         output_path.parent.mkdir(
             parents=True, exist_ok=True

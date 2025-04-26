@@ -493,6 +493,12 @@ def main():
     parser.add_argument(
         "--customer", type=str, help="Process only this specific customer ID"
     )
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Overwrite existing output files",
+        default=False,
+    )
     args = parser.parse_args()
 
     # Initialize paths
@@ -751,8 +757,11 @@ def main():
 
         # Save individual evaluation
         output_file = output_path / f"coverage_evaluation_{customer_id}.json"
-        with open(output_file, "w") as f:
-            json.dump(evaluation, f, indent=2)
+        if not args.overwrite and output_file.exists():
+            print(f"  Skipping existing individual file: {output_file}")
+        else:
+            with open(output_file, "w") as f:
+                json.dump(evaluation, f, indent=2)
 
         print(
             f"  Total coverage ratio (all requirements): {evaluation['total_coverage_ratio']} ({evaluation['total_coverage_percentage']}%)"
@@ -799,17 +808,20 @@ def main():
 
     # Save summary of all evaluations
     summary_file = output_path / "coverage_evaluation_summary.json"
-    with open(summary_file, "w") as f:
-        json.dump(
-            {
-                "summary": {
-                    "overall_stats": overall_stats,
-                    "evaluations": all_evaluations,
-                }
-            },
-            f,
-            indent=2,
-        )
+    if not args.overwrite and summary_file.exists():
+        print(f"\nSkipping existing summary JSON file: {summary_file}")
+    else:
+        with open(summary_file, "w") as f:
+            json.dump(
+                {
+                    "summary": {
+                        "overall_stats": overall_stats,
+                        "evaluations": all_evaluations,
+                    }
+                },
+                f,
+                indent=2,
+            )
 
     # Generate Markdown summary report
     md_summary_file = output_path / "coverage_evaluation_summary.md"
@@ -839,8 +851,11 @@ def main():
         else:
             failing_bands["<50%"].append(customer_id)
 
-    with open(md_summary_file, "w") as f:
-        f.write("# Ground Truth Coverage Evaluation Results\n\n")
+    if not args.overwrite and md_summary_file.exists():
+        print(f"Skipping existing summary Markdown file: {md_summary_file}")
+    else:
+        with open(md_summary_file, "w") as f:
+            f.write("# Ground Truth Coverage Evaluation Results\n\n")
 
         # Overview explanation of Total vs Valid Coverage
         f.write("## Coverage Metrics Explained\n\n")

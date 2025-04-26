@@ -58,6 +58,24 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
 
+# --- macOS Specific Environment Setting ---
+# Addresses potential hangs related to NLTK/Sklearn imports on macOS
+# Must be set before subprocesses are called if they import problematic libraries
+if sys.platform == "darwin":
+    if "OMP_NUM_THREADS" not in os.environ:
+        # Use logging once it's configured, but set the variable immediately
+        os.environ["OMP_NUM_THREADS"] = "1"
+        # We'll log this message after logging is configured
+        _log_omp_set = True
+    else:
+        # Log this message after logging is configured
+        _log_omp_already_set = True
+        _existing_omp_val = os.environ["OMP_NUM_THREADS"]
+else:
+    _log_omp_set = False
+    _log_omp_already_set = False
+
+
 # Define key directories and script paths relative to PROJECT_ROOT
 SCRIPTS_DIR = PROJECT_ROOT / "scripts"
 DATA_DIR = PROJECT_ROOT / "data"
@@ -72,6 +90,16 @@ logging.basicConfig(
         logging.StreamHandler(sys.stdout)  # Log to console
     ],
 )
+
+# Log the OMP_NUM_THREADS setting status now that logging is configured
+if "_log_omp_set" in locals() and _log_omp_set:
+    logging.info(
+        "Detected macOS, automatically set OMP_NUM_THREADS=1 to prevent potential hangs."
+    )
+if "_log_omp_already_set" in locals() and _log_omp_already_set:
+    logging.info(
+        f"Detected macOS, but OMP_NUM_THREADS already set to: {_existing_omp_val}. Skipping automatic setting."
+    )
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -719,7 +747,7 @@ def main():
         and recommendation_report_path.exists()
         and requirements_path.exists()
     ):
-        gen_coverage_args = ["--customer_id", uuid_str]  # Pass potentially updated UUID
+        gen_coverage_args = ["--customer", uuid_str]  # Corrected argument name
         success_gen_coverage = run_step(
             step_name_gen_coverage,
             generate_coverage_script,

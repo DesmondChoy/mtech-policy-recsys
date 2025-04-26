@@ -104,3 +104,15 @@ During testing of `run_recsys_demo.py`, several issues were identified and resol
     *   **Resolution:** Confirmed with the user that both `nltk` and `scikit-learn` are installed in the active virtual environment (`.venv`), resolving the dependency issues.
 
 **Current Status:** The `run_recsys_demo.py` script is now expected to run successfully end-to-end, processing a single transcript and generating all intermediate and final outputs as designed.
+
+6.  **Issue:** Script hangs during import on macOS (specifically involving `nltk` -> `sklearn` imports).
+    *   **Cause:** Potential parallelism issue with underlying libraries (like NumPy/SciPy used by scikit-learn) on macOS, especially Apple Silicon.
+    *   **Resolution:** Set the `OMP_NUM_THREADS` environment variable to `1` before running the script to force single-threaded execution: `export OMP_NUM_THREADS=1; python scripts/run_recsys_demo.py`.
+7.  **Issue:** "Generate Ground Truth Coverage" step overwrote existing summary files (`coverage_evaluation_summary.json`, `coverage_evaluation_summary.md`) on subsequent runs.
+    *   **Resolution:** Modified `scripts/generate_ground_truth_coverage.py` to include an `--overwrite` flag (defaulting to `False`). The script now checks this flag before writing summary files, preventing accidental overwrites unless explicitly requested. The calling script (`run_recsys_demo.py`) does not pass this flag, ensuring the default non-overwriting behavior.
+8.  **Issue:** Intermittent missing comparison report evaluation files (e.g., 3 evaluation files generated for 4 comparison reports).
+    *   **Cause:** The `eval_comparison_report.py` script processes reports sequentially. An intermittent error during the multi-modal LLM call for a single insurer (likely due to API rate limits or temporary glitches) caused that specific evaluation to fail silently (from the perspective of the demo script's orchestrator), but the script continued and exited successfully, leading to a mismatch.
+    *   **Resolution:** Added retry logic (up to 3 attempts with exponential backoff) around the `llm_service.generate_structured_content` call within the `evaluate_single_insurer` function in `scripts/evaluation/comparison_report_evaluation/eval_comparison_report.py` to make the evaluation of individual reports more resilient to transient LLM API errors.
+9.  **Issue:** Running the demo script on macOS required manually setting `export OMP_NUM_THREADS=1` to prevent hangs.
+    *   **Cause:** Potential parallelism conflicts in underlying libraries (NumPy/SciPy via NLTK/Sklearn) on macOS.
+    *   **Resolution:** Modified `scripts/run_recsys_demo.py` to automatically detect if running on macOS (`sys.platform == "darwin"`) and set `os.environ['OMP_NUM_THREADS'] = '1'` at the start of the script if it's not already set. This removes the need for manual export by the user.
