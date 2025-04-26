@@ -7,59 +7,7 @@ This project tackles that challenge head-on with an intelligent workflow powered
 This README outlines the workflow consisting of structured data extraction, automated analysis, and rigorous evaluation which unlocks unprecedented efficiency and transparency in insurance selection, paving the way for smarter, unbiased, and transparent recommendations.
 
 ## System Overview
-
-```mermaid
-graph TD
-    %% Main Components
-    User[User/Customer]
-    WebApp[Web Interface]
-    
-    %% Data Sources
-    PolicyPDFs[Insurance Policy PDFs]
-    Transcripts[Customer Conversations]
-    
-    %% Processing Components
-    PDFExtractor[Policy Extractor]
-    TranscriptEval[Transcript Evaluator]
-    ReqExtractor[Requirements Extractor]
-    PolicyCompare[Policy Comparator]
-    Recommender[Recommendation Engine]
-    
-    %% Data Stores
-    StructuredPolicies[(Structured Policy Data)]
-    CustomerReqs[(Customer Requirements)]
-    ComparisonReports[(Comparison Reports)]
-    
-    %% Flow
-    PolicyPDFs -->|PDF Processing| PDFExtractor
-    PDFExtractor -->|Structured JSON| StructuredPolicies
-    
-    Transcripts -->|Quality Check| TranscriptEval
-    TranscriptEval -->|Validated Transcripts| ReqExtractor
-    ReqExtractor -->|Structured Requirements| CustomerReqs
-    
-    CustomerReqs -->|Requirements Input| PolicyCompare
-    StructuredPolicies -->|Policy Input| PolicyCompare
-    PolicyCompare -->|Insurer-Level Reports| ComparisonReports
-    
-    ComparisonReports -->|Top Candidates| Recommender
-    Transcripts -.->|Context for Prioritization| Recommender
-    Recommender -->|Final Recommendation| WebApp
-    
-    WebApp -->|View Reports| User
-    User -->|Customer ID| WebApp
-    
-    %% Evaluation Components
-    PDFEval[PDF Extraction Evaluator]
-    RecEval[Recommendation Evaluator]
-    GroundTruth[(Ground Truth Data)]
-    
-    PDFExtractor -.->|Verify Accuracy| PDFEval
-    PolicyPDFs -.->|Source Verification| PDFEval
-    
-    Recommender -.->|Verify Recommendations| RecEval
-    GroundTruth -.->|Expected Outcomes| RecEval
-```
+![NUS-project1-diagram](https://github.com/user-attachments/assets/2f53e122-077f-4a8f-86f0-8b7a7a08c95e)
 
 ## Getting Started
 
