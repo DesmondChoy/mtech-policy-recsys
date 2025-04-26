@@ -27,7 +27,7 @@ Implement a dedicated evaluation script (`scripts/evaluation/comparison_report_e
 *   [X] **Task 4: Implement Input File Handling**
     *   [X] Add logic to locate the correct comparison report (`.md`) based on UUID and insurer. *(Done)*
     *   [X] Add logic to parse the report and identify the `recommended_tier`. *(Done, required refinement)*
-    *   [ ] Add logic to locate the corresponding raw policy PDF based on insurer ~~and recommended tier~~ **prefix only**. *(Refinement needed)*
+    *   [X] Add logic to locate the corresponding raw policy PDF based on insurer and recommended tier (using lowercase and pattern matching). *(Done)*
     *   [X] Add logic to locate the corresponding customer requirements JSON (determining scenario name might be needed). *(Done)*
 *   [X] **Task 5: Integrate LLM Service**
     *   [X] Import and instantiate the `LLMService` from `src/models/llm_service.py`. *(Done)*
@@ -73,3 +73,13 @@ Implement a dedicated evaluation script (`scripts/evaluation/comparison_report_e
     *   **Solution:** Modified `eval_comparison_report.py` to read the PDF bytes and pass `{"mime_type": "application/pdf", "data": pdf_bytes}` to the `LLMService`. *(Implemented)*
 *   **Current Status:** The script runs successfully. Output structure modified to save results under `data/evaluation/comparison_report_evaluations/{uuid}/`. Full test run with `--overwrite` completed successfully for test UUIDs.
 *   **Next Step:** Review evaluation results for quality. Consider Task 13 (Integration with Orchestrator) as a future enhancement. Update Memory Bank (`progress.md`, `activeContext.md`).
+
+## Update (2025-04-26 ~2:03 PM): Tier Ranking Integration
+
+*   **Problem:** Initial prompt update only made the evaluator *aware* of the tier ranking logic but didn't provide the actual ranking data, preventing validation of *correct* tie-breaker application.
+*   **Solution:**
+    *   [X] Modified `eval_comparison_report.py` to import `get_insurer_tier_ranking` from `data.policies.pricing_tiers.tier_rankings`.
+    *   [X] Added logic within `evaluate_single_insurer` to load the specific ranking list for the current insurer being evaluated.
+    *   [X] Updated the `PROMPT_TEMPLATE` to include a new section displaying this specific ranking list (formatted as JSON) to the LLM evaluator.
+    *   [X] Refined the evaluation instructions in Task 1, Task 2, and the Overall Assessment to explicitly guide the LLM on using the provided ranking data to validate the correct application of the tie-breaking logic, in addition to validating claims against the PDF.
+*   **Status:** Implemented. The evaluator now has the necessary context and data to perform a more accurate assessment of the comparison reports, including the correct use of tier rankings for tie-breaking.

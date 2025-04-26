@@ -242,12 +242,10 @@ def generate_summary_markdown(
         "",
         "## Pipeline Step Summary",
         "",
-        "| Step Name                       | Status                 | Duration   | Output File(s) / Directory |",
-        "| :------------------------------ | :--------------------- | :--------- | :------------------------- |",
     ]
 
     # Define descriptions for each step's output (can be expanded)
-    output_descriptions = {
+    output_descriptions = {  # Keep this for reference if needed later
         "Generate Transcript": "Raw synthetic conversation transcript (JSON).",
         "Evaluate Transcript": "Transcript quality evaluation results (JSON).",
         "Parse Transcript": "Parsed transcript structure (JSON).",
@@ -259,12 +257,21 @@ def generate_summary_markdown(
         "Generate Ground Truth Coverage": "Requirement coverage evaluation results (JSON).",
     }
 
+    # Generate structured list instead of table
     for step_name, results in run_results.items():
+        markdown_lines.append("---")  # Separator
+        markdown_lines.append(f"### {step_name}")
+
         status = results.get("status", "Unknown")
         duration = results.get("duration", "N/A")
         outputs = results.get("output_files", [])
-        output_links = []
+        description = output_descriptions.get(step_name, "No description available.")
+
+        markdown_lines.append(f"*   **Status:** {status}")
+        markdown_lines.append(f"*   **Duration:** {duration}")
+
         if outputs:
+            output_links = []
             for output_path_str in outputs:
                 # Ensure path is relative for linking
                 rel_path = Path(output_path_str)
@@ -274,28 +281,16 @@ def generate_summary_markdown(
                     f"./{rel_path.as_posix()}"  # Use forward slashes for Markdown links
                 )
                 output_links.append(f"[`{link_text}`]({link_target})")
+            markdown_lines.append(f"*   **Output:** {', '.join(output_links)}")
         else:
-            output_links.append("N/A")
+            markdown_lines.append(f"*   **Output:** N/A")
 
-        output_str = "<br>".join(
-            output_links
-        )  # Use <br> for multiple lines in table cell
-        description = output_descriptions.get(step_name, "No description available.")
-
-        # Add row to table
-        markdown_lines.append(
-            f"| {step_name:<31} | {status:<22} | {duration:<10} | {output_str} |"
-        )
-        # Add description row (optional, makes table wide)
-        # markdown_lines.append(f"| {'':<31} | {'':<22} | {'':<10} | *{description}* |")
-
-    # Add a separate section for descriptions if table is too wide
-    markdown_lines.append("\n## Output Descriptions\n")
-    for step, desc in output_descriptions.items():
-        markdown_lines.append(f"- **{step}:** {desc}")
+        markdown_lines.append(f"*   **Description:** {description}")
+        markdown_lines.append("")  # Add a blank line for spacing
 
     # Add Stdout/Stderr details for failed steps
-    markdown_lines.append("\n## Error Details (for Failed Steps)\n")
+    markdown_lines.append("---\n")  # Separator before error details
+    markdown_lines.append("## Error Details (for Failed Steps)\n")
     failed_steps_found = False
     for step_name, results in run_results.items():
         if results.get("status") == "Failure":

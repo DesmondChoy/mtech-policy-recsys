@@ -15,6 +15,7 @@ project_root = Path(__file__).resolve().parents[3]
 sys.path.append(str(project_root))
 
 from src.models.llm_service import LLMService
+from data.policies.pricing_tiers.tier_rankings import get_insurer_tier_ranking
 
 """
 Evaluates generated policy comparison reports against source policy PDFs
@@ -109,17 +110,28 @@ PROMPT_TEMPLATE = """
 {report_section_markdown}
 ```
 
+## Important Context: Tier Ranking Logic & Data
+1.  **Tier Ranking Purpose:** The comparison report generation process uses an external mechanism (`data/policies/pricing_tiers/tier_rankings.py`) to break ties between policy tiers from the SAME insurer. If multiple tiers from one insurer meet the customer's requirements equally well based *solely* on the policy document (PDF), the system is designed to recommend the tier ranked as cheaper/lower according to this external ranking.
+2.  **Provided Ranking Data:** The known tier ranking for insurer '{insurer}' (ordered from cheapest to most expensive) is:
+    ```json
+    {insurer_ranking_list_str}
+    ```
+3.  **Evaluation Rule:** Justifications or summary statements in the report referencing price, budget, or tier preference *as a tie-breaker between otherwise equivalent tiers* should be considered valid **only if** the chosen tier correctly matches the cheapest option according to the **Provided Ranking Data** above among the tiers verified as equivalent based on the PDF. Focus first on validating coverage claims against the PDF; only consider the tier ranking valid if used correctly as a tie-breaker.
+
 ## Your Task 1 :
 **Examine Each Coverage Section:** For each of the **customer requirements** listed above, perform the following checks by comparing the **comparison report section** claims against the **policy document** (PDF input).
 **Report Content Check:** Does the **comparison report section** provide an analysis (e.g., under a heading like "Requirement: [Coverage Name]") for this specific coverage type? Answer Yes/No.
 **Information Found in PDF:** Does the **policy document** contain relevant terms, conditions, benefits, limits, or exclusions specifically pertaining to this coverage type? Answer Yes/No.
 **Coverage Assessment Validation:** Carefully read the "Coverage Assessment" section (including "Base Limits", "Conditional Limits" and "Source Specific Details" fields) for this coverage type within the **comparison report section**. Based only on the provided **policy document** (recognizing it may be a summary), determine if the **comparison report section** justification is factually supported by the **policy document** terms, conditions, limits, and exclusions. Is the **comparison report section** reasoning sound given the **policy document** content?
-**Specific Instruction for Medical Coverage:** When assessing Medical Coverage and the customer requirement involves pre-existing conditions, apply a stricter standard due to potential limitations of the summary PDF. If the PDF summary only confirms pre-existing condition coverage under specific sections like 'Emergency Evacuation' (e.g., Sec 4) but lacks explicit confirmation under the main 'Medical Expenses Overseas' section (e.g., Sec 2), then report as justification_supported_by_pdf is ‘yes’ and ‘purchase of add-on required’.
+    - If the justification relies *solely* on price/ranking without establishing equivalent coverage from the PDF, mark `justification_supported_by_pdf` as 'No'.
+    - If coverage is equivalent based on the PDF and the justification *additionally* mentions price/ranking as a tie-breaker (consistent with the Tier Ranking Logic context above), verify that the chosen tier ('{recommended_tier_name}') is indeed the cheapest among the equivalent tiers according to the **Provided Ranking Data** above. If both conditions (PDF equivalence AND correct ranking application) are met, mark `justification_supported_by_pdf` as 'Yes'. Otherwise (if PDF coverage isn't equivalent OR the ranking was applied incorrectly), mark 'No'.
+    - Otherwise (no tie-breaker mentioned), mark `justification_supported_by_pdf` based purely on PDF evidence ('Yes' or 'No').
+**Specific Instruction for Medical Coverage:** When assessing Medical Coverage and the customer requirement involves pre-existing conditions, apply a stricter standard due to potential limitations of the summary PDF. If the PDF summary only confirms pre-existing condition coverage under specific sections like 'Emergency Evacuation' (e.g., Sec 4) but lacks explicit confirmation under the main 'Medical Expenses Overseas' section (e.g., Sec 2), then report `justification_supported_by_pdf` as ‘yes’ and ‘purchase of add-on required’.
 
 ## Your Task 2 :
-**Verify Summary Statements:** Verify the statements in the final summary section of the **comparison report section** (strengths & weaknesses for the recommended tier '{recommended_tier_name}') based on the **policy document** (PDF input).
-**Determine:** In the last section of the **comparison report section** (denoted by the last ##), there is a summary for the recommended tier '{recommended_tier_name}'. Determine the truth in each statement (both strengths & weakness) by referencing information provided in the **policy document**. Give the answer in 'True' or 'False' under 'validated'.
-**Explain:** Explain why "True" or "False" under `explanation`, referencing evidence from the **policy document** and list page number under `page`.
+**Verify Summary Statements:** Verify the statements in the final summary section of the **comparison report section** (strengths & weaknesses for the recommended tier '{recommended_tier_name}') based on the **policy document** (PDF input) and the **Provided Ranking Data**.
+**Determine:** In the last section of the **comparison report section** (denoted by the last ##), there is a summary for the recommended tier '{recommended_tier_name}'. Determine the truth in each statement (both strengths & weakness) by referencing information provided in the **policy document** and considering the **Tier Ranking Logic/Data**. Give the answer in 'True' or 'False' under 'validated'. Statements about price/value are considered 'True' if they accurately reflect the correct application of the **Provided Ranking Data** as a tie-breaker between tiers previously verified as equivalent based on the PDF.
+**Explain:** Explain why "True" or "False" under `explanation`, referencing evidence from the **policy document** and/or the correct application of the **Provided Ranking Data** and list page number under `page` (if applicable from PDF).
 
 ## Crucial Instructions:
 1. **Recommended Tier Focus:** Focus your analysis on the '{recommended_tier_name}' tier within the provided **policy document**.
@@ -156,7 +168,7 @@ PROMPT_TEMPLATE = """
     ],
      "overall_assessment": {{
       "pass_fail": "[PASS/FAIL]",  // PASS if all 'validated' fields in 'analysis' and 'summary_validation' are true. FAIL otherwise.
-      "explanation": "[Provide a brief (2-3 sentences) summary of the validation findings for this specific report. Assign PASS if all justifications/statements are reasonably supported by the PDF according to instructions. Assign FAIL if there are one or more significant, unsupported claims or discrepancies.]"
+      "explanation": "[Provide a brief (2-3 sentences) summary of the validation findings for this specific report. Assign PASS if all justifications/statements are reasonably supported by the PDF *and*, where applicable, correctly apply the provided **Insurer Tier Ranking Data** as a tie-breaker according to instructions. Assign FAIL if there are one or more significant claims or discrepancies unsupported by the PDF *and* not explained by the correct application of the Tier Ranking Logic/Data.]"
     }}
 }}
 ```
@@ -289,6 +301,17 @@ def evaluate_single_insurer(
         )
         return False
 
+    # Load Tier Ranking Data
+    all_rankings = get_insurer_tier_ranking()
+    insurer_ranking_list = all_rankings.get(insurer.lower())
+    insurer_ranking_list_str = (
+        json.dumps(insurer_ranking_list) if insurer_ranking_list else "N/A"
+    )
+    if insurer_ranking_list is None:
+        logging.warning(
+            f"No tier ranking found for insurer: {insurer}. Evaluation of tie-breaking logic may be limited."
+        )
+
     # Prepare Prompt
     report_section_match = re.search(
         rf"##\s*Summary and Recommendation for {re.escape(insurer)}\s*-\s*{re.escape(recommended_tier)}.*?(?=##\s*Summary and Recommendation for|$)",
@@ -319,6 +342,7 @@ def evaluate_single_insurer(
         "requirements_json_str": requirements_json_str,
         "report_section_markdown": report_section_markdown,
         "report_identifier": report_identifier,
+        "insurer_ranking_list_str": insurer_ranking_list_str,  # Add ranking list string
     }
     try:
         final_prompt = PROMPT_TEMPLATE.format(**prompt_inputs)
