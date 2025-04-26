@@ -6,6 +6,48 @@ This project tackles that challenge head-on with an intelligent workflow powered
 
 This README outlines the workflow consisting of structured data extraction, automated analysis, and rigorous evaluation which unlocks unprecedented efficiency and transparency in insurance selection, paving the way for smarter, unbiased, and transparent recommendations.
 
+### How to Run the Demo Workflow
+
+For a quick and easy way to see the entire recommendation system in action from start to finish, you can use the dedicated demo script. This script runs all the main steps automatically and creates a summary report showing what happened.
+
+**1. Basic Run (No Specific Scenario):**
+
+This command runs the workflow without focusing on a specific pre-defined test case. It will generate a conversation, process it, compare policies, and create a recommendation, but it will skip evaluations that require a specific scenario.
+
+```bash
+python scripts/run_recsys_demo.py
+```
+
+**2. Run with a Specific Scenario:**
+
+You can test the system with specific situations (scenarios) like needing pet care coverage or golf equipment insurance. Replace `<scenario_name>` with one of the available scenarios (e.g., `pet_care_coverage`, `golf_coverage`).
+
+```bash
+python scripts/run_recsys_demo.py --scenario <scenario_name>
+```
+
+*   **Available Scenarios:** `pet_care_coverage`, `golf_coverage`, `public_transport_double_cover`, `uncovered_cancellation_reason`
+*   **Optional Flag:** You can add `--skip_scenario_eval` at the end of the command (even if you provided a scenario) to specifically skip the final scenario-based evaluation step if needed.
+
+**What Happens When You Run It?**
+
+*   The script creates a unique ID (called a UUID) for this specific run.
+*   It simulates a customer conversation (or uses the specified scenario).
+*   It processes the conversation, extracts needs, compares policies, and generates a final recommendation.
+*   It performs various quality checks and evaluations along the way.
+*   **Most importantly:** It creates a summary file named `demo_summary_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.md` (where 'x' represents the unique ID) directly in the main project folder.
+
+**Checking the Results:**
+
+*   Look for the `demo_summary_... .md` file in the project's main directory after the script finishes.
+*   Open this file (it's a Markdown file, viewable in VS Code or other text editors).
+*   This summary report shows:
+    *   Which steps ran successfully or failed.
+    *   Links to the output files created at each step (like the conversation transcript, extracted requirements, comparison reports, and the final recommendation).
+    *   Details of any errors encountered.
+
+This provides a clear overview of the entire process and its results for a single demonstration run.
+
 ## System Overview
 ![NUS-project1-diagram](https://github.com/user-attachments/assets/2f53e122-077f-4a8f-86f0-8b7a7a08c95e)
 
