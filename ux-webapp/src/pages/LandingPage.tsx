@@ -133,7 +133,7 @@ const LandingPage: React.FC = () => {
               mb: 2, // Margin below dropdown
               width: '100%', // Take full width of container
               maxWidth: 420, // Match card width
-              bgcolor: 'rgba(240,240,240,0.75)',
+              bgcolor: 'background.paper',
               borderRadius: 1,
               boxShadow: 1,
               opacity: 0.9,
@@ -141,14 +141,14 @@ const LandingPage: React.FC = () => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center', // Center items within dropdown box
-              border: '1px solid #e3e3e3',
+              border: `1px solid ${theme.palette.divider}`,
               fontSize: 13,
             }}
           >
             <FormControl fullWidth size="small" sx={{ m: 0 }}>
               <InputLabel
                 id="customer-select-label-demo"
-                sx={{ fontSize: 13, top: '-6px', left: '-2px', bgcolor: 'rgba(255,255,255,0.75)', px: 0.5 }}
+                sx={{ fontSize: 13, top: '-6px', left: '-2px', bgcolor: 'background.paper', px: 0.5 }}
                 shrink
               >
                 Customer ID (Demo)
@@ -158,7 +158,7 @@ const LandingPage: React.FC = () => {
                 value={selectedCustomer}
                 label="Customer ID (Demo)"
                 onChange={handleDropdownChange}
-                sx={{ fontSize: 13, minHeight: 36, background: 'rgba(255,255,255,0.9)' }}
+                sx={{ fontSize: 13, minHeight: 36, background: 'background.paper' }}
                 MenuProps={{
                   PaperProps: {
                     sx: { fontSize: 13, maxHeight: 200 }

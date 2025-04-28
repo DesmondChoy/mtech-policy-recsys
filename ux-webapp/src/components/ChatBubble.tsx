@@ -27,7 +27,8 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ speaker, dialogue }) => {
         sx={{
           p: 1.5,
           bgcolor: speaker === 'Customer' ? 'primary.light' : 'grey.200',
-          color: speaker === 'Customer' ? 'white' : 'text.primary',
+          // Use theme's contrast text color for customer, and always dark text for agent
+          color: speaker === 'Customer' ? 'primary.contrastText' : 'grey.900',
           borderRadius: 3,
           minWidth: 100,
           maxWidth: 400,

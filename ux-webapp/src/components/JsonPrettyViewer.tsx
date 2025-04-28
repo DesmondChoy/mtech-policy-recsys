@@ -54,7 +54,17 @@ export const JsonPrettyViewer: React.FC<{ filePath: string; dataPath?: string }>
   if (content === null) return <Typography sx={{ py: 2 }}>No content to display.</Typography>; // Handle case where content is validly null/empty after extraction
 
   return (
-    <Box sx={{ fontFamily: 'monospace', fontSize: '0.9rem', bgcolor: '#f7f7fa', px: 2, py: 2, borderRadius: 2, overflowX: 'auto', whiteSpace: 'pre' }}>
+    <Box sx={{ 
+      fontFamily: 'monospace', 
+      fontSize: '0.9rem', 
+      bgcolor: 'background.paper', 
+      color: 'text.primary',
+      px: 2, 
+      py: 2, 
+      borderRadius: 2, 
+      overflowX: 'auto', 
+      whiteSpace: 'pre' 
+    }}>
       {JSON.stringify(content, null, 2)}
     </Box>
   );
