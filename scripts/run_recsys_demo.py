@@ -339,16 +339,17 @@ def main():
 
     # --- Task 4: UUID Generation & Initial Output ---
     run_uuid = uuid.uuid4()
+    # This initial UUID might be overwritten by the one from the generated transcript filename
     uuid_str = str(run_uuid)
-    summary_report_path = PROJECT_ROOT / f"demo_summary_{uuid_str}.md"
+    # summary_report_path will be defined later using the final uuid_str
 
     logging.info("-" * 60)
     logging.info(f"Starting RecSys Demo Run")
     logging.info(f"  Scenario: {scenario_name}")
-    logging.info(f"  UUID:     {uuid_str}")
     logging.info(
-        f"  Summary Report will be saved to: {summary_report_path.relative_to(PROJECT_ROOT)}"
+        f"  Initial UUID: {uuid_str} (may change based on transcript generation)"
     )
+    # Log the final path later
     logging.info("-" * 60)
 
     # --- Task 6: Implement Main Pipeline Logic ---
@@ -500,7 +501,7 @@ def main():
         DATA_DIR
         / "evaluation"
         / "ground_truth_evaluation"
-        / f"coverage_eval_{uuid_str}.json"
+        / f"coverage_evaluation_{uuid_str}.json"
     )
 
     # --- Step 2: Evaluate Transcript ---
@@ -765,6 +766,11 @@ def main():
         run_results[step_name_gen_coverage] = {"status": "Skipped", "output_files": []}
 
     # --- Task 7: Implement Summary Generation ---
+    # Define final summary path using the potentially updated uuid_str
+    summary_report_path = PROJECT_ROOT / f"demo_summary_{uuid_str}.md"
+    logging.info(
+        f"Final Summary Report will be saved to: {summary_report_path.relative_to(PROJECT_ROOT)}"
+    )  # Log the final path here
     generate_summary_markdown(run_results, scenario_name, uuid_str, summary_report_path)
 
     logging.info("Demo pipeline execution finished.")

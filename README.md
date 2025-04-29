@@ -6,54 +6,9 @@ This project tackles that challenge head-on with an intelligent workflow powered
 
 This README outlines the workflow consisting of structured data extraction, automated analysis, and rigorous evaluation which unlocks unprecedented efficiency and transparency in insurance selection, paving the way for smarter, unbiased, and transparent recommendations.
 
-### How to Run the Demo Workflow
-
-For a quick and easy way to see the entire recommendation system in action from start to finish, you can use the dedicated demo script. This script runs all the main steps automatically and creates a summary report showing what happened.
-
-**1. Basic Run (No Specific Scenario):**
-
-This command runs the workflow without focusing on a specific pre-defined test case. It will generate a conversation, process it, compare policies, and create a recommendation, but it will skip evaluations that require a specific scenario.
-
-```bash
-python scripts/run_recsys_demo.py
-```
-
-**2. Run with a Specific Scenario:**
-
-You can test the system with specific situations (scenarios) like needing pet care coverage or golf equipment insurance. Replace `<scenario_name>` with one of the available scenarios (e.g., `pet_care_coverage`, `golf_coverage`).
-
-```bash
-python scripts/run_recsys_demo.py --scenario <scenario_name>
-```
-
-*   **Available Scenarios:** `pet_care_coverage`, `golf_coverage`, `public_transport_double_cover`, `uncovered_cancellation_reason`
-*   **Optional Flag:** You can add `--skip_scenario_eval` at the end of the command (even if you provided a scenario) to specifically skip the final scenario-based evaluation step if needed.
-
-**What Happens When You Run It?**
-
-*   The script creates a unique ID (called a UUID) for this specific run.
-*   It simulates a customer conversation (or uses the specified scenario).
-*   It processes the conversation, extracts needs, compares policies, and generates a final recommendation.
-*   It performs various quality checks and evaluations along the way.
-*   **Most importantly:** It creates a summary file named `demo_summary_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.md` (where 'x' represents the unique ID) directly in the main project folder.
-
-**Checking the Results:**
-
-*   Look for the `demo_summary_... .md` file in the project's main directory after the script finishes.
-*   Open this file (it's a Markdown file, viewable in VS Code or other text editors).
-*   This summary report shows:
-    *   Which steps ran successfully or failed.
-    *   Links to the output files created at each step (like the conversation transcript, extracted requirements, comparison reports, and the final recommendation).
-    *   Details of any errors encountered.
-
-This provides a clear overview of the entire process and its results for a single demonstration run.
-
-## System Overview
-![NUS-project1-diagram](https://github.com/user-attachments/assets/2f53e122-077f-4a8f-86f0-8b7a7a08c95e)
-
 ## Getting Started
 
-Follow these steps to set up the project environment:
+Follow these steps to set up the project environment for running the backend scripts:
 
 1.  **Clone the Repository**:
     ```bash
@@ -63,12 +18,16 @@ Follow these steps to set up the project environment:
     *(Replace `<repository_url>` with the actual URL)*
 
 2.  **Set Up Python Environment**:
-    It's recommended to use a virtual environment:
+    This project requires **Python 3.11 or 3.12** due to specific dependencies (as noted in `pyproject.toml`). Please ensure you have a compatible version installed.
+
+    It's highly recommended to use a virtual environment. Create one using a compatible Python version (example uses 3.11):
     ```bash
-    python -m venv venv
+    # Replace 'python3.11' with the command that invokes Python 3.11 on your system
+    # (e.g., 'python', 'py -3.11', etc.)
+    python3.11 -m venv venv 
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     ```
-    Install Python dependencies for the core backend scripts and logic:
+    Once the virtual environment is activated, install the Python dependencies:
     ```bash
     pip install -r requirements.txt
     ```
@@ -81,161 +40,159 @@ Follow these steps to set up the project environment:
     # OPENAI_MODEL_NAME="gpt-4o" # Optional: Defaults to gpt-4o if not set for CrewAI/Extractor
     ```
 
-4.  **Install Node.js Dependencies (for Frontend)**:
-    This project includes a frontend web application component located in the `ux-webapp/` directory. To set up the frontend, navigate to that directory and install the required Node.js dependencies:
+4.  **Install Node.js Dependencies (Optional - for Local Frontend Development)**:
+    This project includes a frontend web application component (`ux-webapp/`). **This step is optional** as the application is already deployed and accessible online (see "Online Access" section below).
+
+    If you wish to run or develop the frontend *locally*, navigate to the `ux-webapp/` directory and install the required Node.js dependencies:
     ```bash
     cd ux-webapp
     npm install
-    cd ..
+    cd .. 
     ```
-    *Note: Ensure you have Node.js and npm installed. This step is necessary to run the web interface.*
+    *Note: Ensure you have Node.js and npm installed if performing this optional step.*
 
-## User-Friendly Web Interface
+## Online Access (Web Interface)
 
-This project includes a modern, easy-to-use web application that makes exploring insurance recommendations simple:
-
-- **Simple Login**: Enter your customer ID to access your personalized reports
-- **Intuitive Navigation**: Browse different sections of your recommendation through a familiar tab-based interface
-- **Interactive Features**:
-  - View your personalized recommendation with clear justifications
-  - Compare different insurance policies side-by-side
-  - Review your original conversation
-  - Provide feedback on recommendations
-- **Mobile-Friendly**: Access your recommendations on any device
-
-### Running the Web Interface
-
-1. **Start the Development Server**:
-   ```bash
-   cd ux-webapp
-   npm run dev
-   ```
-   Then open your browser to the displayed URL (typically http://localhost:5173)
-
-2. **Build for Production** (optional):
-   ```bash
-   cd ux-webapp
-   npm run build
-   ```
-   This creates optimized files in the `ux-webapp/dist` directory.
-
-### Online Access
-
-The web application is deployed and accessible online at:
+The user-friendly web application is deployed and accessible online at:
 [https://aegis-recsys.netlify.app/](https://aegis-recsys.netlify.app/)
 
-You can use this link to explore the interface and functionality without installing the project locally.
+You can use this link to explore the interface and functionality without needing to run the backend scripts or frontend locally.
+
+## How to Run the Demo Workflow (Backend)
+
+For a quick way to see the entire backend recommendation system workflow in action, use the dedicated demo script. This script runs all the main steps automatically and creates a summary report showing what happened.
+
+**1. Basic Run (No Specific Scenario):**
+
+This command runs the workflow without focusing on a specific pre-defined test case. It will generate a conversation, process it, compare policies, and create a recommendation, but it will skip evaluations that require a specific scenario.
+
+```bash
+python scripts/run_recsys_demo.py
+```
+
+**2. Run with a Specific Scenario:**
+
+You can test the system with specific situations (scenarios). Replace `<scenario_name>` with one of the available scenarios.
+
+```bash
+python scripts/run_recsys_demo.py --scenario <scenario_name>
+```
+
+*   **Available Scenarios:** `pet_care_coverage`, `golf_coverage`, `public_transport_double_cover`, `uncovered_cancellation_reason`
+*   **Optional Flag:** You can add `--skip_scenario_eval` at the end of the command (even if you provided a scenario) to specifically skip the final scenario-based evaluation step if needed.
+
+**What Happens When You Run It?**
+
+*   The script creates a unique ID (UUID) for this specific run.
+*   It simulates a customer conversation (or uses the specified scenario).
+*   It processes the conversation, extracts needs, compares policies, and generates a final recommendation.
+*   It performs various quality checks and evaluations along the way.
+*   **Most importantly:** It creates a summary file named `demo_summary_{uuid}.md` in the main project folder.
+
+**Checking the Results:**
+
+*   Look for the `demo_summary_... .md` file in the project's main directory after the script finishes.
+*   Open this file to see the status of each step, links to output files (transcript, requirements, comparisons, recommendation), and any errors.
+
+## System Overview
+![NUS-project1-diagram](https://github.com/user-attachments/assets/2f53e122-077f-4a8f-86f0-8b7a7a08c95e)
 
 ## Key Features
 
-**1. Data Generation & Processing:**
-- **Synthetic Transcript Generation**: Creates realistic, scenario-driven customer conversations using LLMs, incorporating personalities and specific coverage requirements.
-- **Automated Policy Extraction**: Uses LLMs to parse policy PDFs, extracting tier-specific coverage into structured JSON, including base/conditional limits and source-linked details.
-- **Structured Requirement Extraction**: Employs an AI agent (using the CrewAI framework) to analyze transcripts and convert customer needs into validated, structured JSON based on a predefined schema.
+*   **Automated Data Extraction**: Uses LLMs to extract structured data from policy PDFs and customer transcripts.
+*   **Scenario-Driven Generation**: Creates realistic synthetic transcripts based on defined scenarios and personalities.
+*   **Agent-Based Requirement Extraction**: Employs a CrewAI agent to identify and structure customer needs.
+*   **LLM-Powered Comparison & Recommendation**: Generates detailed policy comparisons and justified final recommendations.
+*   **Multi-faceted Evaluation**: Includes steps to evaluate transcript quality, extraction accuracy, and recommendation relevance against ground truth data.
+*   **Web Interface**: Provides an optional, user-friendly interface (deployed online) for exploring results.
 
-**2. Analysis & Recommendation:**
-- **Insurer-Level Policy Comparison**: Generates Markdown reports via LLMs comparing customer requirements against all policy tiers for an insurer, recommending the best-fit tier with justification and detailed coverage analysis.
-- **Final Recommendation Report Generation**: Processes comparison reports, applies scoring, uses an LLM for re-ranking, and generates a final customer-friendly Markdown recommendation report.
+## Command-Line Usage (Individual Scripts)
 
-**3. Evaluation & Quality Assurance:**
-The system incorporates several evaluation steps throughout the workflow to ensure data quality and accuracy. A central **Ground Truth Knowledge Base** (`data/ground_truth/ground_truth.json`) defines which specific requirements are covered by which policy tiers and is utilized by downstream evaluation steps. The key evaluations, in workflow order, are:
+This section outlines the key commands for running individual parts of the system if you don't want to use the full demo script.
 
-- **LLM-Based Transcript Evaluation**: Assesses generated transcripts for quality, relevance, and requirement coverage completeness before they are processed further. (See `scripts/evaluation/transcript_evaluation/eval_transcript_main.py`).
-- **PDF Extraction Evaluation**: Compares the structured JSON data extracted from policy PDFs against the original source PDF using a multi-modal LLM to verify extraction accuracy and completeness. (See `scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py`).
-- **Comparison Report Evaluation**: Evaluates the quality and accuracy of the generated policy comparison reports using an LLM to compare against source PDFs and customer requirements. (See `scripts/evaluation/comparison_report_evaluation/eval_comparison_report.py`).
-- **Coverage Ground Truth Evaluation**: After a final recommendation is generated, this step assesses how well the *recommended policy* covers the customer's *individual requirements*. It uses semantic matching (`src/embedding/embedding_utils.py`) against the Ground Truth Knowledge Base to check each requirement's coverage status (Covered, Not Covered, or Requirement Not Found). (See `scripts/generate_ground_truth_coverage.py`).
-- **Scenario Ground Truth Evaluation**: Also performed after the final recommendation, this compares the *overall recommended policy* against *predefined expected outcomes* for specific test scenarios (which might also be defined within the knowledge base or a related file like `data/evaluation/scenario_evaluation/scenario_ground_truth.json`). This verifies if the final recommendation aligns with the expected policy for that specific situation. (See `scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py`).
+### Setup & Preparation
 
-**4. Future Goals:**
-- **Iterative Refinement**: Future goal for users to update needs and receive refined recommendations.
+1.  **Extract Policy Data**: Process policy PDFs into structured JSON.
+    ```bash
+    # Process a specific policy PDF
+    python scripts/extract_policy_tier.py --pdf_path data/policies/raw/fwd_Premium.pdf --output_dir data/policies/processed/
 
-## Command-Line Usage
+    # Process all policy PDFs in the raw directory
+    python scripts/extract_policy_tier.py
+    ```
 
-This section outlines the key commands available for running different parts of the system.
+2.  **Generate Personalities** (Optional): Create personality profiles for transcript generation.
+    ```bash
+    python scripts/data_generation/generate_personalities.py
+    ```
 
-### Data Generation and Processing
+### Core Workflow Steps
 
-1. **Extract Policy Data**:
-   ```bash
-   # Process a specific policy PDF
-   python scripts/extract_policy_tier.py --pdf_path data/policies/raw/fwd_Premium.pdf --output_dir data/policies/processed/
+3.  **Generate Synthetic Transcripts**: Create conversation data.
+    ```bash
+    # Generate 5 general transcripts
+    python scripts/data_generation/generate_transcripts.py -n 5
 
-   # Process all policy PDFs in the raw directory
-   python scripts/extract_policy_tier.py
-   ```
+    # Generate 3 transcripts for a specific scenario (e.g., golf_coverage)
+    # Available scenarios: golf_coverage, pet_care_coverage, public_transport_double_cover, uncovered_cancellation_reason
+    python scripts/data_generation/generate_transcripts.py -n 3 -s golf_coverage
+    ```
 
-2. **Generate Personalities** (optional):
-   ```bash
-   python scripts/data_generation/generate_personalities.py
-   ```
+4.  **Parse Transcripts**: Convert raw transcripts to a standard processed format.
+    ```bash
+    python src/utils/transcript_processing.py
+    ```
 
-3. **Generate Synthetic Transcripts**:
-   ```bash
-   # Generate 5 general transcripts
-   python scripts/data_generation/generate_transcripts.py -n 5
+5.  **Extract Requirements**: Use the CrewAI agent to extract needs from processed transcripts.
+    ```bash
+    python src/agents/extractor.py
+    ```
 
-   # Generate 3 transcripts for a specific scenario (e.g., golf coverage)
-   python scripts/data_generation/generate_transcripts.py -n 3 -s golf_coverage
-   ```
-   Available scenarios: `golf_coverage`, `pet_care_coverage`, `public_transport_double_cover`, `uncovered_cancellation_reason`
+6.  **Generate Policy Comparison Reports**: Compare extracted requirements against processed policies.
+    ```bash
+    # Generate comparison reports for a specific customer UUID
+    python scripts/generate_policy_comparison.py --customer_id <customer_uuid>
+    ```
 
-4. **Evaluate Transcripts**:
-   ```bash
-   # Evaluate a single transcript
-   python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --transcript data/transcripts/raw/synthetic/transcript_golf_coverage_6aef8846-aed1-4a6e-8115-d5ca7d6d0abf.json
+7.  **Generate Final Recommendation**: Create the final recommendation report based on comparisons.
+    ```bash
+    # Generate recommendation for a specific customer UUID
+    python scripts/generate_recommendation_report.py --customer_id <customer_uuid>
 
-   # Evaluate all transcripts in a directory
-   python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/
-   ```
-
-5. **Parse Transcripts**:
-   ```bash
-   python src/utils/transcript_processing.py
-   ```
-
-6. **Extract Requirements**:
-   ```bash
-   python src/agents/extractor.py
-   ```
-
-### Analysis and Recommendation
-
-7. **Generate Policy Comparison Reports**:
-   ```bash
-   # Generate comparison reports for a specific customer
-   python scripts/generate_policy_comparison.py --customer_id 49eb20af-32b0-46e0-a14e-0dbe3e3c6e73
-   ```
-
-8. **Generate Final Recommendation**:
-   ```bash
-   # Generate recommendation for a specific customer
-   python scripts/generate_recommendation_report.py --customer_id 49eb20af-32b0-46e0-a14e-0dbe3e3c6e73
-
-   # Force overwrite of existing recommendation
-   python scripts/generate_recommendation_report.py --customer_id 49eb20af-32b0-46e0-a14e-0dbe3e3c6e73 --overwrite
-   ```
+    # Force overwrite of existing recommendation
+    python scripts/generate_recommendation_report.py --customer_id <customer_uuid> --overwrite
+    ```
 
 ### Evaluation Tools
 
-9. **Evaluate PDF Extraction**:
-   ```bash
-   # Evaluate all processed policy JSON files
-   python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py
+8.  **Evaluate Transcripts**: Check the quality of generated transcripts.
+    ```bash
+    # Evaluate a single transcript
+    python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --transcript <path_to_raw_transcript.json>
 
-   # Evaluate only specific policies (using file pattern)
-   python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py --file_pattern "fwd_*.json"
+    # Evaluate all transcripts in the raw synthetic directory
+    python scripts/evaluation/transcript_evaluation/eval_transcript_main.py --directory data/transcripts/raw/synthetic/
     ```
 
-10. **Evaluate Recommendation Coverage (vs. Ground Truth)**:
+9.  **Evaluate PDF Extraction**: Verify the accuracy of policy data extraction.
+    ```bash
+    # Evaluate all processed policy JSON files
+    python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py
+
+    # Evaluate only specific policies (using file pattern)
+    python scripts/evaluation/pdf_extraction_evaluation/eval_pdf_extraction.py --file_pattern "fwd_*.json"
+    ```
+
+10. **Evaluate Recommendation Coverage (vs. Ground Truth)**: Check how well the recommended policy covers individual requirements.
     ```bash
     # Evaluate coverage for all customers
     python scripts/generate_ground_truth_coverage.py
 
-    # Evaluate coverage for a specific customer with debug output
-    python scripts/generate_ground_truth_coverage.py --customer <customer_id> --debug 
+    # Evaluate coverage for a specific customer UUID with debug output
+    python scripts/generate_ground_truth_coverage.py --customer <customer_uuid> --debug 
     ```
 
-11. **Evaluate Scenario Recommendations (vs. Ground Truth)**:
+11. **Evaluate Scenario Recommendations (vs. Ground Truth)**: Check if the final recommendation matches the expected outcome for a test scenario.
     ```bash
     # Evaluate recommendations for a specific scenario
     python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py --scenario golf_coverage
@@ -244,15 +201,15 @@ This section outlines the key commands available for running different parts of 
     python scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py
     ```
 
-12. **Calculate Scenario Pass Rates**:
+12. **Calculate Scenario Pass Rates**: Summarize scenario evaluation results.
     ```bash
     python scripts/calculate_scenario_pass_rates.py
     ```
 
 ### End-to-End Workflow (Orchestrator)
 
-13. **Run Complete Pipeline**:
-    The `scripts/orchestrate_scenario_evaluation.py` script automates the entire workflow from transcript generation to final evaluation for target scenarios.
+13. **Run Complete Pipeline (Alternative to Demo Script)**:
+    The `scripts/orchestrate_scenario_evaluation.py` script automates the workflow for *multiple* transcripts per scenario, useful for broader testing.
     ```bash
     # Run the full workflow with 5 transcripts per scenario
     python scripts/orchestrate_scenario_evaluation.py -n 5
@@ -260,30 +217,29 @@ This section outlines the key commands available for running different parts of 
     # Skip transcript evaluation for faster processing
     python scripts/orchestrate_scenario_evaluation.py -n 5 --skip_transcript_eval
 
-    # Only run the final evaluation step on existing results
+    # Only run the final evaluation aggregation step on existing results
     python scripts/orchestrate_scenario_evaluation.py --only_aggregate
     ```
-    *   **Arguments**:
-        *   `-n`, `--num_transcripts`: Number of transcripts per scenario (default: 5).
-        *   `--skip_transcript_eval`: Skips initial transcript evaluation.
-        *   `--only_aggregate`: Skips generation/processing, only runs final evaluation.
-    *   **Output**: Creates intermediate files and final reports. Aggregated scenario evaluation results are saved in `data/evaluation/scenario_evaluation/`.
+    *   **Arguments**: `-n` (num transcripts), `--skip_transcript_eval`, `--only_aggregate`.
+    *   **Output**: Creates intermediate files and final reports. Aggregated scenario evaluation results saved in `data/evaluation/scenario_evaluation/`.
 
-## Specialized Travel Scenarios
+### Running the Web Interface Locally (Optional)
 
-The system is designed to handle specific travel situations including:
+If you completed the optional Node.js setup in "Getting Started":
 
-- **Golf Trips**: Coverage for equipment, green fees, and other golf-specific needs
-- **Pet Owners**: Options for pet accommodation if your return is delayed
-- **Public Transport**: Enhanced coverage when traveling on public transportation
-- **Special Events**: Coverage for trip cancellation due to important personal events
+1. **Start the Development Server**:
+   ```bash
+   cd ux-webapp
+   npm run dev
+   ```
+   Then open your browser to the displayed URL (typically http://localhost:5173).
 
-These scenarios can be selected when generating test data to see how the system handles specific travel needs. Use the `-s` flag with the `generate_transcripts.py` script to specify a scenario:
-
-```bash
-# Example: Generate 3 transcripts for golf coverage scenario
-python scripts/data_generation/generate_transcripts.py -n 3 -s golf_coverage
-```
+2. **Build for Production** (Optional):
+   ```bash
+   cd ux-webapp
+   npm run build
+   ```
+   This creates optimized files in the `ux-webapp/dist` directory.
 
 ## Technical Stack
 
