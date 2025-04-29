@@ -57,7 +57,7 @@ The project is in the **initial setup and planning phase**. We are currently est
 | **Recommender Logic Script**       | **100%**    | **High** | **`scripts/generate_recommendation_report.py` implemented (parser, score, re-rank with transcript context, MD report, efficient overwrite check, improved logging).** |
 | **Ground Truth Data**              | **100%**    | **High** | **`data/ground_truth/ground_truth.json` created and refined.**                                       |
 | **Embedding Utilities**            | **100%**    | **High** | **`src/embedding/embedding_utils.py` implemented with `EmbeddingMatcher`.**                          |
-| **Scenario Rec. Evaluation**       | **100%**    | **High** | **`scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` implemented, uses embeddings. Testing/Refinement pending.** |
+| **Scenario Rec. Evaluation**       | **100%**    | **High** | **`scripts/evaluation/scenario_evaluation/evaluate_scenario_recommendations.py` implemented, uses embeddings. Enhanced with `--target-uuid` for single-run evaluation.** |
 | **Ground Truth Coverage Script**   | **100%**    | **Medium** | **`scripts/generate_ground_truth_coverage.py` added. Functionality/Testing pending.**                |
 | **Orchestration Script**           | **100%**    | **High** | **`scripts/orchestrate_scenario_evaluation.py` implemented and debugged. Parallel eval, sequential reports. Final evaluation includes all reports. Added `--only_aggregate` flag.** |
 | **Component Integration**          | **20%**     | **Medium** | **Internal Stage 1/2 integration done. Full pipeline orchestration pending.**                        |
@@ -68,9 +68,10 @@ The project is in the **initial setup and planning phase**. We are currently est
 | **Frontend Disclaimer Page**       | **100%**    | **Medium** | **Added disclaimer page (`DisclaimerPage.tsx`), route (`/disclaimer/:uuid`), and updated `TransitionPage` navigation.** |
 | **Frontend Feedback UI**           | **100%**    | **Medium** | **Added Feedback tab, thumbs up/down buttons (centered), styled predefined feedback buttons (chip-style, blue, left-aligned), text area, send button with snackbar.** |
 | **Frontend Tab Scrolling**         | **100%**    | **Medium** | **Fixed tab label cutoff by making tabs always scrollable.**                                         |
+| **Demo Script (`run_recsys_demo.py`)** | **100%**    | **High** | **Fully debugged and functional for end-to-end single-scenario runs.**                               |
 | Testing Framework                  | 20%         | Medium   | Unit tests added for recommender parser/scorer/MD report. More needed.                               |
 | ML Models                          | 0%          | Low      | Later phase.                                                                                         |
-| Documentation (Memory Bank)        | **In Prog.**| High     | **Updating core files for recent frontend changes and demo script debugging.**                       |
+| Documentation (Memory Bank)        | **100%**    | High     | **Updated for demo script fixes and `--target-uuid` enhancement.**                                   |
 
 ## Known Issues
 
@@ -99,4 +100,4 @@ The project is in the **initial setup and planning phase**. We are currently est
 12. **Frontend Feedback UI Implementation**: Added Feedback tab, thumbs up/down buttons (centered), styled predefined feedback buttons (chip-style, blue, left-aligned), text area, and send button with snackbar confirmation.
 13. **Frontend Tab Scrolling Fix**: Resolved tab label cutoff issue by making tabs always scrollable.
 14. **Comparison Report Evaluation Debugging & Refinement**: Fixed multiple issues (`TypeError`, `429 RESOURCE_EXHAUSTED`, PDF input format) in `scripts/evaluation/comparison_report_evaluation/eval_comparison_report.py` and related config (`src/models/gemini_config.py`). Modified script to save output to `data/evaluation/comparison_report_evaluations/{uuid}/`. Successfully tested with `--overwrite` flag.
-15. **Demo Script Debugging**: Resolved multiple issues in `scripts/run_recsys_demo.py` including argument mismatches and adapting dependent scripts (`transcript_processing.py`, `extractor.py`) for single-file execution. Confirmed necessary dependencies (`nltk`, `sklearn`) are installed.
+15. **Demo Script (`run_recsys_demo.py`) Debugging & Refinement**: Resolved multiple issues including argument mismatches, `UnicodeDecodeError`, missing output files, and incorrect evaluation scope. Adapted dependent scripts (`transcript_processing.py`, `extractor.py`, `evaluate_scenario_recommendations.py`) for single-run execution within the demo context. Confirmed necessary dependencies (`nltk`, `sklearn`) are installed.

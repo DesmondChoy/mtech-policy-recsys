@@ -341,3 +341,9 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Fixed JSON viewer in `ux-webapp/src/components/JsonPrettyViewer.tsx` by replacing hardcoded background color `bgcolor: '#f7f7fa'` with theme-aware `bgcolor: 'background.paper'` and adding `color: 'text.primary'`.
     - Fixed landing page dropdown in `ux-webapp/src/pages/LandingPage.tsx` by replacing multiple hardcoded colors with theme-aware alternatives (`background.paper`, `theme.palette.divider`).
     - These changes ensure all text is properly visible in both light and dark modes, adapting to the user's system preferences.
+53. **Demo Script (`run_recsys_demo.py`) Scenario Evaluation Fixes**:
+    - Fixed `UnicodeDecodeError` during transcript generation subprocess by adding `errors="ignore"` to the `subprocess.run` call in `run_recsys_demo.py`.
+    - Fixed `unrecognized arguments: --uuid` error when calling `evaluate_scenario_recommendations.py` by removing the `--uuid` parameter from the call in `run_recsys_demo.py`.
+    - Fixed "expected output file not found" warning by adding the `-o {scenario_eval_path}` parameter to the call to `evaluate_scenario_recommendations.py` in `run_recsys_demo.py`.
+    - Added `--target-uuid` parameter to `evaluate_scenario_recommendations.py` (logic and argument parser) to allow evaluation of a single UUID.
+    - Updated `run_recsys_demo.py` to pass the `--target-uuid` parameter to `evaluate_scenario_recommendations.py`, ensuring the demo evaluates only the UUID generated in that specific run.

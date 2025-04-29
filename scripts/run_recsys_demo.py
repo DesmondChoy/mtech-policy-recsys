@@ -178,6 +178,7 @@ def run_step(
             check=False,  # Don't raise exception on non-zero exit code
             cwd=PROJECT_ROOT,  # Ensure script runs from project root
             encoding="utf-8",  # Specify encoding
+            errors="ignore",  # Ignore decoding errors to prevent UnicodeDecodeError
         )
 
         stdout_log = process.stdout.strip()
@@ -699,9 +700,13 @@ def main():
         eval_scenario_args = [
             "--scenario",
             scenario_name,
-            "--uuid",
-            uuid_str,
-        ]  # Pass potentially updated UUID
+            "-o",  # Output file argument to specify where to save results
+            str(
+                scenario_eval_path
+            ),  # Path where the orchestrator expects the output file
+            "--target-uuid",  # Target UUID argument to focus on just this UUID
+            uuid_str,  # Pass the UUID for the current run
+        ]
         success_eval_scenario = run_step(
             step_name_eval_scenario,
             eval_scenario_script,

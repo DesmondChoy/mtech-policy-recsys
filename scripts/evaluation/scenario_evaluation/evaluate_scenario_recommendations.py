@@ -166,7 +166,12 @@ def extract_uuid_from_filename(filename: Path) -> str | None:
     return None
 
 
-def main(results_dir: str, output_file: str | None, target_scenario: str | None):
+def main(
+    results_dir: str,
+    output_file: str | None,
+    target_scenario: str | None,
+    target_uuid: str | None,
+):
     """Main function to run the evaluation."""
     results_path = Path(results_dir)
     if not results_path.is_dir():
@@ -189,7 +194,36 @@ def main(results_dir: str, output_file: str | None, target_scenario: str | None)
         return
 
     target_uuids = None
-    if target_scenario:
+
+    # If a specific target UUID is provided, use only that UUID
+    if target_uuid:
+        logging.info(f"Focusing evaluation on specific UUID: {target_uuid}")
+        target_uuids = {target_uuid}
+
+        # We still need to know the scenario for this UUID to get the ground truth
+        if not target_scenario:
+            # Try to find the scenario from transcript files
+            transcript_pattern = TRANSCRIPT_DIR / f"transcript_*_{target_uuid}.json"
+            matching_transcripts = list(
+                TRANSCRIPT_DIR.glob(f"transcript_*_{target_uuid}.json")
+            )
+            if matching_transcripts:
+                scenario_name = extract_scenario_from_filename(matching_transcripts[0])
+                if scenario_name and scenario_name in ground_truth_data:
+                    target_scenario = scenario_name
+                    logging.info(
+                        f"Determined scenario '{target_scenario}' from transcript filename"
+                    )
+                else:
+                    logging.error(
+                        f"Could not determine valid scenario for UUID {target_uuid}"
+                    )
+                    return
+            else:
+                logging.error(f"No transcript found for UUID {target_uuid}")
+                return
+    # Otherwise, if only a scenario is provided, find all UUIDs for that scenario
+    elif target_scenario:
         logging.info(f"Filtering evaluation for scenario: {target_scenario}")
         target_uuids = set()
         transcript_pattern = TRANSCRIPT_DIR / f"transcript_{target_scenario}_*.json"
@@ -396,5 +430,12 @@ if __name__ == "__main__":
         default=None,
         help="Optional specific scenario name to evaluate. If not provided, evaluates all scenarios found.",
     )
+    # Add target UUID argument
+    parser.add_argument(
+        "-u",
+        "--target-uuid",
+        default=None,
+        help="Optional specific UUID to evaluate. If provided, only evaluates the recommendation for this UUID.",
+    )
     args = parser.parse_args()
-    main(args.results_dir, args.output_file, args.scenario)
+    main(args.results_dir, args.output_file, args.scenario, args.target_uuid)

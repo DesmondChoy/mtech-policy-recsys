@@ -82,6 +82,11 @@
     *   The comparison reports (Markdown) are parsed by the `scripts/generate_recommendation_report.py` script.
     *   This script performs Stage 1 scoring, uses `LLMService` for Stage 2 re-ranking, and generates the final recommendation report in Markdown format (`results/{uuid}/recommendation_report_{uuid}.md`).
 
+6.  **Demo Script Orchestration (`scripts/run_recsys_demo.py`)**:
+    *   This script provides a simplified end-to-end run for a single scenario.
+    *   It calls the necessary scripts (generation, parsing, extraction, comparison, recommendation) sequentially for a *single generated UUID*.
+    *   Crucially, when calling the scenario evaluation script (`evaluate_scenario_recommendations.py`), it passes the specific `--target-uuid` to ensure only the current run's result is evaluated, preventing aggregation of historical data for the same scenario.
+
 ## Project-Specific Patterns
 
 1. **LLM Prompt Engineering**:
