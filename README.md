@@ -1,4 +1,4 @@
-# Revolutionizing Travel Insurance: An LLM-Powered Recommendation Workflow
+# Aegis AI: Simplifying Travel Insurance with Intelligent Recommendations
 
 Navigating the complexities of travel insurance is a major consumer headache, leading to confusion and suboptimal choices.  
 
@@ -6,16 +6,17 @@ This project tackles that challenge head-on with an intelligent workflow powered
 
 This README outlines the workflow consisting of structured data extraction, automated analysis, and rigorous evaluation which unlocks unprecedented efficiency and transparency in insurance selection, paving the way for smarter, unbiased, and transparent recommendations.
 
+The user-facing application for this system is named **Aegis AI**. The name draws inspiration from mythology: the Aegis was the legendary shield of protection carried by Zeus and Athena. This name reflects the project's goal of providing robust protection (like the shield) through intelligent, modern solutions (AI).
+
 ## Getting Started
 
 Follow these steps to set up the project environment for running the backend scripts:
 
 1.  **Clone the Repository**:
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/DesmondChoy/mtech-policy-recsys
     cd mtech-policy-recsys
     ```
-    *(Replace `<repository_url>` with the actual URL)*
 
 2.  **Set Up Python Environment**:
     This project requires **Python 3.11 or 3.12** due to specific dependencies (as noted in `pyproject.toml`). Please ensure you have a compatible version installed.
@@ -51,12 +52,12 @@ Follow these steps to set up the project environment for running the backend scr
     ```
     *Note: Ensure you have Node.js and npm installed if performing this optional step.*
 
-## Online Access (Web Interface)
+## Online Access (Aegis AI Web Interface)
 
-The user-friendly web application is deployed and accessible online at:
+The user-friendly **Aegis AI** web application is deployed and accessible online at:
 [https://aegis-recsys.netlify.app/](https://aegis-recsys.netlify.app/)
 
-You can use this link to explore the interface and functionality without needing to run the backend scripts or frontend locally.
+You can use this link to explore the Aegis AI interface and functionality without needing to run the backend scripts or frontend locally.
 
 ## How to Run the Demo Workflow (Backend)
 
@@ -89,13 +90,15 @@ python scripts/run_recsys_demo.py --scenario <scenario_name>
 *   It performs various quality checks and evaluations along the way.
 *   **Most importantly:** It creates a summary file named `demo_summary_{uuid}.md` in the main project folder.
 
+**Important Cost Note:** Running this demo script involves multiple calls to LLM APIs. Expect approximate costs of **SGD $3** for Google Gemini API usage and **a few cents (USD)** for OpenAI API usage per run. Costs may vary based on API pricing changes and specific run complexity.
+
 **Checking the Results:**
 
 *   Look for the `demo_summary_... .md` file in the project's main directory after the script finishes.
 *   Open this file to see the status of each step, links to output files (transcript, requirements, comparisons, recommendation), and any errors.
 
 ## System Overview
-![NUS-project1-diagram](https://github.com/user-attachments/assets/2f53e122-077f-4a8f-86f0-8b7a7a08c95e)
+![NUS-project-diagram](data/architecture.jpg)
 
 ## Key Features
 
@@ -104,7 +107,7 @@ python scripts/run_recsys_demo.py --scenario <scenario_name>
 *   **Agent-Based Requirement Extraction**: Employs a CrewAI agent to identify and structure customer needs.
 *   **LLM-Powered Comparison & Recommendation**: Generates detailed policy comparisons and justified final recommendations.
 *   **Multi-faceted Evaluation**: Includes steps to evaluate transcript quality, extraction accuracy, and recommendation relevance against ground truth data.
-*   **Web Interface**: Provides an optional, user-friendly interface (deployed online) for exploring results.
+*   **Aegis AI Web Interface**: Provides an optional, user-friendly interface (deployed online) for exploring results.
 
 ## Command-Line Usage (Individual Scripts)
 
@@ -254,10 +257,10 @@ If you completed the optional Node.js setup in "Getting Started":
 
 The current system provides a robust foundation. Future work could include:
 
-- **Functional Feedback System**: Implementing the backend logic to actually collect and process user feedback submitted through the web interface.
+- **Functional Feedback System**: Implementing the backend logic to actually collect and process user feedback submitted through the **Aegis AI** web interface.
 - **Advanced Orchestration**: Developing a more sophisticated workflow management system beyond the current script-based orchestration.
 - **Machine Learning Insights**: Training ML models on the generated data (requirements, recommendations) to uncover deeper insights.
-- **Iterative Refinement**: Allowing users to update their needs within the web interface and receive refined recommendations.
+- **Iterative Refinement**: Allowing users to update their needs within the **Aegis AI** web interface and receive refined recommendations.
 
 ## Academic Project
 
