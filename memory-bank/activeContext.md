@@ -347,3 +347,5 @@ The project has moved beyond initial setup and is focused on refining the existi
     - Fixed "expected output file not found" warning by adding the `-o {scenario_eval_path}` parameter to the call to `evaluate_scenario_recommendations.py` in `run_recsys_demo.py`.
     - Added `--target-uuid` parameter to `evaluate_scenario_recommendations.py` (logic and argument parser) to allow evaluation of a single UUID.
     - Updated `run_recsys_demo.py` to pass the `--target-uuid` parameter to `evaluate_scenario_recommendations.py`, ensuring the demo evaluates only the UUID generated in that specific run.
+54. **Embedding Utils `.env` Loading**: Modified `src/embedding/embedding_utils.py` to remove the hardcoded path for `.env` file loading, allowing `load_dotenv()` to search automatically (typically from project root). Improves cross-platform compatibility.
+55. **Demo Script Windows UTF-8 Fix**: Modified `scripts/run_recsys_demo.py` to detect Windows OS and set `PYTHONUTF8=1` environment variable for subprocesses, aiming to prevent potential Unicode errors during output capture.

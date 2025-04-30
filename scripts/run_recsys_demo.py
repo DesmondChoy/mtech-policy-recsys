@@ -168,11 +168,18 @@ def run_step(
     success = False
     stdout_log = ""
     stderr_log = ""
+    env_vars = os.environ.copy()  # Start with current environment
+
+    # Set PYTHONUTF8=1 specifically for Windows subprocesses
+    if sys.platform == "win32":
+        env_vars["PYTHONUTF8"] = "1"
+        logging.info("Detected Windows, setting PYTHONUTF8=1 for subprocess.")
 
     try:
         # Execute the script as a subprocess
         process = subprocess.run(
             full_command,
+            env=env_vars,  # Pass the potentially modified environment
             capture_output=True,
             text=True,
             check=False,  # Don't raise exception on non-zero exit code
