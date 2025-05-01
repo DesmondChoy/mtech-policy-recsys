@@ -98,7 +98,8 @@ python scripts/run_recsys_demo.py --scenario <scenario_name>
 *   Open this file to see the status of each step, links to output files (transcript, requirements, comparisons, recommendation), and any errors.
 
 ## System Overview
-![NUS-project-diagram](data/architecture.jpg)
+![NUS-project-diagram](https://raw.githubusercontent.com/DesmondChoy/mtech-policy-recsys/main/data/architecture.jpg)
+
 
 ## Key Features
 
