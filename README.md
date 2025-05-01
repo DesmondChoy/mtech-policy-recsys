@@ -21,14 +21,33 @@ Follow these steps to set up the project environment for running the backend scr
 2.  **Set Up Python Environment**:
     This project requires **Python 3.11 or 3.12** due to specific dependencies (as noted in `pyproject.toml`). Please ensure you have a compatible version installed.
 
-    It's highly recommended to use a virtual environment. Create one using a compatible Python version (example uses 3.11):
+    It's highly recommended to use a virtual environment.
+
+    ### Creating and Activating a Virtual Environment
+
+    **For Windows Users:**
+
+    To create a virtual environment named `.venv` using Python 3.11 (replace `3.11` with your desired version if needed):
     ```bash
-    # Replace 'python3.11' with the command that invokes Python 3.11 on your system
-    # (e.g., 'python', 'py -3.11', etc.)
-    python3.11 -m venv venv 
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    py -3.11 -m venv .venv
     ```
-    Once the virtual environment is activated, install the Python dependencies:
+    To activate the virtual environment:
+    ```bash
+    .venv\Scripts\activate
+    ```
+
+    **For macOS and Linux Users:**
+
+    To create a virtual environment named `venv` using Python 3.11 (replace `python3.11` with the command that invokes Python 3.11 on your system if needed):
+    ```bash
+    python3.11 -m venv venv
+    ```
+    To activate the virtual environment:
+    ```bash
+    source venv/bin/activate
+    ```
+
+Once the virtual environment is activated, install the Python dependencies:
     ```bash
     pip install -r requirements.txt
     ```
@@ -40,6 +59,11 @@ Follow these steps to set up the project environment for running the backend scr
     OPENAI_API_KEY="your_openai_api_key_here"
     # OPENAI_MODEL_NAME="gpt-4o" # Optional: Defaults to gpt-4o if not set for CrewAI/Extractor
     ```
+
+    - [Documentation](https://ai.google.dev/gemini-api/docs/api-key) to get GOOGLE_API_KEY
+    - [Documentation](https://help.openai.com/en/articles/8867743-assign-api-key-permissions) to get OPENAI_API_KEY
+
+
 
 4.  **Install Node.js Dependencies (Optional - for Local Frontend Development)**:
     This project includes a frontend web application component (`ux-webapp/`). **This step is optional** as the application is already deployed and accessible online (see "Online Access" section below).

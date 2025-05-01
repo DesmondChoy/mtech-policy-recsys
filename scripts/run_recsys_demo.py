@@ -170,10 +170,9 @@ def run_step(
     stderr_log = ""
     env_vars = os.environ.copy()  # Start with current environment
 
-    # Set PYTHONUTF8=1 specifically for Windows subprocesses
+    # Set PYTHONUTF8=1 specifically for Windows subprocesses (without logging here)
     if sys.platform == "win32":
         env_vars["PYTHONUTF8"] = "1"
-        logging.info("Detected Windows, setting PYTHONUTF8=1 for subprocess.")
 
     try:
         # Execute the script as a subprocess
@@ -358,6 +357,11 @@ def main():
     )
     # Log the final path later
     logging.info("-" * 60)
+
+    # --- Windows Specific Environment Setting ---
+    # Log once if we are on Windows and will be setting PYTHONUTF8 for subprocesses
+    if sys.platform == "win32":
+        logging.info("Detected Windows, setting PYTHONUTF8=1 for subprocesses.")
 
     # --- Task 6: Implement Main Pipeline Logic ---
     run_results: Dict[str, Any] = {}  # Initialize results tracker
