@@ -90,7 +90,7 @@ python scripts/run_recsys_demo.py --scenario <scenario_name>
 *   It performs various quality checks and evaluations along the way.
 *   **Most importantly:** It creates a summary file named `demo_summary_{uuid}.md` in the main project folder.
 
-**Important Cost Note:** Running this demo script involves multiple calls to LLM APIs. Expect approximate costs of **SGD $3** for Google Gemini API usage and **a few cents (USD)** for OpenAI API usage per run. Costs may vary based on API pricing changes and specific run complexity.
+**Important Cost Note:** Running this demo script involves multiple calls to LLM APIs. Expect approximate costs of **USD $3** for Google Gemini API usage and **a few cents (USD)** for OpenAI API usage per run. Costs may vary based on API pricing changes and specific run complexity.
 
 **Checking the Results:**
 
